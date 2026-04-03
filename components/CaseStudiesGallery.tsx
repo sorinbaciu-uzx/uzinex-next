@@ -334,6 +334,80 @@ const CASE_STUDIES: CaseStudy[] = [
     alt: "Echipament sablare cu laser Uzinex pentru atelier industrial Ocnele Mari Vâlcea",
   },
   {
+    id: "ars-sudura",
+    client: "ARS Industrial S.R.L.",
+    industry: "Auto & metalurgie",
+    location: "Ploiești, România",
+    year: "2025",
+    title: "Aparate de sudură cap la cap de mari dimensiuni pentru linii industriale",
+    excerpt:
+      "ARS Industrial S.R.L. din Ploiești a colaborat cu Uzinex pentru echiparea atelierului cu aparate de sudură cap la cap de mari dimensiuni. Soluția acoperă sudarea țevilor și profilelor industriale de diametru mare, cu calitate uniformă și repetabilitate ridicată — critice pentru aplicații în petrol-gaz, construcții și infrastructură.",
+    equipment: [
+      "Aparat sudură cap la cap mari dimensiuni",
+      "Sistem de aliniere și clampare",
+      "Unitate de control parametri",
+      "Kit de siguranță și protecție",
+    ],
+    metrics: [
+      { label: "Dimensiune", value: "Mari" },
+      { label: "Aplicație", value: "Petrol-gaz" },
+      { label: "Calitate", value: "Uniformă" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80&auto=format&fit=crop",
+    alt: "Aparat sudură cap la cap mari dimensiuni Uzinex pentru ARS Industrial Ploiești",
+  },
+  {
+    id: "ars-fotovoltaic",
+    client: "ARS Industrial S.R.L.",
+    industry: "Energie & infrastructură",
+    location: "Ploiești, România",
+    year: "2025",
+    title: "Centrală fotovoltaică mobilă — energie autonomă pentru șantiere și aplicații tactice",
+    excerpt:
+      "Tot pentru ARS Industrial S.R.L., Uzinex a livrat o soluție distinctă: o centrală fotovoltaică mobilă complet autonomă, cu panouri solare integrate, sistem de stocare în baterii și invertor industrial. Aplicația permite alimentarea cu energie curată a unor șantiere izolate, evenimente mobile sau operațiuni tactice — fără dependență de rețeaua națională.",
+    equipment: [
+      "Panouri fotovoltaice de înaltă eficiență",
+      "Sistem de stocare baterii Li-Ion",
+      "Invertor industrial hibrid",
+      "Structură mobilă cu remorcă",
+      "Sistem de monitorizare la distanță",
+    ],
+    metrics: [
+      { label: "Sursă", value: "Solară" },
+      { label: "Autonomie", value: "Mobilă" },
+      { label: "Impact", value: "Zero CO₂" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&auto=format&fit=crop",
+    alt: "Centrală fotovoltaică mobilă Uzinex pentru ARS Industrial Ploiești — energie autonomă șantiere",
+    featured: true,
+  },
+  {
+    id: "envirotec",
+    client: "Envirotec S.R.L.",
+    industry: "Procesare & reciclare",
+    location: "Vaslui, România",
+    year: "2025",
+    title: "Presă de balotat deșeuri pentru industria de reciclare",
+    excerpt:
+      "Envirotec S.R.L. din Vaslui operează în domeniul colectării și valorificării deșeurilor. Uzinex a livrat o presă industrială de balotat deșeuri care permite compactarea eficientă a hârtiei, cartonului, plasticului și metalelor, reducând volumul transportat și crescând rentabilitatea lanțului de reciclare.",
+    equipment: [
+      "Presă industrială de balotat",
+      "Sistem hidraulic de mare presiune",
+      "Masă de încărcare automată",
+      "Sistem de legare baloți",
+    ],
+    metrics: [
+      { label: "Tip deșeuri", value: "Mix" },
+      { label: "Reducere volum", value: "Max" },
+      { label: "Economie circulară", value: "DNSH ✓" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1200&q=80&auto=format&fit=crop",
+    alt: "Presă de balotat deșeuri Uzinex pentru Envirotec Vaslui — industria de reciclare",
+  },
+  {
     id: "venus-mobila",
     client: "Fabrica de mobilă Venus",
     industry: "Logistică & depozitare",
