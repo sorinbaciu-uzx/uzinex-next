@@ -94,7 +94,7 @@ const RESURSE_ITEMS: SubItem[] = [
 ];
 
 const NAV: NavItem[] = [
-  { label: "Acasă", href: "/" },
+  { label: "Echipa", href: "/echipa" },
   { label: "Studii de caz", href: "/studii-de-caz" },
   {
     label: "Catalog tehnic",
