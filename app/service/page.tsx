@@ -169,31 +169,28 @@ export default function ServicePage() {
 
       {/* AI Manuals section */}
       <section className="border-b hairline py-16 lg:py-24 bg-white overflow-hidden">
-        <div className="container-x">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
-            <div className="lg:col-span-6">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                — Inovație exclusivă
-              </div>
-              <h2
-                className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
-                style={{ letterSpacing: "-0.03em" }}
-              >
-                Manuale interactive cu<br />
-                <span className="font-light text-uzx-orange">inteligență artificială.</span>
-              </h2>
+        <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* LEFT — animated AI assistant mockup */}
+          <AIManualMockup />
+
+          {/* RIGHT — content */}
+          <div className="lg:col-span-6 lg:col-start-7">
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+              — Inovație exclusivă
             </div>
-            <div className="lg:col-span-5 lg:col-start-8 flex items-end">
-              <p className="text-ink-600 leading-relaxed">
-                Fiecare echipament livrat de Uzinex vine însoțit de un manual digital interactiv, bazat
-                pe inteligență artificială. În loc să cauți manual zeci de pagini de documentație tehnică,
-                operatorii pot pune întrebări în limbaj natural, vocal sau prin imagini și primesc
-                răspunsuri precise, contextualizate, cu instrucțiuni pas-cu-pas adaptate echipamentului
-                lor specific.
-              </p>
-            </div>
-          </div>
-          <div>
+            <h2
+              className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Manuale interactive cu<br />
+              <span className="font-light text-uzx-orange">inteligență artificială.</span>
+            </h2>
+            <p className="text-ink-600 leading-relaxed text-base mb-10 max-w-xl">
+              Fiecare echipament livrat de Uzinex vine însoțit de un manual digital interactiv, bazat pe
+              inteligență artificială. În loc să cauți manual zeci de pagini de documentație tehnică,
+              operatorii pot pune întrebări în limbaj natural, vocal sau prin imagini și primesc răspunsuri
+              precise, contextualizate, cu instrucțiuni pas-cu-pas adaptate echipamentului lor specific.
+            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-ink-200 border-y border-ink-200">
               {[
