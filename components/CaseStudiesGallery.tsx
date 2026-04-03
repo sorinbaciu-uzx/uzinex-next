@@ -27,6 +27,7 @@ type CaseStudy = {
   image: string;
   alt: string;
   featured?: boolean;
+  youtubeId?: string;
 };
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -45,9 +46,10 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Status", value: "Operațional" },
       { label: "Finanțare", value: "Fonduri UE" },
     ],
-    image: "/cases/camma-tehno-metal-linie-productie-caramida-modulara-uzinex.webp",
+    image: "https://img.youtube.com/vi/AoMfOAPQzVQ/maxresdefault.jpg",
     alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — CAMMA Tehno Metal",
     featured: true,
+    youtubeId: "AoMfOAPQzVQ",
   },
   {
     id: "airone",
@@ -69,10 +71,10 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Segment", value: "HoReCa" },
       { label: "Integrare", value: "Completă" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/LVRLKCO4yQY/maxresdefault.jpg",
     alt: "Echipamente de producție Uzinex pentru AIRONE — lider piață HoReCa România",
     featured: true,
+    youtubeId: "LVRLKCO4yQY",
   },
   {
     id: "feg",
@@ -89,9 +91,10 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Reducere downtime", value: "85%" },
       { label: "Conformitate", value: "100%" },
     ],
-    image: "/cases/feg-instalatie-sudura-industriala-uzinex.webp",
+    image: "https://img.youtube.com/vi/DQO74tlDNNQ/maxresdefault.jpg",
     alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
     featured: true,
+    youtubeId: "DQO74tlDNNQ",
   },
   {
     id: "geo-ex",
@@ -137,9 +140,9 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Proces", value: "Automatizat" },
       { label: "Flexibilitate", value: "Ridicată" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/Ofsgi59eWI4/maxresdefault.jpg",
     alt: "Fabrică de confecții metalice Geomar Pitești — dotare completă cu echipamente Uzinex",
+    youtubeId: "Ofsgi59eWI4",
   },
   {
     id: "goldpack",
@@ -161,10 +164,10 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Material", value: "Carton" },
       { label: "Flexibilitate", value: "Custom" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/Jqy_Rx89lH0/maxresdefault.jpg",
     alt: "Linie de producție ambalaje carton Uzinex pentru Gold Pack Râmnicu Sărat",
     featured: true,
+    youtubeId: "Jqy_Rx89lH0",
   },
   {
     id: "victoria-unic",
@@ -445,6 +448,7 @@ const INDUSTRIES: Industry[] = [
 
 export function CaseStudiesGallery() {
   const [filter, setFilter] = useState<Industry>("Toate");
+  const [activeVideo, setActiveVideo] = useState<CaseStudy | null>(null);
 
   const filtered = useMemo(() => {
     if (filter === "Toate") return CASE_STUDIES;
@@ -568,7 +572,13 @@ export function CaseStudiesGallery() {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                   className="bg-white flex flex-col group"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-ink-100">
+                  <button
+                    type="button"
+                    onClick={() => c.youtubeId && setActiveVideo(c)}
+                    disabled={!c.youtubeId}
+                    aria-label={c.youtubeId ? `Vezi videoclipul: ${c.title}` : c.title}
+                    className="relative aspect-[16/10] overflow-hidden bg-ink-100 text-left disabled:cursor-default"
+                  >
                     <Image
                       src={c.image}
                       alt={c.alt}
@@ -596,12 +606,21 @@ export function CaseStudiesGallery() {
                         </div>
                       </div>
                     )}
+                    {c.youtubeId && (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="w-16 h-16 bg-white/15 backdrop-blur border border-white/40 flex items-center justify-center group-hover:bg-uzx-orange group-hover:border-uzx-orange transition">
+                          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
                     <div className="absolute bottom-4 left-4 right-4 text-white">
                       <div className="text-[11px] mono uppercase tracking-wider opacity-80">
                         {c.client}
                       </div>
                     </div>
-                  </div>
+                  </button>
 
                   <div className="p-8 lg:p-10 flex flex-col flex-1">
                     <div className="flex items-center gap-3 text-[11px] mono text-ink-400 mb-4">
@@ -717,6 +736,53 @@ export function CaseStudiesGallery() {
           </div>
         </div>
       </section>
+
+      {/* YouTube lightbox */}
+      <AnimatePresence>
+        {activeVideo && activeVideo.youtubeId && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveVideo(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 cursor-pointer"
+            style={{ background: "rgba(5,15,30,0.92)" }}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl cursor-default"
+            >
+              <button
+                type="button"
+                onClick={() => setActiveVideo(null)}
+                aria-label="Închide"
+                className="absolute -top-12 right-0 text-white/70 hover:text-white text-2xl"
+              >
+                ✕
+              </button>
+              <div className="aspect-video bg-black border border-white/10">
+                <iframe
+                  src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1&rel=0`}
+                  title={activeVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="mt-4 text-white">
+                <div className="text-[11px] mono uppercase tracking-widest text-uzx-orange mb-2">
+                  {activeVideo.client} · {activeVideo.year}
+                </div>
+                <div className="serif text-xl">{activeVideo.title}</div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
