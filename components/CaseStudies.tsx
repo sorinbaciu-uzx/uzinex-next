@@ -217,6 +217,18 @@ export function CaseStudies() {
             →
           </button>
         </div>
+
+        {/* Link la pagina completă */}
+        <div className="flex justify-center mt-8">
+          <a
+            href="/studii-de-caz"
+            className="group inline-flex items-center gap-3 text-sm text-ink-700 hover:text-uzx-blue transition"
+          >
+            <span className="w-12 h-px bg-ink-300 group-hover:bg-uzx-blue transition" />
+            Vezi toate studiile de caz
+            <span className="group-hover:translate-x-1 transition">→</span>
+          </a>
+        </div>
       </div>
 
       {/* YouTube lightbox */}
