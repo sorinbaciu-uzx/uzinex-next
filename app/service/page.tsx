@@ -227,6 +227,105 @@ export default function ServicePage() {
             </div>
           </div>
         </div>
+
+        {/* Commission AI manual for any equipment */}
+        <div className="container-x mt-16 lg:mt-20">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 p-8 lg:p-12 text-white relative overflow-hidden"
+            style={{ background: "#082545" }}
+          >
+            <div
+              className="absolute inset-0 pointer-events-none opacity-20"
+              style={{
+                background:
+                  "radial-gradient(ellipse 80% 80% at 90% 50%, #1e6bb8 0%, transparent 60%)",
+              }}
+            />
+            <div
+              className="absolute -top-px -right-px w-20 h-20 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(135deg, transparent 0%, transparent 50%, rgba(245,133,31,0.5) 50%)",
+              }}
+            />
+
+            <div className="lg:col-span-7 relative">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                — Serviciu disponibil separat
+              </div>
+              <h3
+                className="serif text-2xl md:text-3xl lg:text-4xl leading-[0.95] mb-5"
+                style={{ letterSpacing: "-0.03em" }}
+              >
+                Ai cumpărat echipamentul<br />
+                de la altcineva?{" "}
+                <span className="font-light text-uzx-orange">
+                  Îți construim noi manualul AI.
+                </span>
+              </h3>
+              <p className="text-ink-200 text-base leading-relaxed max-w-2xl">
+                Chiar dacă echipamentul tău nu a fost achiziționat prin Uzinex, îți putem dezvolta un manual
+                interactiv cu inteligență artificială contra cost — personalizat pe modelul, configurația și
+                procedurile tale interne. Lucrăm pe orice tip de utilaj industrial, indiferent de brand sau
+                vechime.
+              </p>
+
+              <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-ink-200">
+                <li className="flex gap-3">
+                  <span className="text-uzx-orange shrink-0">→</span>
+                  <span>Analiză tehnică și culegere documentație existentă</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-uzx-orange shrink-0">→</span>
+                  <span>Antrenare model AI pe specificul utilajului tău</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-uzx-orange shrink-0">→</span>
+                  <span>Instalare locală (offline) sau cloud securizat</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-uzx-orange shrink-0">→</span>
+                  <span>Training pentru operatori & suport post-livrare</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="lg:col-span-5 relative flex flex-col justify-between gap-6">
+              <div className="border border-white/15 p-6">
+                <div className="text-[10px] mono text-white/50 uppercase tracking-widest mb-3">
+                  Pret pornind de la
+                </div>
+                <div
+                  className="serif text-4xl lg:text-5xl text-white num mb-2"
+                  style={{ letterSpacing: "-0.03em" }}
+                >
+                  la cerere
+                </div>
+                <p className="text-xs text-white/60 leading-relaxed">
+                  Costul final depinde de complexitatea echipamentului, volumul documentației existente și
+                  cerințele de integrare. Îți trimitem o ofertă personalizată după o analiză inițială
+                  gratuită.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <a
+                  href="#contact"
+                  className="bg-uzx-orange hover:bg-uzx-orange2 text-white text-sm px-6 py-4 transition flex items-center justify-center gap-3 group font-medium"
+                >
+                  Solicită ofertă pentru manual AI
+                  <span className="group-hover:translate-x-1 transition">→</span>
+                </a>
+                <a
+                  href="mailto:info@uzinex.ro?subject=Manual AI pentru echipament existent"
+                  className="text-xs text-white/80 hover:text-white text-center underline-link transition"
+                >
+                  sau scrie-ne la info@uzinex.ro
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Details section */}
