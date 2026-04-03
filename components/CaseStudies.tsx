@@ -81,7 +81,7 @@ export function CaseStudies() {
   const c = CASES[index];
 
   return (
-    <section className="border-b hairline py-16 lg:py-20 bg-white">
+    <section id="studii" className="border-b hairline py-16 lg:py-20 bg-white">
       <div className="container-x">
         <div className="text-center mb-12">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
