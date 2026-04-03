@@ -2,7 +2,7 @@ import { Logo } from "./Logo";
 
 const MENU = [
   { label: "Acasă", href: "#" },
-  { label: "Studii de caz", href: "#" },
+  { label: "Studii de caz", href: "/studii-de-caz" },
   { label: "Catalog tehnic", href: "#catalog" },
   { label: "Soluții recomandate", href: "#solutii" },
   { label: "Informații utile", href: "#qa" },
