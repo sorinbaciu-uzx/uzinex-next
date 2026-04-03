@@ -6,6 +6,7 @@ const MENU = [
   { label: "Catalog tehnic", href: "#catalog" },
   { label: "Soluții recomandate", href: "#solutii" },
   { label: "Informații utile", href: "#qa" },
+  { label: "Cariere", href: "/cariere" },
   { label: "Contact", href: "#contact" },
 ];
 

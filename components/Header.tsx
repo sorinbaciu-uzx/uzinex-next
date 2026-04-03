@@ -109,6 +109,7 @@ const NAV: NavItem[] = [
   },
   { label: "Consultanță fonduri europene", href: "/consultanta-fonduri-europene" },
   { label: "Service", href: "/service" },
+  { label: "Cariere", href: "/cariere" },
   { label: "Contact", href: "/#contact" },
 ];
 
