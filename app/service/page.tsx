@@ -45,7 +45,7 @@ export default function ServicePage() {
           </a>
           <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
             <span className="w-8 h-px bg-white/40" />
-            <span>Service & mentenanță · Suport 100% local</span>
+            <span>Service Uzinex · Vă asigurăm succesul</span>
           </div>
           <h1
             className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white max-w-3xl"
@@ -59,6 +59,97 @@ export default function ServicePage() {
             de calitatea service-ului post-vânzare. Uzinex asigură un ecosistem complet de suport tehnic,
             intervenție rapidă, mentenanță preventivă și piese de schimb — totul la standarde europene, 100% local.
           </p>
+
+          {/* 3 brand pillars */}
+          <div className="mt-12 grid grid-cols-3 gap-px bg-white/10 border-y border-white/10 max-w-2xl">
+            <div className="bg-transparent py-5 px-4 text-center">
+              <div className="serif text-xl lg:text-2xl text-uzx-orange">Oricând.</div>
+              <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">24/7</div>
+            </div>
+            <div className="bg-transparent py-5 px-4 text-center">
+              <div className="serif text-xl lg:text-2xl text-uzx-orange">De încredere.</div>
+              <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">Piese OEM</div>
+            </div>
+            <div className="bg-transparent py-5 px-4 text-center">
+              <div className="serif text-xl lg:text-2xl text-uzx-orange">Rapid.</div>
+              <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">Sub 24h</div>
+            </div>
+          </div>
+
+          {/* Customer voice quote */}
+          <div className="mt-12 max-w-2xl border-l-2 border-uzx-orange pl-6">
+            <blockquote className="serif text-lg lg:text-xl text-white/90 leading-relaxed italic">
+              „Afacerea noastră depinde de utilajele care funcționează non-stop. Când echipamentele
+              nu sunt disponibile, apar perioade de inactivitate extrem de costisitoare. Service-ul
+              rapid Uzinex ne oferă un sentiment puternic de siguranță."
+            </blockquote>
+            <div className="mt-4 text-[11px] mono text-white/60 uppercase tracking-widest">
+              — Director operațiuni · Client Uzinex din 2018
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 PROMISES */}
+      <section className="border-b hairline py-16 lg:py-24 bg-white">
+        <div className="container-x">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 lg:mb-16">
+            <div className="lg:col-span-6">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                — Te poți baza pe noi
+              </div>
+              <h2
+                className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
+                style={{ letterSpacing: "-0.03em" }}
+              >
+                Patru promisiuni<br />
+                <span className="font-light text-uzx-orange">pe care nu le negociem.</span>
+              </h2>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8 flex items-end">
+              <p className="text-ink-600 leading-relaxed">
+                Service-ul Uzinex este construit pe patru piloni fundamentali. Fiecare echipament livrat,
+                fiecare intervenție efectuată și fiecare contract semnat respectă aceste promisiuni —
+                fără excepție și fără compromisuri.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink-200 border-y border-ink-200">
+            {[
+              {
+                num: "01",
+                title: "Disponibilitate",
+                body: "Datorită rețelei naționale de service, echipa ta personală Uzinex — formată din manager regional, dispecer și tehnician — este mereu aproape de tine, prin toate canalele de comunicare. Telefon, email și aplicație mobilă, disponibile 24/7.",
+              },
+              {
+                num: "02",
+                title: "Fiabilitate",
+                body: "Competența tehnică a echipei noastre, calitatea ridicată a pieselor originale OEM și parteneriatele internaționale cu producători de top garantează un service fără probleme și de succes pe termen lung.",
+              },
+              {
+                num: "03",
+                title: "Rapiditate",
+                body: "Răspundem imediat la fiecare solicitare. Perioadele de inactivitate sunt reduse la minim datorită proceselor standardizate de reparație și întreținere, digitalizării complete și livrării next-day a pieselor de schimb.",
+              },
+              {
+                num: "04",
+                title: "Competență în consultanță",
+                body: "Tehnicienii Uzinex văd mai mult. Cu o vedere antrenată la 360°, ei recunosc imediat unde și cum pot fi aduse îmbunătățiri în privința siguranței, eficienței și stării utilajelor sau spațiilor de depozitare.",
+              },
+            ].map((p) => (
+              <div key={p.num} className="bg-white p-8 lg:p-10">
+                <div className="text-[11px] mono text-uzx-orange mb-6">— {p.num}</div>
+                <h3
+                  className="serif text-xl lg:text-2xl text-ink-900 mb-4 leading-tight"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  {p.title}
+                </h3>
+                <p className="text-sm text-ink-600 leading-relaxed">{p.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -423,6 +514,238 @@ export default function ServicePage() {
       </section>
 
       <ServiceSubscriptions />
+
+      {/* COLLABORATIVE DIAGNOSIS */}
+      <section className="border-b hairline py-16 lg:py-24 bg-ink-50">
+        <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-5">
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+              — Service digital
+            </div>
+            <h2
+              className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Diagnoză<br />
+              <span className="font-light text-uzx-orange">colaborativă remote.</span>
+            </h2>
+            <p className="text-ink-600 leading-relaxed mb-5">
+              Pentru situațiile complexe în care un tehnician de la fața locului are nevoie de input
+              suplimentar, am dezvoltat un instrument digital care permite partajarea în timp real a
+              datelor de diagnoză cu experții noștri din biroul central.
+            </p>
+            <p className="text-ink-600 leading-relaxed">
+              Dincolo de simpla partajare a ecranului, expertul remote poate sprijini activ diagnosticarea
+              prin dialog și poate efectua intervenții în paralel, în strânsă colaborare cu tehnicianul
+              de la tine. Tehnicianul deține întotdeauna controlul asupra utilajului. Diagnoza colaborativă
+              nu doar te scutește de costurile suplimentare cu deplasarea mai multor specialiști, dar
+              accelerează considerabil procesul de reparație.
+            </p>
+          </div>
+
+          <div className="lg:col-span-6 lg:col-start-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border-y border-ink-200">
+              {[
+                {
+                  title: "Partajare ecran în timp real",
+                  body: "Tehnicianul de la fața locului partajează imediat camera, telemetria și parametrii utilajului cu experții remote.",
+                },
+                {
+                  title: "Intervenție în paralel",
+                  body: "Expertul de la birou poate efectua diagnoze, configurări sau patch-uri în paralel cu tehnicianul, fără a întrerupe fluxul.",
+                },
+                {
+                  title: "Acces la istoric complet",
+                  body: "Toate datele anterioare ale utilajului, manualele AI și istoricul de intervenții sunt disponibile instant pe tabletă.",
+                },
+                {
+                  title: "Comandă piese în timp real",
+                  body: "Dacă diagnoza identifică o piesă care trebuie înlocuită, comanda este lansată imediat pentru livrare next-day.",
+                },
+                {
+                  title: "Documentație automată",
+                  body: "Întreaga sesiune este înregistrată și transformată automat în raport tehnic pentru istoricul utilajului tău.",
+                },
+                {
+                  title: "Siguranță și control",
+                  body: "Conexiunile sunt criptate end-to-end, iar tehnicianul de la fața locului păstrează controlul total asupra echipamentului.",
+                },
+              ].map((f, i) => (
+                <div key={i} className="bg-white p-6">
+                  <h3
+                    className="serif text-base text-ink-900 mb-2 leading-tight"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p className="text-xs text-ink-500 leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ORIGINAL PARTS + STATS */}
+      <section className="border-b hairline py-16 lg:py-24 bg-white">
+        <div className="container-x">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
+            <div className="lg:col-span-6">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                — Piese originale OEM
+              </div>
+              <h2
+                className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
+                style={{ letterSpacing: "-0.03em" }}
+              >
+                Calitate cu garanție<br />
+                <span className="font-light text-uzx-orange">de disponibilitate.</span>
+              </h2>
+              <p className="text-ink-600 leading-relaxed">
+                Lucrăm exclusiv cu piese originale, certificate de producători OEM și supuse celor mai
+                stricte teste de calitate. Aceste piese nu sunt doar foarte rezistente și mai puțin
+                sensibile la uzură — ele garantează exploatarea în siguranță a utilajului tău și
+                păstrarea valorii investiției pe termen lung.
+              </p>
+            </div>
+
+            <div className="lg:col-span-5 lg:col-start-8 flex items-end">
+              <p className="text-ink-600 leading-relaxed">
+                Avem acces la rețeaua internațională de stocuri OEM cu peste 50.000 de piese pentru
+                utilizare imediată, iar pentru piesele care nu sunt disponibile direct, livrăm în maxim
+                5 zile lucrătoare. Aceste caracteristici asigură disponibilitatea permanentă a flotei
+                tale și evitarea timpilor de nefuncționare costisitori.
+              </p>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-ink-200 border-y border-ink-200">
+            <div className="bg-white py-10 px-4 lg:px-8 text-center">
+              <div className="serif text-4xl lg:text-5xl text-uzx-blue num">50.000+</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">
+                Piese OEM disponibile
+              </div>
+            </div>
+            <div className="bg-white py-10 px-4 lg:px-8 text-center">
+              <div className="serif text-4xl lg:text-5xl text-uzx-blue num">12 ani</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">
+                Garanție disponibilitate
+              </div>
+            </div>
+            <div className="bg-white py-10 px-4 lg:px-8 text-center">
+              <div className="serif text-4xl lg:text-5xl text-uzx-blue num">5 zile</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">
+                Livrare piese non-stoc
+              </div>
+            </div>
+            <div className="bg-white py-10 px-4 lg:px-8 text-center">
+              <div className="serif text-4xl lg:text-5xl text-uzx-blue num">100%</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">
+                Piese originale OEM
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SATISFACTION + SIMPLY EFFICIENT */}
+      <section
+        className="border-b py-16 lg:py-24 text-white relative overflow-hidden"
+        style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 80% at 20% 40%, rgba(30,107,184,0.5) 0%, rgba(8,37,69,0) 60%)",
+          }}
+        />
+        <div className="container-x relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-6">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                — Satisfacția ta
+              </div>
+              <h2
+                className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95] mb-6"
+                style={{ letterSpacing: "-0.03em" }}
+              >
+                Singurul standard<br />
+                <span className="font-light text-uzx-orange">care contează cu adevărat.</span>
+              </h2>
+              <p className="text-ink-200 leading-relaxed mb-5">
+                Vrem să beneficiezi de service-ul Uzinex la cel mai înalt standard. Suntem ferm
+                convinși că îți putem câștiga încrederea doar ascultându-te cu atenție, înțelegându-ți
+                cerințele și îndeplinindu-le cu fiabilitate absolută. Tu decizi dacă am reușit sau nu.
+              </p>
+              <p className="text-ink-200 leading-relaxed">
+                De aceea, după fiecare intervenție și la finalul fiecărui contract de mentenanță, îți
+                trimitem un chestionar scurt pentru a afla nivelul tău de satisfacție și pentru a
+                analiza potențialul nostru de îmbunătățire. Feedback-ul tău este combustibilul care ne
+                ține în mișcare.
+              </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-6">
+                <div className="border border-white/15 p-5">
+                  <div
+                    className="serif text-5xl text-uzx-orange num"
+                    style={{ letterSpacing: "-0.03em" }}
+                  >
+                    97%
+                  </div>
+                  <div className="text-[11px] mono text-white/60 uppercase tracking-widest mt-2">
+                    Satisfacție clienți
+                  </div>
+                </div>
+                <div className="border border-white/15 p-5">
+                  <div
+                    className="serif text-5xl text-uzx-orange num"
+                    style={{ letterSpacing: "-0.03em" }}
+                  >
+                    100+
+                  </div>
+                  <div className="text-[11px] mono text-white/60 uppercase tracking-widest mt-2">
+                    Companii partenere
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 lg:col-start-8">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-5 mono">
+                — Simply Efficient
+              </div>
+              <p className="text-ink-200 leading-relaxed mb-8">
+                Atributele de performanță reprezintă reperul eficienței economice. Ca orice produs
+                Uzinex, service-ul pe care ți-l oferim este construit pe cinci principii fundamentale
+                care îți optimizează resursele și îți garantează rezultatul.
+              </p>
+
+              <div className="space-y-px bg-white/10 border-y border-white/10">
+                {[
+                  { word: "Simply safe", desc: "Conformitate totală cu standardele de siguranță." },
+                  { word: "Simply easy", desc: "Procese clare, comunicare directă, decizii rapide." },
+                  { word: "Simply powerful", desc: "Tehnicieni cu experiență, instrumente de top." },
+                  { word: "Simply connected", desc: "Digital end-to-end, fără hârtie inutilă." },
+                  { word: "Simply flexible", desc: "Pachete adaptate exact nevoilor tale." },
+                ].map((s, i) => (
+                  <div key={i} className="bg-transparent py-4 px-5 flex items-baseline gap-4">
+                    <div
+                      className="serif text-lg text-white shrink-0"
+                      style={{ letterSpacing: "-0.02em" }}
+                    >
+                      {s.word}
+                    </div>
+                    <div className="text-xs text-white/60 leading-relaxed">{s.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ContactCTA />
       <Footer />
     </>
