@@ -17,9 +17,9 @@ export default function ServicePage() {
     <>
       <Header />
 
-      {/* Hero simplu */}
+      {/* Hero */}
       <section
-        className="relative overflow-hidden border-b text-white -mt-[140px] pt-[160px] pb-20 lg:pb-24"
+        className="relative overflow-hidden border-b text-white -mt-[140px] pt-[140px] pb-14 lg:pb-16"
         style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div
@@ -40,53 +40,63 @@ export default function ServicePage() {
         <div className="container-x relative z-10">
           <a
             href="/"
-            className="inline-flex items-center gap-2 text-xs mono uppercase tracking-wider text-white/70 hover:text-white transition mb-10"
+            className="inline-flex items-center gap-2 text-xs mono uppercase tracking-wider text-white/70 hover:text-white transition mb-8"
           >
             <span>←</span> Înapoi la pagina principală
           </a>
-          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
-            <span className="w-8 h-px bg-white/40" />
-            <span>Service Uzinex · Vă asigurăm succesul</span>
-          </div>
-          <h1
-            className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white max-w-3xl"
-            style={{ letterSpacing: "-0.03em" }}
-          >
-            Service tehnic și<br />
-            <span className="font-light text-uzx-orange">mentenanță preventivă.</span>
-          </h1>
-          <p className="text-base lg:text-lg text-ink-200 max-w-2xl mt-6 leading-relaxed">
-            Indiferent cât de performante sunt echipamentele livrate, succesul unui proiect industrial depinde
-            de calitatea service-ului post-vânzare. Uzinex asigură un ecosistem complet de suport tehnic,
-            intervenție rapidă, mentenanță preventivă și piese de schimb — totul la standarde europene, 100% local.
-          </p>
 
-          {/* 3 brand pillars */}
-          <div className="mt-12 grid grid-cols-3 gap-px bg-white/10 border-y border-white/10 max-w-2xl">
-            <div className="bg-transparent py-5 px-4 text-center">
-              <div className="serif text-xl lg:text-2xl text-uzx-orange">Oricând.</div>
-              <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">24/7</div>
-            </div>
-            <div className="bg-transparent py-5 px-4 text-center">
-              <div className="serif text-xl lg:text-2xl text-uzx-orange">De încredere.</div>
-              <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">Piese OEM</div>
-            </div>
-            <div className="bg-transparent py-5 px-4 text-center">
-              <div className="serif text-xl lg:text-2xl text-uzx-orange">Rapid.</div>
-              <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">Sub 24h</div>
-            </div>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* LEFT — text */}
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-5 mono">
+                <span className="w-8 h-px bg-white/40" />
+                <span>Service Uzinex · Vă asigurăm succesul</span>
+              </div>
+              <h1
+                className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white"
+                style={{ letterSpacing: "-0.03em" }}
+              >
+                Service tehnic și<br />
+                <span className="font-light text-uzx-orange">mentenanță preventivă.</span>
+              </h1>
+              <p className="text-base text-ink-200 mt-6 leading-relaxed">
+                Indiferent cât de performante sunt echipamentele livrate, succesul unui proiect industrial
+                depinde de calitatea service-ului post-vânzare. Uzinex asigură un ecosistem complet de
+                suport tehnic, intervenție rapidă, mentenanță preventivă și piese de schimb — totul la
+                standarde europene, 100% local.
+              </p>
 
-          {/* Customer voice quote */}
-          <div className="mt-12 max-w-2xl border-l-2 border-uzx-orange pl-6">
-            <blockquote className="serif text-lg lg:text-xl text-white/90 leading-relaxed italic">
-              „Afacerea noastră depinde de utilajele care funcționează non-stop. Când echipamentele
-              nu sunt disponibile, apar perioade de inactivitate extrem de costisitoare. Service-ul
-              rapid Uzinex ne oferă un sentiment puternic de siguranță."
-            </blockquote>
-            <div className="mt-4 text-[11px] mono text-white/60 uppercase tracking-widest">
-              — Director operațiuni · Client Uzinex din 2018
+              {/* 3 brand pillars */}
+              <div className="mt-8 grid grid-cols-3 gap-px bg-white/10 border-y border-white/10">
+                <div className="bg-transparent py-4 px-3 text-center">
+                  <div className="serif text-lg lg:text-xl text-uzx-orange">Oricând.</div>
+                  <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">24/7</div>
+                </div>
+                <div className="bg-transparent py-4 px-3 text-center">
+                  <div className="serif text-lg lg:text-xl text-uzx-orange">De încredere.</div>
+                  <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">Piese OEM</div>
+                </div>
+                <div className="bg-transparent py-4 px-3 text-center">
+                  <div className="serif text-lg lg:text-xl text-uzx-orange">Rapid.</div>
+                  <div className="text-[10px] mono text-white/60 uppercase tracking-widest mt-1">Sub 24h</div>
+                </div>
+              </div>
+
+              {/* Customer voice quote */}
+              <div className="mt-8 border-l-2 border-uzx-orange pl-6">
+                <blockquote className="serif text-base lg:text-lg text-white/90 leading-relaxed italic">
+                  „Afacerea noastră depinde de utilajele care funcționează non-stop. Când echipamentele
+                  nu sunt disponibile, apar perioade de inactivitate extrem de costisitoare. Service-ul
+                  rapid Uzinex ne oferă un sentiment puternic de siguranță."
+                </blockquote>
+                <div className="mt-3 text-[11px] mono text-white/60 uppercase tracking-widest">
+                  — Director operațiuni · Client Uzinex din 2018
+                </div>
+              </div>
             </div>
+
+            {/* RIGHT — animated AI manual mockup */}
+            <AIManualMockup />
           </div>
         </div>
       </section>
@@ -159,28 +169,31 @@ export default function ServicePage() {
 
       {/* AI Manuals section */}
       <section className="border-b hairline py-16 lg:py-24 bg-white overflow-hidden">
-        <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* LEFT — animated AI assistant mockup */}
-          <AIManualMockup />
-
-          {/* RIGHT — content */}
-          <div className="lg:col-span-6 lg:col-start-7">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-              — Inovație exclusivă
+        <div className="container-x">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+            <div className="lg:col-span-6">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                — Inovație exclusivă
+              </div>
+              <h2
+                className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
+                style={{ letterSpacing: "-0.03em" }}
+              >
+                Manuale interactive cu<br />
+                <span className="font-light text-uzx-orange">inteligență artificială.</span>
+              </h2>
             </div>
-            <h2
-              className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
-              style={{ letterSpacing: "-0.03em" }}
-            >
-              Manuale interactive cu<br />
-              <span className="font-light text-uzx-orange">inteligență artificială.</span>
-            </h2>
-            <p className="text-ink-600 leading-relaxed text-base mb-10 max-w-xl">
-              Fiecare echipament livrat de Uzinex vine însoțit de un manual digital interactiv, bazat pe
-              inteligență artificială. În loc să cauți manual zeci de pagini de documentație tehnică,
-              operatorii pot pune întrebări în limbaj natural și primesc răspunsuri precise, contextualizate,
-              cu instrucțiuni pas-cu-pas adaptate echipamentului lor specific.
-            </p>
+            <div className="lg:col-span-5 lg:col-start-8 flex items-end">
+              <p className="text-ink-600 leading-relaxed">
+                Fiecare echipament livrat de Uzinex vine însoțit de un manual digital interactiv, bazat
+                pe inteligență artificială. În loc să cauți manual zeci de pagini de documentație tehnică,
+                operatorii pot pune întrebări în limbaj natural, vocal sau prin imagini și primesc
+                răspunsuri precise, contextualizate, cu instrucțiuni pas-cu-pas adaptate echipamentului
+                lor specific.
+              </p>
+            </div>
+          </div>
+          <div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-ink-200 border-y border-ink-200">
               {[
