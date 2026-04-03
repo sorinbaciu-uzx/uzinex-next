@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceGrid } from "@/components/ServiceGrid";
+import { ServiceSubscriptions } from "@/components/ServiceSubscriptions";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export const metadata: Metadata = {
@@ -421,6 +422,7 @@ export default function ServicePage() {
         </div>
       </section>
 
+      <ServiceSubscriptions />
       <ContactCTA />
       <Footer />
     </>
