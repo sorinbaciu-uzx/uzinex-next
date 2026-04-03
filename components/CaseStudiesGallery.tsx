@@ -31,29 +31,6 @@ type CaseStudy = {
 
 const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "feg",
-    client: "Future Energy Group S.R.L.",
-    industry: "Energie & infrastructură",
-    location: "Iași, România",
-    year: "2026",
-    title: "Instalație de sudură industrială pusă în funcțiune în 2 ore",
-    excerpt:
-      "Future Energy Group, producător român de echipamente energetice, avea nevoie urgentă de o instalație de sudură industrială pentru un proiect cu termen contractual strict. Inginerii Uzinex au livrat soluția completă, au efectuat instalarea și commissioning-ul în doar 2 ore, salvând proiectul de la întârzieri.",
-    quote: {
-      text: "Echipa Uzinex a fost extraordinară — au livrat și pus în funcțiune instalația într-un timp record. Fără ei, am fi pierdut termenul de finanțare.",
-      author: "Reprezentant FEG",
-    },
-    equipment: ["Aparat sudură industrială", "Sistem de protecție", "Set consumabile"],
-    metrics: [
-      { label: "Timp instalare", value: "2 ore" },
-      { label: "Reducere downtime", value: "85%" },
-      { label: "Conformitate UE", value: "100%" },
-    ],
-    image: "/cases/feg-instalatie-sudura-industriala-uzinex.webp",
-    alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
-    featured: true,
-  },
-  {
     id: "camma",
     client: "CAMMA Tehno Metal S.R.L.",
     industry: "Procesare & reciclare",
@@ -61,230 +38,324 @@ const CASE_STUDIES: CaseStudy[] = [
     year: "2025",
     title: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România",
     excerpt:
-      "CAMMA Tehno Metal a ales Uzinex pentru implementarea unei linii complete de producție pentru cea mai mare fabrică de cărămidă modulară din România. Proiectul a inclus dimensionare tehnică, livrare echipamente, instalare și training pentru operatori, totul finanțat prin fonduri europene.",
-    quote: {
-      text: "O linie de producție impecabilă, livrată la cheie. Inginerii Uzinex au înțeles exact ce avem nevoie și au livrat la timp, în limita bugetului.",
-      author: "Conducerea CAMMA",
-    },
+      "CAMMA Tehno Metal a ales Uzinex pentru implementarea unei linii complete de producție pentru cea mai mare fabrică de cărămidă modulară din România. Proiectul a inclus dimensionare tehnică, livrare echipamente, instalare și training pentru operatori, finanțat prin fonduri europene.",
     equipment: ["Presă hidraulică", "Linie de uscare", "Sistem de paletizare", "Conveyor industrial"],
     metrics: [
-      { label: "Capacitate producție", value: "+300%" },
-      { label: "Eficiență energetică", value: "98%" },
-      { label: "Termen finanțare", value: "Respectat" },
+      { label: "Capacitate", value: "+300%" },
+      { label: "Status", value: "Operațional" },
+      { label: "Finanțare", value: "Fonduri UE" },
     ],
     image: "/cases/camma-tehno-metal-linie-productie-caramida-modulara-uzinex.webp",
     alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — CAMMA Tehno Metal",
     featured: true,
   },
   {
-    id: "metaltech",
-    client: "MetalTech Industries",
-    industry: "Auto & metalurgie",
-    location: "Brașov, România",
-    year: "2025",
-    title: "Centru CNC vertical pentru două schimburi zilnic, fără defecțiuni",
-    excerpt:
-      "MetalTech Industries a investit într-un centru CNC vertical de înaltă precizie pentru linia de producție automotive. După 4 ani de operare în două schimburi zilnic, echipamentul nu a avut o singură defecțiune majoră, asigurând o continuitate operațională exemplară.",
-    quote: {
-      text: "4 ani de operare 16 ore pe zi fără o singură defecțiune. Investiția cea mai bună pe care am făcut-o.",
-      author: "Bogdan Stan, Director Producție",
-    },
-    equipment: ["Centru CNC vertical 5 axe", "Sistem palletizare", "Software CAM"],
-    metrics: [
-      { label: "Uptime", value: "99.8%" },
-      { label: "Ani de operare", value: "4+" },
-      { label: "Defecțiuni majore", value: "0" },
-    ],
-    image:
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
-    alt: "Centru CNC vertical Uzinex pentru MetalTech Industries — operare 16 ore/zi fără defecțiuni",
-  },
-  {
-    id: "logipark",
-    client: "LogiPark România",
-    industry: "Logistică & depozitare",
-    location: "București · Cluj · Timișoara",
-    year: "2025",
-    title: "3 depozite echipate cu motostivuitoare și sisteme automatizate",
-    excerpt:
-      "LogiPark România, lider în servicii logistice, a echipat trei centre de distribuție majore cu o flotă completă de motostivuitoare electrice și diesel, sisteme de paletizare automatizată și soluții de stocare verticală. Service 24/7 inclus în contract.",
-    quote: {
-      text: "Service-ul Uzinex este disponibil 24/7. În 18 luni nu am avut o singură întrerupere logistică majoră.",
-      author: "Daniela Marin, Procurement",
-    },
-    equipment: [
-      "32 × Motostivuitoare electrice",
-      "12 × Motostivuitoare diesel",
-      "Linie automată paletizare",
-      "Rafturi industriale VNA",
-    ],
-    metrics: [
-      { label: "Centre echipate", value: "3" },
-      { label: "Service SLA", value: "24/7" },
-      { label: "Întreruperi", value: "0" },
-    ],
-    image:
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80&auto=format&fit=crop",
-    alt: "Motostivuitoare Uzinex livrate către LogiPark România — flotă pentru 3 centre de distribuție",
-  },
-  {
-    id: "auto-components",
-    client: "Auto Components SRL",
+    id: "airone",
+    client: "AIRONE",
     industry: "Producție & manufactură",
-    location: "Pitești, România",
-    year: "2026",
-    title: "Linie robotizată de paletizare cu reducere costuri 38%",
-    excerpt:
-      "Auto Components SRL, furnizor pentru industria auto, a implementat o linie robotizată de paletizare cu 4 brațe robotice, integrate într-o celulă de producție automată. Implementarea Uzinex a fost livrată la cheie, iar costurile operaționale s-au redus cu 38% în primul an.",
-    quote: {
-      text: "Linia robotizată de paletizare ne-a redus costurile cu 38% în primul an. Implementarea a fost impecabilă.",
-      author: "Andrei Popescu, Plant Manager",
-    },
-    equipment: [
-      "4 × Brațe robotice 6 axe (200 kg payload)",
-      "Sistem de viziune AI",
-      "Conveyor inteligent",
-      "Sistem SCADA",
-    ],
-    metrics: [
-      { label: "Reducere costuri", value: "38%" },
-      { label: "ROI", value: "14 luni" },
-      { label: "Productivitate", value: "+220%" },
-    ],
-    image:
-      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80&auto=format&fit=crop",
-    alt: "Linie robotizată de paletizare cu 4 brațe robotice Uzinex pentru Auto Components SRL",
-    featured: true,
-  },
-  {
-    id: "terra-energy",
-    client: "Terra Energy",
-    industry: "Energie & infrastructură",
-    location: "Constanța, România",
+    location: "România",
     year: "2025",
-    title: "Linie completă turnkey livrată cu 3 săptămâni înainte de deadline POIM",
+    title: "Fabrică de echipamente HoReCa pentru cel mai important jucător din piața din România",
     excerpt:
-      "Pentru un contract POIM cu termen extrem de strict, Terra Energy avea nevoie de o linie completă într-un calendar imposibil. Inginerii Uzinex au propus o configurație alternativă, conformă cu cerințele de finanțare, și au livrat cu 3 săptămâni înainte de deadline.",
-    quote: {
-      text: "Uzinex a propus o configurație alternativă conformă cu finanțarea și a livrat cu 3 săptămâni înainte de termen.",
-      author: "Laura Dumitrescu, CFO",
-    },
+      "AIRONE, liderul pieței românești de echipamente HoReCa, a colaborat cu Uzinex pentru dotarea fabricii de producție cu utilaje industriale de ultimă generație. Proiectul a inclus utilaje de prelucrare inox, presare, sudură și asamblare automatizată pentru fabricarea de echipamente profesionale de bucătărie.",
     equipment: [
-      "Generatoare industriale",
-      "Tablouri electrice automatizate",
-      "Sistem de monitorizare",
-      "Echipamente de protecție",
+      "Utilaje prelucrare inox",
+      "Mașini de presare",
+      "Sisteme sudură TIG/MIG",
+      "Linie asamblare automatizată",
     ],
     metrics: [
-      { label: "Avans deadline", value: "3 săptămâni" },
-      { label: "Conformitate POIM", value: "100%" },
-      { label: "DNSH", value: "Validat" },
-    ],
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80&auto=format&fit=crop",
-    alt: "Linie energetică turnkey Uzinex pentru Terra Energy — proiect POIM livrat înainte de termen",
-  },
-  {
-    id: "biopack",
-    client: "BioPack Solutions",
-    industry: "Procesare & reciclare",
-    location: "Oradea, România",
-    year: "2025",
-    title: "Linie de ambalare automată — capacitate triplată în 18 luni",
-    excerpt:
-      "BioPack Solutions, producător de ambalaje sustenabile, a investit într-o linie de ambalare complet automatizată livrată de Uzinex. Capacitatea fabricii s-a triplat în 18 luni, iar investiția a fost amortizată complet în acest interval.",
-    quote: {
-      text: "Linia de ambalare automată a triplat capacitatea fabricii. Investiție amortizată în 18 luni.",
-      author: "Ana Petrescu, CEO",
-    },
-    equipment: [
-      "Mașini de ambalare automată",
-      "Etichetare și dozare",
-      "Conveyor multi-nivel",
-      "Sistem control calitate",
-    ],
-    metrics: [
-      { label: "Creștere capacitate", value: "300%" },
-      { label: "Amortizare", value: "18 luni" },
-      { label: "Eficiență", value: "+85%" },
-    ],
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
-    alt: "Linie de ambalare automată Uzinex pentru BioPack Solutions — capacitate triplată",
-  },
-  {
-    id: "weldmaster",
-    client: "WeldMaster Industries",
-    industry: "Auto & metalurgie",
-    location: "Cluj-Napoca, România",
-    year: "2025",
-    title: "4 brațe robotice de sudură transformă linia de producție",
-    excerpt:
-      "WeldMaster Industries a integrat 4 brațe robotice de sudură furnizate de Uzinex în linia principală de producție. Transformarea a redus eroarea umană, a accelerat ciclurile și a generat ROI în doar 14 luni.",
-    quote: {
-      text: "Cele 4 brațe robotice de sudură au transformat complet linia noastră. ROI în 14 luni.",
-      author: "Cristian Ionescu, Operations",
-    },
-    equipment: [
-      "4 × Brațe robotice de sudură",
-      "Tabel rotativ",
-      "Sistem aspirație fum",
-      "Software off-line programming",
-    ],
-    metrics: [
-      { label: "ROI", value: "14 luni" },
-      { label: "Reducere defecte", value: "92%" },
-      { label: "Cicluri/oră", value: "+180%" },
+      { label: "Poziție piață", value: "#1 RO" },
+      { label: "Segment", value: "HoReCa" },
+      { label: "Integrare", value: "Completă" },
     ],
     image:
       "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80&auto=format&fit=crop",
-    alt: "Brațe robotice de sudură Uzinex pentru WeldMaster Industries — ROI în 14 luni",
+    alt: "Echipamente de producție Uzinex pentru AIRONE — lider piață HoReCa România",
+    featured: true,
   },
   {
-    id: "datacenter-one",
-    client: "DataCenter One",
+    id: "feg",
+    client: "Future Energy Group S.R.L.",
     industry: "Energie & infrastructură",
-    location: "București, România",
-    year: "2025",
-    title: "Generator industrial livrat și pus în funcțiune în 5 zile",
+    location: "Iași, România",
+    year: "2026",
+    title: "Instalație de sudură industrială pusă în funcțiune în 2 ore",
     excerpt:
-      "În plin audit PNRR, DataCenter One avea nevoie urgent de un generator industrial care nu mai apăruse de la furnizorul anterior. Uzinex a livrat și pus în funcțiune echipamentul în 5 zile, salvând auditul de la observații.",
-    quote: {
-      text: "Uzinex l-a livrat și pus în funcțiune în 5 zile. Auditorii au plecat mulțumiți, dosarul a trecut fără observații.",
-      author: "Sorin Vasile, Facility Manager",
-    },
-    equipment: ["Generator industrial 500 kVA", "Tablou ATS", "Sistem monitorizare la distanță"],
+      "Future Energy Group, producător român de echipamente energetice, avea nevoie urgentă de o instalație de sudură industrială pentru un proiect cu termen contractual strict. Inginerii Uzinex au livrat soluția completă și au efectuat commissioning-ul în doar 2 ore.",
+    equipment: ["Aparat sudură industrială", "Sistem de protecție", "Set consumabile"],
     metrics: [
-      { label: "Timp livrare", value: "5 zile" },
-      { label: "Audit PNRR", value: "Trecut" },
-      { label: "Observații", value: "0" },
+      { label: "Timp instalare", value: "2 ore" },
+      { label: "Reducere downtime", value: "85%" },
+      { label: "Conformitate", value: "100%" },
+    ],
+    image: "/cases/feg-instalatie-sudura-industriala-uzinex.webp",
+    alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
+    featured: true,
+  },
+  {
+    id: "geo-ex",
+    client: "Geo-Ex Construct",
+    industry: "Procesare & reciclare",
+    location: "România",
+    year: "2025",
+    title: "Fabrică completă de procesare a pietrei pentru blaturi, chiuvete și monumente funerare",
+    excerpt:
+      "Geo-Ex Construct, specialist în prelucrarea pietrei naturale, a colaborat cu Uzinex pentru echiparea unei fabrici complete de procesare a pietrei. Portofoliul acoperă blaturi de bucătărie, chiuvete din piatră, monumente funerare și elemente arhitecturale personalizate.",
+    equipment: [
+      "Centru CNC prelucrare piatră",
+      "Mașini de tăiere cu disc diamantat",
+      "Sistem de lustruire automată",
+      "Pod rulant pentru manipulare blocuri",
+    ],
+    metrics: [
+      { label: "Specializare", value: "Piatră" },
+      { label: "Capacitate", value: "Industrială" },
+      { label: "Livrare", value: "Turnkey" },
     ],
     image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&q=80&auto=format&fit=crop",
-    alt: "Generator industrial Uzinex livrat DataCenter One în 5 zile — audit PNRR salvat",
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80&auto=format&fit=crop",
+    alt: "Fabrică completă de prelucrare a pietrei Uzinex pentru Geo-Ex Construct — blaturi, chiuvete, monumente",
   },
   {
-    id: "lasercut",
-    client: "Laser Cut Pro",
-    industry: "Producție & manufactură",
-    location: "Sibiu, România",
-    year: "2026",
-    title: "Mașină de tăiere laser fibră livrată în 3 săptămâni",
+    id: "geomar",
+    client: "Geomar S.R.L.",
+    industry: "Auto & metalurgie",
+    location: "Pitești, România",
+    year: "2025",
+    title: "Fabrică de confecții metalice dotată integral cu echipamente Uzinex",
     excerpt:
-      "Laser Cut Pro a achiziționat o mașină de tăiere laser fibră de înaltă precizie pentru extinderea capacității de producție. Uzinex a livrat în 3 săptămâni, cu calitate excepțională a tăieturilor.",
-    quote: {
-      text: "Calitatea suprafețelor de tăiere este excepțională. Recomand cu încredere.",
-      author: "Mihai Constantin, Director",
-    },
-    equipment: ["Mașină laser fibră 6 kW", "Sistem de încărcare automată", "Software CAD/CAM"],
+      "Geomar S.R.L. din Pitești a ales Uzinex pentru dotarea completă a fabricii de confecții metalice. Proiectul a inclus utilaje de prelucrare metal, sudură, vopsire și asamblare, configurate pentru producție de serie și pentru comenzi personalizate.",
+    equipment: [
+      "Mașini de tăiere laser",
+      "Sudură robotizată",
+      "Ștanțe și abkant",
+      "Cabină vopsire industrială",
+    ],
     metrics: [
-      { label: "Termen livrare", value: "3 săpt." },
-      { label: "Precizie", value: "±0.05mm" },
-      { label: "Capacitate", value: "+150%" },
+      { label: "Dotare", value: "Integrală" },
+      { label: "Proces", value: "Automatizat" },
+      { label: "Flexibilitate", value: "Ridicată" },
     ],
     image:
       "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
-    alt: "Mașină de tăiere laser fibră Uzinex pentru Laser Cut Pro — livrată în 3 săptămâni",
+    alt: "Fabrică de confecții metalice Geomar Pitești — dotare completă cu echipamente Uzinex",
+  },
+  {
+    id: "goldpack",
+    client: "Gold Pack S.R.L.",
+    industry: "Procesare & reciclare",
+    location: "Râmnicu Sărat, România",
+    year: "2025",
+    title: "Fabrică de ambalaje personalizate din carton cu linie de producție completă",
+    excerpt:
+      "Gold Pack S.R.L. din Râmnicu Sărat a implementat, prin Uzinex, o fabrică completă de ambalaje personalizate din carton. Linia acoperă tăiere, ștanțare, imprimare și asamblare, permițând producție flexibilă pentru clienți din diverse industrii.",
+    equipment: [
+      "Mașini de tăiere și ștanțare carton",
+      "Sistem de imprimare flexo/offset",
+      "Linie de asamblare cutii",
+      "Paletizare automată",
+    ],
+    metrics: [
+      { label: "Segment", value: "Ambalaje" },
+      { label: "Material", value: "Carton" },
+      { label: "Flexibilitate", value: "Custom" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
+    alt: "Linie de producție ambalaje carton Uzinex pentru Gold Pack Râmnicu Sărat",
+    featured: true,
+  },
+  {
+    id: "victoria-unic",
+    client: "Victoria Unic",
+    industry: "Procesare & reciclare",
+    location: "Huși, România",
+    year: "2025",
+    title: "Concasor pentru betoane în industria de reciclare",
+    excerpt:
+      "Victoria Unic din Huși operează în industria de reciclare a deșeurilor din construcții. Uzinex a furnizat un concasor industrial de betoane de mare capacitate, contribuind la transformarea deșeurilor în agregate reutilizabile pentru construcții noi — în linie cu principiile economiei circulare.",
+    equipment: [
+      "Concasor industrial pentru beton",
+      "Sistem de sortare agregate",
+      "Conveyor cu banda",
+      "Sistem de reducere praf",
+    ],
+    metrics: [
+      { label: "Aplicație", value: "Reciclare" },
+      { label: "Impact", value: "DNSH ✓" },
+      { label: "Capacitate", value: "Mare" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=1200&q=80&auto=format&fit=crop",
+    alt: "Concasor industrial de betoane Uzinex pentru Victoria Unic Huși — reciclare deșeuri construcții",
+  },
+  {
+    id: "alin-carp",
+    client: "Întreprindere Individuală Alin Carp",
+    industry: "Producție & manufactură",
+    location: "Botoșani, România",
+    year: "2025",
+    title: "Secție de tricotaje completă într-o mică afacere de familie",
+    excerpt:
+      "Întreprinderea Individuală Alin Carp din județul Botoșani a fost dotată de Uzinex cu o secție de tricotaje completă. Proiectul demonstrează angajamentul nostru de a sprijini și afaceri mici, nu doar corporațiile, oferind soluții industriale accesibile pentru producători locali.",
+    equipment: [
+      "Mașini de tricotat industriale",
+      "Sistem de pregătire fire",
+      "Mașini de finisare",
+      "Utilaje de control calitate",
+    ],
+    metrics: [
+      { label: "Profil", value: "Afacere familie" },
+      { label: "Dotare", value: "Completă" },
+      { label: "Tip", value: "Turnkey" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
+    alt: "Secție de tricotaje completă Uzinex pentru Întreprindere Individuală Alin Carp Botoșani",
+  },
+  {
+    id: "specat",
+    client: "Specat S.R.L.",
+    industry: "Procesare & reciclare",
+    location: "Craiova, România",
+    year: "2025",
+    title: "Precurățător de cereale de mare capacitate pentru industria agro",
+    excerpt:
+      "Specat S.R.L. din Craiova a integrat în fluxul său de procesare un precurățător de cereale industrial livrat de Uzinex. Echipamentul îmbunătățește calitatea cerealelor înainte de procesare sau depozitare, reducând pierderile și crescând eficiența operațională.",
+    equipment: [
+      "Precurățător de cereale industrial",
+      "Sistem de aspirație impurități",
+      "Conveyor cu elevator",
+      "Sistem de control automat",
+    ],
+    metrics: [
+      { label: "Industrie", value: "Agro" },
+      { label: "Funcție", value: "Precurățare" },
+      { label: "Capacitate", value: "Mare" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1595855759920-86582396756a?w=1200&q=80&auto=format&fit=crop",
+    alt: "Precurățător de cereale industrial Uzinex pentru Specat Craiova",
+  },
+  {
+    id: "magnius",
+    client: "Magnius",
+    industry: "Producție & manufactură",
+    location: "Iași, România",
+    year: "2025",
+    title: "Aparat CNC de îndoit litere volumetrice pentru industria publicitară",
+    excerpt:
+      "Magnius, brand de referință în industria publicitară din Iași, a investit într-un aparat CNC specializat de îndoit litere volumetrice, furnizat de Uzinex. Echipamentul permite producția rapidă și precisă de litere 3D pentru firmele luminoase, signalistică și branding corporate.",
+    equipment: [
+      "Aparat CNC îndoit litere volumetrice",
+      "Software CAD pentru design",
+      "Accesorii pentru materiale diverse (aluminiu, inox, acrilic)",
+    ],
+    metrics: [
+      { label: "Industrie", value: "Publicitate" },
+      { label: "Tehnologie", value: "CNC 3D" },
+      { label: "Precizie", value: "Mare" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1200&q=80&auto=format&fit=crop",
+    alt: "Aparat CNC de îndoit litere volumetrice Uzinex pentru Magnius Iași — industria publicitară",
+  },
+  {
+    id: "fier-forjat-limanu",
+    client: "Fier-Forjat Limanu S.R.L.",
+    industry: "Auto & metalurgie",
+    location: "Limanu, Constanța",
+    year: "2025",
+    title: "Fabrică completă de confecții metalice din fier forjat",
+    excerpt:
+      "Fier-Forjat Limanu S.R.L. din localitatea Limanu, județul Constanța, este specializată în confecții metalice artizanale și industriale din fier forjat. Uzinex a furnizat fabrica completă cu utilaje pentru forjare, prelucrare, îndoire și finisare, păstrând caracterul tradițional al meșteșugului combinat cu eficiența industrială.",
+    equipment: [
+      "Presă hidraulică de forjare",
+      "Mașini de îndoit fier forjat",
+      "Cuptoare industriale de încălzire",
+      "Utilaje de finisare și vopsire",
+    ],
+    metrics: [
+      { label: "Specializare", value: "Fier forjat" },
+      { label: "Dotare", value: "Completă" },
+      { label: "Profil", value: "Artizanal + Industrial" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
+    alt: "Fabrică completă de fier forjat Uzinex pentru Fier-Forjat Limanu Constanța",
+  },
+  {
+    id: "birou-proiectare-iasi",
+    client: "Birou de proiectare drumuri",
+    industry: "Energie & infrastructură",
+    location: "Iași, România",
+    year: "2025",
+    title: "Echipare completă pentru un birou de proiectare drumuri",
+    excerpt:
+      "Un birou specializat în proiectarea infrastructurii rutiere din Iași a fost echipat integral de Uzinex. Proiectul a inclus stații de lucru CAD performante, plottere de format mare, echipamente de măsurare topografică și infrastructură IT dedicată — totul pentru un mediu de proiectare modern și productiv.",
+    equipment: [
+      "Stații de lucru CAD profesionale",
+      "Plottere A0 și scanere",
+      "Echipamente de măsurare topo",
+      "Infrastructură IT și rețea",
+    ],
+    metrics: [
+      { label: "Tip proiect", value: "Birotică" },
+      { label: "Domeniu", value: "Infrastructură" },
+      { label: "Dotare", value: "Turnkey" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80&auto=format&fit=crop",
+    alt: "Echipare completă birou proiectare drumuri Iași — Uzinex",
+  },
+  {
+    id: "sablare-laser-ocnele-mari",
+    client: "Atelier industrial Ocnele Mari",
+    industry: "Producție & manufactură",
+    location: "Ocnele Mari, Vâlcea",
+    year: "2025",
+    title: "Echipament de sablare cu laser pentru prelucrări de precizie",
+    excerpt:
+      "Un atelier industrial din Ocnele Mari, județul Vâlcea, a fost dotat de Uzinex cu un echipament modern de sablare cu laser. Tehnologia permite curățare, marcare și pregătire superficială non-abrazivă, fără chimicale, ideală pentru componente tehnice, piese auto vintage și aplicații muzeale.",
+    equipment: [
+      "Sistem de sablare cu laser",
+      "Sistem de filtrare și ventilație",
+      "Cabină de lucru închisă",
+      "Software de control",
+    ],
+    metrics: [
+      { label: "Tehnologie", value: "Laser" },
+      { label: "Impact mediu", value: "Zero chimicale" },
+      { label: "Aplicații", value: "Multiple" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
+    alt: "Echipament sablare cu laser Uzinex pentru atelier industrial Ocnele Mari Vâlcea",
+  },
+  {
+    id: "venus-mobila",
+    client: "Fabrica de mobilă Venus",
+    industry: "Logistică & depozitare",
+    location: "Pitești, România",
+    year: "2025",
+    title: "Macara pentru manipulare plăci de PAL la o fabrică de mobilă",
+    excerpt:
+      "Fabrica de mobilă Venus din Pitești a implementat, cu ajutorul Uzinex, o macara industrială dedicată manipulării eficiente a plăcilor de PAL în procesul de producție. Echipamentul reduce timpul de încărcare/descărcare, elimină efortul fizic al operatorilor și crește siguranța la locul de muncă.",
+    equipment: [
+      "Macara industrială cu braț rotativ",
+      "Sistem de prindere pentru plăci PAL",
+      "Comandă electrică și manuală",
+      "Sistem de siguranță CE",
+    ],
+    metrics: [
+      { label: "Aplicație", value: "Manipulare PAL" },
+      { label: "Siguranță", value: "CE certificat" },
+      { label: "Productivitate", value: "Crescută" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop",
+    alt: "Macara pentru manipulare PAL Uzinex la fabrica de mobilă Venus Pitești",
   },
 ];
 
@@ -351,7 +422,7 @@ export function CaseStudiesGallery() {
               <div>
                 <div className="serif text-3xl text-white num">{CASE_STUDIES.length}+</div>
                 <div className="text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
-                  Proiecte livrate
+                  Proiecte prezentate
                 </div>
               </div>
               <div>
@@ -361,9 +432,9 @@ export function CaseStudiesGallery() {
                 </div>
               </div>
               <div>
-                <div className="serif text-3xl text-white num">100%</div>
+                <div className="serif text-3xl text-white num">RO</div>
                 <div className="text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
-                  Termen respectat
+                  Clienți din toată țara
                 </div>
               </div>
             </div>
