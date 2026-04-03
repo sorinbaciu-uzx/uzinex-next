@@ -85,12 +85,13 @@ export default function ServicePage() {
               {/* Customer voice quote */}
               <div className="mt-8 border-l-2 border-uzx-orange pl-6">
                 <blockquote className="serif text-base lg:text-lg text-white/90 leading-relaxed italic">
-                  „Afacerea noastră depinde de utilajele care funcționează non-stop. Când echipamentele
-                  nu sunt disponibile, apar perioade de inactivitate extrem de costisitoare. Service-ul
-                  rapid Uzinex ne oferă un sentiment puternic de siguranță."
+                  „Manualul AI Uzinex a schimbat complet modul în care lucrăm. Operatorii noi învață în
+                  câteva zile, iar întrebările tehnice care înainte însemnau ore de căutat în documentație
+                  primesc răspuns instant — direct prin voce sau printr-o fotografie. Este ca și cum am
+                  avea un inginer Uzinex disponibil 24/7 lângă fiecare echipament."
                 </blockquote>
                 <div className="mt-3 text-[11px] mono text-white/60 uppercase tracking-widest">
-                  — Director operațiuni · Client Uzinex din 2018
+                  — Director operațiuni · Client Uzinex
                 </div>
               </div>
             </div>
