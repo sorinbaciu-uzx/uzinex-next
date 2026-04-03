@@ -316,9 +316,9 @@ export function CaseStudiesGallery() {
 
   return (
     <>
-      {/* HERO */}
+      {/* HERO — extends under the sticky header so the brand-blue bg flows behind it */}
       <section
-        className="relative overflow-hidden border-b text-white"
+        className="relative overflow-hidden border-b text-white -mt-[140px] pt-[140px]"
         style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div
@@ -328,7 +328,7 @@ export function CaseStudiesGallery() {
               "radial-gradient(ellipse 80% 70% at 80% 50%, rgba(30,107,184,0.45) 0%, rgba(30,107,184,0.1) 50%, transparent 80%)",
           }}
         />
-        <div className="container-x pt-28 lg:pt-32 pb-16 lg:pb-20 relative z-10">
+        <div className="container-x pt-16 lg:pt-20 pb-16 lg:pb-20 relative z-10">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
               <span className="w-8 h-px bg-white/40" />
@@ -371,18 +371,20 @@ export function CaseStudiesGallery() {
         </div>
       </section>
 
-      {/* FILTER BAR — sticky */}
+      {/* FILTER BAR — sticky, wrap instead of horizontal scroll */}
       <section className="sticky top-16 lg:top-20 z-30 border-b hairline bg-white/95 backdrop-blur">
-        <div className="container-x">
-          <div className="flex gap-6 lg:gap-10 overflow-x-auto py-4 lg:py-5 -mb-px">
+        <div className="container-x py-4 lg:py-5">
+          <div className="flex flex-wrap gap-x-5 gap-y-3 lg:gap-x-7">
             {INDUSTRIES.map((ind) => {
               const isActive = filter === ind;
               return (
                 <button
                   key={ind}
                   onClick={() => setFilter(ind)}
-                  className={`relative whitespace-nowrap text-xs lg:text-sm tracking-wide transition flex items-center gap-2 ${
-                    isActive ? "text-uzx-orange" : "text-ink-500 hover:text-ink-900"
+                  className={`relative text-xs lg:text-sm tracking-wide transition inline-flex items-center gap-2 px-3 py-1.5 border ${
+                    isActive
+                      ? "border-uzx-orange text-uzx-orange bg-uzx-orange/5"
+                      : "border-ink-200 text-ink-600 hover:border-ink-900 hover:text-ink-900"
                   }`}
                 >
                   {ind}
@@ -391,14 +393,8 @@ export function CaseStudiesGallery() {
                       isActive ? "text-uzx-orange" : "text-ink-400"
                     }`}
                   >
-                    ({counts[ind] || 0})
+                    {counts[ind] || 0}
                   </span>
-                  {isActive && (
-                    <motion.div
-                      layoutId="industry-underline"
-                      className="absolute -bottom-4 lg:-bottom-5 left-0 right-0 h-0.5 bg-uzx-orange"
-                    />
-                  )}
                 </button>
               );
             })}
