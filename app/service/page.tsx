@@ -64,6 +64,171 @@ export default function ServicePage() {
       {/* Service grid */}
       <ServiceGrid />
 
+      {/* AI Manuals section */}
+      <section className="border-b hairline py-16 lg:py-24 bg-white overflow-hidden">
+        <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* LEFT — stylized AI assistant mockup */}
+          <div className="lg:col-span-5">
+            <div
+              className="relative border hairline p-8 lg:p-10"
+              style={{ background: "linear-gradient(180deg, #0a1a2e 0%, #082545 100%)" }}
+            >
+              {/* Window chrome */}
+              <div className="flex items-center gap-2 mb-8 pb-4 border-b border-white/10">
+                <div className="w-2.5 h-2.5 rounded-full bg-uzx-orange" />
+                <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+                <div className="w-2.5 h-2.5 rounded-full bg-white/15" />
+                <div className="ml-3 text-[10px] mono uppercase tracking-widest text-white/50">
+                  UZX Manual Assistant
+                </div>
+              </div>
+
+              {/* Chat */}
+              <div className="space-y-5">
+                <div>
+                  <div className="text-[10px] mono text-uzx-orange mb-2">OPERATOR</div>
+                  <div className="text-sm text-white/90 leading-relaxed">
+                    Cum resetez parametrii pentru tăiere inox 5 mm pe UZX-Laser F12?
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-5">
+                  <div className="text-[10px] mono text-uzx-blue mb-2 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-blue animate-pulse" />
+                    UZX AI · MANUAL TEHNIC
+                  </div>
+                  <div className="text-sm text-white/80 leading-relaxed">
+                    Pentru tăiere inox 5 mm, setează puterea laser la 2400 W, presiune azot 18 bar,
+                    viteza 2.8 m/min. Urmează acești pași:
+                  </div>
+                  <div className="mt-3 space-y-1.5 text-[11px] mono text-white/60">
+                    <div>→ Meniu → Parametri material → Stainless 5mm</div>
+                    <div>→ Încarcă preset UZX-INX-05</div>
+                    <div>→ Verifică focus la +1.2 mm</div>
+                    <div>→ Test cut pe probă înainte producție</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Input */}
+              <div className="mt-8 pt-5 border-t border-white/10 flex items-center gap-3">
+                <div className="flex-1 h-9 border border-white/15 px-3 flex items-center text-[11px] mono text-white/30">
+                  Pune o întrebare tehnică…
+                </div>
+                <div className="w-9 h-9 bg-uzx-orange flex items-center justify-center text-white">
+                  →
+                </div>
+              </div>
+
+              {/* Decorative */}
+              <div
+                className="absolute -top-px -right-px w-16 h-16 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(135deg, transparent 0%, transparent 50%, rgba(245,133,31,0.4) 50%)",
+                }}
+              />
+            </div>
+            <div className="text-center mt-4 text-[10px] mono uppercase tracking-widest text-ink-400">
+              — Mockup interfață assistant AI integrat în manual
+            </div>
+          </div>
+
+          {/* RIGHT — content */}
+          <div className="lg:col-span-6 lg:col-start-7">
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+              — Inovație exclusivă
+            </div>
+            <h2
+              className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
+              style={{ letterSpacing: "-0.03em" }}
+            >
+              Manuale interactive cu<br />
+              <span className="font-light text-uzx-orange">inteligență artificială.</span>
+            </h2>
+            <p className="text-ink-600 leading-relaxed text-base mb-10 max-w-xl">
+              Fiecare echipament livrat de Uzinex vine însoțit de un manual digital interactiv, bazat pe
+              inteligență artificială. În loc să cauți manual zeci de pagini de documentație tehnică,
+              operatorii pot pune întrebări în limbaj natural și primesc răspunsuri precise, contextualizate,
+              cu instrucțiuni pas-cu-pas adaptate echipamentului lor specific.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-ink-200 border-y border-ink-200">
+              {[
+                {
+                  num: "01",
+                  title: "Limbaj natural",
+                  body: "Pune întrebări în română sau engleză, exact cum ai vorbi cu un coleg tehnic. Fără a cunoaște termeni specifici sau pagini din manual.",
+                },
+                {
+                  num: "02",
+                  title: "Contextual pe echipament",
+                  body: "AI-ul cunoaște exact modelul, configurația și istoricul echipamentului tău. Răspunde cu referință directă la specificațiile reale, nu la șabloane generice.",
+                },
+                {
+                  num: "03",
+                  title: "Proceduri pas-cu-pas",
+                  body: "Ghiduri clare pentru punere în funcțiune, parametrizare, mentenanță preventivă, troubleshooting și situații de urgență — toate în format acționabil.",
+                },
+                {
+                  num: "04",
+                  title: "Training rapid pentru operatori",
+                  body: "Reduce timpul de onboarding al noilor operatori cu până la 70%. Echipa învață direct din echipament, fără sesiuni lungi de training clasic.",
+                },
+                {
+                  num: "05",
+                  title: "Reduce eroarea umană",
+                  body: "Verifică parametrii înainte de operare, previne configurații greșite și alertează automat pentru situațiile critice de siguranță.",
+                },
+                {
+                  num: "06",
+                  title: "Disponibil 24/7, offline",
+                  body: "Rulează local pe echipament sau pe tablete industriale, fără dependență de internet. Accesibil oricând, chiar și în locații izolate sau clasificate.",
+                },
+                {
+                  num: "07",
+                  title: "Istoricul intervențiilor",
+                  body: "Toate interacțiunile și intervențiile sunt jurnalizate automat, pentru auditare, raportare DNSH și urmărirea conformității cu procedurile.",
+                },
+                {
+                  num: "08",
+                  title: "Actualizări permanente",
+                  body: "Baza de cunoștințe se actualizează automat cu noi proceduri, patch-uri de siguranță și soluții de la comunitatea de operatori Uzinex.",
+                },
+              ].map((b) => (
+                <div key={b.num} className="bg-white p-6">
+                  <div className="text-[11px] mono text-uzx-blue mb-2">{b.num}</div>
+                  <h3
+                    className="serif text-base text-ink-900 mb-2 leading-tight"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    {b.title}
+                  </h3>
+                  <p className="text-xs text-ink-500 leading-relaxed">{b.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <div
+              className="mt-8 p-5 border border-uzx-blue/30 flex items-start gap-4"
+              style={{ background: "rgba(30,107,184,0.04)" }}
+            >
+              <div className="text-2xl text-uzx-blue shrink-0">⚡</div>
+              <div>
+                <div className="text-sm font-medium text-ink-900 mb-1">
+                  Inclus gratuit cu orice echipament livrat
+                </div>
+                <p className="text-xs text-ink-600 leading-relaxed">
+                  Manualul AI este parte integrantă din fiecare livrare Uzinex, fără cost suplimentar. Nu
+                  există abonamente, licențe ascunse sau limitări de utilizare — o dată primit echipamentul,
+                  asistentul tehnic este al tău.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Details section */}
       <section className="border-b hairline py-16 lg:py-20 bg-white">
         <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-12">
