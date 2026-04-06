@@ -16,10 +16,10 @@ export default function Home() {
       <Header />
       <Hero />
       <AuthorityStrip />
+      <CaseStudies />
       <Certifications />
       <CatalogTabs />
       <Solutions />
-      <CaseStudies />
       <TestimonialMarquee />
       <QASection />
       <ContactCTA />
