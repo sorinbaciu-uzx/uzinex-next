@@ -1,47 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="130" viewBox="0 0 600 130" role="img" aria-label="Uzinex — utilaje & echipamente pentru industrie">
-  <defs>
-    <!-- Mask: 2 horizontal slits across all letters -->
-    <mask id="letter-slits" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="100">
-      <rect x="0" y="0" width="600" height="100" fill="white"/>
-      <rect x="0" y="32" width="600" height="6" fill="black"/>
-      <rect x="0" y="62" width="600" height="6" fill="black"/>
-    </mask>
-    <!-- Mask: 2 diagonal slits for X -->
-    <mask id="x-slits" maskUnits="userSpaceOnUse" x="430" y="0" width="170" height="100">
-      <rect x="430" y="0" width="170" height="100" fill="white"/>
-      <g transform="translate(515,50) rotate(50)">
-        <rect x="-130" y="-3" width="260" height="6" fill="black"/>
-        <rect x="-130" y="22" width="260" height="6" fill="black"/>
-      </g>
-    </mask>
-  </defs>
-
-  <!-- ─── BLUE LETTERS WITH SLITS ─── -->
-  <g fill="#1e6bb8" mask="url(#letter-slits)">
-    <!-- U -->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="130" viewBox="0 0 600 130" role="img" aria-label="Uzinex">
+  <g fill="#1e6bb8">
     <path d="M0 6 L34 6 L34 66 Q34 80 50 80 Q66 80 66 66 L66 6 L100 6 L100 68 Q100 102 50 102 Q0 102 0 68 Z"/>
-    <!-- Z -->
     <path d="M110 6 L196 6 L196 26 L150 80 L196 80 L196 100 L110 100 L110 80 L156 26 L110 26 Z"/>
-    <!-- I -->
     <rect x="208" y="6" width="28" height="94"/>
-    <!-- N -->
     <path d="M248 6 L278 6 L312 60 L312 6 L342 6 L342 100 L312 100 L278 46 L278 100 L248 100 Z"/>
-    <!-- E -->
     <path d="M354 6 L424 6 L424 26 L386 26 L386 42 L420 42 L420 60 L386 60 L386 80 L424 80 L424 100 L354 100 Z"/>
   </g>
-
-  <!-- ─── ORANGE X WITH DIAGONAL SLITS ─── -->
-  <g fill="#f5851f" mask="url(#x-slits)">
-    <path d="M438 6 L470 6 L490 38 L510 6 L542 6 L510 50 L545 100 L513 100 L490 64 L467 100 L435 100 L470 50 Z"/>
-  </g>
-
-  <!-- Decorative angled tip on X -->
   <g fill="#f5851f">
-    <polygon points="540,90 580,40 595,55 555,105"/>
+    <path d="M438 6 L470 6 L490 38 L510 6 L542 6 L510 50 L545 100 L513 100 L490 64 L467 100 L435 100 L470 50 Z"/>
+    <polygon points="548,88 588,38 600,52 560,102"/>
   </g>
-
-  <!-- ─── TAGLINE ─── -->
-  <text x="0" y="125" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#1e6bb8" letter-spacing="0.5">
-    utilaje &amp; echipamente pentru industrie
-  </text>
+  <g fill="#ffffff">
+    <rect x="0" y="34" width="430" height="5"/>
+    <rect x="0" y="62" width="430" height="5"/>
+  </g>
+  <text x="0" y="124" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="500" fill="#1e6bb8">utilaje &amp; echipamente pentru industrie</text>
 </svg>
