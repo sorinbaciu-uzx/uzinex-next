@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container-x py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
           <div className="lg:col-span-4">
-            <Logo className="h-10 w-auto" />
+            <Logo className="h-12 w-auto" width={220} height={48} />
             <p className="text-ink-500 text-sm mt-6 max-w-xs leading-relaxed">
               Echipamente industriale, cupe de excavator și soluții de leasing pentru profesioniștii din construcții. Din 2003.
             </p>
