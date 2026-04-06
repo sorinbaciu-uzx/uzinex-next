@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-50:  #f7f7f8;
+  --color-ink-100: #eeeef0;
+  --color-ink-200: #d9d9de;
+  --color-ink-300: #b8b8c0;
+  --color-ink-400: #8a8a95;
+  --color-ink-500: #5f5f6b;
+  --color-ink-600: #42424c;
+  --color-ink-700: #2d2d35;
+  --color-ink-800: #1c1c22;
+  --color-ink-900: #0e0e12;
+
+  --color-uzx-blue:    #1e6bb8;
+  --color-uzx-blue2:   #155290;
+  --color-uzx-orange:  #f5851f;
+  --color-uzx-orange2: #e06d00;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --tracking-tightest: -0.04em;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #ffffff;
+  color: #0e0e12;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01","cv11";
+}
+
+.serif {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+
+.container-x {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.hairline { border-color: #eeeef0; }
+.num { font-variant-numeric: tabular-nums; }
+
+::selection { background: #0e0e12; color: #fff; }
+
+.underline-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+.testimonial-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+}
