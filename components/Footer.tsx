@@ -39,15 +39,21 @@ export function Footer() {
             </ul>
           </div>
           <div className="lg:col-span-2">
-            <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">Newsletter</div>
-            <p className="text-sm text-ink-500 mb-4">Noutăți și oferte lunare.</p>
-            <form className="flex border-b border-ink-300">
+            <label htmlFor="footer-newsletter" className="block text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">
+              Newsletter
+            </label>
+            <p className="text-sm text-ink-600 mb-4">Noutăți și oferte lunare.</p>
+            <form className="flex border-b border-ink-400">
               <input
+                id="footer-newsletter"
                 type="email"
                 placeholder="Email"
-                className="bg-transparent text-sm py-2 flex-1 focus:outline-none placeholder:text-ink-400"
+                aria-label="Adresa ta de email"
+                className="bg-transparent text-sm py-2 flex-1 focus:outline-none placeholder:text-ink-500 text-ink-900"
               />
-              <button type="submit" className="text-ink-900 px-2">→</button>
+              <button type="submit" aria-label="Abonează-te la newsletter" className="text-ink-900 px-2">
+                →
+              </button>
             </form>
           </div>
         </div>

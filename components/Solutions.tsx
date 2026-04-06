@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 
 const SOLUTIONS = [
@@ -79,11 +80,14 @@ export function Solutions() {
               className="bg-white grid lg:grid-cols-12 gap-8 p-8 lg:p-12 items-center"
             >
               <div className="lg:col-span-3">
-                <div className="aspect-[4/3] overflow-hidden bg-ink-100">
-                  <img
+                <div className="aspect-[4/3] overflow-hidden bg-ink-100 relative">
+                  <Image
                     src={s.image}
                     alt={s.industry}
-                    className="w-full h-full object-cover grayscale-[30%]"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 25vw"
+                    className="object-cover grayscale-[30%]"
+                    loading="lazy"
                   />
                 </div>
               </div>

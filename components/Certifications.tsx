@@ -43,7 +43,7 @@ export function Certifications() {
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             >
               {[...BRANDS, ...BRANDS].map((b, i) => (
-                <span key={i} className="serif text-2xl text-ink-300 whitespace-nowrap">
+                <span key={i} className="serif text-2xl text-ink-400 whitespace-nowrap">
                   {b}
                 </span>
               ))}

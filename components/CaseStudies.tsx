@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
 type CaseStudy = {
@@ -93,10 +94,13 @@ export function CaseStudies() {
               className="grid grid-cols-1 lg:grid-cols-2 bg-ink-50 min-h-[460px]"
             >
               <div className="relative overflow-hidden h-72 lg:h-auto">
-                <img
+                <Image
                   src={c.image}
                   alt={c.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  priority={index === 0}
                 />
               </div>
               <div className="flex flex-col justify-center p-10 lg:p-16">

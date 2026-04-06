@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
 type Product = { name: string; spec: string; img: string };
@@ -198,11 +199,15 @@ export function CatalogTabs() {
                 >
                   <div className="text-sm text-ink-700">{p.name}</div>
                   <div className="w-10 h-px bg-uzx-orange mt-2" />
-                  <div className="flex-1 flex items-center justify-center my-6">
-                    <img
+                  <div className="flex-1 flex items-center justify-center my-6 relative h-32">
+                    <Image
                       src={p.img}
                       alt={p.name}
+                      width={500}
+                      height={128}
+                      sizes="(max-width: 768px) 100vw, 25vw"
                       className="w-full h-32 object-cover grayscale group-hover:grayscale-0 transition"
+                      loading="lazy"
                     />
                   </div>
                   <div className="text-[10px] mono text-ink-400 uppercase">{p.spec}</div>
