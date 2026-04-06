@@ -1,27 +1,24 @@
-import Image from "next/image";
-
 /**
  * Uzinex brand logo.
- * Uses /public/logo.svg if present (preferred — pixel-perfect from brand file).
- * Falls back to inline SVG recreation if missing.
+ * Loads /public/logo.svg via plain <img> (SVG doesn't benefit from next/image optimization).
  */
 export function Logo({
-  className = "h-9 w-auto",
-  width = 180,
-  height = 40,
+  className = "",
+  width = 165,
+  height = 36,
 }: {
   className?: string;
   width?: number;
   height?: number;
 }) {
   return (
-    <Image
+    <img
       src="/logo.svg"
       alt="Uzinex — utilaje & echipamente pentru industrie"
       width={width}
       height={height}
-      priority
       className={className}
+      style={{ width, height }}
     />
   );
 }
