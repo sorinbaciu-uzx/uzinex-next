@@ -4,6 +4,7 @@ import { AuthorityStrip } from "@/components/AuthorityStrip";
 import { Certifications } from "@/components/Certifications";
 import { CatalogTabs } from "@/components/CatalogTabs";
 import { Solutions } from "@/components/Solutions";
+import { ClientLogos } from "@/components/ClientLogos";
 import { TestimonialMarquee } from "@/components/TestimonialMarquee";
 import { QASection } from "@/components/QASection";
 import { ContactCTA } from "@/components/ContactCTA";
@@ -18,6 +19,7 @@ export default function Home() {
       <Certifications />
       <CatalogTabs />
       <Solutions />
+      <ClientLogos />
       <TestimonialMarquee />
       <QASection />
       <ContactCTA />
