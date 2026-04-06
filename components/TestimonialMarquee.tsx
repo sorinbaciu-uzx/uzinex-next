@@ -2,6 +2,15 @@
 
 import { motion } from "motion/react";
 
+const CLIENT_LOGOS = [
+  { name: "Cărămidă Modulară România", src: "/clients/caramida.png" },
+  { name: "Iron", src: "/clients/iron.png" },
+  { name: "Future Energy Group", src: "/clients/feg.webp" },
+  { name: "Geomar Metal Work", src: "/clients/geomar.png" },
+  { name: "MDG Gold Paper", src: "/clients/mdg.webp" },
+  { name: "Geo-Ex Construct", src: "/clients/geoex.jpg" },
+];
+
 type Testimonial = { quote: string; name: string; role: string };
 
 const COL1: Testimonial[] = [
@@ -146,6 +155,34 @@ export function TestimonialMarquee() {
               Toate referințele
               <span className="group-hover:translate-x-1 transition">→</span>
             </a>
+
+            {/* Client logos bar — uniform white tint, no hover */}
+            <div className="mt-12 pt-10 border-t border-ink-700">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mb-6 mono">
+                — Companii care au ales Uzinex
+              </div>
+              <div className="overflow-hidden">
+                <motion.div
+                  className="flex items-center gap-10"
+                  style={{ width: "max-content" }}
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                >
+                  {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((c, i) => (
+                    <div key={i} className="shrink-0 h-14 flex items-center justify-center">
+                      <img
+                        src={c.src}
+                        alt={c.name}
+                        className="max-h-full w-auto object-contain"
+                        style={{
+                          filter: "brightness(0) invert(1) opacity(0.75)",
+                        }}
+                      />
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
           </div>
 
           <div
