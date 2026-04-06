@@ -38,11 +38,11 @@ export function QASection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="qa" className="border-b hairline py-24 lg:py-32">
-      <div className="container-x grid lg:grid-cols-12 gap-12">
+    <section id="qa" className="border-b hairline py-16 lg:py-20">
+      <div className="container-x grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">04 / Întrebări</div>
-          <h2 className="serif text-4xl md:text-5xl lg:text-6xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.04em" }}>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">04 / Întrebări</div>
+          <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
             Întrebări<br />frecvente.
           </h2>
           <p className="text-ink-500 mt-8 leading-relaxed max-w-sm">
@@ -60,9 +60,9 @@ export function QASection() {
               <div key={i} className="border-b hairline">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between py-6 lg:py-8 text-left"
+                  className="w-full flex items-center justify-between py-5 lg:py-6 text-left"
                 >
-                  <span className="serif text-xl lg:text-2xl text-ink-900 pr-8">{item.q}</span>
+                  <span className="serif text-lg lg:text-xl text-ink-900 pr-8">{item.q}</span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.3 }}

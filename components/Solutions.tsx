@@ -52,12 +52,12 @@ const SOLUTIONS = [
 
 export function Solutions() {
   return (
-    <section id="solutii" className="border-b hairline py-24 lg:py-32 bg-ink-50">
+    <section id="solutii" className="border-b hairline py-16 lg:py-20 bg-ink-50">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-12 mb-20">
+        <div className="grid lg:grid-cols-12 gap-10 mb-12">
           <div className="lg:col-span-6">
-            <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">02 / Soluții tehnice</div>
-            <h2 className="serif text-4xl md:text-5xl lg:text-6xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.04em" }}>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">02 / Soluții tehnice</div>
+            <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
               Recomandări în<br />funcție de aplicație.
             </h2>
           </div>
@@ -76,7 +76,7 @@ export function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="bg-white grid lg:grid-cols-12 gap-12 p-10 lg:p-16 items-center"
+              className="bg-white grid lg:grid-cols-12 gap-8 p-8 lg:p-12 items-center"
             >
               <div className="lg:col-span-3">
                 <div className="aspect-[4/3] overflow-hidden bg-ink-100">
@@ -92,7 +92,7 @@ export function Solutions() {
               </div>
               <div className="lg:col-span-4">
                 <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-3">Industrie</div>
-                <h3 className="serif text-3xl text-ink-900 leading-tight">{s.industry}</h3>
+                <h3 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight">{s.industry}</h3>
                 <p className="text-ink-600 leading-relaxed mt-4">{s.description}</p>
                 <ul className="mt-6 space-y-2 text-sm text-ink-700">
                   {s.bullets.map((b) => (

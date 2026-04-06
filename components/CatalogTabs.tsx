@@ -112,17 +112,17 @@ export function CatalogTabs() {
   const cat = CATEGORIES.find((c) => c.id === active)!;
 
   return (
-    <section id="catalog" className="border-b hairline py-24 lg:py-32">
+    <section id="catalog" className="border-b hairline py-16 lg:py-20">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-12 mb-20">
+        <div className="grid lg:grid-cols-12 gap-10 mb-12">
           <div className="lg:col-span-5">
-            <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">01 / Catalog tehnic</div>
-            <h2 className="serif text-4xl md:text-5xl lg:text-6xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.04em" }}>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">01 / Catalog tehnic</div>
+            <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
               Categorii din<br />portofoliul nostru.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-            <p className="text-ink-500 text-lg leading-relaxed">
+            <p className="text-ink-500 text-base leading-relaxed">
               Sute de soluții organizate pe categorii tehnice, cu specificații complete, fișe tehnice descărcabile și
               consultanță inginerească pentru fiecare proiect.
             </p>
@@ -166,10 +166,10 @@ export function CatalogTabs() {
             className="grid grid-cols-1 lg:grid-cols-3 gap-6"
           >
             {/* Big dark card */}
-            <div className="bg-ink-900 text-white p-10 lg:p-12 relative overflow-hidden flex flex-col justify-between min-h-[520px]">
+            <div className="bg-ink-900 text-white p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between min-h-[440px]">
               <div>
-                <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-6 mono">— Categorie {cat.num}</div>
-                <h3 className="serif text-3xl lg:text-4xl leading-tight whitespace-pre-line">{cat.title}</h3>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 mono">— Categorie {cat.num}</div>
+                <h3 className="serif text-2xl lg:text-3xl leading-tight whitespace-pre-line">{cat.title}</h3>
                 <p className="text-ink-300 text-sm leading-relaxed mt-6 max-w-xs">{cat.description}</p>
               </div>
               <div

@@ -118,14 +118,14 @@ function Column({
 
 export function TestimonialMarquee() {
   return (
-    <section id="testimoniale" className="border-b hairline py-24 lg:py-32 bg-ink-900 text-white">
+    <section id="testimoniale" className="border-b hairline py-16 lg:py-20 bg-ink-900 text-white">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-12 mb-16">
+        <div className="grid lg:grid-cols-12 gap-10 mb-10">
           <div className="lg:col-span-6">
-            <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">03 / Referințe</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">03 / Referințe</div>
             <h2
-              className="serif text-4xl md:text-5xl lg:text-6xl leading-[0.95]"
-              style={{ letterSpacing: "-0.04em" }}
+              className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
+              style={{ letterSpacing: "-0.03em" }}
             >
               Spun ei,<br />
               <span className="font-light text-uzx-orange">nu noi.</span>
@@ -150,7 +150,7 @@ export function TestimonialMarquee() {
 
           <div
             className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 testimonial-mask"
-            style={{ height: 640 }}
+            style={{ height: 520 }}
           >
             <Column data={COL1} duration={50} />
             <div className="hidden md:block">

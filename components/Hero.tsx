@@ -195,27 +195,27 @@ export function Hero() {
       </div>
 
       {/* ─── Content ─── */}
-      <div className="container-x pt-32 lg:pt-40 pb-24 grid lg:grid-cols-12 gap-12 relative z-10">
+      <div className="container-x pt-20 lg:pt-24 pb-16 grid lg:grid-cols-12 gap-10 relative z-10">
         <motion.div
           className="lg:col-span-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-ink-300 mb-10 mono">
+          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-ink-300 mb-6 mono">
             <span className="w-8 h-px bg-ink-500" />
             <span>Furnizor industrial · 2003 — prezent</span>
           </div>
-          <h1 className="serif text-5xl md:text-6xl lg:text-[5.5rem] font-medium leading-[0.92] text-white" style={{ letterSpacing: "-0.04em" }}>
+          <h1 className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white" style={{ letterSpacing: "-0.03em" }}>
             Echipamente și<br />
             componente pentru<br />
             <span className="font-light text-uzx-orange">industria grea.</span>
           </h1>
-          <p className="text-lg lg:text-xl text-ink-200 max-w-2xl mt-10 leading-relaxed">
+          <p className="text-base lg:text-lg text-ink-200 max-w-2xl mt-6 leading-relaxed">
             Cupe de excavator, atașamente hidraulice, piese de uzură și soluții complete pentru flotele profesionale.
             Producție internă, calitate certificată ISO 9001, livrare în toată România.
           </p>
-          <div className="flex flex-wrap items-center gap-6 mt-10">
+          <div className="flex flex-wrap items-center gap-5 mt-7">
             <a
               href="#catalog"
               className="bg-white hover:bg-ink-100 text-ink-900 text-sm px-7 py-4 transition flex items-center gap-3 group font-medium"
@@ -235,18 +235,18 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-ink-400 mono">Intervenție fizică</div>
-              <div className="serif text-3xl text-white mt-1">sub 24 ore</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">Intervenție fizică</div>
+              <div className="serif text-2xl text-white mt-1">sub 24 ore</div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-ink-400 mono">Echipă de ingineri</div>
-              <div className="serif text-3xl text-white mt-1">consultanță tehnică</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">Echipă de ingineri</div>
+              <div className="serif text-2xl text-white mt-1">consultanță tehnică</div>
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-ink-400 mono">Garanție standard</div>
-              <div className="serif text-3xl text-white mt-1">60 luni</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">Garanție standard</div>
+              <div className="serif text-2xl text-white mt-1">60 luni</div>
             </div>
           </div>
         </motion.div>

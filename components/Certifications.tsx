@@ -7,7 +7,7 @@ const BRANDS = ["Caterpillar", "Komatsu", "Volvo CE", "Hitachi", "JCB", "Liebher
 
 export function Certifications() {
   return (
-    <section className="border-b hairline py-20">
+    <section className="border-b hairline py-14 lg:py-16">
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
