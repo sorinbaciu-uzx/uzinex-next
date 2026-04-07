@@ -4,14 +4,14 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b hairline bg-ink-900 text-white">
+    <section className="relative overflow-hidden border-b hairline text-white" style={{ background: "#082545" }}>
       {/* ─── Animated blueprint background ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 70% 30%, #122544 0%, #0a1424 50%, #050a14 100%)",
+              "radial-gradient(ellipse at 70% 30%, #1e6bb8 0%, #0e3866 35%, #082545 70%, #051a33 100%)",
           }}
         />
 
@@ -182,14 +182,14 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(5,10,20,0.45) 0%, rgba(5,10,20,0.7) 70%, rgba(5,10,20,0.95) 100%)",
+              "linear-gradient(180deg, rgba(5,20,40,0.45) 0%, rgba(5,20,40,0.7) 70%, rgba(5,20,40,0.95) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(5,10,20,0.85) 0%, rgba(5,10,20,0.45) 45%, rgba(5,10,20,0.1) 100%)",
+              "linear-gradient(90deg, rgba(5,20,40,0.85) 0%, rgba(5,20,40,0.45) 45%, rgba(5,20,40,0.1) 100%)",
           }}
         />
       </div>

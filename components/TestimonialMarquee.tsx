@@ -87,12 +87,15 @@ const COL3: Testimonial[] = [
 
 function Card({ t }: { t: Testimonial }) {
   return (
-    <div className="bg-ink-800 border border-ink-700 p-6">
+    <div
+      className="p-6 border"
+      style={{ background: "rgba(30,107,184,0.08)", borderColor: "rgba(30,107,184,0.25)" }}
+    >
       <div className="text-uzx-orange text-sm tracking-widest mb-4">★★★★★</div>
       <blockquote className="serif text-base leading-relaxed text-white/90 mb-6">„{t.quote}"</blockquote>
-      <div className="pt-4 border-t border-ink-700">
+      <div className="pt-4 border-t" style={{ borderColor: "rgba(30,107,184,0.25)" }}>
         <div className="serif text-sm text-white">{t.name}</div>
-        <div className="text-[11px] text-ink-400 mt-0.5">{t.role}</div>
+        <div className="text-[11px] text-white/55 mt-0.5">{t.role}</div>
       </div>
     </div>
   );
@@ -127,7 +130,7 @@ function Column({
 
 export function TestimonialMarquee() {
   return (
-    <section id="testimoniale" className="border-b hairline py-16 lg:py-20 bg-ink-900 text-white">
+    <section id="testimoniale" className="border-b hairline py-16 lg:py-20 text-white" style={{ background: "linear-gradient(180deg, #082545 0%, #051a33 100%)" }}>
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-10 mb-10">
           <div className="lg:col-span-6">
@@ -157,7 +160,7 @@ export function TestimonialMarquee() {
             </a>
 
             {/* Client logos bar — uniform white tint, no hover */}
-            <div className="mt-12 pt-10 border-t border-ink-700">
+            <div className="mt-12 pt-10 border-t" style={{ borderColor: "rgba(30,107,184,0.25)" }}>
               <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mb-6 mono">
                 — Companii care au ales Uzinex
               </div>
