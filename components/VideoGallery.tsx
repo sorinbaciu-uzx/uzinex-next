@@ -17,57 +17,35 @@ type VideoItem = {
 const VIDEOS: VideoItem[] = [
   {
     id: "v1",
-    title: "Uzinex la TVR — soluții industriale pentru proiecte cu fonduri europene",
+    title: "Uzinex — apariție TV despre soluții industriale",
     type: "TV",
     date: "2026",
-    thumbnail: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=900&q=80&auto=format&fit=crop",
-    youtubeId: "BYtV6hoJ28Y",
-    duration: "8:42",
+    thumbnail: "https://img.youtube.com/vi/-_1CJ3VDFhE/maxresdefault.jpg",
+    youtubeId: "-_1CJ3VDFhE",
   },
   {
     id: "v2",
-    title: "Demo aparat sudură industrială — pus în funcțiune în 2 ore",
-    type: "Demo",
-    date: "2026",
-    thumbnail: "/cases/feg-instalatie-sudura-industriala-uzinex.webp",
-    youtubeId: "BYtV6hoJ28Y",
-    duration: "3:15",
+    title: "Reportaj Uzinex — echipamente și tehnologie la cheie",
+    type: "Reportaj",
+    date: "2025",
+    thumbnail: "https://img.youtube.com/vi/cnXAYqGYX5A/maxresdefault.jpg",
+    youtubeId: "cnXAYqGYX5A",
   },
   {
     id: "v3",
-    title: "Hannover Messe — prezentarea noilor linii robotizate Uzinex",
-    type: "Târg",
+    title: "Demo tehnic — punere în funcțiune a unui echipament Uzinex",
+    type: "Demo",
     date: "2025",
-    thumbnail: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=900&q=80&auto=format&fit=crop",
-    youtubeId: "BYtV6hoJ28Y",
-    duration: "12:08",
+    thumbnail: "https://img.youtube.com/vi/pzPCtrud130/maxresdefault.jpg",
+    youtubeId: "pzPCtrud130",
   },
   {
     id: "v4",
-    title: "Romexpo IndustryExpo — stand interactiv cu echipamente CNC",
-    type: "Târg",
-    date: "2025",
-    thumbnail: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=900&q=80&auto=format&fit=crop",
-    youtubeId: "BYtV6hoJ28Y",
-    duration: "6:20",
-  },
-  {
-    id: "v5",
-    title: "Interviu CEO Uzinex — strategia integrator industrial 2026",
+    title: "Interviu Uzinex — viziunea de integrator industrial",
     type: "Interviu",
-    date: "2026",
-    thumbnail: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80&auto=format&fit=crop",
-    youtubeId: "BYtV6hoJ28Y",
-    duration: "15:47",
-  },
-  {
-    id: "v6",
-    title: "Reportaj ProTV — automatizarea unei fabrici cu echipamente Uzinex",
-    type: "Reportaj",
     date: "2025",
-    thumbnail: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&auto=format&fit=crop",
-    youtubeId: "BYtV6hoJ28Y",
-    duration: "5:03",
+    thumbnail: "https://img.youtube.com/vi/Ss0stt74748/maxresdefault.jpg",
+    youtubeId: "Ss0stt74748",
   },
 ];
 
@@ -104,8 +82,9 @@ export function VideoGallery() {
           </div>
         </div>
 
-        {/* Video grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Horizontal scroll row */}
+        <div className="-mx-6 px-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory">
+          <div className="flex gap-6 w-max">
           {VIDEOS.map((v, i) => (
             <motion.button
               key={v.id}
@@ -114,7 +93,7 @@ export function VideoGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group text-left relative overflow-hidden border hairline hover:border-uzx-blue transition"
+              className="group text-left relative overflow-hidden border hairline hover:border-uzx-blue transition shrink-0 w-[85vw] sm:w-[440px] lg:w-[480px] snap-start"
             >
               <div className="aspect-video relative overflow-hidden bg-ink-100">
                 <Image
@@ -170,6 +149,7 @@ export function VideoGallery() {
               </div>
             </motion.button>
           ))}
+          </div>
         </div>
 
         <div className="flex justify-center mt-12">
