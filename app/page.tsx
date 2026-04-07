@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { AuthorityStrip } from "@/components/AuthorityStrip";
 import { Certifications } from "@/components/Certifications";
 import { CatalogTabs } from "@/components/CatalogTabs";
+import { VideoGallery } from "@/components/VideoGallery";
 import { Solutions } from "@/components/Solutions";
 import { CaseStudies } from "@/components/CaseStudies";
 import { TestimonialMarquee } from "@/components/TestimonialMarquee";
@@ -20,6 +21,7 @@ export default function Home() {
       <Certifications />
       <TestimonialMarquee />
       <CatalogTabs />
+      <VideoGallery />
       <Solutions />
       <QASection />
       <ContactCTA />
