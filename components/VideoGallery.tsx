@@ -83,29 +83,11 @@ export function VideoGallery() {
               <span className="font-light text-uzx-orange">târguri și pe teren.</span>
             </h2>
           </div>
-          <div className="lg:col-span-5 lg:col-start-8 flex items-end justify-between gap-6">
-            <p className="text-ink-500 text-base leading-relaxed flex-1">
+          <div className="lg:col-span-5 lg:col-start-8 flex items-end">
+            <p className="text-ink-500 text-base leading-relaxed">
               Apariții media, demo-uri tehnice și prezentări de la cele mai importante târguri industriale din
               Europa. Vezi tehnologia noastră în acțiune.
             </p>
-            <div className="hidden lg:flex items-center gap-2 shrink-0">
-              <button
-                type="button"
-                onClick={() => scrollByCard(-1)}
-                aria-label="Video anterior"
-                className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollByCard(1)}
-                aria-label="Video următor"
-                className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
-              >
-                →
-              </button>
-            </div>
           </div>
         </div>
 
@@ -125,7 +107,7 @@ export function VideoGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group text-left relative overflow-hidden border hairline hover:border-uzx-blue transition shrink-0 w-[85vw] sm:w-[440px] lg:w-[480px] snap-start"
+              className="group text-left relative overflow-hidden border hairline hover:border-uzx-blue transition shrink-0 w-[78vw] sm:w-[320px] lg:w-[360px] snap-start"
             >
               <div className="aspect-video relative overflow-hidden bg-ink-100">
                 <Image
@@ -184,8 +166,8 @@ export function VideoGallery() {
           </div>
         </div>
 
-        {/* Mobile arrows */}
-        <div className="lg:hidden flex items-center justify-center gap-3 mt-8">
+        {/* Arrows */}
+        <div className="flex items-center justify-center gap-3 mt-10">
           <button
             type="button"
             onClick={() => scrollByCard(-1)}
@@ -202,17 +184,6 @@ export function VideoGallery() {
           >
             →
           </button>
-        </div>
-
-        <div className="flex justify-center mt-10">
-          <a
-            href="#"
-            className="group inline-flex items-center gap-3 text-sm text-ink-700 hover:text-uzx-blue transition"
-          >
-            <span className="w-12 h-px bg-ink-300 group-hover:bg-uzx-blue transition" />
-            Vezi toate aparițiile media
-            <span className="group-hover:translate-x-1 transition">→</span>
-          </a>
         </div>
       </div>
 
