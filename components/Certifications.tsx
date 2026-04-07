@@ -3,7 +3,25 @@
 import { motion } from "motion/react";
 
 const CERTS = ["ISO 9001", "ISO 14001", "CE Mark", "EN 1090", "Hardox® Wearparts", "SSAB Partner", "EBRD", "PNRR"];
-const BRANDS = ["Caterpillar", "Komatsu", "Volvo CE", "Hitachi", "JCB", "Liebherr", "Case", "Doosan", "Hyundai CE", "Bobcat"];
+const BRANDS = [
+  "Siemens",
+  "Mitsubishi Electric",
+  "Schneider Electric",
+  "ABB",
+  "Samsung",
+  "Panasonic",
+  "Omron",
+  "Yaskawa",
+  "WEG",
+  "Fanuc",
+  "Bosch Rexroth",
+  "Festo",
+  "SMC",
+  "Rockwell Automation",
+  "Allen-Bradley",
+  "Danfoss",
+  "SEW-Eurodrive",
+];
 
 export function Certifications() {
   return (
@@ -33,7 +51,7 @@ export function Certifications() {
 
         <div className="mt-20 pt-12 border-t hairline">
           <div className="text-center text-xs uppercase tracking-[0.2em] text-ink-400 mb-10">
-            Compatibili cu utilaje de la
+            Componente cheie de la
           </div>
           <div className="overflow-hidden">
             <motion.div
