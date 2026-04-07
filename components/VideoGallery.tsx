@@ -47,6 +47,14 @@ const VIDEOS: VideoItem[] = [
     thumbnail: "https://img.youtube.com/vi/Ss0stt74748/maxresdefault.jpg",
     youtubeId: "Ss0stt74748",
   },
+  {
+    id: "v5",
+    title: "Uzinex la Exclusiv TV Moldova — apariție în direct",
+    type: "TV",
+    date: "2025",
+    thumbnail: "https://img.youtube.com/vi/ixaSRPK1mtU/maxresdefault.jpg",
+    youtubeId: "ixaSRPK1mtU",
+  },
 ];
 
 const TYPE_COLORS: Record<VideoItem["type"], string> = {
