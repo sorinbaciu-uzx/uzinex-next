@@ -2,7 +2,16 @@
 
 import { motion } from "motion/react";
 
-const CERTS = ["ISO 9001", "ISO 14001", "CE Mark", "EN 1090", "Hardox® Wearparts", "SSAB Partner", "EBRD", "PNRR"];
+const CERTS = [
+  "ISO 9001",
+  "ISO 14001",
+  "Marcaj CE",
+  "EN 1090",
+  "DNSH",
+  "PNRR",
+  "EBRD",
+  "Manuale AI",
+];
 const BRANDS = [
   "Siemens",
   "Mitsubishi Electric",
@@ -29,13 +38,12 @@ export function Certifications() {
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">— Recunoaștere</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">— Conformitate</div>
             <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-tight" style={{ letterSpacing: "-0.04em" }}>
-              Certificări și<br />parteneri industriali.
+              Certificat, eligibil,<br />sustenabil.
             </h2>
             <p className="text-ink-500 mt-6 leading-relaxed">
-              Lucrăm conform celor mai stricte standarde europene și suntem furnizori oficiali pentru cele mai
-              importante grupuri din construcții.
+              Toate echipamentele livrate respectă standardele europene de calitate și principiul DNSH, sunt eligibile pentru achiziții cu fonduri UE și PNRR și includ <span className="text-ink-900 font-medium">manuale interactive cu inteligență artificială</span> pentru exploatare, mentenanță și training-ul operatorilor.
             </p>
           </div>
           <div className="lg:col-span-8">
