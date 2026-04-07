@@ -52,7 +52,7 @@ const VIDEOS: VideoItem[] = [
     title: "Uzinex la Exclusiv TV Moldova — apariție în direct",
     type: "TV",
     date: "2025",
-    thumbnail: "https://img.youtube.com/vi/ixaSRPK1mtU/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/ixaSRPK1mtU/hqdefault.jpg",
     youtubeId: "ixaSRPK1mtU",
   },
 ];
