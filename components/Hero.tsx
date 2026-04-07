@@ -4,14 +4,14 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b hairline text-white" style={{ background: "#082545" }}>
+    <section className="relative overflow-hidden border-b hairline text-white" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       {/* ─── Animated blueprint background ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 70% 30%, #1e6bb8 0%, #0e3866 35%, #082545 70%, #051a33 100%)",
+              "radial-gradient(ellipse 1200px 800px at 80% 60%, rgba(30,107,184,0.55) 0%, rgba(30,107,184,0.15) 40%, rgba(8,37,69,0) 70%)",
           }}
         />
 
@@ -182,14 +182,7 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(5,20,40,0.45) 0%, rgba(5,20,40,0.7) 70%, rgba(5,20,40,0.95) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(5,20,40,0.85) 0%, rgba(5,20,40,0.45) 45%, rgba(5,20,40,0.1) 100%)",
+              "linear-gradient(90deg, rgba(8,37,69,0.85) 0%, rgba(8,37,69,0.4) 50%, rgba(8,37,69,0.05) 100%)",
           }}
         />
       </div>
@@ -202,9 +195,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-ink-300 mb-6 mono">
-            <span className="w-8 h-px bg-ink-500" />
-            <span>Furnizor industrial · 2003 — prezent</span>
+          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
+            <span className="w-8 h-px bg-white/40" />
+            <span>Integrator industrial · Proiectare · Implementare · Service</span>
           </div>
           <h1 className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white" style={{ letterSpacing: "-0.03em" }}>
             Echipamente și<br />

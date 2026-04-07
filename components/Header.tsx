@@ -5,8 +5,8 @@ export function Header() {
     <>
       <div className="text-white/90 text-xs" style={{ background: "#082545" }}>
         <div className="container-x flex items-center justify-between py-2.5">
-          <span className="opacity-70">
-            Sediu central: București · Punct de lucru Otopeni · Livrare națională
+          <span className="opacity-80">
+            Sediu central: Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași · Livrare națională
           </span>
           <div className="hidden md:flex items-center gap-5 opacity-80">
             <a href="tel:+40000000000" className="hover:opacity-100">
@@ -23,8 +23,8 @@ export function Header() {
       </div>
 
       <header
-        className="sticky top-0 z-50 backdrop-blur border-b text-white"
-        style={{ background: "rgba(8,37,69,0.92)", borderColor: "rgba(255,255,255,0.08)" }}
+        className="sticky top-0 z-50 border-b text-white"
+        style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div className="container-x flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-3">

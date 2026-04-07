@@ -28,9 +28,9 @@ export function ContactCTA() {
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-3">Sediu</div>
             <div className="text-ink-700">
-              Șos. București-Ploiești, km 12
+              Parc Științific & Tehnologic Tehnopolis
               <br />
-              Otopeni, jud. Ilfov
+              Bd. Poitiers nr. 10, 700671 Iași
             </div>
           </div>
           <a

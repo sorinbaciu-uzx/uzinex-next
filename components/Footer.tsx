@@ -59,7 +59,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t hairline text-xs text-ink-400">
           <div>© 2026 Uzinex SRL · CUI RO 12345678</div>
-          <div className="mt-4 md:mt-0">Sediu social: București · Depozit: Otopeni</div>
+          <div className="mt-4 md:mt-0">Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași</div>
         </div>
       </div>
     </footer>
