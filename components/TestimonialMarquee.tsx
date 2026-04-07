@@ -26,7 +26,8 @@ const COL1: Testimonial[] = [
     role: "Procurement · LogiPark România",
   },
   {
-    quote: "Centrul CNC achiziționat lucrează 2 schimburi zilnic de 4 ani fără o singură defecțiune majoră.",
+    quote:
+      "Aveam un proiect cu fonduri europene blocat de un furnizor care nu mai livra. Uzinex a preluat dosarul tehnic și a livrat tot echipamentul în timpul prevăzut de contractul de finanțare. Ne-au salvat literalmente proiectul.",
     name: "Bogdan Stan",
     role: "Director Producție · MetalTech",
   },
@@ -45,7 +46,8 @@ const COL2: Testimonial[] = [
     role: "Director · Laser Cut Pro",
   },
   {
-    quote: "Sistemul de leasing pentru utilajele grele a fost aprobat în 36 de ore. Recomand cu încredere.",
+    quote:
+      "Termenul de implementare al unei investiții PNRR era depășit cu 2 luni. Inginerii Uzinex au reconfigurat livrarea și am încheiat dosarul fără penalități. Conformitate 100%.",
     name: "Laura Dumitrescu",
     role: "CFO · Terra Energy",
   },
@@ -68,7 +70,8 @@ const COL3: Testimonial[] = [
     role: "CEO · BioPack Solutions",
   },
   {
-    quote: "Lucrăm cu Uzinex de 11 ani. Singurul furnizor în care avem încredere oarbă.",
+    quote:
+      "Pe un proiect cu fonduri europene am rămas fără furnizor în plină execuție. Uzinex a intrat în 48h, a refăcut specificațiile tehnice și a livrat la termen. Fără ei, pierdeam finanțarea.",
     name: "Răzvan Dima",
     role: "Owner · Mecanica Grup",
   },
@@ -79,7 +82,7 @@ const COL3: Testimonial[] = [
   },
   {
     quote:
-      "Generatorul industrial livrat și pus în funcțiune în 5 zile. Continuitate operațională asigurată.",
+      "Aveam un audit pe finanțarea PNRR și echipamentul promis nu apăruse. Uzinex l-a livrat și pus în funcțiune în 5 zile. Auditorii au plecat mulțumiți, dosarul a trecut fără observații.",
     name: "Sorin Vasile",
     role: "Facility Manager · DataCenter One",
   },
