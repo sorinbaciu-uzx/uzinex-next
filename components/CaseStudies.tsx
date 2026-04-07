@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 type CaseStudy = {
   client: string;
   image: string;
+  alt?: string;
   title: string;
   subtitle: string;
 };
@@ -14,10 +15,10 @@ type CaseStudy = {
 const CASES: CaseStudy[] = [
   {
     client: "FUTURE ENERGY GROUP S.R.L.",
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1400&q=80&auto=format&fit=crop",
-    title: "Un producător român de echipamente energetice",
-    subtitle: "reduce timpii de execuție cu 42%",
+    image: "/cases/feg-instalatie-sudura-industriala-uzinex.jpg",
+    alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
+    title: "Future Energy Group reduce timpul de instalare",
+    subtitle: "cu o nouă instalație de sudură industrială pusă în funcțiune în doar 2 ore",
   },
   {
     client: "CĂRĂMIDĂ MODULARĂ ROMÂNIA",
@@ -96,7 +97,7 @@ export function CaseStudies() {
               <div className="relative overflow-hidden h-72 lg:h-auto">
                 <Image
                   src={c.image}
-                  alt={c.title}
+                  alt={c.alt ?? c.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
