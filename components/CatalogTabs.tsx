@@ -106,6 +106,25 @@ const CATEGORIES: Category[] = [
       { name: "Intervenție rapidă", spec: "Sub 24h · Național", img: "https://images.unsplash.com/photo-1574170609180-ec61b03f5d2c?w=500&q=80&auto=format&fit=crop" },
     ],
   },
+  {
+    id: "t7",
+    num: "07",
+    tab: "Apărare & Securitate",
+    title: "Apărare &\nsecuritate",
+    description:
+      "Echipamente tehnologice pentru MApN, IGSU, instituții de forță și operatori privați de securitate. Conforme NATO STANAG și eligibile prin proceduri guvernamentale clasificate.",
+    cta: "Solicită dosar tehnic",
+    products: [
+      { name: "Drone & sisteme UAV", spec: "ISR · cartografiere · patrulare", img: "https://images.unsplash.com/photo-1524143986875-3b098d78b363?w=500&q=80&auto=format&fit=crop" },
+      { name: "Sisteme de supraveghere", spec: "Termoviziune · AI detection", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&q=80&auto=format&fit=crop" },
+      { name: "Echipamente de detecție", spec: "CBRN · metal · explozibil", img: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=500&q=80&auto=format&fit=crop" },
+      { name: "Comunicații tactice", spec: "Radio · SATCOM · criptare", img: "https://images.unsplash.com/photo-1551808525-51a94da548ce?w=500&q=80&auto=format&fit=crop" },
+      { name: "Generatoare autonome", spec: "Hibrid · silent · tactice", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&q=80&auto=format&fit=crop" },
+      { name: "Adăposturi modulare", spec: "Containere operaționale NATO", img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&q=80&auto=format&fit=crop" },
+      { name: "Simulatoare training", spec: "VR · AR · scenarii tactice", img: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=500&q=80&auto=format&fit=crop" },
+      { name: "Echipamente EOD", spec: "Roboți & unelte anti-explozibil", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&q=80&auto=format&fit=crop" },
+    ],
+  },
 ];
 
 export function CatalogTabs() {
@@ -122,11 +141,17 @@ export function CatalogTabs() {
               Categorii din<br />portofoliul nostru.
             </h2>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 flex items-end">
+          <div className="lg:col-span-6 lg:col-start-7 flex flex-col items-start justify-end gap-5">
             <p className="text-ink-500 text-base leading-relaxed">
               Sute de soluții organizate pe categorii tehnice, cu specificații complete, fișe tehnice descărcabile și
               consultanță inginerească pentru fiecare proiect.
             </p>
+            <div className="inline-flex items-center gap-3 border border-uzx-blue/30 bg-uzx-blue/5 px-4 py-2.5">
+              <div className="w-2 h-2 rounded-full bg-uzx-blue animate-pulse" />
+              <span className="text-xs uppercase tracking-wider text-uzx-blue font-medium mono">
+                Toate categoriile disponibile prin SEAP / SICAP
+              </span>
+            </div>
           </div>
         </div>
 
@@ -169,7 +194,13 @@ export function CatalogTabs() {
             {/* Big dark card */}
             <div className="text-white p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between min-h-[440px]" style={{ background: "#082545" }}>
               <div>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 mono">— Categorie {cat.num}</div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono">— Categorie {cat.num}</div>
+                  <div className="inline-flex items-center gap-1.5 border border-white/25 px-2 py-1 text-[9px] uppercase tracking-wider mono text-white/90">
+                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
+                    SEAP / SICAP
+                  </div>
+                </div>
                 <h3 className="serif text-2xl lg:text-3xl leading-tight whitespace-pre-line">{cat.title}</h3>
                 <p className="text-ink-300 text-sm leading-relaxed mt-6 max-w-xs">{cat.description}</p>
               </div>
