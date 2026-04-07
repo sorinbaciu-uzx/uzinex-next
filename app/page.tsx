@@ -19,9 +19,9 @@ export default function Home() {
       <AuthorityStrip />
       <CaseStudies />
       <Certifications />
+      <VideoGallery />
       <TestimonialMarquee />
       <CatalogTabs />
-      <VideoGallery />
       <Solutions />
       <QASection />
       <ContactCTA />
