@@ -200,9 +200,9 @@ export function Hero() {
             <span>Integrator industrial · Proiectare · Implementare · Service</span>
           </div>
           <h1 className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white" style={{ letterSpacing: "-0.03em" }}>
-            Echipamente și<br />
-            componente pentru<br />
-            <span className="font-light text-uzx-orange">industria grea.</span>
+            Tehnologie industrială<br />
+            performantă și<br />
+            <span className="font-light text-uzx-orange">servicii superioare.</span>
           </h1>
           <p className="text-base lg:text-lg text-ink-200 max-w-2xl mt-6 leading-relaxed">
             Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri guvernamentale, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.
