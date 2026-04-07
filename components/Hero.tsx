@@ -188,7 +188,7 @@ export function Hero() {
       </div>
 
       {/* ─── Content ─── */}
-      <div className="container-x pt-20 lg:pt-24 pb-16 grid lg:grid-cols-12 gap-10 relative z-10">
+      <div className="container-x pt-20 lg:pt-24 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-10 relative z-10">
         <motion.div
           className="lg:col-span-8"
           initial={{ opacity: 0, y: 30 }}

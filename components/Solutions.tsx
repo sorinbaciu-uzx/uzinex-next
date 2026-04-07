@@ -55,7 +55,7 @@ export function Solutions() {
   return (
     <section id="solutii" className="border-b hairline py-16 lg:py-20 bg-ink-50">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">05 / Soluții tehnice</div>
             <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
@@ -77,7 +77,7 @@ export function Solutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="bg-white grid lg:grid-cols-12 gap-8 p-8 lg:p-12 items-center"
+              className="bg-white grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-12 items-center"
             >
               <div className="lg:col-span-3">
                 <div className="aspect-[4/3] overflow-hidden bg-ink-100 relative">

@@ -36,7 +36,7 @@ export function Certifications() {
   return (
     <section className="border-b hairline py-14 lg:py-16">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-4">— Conformitate</div>
             <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-tight" style={{ letterSpacing: "-0.04em" }}>

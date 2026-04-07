@@ -105,7 +105,7 @@ export function VideoGallery() {
   return (
     <section className="border-b hairline py-16 lg:py-20 bg-white">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">02 / Galerie video</div>
             <h2

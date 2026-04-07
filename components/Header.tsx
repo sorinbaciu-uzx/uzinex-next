@@ -58,9 +58,10 @@ export function Header() {
             </a>
             <a
               href="#contact"
-              className="bg-uzx-orange hover:bg-uzx-orange2 text-white text-sm px-5 py-2.5 transition"
+              className="bg-uzx-orange hover:bg-uzx-orange2 text-white text-xs md:text-sm px-3 md:px-5 py-2 md:py-2.5 transition whitespace-nowrap"
             >
-              Discută cu un inginer
+              <span className="md:hidden">Contact</span>
+              <span className="hidden md:inline">Discută cu un inginer</span>
             </a>
           </div>
         </div>

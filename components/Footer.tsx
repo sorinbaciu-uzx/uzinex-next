@@ -43,7 +43,7 @@ export function Footer() {
     <footer className="bg-ink-50">
       <div className="container-x py-16 lg:py-20">
         {/* TOP — 4 columns */}
-        <div className="grid lg:grid-cols-12 gap-12 pb-12 border-b hairline">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b hairline">
           {/* Brand + tagline + compliance */}
           <div className="lg:col-span-3">
             <Logo width={200} height={43} />

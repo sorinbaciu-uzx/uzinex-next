@@ -137,7 +137,7 @@ export function TestimonialMarquee() {
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 1200px 600px at 20% 50%, rgba(30,107,184,0.35) 0%, rgba(30,107,184,0.1) 40%, transparent 70%)" }} />
       <div className="relative">
       <div className="container-x">
-        <div className="grid lg:grid-cols-12 gap-10 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-10">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">03 / Referințe</div>
             <h2
@@ -150,7 +150,7 @@ export function TestimonialMarquee() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-3">
             <div className="text-xs text-ink-400 num mb-6 mono">— 12 referințe verificate</div>
             <p className="text-ink-300 leading-relaxed text-sm">
