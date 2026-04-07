@@ -15,7 +15,7 @@ type CaseStudy = {
 const CASES: CaseStudy[] = [
   {
     client: "FUTURE ENERGY GROUP S.R.L.",
-    image: "/cases/feg-instalatie-sudura-industriala-uzinex.jpg",
+    image: "/cases/feg-instalatie-sudura-industriala-uzinex.webp",
     alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
     title: "Future Energy Group reduce timpul de instalare",
     subtitle: "cu o nouă instalație de sudură industrială pusă în funcțiune în doar 2 ore",
