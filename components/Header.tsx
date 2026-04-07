@@ -22,20 +22,23 @@ export function Header() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-white/85 backdrop-blur border-b hairline">
+      <header
+        className="sticky top-0 z-50 backdrop-blur border-b text-white"
+        style={{ background: "rgba(8,37,69,0.92)", borderColor: "rgba(255,255,255,0.08)" }}
+      >
         <div className="container-x flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-3">
-            <Logo />
+            <Logo className="brightness-0 invert" />
           </a>
-          <nav className="hidden lg:flex items-center gap-9 text-sm text-ink-700">
-            <a href="#catalog" className="hover:text-ink-900">Catalog tehnic</a>
-            <a href="#solutii" className="hover:text-ink-900">Soluții recomandate</a>
-            <a href="#testimoniale" className="hover:text-ink-900">Clienți</a>
-            <a href="#qa" className="hover:text-ink-900">Întrebări frecvente</a>
-            <a href="#contact" className="hover:text-ink-900">Contact</a>
+          <nav className="hidden lg:flex items-center gap-9 text-sm text-white/80">
+            <a href="#catalog" className="hover:text-white">Catalog tehnic</a>
+            <a href="#solutii" className="hover:text-white">Soluții recomandate</a>
+            <a href="#testimoniale" className="hover:text-white">Clienți</a>
+            <a href="#qa" className="hover:text-white">Întrebări frecvente</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
           <div className="flex items-center gap-3">
-            <a href="#" className="hidden md:inline text-sm text-ink-700 hover:text-ink-900">
+            <a href="#" className="hidden md:inline text-sm text-white/80 hover:text-white">
               Autentificare
             </a>
             <a
