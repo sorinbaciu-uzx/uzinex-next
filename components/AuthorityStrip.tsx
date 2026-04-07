@@ -2,7 +2,7 @@ const KPIS = [
   { value: "+30", label: "Ani expertiză tehnică" },
   { value: "+500", label: "Soluții în portofoliu" },
   { value: "40+", label: "Industrii deservite" },
-  { value: "100%", label: "Proiecte conforme UE & PNRR" },
+  { value: "0", label: "Abateri în audituri europene" },
 ];
 
 export function AuthorityStrip() {

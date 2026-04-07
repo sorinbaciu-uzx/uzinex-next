@@ -205,7 +205,7 @@ export function Hero() {
             <span className="font-light text-uzx-orange">industria grea.</span>
           </h1>
           <p className="text-base lg:text-lg text-ink-200 max-w-2xl mt-6 leading-relaxed">
-            Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri B2G, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.
+            Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri guvernamentale, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.
           </p>
           <div className="flex flex-wrap items-center gap-5 mt-7">
             <a
