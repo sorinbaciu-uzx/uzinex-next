@@ -21,11 +21,11 @@ const CASES: CaseStudy[] = [
     subtitle: "cu o nouă instalație de sudură industrială pusă în funcțiune în doar 2 ore",
   },
   {
-    client: "CĂRĂMIDĂ MODULARĂ ROMÂNIA",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=80&auto=format&fit=crop",
-    title: "Linie completă de producție pentru o fabrică",
-    subtitle: "de cărămidă modulară din Transilvania",
+    client: "CAMMA TEHNO METAL S.R.L.",
+    image: "/cases/camma-tehno-metal-linie-productie-caramida-modulara-uzinex.webp",
+    alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — echipamente Uzinex pentru CAMMA Tehno Metal",
+    title: "Linie completă de producție pentru cea mai mare fabrică",
+    subtitle: "de cărămidă modulară din România",
   },
   {
     client: "MDG GOLD PAPER",
