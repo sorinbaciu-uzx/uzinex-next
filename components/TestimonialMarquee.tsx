@@ -151,7 +151,7 @@ export function TestimonialMarquee() {
           <div className="lg:col-span-3">
             <div className="text-xs text-ink-400 num mb-6 mono">— 12 referințe verificate</div>
             <p className="text-ink-300 leading-relaxed text-sm">
-              Peste 5.000 de companii din producție, logistică și industrie au ales Uzinex ca partener strategic.
+              Peste 100 de companii din producție, logistică și industrie au ales Uzinex ca partener strategic.
             </p>
             <a
               href="#"
