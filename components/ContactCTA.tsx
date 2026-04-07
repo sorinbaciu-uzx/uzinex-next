@@ -15,8 +15,8 @@ export function ContactCTA() {
         <div className="lg:col-span-4 lg:col-start-9 space-y-8">
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-3">Telefon</div>
-            <a href="tel:+40000000000" className="serif text-2xl text-ink-900 hover:text-ink-600 transition">
-              +40 21 000 0000
+            <a href="tel:+40769081081" className="serif text-2xl text-ink-900 hover:text-ink-600 transition">
+              +40 769 081 081
             </a>
           </div>
           <div>

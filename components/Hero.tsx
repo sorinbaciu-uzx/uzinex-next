@@ -11,7 +11,7 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 1200px 800px at 80% 60%, rgba(30,107,184,0.55) 0%, rgba(30,107,184,0.15) 40%, rgba(8,37,69,0) 70%)",
+              "radial-gradient(ellipse 90% 80% at 75% 50%, #1e6bb8 0%, #155290 25%, #0e3866 50%, #082545 80%)",
           }}
         />
 
@@ -182,7 +182,7 @@ export function Hero() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(8,37,69,0.85) 0%, rgba(8,37,69,0.4) 50%, rgba(8,37,69,0.05) 100%)",
+              "linear-gradient(90deg, rgba(8,37,69,0.92) 0%, rgba(8,37,69,0.55) 40%, rgba(8,37,69,0.15) 70%, rgba(8,37,69,0) 100%)",
           }}
         />
       </div>

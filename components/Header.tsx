@@ -9,8 +9,8 @@ export function Header() {
             Sediu central: Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași · Livrare națională
           </span>
           <div className="hidden md:flex items-center gap-5 opacity-80">
-            <a href="tel:+40000000000" className="hover:opacity-100">
-              +40 21 000 0000
+            <a href="tel:+40769081081" className="hover:opacity-100">
+              +40 769 081 081
             </a>
             <span className="text-white/30">|</span>
             <a href="#">RO</a>
@@ -27,8 +27,8 @@ export function Header() {
         style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}
       >
         <div className="container-x flex items-center justify-between h-20">
-          <a href="#" className="flex items-center gap-3">
-            <Logo className="brightness-0 invert" />
+          <a href="#" className="flex items-center gap-3 bg-white px-3 py-1.5">
+            <Logo />
           </a>
           <nav className="hidden lg:flex items-center gap-9 text-sm text-white/80">
             <a href="#catalog" className="hover:text-white">Catalog tehnic</a>
