@@ -55,6 +55,14 @@ const VIDEOS: VideoItem[] = [
     thumbnail: "https://img.youtube.com/vi/ixaSRPK1mtU/hqdefault.jpg",
     youtubeId: "ixaSRPK1mtU",
   },
+  {
+    id: "v6",
+    title: "Interviu Sorin Baciu, CEO Uzinex — Ziarul Financiar 2024",
+    type: "Interviu",
+    date: "2024",
+    thumbnail: "https://img.youtube.com/vi/WEUTp8O32Io/maxresdefault.jpg",
+    youtubeId: "WEUTp8O32Io",
+  },
 ];
 
 const TYPE_COLORS: Record<VideoItem["type"], string> = {
