@@ -3,18 +3,18 @@ import { Logo } from "./Logo";
 export function Header() {
   return (
     <>
-      <div className="bg-ink-900 text-ink-100 text-xs">
+      <div className="text-white/90 text-xs" style={{ background: "#082545" }}>
         <div className="container-x flex items-center justify-between py-2.5">
           <span className="opacity-70">
             Sediu central: București · Punct de lucru Otopeni · Livrare națională
           </span>
-          <div className="hidden md:flex items-center gap-5 opacity-70">
+          <div className="hidden md:flex items-center gap-5 opacity-80">
             <a href="tel:+40000000000" className="hover:opacity-100">
               +40 21 000 0000
             </a>
-            <span className="text-ink-500">|</span>
+            <span className="text-white/30">|</span>
             <a href="#">RO</a>
-            <span className="text-ink-500">/</span>
+            <span className="text-white/30">/</span>
             <a href="#" className="opacity-50">
               EN
             </a>
