@@ -58,41 +58,40 @@ export function Footer() {
                 href="https://anpc.ro/ce-este-sal/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 border hairline hover:border-uzx-blue transition group"
+                className="block border hairline hover:border-uzx-blue transition overflow-hidden"
               >
-                <div className="w-10 h-10 bg-uzx-blue text-white flex items-center justify-center text-[10px] font-bold mono shrink-0">
-                  ANPC
-                </div>
-                <div className="text-[11px] text-ink-700 leading-tight">
-                  Soluționarea alternativă
-                  <br />
-                  a litigiilor
-                </div>
+                <img
+                  src="/legal/anpc.webp"
+                  alt="ANPC — Soluționarea alternativă a litigiilor"
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
               </a>
               <a
                 href="https://ec.europa.eu/consumers/odr/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 border hairline hover:border-uzx-blue transition group"
+                className="block border hairline hover:border-uzx-blue transition overflow-hidden"
               >
-                <div className="w-10 h-10 bg-uzx-orange text-white flex items-center justify-center text-[10px] font-bold mono shrink-0">
-                  SOL
-                </div>
-                <div className="text-[11px] text-ink-700 leading-tight">
-                  Soluționarea online
-                  <br />
-                  a litigiilor
-                </div>
+                <img
+                  src="/legal/sol.webp"
+                  alt="SOL — Soluționarea online a litigiilor"
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
               </a>
             </div>
 
             {/* Payment methods */}
             <div className="mt-6">
               <div className="text-[10px] uppercase tracking-wider text-ink-400 mono mb-3">Plăți securizate</div>
-              <div className="flex items-center gap-2">
-                <div className="px-3 py-1.5 border hairline text-[10px] mono text-ink-700">NETOPIA</div>
-                <div className="px-3 py-1.5 border hairline text-[10px] mono text-ink-700">VISA</div>
-                <div className="px-3 py-1.5 border hairline text-[10px] mono text-ink-700">MASTERCARD</div>
+              <div className="border hairline overflow-hidden">
+                <img
+                  src="/legal/netopia-payments.webp"
+                  alt="Plăți online securizate prin NETOPIA Payments — acceptăm Visa și Mastercard"
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
