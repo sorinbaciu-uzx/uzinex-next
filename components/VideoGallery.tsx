@@ -68,7 +68,7 @@ const VIDEOS: VideoItem[] = [
     title: "Interviu cofondator Uzinex — Demo Metal Brașov",
     type: "Interviu",
     date: "2025",
-    thumbnail: "https://img.youtube.com/vi/Ij2ouSJvAzg/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/Ij2ouSJvAzg/hqdefault.jpg",
     youtubeId: "Ij2ouSJvAzg",
   },
   {
@@ -76,7 +76,7 @@ const VIDEOS: VideoItem[] = [
     title: "Prezentare Uzinex — stand Demo Metal Brașov",
     type: "Târg",
     date: "2025",
-    thumbnail: "https://img.youtube.com/vi/ZTtaePGjnb0/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/ZTtaePGjnb0/hqdefault.jpg",
     youtubeId: "ZTtaePGjnb0",
   },
 ];
