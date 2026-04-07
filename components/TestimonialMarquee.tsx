@@ -47,7 +47,7 @@ const COL2: Testimonial[] = [
   },
   {
     quote:
-      "Termenul de implementare al unei investiții PNRR era depășit cu 2 luni. Inginerii Uzinex au reconfigurat livrarea și am încheiat dosarul fără penalități. Conformitate 100%.",
+      "Pe un contract POIM aveam nevoie de o linie completă într-un termen imposibil. Uzinex a propus o configurație alternativă conformă cu cerințele de finanțare și a livrat cu 3 săptămâni înainte de deadline.",
     name: "Laura Dumitrescu",
     role: "CFO · Terra Energy",
   },
