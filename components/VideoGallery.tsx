@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -59,6 +59,15 @@ const TYPE_COLORS: Record<VideoItem["type"], string> = {
 
 export function VideoGallery() {
   const [active, setActive] = useState<VideoItem | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.querySelector("button");
+    const cardWidth = card ? (card as HTMLElement).offsetWidth + 24 : 480;
+    el.scrollBy({ left: dir * cardWidth, behavior: "smooth" });
+  };
 
   return (
     <section className="border-b hairline py-16 lg:py-20 bg-white">
@@ -74,16 +83,39 @@ export function VideoGallery() {
               <span className="font-light text-uzx-orange">târguri și pe teren.</span>
             </h2>
           </div>
-          <div className="lg:col-span-5 lg:col-start-8 flex items-end">
-            <p className="text-ink-500 text-base leading-relaxed">
+          <div className="lg:col-span-5 lg:col-start-8 flex items-end justify-between gap-6">
+            <p className="text-ink-500 text-base leading-relaxed flex-1">
               Apariții media, demo-uri tehnice și prezentări de la cele mai importante târguri industriale din
               Europa. Vezi tehnologia noastră în acțiune.
             </p>
+            <div className="hidden lg:flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollByCard(-1)}
+                aria-label="Video anterior"
+                className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByCard(1)}
+                aria-label="Video următor"
+                className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+              >
+                →
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Horizontal scroll row */}
-        <div className="-mx-6 px-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory">
+        {/* Horizontal scroll row (no scrollbar) */}
+        <div
+          ref={trackRef}
+          className="-mx-6 px-6 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
           <div className="flex gap-6 w-max">
           {VIDEOS.map((v, i) => (
             <motion.button
@@ -152,7 +184,27 @@ export function VideoGallery() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-12">
+        {/* Mobile arrows */}
+        <div className="lg:hidden flex items-center justify-center gap-3 mt-8">
+          <button
+            type="button"
+            onClick={() => scrollByCard(-1)}
+            aria-label="Video anterior"
+            className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollByCard(1)}
+            aria-label="Video următor"
+            className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+          >
+            →
+          </button>
+        </div>
+
+        <div className="flex justify-center mt-10">
           <a
             href="#"
             className="group inline-flex items-center gap-3 text-sm text-ink-700 hover:text-uzx-blue transition"
