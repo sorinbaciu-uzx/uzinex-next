@@ -167,7 +167,7 @@ export function CatalogTabs() {
             className="grid grid-cols-1 lg:grid-cols-3 gap-6"
           >
             {/* Big dark card */}
-            <div className="bg-ink-900 text-white p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between min-h-[440px]">
+            <div className="text-white p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between min-h-[440px]" style={{ background: "#082545" }}>
               <div>
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 mono">— Categorie {cat.num}</div>
                 <h3 className="serif text-2xl lg:text-3xl leading-tight whitespace-pre-line">{cat.title}</h3>
