@@ -17,7 +17,7 @@ type VideoItem = {
 const VIDEOS: VideoItem[] = [
   {
     id: "v1",
-    title: "Uzinex — apariție TV despre soluții industriale",
+    title: "Uzinex la Agro TV Moldova — soluții industriale pentru sectorul agro",
     type: "TV",
     date: "2026",
     thumbnail: "https://img.youtube.com/vi/-_1CJ3VDFhE/maxresdefault.jpg",
@@ -181,7 +181,7 @@ export function VideoGallery() {
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="Video anterior"
-            className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+            className="w-12 h-12 bg-uzx-blue text-white flex items-center justify-center hover:bg-uzx-orange transition text-lg"
           >
             ←
           </button>
@@ -189,7 +189,7 @@ export function VideoGallery() {
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="Video următor"
-            className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+            className="w-12 h-12 bg-uzx-blue text-white flex items-center justify-center hover:bg-uzx-orange transition text-lg"
           >
             →
           </button>
