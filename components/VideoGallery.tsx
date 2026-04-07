@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 type VideoItem = {
   id: string;
   title: string;
-  type: "TV" | "Târg" | "Demo" | "Interviu" | "Reportaj";
+  type: "TV" | "Târg" | "Demo" | "Interviu" | "Reportaj" | "Prezentare";
   date: string;
   thumbnail: string;
   youtubeId: string;
@@ -33,16 +33,16 @@ const VIDEOS: VideoItem[] = [
   },
   {
     id: "v3",
-    title: "Demo tehnic — punere în funcțiune a unui echipament Uzinex",
-    type: "Demo",
+    title: "Prezentarea companiei Uzinex — integrator industrial",
+    type: "Prezentare",
     date: "2025",
     thumbnail: "https://img.youtube.com/vi/pzPCtrud130/maxresdefault.jpg",
     youtubeId: "pzPCtrud130",
   },
   {
     id: "v4",
-    title: "Interviu Uzinex — viziunea de integrator industrial",
-    type: "Interviu",
+    title: "Uzinex la Demo Metal Brașov — târg specializat în prelucrarea metalului",
+    type: "Târg",
     date: "2025",
     thumbnail: "https://img.youtube.com/vi/Ss0stt74748/maxresdefault.jpg",
     youtubeId: "Ss0stt74748",
@@ -63,6 +63,7 @@ const TYPE_COLORS: Record<VideoItem["type"], string> = {
   Demo: "#155290",
   Interviu: "#e06d00",
   Reportaj: "#1e6bb8",
+  Prezentare: "#155290",
 };
 
 export function VideoGallery() {
