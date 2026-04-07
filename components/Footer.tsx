@@ -266,7 +266,17 @@ export function Footer() {
         {/* BOTTOM */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-xs text-ink-400">
           <div>© 2026 GW LASER TECHNOLOGY S.R.L. · Toate drepturile rezervate</div>
-          <div className="mt-4 md:mt-0">Construit cu Next.js · Tailwind v4 · Motion</div>
+          <div className="mt-4 md:mt-0">
+            Construit de{" "}
+            <a
+              href="https://capcaun.biz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-ink-700 hover:text-uzx-blue transition underline-link"
+            >
+              Căpcăun S.R.L.
+            </a>
+          </div>
         </div>
       </div>
     </footer>
