@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[140px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
+    <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[160px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       {/* ─── Animated blueprint background ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div

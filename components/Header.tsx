@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 export function Header() {
   return (
     <>
-      <div className="text-white/90 text-xs relative z-10" style={{ background: "rgba(8,37,69,0.65)", backdropFilter: "blur(6px)" }}>
+      <div className="text-white/90 text-xs relative z-10">
         <div className="container-x flex items-center justify-between py-2.5">
           <span className="opacity-80">
             Sediu central: Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași · Livrare națională
@@ -22,13 +22,10 @@ export function Header() {
         </div>
       </div>
 
-      <header
-        className="sticky top-0 z-50 text-white"
-        style={{ background: "rgba(8,37,69,0.55)", backdropFilter: "blur(8px)" }}
-      >
+      <header className="sticky top-0 z-50 text-white">
         <div className="container-x flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-3">
-            <Logo style={{ filter: "brightness(1.7) saturate(1.3)" }} />
+            <Logo />
           </a>
           <nav className="hidden lg:flex items-center gap-9 text-sm text-white/80">
             <a href="#catalog" className="hover:text-white">Catalog tehnic</a>
