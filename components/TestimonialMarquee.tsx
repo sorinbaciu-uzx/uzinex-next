@@ -136,7 +136,7 @@ export function TestimonialMarquee() {
       <div className="container-x">
         <div className="grid lg:grid-cols-12 gap-10 mb-10">
           <div className="lg:col-span-6">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">03 / Referințe</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">02 / Referințe</div>
             <h2
               className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
               style={{ letterSpacing: "-0.03em" }}

@@ -41,7 +41,7 @@ export function QASection() {
     <section id="qa" className="border-b hairline py-16 lg:py-20">
       <div className="container-x grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">04 / Întrebări</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">05 / Întrebări</div>
           <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
             Întrebări<br />frecvente.
           </h2>

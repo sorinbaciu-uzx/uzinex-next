@@ -70,7 +70,7 @@ export function CaseStudies() {
       <div className="container-x">
         <div className="text-center mb-12">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-            06 / Studii de caz
+            01 / Studii de caz
           </div>
           <h2
             className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
