@@ -63,6 +63,22 @@ const VIDEOS: VideoItem[] = [
     thumbnail: "https://img.youtube.com/vi/WEUTp8O32Io/maxresdefault.jpg",
     youtubeId: "WEUTp8O32Io",
   },
+  {
+    id: "v7",
+    title: "Interviu cofondator Uzinex — Demo Metal Brașov",
+    type: "Interviu",
+    date: "2025",
+    thumbnail: "https://img.youtube.com/vi/Ij2ouSJvAzg/maxresdefault.jpg",
+    youtubeId: "Ij2ouSJvAzg",
+  },
+  {
+    id: "v8",
+    title: "Prezentare Uzinex — stand Demo Metal Brașov",
+    type: "Târg",
+    date: "2025",
+    thumbnail: "https://img.youtube.com/vi/ZTtaePGjnb0/maxresdefault.jpg",
+    youtubeId: "ZTtaePGjnb0",
+  },
 ];
 
 const TYPE_COLORS: Record<VideoItem["type"], string> = {
