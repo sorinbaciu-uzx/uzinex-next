@@ -1,6 +1,18 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <div className="text-white/90 text-xs relative z-10">
@@ -22,7 +34,13 @@ export function Header() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 text-white">
+      <header
+        className="sticky top-0 z-50 text-white transition-colors duration-300"
+        style={{
+          background: scrolled ? "#082545" : "transparent",
+          boxShadow: scrolled ? "0 1px 0 rgba(255,255,255,0.08)" : "none",
+        }}
+      >
         <div className="container-x flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-3">
             <Logo />

@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[160px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
+    <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[120px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       {/* ─── Animated blueprint background ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div
@@ -205,7 +205,7 @@ export function Hero() {
             <span className="font-light text-uzx-orange">industria grea.</span>
           </h1>
           <p className="text-base lg:text-lg text-ink-200 max-w-2xl mt-6 leading-relaxed">
-            Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de defense. Optimizăm achizițiile prin fonduri europene sau proceduri B2G, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.
+            Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri B2G, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.
           </p>
           <div className="flex flex-wrap items-center gap-5 mt-7">
             <a
