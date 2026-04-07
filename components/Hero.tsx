@@ -4,14 +4,14 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b hairline text-white" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
+    <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[140px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       {/* ─── Animated blueprint background ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 90% 80% at 75% 50%, #1e6bb8 0%, #155290 25%, #0e3866 50%, #082545 80%)",
+              "radial-gradient(ellipse 100% 90% at 80% 45%, #2d7dc9 0%, #1e6bb8 15%, #155290 30%, #0e3866 50%, #082545 75%, #051a33 100%)",
           }}
         />
 

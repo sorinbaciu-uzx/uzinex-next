@@ -6,10 +6,12 @@ export function Logo({
   className = "",
   width = 165,
   height = 36,
+  style,
 }: {
   className?: string;
   width?: number;
   height?: number;
+  style?: React.CSSProperties;
 }) {
   return (
     <img
@@ -18,7 +20,7 @@ export function Logo({
       width={width}
       height={height}
       className={className}
-      style={{ width, height }}
+      style={{ width, height, ...style }}
     />
   );
 }
