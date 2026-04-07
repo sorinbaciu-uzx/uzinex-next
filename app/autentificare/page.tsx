@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { getCurrentUser } from "@/lib/client-auth";
+import { LoginForm } from "./LoginForm";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Autentificare client — Uzinex",
@@ -9,7 +14,10 @@ export const metadata: Metadata = {
     "Intră în contul tău Uzinex pentru a accesa oferte, istoric comenzi, manuale interactive AI, certificate de conformitate și documente tehnice.",
 };
 
-export default function AutentificarePage() {
+export default async function AutentificarePage() {
+  const user = await getCurrentUser();
+  if (user) redirect("/cont");
+
   return (
     <>
       <Header />
@@ -38,62 +46,7 @@ export default function AutentificarePage() {
                 tehnice pentru echipamentele tale.
               </p>
 
-              <form className="space-y-5">
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-[11px] uppercase tracking-wider text-ink-500 mb-2 font-medium"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    placeholder="nume@companie.ro"
-                    className="w-full border hairline px-4 py-3 text-sm text-ink-900 bg-white focus:outline-none focus:border-uzx-blue"
-                  />
-                </div>
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <label
-                      htmlFor="password"
-                      className="text-[11px] uppercase tracking-wider text-ink-500 font-medium"
-                    >
-                      Parolă
-                    </label>
-                    <a
-                      href="#recuperare"
-                      className="text-[11px] text-uzx-blue hover:underline"
-                    >
-                      Am uitat parola
-                    </a>
-                  </div>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    autoComplete="current-password"
-                    required
-                    className="w-full border hairline px-4 py-3 text-sm text-ink-900 bg-white focus:outline-none focus:border-uzx-blue"
-                  />
-                </div>
-                <label className="flex items-center gap-2 text-xs text-ink-600">
-                  <input
-                    type="checkbox"
-                    className="border hairline w-4 h-4 accent-uzx-blue"
-                  />
-                  Ține-mă autentificat 30 de zile
-                </label>
-                <button
-                  type="submit"
-                  className="w-full bg-uzx-blue hover:bg-uzx-blue2 text-white py-3.5 text-sm font-medium transition"
-                >
-                  Intră în cont
-                </button>
-              </form>
+              <LoginForm />
 
               <div className="relative my-8">
                 <div className="absolute inset-0 flex items-center">
@@ -119,14 +72,12 @@ export default function AutentificarePage() {
               </div>
             </div>
 
-            <div className="mt-6 px-4 py-3 border hairline bg-yellow-50 border-yellow-300 text-yellow-900 text-xs leading-relaxed">
-              <strong>Info:</strong> Portalul clienților Uzinex este în faza de
-              roll-out. Conturile se activează la cerere, după semnarea
-              primului contract sau la solicitarea departamentului comercial.
-              Pentru acces, contactează echipa la{" "}
+            <div className="mt-6 px-4 py-3 border hairline bg-ink-100 border-ink-200 text-ink-600 text-xs leading-relaxed">
+              Conturile sunt create manual de către echipa Uzinex după
+              semnarea primului contract. Pentru acces, contactează-ne la{" "}
               <a
                 href="mailto:info@uzinex.ro"
-                className="underline hover:text-yellow-700"
+                className="underline hover:text-uzx-blue"
               >
                 info@uzinex.ro
               </a>

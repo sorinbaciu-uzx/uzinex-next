@@ -21,3 +21,27 @@ model AdminSession {
   expiresAt DateTime
   createdAt DateTime @default(now())
 }
+
+model ClientUser {
+  id           String          @id @default(cuid())
+  email        String          @unique
+  passwordHash String
+  name         String
+  company      String?
+  phone        String?
+  role         String          @default("client") // client | admin
+  active       Boolean         @default(true)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  sessions     ClientSession[]
+}
+
+model ClientSession {
+  token     String     @id
+  userId    String
+  user      ClientUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime   @default(now())
+
+  @@index([userId])
+}
