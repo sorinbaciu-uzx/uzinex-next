@@ -130,7 +130,7 @@ function Column({
 
 export function TestimonialMarquee() {
   return (
-    <section id="testimoniale" className="border-b py-16 lg:py-20 text-white relative overflow-hidden" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
+    <section id="testimoniale" className="border-b py-12 lg:py-14 text-white relative overflow-hidden" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 1200px 600px at 20% 50%, rgba(30,107,184,0.35) 0%, rgba(30,107,184,0.1) 40%, transparent 70%)" }} />
       <div className="relative">
       <div className="container-x">
@@ -192,7 +192,7 @@ export function TestimonialMarquee() {
 
           <div
             className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 testimonial-mask"
-            style={{ height: 520 }}
+            style={{ height: 360 }}
           >
             <Column data={COL1} duration={50} />
             <div className="hidden md:block">
