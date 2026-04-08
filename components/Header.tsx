@@ -97,7 +97,7 @@ const NAV: NavItem[] = [
   { label: "Studii de caz", href: "/studii-de-caz" },
   {
     label: "Catalog tehnic",
-    href: "/#catalog",
+    href: "/magazin",
     type: "mega",
     groups: CATALOG_GROUPS,
   },
