@@ -744,7 +744,7 @@ export function CaseStudiesGallery() {
       </section>
 
       {/* CTA */}
-      <section className="border-b hairline py-16 lg:py-20 bg-white">
+      <section className="border-b hairline py-10 lg:py-14 bg-white">
         <div className="container-x">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">

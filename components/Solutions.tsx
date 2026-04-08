@@ -53,12 +53,12 @@ const SOLUTIONS = [
 
 export function Solutions() {
   return (
-    <section id="solutii" className="border-b hairline py-16 lg:py-20 bg-ink-50">
+    <section id="solutii" className="border-b hairline py-10 lg:py-14 bg-ink-50">
       <div className="container-x">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">06 / Soluții tehnice</div>
-            <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
+            <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
               Recomandări în<br />funcție de aplicație.
             </h2>
           </div>

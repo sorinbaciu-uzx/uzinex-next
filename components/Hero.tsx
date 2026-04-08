@@ -188,7 +188,7 @@ export function Hero() {
       </div>
 
       {/* ─── Content ─── */}
-      <div className="container-x pt-20 lg:pt-24 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-10 relative z-10">
+      <div className="container-x pt-14 lg:pt-16 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
         <motion.div
           className="lg:col-span-8"
           initial={{ opacity: 0, y: 30 }}
@@ -199,7 +199,7 @@ export function Hero() {
             <span className="w-8 h-px bg-white/40" />
             <span>Integrator industrial · Proiectare · Implementare · Service</span>
           </div>
-          <h1 className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] text-white" style={{ letterSpacing: "-0.03em" }}>
+          <h1 className="serif text-3xl md:text-4xl lg:text-5xl font-medium leading-[0.95] text-white" style={{ letterSpacing: "-0.03em" }}>
             Tehnologie industrială<br />
             performantă și<br />
             <span className="font-light text-uzx-orange">servicii superioare.</span>

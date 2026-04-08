@@ -62,7 +62,7 @@ export function NewsSection() {
               05 / Noutăți & comunicări
             </div>
             <h2
-              className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
+              className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]"
               style={{ letterSpacing: "-0.03em" }}
             >
               Ultimele articole,<br />

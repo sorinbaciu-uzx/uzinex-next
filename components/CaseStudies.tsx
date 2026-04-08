@@ -88,14 +88,14 @@ export function CaseStudies() {
   const c = CASES[index];
 
   return (
-    <section id="studii" className="border-b hairline py-16 lg:py-20 bg-white">
+    <section id="studii" className="border-b hairline py-10 lg:py-14 bg-white">
       <div className="container-x">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
             01 / Studii de caz
           </div>
           <h2
-            className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
+            className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]"
             style={{ letterSpacing: "-0.03em" }}
           >
             Cazuri de succes <span className="font-light text-uzx-orange">remarcabile.</span>

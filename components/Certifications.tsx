@@ -34,7 +34,7 @@ const BRANDS = [
 
 export function Certifications() {
   return (
-    <section className="border-b hairline py-14 lg:py-16">
+    <section className="border-b hairline py-10 lg:py-12">
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">

@@ -42,11 +42,11 @@ export function QASection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="qa" className="border-b hairline py-16 lg:py-20">
+    <section id="qa" className="border-b hairline py-10 lg:py-14">
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">07 / Întrebări</div>
-          <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
+          <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
             Întrebări<br />frecvente.
           </h2>
           <p className="text-ink-500 mt-8 leading-relaxed max-w-sm">
