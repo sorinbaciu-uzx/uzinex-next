@@ -23,19 +23,19 @@ const CATEGORIES = [
 ];
 
 const GDPR_LINKS = [
-  "Politica de confidențialitate",
-  "Termeni și condiții",
-  "Politica de livrare",
-  "Politica de retur",
-  "Politica de cookies",
+  { label: "Politica de confidențialitate", href: "/politica-confidentialitate" },
+  { label: "Termeni și condiții", href: "/termeni-conditii" },
+  { label: "Politica de livrare", href: "/politica-livrare" },
+  { label: "Politica de retur", href: "/politica-retur" },
+  { label: "Politica de cookies", href: "/politica-cookies" },
 ];
 
 const COMPANY_POLICIES = [
-  "Politica privind sclavia modernă",
-  "Politica privind egalitatea de șanse",
-  "Politica de mediu",
-  "Politica de calitate",
-  "Politica anti mită și corupție",
+  { label: "Politica privind sclavia modernă", href: "/politica-sclavie-moderna" },
+  { label: "Politica privind egalitatea de șanse", href: "/politica-egalitate-sanse" },
+  { label: "Politica de mediu", href: "/politica-mediu" },
+  { label: "Politica de calitate", href: "/politica-calitate" },
+  { label: "Politica anti mită și corupție", href: "/politica-anti-mita-coruptie" },
 ];
 
 export function Footer() {
@@ -115,9 +115,9 @@ export function Footer() {
               <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">GDPR</div>
               <ul className="space-y-2.5 text-sm text-ink-700">
                 {GDPR_LINKS.map((link) => (
-                  <li key={link}>
-                    <a className="hover:text-uzx-blue transition" href="#">
-                      {link}
+                  <li key={link.href}>
+                    <a className="hover:text-uzx-blue transition" href={link.href}>
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -128,9 +128,9 @@ export function Footer() {
               <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">Politicile companiei</div>
               <ul className="space-y-2.5 text-sm text-ink-700">
                 {COMPANY_POLICIES.map((link) => (
-                  <li key={link}>
-                    <a className="hover:text-uzx-blue transition" href="#">
-                      {link}
+                  <li key={link.href}>
+                    <a className="hover:text-uzx-blue transition" href={link.href}>
+                      {link.label}
                     </a>
                   </li>
                 ))}
