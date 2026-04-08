@@ -233,23 +233,23 @@ export function CatalogTabs() {
   }, []);
 
   return (
-    <section id="catalog" className="border-b hairline py-16 lg:py-20">
+    <section id="catalog" className="border-b hairline py-10 lg:py-14">
       <div className="container-x">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
           <div className="lg:col-span-5">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">04 / Catalog tehnic</div>
-            <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-2">04 / Catalog tehnic</div>
+            <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
               Categorii din<br />portofoliul nostru.
             </h2>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 flex flex-col items-start justify-end gap-5">
-            <p className="text-ink-500 text-base leading-relaxed">
+          <div className="lg:col-span-6 lg:col-start-7 flex flex-col items-start justify-end gap-3">
+            <p className="text-ink-500 text-sm leading-relaxed">
               Sute de soluții organizate pe categorii tehnice, cu specificații complete, fișe tehnice descărcabile și
               consultanță inginerească pentru fiecare proiect.
             </p>
-            <div className="inline-flex items-center gap-3 border border-uzx-blue/30 bg-uzx-blue/5 px-4 py-2.5">
-              <div className="w-2 h-2 rounded-full bg-uzx-blue animate-pulse" />
-              <span className="text-xs uppercase tracking-wider text-uzx-blue font-medium mono">
+            <div className="inline-flex items-center gap-2 border border-uzx-blue/30 bg-uzx-blue/5 px-3 py-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-uzx-blue animate-pulse" />
+              <span className="text-[10px] uppercase tracking-wider text-uzx-blue font-medium mono">
                 Toate echipamentele disponibile prin SEAP / SICAP
               </span>
             </div>
@@ -257,7 +257,7 @@ export function CatalogTabs() {
         </div>
 
         {/* CATEGORY SELECTOR — dropdown + prev/next */}
-        <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="hidden sm:flex items-center gap-3 text-[11px] mono uppercase tracking-[0.2em] text-ink-400">
             <span className="w-8 h-px bg-ink-300" />
             <span>
@@ -265,8 +265,8 @@ export function CatalogTabs() {
             </span>
           </div>
 
-          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[420px]">
-            <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono mb-2 flex items-center gap-2">
+          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[360px]">
+            <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono mb-1.5 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange animate-pulse" />
               Selectează o categorie
             </div>
@@ -275,22 +275,22 @@ export function CatalogTabs() {
               onClick={() => setDropdownOpen((o) => !o)}
               aria-haspopup="listbox"
               aria-expanded={dropdownOpen}
-              className="w-full flex items-center gap-4 px-5 py-4 border-2 border-uzx-orange bg-white hover:bg-uzx-orange/5 transition text-left group shadow-[0_4px_0_0_rgba(245,133,31,0.15)]"
+              className="w-full flex items-center gap-3 px-4 py-2.5 border-2 border-uzx-orange bg-white hover:bg-uzx-orange/5 transition text-left group shadow-[0_3px_0_0_rgba(245,133,31,0.15)]"
             >
-              <span className="serif text-2xl text-uzx-orange num shrink-0 mono">
+              <span className="serif text-xl text-uzx-orange num shrink-0 mono">
                 {cat.num}
               </span>
-              <span className="w-px h-10 bg-ink-200 shrink-0" />
+              <span className="w-px h-7 bg-ink-200 shrink-0" />
               <span className="flex-1 min-w-0">
-                <span className="block text-[10px] uppercase tracking-widest text-ink-400 mono">
+                <span className="block text-[9px] uppercase tracking-widest text-ink-400 mono leading-tight">
                   Categorie activă
                 </span>
-                <span className="serif text-lg lg:text-xl text-ink-900 block truncate leading-tight">
+                <span className="serif text-base lg:text-lg text-ink-900 block truncate leading-tight">
                   {cat.tab}
                 </span>
               </span>
               <span
-                className="flex items-center justify-center w-9 h-9 bg-uzx-orange text-white text-sm shrink-0 transition-transform group-hover:scale-110"
+                className="flex items-center justify-center w-8 h-8 bg-uzx-orange text-white text-xs shrink-0 transition-transform group-hover:scale-110"
                 style={{ transform: dropdownOpen ? "rotate(180deg)" : "none" }}
               >
                 ▾
@@ -376,20 +376,20 @@ export function CatalogTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-4"
           >
             {/* Big dark card */}
-            <div className="text-white p-8 lg:p-10 relative overflow-hidden flex flex-col justify-between min-h-[440px]" style={{ background: "#082545" }}>
+            <div className="text-white p-6 lg:p-7 relative overflow-hidden flex flex-col justify-between min-h-[340px]" style={{ background: "#082545" }}>
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono">— Categorie {cat.num}</div>
-                  <div className="inline-flex items-center gap-1.5 border border-white/25 px-2 py-1 text-[9px] uppercase tracking-wider mono text-white/90">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono">— Categorie {cat.num}</div>
+                  <div className="inline-flex items-center gap-1.5 border border-white/25 px-2 py-0.5 text-[9px] uppercase tracking-wider mono text-white/90">
                     <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
                     SEAP / SICAP
                   </div>
                 </div>
-                <h3 className="serif text-2xl lg:text-3xl leading-tight whitespace-pre-line">{cat.title}</h3>
-                <p className="text-ink-300 text-sm leading-relaxed mt-6 max-w-xs">{cat.description}</p>
+                <h3 className="serif text-xl lg:text-2xl leading-tight whitespace-pre-line">{cat.title}</h3>
+                <p className="text-ink-300 text-xs lg:text-sm leading-relaxed mt-4 max-w-xs">{cat.description}</p>
               </div>
               <div
                 className="absolute right-0 bottom-0 w-2/3 h-2/3 opacity-20"
@@ -404,31 +404,31 @@ export function CatalogTabs() {
             </div>
 
             {/* Product grid */}
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="lg:col-span-2 grid grid-cols-2 gap-3 lg:gap-4">
               {cat.products.map((p, i) => (
                 <motion.a
                   key={`${cat.id}-${i}`}
                   href="#"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  whileHover={{ y: -4 }}
-                  className="group bg-ink-50 p-6 hover:bg-white hover:shadow-lg transition flex flex-col"
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  whileHover={{ y: -3 }}
+                  className="group bg-ink-50 p-4 hover:bg-white hover:shadow-lg transition flex flex-col"
                 >
-                  <div className="text-sm text-ink-700">{p.name}</div>
-                  <div className="w-10 h-px bg-uzx-orange mt-2" />
-                  <div className="flex-1 flex items-center justify-center my-6 relative h-32">
+                  <div className="text-xs lg:text-sm text-ink-700 leading-tight">{p.name}</div>
+                  <div className="w-8 h-px bg-uzx-orange mt-1.5" />
+                  <div className="flex-1 flex items-center justify-center my-3 relative h-20 lg:h-24">
                     <Image
                       src={p.img}
                       alt={p.name}
-                      width={500}
-                      height={128}
-                      sizes="(max-width: 768px) 100vw, 25vw"
-                      className="w-full h-32 object-cover grayscale group-hover:grayscale-0 transition"
+                      width={400}
+                      height={96}
+                      sizes="(max-width: 768px) 50vw, 20vw"
+                      className="w-full h-20 lg:h-24 object-cover grayscale group-hover:grayscale-0 transition"
                       loading="lazy"
                     />
                   </div>
-                  <div className="text-[10px] mono text-ink-400 uppercase">{p.spec}</div>
+                  <div className="text-[9px] mono text-ink-400 uppercase truncate">{p.spec}</div>
                 </motion.a>
               ))}
             </div>
