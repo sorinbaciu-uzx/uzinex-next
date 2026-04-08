@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero, type HeroData } from "@/components/Hero";
-import { AuthorityStrip } from "@/components/AuthorityStrip";
-import { Certifications } from "@/components/Certifications";
+import { AuthorityStrip, type AuthorityData } from "@/components/AuthorityStrip";
+import { Certifications, type CertificationsData } from "@/components/Certifications";
 import { CatalogTabs } from "@/components/CatalogTabs";
 import { VideoGallery, type VideoGalleryData } from "@/components/VideoGallery";
 import { NewsSection, type NewsData } from "@/components/NewsSection";
@@ -18,6 +18,8 @@ export const dynamic = "force-dynamic";
 export default async function Home() {
   const c = await getContents([
     "hero",
+    "authority",
+    "certifications",
     "case_studies_home",
     "video_gallery",
     "testimonials",
@@ -30,9 +32,9 @@ export default async function Home() {
     <>
       <Header />
       <Hero data={c.hero as HeroData | undefined} />
-      <AuthorityStrip />
+      <AuthorityStrip data={c.authority as AuthorityData | undefined} />
       <CaseStudies data={c.case_studies_home as CaseStudiesHomeData | undefined} />
-      <Certifications />
+      <Certifications data={c.certifications as CertificationsData | undefined} />
       <VideoGallery data={c.video_gallery as VideoGalleryData | undefined} />
       <TestimonialMarquee data={c.testimonials as TestimonialsData | undefined} />
       <CatalogTabs />

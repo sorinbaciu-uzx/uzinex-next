@@ -13,7 +13,7 @@ type Industry =
   | "Auto & metalurgie"
   | "Apărare & securitate";
 
-type CaseStudy = {
+export type CaseStudyAll = {
   id: string;
   client: string;
   industry: Exclude<Industry, "Toate">;
@@ -30,7 +30,7 @@ type CaseStudy = {
   youtubeId?: string;
 };
 
-const CASE_STUDIES: CaseStudy[] = [
+const CASE_STUDIES: CaseStudyAll[] = [
   {
     id: "camma",
     client: "CAMMA Tehno Metal S.R.L.",
@@ -446,9 +446,13 @@ const INDUSTRIES: Industry[] = [
   "Apărare & securitate",
 ];
 
-export function CaseStudiesGallery() {
+export type CaseStudiesAllData = { items: CaseStudyAll[] };
+export const CASE_STUDIES_ALL_DEFAULT: CaseStudiesAllData = { items: CASE_STUDIES };
+
+export function CaseStudiesGallery({ data }: { data?: CaseStudiesAllData | null }) {
+  const items = data?.items ?? CASE_STUDIES;
   const [filter, setFilter] = useState<Industry>("Toate");
-  const [activeVideo, setActiveVideo] = useState<CaseStudy | null>(null);
+  const [activeVideo, setActiveVideo] = useState<CaseStudyAll | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -463,13 +467,13 @@ export function CaseStudiesGallery() {
   }, []);
 
   const filtered = useMemo(() => {
-    if (filter === "Toate") return CASE_STUDIES;
-    return CASE_STUDIES.filter((c) => c.industry === filter);
-  }, [filter]);
+    if (filter === "Toate") return items;
+    return items.filter((c) => c.industry === filter);
+  }, [filter, items]);
 
   const counts = useMemo(() => {
-    const map: Record<string, number> = { Toate: CASE_STUDIES.length };
-    CASE_STUDIES.forEach((c) => {
+    const map: Record<string, number> = { Toate: items.length };
+    items.forEach((c) => {
       map[c.industry] = (map[c.industry] || 0) + 1;
     });
     return map;
@@ -509,7 +513,7 @@ export function CaseStudiesGallery() {
             </p>
             <div className="grid grid-cols-3 gap-4 mt-6 max-w-md">
               <div>
-                <div className="serif text-2xl lg:text-3xl text-white num">{CASE_STUDIES.length}+</div>
+                <div className="serif text-2xl lg:text-3xl text-white num">{items.length}+</div>
                 <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
                   Proiecte prezentate
                 </div>

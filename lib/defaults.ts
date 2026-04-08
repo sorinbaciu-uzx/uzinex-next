@@ -1,10 +1,4 @@
 // Central registry of default content for each editable block.
-// Components import their typed default from here AND export it,
-// so the admin "Reset" button and DB seeder always have a single source of truth.
-//
-// Blocks marked as `null` are not yet wired to the DB — admin can still edit
-// them but changes won't appear on the site until the matching component is
-// updated to read from `getContent()`.
 
 import { HERO_DEFAULT } from "@/components/Hero";
 import { NEWS_DEFAULT } from "@/components/NewsSection";
@@ -14,35 +8,45 @@ import { TESTIMONIALS_DEFAULT } from "@/components/TestimonialMarquee";
 import { SOLUTIONS_DEFAULT } from "@/components/Solutions";
 import { CASE_STUDIES_HOME_DEFAULT } from "@/components/CaseStudies";
 import { CONTACT_CTA_DEFAULT } from "@/components/ContactCTA";
+import { AUTHORITY_DEFAULT } from "@/components/AuthorityStrip";
+import { CERTIFICATIONS_DEFAULT } from "@/components/Certifications";
+import { CASE_STUDIES_ALL_DEFAULT } from "@/components/CaseStudiesGallery";
+import { TEAM_DEFAULT } from "@/app/echipa/page";
+import { CARIERE_DEFAULT } from "@/app/cariere/page";
 
 export const DEFAULT_CONTENT: Record<string, unknown> = {
   hero: HERO_DEFAULT,
+  authority: AUTHORITY_DEFAULT,
   case_studies_home: CASE_STUDIES_HOME_DEFAULT,
+  case_studies_all: CASE_STUDIES_ALL_DEFAULT,
+  certifications: CERTIFICATIONS_DEFAULT,
   video_gallery: VIDEO_GALLERY_DEFAULT,
   testimonials: TESTIMONIALS_DEFAULT,
   news: NEWS_DEFAULT,
   solutions: SOLUTIONS_DEFAULT,
   qa: QA_DEFAULT,
   contact_cta: CONTACT_CTA_DEFAULT,
-  // not yet wired — editor still works for these
-  authority: {},
-  case_studies_all: {},
-  certifications: {},
+  team: TEAM_DEFAULT,
+  cariere: CARIERE_DEFAULT,
+  // still not wired
   catalog_tabs: {},
   footer: {},
   header: {},
-  team: {},
   service: {},
-  cariere: {},
 };
 
 export const WIRED_KEYS = new Set([
   "hero",
+  "authority",
   "case_studies_home",
+  "case_studies_all",
+  "certifications",
   "video_gallery",
   "testimonials",
   "news",
   "solutions",
   "qa",
   "contact_cta",
+  "team",
+  "cariere",
 ]);

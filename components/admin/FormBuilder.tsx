@@ -132,6 +132,159 @@ function SelectField({
   );
 }
 
+function TextOrListField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string | string[];
+  onChange: (v: string | string[]) => void;
+}) {
+  const isList = Array.isArray(value);
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <div className="text-xs uppercase tracking-wider text-ink-500 font-medium">
+          {label}
+        </div>
+        <button
+          type="button"
+          onClick={() => {
+            if (isList) {
+              onChange((value as string[]).join("\n\n"));
+            } else {
+              const parts = ((value as string) || "")
+                .split(/\n\s*\n/)
+                .filter(Boolean);
+              onChange(parts.length ? parts : [""]);
+            }
+          }}
+          className="text-[10px] uppercase tracking-wider text-uzx-blue hover:underline"
+        >
+          {isList ? "→ Paragraf" : "→ Listă de bullet-uri"}
+        </button>
+      </div>
+      {isList ? (
+        <StringListField label="" value={value as string[]} onChange={onChange} />
+      ) : (
+        <textarea
+          value={(value as string) ?? ""}
+          onChange={(e) => onChange(e.target.value)}
+          rows={5}
+          className="w-full border hairline px-3 py-2 text-sm bg-white focus:outline-none focus:border-uzx-blue"
+        />
+      )}
+    </div>
+  );
+}
+
+function ImageUploadField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
+  const [dragOver, setDragOver] = useState(false);
+
+  async function upload(file: File) {
+    setError("");
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "upload failed");
+      onChange(json.url);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  return (
+    <div>
+      <div className="text-xs uppercase tracking-wider text-ink-500 mb-1.5 font-medium">
+        {label}
+      </div>
+      <div
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragOver(true);
+        }}
+        onDragLeave={() => setDragOver(false)}
+        onDrop={(e) => {
+          e.preventDefault();
+          setDragOver(false);
+          const f = e.dataTransfer.files?.[0];
+          if (f) upload(f);
+        }}
+        className={`border hairline p-3 bg-white flex gap-3 items-start ${
+          dragOver ? "border-uzx-blue bg-uzx-blue/5" : ""
+        }`}
+      >
+        {value ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={value}
+            alt=""
+            className="w-24 h-24 object-cover border hairline shrink-0 bg-ink-50"
+          />
+        ) : (
+          <div className="w-24 h-24 border hairline border-dashed flex items-center justify-center text-ink-300 text-xs shrink-0">
+            fără imagine
+          </div>
+        )}
+        <div className="flex-1 min-w-0 space-y-2">
+          <div className="flex items-center gap-2">
+            <label className="border hairline px-3 py-1.5 text-xs cursor-pointer hover:bg-ink-50 bg-white">
+              {uploading ? "Se încarcă..." : "Încarcă imagine"}
+              <input
+                type="file"
+                accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml,image/avif"
+                className="hidden"
+                disabled={uploading}
+                onChange={(e) => {
+                  const f = e.target.files?.[0];
+                  if (f) upload(f);
+                  e.target.value = "";
+                }}
+              />
+            </label>
+            {value && (
+              <button
+                type="button"
+                onClick={() => onChange("")}
+                className="text-xs text-red-600 hover:underline"
+              >
+                Șterge
+              </button>
+            )}
+            <span className="text-[10px] text-ink-400">
+              sau trage fișierul aici
+            </span>
+          </div>
+          <input
+            type="url"
+            placeholder="...sau lipește un URL"
+            value={value ?? ""}
+            onChange={(e) => onChange(e.target.value)}
+            className="w-full border hairline px-2 py-1.5 text-xs font-mono text-ink-700 bg-white focus:outline-none focus:border-uzx-blue"
+          />
+          {error && <div className="text-xs text-red-600">{error}</div>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function StringListField({
   label,
   value,
@@ -325,12 +478,10 @@ function ShapeFields({
   );
 
   const entries = Object.entries(shape);
-  const simpleEntries = entries.filter(
-    ([, f]) => f.type !== "list" && f.type !== "string_list" && f.type !== "group"
-  );
-  const complexEntries = entries.filter(
-    ([, f]) => f.type === "list" || f.type === "string_list" || f.type === "group"
-  );
+  const isComplex = (t: FieldSchema["type"]) =>
+    t === "list" || t === "string_list" || t === "group" || t === "text_or_list";
+  const simpleEntries = entries.filter(([, f]) => !isComplex(f.type));
+  const complexEntries = entries.filter(([, f]) => isComplex(f.type));
 
   return (
     <div className="space-y-5">
@@ -340,7 +491,9 @@ function ShapeFields({
             <div
               key={k}
               className={
-                field.type === "textarea" ? "md:col-span-2" : undefined
+                field.type === "textarea" || field.type === "image"
+                  ? "md:col-span-2"
+                  : undefined
               }
             >
               <FieldRenderer
@@ -384,13 +537,20 @@ function FieldRenderer({
         />
       );
     case "url":
-    case "image":
       return (
         <TextField
           label={field.label}
           value={(value as string) ?? ""}
           onChange={onChange}
           type="url"
+        />
+      );
+    case "image":
+      return (
+        <ImageUploadField
+          label={field.label}
+          value={(value as string) ?? ""}
+          onChange={onChange}
         />
       );
     case "textarea":
@@ -417,6 +577,14 @@ function FieldRenderer({
         <StringListField
           label={field.label}
           value={(value as string[]) ?? []}
+          onChange={(v) => onChange(v)}
+        />
+      );
+    case "text_or_list":
+      return (
+        <TextOrListField
+          label={field.label}
+          value={(value as string | string[]) ?? ""}
           onChange={(v) => onChange(v)}
         />
       );

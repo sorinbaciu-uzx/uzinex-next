@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CaseStudiesGallery } from "@/components/CaseStudiesGallery";
+import { CaseStudiesGallery, type CaseStudiesAllData } from "@/components/CaseStudiesGallery";
+import { getContent } from "@/lib/content";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Studii de caz — Uzinex",
@@ -9,12 +12,13 @@ export const metadata: Metadata = {
     "Descoperă proiectele Uzinex livrate pentru clienți din producție, logistică, energie, infrastructură, procesare, apărare și auto. Soluții industriale la cheie cu rezultate măsurabile.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const data = await getContent<CaseStudiesAllData>("case_studies_all");
   return (
     <>
       <Header />
       <main>
-        <CaseStudiesGallery />
+        <CaseStudiesGallery data={data} />
       </main>
       <Footer />
     </>

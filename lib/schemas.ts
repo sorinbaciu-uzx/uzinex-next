@@ -8,6 +8,7 @@ export type FieldSchema =
   | { type: "image"; label: string; help?: string }
   | { type: "select"; label: string; options: string[] }
   | { type: "string_list"; label: string; placeholder?: string; help?: string }
+  | { type: "text_or_list"; label: string; help?: string }
   | {
       type: "list";
       label: string;
@@ -134,7 +135,7 @@ export const SCHEMAS: Record<string, BlockSchema> = {
           },
           date: { type: "text", label: "An / dată" },
           youtubeId: { type: "text", label: "YouTube ID" },
-          thumbnail: { type: "url", label: "Thumbnail URL" },
+          thumbnail: { type: "image", label: "Thumbnail" },
           duration: { type: "text", label: "Durată (opțional)" },
         },
       },
@@ -157,7 +158,7 @@ export const SCHEMAS: Record<string, BlockSchema> = {
         item: {
           num: { type: "text", label: "Număr (ex: 01)" },
           industry: { type: "text", label: "Industrie / aplicație" },
-          image: { type: "url", label: "Imagine" },
+          image: { type: "image", label: "Imagine" },
           description: { type: "textarea", label: "Descriere", rows: 3 },
           bullets: { type: "string_list", label: "Bullet points" },
           package: { type: "text", label: "Pachet recomandat" },
@@ -177,9 +178,116 @@ export const SCHEMAS: Record<string, BlockSchema> = {
           client: { type: "text", label: "Client" },
           title: { type: "text", label: "Titlu" },
           subtitle: { type: "text", label: "Subtitlu" },
-          image: { type: "url", label: "Imagine (URL)" },
+          image: { type: "image", label: "Imagine" },
           alt: { type: "text", label: "Alt text (SEO)" },
           youtubeId: { type: "text", label: "YouTube ID (opțional)" },
+        },
+      },
+    },
+  },
+
+  authority: {
+    title: "Authority Strip — KPI-uri sub Hero",
+    fields: {
+      items: {
+        type: "list",
+        label: "KPI-uri",
+        itemLabelField: "label",
+        item: {
+          value: { type: "text", label: "Valoare (ex: +30)" },
+          label: { type: "text", label: "Etichetă" },
+        },
+      },
+    },
+  },
+
+  certifications: {
+    title: "Certificări & conformitate",
+    fields: {
+      eyebrow: { type: "text", label: "Eyebrow" },
+      titleLine1: { type: "text", label: "Titlu — linia 1" },
+      titleLine2: { type: "text", label: "Titlu — linia 2" },
+      description: { type: "textarea", label: "Descriere", rows: 4 },
+      certs: { type: "string_list", label: "Certificări" },
+      brandsTitle: { type: "text", label: "Titlu bară branduri" },
+      brands: { type: "string_list", label: "Branduri" },
+    },
+  },
+
+  case_studies_all: {
+    title: "Studii de caz — pagina /studii-de-caz",
+    description: "Toate studiile de caz afișate pe pagina dedicată.",
+    fields: {
+      items: {
+        type: "list",
+        label: "Studii de caz",
+        itemLabelField: "client",
+        item: {
+          id: { type: "text", label: "ID (slug, ex: camma)" },
+          client: { type: "text", label: "Client" },
+          industry: {
+            type: "select",
+            label: "Industrie",
+            options: [
+              "Producție & manufactură",
+              "Logistică & depozitare",
+              "Energie & infrastructură",
+              "Procesare & reciclare",
+              "Auto & metalurgie",
+              "Apărare & securitate",
+            ],
+          },
+          location: { type: "text", label: "Locație" },
+          year: { type: "text", label: "An" },
+          title: { type: "text", label: "Titlu" },
+          excerpt: { type: "textarea", label: "Rezumat", rows: 4 },
+          image: { type: "image", label: "Imagine" },
+          alt: { type: "text", label: "Alt text (SEO)" },
+          youtubeId: { type: "text", label: "YouTube ID (opțional)" },
+          equipment: { type: "string_list", label: "Echipamente" },
+          metrics: {
+            type: "list",
+            label: "Metrici",
+            itemLabelField: "label",
+            item: {
+              label: { type: "text", label: "Etichetă" },
+              value: { type: "text", label: "Valoare" },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  team: {
+    title: "Pagina /echipa",
+    fields: {
+      title: { type: "text", label: "Titlu pagină" },
+      updated: { type: "text", label: "Data actualizării" },
+      sections: {
+        type: "list",
+        label: "Secțiuni",
+        itemLabelField: "title",
+        item: {
+          title: { type: "text", label: "Titlu secțiune" },
+          body: { type: "text_or_list", label: "Conținut" },
+        },
+      },
+    },
+  },
+
+  cariere: {
+    title: "Pagina /cariere",
+    fields: {
+      title: { type: "text", label: "Titlu pagină" },
+      updated: { type: "text", label: "Data actualizării" },
+      sections: {
+        type: "list",
+        label: "Secțiuni",
+        itemLabelField: "title",
+        item: {
+          title: { type: "text", label: "Titlu secțiune" },
+          body: { type: "text_or_list", label: "Conținut" },
         },
       },
     },
@@ -201,7 +309,7 @@ export const SCHEMAS: Record<string, BlockSchema> = {
         itemLabelField: "name",
         item: {
           name: { type: "text", label: "Nume companie" },
-          src: { type: "text", label: "Path imagine (ex: /clients/x.png)" },
+          src: { type: "image", label: "Imagine logo" },
         },
       },
       col1: {
