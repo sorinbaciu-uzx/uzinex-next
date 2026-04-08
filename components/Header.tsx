@@ -41,7 +41,7 @@ const CATALOG_GROUPS: CategoryGroup[] = [
       { label: "Brațe robotice 6 axe", href: "/#catalog" },
       { label: "Celule de paletizare", href: "/#catalog" },
       { label: "Cobots colaborativi", href: "/#catalog" },
-      { label: "Sisteme de viziune AI", href: "/#catalog" },
+      { label: "Sisteme de viziune (AI)", href: "/#catalog" },
     ],
   },
   {
@@ -82,6 +82,55 @@ const CATALOG_GROUPS: CategoryGroup[] = [
       { label: "Generatoare autonome", href: "/#catalog" },
       { label: "Adăposturi modulare", href: "/#catalog" },
       { label: "Simulatoare training", href: "/#catalog" },
+    ],
+  },
+  {
+    name: "Mașini de prelucrare lemn",
+    href: "/magazin?cat=Mașini+de+prelucrare+lemn",
+    items: [
+      { label: "Mașini de aplicat cant", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
+      { label: "Mașini pentru uși", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
+      { label: "Fierăstraie pentru lemn", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
+      { label: "Mașini de finisat lemn", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
+    ],
+  },
+  {
+    name: "Echipamente de ambalare",
+    href: "/magazin?cat=Echipamente+de+ambalare",
+    items: [
+      { label: "Fabricare cutii carton", href: "/magazin?cat=Echipamente+de+ambalare" },
+      { label: "Ambalare paleți & termocontractabilă", href: "/magazin?cat=Echipamente+de+ambalare" },
+      { label: "Sigilare și formare cutii", href: "/magazin?cat=Echipamente+de+ambalare" },
+      { label: "Mașini de legat cu bandă", href: "/magazin?cat=Echipamente+de+ambalare" },
+    ],
+  },
+  {
+    name: "Etichetare & dozare",
+    href: "/magazin?cat=Echipamente+de+etichetare+și+dozare",
+    items: [
+      { label: "Mașini de etichetare", href: "/magazin?cat=Echipamente+de+etichetare+și+dozare" },
+      { label: "Mașini de umplere și plafonare", href: "/magazin?cat=Echipamente+de+etichetare+și+dozare" },
+      { label: "Mașini de dezmembrat", href: "/magazin?cat=Echipamente+de+etichetare+și+dozare" },
+    ],
+  },
+  {
+    name: "Reciclare",
+    href: "/magazin?cat=Echipamente+de+reciclare",
+    items: [
+      { label: "Mașini de balotat și presare", href: "/magazin?cat=Echipamente+de+reciclare" },
+      { label: "Mașini de tocat și mărunțit", href: "/magazin?cat=Echipamente+de+reciclare" },
+      { label: "Echipamente de separare", href: "/magazin?cat=Echipamente+de+reciclare" },
+      { label: "Echipamente auxiliare reciclare", href: "/magazin?cat=Echipamente+de+reciclare" },
+    ],
+  },
+  {
+    name: "Inspecție industrială",
+    href: "/magazin?cat=Echipamente+de+inspecție+industrială",
+    items: [
+      { label: "Roboți CCTV pentru conducte", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
+      { label: "Camere push pentru conducte", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
+      { label: "Camere PTZ / periscop", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
+      { label: "Videoscoape industriale", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
     ],
   },
 ];

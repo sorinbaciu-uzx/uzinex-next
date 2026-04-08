@@ -121,6 +121,81 @@ const CATEGORIES: Category[] = [
       { name: "Simulatoare training", spec: "VR · AR · scenarii tactice", img: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=500&q=80&auto=format&fit=crop" },
     ],
   },
+  {
+    id: "t8",
+    num: "08",
+    tab: "Prelucrare lemn",
+    title: "Mașini pentru\nprelucrarea lemnului",
+    description:
+      "Utilaje industriale pentru fabrici de mobilă, tâmplărie PVC și procesatori lemn. De la mașini de aplicat cant la fierăstraie și linii de finisare.",
+    cta: "Vezi toate modelele",
+    products: [
+      { name: "Mașini de aplicat cant", spec: "Automate & semi-auto", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80&auto=format&fit=crop" },
+      { name: "Mașini pentru uși", spec: "Linii complete producție", img: "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=500&q=80&auto=format&fit=crop" },
+      { name: "Fierăstraie pentru lemn", spec: "Panglică · circular · sector", img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80&auto=format&fit=crop" },
+      { name: "Mașini de finisat lemn", spec: "Șlefuire · lăcuire · polishing", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80&auto=format&fit=crop" },
+    ],
+  },
+  {
+    id: "t9",
+    num: "09",
+    tab: "Ambalare",
+    title: "Echipamente\nde ambalare",
+    description:
+      "Soluții complete pentru fabrici de ambalaje și linii de producție cu produse finite: fabricare cutii carton, paletizare, sigilare, termocontractabilă și legare cu bandă.",
+    cta: "Vezi toate modelele",
+    products: [
+      { name: "Fabricare cutii carton", spec: "Flexo · offset · digital", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80&auto=format&fit=crop" },
+      { name: "Ambalare paleți", spec: "Înfășurare stretch automată", img: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&q=80&auto=format&fit=crop" },
+      { name: "Sigilare & formare cutii", spec: "Linii continue", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80&auto=format&fit=crop" },
+      { name: "Termocontractabilă", spec: "Tunele & mașini cu cameră", img: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=500&q=80&auto=format&fit=crop" },
+    ],
+  },
+  {
+    id: "t10",
+    num: "10",
+    tab: "Etichetare & dozare",
+    title: "Etichetare,\numplere & dozare",
+    description:
+      "Echipamente pentru linii de producție farma, food, cosmetică și industrială: mașini de etichetare, umplere și plafonare, dozare precisă și marcare automată.",
+    cta: "Vezi toate modelele",
+    products: [
+      { name: "Mașini de etichetare", spec: "Wrap-around · top · side", img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80&auto=format&fit=crop" },
+      { name: "Umplere & plafonare", spec: "Lichide · vâscoase · pudre", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80&auto=format&fit=crop" },
+      { name: "Mașini de dezmembrat", spec: "Linii dedicate", img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&q=80&auto=format&fit=crop" },
+      { name: "Marcare industrială", spec: "Inkjet · laser · hot-stamp", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80&auto=format&fit=crop" },
+    ],
+  },
+  {
+    id: "t11",
+    num: "11",
+    tab: "Reciclare",
+    title: "Echipamente\nde reciclare",
+    description:
+      "Soluții complete pentru economia circulară și operatori de deșeuri: balotare, presare, tocare, sortare, separare materiale — toate conforme DNSH și eligibile pentru finanțări europene.",
+    cta: "Vezi toate modelele",
+    products: [
+      { name: "Balotare & presare", spec: "Hârtie · carton · plastic · metal", img: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=500&q=80&auto=format&fit=crop" },
+      { name: "Tocare & mărunțire", spec: "Shredder · granulatoare", img: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=500&q=80&auto=format&fit=crop" },
+      { name: "Echipamente separare", spec: "Magnetic · optic · densimetric", img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=500&q=80&auto=format&fit=crop" },
+      { name: "Auxiliare reciclare", spec: "Conveyor · buncăre · alimentatoare", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&auto=format&fit=crop" },
+    ],
+  },
+  {
+    id: "t12",
+    num: "12",
+    tab: "Inspecție industrială",
+    title: "Inspecție & mentenanță\npredictivă",
+    description:
+      "Sisteme pentru inspecția conductelor, canalizării, structurilor interne și control NDT: roboți CCTV, camere push și PTZ, videoscoape industriale, echipamente pentru testări nedistructive.",
+    cta: "Vezi toate modelele",
+    products: [
+      { name: "Roboți CCTV conducte", spec: "Diametru 50 — 2000 mm", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&q=80&auto=format&fit=crop" },
+      { name: "Camere push", spec: "Inspecție canalizare & țevi", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80&auto=format&fit=crop" },
+      { name: "Camere PTZ / periscop", spec: "Cămine & spații închise", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&q=80&auto=format&fit=crop" },
+      { name: "Videoscoape industriale", spec: "Inspecții NDT certificate", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&q=80&auto=format&fit=crop" },
+    ],
+  },
 ];
 
 export function CatalogTabs() {
