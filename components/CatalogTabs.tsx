@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -219,6 +219,19 @@ export function CatalogTabs() {
     touchStartX.current = null;
   };
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
+
   return (
     <section id="catalog" className="border-b hairline py-16 lg:py-20">
       <div className="container-x">
@@ -243,29 +256,99 @@ export function CatalogTabs() {
           </div>
         </div>
 
-        {/* TABS */}
-        <div className="border-b hairline mb-12">
-          <div className="flex gap-10 overflow-x-auto -mb-px">
-            {CATEGORIES.map((c) => {
-              const isActive = c.id === active;
-              return (
-                <button
-                  key={c.id}
-                  onClick={() => setActive(c.id)}
-                  className={`relative whitespace-nowrap pb-5 text-sm tracking-wide transition ${
-                    isActive ? "text-uzx-orange" : "text-ink-500 hover:text-ink-900"
-                  }`}
+        {/* CATEGORY SELECTOR — dropdown + prev/next */}
+        <div className="border-b hairline pb-5 mb-10 flex items-center justify-between gap-3">
+          <div className="text-[11px] mono uppercase tracking-[0.2em] text-ink-400 hidden sm:block">
+            Categoria {cat.num} / {String(CATEGORIES.length).padStart(2, "0")}
+          </div>
+
+          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[340px]">
+            <button
+              type="button"
+              onClick={() => setDropdownOpen((o) => !o)}
+              aria-haspopup="listbox"
+              aria-expanded={dropdownOpen}
+              className="w-full flex items-center gap-3 px-4 py-3 border hairline hover:border-uzx-blue transition text-left bg-white"
+            >
+              <span className="text-[10px] uppercase tracking-widest text-ink-400 mono shrink-0">
+                Categorie:
+              </span>
+              <span className="flex-1 text-sm text-ink-900 truncate">{cat.tab}</span>
+              <span
+                className="text-[11px] text-ink-500 transition-transform shrink-0"
+                style={{ transform: dropdownOpen ? "rotate(180deg)" : "none" }}
+              >
+                ▾
+              </span>
+            </button>
+
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.ul
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.18 }}
+                  role="listbox"
+                  className="absolute left-0 right-0 top-full mt-2 bg-white border hairline shadow-lg z-40 max-h-[70vh] overflow-y-auto"
                 >
-                  {c.tab}
-                  {isActive && (
-                    <motion.div
-                      layoutId="cat-underline"
-                      className="absolute left-0 right-0 -bottom-px h-0.5 bg-uzx-orange"
-                    />
-                  )}
-                </button>
-              );
-            })}
+                  {CATEGORIES.map((c) => {
+                    const isActive = c.id === active;
+                    return (
+                      <li key={c.id}>
+                        <button
+                          type="button"
+                          role="option"
+                          aria-selected={isActive}
+                          onClick={() => {
+                            setActive(c.id);
+                            setDropdownOpen(false);
+                          }}
+                          className={`w-full flex items-center justify-between gap-3 px-4 py-3 text-sm transition text-left ${
+                            isActive
+                              ? "text-uzx-orange bg-uzx-orange/5"
+                              : "text-ink-700 hover:bg-ink-50"
+                          }`}
+                        >
+                          <span className="flex items-center gap-3 min-w-0">
+                            <span
+                              className={`text-[10px] mono shrink-0 num ${
+                                isActive ? "text-uzx-orange" : "text-ink-400"
+                              }`}
+                            >
+                              {c.num}
+                            </span>
+                            <span className="truncate">{c.tab}</span>
+                          </span>
+                          {isActive && (
+                            <span className="text-uzx-orange text-xs shrink-0">✓</span>
+                          )}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <div className="hidden sm:flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={() => goTo(-1)}
+              aria-label="Categoria anterioară"
+              className="w-11 h-11 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              onClick={() => goTo(1)}
+              aria-label="Categoria următoare"
+              className="w-11 h-11 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
+            >
+              →
+            </button>
           </div>
         </div>
 
