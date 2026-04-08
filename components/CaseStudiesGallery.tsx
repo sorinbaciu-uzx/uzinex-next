@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -449,6 +449,18 @@ const INDUSTRIES: Industry[] = [
 export function CaseStudiesGallery() {
   const [filter, setFilter] = useState<Industry>("Toate");
   const [activeVideo, setActiveVideo] = useState<CaseStudy | null>(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, []);
 
   const filtered = useMemo(() => {
     if (filter === "Toate") return CASE_STUDIES;
@@ -477,41 +489,40 @@ export function CaseStudiesGallery() {
               "radial-gradient(ellipse 80% 70% at 80% 50%, rgba(30,107,184,0.45) 0%, rgba(30,107,184,0.1) 50%, transparent 80%)",
           }}
         />
-        <div className="container-x pt-16 lg:pt-20 pb-16 lg:pb-20 relative z-10">
+        <div className="container-x pt-10 lg:pt-14 pb-10 lg:pb-14 relative z-10">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
-              <span className="w-8 h-px bg-white/40" />
+            <div className="flex items-center gap-3 text-[10px] lg:text-[11px] uppercase tracking-[0.2em] text-white/70 mb-4 mono">
+              <span className="w-6 h-px bg-white/40" />
               <span>Portofoliu de proiecte · 2024 — prezent</span>
             </div>
             <h1
-              className="serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[0.95] mb-6"
+              className="serif text-3xl md:text-4xl lg:text-5xl font-medium leading-[0.95] mb-4"
               style={{ letterSpacing: "-0.03em" }}
             >
               Studii de caz<br />
               <span className="font-light text-uzx-orange">livrate pentru clienții noștri.</span>
             </h1>
-            <p className="text-base lg:text-lg text-ink-200 leading-relaxed max-w-2xl">
+            <p className="text-sm lg:text-base text-ink-200 leading-relaxed max-w-2xl">
               Proiecte reale, rezultate măsurabile, clienți mulțumiți. Descoperă cum integrăm
               tehnologie industrială la cheie pentru companii din producție, logistică, energie,
-              procesare, auto și apărare — toate cu respectarea cerințelor europene de finanțare și
-              conformitate.
+              procesare, auto și apărare.
             </p>
-            <div className="grid grid-cols-3 gap-4 mt-10 max-w-md">
+            <div className="grid grid-cols-3 gap-4 mt-6 max-w-md">
               <div>
-                <div className="serif text-3xl text-white num">{CASE_STUDIES.length}+</div>
-                <div className="text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
+                <div className="serif text-2xl lg:text-3xl text-white num">{CASE_STUDIES.length}+</div>
+                <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
                   Proiecte prezentate
                 </div>
               </div>
               <div>
-                <div className="serif text-3xl text-white num">6</div>
-                <div className="text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
+                <div className="serif text-2xl lg:text-3xl text-white num">6</div>
+                <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
                   Industrii deservite
                 </div>
               </div>
               <div>
-                <div className="serif text-3xl text-white num">RO</div>
-                <div className="text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
+                <div className="serif text-2xl lg:text-3xl text-white num">RO</div>
+                <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-white/60 mt-1 mono">
                   Clienți din toată țara
                 </div>
               </div>
@@ -520,39 +531,84 @@ export function CaseStudiesGallery() {
         </div>
       </section>
 
-      {/* FILTER BAR — sticky, wrap instead of horizontal scroll */}
+      {/* FILTER BAR — sticky dropdown */}
       <section className="sticky top-16 lg:top-20 z-30 border-b hairline bg-white/95 backdrop-blur">
-        <div className="container-x py-4 lg:py-5">
-          <div className="flex flex-wrap gap-x-5 gap-y-3 lg:gap-x-7">
-            {INDUSTRIES.map((ind) => {
-              const isActive = filter === ind;
-              return (
-                <button
-                  key={ind}
-                  onClick={() => setFilter(ind)}
-                  className={`relative text-xs lg:text-sm tracking-wide transition inline-flex items-center gap-2 px-3 py-1.5 border ${
-                    isActive
-                      ? "border-uzx-orange text-uzx-orange bg-uzx-orange/5"
-                      : "border-ink-200 text-ink-600 hover:border-ink-900 hover:text-ink-900"
-                  }`}
+        <div className="container-x py-3 lg:py-4 flex items-center justify-between gap-4">
+          <div className="text-[11px] mono uppercase tracking-[0.2em] text-ink-400">
+            {filtered.length} {filtered.length === 1 ? "proiect" : "proiecte"} afișate
+          </div>
+
+          <div ref={dropdownRef} className="relative">
+            <button
+              type="button"
+              onClick={() => setDropdownOpen((o) => !o)}
+              aria-haspopup="listbox"
+              aria-expanded={dropdownOpen}
+              className="flex items-center gap-3 px-4 py-2 border hairline hover:border-uzx-blue transition text-sm text-ink-900 min-w-[220px] justify-between"
+            >
+              <span className="flex items-center gap-2">
+                <span className="text-[10px] uppercase tracking-widest text-ink-400 mono">
+                  Industrie:
+                </span>
+                <span>{filter}</span>
+              </span>
+              <span
+                className="text-[11px] text-ink-500 transition-transform"
+                style={{ transform: dropdownOpen ? "rotate(180deg)" : "none" }}
+              >
+                ▾
+              </span>
+            </button>
+
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.ul
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.18 }}
+                  role="listbox"
+                  className="absolute right-0 top-full mt-2 min-w-[280px] bg-white border hairline shadow-lg"
                 >
-                  {ind}
-                  <span
-                    className={`text-[10px] mono num ${
-                      isActive ? "text-uzx-orange" : "text-ink-400"
-                    }`}
-                  >
-                    {counts[ind] || 0}
-                  </span>
-                </button>
-              );
-            })}
+                  {INDUSTRIES.map((ind) => {
+                    const isActive = filter === ind;
+                    return (
+                      <li key={ind}>
+                        <button
+                          type="button"
+                          role="option"
+                          aria-selected={isActive}
+                          onClick={() => {
+                            setFilter(ind);
+                            setDropdownOpen(false);
+                          }}
+                          className={`w-full flex items-center justify-between px-4 py-2.5 text-sm transition ${
+                            isActive
+                              ? "text-uzx-orange bg-uzx-orange/5"
+                              : "text-ink-700 hover:bg-ink-50"
+                          }`}
+                        >
+                          <span>{ind}</span>
+                          <span
+                            className={`text-[10px] mono num ${
+                              isActive ? "text-uzx-orange" : "text-ink-400"
+                            }`}
+                          >
+                            {counts[ind] || 0}
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
 
       {/* CASE GRID */}
-      <section className="py-14 lg:py-20 bg-ink-50">
+      <section className="py-10 lg:py-14 bg-ink-50">
         <div className="container-x">
           <AnimatePresence mode="popLayout">
             <motion.div
@@ -561,7 +617,7 @@ export function CaseStudiesGallery() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-ink-200 border hairline"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
             >
               {filtered.map((c, i) => (
                 <motion.article
@@ -570,7 +626,7 @@ export function CaseStudiesGallery() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="bg-white flex flex-col group"
+                  className="bg-white border hairline flex flex-col group hover:border-ink-300 transition"
                 >
                   <button
                     type="button"
@@ -583,7 +639,7 @@ export function CaseStudiesGallery() {
                       src={c.image}
                       alt={c.alt}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition duration-700"
                       loading="lazy"
                     />
@@ -594,67 +650,60 @@ export function CaseStudiesGallery() {
                           "linear-gradient(180deg, rgba(8,37,69,0) 50%, rgba(8,37,69,0.85) 100%)",
                       }}
                     />
-                    <div className="absolute top-4 left-4">
-                      <div className="text-[10px] mono uppercase tracking-widest text-white px-2.5 py-1 bg-uzx-orange">
+                    <div className="absolute top-3 left-3">
+                      <div className="text-[9px] mono uppercase tracking-widest text-white px-2 py-0.5 bg-uzx-orange">
                         {c.industry}
                       </div>
                     </div>
                     {c.featured && (
-                      <div className="absolute top-4 right-4">
-                        <div className="text-[10px] mono uppercase tracking-widest text-white px-2.5 py-1 border border-white/40 backdrop-blur">
-                          ★ Featured
+                      <div className="absolute top-3 right-3">
+                        <div className="text-[9px] mono uppercase tracking-widest text-white px-2 py-0.5 border border-white/40 backdrop-blur">
+                          ★
                         </div>
                       </div>
                     )}
                     {c.youtubeId && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="w-16 h-16 bg-white/15 backdrop-blur border border-white/40 flex items-center justify-center group-hover:bg-uzx-orange group-hover:border-uzx-orange transition">
-                          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                        <div className="w-12 h-12 bg-white/15 backdrop-blur border border-white/40 flex items-center justify-center group-hover:bg-uzx-orange group-hover:border-uzx-orange transition">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                             <path d="M8 5v14l11-7z" />
                           </svg>
                         </div>
                       </div>
                     )}
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <div className="text-[11px] mono uppercase tracking-wider opacity-80">
+                    <div className="absolute bottom-3 left-3 right-3 text-white">
+                      <div className="text-[10px] mono uppercase tracking-wider opacity-85 truncate">
                         {c.client}
                       </div>
                     </div>
                   </button>
 
-                  <div className="p-8 lg:p-10 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 text-[11px] mono text-ink-400 mb-4">
-                      <span>{c.location}</span>
+                  <div className="p-5 lg:p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 text-[10px] mono text-ink-400 mb-3">
+                      <span className="truncate">{c.location}</span>
                       <span className="text-ink-300">·</span>
                       <span className="num">{c.year}</span>
                     </div>
 
                     <h3
-                      className="serif text-xl lg:text-2xl text-ink-900 leading-tight mb-4"
-                      style={{ letterSpacing: "-0.02em" }}
+                      className="serif text-base lg:text-lg text-ink-900 leading-snug mb-3"
+                      style={{ letterSpacing: "-0.01em" }}
                     >
                       {c.title}
                     </h3>
 
-                    <p className="text-sm text-ink-600 leading-relaxed mb-6">{c.excerpt}</p>
-
-                    {c.quote && (
-                      <blockquote className="border-l-2 border-uzx-orange pl-4 my-4">
-                        <p className="serif text-sm italic text-ink-700 leading-relaxed">
-                          „{c.quote.text}"
-                        </p>
-                        <footer className="text-[11px] text-ink-500 mt-2 mono">
-                          — {c.quote.author}
-                        </footer>
-                      </blockquote>
-                    )}
+                    <p className="text-xs lg:text-sm text-ink-600 leading-relaxed mb-4 line-clamp-3">
+                      {c.excerpt}
+                    </p>
 
                     {c.metrics && c.metrics.length > 0 && (
-                      <div className="grid grid-cols-3 gap-3 mt-4 mb-6 py-4 border-y hairline">
+                      <div className="grid grid-cols-3 gap-2 mt-2 mb-4 py-3 border-y hairline">
                         {c.metrics.map((m) => (
                           <div key={m.label}>
-                            <div className="serif text-lg text-uzx-blue num">{m.value}</div>
-                            <div className="text-[10px] mono text-ink-400 uppercase tracking-wider mt-1">
+                            <div className="serif text-sm lg:text-base text-uzx-blue num leading-tight">
+                              {m.value}
+                            </div>
+                            <div className="text-[9px] mono text-ink-400 uppercase tracking-wider mt-0.5 leading-tight">
                               {m.label}
                             </div>
                           </div>
@@ -662,27 +711,24 @@ export function CaseStudiesGallery() {
                       </div>
                     )}
 
-                    <div className="mt-auto pt-4">
-                      <div className="text-[11px] mono text-ink-400 uppercase tracking-wider mb-2">
+                    <div className="mt-auto pt-2">
+                      <div className="text-[10px] mono text-ink-400 uppercase tracking-wider mb-1.5">
                         Echipamente
                       </div>
-                      <ul className="text-xs text-ink-600 space-y-1">
-                        {c.equipment.map((e) => (
+                      <ul className="text-[11px] lg:text-xs text-ink-600 space-y-0.5">
+                        {c.equipment.slice(0, 3).map((e) => (
                           <li key={e} className="flex gap-2">
-                            <span className="text-ink-300 num">—</span>
-                            <span>{e}</span>
+                            <span className="text-ink-300 num shrink-0">—</span>
+                            <span className="truncate">{e}</span>
                           </li>
                         ))}
+                        {c.equipment.length > 3 && (
+                          <li className="text-[10px] text-ink-400 pl-4">
+                            +{c.equipment.length - 3} mai multe
+                          </li>
+                        )}
                       </ul>
                     </div>
-
-                    <a
-                      href="#"
-                      className="mt-6 inline-flex items-center gap-2 text-sm text-uzx-blue hover:text-uzx-blue2 transition group/cta"
-                    >
-                      Citește studiul complet
-                      <span className="group-hover/cta:translate-x-1 transition">→</span>
-                    </a>
                   </div>
                 </motion.article>
               ))}
