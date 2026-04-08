@@ -205,7 +205,7 @@ export function VideoGallery() {
             type="button"
             onClick={() => scrollByCard(-1)}
             aria-label="Video anterior"
-            className="w-12 h-12 bg-uzx-blue text-white flex items-center justify-center hover:bg-uzx-orange transition text-lg"
+            className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-ink-900 hover:text-ink-900 transition text-lg"
           >
             ←
           </button>
@@ -213,7 +213,7 @@ export function VideoGallery() {
             type="button"
             onClick={() => scrollByCard(1)}
             aria-label="Video următor"
-            className="w-12 h-12 bg-uzx-blue text-white flex items-center justify-center hover:bg-uzx-orange transition text-lg"
+            className="w-12 h-12 border hairline flex items-center justify-center text-ink-700 hover:border-ink-900 hover:text-ink-900 transition text-lg"
           >
             →
           </button>

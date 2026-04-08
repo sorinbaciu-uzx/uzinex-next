@@ -21,8 +21,8 @@ export function ContactCTA() {
           </div>
           <div>
             <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-3">Email</div>
-            <a href="mailto:contact@uzinex.ro" className="serif text-2xl text-ink-900 hover:text-ink-600 transition">
-              contact@uzinex.ro
+            <a href="mailto:info@uzinex.ro" className="serif text-2xl text-ink-900 hover:text-ink-600 transition">
+              info@uzinex.ro
             </a>
           </div>
           <div>
