@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { KEY_LABELS, CONTENT_KEYS } from "@/lib/content";
-import { DEFAULT_CONTENT } from "@/lib/defaults";
+import { DEFAULT_CONTENT, WIRED_KEYS } from "@/lib/defaults";
+import { SCHEMAS } from "@/lib/schemas";
 import { ContentEditor } from "./ContentEditor";
+import { FormBuilder } from "@/components/admin/FormBuilder";
 
 export const dynamic = "force-dynamic";
 
@@ -29,26 +31,52 @@ export default async function EditContentPage({
     row = await prisma.contentBlock.findUnique({ where: { key } });
   } catch {}
 
-  const current = row?.data ?? DEFAULT_CONTENT[key] ?? {};
+  const defaults = (DEFAULT_CONTENT[key] ?? {}) as Record<string, unknown>;
+  const current = (row?.data as Record<string, unknown>) ?? defaults;
+  const schema = SCHEMAS[key];
+  const isWired = WIRED_KEYS.has(key);
 
   return (
     <div className="space-y-6">
       <div>
         <Link href="/admin" className="text-uzx-blue text-sm">
-          ← Înapoi
+          ← Înapoi la panoul de administrare
         </Link>
         <h1 className="serif text-3xl text-ink-900 mt-3">
-          {KEY_LABELS[key] || key}
+          {schema?.title || KEY_LABELS[key] || key}
         </h1>
-        <p className="text-ink-500 text-sm mt-1">
-          Cheie: <code className="font-mono">{key}</code>
-        </p>
+        {schema?.description && (
+          <p className="text-ink-500 text-sm mt-1">{schema.description}</p>
+        )}
+        <div className="flex items-center gap-3 mt-3">
+          <code className="font-mono text-xs text-ink-400">{key}</code>
+          {!isWired && (
+            <span className="text-[10px] uppercase tracking-wider bg-yellow-100 text-yellow-800 px-2 py-0.5">
+              În pregătire — componenta încă nu citește din DB
+            </span>
+          )}
+        </div>
       </div>
-      <ContentEditor
-        contentKey={key}
-        initial={current}
-        defaultValue={DEFAULT_CONTENT[key] ?? {}}
-      />
+
+      {schema ? (
+        <FormBuilder
+          schema={schema}
+          contentKey={key}
+          initial={current}
+          defaultValue={defaults}
+        />
+      ) : (
+        <>
+          <div className="border border-yellow-300 bg-yellow-50 text-yellow-900 p-3 text-sm">
+            Acest bloc nu are încă un editor vizual. Folosește editorul JSON.
+          </div>
+          <ContentEditor
+            contentKey={key}
+            initial={current}
+            defaultValue={defaults}
+          />
+        </>
+      )}
     </div>
   );
 }
