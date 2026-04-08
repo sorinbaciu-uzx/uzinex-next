@@ -237,9 +237,9 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Funcție", value: "Precurățare" },
       { label: "Capacitate", value: "Mare" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1595855759920-86582396756a?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/sFsmEF-OOCg/hqdefault.jpg",
     alt: "Precurățător de cereale industrial Uzinex pentru Specat Craiova",
+    youtubeId: "sFsmEF-OOCg",
   },
   {
     id: "magnius",
@@ -284,9 +284,9 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Dotare", value: "Completă" },
       { label: "Profil", value: "Artizanal + Industrial" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/bCxoVN1QgQM/maxresdefault.jpg",
     alt: "Fabrică completă de fier forjat Uzinex pentru Fier-Forjat Limanu Constanța",
+    youtubeId: "bCxoVN1QgQM",
   },
   {
     id: "birou-proiectare-iasi",
@@ -332,9 +332,9 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Impact mediu", value: "Zero chimicale" },
       { label: "Aplicații", value: "Multiple" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/rmf2y9oWsdg/maxresdefault.jpg",
     alt: "Echipament sablare cu laser Uzinex pentru atelier industrial Ocnele Mari Vâlcea",
+    youtubeId: "rmf2y9oWsdg",
   },
   {
     id: "ars-sudura",
@@ -430,9 +430,9 @@ const CASE_STUDIES: CaseStudy[] = [
       { label: "Siguranță", value: "CE certificat" },
       { label: "Productivitate", value: "Crescută" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80&auto=format&fit=crop",
+    image: "https://img.youtube.com/vi/KsBWTNjk1EE/hqdefault.jpg",
     alt: "Macara pentru manipulare PAL Uzinex la fabrica de mobilă Venus Pitești",
+    youtubeId: "KsBWTNjk1EE",
   },
 ];
 
