@@ -4,6 +4,7 @@ import { AuthorityStrip } from "@/components/AuthorityStrip";
 import { Certifications } from "@/components/Certifications";
 import { CatalogTabs } from "@/components/CatalogTabs";
 import { VideoGallery } from "@/components/VideoGallery";
+import { NewsSection } from "@/components/NewsSection";
 import { Solutions } from "@/components/Solutions";
 import { CaseStudies } from "@/components/CaseStudies";
 import { TestimonialMarquee } from "@/components/TestimonialMarquee";
@@ -22,6 +23,7 @@ export default function Home() {
       <VideoGallery />
       <TestimonialMarquee />
       <CatalogTabs />
+      <NewsSection />
       <Solutions />
       <QASection />
       <ContactCTA />

@@ -3,7 +3,7 @@ export function ContactCTA() {
     <section id="contact" className="border-b hairline py-16 lg:py-20">
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">07 / Contact</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">08 / Contact</div>
           <h2 className="serif text-4xl md:text-5xl lg:text-6xl text-ink-900 leading-[0.92]" style={{ letterSpacing: "-0.03em" }}>
             Construim împreună<br />
             următorul tău <span className="font-light text-uzx-orange">proiect.</span>
