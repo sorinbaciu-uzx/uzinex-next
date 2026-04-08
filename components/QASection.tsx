@@ -3,7 +3,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const QA = [
+export type QAItem = { q: string; a: string };
+export type QAData = {
+  eyebrow: string;
+  titleLine1: string;
+  titleLine2: string;
+  description: string;
+  contactLabel: string;
+  items: QAItem[];
+};
+
+const QA: QAItem[] = [
   {
     q: "Sunt echipamentele voastre disponibile prin SEAP / SICAP?",
     a: "Da. Toate categoriile din catalogul tehnic sunt disponibile prin SEAP și SICAP, iar echipa noastră te asistă cu dosarul tehnic, fișele de conformitate și încadrarea CPV. Lucrăm frecvent cu autorități contractante pe proceduri simplificate, licitații deschise și achiziții directe.",
@@ -38,27 +48,38 @@ const QA = [
   },
 ];
 
-export function QASection() {
+export const QA_DEFAULT: QAData = {
+  eyebrow: "07 / Întrebări",
+  titleLine1: "Întrebări",
+  titleLine2: "frecvente.",
+  description:
+    "Răspunsuri la cele mai comune întrebări tehnice și comerciale. Nu găsești ce cauți?",
+  contactLabel: "Contactează echipa →",
+  items: QA,
+};
+
+export function QASection({ data }: { data?: QAData | null }) {
+  const d = data ?? QA_DEFAULT;
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section id="qa" className="border-b hairline py-10 lg:py-14">
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">07 / Întrebări</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
           <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
-            Întrebări<br />frecvente.
+            {d.titleLine1}<br />{d.titleLine2}
           </h2>
           <p className="text-ink-500 mt-8 leading-relaxed max-w-sm">
-            Răspunsuri la cele mai comune întrebări tehnice și comerciale. Nu găsești ce cauți?
+            {d.description}
           </p>
           <a href="#contact" className="text-sm text-ink-700 underline-link mt-6 inline-block">
-            Contactează echipa →
+            {d.contactLabel}
           </a>
         </div>
 
         <div className="lg:col-span-7 lg:col-start-6 border-t hairline">
-          {QA.map((item, i) => {
+          {d.items.map((item, i) => {
             const isOpen = open === i;
             return (
               <div key={i} className="border-b hairline">

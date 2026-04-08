@@ -4,7 +4,15 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
-type VideoItem = {
+export type VideoGalleryData = {
+  eyebrow: string;
+  titleLine1: string;
+  titleHighlight: string;
+  description: string;
+  videos: VideoItem[];
+};
+
+export type VideoItem = {
   id: string;
   title: string;
   type: "TV" | "Târg" | "Demo" | "Interviu" | "Reportaj" | "Prezentare";
@@ -90,7 +98,17 @@ const TYPE_COLORS: Record<VideoItem["type"], string> = {
   Prezentare: "#155290",
 };
 
-export function VideoGallery() {
+export const VIDEO_GALLERY_DEFAULT: VideoGalleryData = {
+  eyebrow: "02 / Galerie video",
+  titleLine1: "Uzinex la TV,",
+  titleHighlight: "târguri și pe teren.",
+  description:
+    "Apariții media, demo-uri tehnice și prezentări de la cele mai importante târguri industriale din Europa. Vezi tehnologia noastră în acțiune.",
+  videos: VIDEOS,
+};
+
+export function VideoGallery({ data }: { data?: VideoGalleryData | null }) {
+  const d = data ?? VIDEO_GALLERY_DEFAULT;
   const [active, setActive] = useState<VideoItem | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -107,19 +125,18 @@ export function VideoGallery() {
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
           <div className="lg:col-span-6">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">02 / Galerie video</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
             <h2
               className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Uzinex la TV,<br />
-              <span className="font-light text-uzx-orange">târguri și pe teren.</span>
+              {d.titleLine1}<br />
+              <span className="font-light text-uzx-orange">{d.titleHighlight}</span>
             </h2>
           </div>
           <div className="lg:col-span-5 lg:col-start-8 flex items-end">
             <p className="text-ink-500 text-base leading-relaxed">
-              Apariții media, demo-uri tehnice și prezentări de la cele mai importante târguri industriale din
-              Europa. Vezi tehnologia noastră în acțiune.
+              {d.description}
             </p>
           </div>
         </div>
@@ -132,7 +149,7 @@ export function VideoGallery() {
         >
           <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
           <div className="flex gap-6 w-max">
-          {VIDEOS.map((v, i) => (
+          {d.videos.map((v, i) => (
             <motion.button
               key={v.id}
               onClick={() => setActive(v)}

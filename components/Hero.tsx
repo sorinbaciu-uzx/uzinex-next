@@ -2,7 +2,39 @@
 
 import { motion } from "motion/react";
 
-export function Hero() {
+export type HeroData = {
+  eyebrow: string;
+  titleLine1: string;
+  titleLine2: string;
+  titleHighlight: string;
+  description: string;
+  ctaLabel: string;
+  ctaHref: string;
+  secondaryCtaLabel: string;
+  secondaryCtaHref: string;
+  stats: { label: string; value: string }[];
+};
+
+export const HERO_DEFAULT: HeroData = {
+  eyebrow: "Integrator industrial · Proiectare · Implementare · Service",
+  titleLine1: "Tehnologie industrială",
+  titleLine2: "performantă și",
+  titleHighlight: "servicii superioare.",
+  description:
+    "Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri guvernamentale, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.",
+  ctaLabel: "Vezi catalogul tehnic",
+  ctaHref: "/magazin",
+  secondaryCtaLabel: "Discută cu un inginer",
+  secondaryCtaHref: "#contact",
+  stats: [
+    { label: "Intervenție fizică", value: "sub 24 ore" },
+    { label: "Echipă de ingineri", value: "consultanță tehnică" },
+    { label: "Garanție standard", value: "60 luni" },
+  ],
+};
+
+export function Hero({ data }: { data?: HeroData | null }) {
+  const d = data ?? HERO_DEFAULT;
   return (
     <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[120px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       {/* ─── Animated blueprint background ─── */}
@@ -197,28 +229,28 @@ export function Hero() {
         >
           <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
             <span className="w-8 h-px bg-white/40" />
-            <span>Integrator industrial · Proiectare · Implementare · Service</span>
+            <span>{d.eyebrow}</span>
           </div>
           <h1 className="serif text-3xl md:text-4xl lg:text-5xl font-medium leading-[0.95] text-white" style={{ letterSpacing: "-0.03em" }}>
-            Tehnologie industrială<br />
-            performantă și<br />
-            <span className="font-light text-uzx-orange">servicii superioare.</span>
+            {d.titleLine1}<br />
+            {d.titleLine2}<br />
+            <span className="font-light text-uzx-orange">{d.titleHighlight}</span>
           </h1>
           <p className="text-base lg:text-lg text-ink-200 max-w-2xl mt-6 leading-relaxed">
-            Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri guvernamentale, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.
+            {d.description}
           </p>
           <div className="flex flex-wrap items-center gap-5 mt-7">
             <a
-              href="/magazin"
+              href={d.ctaHref}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white hover:bg-ink-100 text-ink-900 text-sm px-7 py-4 transition flex items-center gap-3 group font-medium"
             >
-              Vezi catalogul tehnic
+              {d.ctaLabel}
               <span className="group-hover:translate-x-1 transition">→</span>
             </a>
-            <a href="#contact" className="text-sm text-white underline-link hover:text-ink-200">
-              Discută cu un inginer
+            <a href={d.secondaryCtaHref} className="text-sm text-white underline-link hover:text-ink-200">
+              {d.secondaryCtaLabel}
             </a>
           </div>
         </motion.div>
@@ -230,18 +262,12 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <div className="space-y-6">
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">Intervenție fizică</div>
-              <div className="serif text-2xl text-white mt-1">sub 24 ore</div>
-            </div>
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">Echipă de ingineri</div>
-              <div className="serif text-2xl text-white mt-1">consultanță tehnică</div>
-            </div>
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">Garanție standard</div>
-              <div className="serif text-2xl text-white mt-1">60 luni</div>
-            </div>
+            {d.stats.map((s, i) => (
+              <div key={i}>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">{s.label}</div>
+                <div className="serif text-2xl text-white mt-1">{s.value}</div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

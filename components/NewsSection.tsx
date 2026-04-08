@@ -2,12 +2,20 @@
 
 import { motion } from "motion/react";
 
-type Article = {
+export type Article = {
   category: "Comunicat" | "Articol" | "Anunț" | "Studiu";
   date: string;
   title: string;
   excerpt: string;
   readTime: string;
+};
+
+export type NewsData = {
+  eyebrow: string;
+  titleLine1: string;
+  titleHighlight: string;
+  description: string;
+  articles: Article[];
 };
 
 const ARTICLES: Article[] = [
@@ -52,33 +60,42 @@ const CATEGORY_COLORS: Record<Article["category"], string> = {
   Studiu: "#155290",
 };
 
-export function NewsSection() {
+export const NEWS_DEFAULT: NewsData = {
+  eyebrow: "05 / Noutăți & comunicări",
+  titleLine1: "Ultimele articole,",
+  titleHighlight: "comunicate și studii.",
+  description:
+    "Perspectivă editorială asupra integrării industriale, finanțărilor europene și tendințelor din automatizare și apărare.",
+  articles: ARTICLES,
+};
+
+export function NewsSection({ data }: { data?: NewsData | null }) {
+  const d = data ?? NEWS_DEFAULT;
   return (
     <section id="noutati" className="border-b hairline py-12 lg:py-14 bg-white">
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">
-              05 / Noutăți & comunicări
+              {d.eyebrow}
             </div>
             <h2
               className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Ultimele articole,<br />
-              <span className="font-light text-uzx-orange">comunicate și studii.</span>
+              {d.titleLine1}<br />
+              <span className="font-light text-uzx-orange">{d.titleHighlight}</span>
             </h2>
           </div>
           <div className="lg:col-span-5 lg:col-start-8 flex items-end">
             <p className="text-ink-500 text-base leading-relaxed">
-              Perspectivă editorială asupra integrării industriale, finanțărilor europene și tendințelor din
-              automatizare și apărare.
+              {d.description}
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border-y border-ink-200">
-          {ARTICLES.map((a, i) => (
+          {d.articles.map((a, i) => (
             <motion.a
               key={i}
               href="#"

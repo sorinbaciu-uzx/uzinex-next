@@ -1,0 +1,23 @@
+// Prisma schema for Uzinex admin module
+// Single ContentBlock model holds all editable content as JSON
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContentBlock {
+  key       String   @id
+  data      Json
+  updatedAt DateTime @updatedAt
+}
+
+model AdminSession {
+  token     String   @id
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}

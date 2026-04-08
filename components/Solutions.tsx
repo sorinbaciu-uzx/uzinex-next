@@ -3,7 +3,25 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-const SOLUTIONS = [
+export type Solution = {
+  num: string;
+  industry: string;
+  image: string;
+  description: string;
+  bullets: string[];
+  package: string;
+};
+export type SolutionsData = {
+  eyebrow: string;
+  titleLine1: string;
+  titleLine2: string;
+  description: string;
+  ctaLabel: string;
+  ctaHref: string;
+  items: Solution[];
+};
+
+const SOLUTIONS: Solution[] = [
   {
     num: "01",
     industry: "Producție & manufactură",
@@ -51,26 +69,38 @@ const SOLUTIONS = [
   },
 ];
 
-export function Solutions() {
+export const SOLUTIONS_DEFAULT: SolutionsData = {
+  eyebrow: "06 / Soluții tehnice",
+  titleLine1: "Recomandări în",
+  titleLine2: "funcție de aplicație.",
+  description:
+    "Selectează tipul de aplicație, iar inginerii noștri îți recomandă combinația optimă de echipamente.",
+  ctaLabel: "Solicită o recomandare personalizată",
+  ctaHref: "#contact",
+  items: SOLUTIONS,
+};
+
+export function Solutions({ data }: { data?: SolutionsData | null }) {
+  const d = data ?? SOLUTIONS_DEFAULT;
   return (
     <section id="solutii" className="border-b hairline py-10 lg:py-14 bg-ink-50">
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
           <div className="lg:col-span-6">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">06 / Soluții tehnice</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
             <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
-              Recomandări în<br />funcție de aplicație.
+              {d.titleLine1}<br />{d.titleLine2}
             </h2>
           </div>
           <div className="lg:col-span-5 lg:col-start-8 flex items-end">
             <p className="text-ink-500 text-lg leading-relaxed">
-              Selectează tipul de aplicație, iar inginerii noștri îți recomandă combinația optimă de echipamente.
+              {d.description}
             </p>
           </div>
         </div>
 
         <div className="space-y-px bg-ink-200">
-          {SOLUTIONS.map((s, i) => (
+          {d.items.map((s, i) => (
             <motion.div
               key={s.num}
               initial={{ opacity: 0, y: 20 }}
@@ -119,10 +149,10 @@ export function Solutions() {
 
         <div className="flex justify-center mt-16">
           <a
-            href="#contact"
+            href={d.ctaHref}
             className="bg-uzx-blue hover:bg-uzx-blue2 text-white text-sm px-7 py-4 inline-flex items-center gap-3 group transition"
           >
-            Solicită o recomandare personalizată
+            {d.ctaLabel}
             <span className="group-hover:translate-x-1 transition">→</span>
           </a>
         </div>

@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
-type CaseStudy = {
+export type CaseStudy = {
   client: string;
   image: string;
   alt?: string;
@@ -12,6 +12,8 @@ type CaseStudy = {
   subtitle: string;
   youtubeId?: string;
 };
+
+export type CaseStudiesHomeData = { items: CaseStudy[] };
 
 const CASES: CaseStudy[] = [
   {
@@ -56,18 +58,21 @@ const CASES: CaseStudy[] = [
   },
 ];
 
-export function CaseStudies() {
+export const CASE_STUDIES_HOME_DEFAULT: CaseStudiesHomeData = { items: CASES };
+
+export function CaseStudies({ data }: { data?: CaseStudiesHomeData | null }) {
+  const items = data?.items ?? CASES;
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [activeVideo, setActiveVideo] = useState<CaseStudy | null>(null);
 
   const next = () => {
     setDirection(1);
-    setIndex((i) => (i + 1) % CASES.length);
+    setIndex((i) => (i + 1) % items.length);
   };
   const prev = () => {
     setDirection(-1);
-    setIndex((i) => (i - 1 + CASES.length) % CASES.length);
+    setIndex((i) => (i - 1 + items.length) % items.length);
   };
 
   // Swipe gestures for mobile
@@ -85,7 +90,7 @@ export function CaseStudies() {
     touchStartX.current = null;
   };
 
-  const c = CASES[index];
+  const c = items[index];
 
   return (
     <section id="studii" className="border-b hairline py-10 lg:py-14 bg-white">
@@ -207,7 +212,7 @@ export function CaseStudies() {
             ←
           </button>
           <div className="text-xs mono text-ink-400 num min-w-[60px] text-center">
-            {String(index + 1).padStart(2, "0")} / {String(CASES.length).padStart(2, "0")}
+            {String(index + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
           </div>
           <button
             onClick={next}

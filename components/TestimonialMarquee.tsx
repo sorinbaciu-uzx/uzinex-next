@@ -11,7 +11,20 @@ const CLIENT_LOGOS = [
   { name: "Geo-Ex Construct", src: "/clients/geoex.jpg" },
 ];
 
-type Testimonial = { quote: string; name: string; role: string };
+export type Testimonial = { quote: string; name: string; role: string };
+export type TestimonialsData = {
+  eyebrow: string;
+  titleLine1: string;
+  titleHighlight: string;
+  count: string;
+  description: string;
+  ctaLabel: string;
+  logosTitle: string;
+  logos: { name: string; src: string }[];
+  col1: Testimonial[];
+  col2: Testimonial[];
+  col3: Testimonial[];
+};
 
 const COL1: Testimonial[] = [
   {
@@ -131,7 +144,23 @@ function Column({
   );
 }
 
-export function TestimonialMarquee() {
+export const TESTIMONIALS_DEFAULT: TestimonialsData = {
+  eyebrow: "03 / Referințe",
+  titleLine1: "Spun ei,",
+  titleHighlight: "nu noi.",
+  count: "— 12 referințe verificate",
+  description:
+    "Peste 100 de companii din producție, logistică și industrie au ales Uzinex ca partener strategic.",
+  ctaLabel: "Toate referințele",
+  logosTitle: "— Companii care au ales Uzinex",
+  logos: CLIENT_LOGOS,
+  col1: COL1,
+  col2: COL2,
+  col3: COL3,
+};
+
+export function TestimonialMarquee({ data }: { data?: TestimonialsData | null }) {
+  const d = data ?? TESTIMONIALS_DEFAULT;
   return (
     <section id="testimoniale" className="border-b py-12 lg:py-14 text-white relative overflow-hidden" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 1200px 600px at 20% 50%, rgba(30,107,184,0.35) 0%, rgba(30,107,184,0.1) 40%, transparent 70%)" }} />
@@ -139,35 +168,35 @@ export function TestimonialMarquee() {
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-10">
           <div className="lg:col-span-6">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">03 / Referințe</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
             <h2
               className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Spun ei,<br />
-              <span className="font-light text-uzx-orange">nu noi.</span>
+              {d.titleLine1}<br />
+              <span className="font-light text-uzx-orange">{d.titleHighlight}</span>
             </h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-3">
-            <div className="text-xs text-ink-400 num mb-6 mono">— 12 referințe verificate</div>
+            <div className="text-xs text-ink-400 num mb-6 mono">{d.count}</div>
             <p className="text-ink-300 leading-relaxed text-sm">
-              Peste 100 de companii din producție, logistică și industrie au ales Uzinex ca partener strategic.
+              {d.description}
             </p>
             <a
               href="#"
               className="mt-8 inline-flex items-center gap-3 text-sm text-white border-b border-white/30 hover:border-white pb-1 group"
             >
-              Toate referințele
+              {d.ctaLabel}
               <span className="group-hover:translate-x-1 transition">→</span>
             </a>
 
             {/* Client logos bar — uniform white tint, no hover */}
             <div className="mt-12 pt-10 border-t" style={{ borderColor: "rgba(30,107,184,0.25)" }}>
               <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mb-6 mono">
-                — Companii care au ales Uzinex
+                {d.logosTitle}
               </div>
               <div className="overflow-hidden">
                 <motion.div
@@ -176,7 +205,7 @@ export function TestimonialMarquee() {
                   animate={{ x: ["0%", "-50%"] }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 >
-                  {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((c, i) => (
+                  {[...d.logos, ...d.logos].map((c, i) => (
                     <div key={i} className="shrink-0 h-14 flex items-center justify-center">
                       <img
                         src={c.src}
@@ -197,12 +226,12 @@ export function TestimonialMarquee() {
             className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 testimonial-mask"
             style={{ height: 360 }}
           >
-            <Column data={COL1} duration={50} />
+            <Column data={d.col1} duration={50} />
             <div className="hidden md:block">
-              <Column data={COL2} duration={40} offset={-120} />
+              <Column data={d.col2} duration={40} offset={-120} />
             </div>
             <div className="hidden lg:block">
-              <Column data={COL3} duration={60} offset={-60} />
+              <Column data={d.col3} duration={60} offset={-60} />
             </div>
           </div>
         </div>
