@@ -199,8 +199,20 @@ function ImageUploadField({
       const fd = new FormData();
       fd.append("file", file);
       const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
-      const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "upload failed");
+      const text = await res.text();
+      if (!res.ok) {
+        // try to extract an error message; otherwise show HTTP status
+        let msg = `HTTP ${res.status}`;
+        try {
+          const j = JSON.parse(text);
+          if (j?.error) msg = j.error;
+        } catch {
+          if (text) msg = text.slice(0, 200);
+        }
+        throw new Error(msg);
+      }
+      const json = JSON.parse(text);
+      if (!json?.url) throw new Error("Răspuns invalid de la server");
       onChange(json.url);
     } catch (e) {
       setError((e as Error).message);

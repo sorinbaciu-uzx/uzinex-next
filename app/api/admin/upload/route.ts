@@ -51,16 +51,27 @@ export async function POST(req: Request) {
     .replace(/-+/g, "-");
   const path = `uploads/${Date.now()}-${safeName}`;
 
-  const blob = await put(path, file, {
-    access: "public",
-    contentType: file.type,
-    addRandomSuffix: false,
-  });
-
-  return NextResponse.json({
-    url: blob.url,
-    pathname: blob.pathname,
-    contentType: file.type,
-    size: file.size,
-  });
+  try {
+    const blob = await put(path, file, {
+      access: "public",
+      contentType: file.type,
+      addRandomSuffix: false,
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    });
+    return NextResponse.json({
+      url: blob.url,
+      pathname: blob.pathname,
+      contentType: file.type,
+      size: file.size,
+    });
+  } catch (err) {
+    console.error("[upload] put() failed:", err);
+    return NextResponse.json(
+      { error: (err as Error).message || "upload failed" },
+      { status: 500 }
+    );
+  }
 }
+
+export const runtime = "nodejs";
+export const maxDuration = 60;
