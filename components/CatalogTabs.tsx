@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -126,6 +126,23 @@ const CATEGORIES: Category[] = [
 export function CatalogTabs() {
   const [active, setActive] = useState(CATEGORIES[0].id);
   const cat = CATEGORIES.find((c) => c.id === active)!;
+  const activeIdx = CATEGORIES.findIndex((c) => c.id === active);
+
+  const goTo = (dir: 1 | -1) => {
+    const n = (activeIdx + dir + CATEGORIES.length) % CATEGORIES.length;
+    setActive(CATEGORIES[n].id);
+  };
+
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) goTo(dx < 0 ? 1 : -1);
+    touchStartX.current = null;
+  };
 
   return (
     <section id="catalog" className="border-b hairline py-16 lg:py-20">
@@ -178,6 +195,7 @@ export function CatalogTabs() {
         </div>
 
         {/* PANEL */}
+        <div onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} style={{ touchAction: "pan-y" }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={cat.id}
@@ -243,6 +261,7 @@ export function CatalogTabs() {
             </div>
           </motion.div>
         </AnimatePresence>
+        </div>
       </div>
     </section>
   );

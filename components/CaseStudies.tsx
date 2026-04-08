@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -63,6 +63,21 @@ export function CaseStudies() {
     setIndex((i) => (i - 1 + CASES.length) % CASES.length);
   };
 
+  // Swipe gestures for mobile
+  const touchStartX = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) {
+      if (dx < 0) next();
+      else prev();
+    }
+    touchStartX.current = null;
+  };
+
   const c = CASES[index];
 
   return (
@@ -83,7 +98,7 @@ export function CaseStudies() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} style={{ touchAction: "pan-y" }}>
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={index}
