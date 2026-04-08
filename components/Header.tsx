@@ -69,7 +69,7 @@ export function Header() {
           <a href="#" className="flex items-center gap-3 shrink-0">
             <Logo width={140} height={30} />
           </a>
-          <nav className="hidden lg:flex items-center gap-9 text-sm text-white/80">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-9 text-sm text-white/80">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
@@ -97,7 +97,7 @@ export function Header() {
               onClick={() => setOpen((o) => !o)}
               aria-label={open ? "Închide meniul" : "Deschide meniul"}
               aria-expanded={open}
-              className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white shrink-0"
+              className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white shrink-0"
             >
               <span
                 className="block w-5 h-px bg-white transition-transform"
@@ -124,7 +124,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden fixed inset-0 z-40 pt-32"
+            className="md:hidden fixed inset-0 z-40 pt-32"
             style={{ background: "#082545" }}
           >
             <nav className="container-x flex flex-col gap-2 text-white">

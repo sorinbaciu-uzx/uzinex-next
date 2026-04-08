@@ -209,7 +209,9 @@ export function Hero() {
           </p>
           <div className="flex flex-wrap items-center gap-5 mt-7">
             <a
-              href="#catalog"
+              href="/magazin"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white hover:bg-ink-100 text-ink-900 text-sm px-7 py-4 transition flex items-center gap-3 group font-medium"
             >
               Vezi catalogul tehnic
