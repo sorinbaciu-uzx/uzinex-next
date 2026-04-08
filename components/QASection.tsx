@@ -5,32 +5,36 @@ import { motion, AnimatePresence } from "motion/react";
 
 const QA = [
   {
-    q: "Cât durează livrarea în România?",
-    a: "Termenul de livrare se confirmă individual pentru fiecare proiect, în funcție de configurația și complexitatea echipamentului. Pentru soluții standard livrăm rapid în întreaga țară, iar pentru proiectele custom inginerii noștri îți propun un calendar realist.",
+    q: "Sunt echipamentele voastre disponibile prin SEAP / SICAP?",
+    a: "Da. Toate categoriile din catalogul tehnic sunt disponibile prin SEAP și SICAP, iar echipa noastră te asistă cu dosarul tehnic, fișele de conformitate și încadrarea CPV. Lucrăm frecvent cu autorități contractante pe proceduri simplificate, licitații deschise și achiziții directe.",
   },
   {
-    q: "Ce garanție oferiți pentru produse?",
-    a: "Toate produsele Uzinex beneficiază de garanție standard de 60 de luni pentru defecte de fabricație. Pentru produsele realizate la comandă, garanția este de 24 luni. Reparațiile în garanție sunt efectuate gratuit, inclusiv transportul.",
+    q: "Cum ajutați proiectele cu fonduri europene sau PNRR?",
+    a: "Asigurăm conformitate DNSH, eligibilitate pentru fonduri UE (PNRR, POIM, POCU) și livrare în termenul de finanțare. Dacă ai un dosar blocat de un furnizor anterior, preluăm specificațiile tehnice, reconfigurăm soluția și livrăm înainte de deadline — am salvat zeci de proiecte de la dezangajare.",
   },
   {
-    q: "Pot comanda o cupă după desen propriu?",
-    a: "Da. Realizăm cupe și atașamente la comandă, conform desenelor și specificațiilor furnizate. Inginerii noștri pot, de asemenea, dezvolta soluții complete pornind de la cerințele tale tehnice. Proiectul include validare 3D înainte de fabricație.",
+    q: "Ce garanție oferiți la echipamente?",
+    a: "Garanția standard este de 60 de luni — printre cele mai lungi din piață. Include defecte de fabricație, suport tehnic telefonic și intervenție fizică la fața locului în sub 24 de ore. Pentru echipamente custom, garanția se stabilește individual.",
   },
   {
-    q: "Ce metode de plată acceptați?",
-    a: "Acceptăm transfer bancar, plată în rate prin parteneri de leasing și finanțare pentru companii cu istoric. Pentru clienții noi, putem oferi termene de plată flexibile după evaluarea financiară.",
+    q: "Ce sunt manualele interactive cu inteligență artificială?",
+    a: "Fiecare echipament livrat include un manual digital cu AI integrat: poți pune întrebări tehnice în limbaj natural, obține proceduri pas-cu-pas pentru exploatare și mentenanță, și accesa training pentru operatori. Reduce timpul de onboarding și eroarea umană.",
   },
   {
-    q: "Sunt produsele compatibile cu utilajul meu?",
-    a: "Lucrăm cu echipamente compatibile cu majoritatea brandurilor de pe piață: Caterpillar, Komatsu, Volvo, Hitachi, JCB, Liebherr, Case, Doosan, Hyundai și Bobcat. Ne poți trimite seria utilajului și inginerii noștri îți confirmă compatibilitatea.",
+    q: "Lucrați cu instituții din apărare și securitate?",
+    a: "Da. Avem o categorie dedicată echipamentelor pentru MApN, IGSU, poliție și operatori privați de securitate. Lucrăm pe proceduri guvernamentale clasificate, conforme cu standardele NATO STANAG, cu trasabilitate totală a componentelor.",
   },
   {
-    q: "Oferiți consultanță tehnică gratuită?",
-    a: "Da. Echipa noastră de ingineri oferă consultanță gratuită pentru selecția corectă a echipamentelor, dimensionarea atașamentelor și optimizarea costurilor de exploatare. Sunăm sau ne vizităm clienții la fața locului.",
+    q: "Cum funcționează procesul de integrare end-to-end?",
+    a: "Uzinex este integrator industrial complet: proiectare → implementare → service. Inginerii noștri analizează fluxul tău de producție, propun configurația optimă, coordonează livrarea și instalarea, apoi preiau mentenanța preventivă și suportul tehnic. Un singur partener pentru tot ciclul de viață al echipamentului.",
   },
   {
-    q: "Cum funcționează leasingul prin Uzinex?",
-    a: "Lucrăm cu cele mai mari instituții de leasing din România. Avans de la 10%, perioade între 12 și 60 de luni, dobânzi de la 4.9%. Pre-aprobarea vine în 48 de ore lucrătoare după depunerea documentelor.",
+    q: "Care este durata tipică a unui proiect la cheie?",
+    a: "Pentru soluții standard din catalog, livrarea începe în câteva săptămâni. Pentru linii complete personalizate — de la dimensionare tehnică la punere în funcțiune — termenul este între 8 și 16 săptămâni, în funcție de complexitate. Îți propunem calendar realist la primul call tehnic.",
+  },
+  {
+    q: "Cu ce branduri industriale lucrați?",
+    a: "Livrăm componente și echipamente cheie de la Siemens, Mitsubishi Electric, Schneider Electric, ABB, Samsung, Panasonic, Omron, Yaskawa, WEG, Fanuc, Bosch Rexroth, Festo, SMC, Rockwell Automation și alții. Parteneriate oficiale pentru piese, drive-uri, PLC-uri și automatizare.",
   },
 ];
 

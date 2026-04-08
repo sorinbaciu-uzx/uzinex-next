@@ -54,9 +54,9 @@ const CATEGORY_COLORS: Record<Article["category"], string> = {
 
 export function NewsSection() {
   return (
-    <section id="noutati" className="border-b hairline py-16 lg:py-20 bg-white">
+    <section id="noutati" className="border-b hairline py-12 lg:py-14 bg-white">
       <div className="container-x">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">
               05 / Noutăți & comunicări
@@ -86,9 +86,9 @@ export function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group bg-white p-8 lg:p-10 hover:bg-ink-50 transition flex flex-col"
+              className="group bg-white p-6 lg:p-8 hover:bg-ink-50 transition flex flex-col"
             >
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div
                     className="text-[10px] uppercase tracking-widest mono text-white px-2.5 py-1"
@@ -101,17 +101,28 @@ export function NewsSection() {
                 <div className="text-[11px] mono text-ink-400">{a.readTime}</div>
               </div>
 
-              <h3 className="serif text-xl lg:text-2xl text-ink-900 leading-tight mb-4" style={{ letterSpacing: "-0.02em" }}>
+              <h3 className="serif text-lg lg:text-xl text-ink-900 leading-tight mb-3" style={{ letterSpacing: "-0.02em" }}>
                 {a.title}
               </h3>
-              <p className="text-sm text-ink-500 leading-relaxed mb-8">{a.excerpt}</p>
+              <p className="text-sm text-ink-500 leading-relaxed mb-6">{a.excerpt}</p>
 
-              <div className="mt-auto pt-6 border-t hairline flex items-center justify-between">
+              <div className="mt-auto pt-5 border-t hairline flex items-center justify-between">
                 <span className="text-xs text-ink-700 uppercase tracking-wider">Citește articolul</span>
                 <span className="text-xl text-uzx-blue group-hover:translate-x-1 transition">→</span>
               </div>
             </motion.a>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <a
+            href="#"
+            className="group inline-flex items-center gap-3 text-sm text-ink-700 hover:text-uzx-blue transition"
+          >
+            <span className="w-12 h-px bg-ink-300 group-hover:bg-uzx-blue transition" />
+            Vezi toate articolele
+            <span className="group-hover:translate-x-1 transition">→</span>
+          </a>
         </div>
       </div>
     </section>
