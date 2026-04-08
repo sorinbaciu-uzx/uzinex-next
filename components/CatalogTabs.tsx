@@ -257,25 +257,40 @@ export function CatalogTabs() {
         </div>
 
         {/* CATEGORY SELECTOR — dropdown + prev/next */}
-        <div className="border-b hairline pb-5 mb-10 flex items-center justify-between gap-3">
-          <div className="text-[11px] mono uppercase tracking-[0.2em] text-ink-400 hidden sm:block">
-            Categoria {cat.num} / {String(CATEGORIES.length).padStart(2, "0")}
+        <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="hidden sm:flex items-center gap-3 text-[11px] mono uppercase tracking-[0.2em] text-ink-400">
+            <span className="w-8 h-px bg-ink-300" />
+            <span>
+              Categoria {cat.num} <span className="text-ink-300">/</span> {String(CATEGORIES.length).padStart(2, "0")}
+            </span>
           </div>
 
-          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[340px]">
+          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[420px]">
+            <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono mb-2 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange animate-pulse" />
+              Selectează o categorie
+            </div>
             <button
               type="button"
               onClick={() => setDropdownOpen((o) => !o)}
               aria-haspopup="listbox"
               aria-expanded={dropdownOpen}
-              className="w-full flex items-center gap-3 px-4 py-3 border hairline hover:border-uzx-blue transition text-left bg-white"
+              className="w-full flex items-center gap-4 px-5 py-4 border-2 border-uzx-orange bg-white hover:bg-uzx-orange/5 transition text-left group shadow-[0_4px_0_0_rgba(245,133,31,0.15)]"
             >
-              <span className="text-[10px] uppercase tracking-widest text-ink-400 mono shrink-0">
-                Categorie:
+              <span className="serif text-2xl text-uzx-orange num shrink-0 mono">
+                {cat.num}
               </span>
-              <span className="flex-1 text-sm text-ink-900 truncate">{cat.tab}</span>
+              <span className="w-px h-10 bg-ink-200 shrink-0" />
+              <span className="flex-1 min-w-0">
+                <span className="block text-[10px] uppercase tracking-widest text-ink-400 mono">
+                  Categorie activă
+                </span>
+                <span className="serif text-lg lg:text-xl text-ink-900 block truncate leading-tight">
+                  {cat.tab}
+                </span>
+              </span>
               <span
-                className="text-[11px] text-ink-500 transition-transform shrink-0"
+                className="flex items-center justify-center w-9 h-9 bg-uzx-orange text-white text-sm shrink-0 transition-transform group-hover:scale-110"
                 style={{ transform: dropdownOpen ? "rotate(180deg)" : "none" }}
               >
                 ▾
