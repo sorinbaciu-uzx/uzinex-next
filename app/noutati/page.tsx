@@ -8,6 +8,7 @@ import { HeroFeatured } from "./HeroFeatured";
 import { BlogFeed } from "./BlogFeed";
 import { Highlights } from "./Highlights";
 import { Changelog } from "./Changelog";
+import { AuthorityRail } from "./AuthorityRail";
 
 export const revalidate = 60;
 
@@ -26,7 +27,9 @@ export default async function NoutatiPage() {
   return (
     <>
       <Header solid />
-      <main className="bg-white border-b hairline">
+      {/* sticky rail overlays content on lg+ */}
+      <AuthorityRail videoId={heroVideoId} />
+      <main className="bg-white border-b hairline lg:pr-[340px]">
         {/* ─────────────── PAGE HEADER ─────────────── */}
         <section className="bg-ink-50 border-b hairline">
           <div className="container-x py-8 lg:py-12">
