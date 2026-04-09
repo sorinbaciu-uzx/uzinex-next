@@ -31,6 +31,24 @@ export default async function NoutatiPage() {
       {/* sticky rail overlays content on lg+ */}
       <AuthorityRail videoId={railVideoId} />
       <main className="bg-white border-b hairline">
+        {/* tiny breadcrumb */}
+        <nav
+          aria-label="Breadcrumb"
+          className="container-x pt-3 pb-1"
+        >
+          <div className="max-w-6xl mx-auto lg:pr-[340px]">
+            <ol className="flex items-center gap-1.5 text-[10px] mono uppercase tracking-wider text-ink-400">
+              <li>
+                <Link href="/" className="hover:text-uzx-blue transition">
+                  Acasă
+                </Link>
+              </li>
+              <li className="text-ink-300">/</li>
+              <li className="text-ink-700">Noutăți</li>
+            </ol>
+          </div>
+        </nav>
+
         {articles.length === 0 ? (
           <div className="container-x py-20">
             <div className="max-w-xl mx-auto border hairline p-10 text-center text-ink-400 italic">
