@@ -29,30 +29,24 @@ export default async function NoutatiPage() {
       <main className="bg-white border-b hairline">
         {/* ─────────────── PAGE HEADER ─────────────── */}
         <section className="bg-ink-50 border-b hairline">
-          <div className="container-x py-10 lg:py-16">
+          <div className="container-x py-8 lg:py-12">
             <div className="max-w-6xl mx-auto">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-xs mono uppercase tracking-wider text-ink-500 hover:text-uzx-blue transition mb-8"
+                className="inline-flex items-center gap-2 text-xs mono uppercase tracking-wider text-ink-500 hover:text-uzx-blue transition mb-6"
               >
                 <span>←</span> Înapoi la pagina principală
               </Link>
               <div className="flex items-end justify-between gap-6 flex-wrap">
-                <div>
-                  <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-blue mb-3 mono font-bold">
-                    Blog
-                  </div>
-                  <h1
-                    className="serif text-4xl md:text-5xl lg:text-6xl text-ink-900 leading-[0.95]"
-                    style={{ letterSpacing: "-0.03em" }}
-                  >
-                    Noutăți, comunicări
-                    <br />
-                    <span className="font-light italic text-uzx-orange">
-                      și studii Uzinex.
-                    </span>
-                  </h1>
-                </div>
+                <h1
+                  className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] max-w-2xl"
+                  style={{ letterSpacing: "-0.03em" }}
+                >
+                  Noutăți, comunicări{" "}
+                  <span className="font-light italic text-uzx-orange">
+                    și studii Uzinex.
+                  </span>
+                </h1>
                 <a
                   href="https://www.linkedin.com/company/uzinex"
                   target="_blank"

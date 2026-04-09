@@ -62,20 +62,22 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
 }
 
 function Row({ article }: { article: Article }) {
+  const accent = CATEGORY_COLORS[article.category] || "#1e6bb8";
   return (
-    <article className="py-10 lg:py-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">
-      {/* LEFT: text */}
-      <div className="lg:col-span-6 border-l-2 pl-5" style={{ borderColor: CATEGORY_COLORS[article.category] || "#1e6bb8" }}>
+    <article className="py-10 lg:py-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+      {/* LEFT: narrow text column */}
+      <div
+        className="lg:col-span-5 border-l-2 pl-5"
+        style={{ borderColor: accent }}
+      >
         <div
-          className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-3"
-          style={{
-            color: CATEGORY_COLORS[article.category] || "#1e6bb8",
-          }}
+          className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-4"
+          style={{ color: accent }}
         >
           {article.category}
         </div>
         <h2
-          className="serif text-2xl md:text-3xl text-ink-900 leading-[1.1] mb-4"
+          className="serif text-2xl md:text-[28px] text-ink-900 leading-[1.1] mb-4"
           style={{ letterSpacing: "-0.02em" }}
         >
           <Link
@@ -85,23 +87,25 @@ function Row({ article }: { article: Article }) {
             {article.title}
           </Link>
         </h2>
-        <p className="text-sm text-ink-600 leading-relaxed mb-4 max-w-xl">
+        <p className="text-sm text-ink-600 leading-relaxed mb-5">
           {article.excerpt}
         </p>
         <Link
           href={`/noutati/${article.slug}`}
           className="inline-flex items-center gap-2 text-sm text-uzx-blue font-medium hover:gap-3 transition-all"
         >
-          Citește mai departe
-          <span>›</span>
+          Citește mai departe <span>›</span>
         </Link>
       </div>
 
-      {/* MIDDLE: date + authors */}
-      <div className="lg:col-span-3 border-l-2 border-ink-200 pl-5">
-        <div className="text-xs text-ink-400 mono mb-4">| {article.date}</div>
+      {/* RIGHT WRAPPER: date + authors on top, image below — inside single col */}
+      <div className="lg:col-span-7 lg:border-l-2 lg:border-dashed lg:border-ink-200 lg:pl-8">
+        {/* date */}
+        <div className="text-sm text-ink-700 mb-6">{article.date}</div>
+
+        {/* authors */}
         {article.authors && article.authors.length > 0 ? (
-          <div className="space-y-3">
+          <div className="flex items-start gap-8 flex-wrap mb-8">
             {article.authors.map((a, i) => (
               <div key={i} className="flex items-center gap-3">
                 {a.avatar ? (
@@ -109,10 +113,10 @@ function Row({ article }: { article: Article }) {
                   <img
                     src={a.avatar}
                     alt={a.name}
-                    className="w-10 h-10 object-cover bg-ink-100 border hairline"
+                    className="w-11 h-11 rounded-full object-cover bg-ink-100 border hairline shrink-0"
                   />
                 ) : (
-                  <div className="w-10 h-10 bg-uzx-blue text-white text-xs font-bold flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-full bg-uzx-blue text-white text-xs font-bold flex items-center justify-center shrink-0">
                     {a.name
                       .split(" ")
                       .map((p) => p[0])
@@ -123,19 +127,17 @@ function Row({ article }: { article: Article }) {
                 <div className="text-sm leading-tight">
                   <div className="text-ink-900 font-medium">{a.name}</div>
                   {a.role && (
-                    <div className="text-ink-500 text-xs">{a.role}</div>
+                    <div className="text-ink-500 text-xs mt-0.5">{a.role}</div>
                   )}
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="text-xs text-ink-400 italic">Echipa Uzinex</div>
+          <div className="text-xs text-ink-400 italic mb-8">Echipa Uzinex</div>
         )}
-      </div>
 
-      {/* RIGHT: image */}
-      <div className="lg:col-span-3">
+        {/* image placeholder — horizontal rectangle (like Stripe screenshot) */}
         <Link
           href={`/noutati/${article.slug}`}
           className="block border hairline overflow-hidden group"
@@ -145,29 +147,27 @@ function Row({ article }: { article: Article }) {
             <img
               src={article.image}
               alt={article.title}
-              className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+              className="w-full aspect-[4/5] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
           ) : (
             <div
-              className="w-full aspect-square flex items-center justify-center relative overflow-hidden"
+              className="w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden"
               style={{
-                background: `linear-gradient(135deg, ${
-                  CATEGORY_COLORS[article.category] || "#1e6bb8"
-                } 0%, #082545 100%)`,
+                background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
               }}
             >
               <div
-                className="absolute inset-0 opacity-20"
+                className="absolute inset-0 opacity-25"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(45deg, transparent 0 20px, rgba(255,255,255,0.08) 20px 21px)",
+                    "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
                 }}
               />
               <div
-                className="serif text-white/90 text-3xl font-light relative z-10"
+                className="serif text-white/90 text-4xl lg:text-5xl font-light relative z-10"
                 style={{ letterSpacing: "-0.02em" }}
               >
-                {article.category.toUpperCase()}
+                {article.category}
               </div>
             </div>
           )}
