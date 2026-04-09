@@ -137,10 +137,10 @@ function Row({ article }: { article: Article }) {
           <div className="text-xs text-ink-400 italic mb-8">Echipa Uzinex</div>
         )}
 
-        {/* image placeholder — horizontal rectangle (like Stripe screenshot) */}
+        {/* image placeholder — compact vertical rectangle */}
         <Link
           href={`/noutati/${article.slug}`}
-          className="block border hairline overflow-hidden group"
+          className="block border hairline overflow-hidden group max-w-[260px]"
         >
           {article.image ? (
             // eslint-disable-next-line @next/next/no-img-element
