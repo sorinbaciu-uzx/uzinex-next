@@ -31,18 +31,20 @@ const AUTHORITY_ITEMS = [
     label: "Expertiză tehnică",
     value: "+30 ani",
   },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="currentColor" strokeWidth="1.6">
+        <path d="M4 4h11a3 3 0 013 3v13H7a3 3 0 01-3-3V4z" />
+        <path d="M4 4v13a3 3 0 003 3" />
+        <path d="M9 9h7M9 13h5" strokeLinecap="round" />
+      </svg>
+    ),
+    label: "Manuale interactive",
+    value: "cu AI",
+  },
 ];
 
-const CERTS = [
-  "ISO 9001",
-  "ISO 14001",
-  "CE",
-  "EN 1090",
-  "DNSH",
-  "PNRR",
-  "EBRD",
-  "Manuale AI",
-];
+const CERTS = ["ISO 9001", "ISO 14001", "CE", "EN 1090", "DNSH"];
 
 export function AuthorityRail({ videoId }: { videoId: string }) {
   const [mounted, setMounted] = useState(false);
