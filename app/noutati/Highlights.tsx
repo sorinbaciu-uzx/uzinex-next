@@ -56,14 +56,14 @@ export function Highlights({ items }: { items: Highlight[] }) {
         </div>
       </div>
 
-      {/* drag track — full width, no max container so cards overflow gracefully */}
+      {/* drag track — width bounded on lg+ so it stops before the sticky rail */}
       <div
         ref={trackRef}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
-        className={`hl-track overflow-x-auto overscroll-x-contain select-none pb-12 lg:pb-16 ${
+        className={`hl-track overflow-x-auto overscroll-x-contain select-none pb-12 lg:pb-16 lg:mr-[340px] ${
           isDown ? "cursor-grabbing" : "cursor-grab"
         }`}
         style={{
@@ -72,7 +72,7 @@ export function Highlights({ items }: { items: Highlight[] }) {
         }}
       >
         <style>{`.hl-track::-webkit-scrollbar { display: none; }`}</style>
-        <div className="flex gap-5 lg:gap-6 px-6 lg:px-[max(calc((100vw-72rem)/2),1.5rem)]">
+        <div className="flex gap-5 lg:gap-6 px-6 lg:pl-[max(calc((100vw-72rem)/2),1.5rem)] lg:pr-6">
           {items.map((h, i) => {
             const bg = h.color || "#1e6bb8";
             const card = (
