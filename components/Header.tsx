@@ -165,7 +165,7 @@ const NAV: NavItem[] = [
 
 /* ───────────────────────────── COMPONENT ───────────────────────────── */
 
-export function Header() {
+export function Header({ solid = false }: { solid?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
@@ -188,7 +188,10 @@ export function Header() {
   return (
     <>
       {/* ───── ANNOUNCEMENT BAR ───── */}
-      <div className="text-white/90 text-xs relative z-10">
+      <div
+        className="text-white/90 text-xs relative z-10"
+        style={solid ? { background: "#082545" } : undefined}
+      >
         <div className="container-x flex items-center justify-between py-2.5">
           <span className="opacity-80 hidden sm:inline">
             Sediu central: Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași · Livrare națională
@@ -215,8 +218,10 @@ export function Header() {
       <header
         className="sticky top-0 z-50 text-white transition-colors duration-300"
         style={{
-          background: scrolled || open || hovered ? "#082545" : "transparent",
-          boxShadow: scrolled ? "0 1px 0 rgba(255,255,255,0.08)" : "none",
+          background:
+            solid || scrolled || open || hovered ? "#082545" : "transparent",
+          boxShadow:
+            solid || scrolled ? "0 1px 0 rgba(255,255,255,0.08)" : "none",
         }}
         onMouseLeave={() => setHovered(null)}
       >

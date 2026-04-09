@@ -19,7 +19,7 @@ export default async function ContPage() {
 
   return (
     <>
-      <Header />
+      <Header solid />
       <main className="bg-ink-50 border-b hairline">
         <div className="container-x py-14 lg:py-20">
           <div className="max-w-4xl mx-auto">

@@ -4,17 +4,17 @@ import { redirect } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getCurrentUser } from "@/lib/client-auth";
-import { LoginForm } from "./LoginForm";
+import { RegisterForm } from "./RegisterForm";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Autentificare client — Uzinex",
+  title: "Creează cont — Uzinex",
   description:
-    "Intră în contul tău Uzinex pentru a accesa oferte, istoric comenzi, manuale interactive AI, certificate de conformitate și documente tehnice.",
+    "Înregistrează-te pentru un cont client Uzinex și obține acces la oferte personalizate, istoric comenzi și manuale interactive AI.",
 };
 
-export default async function AutentificarePage() {
+export default async function InregistrarePage() {
   const user = await getCurrentUser();
   if (user) redirect("/cont");
 
@@ -32,21 +32,21 @@ export default async function AutentificarePage() {
             </Link>
             <div className="bg-white border hairline p-8 lg:p-10">
               <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                Cont client Uzinex
+                Cont nou client Uzinex
               </div>
               <h1
                 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
                 style={{ letterSpacing: "-0.02em" }}
               >
-                Autentificare
+                Creează cont
               </h1>
               <p className="text-ink-500 text-sm leading-relaxed mb-8">
-                Accesează oferte personalizate, istoric comenzi, manuale
-                interactive AI, certificate de conformitate și documente
-                tehnice pentru echipamentele tale.
+                Înregistrarea durează 30 de secunde. Vei avea acces imediat la
+                oferte personalizate, istoric comenzi și documente tehnice
+                pentru echipamentele tale.
               </p>
 
-              <LoginForm />
+              <RegisterForm />
 
               <div className="relative my-8">
                 <div className="absolute inset-0 flex items-center">
@@ -59,15 +59,15 @@ export default async function AutentificarePage() {
                 </div>
               </div>
 
-              <div className="text-center space-y-4">
-                <p className="text-sm text-ink-600">
-                  Nu ai încă un cont Uzinex?
+              <div className="text-center">
+                <p className="text-sm text-ink-600 mb-4">
+                  Ai deja un cont Uzinex?
                 </p>
                 <Link
-                  href="/inregistrare"
+                  href="/autentificare"
                   className="block w-full border-2 border-uzx-blue text-uzx-blue hover:bg-uzx-blue hover:text-white py-3 text-sm font-medium transition"
                 >
-                  Creează cont gratuit
+                  Intră în cont
                 </Link>
               </div>
             </div>
