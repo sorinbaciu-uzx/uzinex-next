@@ -152,6 +152,7 @@ export const SCHEMAS: Record<string, BlockSchema> = {
             itemLabelField: "category",
             item: {
               category: { type: "text", label: "Categorie (ex: Service, Catalog)" },
+              date: { type: "text", label: "Dată (ex: Aprilie 2026)" },
               text: { type: "textarea", label: "Text actualizare", rows: 3 },
               href: { type: "text", label: "Link detalii (opțional)" },
             },

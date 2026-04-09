@@ -32,6 +32,7 @@ export type ChangelogEntry = {
   category: string;
   text: string;
   href?: string;
+  date?: string;
 };
 
 export type ChangelogData = {
@@ -233,23 +234,43 @@ const CHANGELOG: ChangelogData = {
   entries: [
     {
       category: "Service",
+      date: "Aprilie 2026",
       text: "Timpul mediu de intervenție la sediul clientului scade de la 4h la 3h pentru toată zona Transilvania, datorită deschiderii centrului de la Cluj.",
     },
     {
       category: "Catalog",
+      date: "Martie 2026",
       text: "Extindere cu 12 modele de electrostivuitoare Li-Ion de la producători europeni cu certificare CE și eligibilitate pentru fonduri UE.",
     },
     {
       category: "Consultanță",
+      date: "Februarie 2026",
       text: "Toate cererile de ofertă pentru echipamente peste 100 000 EUR primesc acum consultanță gratuită pentru eligibilitate PNRR / POIM.",
     },
     {
       category: "Piese de schimb",
+      date: "Ianuarie 2026",
       text: "Stoc permanent pentru cele mai comune 500 de piese OEM la depozitul central Otopeni — livrare next-day în toată țara.",
     },
     {
       category: "Training",
+      date: "Decembrie 2025",
       text: "Laborator nou de training operator CNC deschis în Tehnopolis Iași, cu sesiuni săptămânale gratuite pentru clienți.",
+    },
+    {
+      category: "Certificări",
+      date: "Noiembrie 2025",
+      text: "Acreditare extinsă pentru proceduri guvernamentale clasificate — portofoliul Uzinex devine eligibil pentru contracte cu MApN și IGSU.",
+    },
+    {
+      category: "Parteneriate",
+      date: "Octombrie 2025",
+      text: "Parteneriat oficial Siemens Digital Industries — acces prioritar la portofoliul complet pentru linii de automatizare și TIA Portal.",
+    },
+    {
+      category: "Flotă",
+      date: "Septembrie 2025",
+      text: "Două unități mobile de intervenție noi alocate pentru zona de nord-est — reducerea timpului de deplasare la clienții din Moldova.",
     },
   ],
 };
