@@ -6,10 +6,8 @@ const MENU = [
   { label: "Studii de caz", href: "/studii-de-caz" },
   { label: "Catalog tehnic", href: "/magazin" },
   { label: "Noutăți & comunicări", href: "/noutati" },
-  { label: "Consultanță fonduri UE", href: "/consultanta-fonduri-europene" },
-  { label: "Service inclus la livrare", href: "/service/inclus-la-livrare" },
-  { label: "Abonamente Service", href: "/service/abonamente" },
-  { label: "Manual de service cu AI", href: "/service/manual-ai" },
+  { label: "Finanțare", href: "/finantare" },
+  { label: "Service", href: "/service" },
   { label: "Cariere", href: "/cariere" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -48,9 +46,9 @@ export function Footer() {
     <footer className="bg-ink-50">
       <div className="container-x py-16 lg:py-20">
         {/* TOP — 4 columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b hairline">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b hairline">
           {/* Brand + tagline + compliance */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <Logo width={200} height={43} />
             <p className="text-ink-600 text-sm mt-6 leading-relaxed">
               Alege să lucrezi cu o echipă de profesioniști. Integrator industrial pentru sectorul privat,
@@ -102,10 +100,10 @@ export function Footer() {
           </div>
 
           {/* Meniu + GDPR + Politici companie */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-3 space-y-8">
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">Meniu</div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm text-ink-700">
+              <ul className="space-y-2.5 text-sm text-ink-700">
                 {MENU.map((m) => (
                   <li key={m.label}>
                     <a className="hover:text-uzx-blue transition" href={m.href}>
@@ -118,7 +116,7 @@ export function Footer() {
 
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">GDPR</div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm text-ink-700">
+              <ul className="space-y-2.5 text-sm text-ink-700">
                 {GDPR_LINKS.map((link) => (
                   <li key={link.href}>
                     <a className="hover:text-uzx-blue transition" href={link.href}>
@@ -131,7 +129,7 @@ export function Footer() {
 
             <div>
               <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-5">Politicile companiei</div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm text-ink-700">
+              <ul className="space-y-2.5 text-sm text-ink-700">
                 {COMPANY_POLICIES.map((link) => (
                   <li key={link.href}>
                     <a className="hover:text-uzx-blue transition" href={link.href}>
