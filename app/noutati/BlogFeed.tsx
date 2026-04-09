@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import type { Article } from "@/components/NewsSection";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 4;
 
 /* ───── hover animation CSS ───── */
 const HOVER_CSS = `
@@ -125,7 +125,7 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-12 lg:gap-y-16 pt-8">
+          <div className="divide-y divide-ink-200 divide-dashed pt-2">
             {pageSlice.map((a) => (
               <Row key={a.slug} article={a} />
             ))}
@@ -184,22 +184,22 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
 
 function Row({ article }: { article: Article }) {
   const accent = CATEGORY_COLORS[article.category] || "#1e6bb8";
-  const primary = article.authors?.[0];
+  const hasAuthors = (article.authors?.length ?? 0) > 0;
   return (
-    <article className="grid grid-cols-12 gap-4">
+    <article className="py-10 lg:py-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
       {/* LEFT: text column */}
       <div
-        className="col-span-7 border-l-2 pl-4"
+        className="lg:col-span-5 border-l-2 pl-5"
         style={{ borderColor: accent }}
       >
         <div
-          className="text-[10px] uppercase tracking-[0.22em] mono font-bold mb-3"
+          className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-4"
           style={{ color: accent }}
         >
           {article.category}
         </div>
         <h2
-          className="serif text-[20px] text-ink-900 leading-[1.1] mb-3"
+          className="serif text-2xl md:text-[28px] text-ink-900 leading-[1.1] mb-4"
           style={{ letterSpacing: "-0.02em" }}
         >
           <Link
@@ -209,59 +209,59 @@ function Row({ article }: { article: Article }) {
             {article.title}
           </Link>
         </h2>
-        <p className="text-[13px] text-ink-600 leading-relaxed mb-4 line-clamp-3">
+        <p className="text-sm text-ink-600 leading-relaxed mb-5">
           {article.excerpt}
         </p>
         <Link
           href={`/noutati/${article.slug}`}
-          className="inline-flex items-center gap-1.5 text-[13px] text-uzx-blue font-medium hover:gap-2 transition-all"
+          className="inline-flex items-center gap-2 text-sm text-uzx-blue font-medium hover:gap-3 transition-all"
         >
           Citește mai departe <span>›</span>
         </Link>
       </div>
 
-      {/* RIGHT: date + authors + image */}
-      <div className="col-span-5 border-l border-dashed border-ink-200 pl-4">
-        <div className="text-xs text-ink-700 mb-3">{article.date}</div>
+      {/* RIGHT: date + authors on top, image below */}
+      <div className="lg:col-span-7 lg:border-l-2 lg:border-dashed lg:border-ink-200 lg:pl-8">
+        <div className="text-sm text-ink-700 mb-6">{article.date}</div>
 
-        {primary ? (
-          <div className="flex items-center gap-2 mb-3">
-            {primary.avatar ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={primary.avatar}
-                alt={primary.name}
-                className="w-8 h-8 rounded-full object-cover bg-ink-100 border hairline shrink-0"
-              />
-            ) : (
-              <div className="w-8 h-8 rounded-full bg-uzx-blue text-white text-[10px] font-bold flex items-center justify-center shrink-0">
-                {primary.name
-                  .split(" ")
-                  .map((p) => p[0])
-                  .slice(0, 2)
-                  .join("")}
-              </div>
-            )}
-            <div className="text-xs leading-tight min-w-0">
-              <div className="text-ink-900 font-medium truncate">
-                {primary.name}
-              </div>
-              {primary.role && (
-                <div className="text-ink-500 text-[10px] truncate">
-                  {primary.role}
+        {hasAuthors ? (
+          <div className="flex items-start gap-4 flex-wrap mb-8">
+            {article.authors!.map((a, i) => (
+              <div key={i} className="flex items-center gap-3">
+                {a.avatar ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={a.avatar}
+                    alt={a.name}
+                    className="w-11 h-11 rounded-full object-cover bg-ink-100 border hairline shrink-0"
+                  />
+                ) : (
+                  <div className="w-11 h-11 rounded-full bg-uzx-blue text-white text-xs font-bold flex items-center justify-center shrink-0">
+                    {a.name
+                      .split(" ")
+                      .map((p) => p[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                )}
+                <div className="text-sm leading-tight">
+                  <div className="text-ink-900 font-medium">{a.name}</div>
+                  {a.role && (
+                    <div className="text-ink-500 text-xs mt-0.5">{a.role}</div>
+                  )}
                 </div>
-              )}
-            </div>
+              </div>
+            ))}
           </div>
         ) : (
-          <div className="text-[10px] text-ink-400 italic mb-3">
+          <div className="text-xs text-ink-400 italic mb-8">
             Echipa Uzinex
           </div>
         )}
 
         <Link
           href={`/noutati/${article.slug}`}
-          className="article-card block border hairline overflow-hidden group relative isolate"
+          className="article-card block border hairline overflow-hidden group relative isolate max-w-[320px]"
           style={{ "--accent": accent } as React.CSSProperties}
         >
           {article.image ? (
