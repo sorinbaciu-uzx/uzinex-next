@@ -140,6 +140,12 @@ const RESURSE_ITEMS: SubItem[] = [
   { label: "Materiale utile", href: "/materiale-utile" },
 ];
 
+const SERVICE_ITEMS: SubItem[] = [
+  { label: "Service inclus la livrare", href: "/service/inclus-la-livrare" },
+  { label: "Abonamente Service", href: "/service/abonamente" },
+  { label: "Manual de service cu AI", href: "/service/manual-ai" },
+];
+
 const NAV: NavItem[] = [
   { label: "Echipa", href: "/echipa" },
   { label: "Studii de caz", href: "/studii-de-caz" },
@@ -156,7 +162,12 @@ const NAV: NavItem[] = [
     items: RESURSE_ITEMS,
   },
   { label: "Consultanță fonduri UE", href: "/consultanta-fonduri-europene" },
-  { label: "Service", href: "/service" },
+  {
+    label: "Service",
+    href: "/service",
+    type: "dropdown",
+    items: SERVICE_ITEMS,
+  },
   { label: "Cariere", href: "/cariere" },
   { label: "Contact", href: "/#contact" },
 ];
