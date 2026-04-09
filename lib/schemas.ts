@@ -106,6 +106,51 @@ export const SCHEMAS: Record<string, BlockSchema> = {
             rows: 12,
             help: "Separă paragrafele cu o linie goală. Va apărea pe pagina /noutati/<slug>.",
           },
+          authors: {
+            type: "list",
+            label: "Autori",
+            itemLabelField: "name",
+            item: {
+              name: { type: "text", label: "Nume" },
+              role: { type: "text", label: "Rol" },
+              avatar: { type: "image", label: "Avatar (pătrat)" },
+            },
+          },
+        },
+      },
+      highlights: {
+        type: "list",
+        label: "Momente importante (carduri colorate orizontal)",
+        itemLabelField: "title",
+        item: {
+          title: { type: "text", label: "Titlu" },
+          date: { type: "text", label: "Dată" },
+          excerpt: { type: "textarea", label: "Descriere", rows: 4 },
+          color: {
+            type: "text",
+            label: "Culoare fundal (hex)",
+            help: "Ex: #1e6bb8 (albastru brand), #f5851f (portocaliu), #082545 (albastru închis)",
+          },
+          href: { type: "text", label: "Link (opțional)" },
+        },
+      },
+      changelog: {
+        type: "group",
+        label: "Actualizări operaționale (changelog)",
+        fields: {
+          title: { type: "text", label: "Titlu secțiune" },
+          date: { type: "text", label: "Perioada" },
+          href: { type: "text", label: "Link «Toate actualizările»" },
+          entries: {
+            type: "list",
+            label: "Intrări",
+            itemLabelField: "category",
+            item: {
+              category: { type: "text", label: "Categorie (ex: Service, Catalog)" },
+              text: { type: "textarea", label: "Text actualizare", rows: 3 },
+              href: { type: "text", label: "Link detalii (opțional)" },
+            },
+          },
         },
       },
     },

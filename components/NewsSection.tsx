@@ -2,6 +2,12 @@
 
 import { motion } from "motion/react";
 
+export type Author = {
+  name: string;
+  role?: string;
+  avatar?: string;
+};
+
 export type Article = {
   slug: string;
   category: "Comunicat" | "Articol" | "Anunț" | "Studiu";
@@ -11,6 +17,28 @@ export type Article = {
   readTime: string;
   image?: string;
   body?: string;
+  authors?: Author[];
+};
+
+export type Highlight = {
+  title: string;
+  date: string;
+  excerpt: string;
+  href?: string;
+  color?: string;
+};
+
+export type ChangelogEntry = {
+  category: string;
+  text: string;
+  href?: string;
+};
+
+export type ChangelogData = {
+  title: string;
+  date: string;
+  href: string;
+  entries: ChangelogEntry[];
 };
 
 export type NewsData = {
@@ -20,6 +48,8 @@ export type NewsData = {
   description: string;
   heroVideoId?: string;
   articles: Article[];
+  highlights?: Highlight[];
+  changelog?: ChangelogData;
 };
 
 const ARTICLES: Article[] = [
@@ -132,6 +162,97 @@ const CATEGORY_COLORS: Record<Article["category"], string> = {
   Studiu: "#155290",
 };
 
+const SORIN: Author = { name: "Sorin Baciu", role: "Founder, Uzinex" };
+const ANDREI: Author = { name: "Andrei Popescu", role: "Director Tehnic" };
+const MARIA: Author = { name: "Maria Ionescu", role: "Head of Engineering" };
+const VLAD: Author = { name: "Vlad Marinescu", role: "Director Service" };
+const ANA: Author = { name: "Ana Dumitrescu", role: "Consultant Fonduri UE" };
+
+// attach authors to the default articles
+ARTICLES[0].authors = [SORIN];
+ARTICLES[1].authors = [ANA];
+ARTICLES[2].authors = [SORIN, ANDREI];
+ARTICLES[3].authors = [MARIA];
+if (ARTICLES[4]) ARTICLES[4].authors = [SORIN];
+if (ARTICLES[5]) ARTICLES[5].authors = [VLAD, ANDREI];
+if (ARTICLES[6]) ARTICLES[6].authors = [MARIA];
+if (ARTICLES[7]) ARTICLES[7].authors = [VLAD];
+if (ARTICLES[8]) ARTICLES[8].authors = [ANA];
+if (ARTICLES[9]) ARTICLES[9].authors = [ANDREI, MARIA];
+
+const HIGHLIGHTS: Highlight[] = [
+  {
+    title: "Intervenție service garantată sub 24h",
+    date: "Martie 2026",
+    excerpt:
+      "Toate echipamentele în garanție beneficiază de intervenție fizică la sediul clientului în maxim 24 de ore de la semnalare.",
+    color: "#1e6bb8",
+  },
+  {
+    title: "Catalog extins cu 50+ modele noi CNC",
+    date: "Februarie 2026",
+    excerpt:
+      "Am adăugat centre de prelucrare verticale, strunguri și mașini de tăiere laser fibră de la producători certificați EU.",
+    color: "#0a4d96",
+  },
+  {
+    title: "Sediu nou la Cluj-Napoca",
+    date: "Ianuarie 2026",
+    excerpt:
+      "Al treilea centru de service acoperă acum Transilvania, Banat și Crișana cu intervenție sub 4h.",
+    color: "#082545",
+  },
+  {
+    title: "Consultanță gratuită fonduri PNRR",
+    date: "Decembrie 2025",
+    excerpt:
+      "Sprijin pre-contractual pentru companii care pregătesc dosare de finanțare europeană — de la specificații la audit.",
+    color: "#f5851f",
+  },
+  {
+    title: "Partener oficial Siemens Digital Industries",
+    date: "Noiembrie 2025",
+    excerpt:
+      "Acces prioritar la portofoliul Siemens pentru linii de automatizare și platforme TIA Portal / MindSphere.",
+    color: "#6b3410",
+  },
+  {
+    title: "Kit mentenanță predictivă pentru CNC",
+    date: "Octombrie 2025",
+    excerpt:
+      "Senzori IIoT + dashboard cloud + alerte automate. Reducere downtime cu până la 40% în implementările pilot.",
+    color: "#155290",
+  },
+];
+
+const CHANGELOG: ChangelogData = {
+  title: "Actualizări operaționale",
+  date: "Aprilie 2026",
+  href: "/noutati",
+  entries: [
+    {
+      category: "Service",
+      text: "Timpul mediu de intervenție la sediul clientului scade de la 4h la 3h pentru toată zona Transilvania, datorită deschiderii centrului de la Cluj.",
+    },
+    {
+      category: "Catalog",
+      text: "Extindere cu 12 modele de electrostivuitoare Li-Ion de la producători europeni cu certificare CE și eligibilitate pentru fonduri UE.",
+    },
+    {
+      category: "Consultanță",
+      text: "Toate cererile de ofertă pentru echipamente peste 100 000 EUR primesc acum consultanță gratuită pentru eligibilitate PNRR / POIM.",
+    },
+    {
+      category: "Piese de schimb",
+      text: "Stoc permanent pentru cele mai comune 500 de piese OEM la depozitul central Otopeni — livrare next-day în toată țara.",
+    },
+    {
+      category: "Training",
+      text: "Laborator nou de training operator CNC deschis în Tehnopolis Iași, cu sesiuni săptămânale gratuite pentru clienți.",
+    },
+  ],
+};
+
 export const NEWS_DEFAULT: NewsData = {
   eyebrow: "05 / Noutăți & comunicări",
   titleLine1: "Ultimele articole,",
@@ -140,6 +261,8 @@ export const NEWS_DEFAULT: NewsData = {
     "Perspectivă editorială asupra integrării industriale, finanțărilor europene și tendințelor din automatizare și apărare.",
   heroVideoId: "_Sl8diqCAFw",
   articles: ARTICLES,
+  highlights: HIGHLIGHTS,
+  changelog: CHANGELOG,
 };
 
 export function NewsSection({ data }: { data?: NewsData | null }) {
