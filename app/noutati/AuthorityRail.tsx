@@ -206,6 +206,14 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
                   <span>{muted ? "Sunet" : "Mut"}</span>
                 </button>
               </div>
+              <div className="px-4 py-3 border-t hairline">
+                <div className="text-[9px] mono text-ink-400 uppercase tracking-wider mb-0.5">
+                  Reportaj
+                </div>
+                <div className="text-[12px] text-ink-900 font-medium leading-tight">
+                  Uzinex la Agro TV Moldova — Despre axa de dezvoltare Iași-Chișinău
+                </div>
+              </div>
             </div>
           )}
 
