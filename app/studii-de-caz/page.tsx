@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { CaseStudiesGallery, type CaseStudiesAllData } from "@/components/CaseStudiesGallery";
 import { getContent } from "@/lib/content";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Studii de caz — Uzinex",

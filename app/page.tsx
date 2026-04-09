@@ -13,7 +13,10 @@ import { ContactCTA, type ContactCTAData } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
 import { getContents } from "@/lib/content";
 
-export const dynamic = "force-dynamic";
+// ISR: re-render at most once per minute, plus instant invalidation
+// triggered by `revalidatePath` from /api/admin/content/[key].
+// This keeps Lighthouse / first-byte fast (static HTML cached at edge).
+export const revalidate = 60;
 
 export default async function Home() {
   const c = await getContents([
