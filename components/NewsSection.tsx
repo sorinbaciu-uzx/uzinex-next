@@ -63,6 +63,66 @@ const ARTICLES: Article[] = [
     readTime: "12 min",
     body: "Raportul anual Uzinex pe automatizare industrială oferă o radiografie a adopției roboticii și sistemelor automate în companiile din România. Bazat pe date colectate din peste 200 de fabrici partenere, raportul identifică principalele tendințe, blocaje și oportunități pentru perioada 2026–2028.\n\nPrincipalele concluzii: densitatea roboților industriali per 10 000 de angajați rămâne sub media UE, dar ritmul de creștere este accelerat de fondurile PNRR. Sectoarele cu cea mai rapidă adopție sunt automotive, packaging și prelucrări metalice. Blocajele majore sunt legate de lipsa personalului calificat, complexitatea integrării și finanțarea capitalului de lucru.\n\nRaportul complet este disponibil la cerere pentru clienții Uzinex.",
   },
+  {
+    slug: "parteneriat-siemens-automatizare",
+    category: "Anunț",
+    date: "2025",
+    title: "Parteneriat strategic cu Siemens pentru linii de automatizare",
+    excerpt:
+      "Uzinex devine partener oficial Siemens Digital Industries pentru integrarea liniilor de producție automatizate în România.",
+    readTime: "4 min",
+    body: "Parteneriatul oficial cu Siemens Digital Industries deschide accesul clienților Uzinex la întregul portofoliu Siemens de controlere logice programabile, drive-uri, motoare industriale și platforme de digitalizare TIA Portal și MindSphere.\n\nAcordul include training tehnic certificat pentru echipa de ingineri Uzinex, acces prioritar la componente critice și suport comun pentru proiecte mari de integrare. Primele livrări comune sunt așteptate în primul trimestru al anului viitor.",
+  },
+  {
+    slug: "livrare-48h-vama-echipament",
+    category: "Articol",
+    date: "2025",
+    title: "Cum am livrat în 48h un echipament blocat la vamă",
+    excerpt:
+      "Un client cu finanțare PNRR avea termenul de punere în funcțiune la limită. Iată cum am rezolvat criza logistică.",
+    readTime: "6 min",
+    body: "Povestea unei intervenții care a salvat un proiect de 1.2M EUR finanțat prin PNRR. Clientul, o fabrică de procesare a metalelor, avea termen contractual la 72 de ore pentru punerea în funcțiune a unei linii de tăiere laser. Echipamentul comandat de la un furnizor european s-a blocat în vamă din cauza unor documente incomplete.\n\nEchipa Uzinex a preluat dosarul, a refăcut declarațiile vamale, a coordonat transportul cu un partener local și a livrat echipamentul la destinație în 48 de ore. Instalarea și punerea în funcțiune au fost încheiate cu 6 ore înainte de termen.\n\nProiectul a trecut auditul tehnic al Autorității de Management fără observații, iar clientul și-a păstrat integral finanțarea.",
+  },
+  {
+    slug: "kit-mentenanta-predictiva-cnc",
+    category: "Comunicat",
+    date: "2025",
+    title: "Lansare: kit mentenanță predictivă pentru CNC-uri",
+    excerpt:
+      "Senzori IIoT, dashboard cloud și alerte automate pentru reducerea downtime-ului cu până la 40%.",
+    readTime: "3 min",
+    body: "Uzinex lansează un nou kit de mentenanță predictivă pentru centrele de prelucrare CNC — o soluție plug-and-play care combină senzori IIoT pentru vibrații, temperatură și consum energetic cu un dashboard cloud și alerte automate către echipa de mentenanță.\n\nKitul este compatibil cu majoritatea centrelor CNC din portofoliul Uzinex și poate fi retrofit-at pe echipamente existente. Primele implementări la clienții pilot au arătat o reducere a downtime-ului neplanificat de până la 40% și o extindere a intervalelor de service planificat cu 25%.\n\nKitul este disponibil la comandă prin canalele comerciale Uzinex.",
+  },
+  {
+    slug: "expansiune-centru-service-cluj",
+    category: "Anunț",
+    date: "2025",
+    title: "Expansiune: centru nou de service tehnic la Cluj-Napoca",
+    excerpt:
+      "Cel de-al treilea centru Uzinex acoperă acum întreaga zonă de vest și centru a României, cu intervenție sub 4h.",
+    readTime: "2 min",
+    body: "Uzinex își extinde acoperirea națională prin deschiderea celui de-al treilea centru de service tehnic, la Cluj-Napoca. Noul centru deservește clienții din Transilvania, Banat și Crișana, reducând timpul mediu de intervenție la fața locului la sub 4 ore.\n\nCentrul este echipat cu un atelier complet pentru reparații mecanice și electronice, un depozit de piese de schimb pentru cele mai comune echipamente din portofoliu și două unități mobile de intervenție.",
+  },
+  {
+    slug: "ghid-achizitii-echipamente-aparare",
+    category: "Articol",
+    date: "2025",
+    title: "Ghid: cum cumperi echipamente industriale prin SEAP pentru sectorul de apărare",
+    excerpt:
+      "De la specificații tehnice la criteriile de atribuire, ghid complet pentru autoritățile contractante din sectorul de apărare.",
+    readTime: "9 min",
+    body: "Achizițiile publice din sectorul de apărare au particularități tehnice și legislative care complică procesul pentru multe autorități contractante. Acest ghid sintetizează experiența echipei Uzinex după peste 40 de proceduri SEAP câștigate pentru MApN, IGSU și alte instituții din sector.\n\nAspecte esențiale: specificațiile tehnice trebuie să fie neutre față de producători, criteriile de atribuire să permită raportul calitate-preț, iar garanțiile post-livrare să includă obligatoriu accesul la piese de schimb pentru minim 10 ani.\n\nGhidul complet este disponibil la cerere pentru reprezentanți ai autorităților contractante.",
+  },
+  {
+    slug: "studiu-caz-paletizare-robotizata",
+    category: "Studiu",
+    date: "2025",
+    title: "Studiu de caz: ROI 14 luni pe o linie robotizată de paletizare",
+    excerpt:
+      "Analiză financiară completă a unui proiect de automatizare: investiție, economii operaționale și break-even.",
+    readTime: "8 min",
+    body: "Acest studiu de caz prezintă în detaliu rezultatele financiare ale unei linii robotizate de paletizare livrate în 2024 pentru un client din industria alimentară. Investiția totală, incluzând echipamentul, integrarea și training-ul, a fost de 320 000 EUR.\n\nEconomiile operaționale realizate în primul an au inclus: reducerea costurilor de personal cu 180 000 EUR, reducerea rebuturilor cu 45 000 EUR, și creșterea capacității cu 22% (fără investiții suplimentare). Break-even-ul a fost atins în luna 14, iar în anul doi linia a generat economii nete de peste 270 000 EUR.",
+  },
 ];
 
 const CATEGORY_COLORS: Record<Article["category"], string> = {
