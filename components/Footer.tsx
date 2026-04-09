@@ -1,13 +1,17 @@
 import { Logo } from "./Logo";
 
 const MENU = [
-  { label: "Acasă", href: "#" },
+  { label: "Acasă", href: "/" },
+  { label: "Echipa", href: "/echipa" },
   { label: "Studii de caz", href: "/studii-de-caz" },
-  { label: "Catalog tehnic", href: "#catalog" },
-  { label: "Soluții recomandate", href: "#solutii" },
-  { label: "Informații utile", href: "#qa" },
+  { label: "Catalog tehnic", href: "/magazin" },
+  { label: "Noutăți & comunicări", href: "/noutati" },
+  { label: "Consultanță fonduri UE", href: "/consultanta-fonduri-europene" },
+  { label: "Service inclus la livrare", href: "/service/inclus-la-livrare" },
+  { label: "Abonamente Service", href: "/service/abonamente" },
+  { label: "Manual de service cu AI", href: "/service/manual-ai" },
   { label: "Cariere", href: "/cariere" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const CATEGORIES = [
