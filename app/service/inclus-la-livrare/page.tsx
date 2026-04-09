@@ -157,6 +157,44 @@ export default function ServiceInclusPage() {
 
         <ServiceGrid />
 
+        {/* AI MANUAL MENTION */}
+        <section className="border-b hairline py-10 lg:py-14 bg-ink-50">
+          <div className="container-x">
+            <div className="max-w-6xl mx-auto">
+              <div
+                className="flex items-start gap-4 lg:gap-6 p-6 lg:p-8 border border-uzx-blue/25 bg-white flex-wrap"
+                style={{ background: "rgba(30,107,184,0.03)" }}
+              >
+                <div className="text-3xl text-uzx-blue shrink-0">⚡</div>
+                <div className="flex-1 min-w-[260px]">
+                  <div className="text-[10px] uppercase tracking-[0.22em] mono font-bold text-uzx-orange mb-2">
+                    Inclus gratuit
+                  </div>
+                  <div
+                    className="serif text-xl lg:text-2xl text-ink-900 leading-tight mb-2"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    Manual de service cu inteligență artificială
+                  </div>
+                  <p className="text-sm text-ink-600 leading-relaxed max-w-2xl">
+                    Fiecare echipament livrat de Uzinex vine însoțit de un
+                    manual digital interactiv cu AI — limbaj natural, comandă
+                    vocală, recunoaștere prin imagini, proceduri pas-cu-pas.
+                    Disponibil offline, 24/7, fără cost suplimentar sau
+                    abonamente ascunse.
+                  </p>
+                </div>
+                <Link
+                  href="/service/manual-ai"
+                  className="bg-uzx-blue hover:bg-uzx-blue2 text-white text-sm font-medium px-5 py-3 transition inline-flex items-center gap-2 shrink-0 self-center"
+                >
+                  Vezi detalii <span>›</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* COLLABORATIVE DIAGNOSIS */}
         <section className="border-b hairline py-16 lg:py-24 bg-ink-50">
           <div className="container-x">
