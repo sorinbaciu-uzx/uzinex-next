@@ -222,15 +222,12 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
 
           {/* CTA block */}
           <div className="px-4 py-4 bg-[#082545] text-white">
-            <div className="text-[10px] uppercase tracking-[0.2em] mono font-bold text-uzx-orange mb-3">
-              Discută cu un inginer
-            </div>
             <div className="space-y-1.5">
               <a
                 href="/#contact"
-                className="block w-full bg-uzx-orange hover:bg-uzx-orange2 text-white text-[11px] font-medium px-3 py-2.5 text-center transition"
+                className="block w-full bg-uzx-orange hover:bg-uzx-orange2 text-white text-[12px] font-medium px-3 py-3 text-center transition"
               >
-                Solicită ofertă →
+                Discută cu un inginer →
               </a>
               <a
                 href="tel:+40769081081"
