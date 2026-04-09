@@ -49,21 +49,22 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
   const [muted, setMuted] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // Show only after the hero scrolls away (sentinel above the fold of content)
+  // Show only after the hero scrolls away (sentinel above the top of the viewport)
   useEffect(() => {
     const sentinel = document.getElementById("rail-sentinel");
     if (!sentinel) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        const e = entries[0];
-        // visible when sentinel has scrolled above the top of the viewport
-        if (e.boundingClientRect.top < 0) setMounted(true);
-        else if (e.isIntersecting) setMounted(false);
-      },
-      { threshold: 0, rootMargin: "0px 0px -100% 0px" }
-    );
-    io.observe(sentinel);
-    return () => io.disconnect();
+    const check = () => {
+      const top = sentinel.getBoundingClientRect().top;
+      // sentinel above viewport top (scrolled past it) → show rail
+      setMounted(top < 80);
+    };
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+    };
   }, []);
 
   // control mute via YouTube postMessage API (no reload)
@@ -84,7 +85,7 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
 
   return (
     <aside
-      className={`hidden lg:block fixed right-5 top-28 w-[300px] z-30 transition-all duration-700 ease-out ${
+      className={`hidden lg:block fixed right-5 top-[120px] w-[300px] z-30 transition-all duration-500 ease-out ${
         mounted
           ? "opacity-100 translate-x-0"
           : "opacity-0 translate-x-6 pointer-events-none"
