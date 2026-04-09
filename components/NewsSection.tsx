@@ -260,7 +260,7 @@ export const NEWS_DEFAULT: NewsData = {
   titleHighlight: "comunicate și studii.",
   description:
     "Perspectivă editorială asupra integrării industriale, finanțărilor europene și tendințelor din automatizare și apărare.",
-  heroVideoId: "a-e4NhkxGGY",
+  heroVideoId: "pcy_7qHJiW0",
   railVideoId: "cnXAYqGYX5A",
   articles: ARTICLES,
   highlights: HIGHLIGHTS,
