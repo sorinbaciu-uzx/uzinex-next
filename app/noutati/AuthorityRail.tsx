@@ -185,7 +185,7 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
               <div className="aspect-video relative overflow-hidden bg-black">
                 <iframe
                   ref={iframeRef}
-                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&enablejsapi=1&disablekb=1&fs=0`}
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&enablejsapi=1&disablekb=1&fs=0&start=14`}
                   title="Reportaj Uzinex"
                   allow="autoplay; encrypted-media"
                   className="absolute inset-0 w-full h-full pointer-events-none"
