@@ -80,6 +80,11 @@ export const SCHEMAS: Record<string, BlockSchema> = {
         label: "Articole",
         itemLabelField: "title",
         item: {
+          slug: {
+            type: "text",
+            label: "Slug URL (ex: comunicat-aparare-2026)",
+            help: "Apare în URL: /noutati/<slug>. Folosește litere mici, fără diacritice și cratime în loc de spații.",
+          },
           category: {
             type: "select",
             label: "Categorie",
@@ -87,8 +92,15 @@ export const SCHEMAS: Record<string, BlockSchema> = {
           },
           date: { type: "text", label: "Dată (ex: 15 Martie 2025)" },
           title: { type: "text", label: "Titlu" },
-          excerpt: { type: "textarea", label: "Rezumat", rows: 3 },
+          excerpt: { type: "textarea", label: "Rezumat (apare pe carduri)", rows: 3 },
           readTime: { type: "text", label: "Timp de citire (ex: 5 min)" },
+          image: { type: "image", label: "Imagine articol (opțional)" },
+          body: {
+            type: "textarea",
+            label: "Conținut complet",
+            rows: 12,
+            help: "Separă paragrafele cu o linie goală. Va apărea pe pagina /noutati/<slug>.",
+          },
         },
       },
     },
