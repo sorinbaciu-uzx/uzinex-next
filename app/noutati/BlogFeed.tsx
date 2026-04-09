@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import type { Article } from "@/components/NewsSection";
+
+const PAGE_SIZE = 4;
 
 const CATEGORY_COLORS: Record<Article["category"], string> = {
   Comunicat: "#f5851f",
@@ -16,11 +18,24 @@ const TABS: Tab[] = ["Toate", "Comunicat", "Articol", "Anunț", "Studiu"];
 
 export function BlogFeed({ articles }: { articles: Article[] }) {
   const [active, setActive] = useState<Tab>("Toate");
+  const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
     if (active === "Toate") return articles;
     return articles.filter((a) => a.category === active);
   }, [articles, active]);
+
+  // reset to page 1 whenever the filter changes
+  useEffect(() => {
+    setPage(1);
+  }, [active]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const clampedPage = Math.min(page, totalPages);
+  const pageSlice = filtered.slice(
+    (clampedPage - 1) * PAGE_SIZE,
+    clampedPage * PAGE_SIZE
+  );
 
   return (
     <div>
@@ -45,17 +60,65 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
         })}
       </div>
 
-      {/* ── LIST — 2 per row on lg+ ── */}
+      {/* ── LIST — max 4 per page on lg+, paginated ── */}
       {filtered.length === 0 ? (
         <div className="py-16 text-center text-ink-400 italic">
           Niciun articol în această categorie.
         </div>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-12 lg:gap-y-16 pt-8">
-          {filtered.map((a) => (
-            <Row key={a.slug} article={a} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-12 lg:gap-y-16 pt-8">
+            {pageSlice.map((a) => (
+              <Row key={a.slug} article={a} />
+            ))}
+          </div>
+
+          {totalPages > 1 && (
+            <nav
+              className="mt-14 flex items-center justify-center gap-2"
+              aria-label="Paginare articole"
+            >
+              <button
+                type="button"
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                disabled={clampedPage === 1}
+                className="w-9 h-9 border hairline flex items-center justify-center text-sm text-ink-700 hover:bg-ink-50 disabled:opacity-30 disabled:cursor-not-allowed transition"
+                aria-label="Pagina anterioară"
+              >
+                ‹
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => {
+                const isActive = n === clampedPage;
+                return (
+                  <button
+                    key={n}
+                    type="button"
+                    onClick={() => setPage(n)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`w-9 h-9 border hairline flex items-center justify-center text-sm font-medium transition ${
+                      isActive
+                        ? "bg-uzx-blue border-uzx-blue text-white"
+                        : "text-ink-700 hover:bg-ink-50"
+                    }`}
+                  >
+                    {n}
+                  </button>
+                );
+              })}
+              <button
+                type="button"
+                onClick={() =>
+                  setPage((p) => Math.min(totalPages, p + 1))
+                }
+                disabled={clampedPage === totalPages}
+                className="w-9 h-9 border hairline flex items-center justify-center text-sm text-ink-700 hover:bg-ink-50 disabled:opacity-30 disabled:cursor-not-allowed transition"
+                aria-label="Pagina următoare"
+              >
+                ›
+              </button>
+            </nav>
+          )}
+        </>
       )}
     </div>
   );
