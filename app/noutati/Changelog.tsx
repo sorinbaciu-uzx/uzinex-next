@@ -7,7 +7,7 @@ export function Changelog({ data }: { data: ChangelogData }) {
   return (
     <section className="border-t hairline">
       <div className="container-x py-14 lg:py-20">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[820px] lg:ml-auto lg:mr-0">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* LEFT */}
             <div className="lg:col-span-4">

@@ -22,14 +22,15 @@ export default async function NoutatiPage() {
   const data = (await getContent<NewsData>("news")) ?? NEWS_DEFAULT;
   const articles = data.articles ?? [];
   const [featured, ...rest] = articles;
-  const heroVideoId = data.heroVideoId ?? "_Sl8diqCAFw";
+  const heroVideoId = data.heroVideoId ?? "a-e4NhkxGGY";
+  const railVideoId = data.railVideoId ?? "cnXAYqGYX5A";
 
   return (
     <>
       <Header solid />
       {/* sticky rail overlays content on lg+ */}
-      <AuthorityRail videoId={heroVideoId} />
-      <main className="bg-white border-b hairline lg:pr-[340px]">
+      <AuthorityRail videoId={railVideoId} />
+      <main className="bg-white border-b hairline">
         {/* ─────────────── PAGE HEADER ─────────────── */}
         <section className="bg-ink-50 border-b hairline">
           <div className="container-x py-8 lg:py-12">
@@ -91,46 +92,52 @@ export default async function NoutatiPage() {
               </section>
             )}
 
-            {/* ─────────────── BLOG LIST ─────────────── */}
-            {rest.length > 0 && (
+            {/* sentinel: when this enters viewport, rail becomes visible */}
+            <div id="rail-sentinel" aria-hidden />
+
+            {/* all sections below the hero share the right padding for the rail */}
+            <div className="lg:pr-[340px]">
+              {/* ─────────────── BLOG LIST ─────────────── */}
+              {rest.length > 0 && (
+                <section className="border-t hairline">
+                  <div className="container-x py-14 lg:py-20">
+                    <div className="max-w-[820px] lg:ml-auto lg:mr-0">
+                      <BlogFeed articles={rest} />
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* ─────────────── RECENT HIGHLIGHTS ─────────────── */}
+              {data.highlights && data.highlights.length > 0 && (
+                <Highlights items={data.highlights} />
+              )}
+
+              {/* ─────────────── CHANGELOG ─────────────── */}
+              {data.changelog && <Changelog data={data.changelog} />}
+
+              {/* ─────────────── VIEW ALL CTA ─────────────── */}
               <section className="border-t hairline">
                 <div className="container-x py-14 lg:py-20">
-                  <div className="max-w-6xl mx-auto">
-                    <BlogFeed articles={rest} />
+                  <div className="max-w-[820px] lg:ml-auto lg:mr-0 flex items-center justify-between gap-6 flex-wrap">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-[0.25em] text-ink-400 mono mb-2">
+                        — Arhivă completă
+                      </div>
+                      <div className="serif text-2xl md:text-3xl text-ink-900 leading-tight">
+                        Toate noutățile Uzinex
+                      </div>
+                    </div>
+                    <Link
+                      href="/noutati"
+                      className="bg-[#082545] hover:bg-uzx-blue text-white text-sm font-medium px-6 py-3 transition inline-flex items-center gap-2"
+                    >
+                      Vezi toate articolele <span>›</span>
+                    </Link>
                   </div>
                 </div>
               </section>
-            )}
-
-            {/* ─────────────── RECENT HIGHLIGHTS ─────────────── */}
-            {data.highlights && data.highlights.length > 0 && (
-              <Highlights items={data.highlights} />
-            )}
-
-            {/* ─────────────── CHANGELOG ─────────────── */}
-            {data.changelog && <Changelog data={data.changelog} />}
-
-            {/* ─────────────── VIEW ALL CTA ─────────────── */}
-            <section className="border-t hairline">
-              <div className="container-x py-14 lg:py-20">
-                <div className="max-w-6xl mx-auto flex items-center justify-between gap-6 flex-wrap">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.25em] text-ink-400 mono mb-2">
-                      — Arhivă completă
-                    </div>
-                    <div className="serif text-2xl md:text-3xl text-ink-900 leading-tight">
-                      Toate noutățile Uzinex
-                    </div>
-                  </div>
-                  <Link
-                    href="/noutati"
-                    className="bg-[#082545] hover:bg-uzx-blue text-white text-sm font-medium px-6 py-3 transition inline-flex items-center gap-2"
-                  >
-                    Vezi toate articolele <span>›</span>
-                  </Link>
-                </div>
-              </div>
-            </section>
+            </div>
           </>
         )}
       </main>

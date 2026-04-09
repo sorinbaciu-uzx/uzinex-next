@@ -47,6 +47,7 @@ export type NewsData = {
   titleHighlight: string;
   description: string;
   heroVideoId?: string;
+  railVideoId?: string;
   articles: Article[];
   highlights?: Highlight[];
   changelog?: ChangelogData;
@@ -260,6 +261,7 @@ export const NEWS_DEFAULT: NewsData = {
   description:
     "Perspectivă editorială asupra integrării industriale, finanțărilor europene și tendințelor din automatizare și apărare.",
   heroVideoId: "a-e4NhkxGGY",
+  railVideoId: "cnXAYqGYX5A",
   articles: ARTICLES,
   highlights: HIGHLIGHTS,
   changelog: CHANGELOG,

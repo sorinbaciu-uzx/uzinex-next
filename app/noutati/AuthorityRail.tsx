@@ -47,12 +47,23 @@ const CERTS = [
 export function AuthorityRail({ videoId }: { videoId: string }) {
   const [mounted, setMounted] = useState(false);
   const [muted, setMuted] = useState(true);
-  const [collapsed, setCollapsed] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
+  // Show only after the hero scrolls away (sentinel above the fold of content)
   useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 400);
-    return () => clearTimeout(t);
+    const sentinel = document.getElementById("rail-sentinel");
+    if (!sentinel) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const e = entries[0];
+        // visible when sentinel has scrolled above the top of the viewport
+        if (e.boundingClientRect.top < 0) setMounted(true);
+        else if (e.isIntersecting) setMounted(false);
+      },
+      { threshold: 0, rootMargin: "0px 0px -100% 0px" }
+    );
+    io.observe(sentinel);
+    return () => io.disconnect();
   }, []);
 
   // control mute via YouTube postMessage API (no reload)
@@ -80,36 +91,14 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
       }`}
     >
       <div className="bg-white border hairline shadow-[0_30px_60px_-20px_rgba(8,37,69,0.4)]">
-        {/* header with collapse button */}
-        <div className="px-5 pt-5 pb-4 border-b hairline flex items-start justify-between gap-3">
-          <div>
-            <div className="text-[10px] uppercase tracking-[0.22em] mono font-bold text-uzx-orange mb-1">
-              De ce Uzinex
-            </div>
-            <div
-              className="serif text-lg text-ink-900 leading-[1.1]"
-              style={{ letterSpacing: "-0.02em" }}
-            >
-              Autoritate tehnică
-              <br />
-              verificabilă.
-            </div>
+        {/* header */}
+        <div className="px-5 pt-5 pb-4 border-b hairline">
+          <div className="text-[11px] uppercase tracking-[0.22em] mono font-bold text-uzx-orange">
+            De ce Uzinex
           </div>
-          <button
-            type="button"
-            onClick={() => setCollapsed((c) => !c)}
-            className="text-ink-400 hover:text-ink-900 text-lg leading-none -mt-1"
-            aria-label={collapsed ? "Extinde" : "Restrânge"}
-          >
-            {collapsed ? "+" : "–"}
-          </button>
         </div>
 
-        <div
-          className={`overflow-hidden transition-[max-height] duration-500 ease-out ${
-            collapsed ? "max-h-0" : "max-h-[1200px]"
-          }`}
-        >
+        <div>
           {/* authority chips */}
           <div className="p-5 space-y-3 border-b hairline">
             {AUTHORITY_ITEMS.map((item, i) => (
@@ -195,24 +184,46 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
                   <span>{muted ? "Sunet" : "Mut"}</span>
                 </button>
               </div>
-              <div className="p-3.5 flex items-center justify-between gap-2 border-t hairline">
-                <div>
-                  <div className="text-[10px] mono text-ink-400 uppercase tracking-wider">
-                    Reportaj
-                  </div>
-                  <div className="text-xs text-ink-900 font-medium">
-                    Uzinex în media
-                  </div>
+              <div className="p-3.5 border-t hairline">
+                <div className="text-[10px] mono text-ink-400 uppercase tracking-wider">
+                  Reportaj
                 </div>
-                <a
-                  href="/#contact"
-                  className="bg-uzx-blue hover:bg-uzx-blue2 text-white text-[11px] font-medium px-3 py-2 transition inline-flex items-center gap-1"
-                >
-                  Ofertă <span>›</span>
-                </a>
+                <div className="text-xs text-ink-900 font-medium">
+                  Uzinex în media
+                </div>
               </div>
             </div>
           )}
+
+          {/* CTA block */}
+          <div className="p-5 bg-[#082545] text-white">
+            <div className="text-[10px] uppercase tracking-[0.22em] mono font-bold text-uzx-orange mb-2">
+              Discută cu un inginer
+            </div>
+            <div
+              className="serif text-base text-white leading-[1.15] mb-4"
+              style={{ letterSpacing: "-0.01em" }}
+            >
+              Primești ofertă personalizată în maxim 24 de ore lucrătoare.
+            </div>
+            <div className="space-y-2">
+              <a
+                href="/#contact"
+                className="block w-full bg-uzx-orange hover:bg-uzx-orange2 text-white text-xs font-medium px-4 py-3 text-center transition"
+              >
+                Solicită ofertă →
+              </a>
+              <a
+                href="tel:+40769081081"
+                className="flex items-center justify-center gap-2 w-full border border-white/20 hover:border-white text-white text-xs font-medium px-4 py-2.5 transition"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+                  <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.07 15.07 0 01-6.59-6.58l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1 17 17 0 0017 17 1 1 0 001-1v-3.5a1 1 0 00-1-1z" />
+                </svg>
+                +40 769 081 081
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </aside>

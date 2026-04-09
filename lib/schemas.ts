@@ -78,7 +78,12 @@ export const SCHEMAS: Record<string, BlockSchema> = {
       heroVideoId: {
         type: "text",
         label: "YouTube Video ID pentru hero /noutati",
-        help: "Doar ID-ul (ex: _Sl8diqCAFw), nu URL-ul complet. Lasă gol pentru a afișa imaginea articolului featured.",
+        help: "Doar ID-ul (ex: a-e4NhkxGGY), nu URL-ul complet. Lasă gol pentru a afișa imaginea articolului featured.",
+      },
+      railVideoId: {
+        type: "text",
+        label: "YouTube Video ID pentru widget-ul sticky (reportaj)",
+        help: "Doar ID-ul (ex: cnXAYqGYX5A). Se afișează în widget-ul fixat pe dreapta, după hero.",
       },
       articles: {
         type: "list",
