@@ -41,7 +41,7 @@ export function Highlights({ items }: { items: Highlight[] }) {
   return (
     <section className="bg-ink-50 border-y hairline">
       <div className="container-x py-12 lg:py-16">
-        <div className="max-w-[820px] lg:ml-auto lg:mr-0">
+        <div className="max-w-6xl mx-auto lg:pr-[340px]">
           <div className="flex items-end justify-between gap-6 mb-8 flex-wrap">
             <h2
               className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]"

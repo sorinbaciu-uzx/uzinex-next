@@ -93,51 +93,48 @@ export default async function NoutatiPage() {
             )}
 
             {/* sentinel: when this enters viewport, rail becomes visible */}
-            <div id="rail-sentinel" aria-hidden />
+            <div id="rail-sentinel" aria-hidden className="h-px" />
 
-            {/* all sections below the hero share the right padding for the rail */}
-            <div className="lg:pr-[340px]">
-              {/* ─────────────── BLOG LIST ─────────────── */}
-              {rest.length > 0 && (
-                <section className="border-t hairline">
-                  <div className="container-x py-14 lg:py-20">
-                    <div className="max-w-[820px] lg:ml-auto lg:mr-0">
-                      <BlogFeed articles={rest} />
-                    </div>
-                  </div>
-                </section>
-              )}
-
-              {/* ─────────────── RECENT HIGHLIGHTS ─────────────── */}
-              {data.highlights && data.highlights.length > 0 && (
-                <Highlights items={data.highlights} />
-              )}
-
-              {/* ─────────────── CHANGELOG ─────────────── */}
-              {data.changelog && <Changelog data={data.changelog} />}
-
-              {/* ─────────────── VIEW ALL CTA ─────────────── */}
+            {/* ─────────────── BLOG LIST ─────────────── */}
+            {rest.length > 0 && (
               <section className="border-t hairline">
                 <div className="container-x py-14 lg:py-20">
-                  <div className="max-w-[820px] lg:ml-auto lg:mr-0 flex items-center justify-between gap-6 flex-wrap">
-                    <div>
-                      <div className="text-[10px] uppercase tracking-[0.25em] text-ink-400 mono mb-2">
-                        — Arhivă completă
-                      </div>
-                      <div className="serif text-2xl md:text-3xl text-ink-900 leading-tight">
-                        Toate noutățile Uzinex
-                      </div>
-                    </div>
-                    <Link
-                      href="/noutati"
-                      className="bg-[#082545] hover:bg-uzx-blue text-white text-sm font-medium px-6 py-3 transition inline-flex items-center gap-2"
-                    >
-                      Vezi toate articolele <span>›</span>
-                    </Link>
+                  <div className="max-w-6xl mx-auto lg:pr-[340px]">
+                    <BlogFeed articles={rest} />
                   </div>
                 </div>
               </section>
-            </div>
+            )}
+
+            {/* ─────────────── RECENT HIGHLIGHTS ─────────────── */}
+            {data.highlights && data.highlights.length > 0 && (
+              <Highlights items={data.highlights} />
+            )}
+
+            {/* ─────────────── CHANGELOG ─────────────── */}
+            {data.changelog && <Changelog data={data.changelog} />}
+
+            {/* ─────────────── VIEW ALL CTA ─────────────── */}
+            <section className="border-t hairline">
+              <div className="container-x py-14 lg:py-20">
+                <div className="max-w-6xl mx-auto lg:pr-[340px] flex items-center justify-between gap-6 flex-wrap">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.25em] text-ink-400 mono mb-2">
+                      — Arhivă completă
+                    </div>
+                    <div className="serif text-2xl md:text-3xl text-ink-900 leading-tight">
+                      Toate noutățile Uzinex
+                    </div>
+                  </div>
+                  <Link
+                    href="/noutati"
+                    className="bg-[#082545] hover:bg-uzx-blue text-white text-sm font-medium px-6 py-3 transition inline-flex items-center gap-2"
+                  >
+                    Vezi toate articolele <span>›</span>
+                  </Link>
+                </div>
+              </div>
+            </section>
           </>
         )}
       </main>

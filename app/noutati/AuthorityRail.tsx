@@ -51,19 +51,40 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
 
   // Show only after the hero scrolls away (sentinel above the top of the viewport)
   useEffect(() => {
-    const sentinel = document.getElementById("rail-sentinel");
-    if (!sentinel) return;
+    let rafId = 0;
+    let ticking = false;
+
     const check = () => {
+      const sentinel = document.getElementById("rail-sentinel");
+      if (!sentinel) return;
       const top = sentinel.getBoundingClientRect().top;
-      // sentinel above viewport top (scrolled past it) → show rail
-      setMounted(top < 80);
+      // sentinel has reached or scrolled past the top of viewport → show rail
+      setMounted(top < 1);
+      ticking = false;
     };
-    check();
-    window.addEventListener("scroll", check, { passive: true });
-    window.addEventListener("resize", check);
+
+    const onScroll = () => {
+      if (!ticking) {
+        rafId = requestAnimationFrame(check);
+        ticking = true;
+      }
+    };
+
+    // Multiple initial checks to catch browser scroll restoration after page load
+    const timeouts = [0, 30, 150, 400, 900].map((t) =>
+      window.setTimeout(check, t)
+    );
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    document.addEventListener("scroll", onScroll, { passive: true });
+
     return () => {
-      window.removeEventListener("scroll", check);
-      window.removeEventListener("resize", check);
+      timeouts.forEach(clearTimeout);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      document.removeEventListener("scroll", onScroll);
     };
   }, []);
 
