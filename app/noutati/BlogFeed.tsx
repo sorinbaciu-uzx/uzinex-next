@@ -45,13 +45,13 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
         })}
       </div>
 
-      {/* ── LIST ── */}
+      {/* ── LIST — 2 per row on lg+ ── */}
       {filtered.length === 0 ? (
         <div className="py-16 text-center text-ink-400 italic">
           Niciun articol în această categorie.
         </div>
       ) : (
-        <div className="divide-y divide-ink-200 divide-dashed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-12 lg:gap-y-16 pt-8">
           {filtered.map((a) => (
             <Row key={a.slug} article={a} />
           ))}
@@ -63,116 +63,104 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
 
 function Row({ article }: { article: Article }) {
   const accent = CATEGORY_COLORS[article.category] || "#1e6bb8";
+  const primary = article.authors?.[0];
   return (
-    <article className="py-10 lg:py-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-      {/* LEFT: narrow text column */}
+    <article
+      className="border-l-2 pl-5"
+      style={{ borderColor: accent }}
+    >
       <div
-        className="lg:col-span-5 border-l-2 pl-5"
-        style={{ borderColor: accent }}
+        className="text-[10px] uppercase tracking-[0.22em] mono font-bold mb-3"
+        style={{ color: accent }}
       >
-        <div
-          className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-4"
-          style={{ color: accent }}
-        >
-          {article.category}
-        </div>
-        <h2
-          className="serif text-2xl md:text-[28px] text-ink-900 leading-[1.1] mb-4"
-          style={{ letterSpacing: "-0.02em" }}
-        >
-          <Link
-            href={`/noutati/${article.slug}`}
-            className="hover:text-uzx-blue transition"
-          >
-            {article.title}
-          </Link>
-        </h2>
-        <p className="text-sm text-ink-600 leading-relaxed mb-5">
-          {article.excerpt}
-        </p>
-        <Link
-          href={`/noutati/${article.slug}`}
-          className="inline-flex items-center gap-2 text-sm text-uzx-blue font-medium hover:gap-3 transition-all"
-        >
-          Citește mai departe <span>›</span>
-        </Link>
+        {article.category}
       </div>
-
-      {/* RIGHT WRAPPER: date + authors on top, image below — inside single col */}
-      <div className="lg:col-span-7 lg:border-l-2 lg:border-dashed lg:border-ink-200 lg:pl-8">
-        {/* date */}
-        <div className="text-sm text-ink-700 mb-6">{article.date}</div>
-
-        {/* authors */}
-        {article.authors && article.authors.length > 0 ? (
-          <div className="flex items-start gap-8 flex-wrap mb-8">
-            {article.authors.map((a, i) => (
-              <div key={i} className="flex items-center gap-3">
-                {a.avatar ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={a.avatar}
-                    alt={a.name}
-                    className="w-11 h-11 rounded-full object-cover bg-ink-100 border hairline shrink-0"
-                  />
-                ) : (
-                  <div className="w-11 h-11 rounded-full bg-uzx-blue text-white text-xs font-bold flex items-center justify-center shrink-0">
-                    {a.name
-                      .split(" ")
-                      .map((p) => p[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </div>
-                )}
-                <div className="text-sm leading-tight">
-                  <div className="text-ink-900 font-medium">{a.name}</div>
-                  {a.role && (
-                    <div className="text-ink-500 text-xs mt-0.5">{a.role}</div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-xs text-ink-400 italic mb-8">Echipa Uzinex</div>
-        )}
-
-        {/* image placeholder — compact vertical rectangle */}
+      <h2
+        className="serif text-xl md:text-[22px] text-ink-900 leading-[1.12] mb-3"
+        style={{ letterSpacing: "-0.02em" }}
+      >
         <Link
           href={`/noutati/${article.slug}`}
-          className="block border hairline overflow-hidden group max-w-[260px]"
+          className="hover:text-uzx-blue transition"
         >
-          {article.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-full aspect-[4/5] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            />
-          ) : (
-            <div
-              className="w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
-              }}
-            >
-              <div
-                className="absolute inset-0 opacity-25"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
-                }}
+          {article.title}
+        </Link>
+      </h2>
+      <p className="text-[13px] text-ink-600 leading-relaxed mb-4 line-clamp-3">
+        {article.excerpt}
+      </p>
+
+      {/* date + author inline */}
+      <div className="flex items-center gap-2.5 mb-4 text-xs text-ink-500">
+        <span className="mono">{article.date}</span>
+        {primary && (
+          <>
+            <span className="text-ink-300">·</span>
+            {primary.avatar ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={primary.avatar}
+                alt={primary.name}
+                className="w-5 h-5 rounded-full object-cover bg-ink-100 border hairline"
               />
-              <div
-                className="serif text-white/90 text-4xl lg:text-5xl font-light relative z-10"
-                style={{ letterSpacing: "-0.02em" }}
-              >
-                {article.category}
-              </div>
-            </div>
-          )}
-        </Link>
+            ) : (
+              <span className="w-5 h-5 rounded-full bg-uzx-blue text-white text-[9px] font-bold flex items-center justify-center">
+                {primary.name
+                  .split(" ")
+                  .map((p) => p[0])
+                  .slice(0, 2)
+                  .join("")}
+              </span>
+            )}
+            <span className="text-ink-700 font-medium truncate">
+              {primary.name}
+            </span>
+          </>
+        )}
       </div>
+
+      {/* compact image placeholder */}
+      <Link
+        href={`/noutati/${article.slug}`}
+        className="block border hairline overflow-hidden group max-w-[200px] mb-4"
+      >
+        {article.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={article.image}
+            alt={article.title}
+            className="w-full aspect-[4/5] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <div
+            className="w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden"
+            style={{
+              background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
+            }}
+          >
+            <div
+              className="absolute inset-0 opacity-25"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
+              }}
+            />
+            <div
+              className="serif text-white/90 text-3xl font-light relative z-10"
+              style={{ letterSpacing: "-0.02em" }}
+            >
+              {article.category}
+            </div>
+          </div>
+        )}
+      </Link>
+
+      <Link
+        href={`/noutati/${article.slug}`}
+        className="inline-flex items-center gap-2 text-sm text-uzx-blue font-medium hover:gap-3 transition-all"
+      >
+        Citește mai departe <span>›</span>
+      </Link>
     </article>
   );
 }
