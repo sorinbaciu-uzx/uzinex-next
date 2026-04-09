@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import type { Article } from "@/components/NewsSection";
 
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 6;
 
 const CATEGORY_COLORS: Record<Article["category"], string> = {
   Comunicat: "#f5851f",
