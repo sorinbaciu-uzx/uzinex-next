@@ -112,9 +112,9 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
           : "opacity-0 translate-x-6 pointer-events-none"
       }`}
     >
-      <div className="bg-white border hairline shadow-[0_30px_60px_-20px_rgba(8,37,69,0.4)]">
+      <div className="bg-white border hairline shadow-[0_30px_60px_-20px_rgba(8,37,69,0.4)] max-h-[calc(100vh-140px)] overflow-y-auto">
         {/* header */}
-        <div className="px-5 pt-5 pb-4 border-b hairline">
+        <div className="px-4 pt-4 pb-3 border-b hairline">
           <div className="text-[11px] uppercase tracking-[0.22em] mono font-bold text-uzx-orange">
             De ce Uzinex
           </div>
@@ -122,25 +122,25 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
 
         <div>
           {/* authority chips */}
-          <div className="p-5 space-y-3 border-b hairline">
+          <div className="px-4 py-3.5 space-y-2.5 border-b hairline">
             {AUTHORITY_ITEMS.map((item, i) => (
               <div
                 key={i}
-                className={`flex items-center gap-3 transition-all duration-500 ${
+                className={`flex items-center gap-2.5 transition-all duration-500 ${
                   mounted
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 -translate-x-2"
                 }`}
                 style={{ transitionDelay: `${400 + i * 120}ms` }}
               >
-                <div className="w-9 h-9 border hairline flex items-center justify-center text-uzx-blue shrink-0 bg-ink-50">
+                <div className="w-8 h-8 border hairline flex items-center justify-center text-uzx-blue shrink-0 bg-ink-50">
                   {item.icon}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[10px] uppercase tracking-wider text-ink-400 mono">
+                  <div className="text-[9px] uppercase tracking-wider text-ink-400 mono leading-tight">
                     {item.label}
                   </div>
-                  <div className="serif text-lg text-ink-900 leading-tight">
+                  <div className="serif text-base text-ink-900 leading-tight">
                     {item.value}
                   </div>
                 </div>
@@ -149,15 +149,15 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
           </div>
 
           {/* certifications */}
-          <div className="p-5 border-b hairline">
-            <div className="text-[10px] uppercase tracking-wider text-ink-400 mono mb-3">
+          <div className="px-4 py-3.5 border-b hairline">
+            <div className="text-[9px] uppercase tracking-wider text-ink-400 mono mb-2">
               Certificări & conformitate
             </div>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1">
               {CERTS.map((c, i) => (
                 <span
                   key={c}
-                  className={`text-[10px] mono text-ink-700 border hairline px-2 py-1 bg-white transition-all duration-500 ${
+                  className={`text-[9px] mono text-ink-700 border hairline px-1.5 py-0.5 bg-white transition-all duration-500 ${
                     mounted
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-1"
@@ -206,40 +206,32 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
                   <span>{muted ? "Sunet" : "Mut"}</span>
                 </button>
               </div>
-              <div className="p-3.5 border-t hairline">
-                <div className="text-[10px] mono text-ink-400 uppercase tracking-wider">
-                  Reportaj
-                </div>
-                <div className="text-xs text-ink-900 font-medium">
-                  Uzinex în media
-                </div>
-              </div>
             </div>
           )}
 
           {/* CTA block */}
-          <div className="p-5 bg-[#082545] text-white">
-            <div className="text-[10px] uppercase tracking-[0.22em] mono font-bold text-uzx-orange mb-2">
+          <div className="px-4 py-4 bg-[#082545] text-white">
+            <div className="text-[10px] uppercase tracking-[0.2em] mono font-bold text-uzx-orange mb-1.5">
               Discută cu un inginer
             </div>
             <div
-              className="serif text-base text-white leading-[1.15] mb-4"
+              className="serif text-sm text-white leading-[1.2] mb-3"
               style={{ letterSpacing: "-0.01em" }}
             >
-              Primești ofertă personalizată în maxim 24 de ore lucrătoare.
+              Ofertă personalizată în 24 ore lucrătoare.
             </div>
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <a
                 href="/#contact"
-                className="block w-full bg-uzx-orange hover:bg-uzx-orange2 text-white text-xs font-medium px-4 py-3 text-center transition"
+                className="block w-full bg-uzx-orange hover:bg-uzx-orange2 text-white text-[11px] font-medium px-3 py-2.5 text-center transition"
               >
                 Solicită ofertă →
               </a>
               <a
                 href="tel:+40769081081"
-                className="flex items-center justify-center gap-2 w-full border border-white/20 hover:border-white text-white text-xs font-medium px-4 py-2.5 transition"
+                className="flex items-center justify-center gap-1.5 w-full border border-white/20 hover:border-white text-white text-[11px] font-medium px-3 py-2 transition"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3">
                   <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.07 15.07 0 01-6.59-6.58l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1 17 17 0 0017 17 1 1 0 001-1v-3.5a1 1 0 00-1-1z" />
                 </svg>
                 +40 769 081 081
