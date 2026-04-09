@@ -168,7 +168,7 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
               {CERTS.map((c, i) => (
                 <span
                   key={c}
-                  className={`text-[9px] mono text-ink-700 border hairline px-1.5 py-0.5 bg-white transition-all duration-500 ${
+                  className={`text-[9px] mono font-bold text-uzx-orange border border-uzx-orange/40 px-1.5 py-0.5 bg-uzx-orange/5 transition-all duration-500 ${
                     mounted
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-1"
