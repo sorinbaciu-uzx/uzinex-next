@@ -111,7 +111,26 @@ export default function ServiceManualAIPage() {
         <section className="border-b hairline py-16 lg:py-24 bg-white overflow-hidden">
           <div className="container-x">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              <AIManualMockup />
+              <div className="lg:col-span-6">
+                <AIManualMockup />
+                <div
+                  className="mt-6 p-5 border border-uzx-blue/30 flex items-start gap-4"
+                  style={{ background: "rgba(30,107,184,0.04)" }}
+                >
+                  <div className="text-2xl text-uzx-blue shrink-0">⚡</div>
+                  <div>
+                    <div className="text-sm font-medium text-ink-900 mb-1">
+                      Inclus gratuit cu orice echipament livrat
+                    </div>
+                    <p className="text-xs text-ink-600 leading-relaxed">
+                      Manualul AI este parte integrantă din fiecare livrare
+                      Uzinex, fără cost suplimentar. Nu există abonamente,
+                      licențe ascunse sau limitări de utilizare — o dată primit
+                      echipamentul, asistentul tehnic este al tău.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
@@ -152,23 +171,6 @@ export default function ServiceManualAIPage() {
                   ))}
                 </div>
 
-                <div
-                  className="mt-8 p-5 border border-uzx-blue/30 flex items-start gap-4"
-                  style={{ background: "rgba(30,107,184,0.04)" }}
-                >
-                  <div className="text-2xl text-uzx-blue shrink-0">⚡</div>
-                  <div>
-                    <div className="text-sm font-medium text-ink-900 mb-1">
-                      Inclus gratuit cu orice echipament livrat
-                    </div>
-                    <p className="text-xs text-ink-600 leading-relaxed">
-                      Manualul AI este parte integrantă din fiecare livrare
-                      Uzinex, fără cost suplimentar. Nu există abonamente,
-                      licențe ascunse sau limitări de utilizare — o dată primit
-                      echipamentul, asistentul tehnic este al tău.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
