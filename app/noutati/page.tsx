@@ -114,6 +114,8 @@ export default async function NoutatiPage() {
             {/* ─────────────── CHANGELOG ─────────────── */}
             {data.changelog && <Changelog data={data.changelog} />}
 
+            {/* sentinel: when this enters viewport, rail unmounts (no footer overlap) */}
+            <div id="rail-end-sentinel" aria-hidden className="h-px" />
           </>
         )}
       </main>

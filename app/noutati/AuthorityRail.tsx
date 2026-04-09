@@ -55,11 +55,20 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
     let ticking = false;
 
     const check = () => {
-      const sentinel = document.getElementById("rail-sentinel");
-      if (!sentinel) return;
-      const top = sentinel.getBoundingClientRect().top;
-      // sentinel has reached or scrolled past the top of viewport → show rail
-      setMounted(top < 1);
+      const start = document.getElementById("rail-sentinel");
+      const end = document.getElementById("rail-end-sentinel");
+      if (!start) return;
+      const startTop = start.getBoundingClientRect().top;
+      const vh = window.innerHeight;
+      // default: mount when user scrolled past the start sentinel
+      let shouldMount = startTop < 1;
+      // unmount when the end sentinel enters the lower half of the viewport
+      // so the rail never overlaps the footer
+      if (end) {
+        const endTop = end.getBoundingClientRect().top;
+        if (endTop < vh - 80) shouldMount = false;
+      }
+      setMounted(shouldMount);
       ticking = false;
     };
 
