@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { isAuthenticated } from "@/lib/auth";
-import { redirect } from "next/navigation";
 import { headers } from "next/headers";
+import { AdminLogoutButton } from "./AdminLogoutButton";
 
 export const dynamic = "force-dynamic";
 
@@ -31,14 +31,7 @@ export default async function AdminLayout({
             <Link href="/" target="_blank" className="text-white/70 hover:text-white">
               Vezi siteul ↗
             </Link>
-            <form action="/api/admin/logout" method="post">
-              <button
-                type="submit"
-                className="text-white/70 hover:text-white text-sm"
-              >
-                Logout
-              </button>
-            </form>
+            <AdminLogoutButton />
           </div>
         </div>
       </header>

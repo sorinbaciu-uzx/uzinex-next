@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getCurrentUser } from "@/lib/client-auth";
+import { LogoutButton } from "./LogoutButton";
 
 export const dynamic = "force-dynamic";
 
@@ -39,14 +40,7 @@ export default async function ContPage() {
                   <p className="text-ink-500 mt-3">{user.company}</p>
                 )}
               </div>
-              <form action="/api/auth/logout" method="post">
-                <button
-                  type="submit"
-                  className="text-xs uppercase tracking-wider text-ink-500 hover:text-red-600 border hairline px-4 py-2 bg-white hover:border-red-300 transition"
-                >
-                  Deconectare →
-                </button>
-              </form>
+              <LogoutButton />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border hairline">
