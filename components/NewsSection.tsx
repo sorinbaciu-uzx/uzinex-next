@@ -63,6 +63,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Echipamentele din portofoliu sunt acum eligibile pentru proceduri guvernamentale clasificate și pentru contracte cu MApN și IGSU.",
     readTime: "3 min",
+    image: "https://picsum.photos/seed/uzinex-aparare/400/500",
     body: "Uzinex anunță acreditarea oficială ca furnizor de echipamente industriale pentru sectorul de apărare al României. Începând cu luna aceasta, întregul portofoliu de utilaje, sisteme de prelucrare metalică, soluții de automatizare și piese de schimb este eligibil pentru proceduri guvernamentale clasificate.\n\nAcreditarea include capacitatea de a livra echipamente cu trasabilitate completă a originii, conformitate NATO unde este aplicabil, și garanția unui canal de service 100% local. Această capacitate poziționează Uzinex ca partener strategic pentru contracte cu Ministerul Apărării Naționale (MApN), Inspectoratul General pentru Situații de Urgență (IGSU), Romarm și alți operatori din domeniul apărării.\n\nClienții instituționali pot solicita ofertă tehnică direct prin contact@uzinex.ro sau prin platformele SEAP/SICAP.",
   },
   {
@@ -73,6 +74,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Ghid practic pentru companii care vor să implementeze linii de producție prin PNRR, POCU sau POIM fără riscul dezangajării.",
     readTime: "7 min",
+    image: "https://picsum.photos/seed/uzinex-fonduri-ue/400/500",
     body: "Finanțarea europeană pentru investiții industriale rămâne, în 2026, una dintre cele mai puternice pârghii pentru companiile românești care vor să-și moderneze capacitățile de producție. Totuși, multe proiecte se blochează în execuție din cauza unor decizii tehnice luate prea devreme — adesea înainte de a avea o dimensionare reală a echipamentelor și a furnizorilor.\n\nAcest ghid sintetizează cele mai frecvente capcane întâlnite în proiectele finanțate prin PNRR, POCU și POIM, precum și recomandările echipei Uzinex pentru a evita dezangajarea fondurilor.\n\n1. Specificațiile tehnice trebuie agreate cu un integrator înainte de depunerea cererii. O specificație generică poate fi imposibil de respectat la livrare, iar modificările contractuale ulterioare sunt deseori respinse de Autoritatea de Management.\n\n2. Furnizorii din afara UE necesită planificare suplimentară pentru transport, vamă și conformitate CE.\n\n3. Principiul DNSH (Do No Significant Harm) trebuie verificat pentru fiecare echipament încă din faza de ofertă.\n\n4. Trasabilitatea documentelor este critică la audit — păstrează versiuni cu semnătură digitală pentru toate ofertele și contractele.\n\nUzinex oferă consultanță pre-contractuală gratuită pentru companiile care pregătesc dosare cu finanțare europeană.",
   },
   {
@@ -83,6 +85,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Uzinex își deschide sediul central în Parcul Științific & Tehnologic Tehnopolis din Iași, cu laborator de training pentru clienți.",
     readTime: "2 min",
+    image: "https://picsum.photos/seed/uzinex-tehnopolis/400/500",
     body: "Uzinex își consolidează prezența în nord-estul țării prin deschiderea sediului central în Parcul Științific & Tehnologic Tehnopolis din Iași, Bd. Poitiers nr. 10. Noul spațiu include un laborator de training echipat cu mostre demonstrative din portofoliu, săli pentru workshop-uri tehnice și o zonă dedicată întâlnirilor cu clienți instituționali.\n\nLaboratorul va găzdui sesiuni regulate de training pentru operatori, precum și demonstrații live ale celor mai noi tehnologii de prelucrare metalică, automatizare și inspecție industrială. Toți clienții care au comandat echipamente prin Uzinex în ultimele 12 luni primesc acces gratuit la primul training tematic.",
   },
   {
@@ -93,6 +96,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Analiză a adopției roboticii industriale, blocajelor în finanțarea UE și direcțiilor de dezvoltare 2026-2028.",
     readTime: "12 min",
+    image: "https://picsum.photos/seed/uzinex-raport-automatizare/400/500",
     body: "Raportul anual Uzinex pe automatizare industrială oferă o radiografie a adopției roboticii și sistemelor automate în companiile din România. Bazat pe date colectate din peste 200 de fabrici partenere, raportul identifică principalele tendințe, blocaje și oportunități pentru perioada 2026–2028.\n\nPrincipalele concluzii: densitatea roboților industriali per 10 000 de angajați rămâne sub media UE, dar ritmul de creștere este accelerat de fondurile PNRR. Sectoarele cu cea mai rapidă adopție sunt automotive, packaging și prelucrări metalice. Blocajele majore sunt legate de lipsa personalului calificat, complexitatea integrării și finanțarea capitalului de lucru.\n\nRaportul complet este disponibil la cerere pentru clienții Uzinex.",
   },
   {
@@ -103,6 +107,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Uzinex devine partener oficial Siemens Digital Industries pentru integrarea liniilor de producție automatizate în România.",
     readTime: "4 min",
+    image: "https://picsum.photos/seed/uzinex-siemens/400/500",
     body: "Parteneriatul oficial cu Siemens Digital Industries deschide accesul clienților Uzinex la întregul portofoliu Siemens de controlere logice programabile, drive-uri, motoare industriale și platforme de digitalizare TIA Portal și MindSphere.\n\nAcordul include training tehnic certificat pentru echipa de ingineri Uzinex, acces prioritar la componente critice și suport comun pentru proiecte mari de integrare. Primele livrări comune sunt așteptate în primul trimestru al anului viitor.",
   },
   {
@@ -113,6 +118,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Un client cu finanțare PNRR avea termenul de punere în funcțiune la limită. Iată cum am rezolvat criza logistică.",
     readTime: "6 min",
+    image: "https://picsum.photos/seed/uzinex-livrare-48h/400/500",
     body: "Povestea unei intervenții care a salvat un proiect de 1.2M EUR finanțat prin PNRR. Clientul, o fabrică de procesare a metalelor, avea termen contractual la 72 de ore pentru punerea în funcțiune a unei linii de tăiere laser. Echipamentul comandat de la un furnizor european s-a blocat în vamă din cauza unor documente incomplete.\n\nEchipa Uzinex a preluat dosarul, a refăcut declarațiile vamale, a coordonat transportul cu un partener local și a livrat echipamentul la destinație în 48 de ore. Instalarea și punerea în funcțiune au fost încheiate cu 6 ore înainte de termen.\n\nProiectul a trecut auditul tehnic al Autorității de Management fără observații, iar clientul și-a păstrat integral finanțarea.",
   },
   {
@@ -123,6 +129,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Senzori IIoT, dashboard cloud și alerte automate pentru reducerea downtime-ului cu până la 40%.",
     readTime: "3 min",
+    image: "https://picsum.photos/seed/uzinex-cnc-mentenanta/400/500",
     body: "Uzinex lansează un nou kit de mentenanță predictivă pentru centrele de prelucrare CNC — o soluție plug-and-play care combină senzori IIoT pentru vibrații, temperatură și consum energetic cu un dashboard cloud și alerte automate către echipa de mentenanță.\n\nKitul este compatibil cu majoritatea centrelor CNC din portofoliul Uzinex și poate fi retrofit-at pe echipamente existente. Primele implementări la clienții pilot au arătat o reducere a downtime-ului neplanificat de până la 40% și o extindere a intervalelor de service planificat cu 25%.\n\nKitul este disponibil la comandă prin canalele comerciale Uzinex.",
   },
   {
@@ -133,6 +140,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Cel de-al treilea centru Uzinex acoperă acum întreaga zonă de vest și centru a României, cu intervenție sub 4h.",
     readTime: "2 min",
+    image: "https://picsum.photos/seed/uzinex-cluj/400/500",
     body: "Uzinex își extinde acoperirea națională prin deschiderea celui de-al treilea centru de service tehnic, la Cluj-Napoca. Noul centru deservește clienții din Transilvania, Banat și Crișana, reducând timpul mediu de intervenție la fața locului la sub 4 ore.\n\nCentrul este echipat cu un atelier complet pentru reparații mecanice și electronice, un depozit de piese de schimb pentru cele mai comune echipamente din portofoliu și două unități mobile de intervenție.",
   },
   {
@@ -143,6 +151,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "De la specificații tehnice la criteriile de atribuire, ghid complet pentru autoritățile contractante din sectorul de apărare.",
     readTime: "9 min",
+    image: "https://picsum.photos/seed/uzinex-seap-ghid/400/500",
     body: "Achizițiile publice din sectorul de apărare au particularități tehnice și legislative care complică procesul pentru multe autorități contractante. Acest ghid sintetizează experiența echipei Uzinex după peste 40 de proceduri SEAP câștigate pentru MApN, IGSU și alte instituții din sector.\n\nAspecte esențiale: specificațiile tehnice trebuie să fie neutre față de producători, criteriile de atribuire să permită raportul calitate-preț, iar garanțiile post-livrare să includă obligatoriu accesul la piese de schimb pentru minim 10 ani.\n\nGhidul complet este disponibil la cerere pentru reprezentanți ai autorităților contractante.",
   },
   {
@@ -153,6 +162,7 @@ const ARTICLES: Article[] = [
     excerpt:
       "Analiză financiară completă a unui proiect de automatizare: investiție, economii operaționale și break-even.",
     readTime: "8 min",
+    image: "https://picsum.photos/seed/uzinex-paletizare/400/500",
     body: "Acest studiu de caz prezintă în detaliu rezultatele financiare ale unei linii robotizate de paletizare livrate în 2024 pentru un client din industria alimentară. Investiția totală, incluzând echipamentul, integrarea și training-ul, a fost de 320 000 EUR.\n\nEconomiile operaționale realizate în primul an au inclus: reducerea costurilor de personal cu 180 000 EUR, reducerea rebuturilor cu 45 000 EUR, și creșterea capacității cu 22% (fără investiții suplimentare). Break-even-ul a fost atins în luna 14, iar în anul doi linia a generat economii nete de peste 270 000 EUR.",
   },
 ];

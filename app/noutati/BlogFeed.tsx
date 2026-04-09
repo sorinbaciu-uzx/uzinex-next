@@ -203,36 +203,58 @@ function Row({ article }: { article: Article }) {
 
         <Link
           href={`/noutati/${article.slug}`}
-          className="block border hairline overflow-hidden group"
+          className="block border hairline overflow-hidden group relative"
         >
           {article.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-full aspect-[4/5] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            />
-          ) : (
-            <div
-              className="w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
-              }}
-            >
+            <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={article.image}
+                alt={article.title}
+                className="w-full aspect-[4/5] object-cover transition-all duration-[600ms] ease-out group-hover:scale-[1.08] group-hover:brightness-90"
+              />
+              {/* overlay — dark gradient with accent line */}
               <div
-                className="absolute inset-0 opacity-25"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
+                  background:
+                    "linear-gradient(180deg, transparent 40%, rgba(8,37,69,0.75) 100%)",
                 }}
               />
-              <div
-                className="serif text-white/90 text-2xl font-light relative z-10"
-                style={{ letterSpacing: "-0.02em" }}
-              >
-                {article.category}
+              {/* hover caption */}
+              <div className="absolute inset-x-0 bottom-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div
+                  className="h-[2px] w-8 mb-2"
+                  style={{ background: accent }}
+                />
+                <div className="text-white text-[11px] font-medium inline-flex items-center gap-1">
+                  Citește articolul <span>›</span>
+                </div>
               </div>
-            </div>
+            </>
+          ) : (
+            <>
+              <div
+                className="w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden transition-transform duration-[600ms] ease-out group-hover:scale-[1.05]"
+                style={{
+                  background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
+                }}
+              >
+                <div
+                  className="absolute inset-0 opacity-25 transition-opacity duration-500 group-hover:opacity-40"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
+                  }}
+                />
+                <div
+                  className="serif text-white/90 text-2xl font-light relative z-10 transition-transform duration-500 group-hover:-translate-y-1"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  {article.category}
+                </div>
+              </div>
+            </>
           )}
         </Link>
       </div>
