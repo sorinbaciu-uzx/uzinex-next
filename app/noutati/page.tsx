@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { NEWS_DEFAULT, type NewsData, type Article } from "@/components/NewsSection";
 import { getContent } from "@/lib/content";
+import { HeroFeatured } from "./HeroFeatured";
 
 export const revalidate = 60;
 
@@ -20,25 +21,28 @@ const CATEGORY_COLORS: Record<Article["category"], string> = {
   Studiu: "#155290",
 };
 
-// Fallback cover when article has no image — uses a muted brand gradient
-function Cover({ article, tall }: { article: Article; tall?: boolean }) {
-  const ratio = tall ? "aspect-[4/5]" : "aspect-[16/10]";
+function Cover({
+  article,
+  aspect = "aspect-[4/5]",
+}: {
+  article: Article;
+  aspect?: string;
+}) {
   if (article.image) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
         src={article.image}
         alt={article.title}
-        className={`w-full ${ratio} object-cover`}
+        className={`w-full ${aspect} object-cover transition-transform duration-300 group-hover:scale-[1.02]`}
       />
     );
   }
   return (
     <div
-      className={`w-full ${ratio} flex items-center justify-center relative overflow-hidden`}
+      className={`w-full ${aspect} flex items-center justify-center relative overflow-hidden`}
       style={{
-        background:
-          "linear-gradient(135deg, #082545 0%, #1e6bb8 100%)",
+        background: "linear-gradient(135deg, #082545 0%, #1e6bb8 100%)",
       }}
     >
       <div
@@ -49,7 +53,7 @@ function Cover({ article, tall }: { article: Article; tall?: boolean }) {
         }}
       />
       <div
-        className="serif text-white/90 text-5xl md:text-6xl font-light relative z-10"
+        className="serif text-white/90 text-4xl font-light relative z-10"
         style={{ letterSpacing: "-0.03em" }}
       >
         uzinex
@@ -58,10 +62,43 @@ function Cover({ article, tall }: { article: Article; tall?: boolean }) {
   );
 }
 
+function GridCard({ article }: { article: Article }) {
+  return (
+    <Link
+      href={`/noutati/${article.slug}`}
+      className="group block border-t border-ink-900 pt-5"
+    >
+      <div
+        className="text-[10px] uppercase tracking-[0.22em] mono font-bold mb-2"
+        style={{
+          color: CATEGORY_COLORS[article.category] || "#1e6bb8",
+        }}
+      >
+        {article.category}
+      </div>
+      <h3
+        className="serif text-xl lg:text-2xl text-ink-900 leading-[1.1] mb-3 group-hover:text-uzx-blue transition"
+        style={{ letterSpacing: "-0.02em" }}
+      >
+        {article.title}
+      </h3>
+      <p className="text-sm text-ink-500 leading-relaxed mb-4 line-clamp-3">
+        {article.excerpt}
+      </p>
+      {article.image && (
+        <div className="overflow-hidden border hairline">
+          <Cover article={article} aspect="aspect-[16/10]" />
+        </div>
+      )}
+    </Link>
+  );
+}
+
 export default async function NoutatiPage() {
   const data = (await getContent<NewsData>("news")) ?? NEWS_DEFAULT;
   const articles = data.articles ?? [];
-  const [featured, ...rest] = articles;
+  const heroVideoId = data.heroVideoId ?? "_Sl8diqCAFw";
+  const [primary, secondary, ...rest] = articles;
 
   return (
     <>
@@ -69,11 +106,11 @@ export default async function NoutatiPage() {
       <main className="bg-white border-b hairline">
         {/* ─────── PAGE HEADER ─────── */}
         <section className="border-b hairline">
-          <div className="container-x py-10 lg:py-16">
+          <div className="container-x py-10 lg:py-14">
             <div className="max-w-6xl mx-auto">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-xs mono uppercase tracking-wider text-ink-500 hover:text-uzx-blue transition mb-8"
+                className="inline-flex items-center gap-2 text-xs mono uppercase tracking-wider text-ink-500 hover:text-uzx-blue transition mb-6"
               >
                 <span>←</span> Înapoi la pagina principală
               </Link>
@@ -109,67 +146,25 @@ export default async function NoutatiPage() {
           </div>
         ) : (
           <>
-            {/* ─────── FEATURED ─────── */}
-            {featured && (
-              <section className="border-b hairline">
-                <div className="container-x py-12 lg:py-20">
-                  <div className="max-w-6xl mx-auto">
-                    <div className="text-[10px] uppercase tracking-[0.25em] text-ink-400 mb-6 mono">
-                      — În prim plan
-                    </div>
-                    <Link
-                      href={`/noutati/${featured.slug}`}
-                      className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start"
-                    >
-                      <div className="lg:col-span-7">
-                        <div className="border hairline overflow-hidden">
-                          <Cover article={featured} />
-                        </div>
-                      </div>
-                      <div className="lg:col-span-5 lg:pt-4">
-                        <div className="flex items-center gap-3 mb-5">
-                          <div
-                            className="text-[10px] uppercase tracking-widest mono text-white px-2.5 py-1"
-                            style={{
-                              background:
-                                CATEGORY_COLORS[featured.category] || "#1e6bb8",
-                            }}
-                          >
-                            {featured.category}
-                          </div>
-                          <div className="text-[11px] mono text-ink-400 num">
-                            {featured.date}
-                          </div>
-                          <div className="text-[11px] mono text-ink-400">
-                            · {featured.readTime}
-                          </div>
-                        </div>
-                        <h2
-                          className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[1] mb-6 group-hover:text-uzx-blue transition"
-                          style={{ letterSpacing: "-0.025em" }}
-                        >
-                          {featured.title}
-                        </h2>
-                        <p className="text-lg text-ink-600 leading-relaxed mb-8">
-                          {featured.excerpt}
-                        </p>
-                        <div className="inline-flex items-center gap-3 text-sm text-ink-900 border-b border-ink-900 pb-1 group-hover:border-uzx-blue group-hover:text-uzx-blue transition">
-                          Citește articolul
-                          <span className="group-hover:translate-x-1 transition">
-                            →
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
+            {/* ─────── HERO FEATURED ─────── */}
+            <section className="border-b hairline">
+              <div className="container-x py-12 lg:py-16">
+                <div className="max-w-6xl mx-auto">
+                  {primary && (
+                    <HeroFeatured
+                      primary={primary}
+                      secondary={secondary}
+                      videoId={heroVideoId}
+                    />
+                  )}
                 </div>
-              </section>
-            )}
+              </div>
+            </section>
 
-            {/* ─────── GRID ─────── */}
+            {/* ─────── ARTICLES GRID ─────── */}
             {rest.length > 0 && (
               <section>
-                <div className="container-x py-12 lg:py-20">
+                <div className="container-x py-14 lg:py-20">
                   <div className="max-w-6xl mx-auto">
                     <div className="flex items-end justify-between gap-6 mb-10 flex-wrap">
                       <div>
@@ -190,40 +185,7 @@ export default async function NoutatiPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
                       {rest.map((a, i) => (
-                        <Link
-                          key={a.slug || i}
-                          href={`/noutati/${a.slug}`}
-                          className="group flex flex-col"
-                        >
-                          <div className="border hairline overflow-hidden mb-5">
-                            <div className="transition-transform duration-300 group-hover:scale-[1.02]">
-                              <Cover article={a} tall />
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-3 mb-3">
-                            <div
-                              className="text-[10px] uppercase tracking-widest mono text-white px-2 py-0.5"
-                              style={{
-                                background:
-                                  CATEGORY_COLORS[a.category] || "#1e6bb8",
-                              }}
-                            >
-                              {a.category}
-                            </div>
-                            <div className="text-[10px] mono text-ink-400">
-                              {a.date} · {a.readTime}
-                            </div>
-                          </div>
-                          <h3
-                            className="serif text-xl lg:text-2xl text-ink-900 leading-[1.1] mb-3 group-hover:text-uzx-blue transition"
-                            style={{ letterSpacing: "-0.02em" }}
-                          >
-                            {a.title}
-                          </h3>
-                          <p className="text-sm text-ink-500 leading-relaxed">
-                            {a.excerpt}
-                          </p>
-                        </Link>
+                        <GridCard key={a.slug || i} article={a} />
                       ))}
                     </div>
                   </div>

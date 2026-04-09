@@ -18,6 +18,7 @@ export type NewsData = {
   titleLine1: string;
   titleHighlight: string;
   description: string;
+  heroVideoId?: string;
   articles: Article[];
 };
 
@@ -77,6 +78,7 @@ export const NEWS_DEFAULT: NewsData = {
   titleHighlight: "comunicate și studii.",
   description:
     "Perspectivă editorială asupra integrării industriale, finanțărilor europene și tendințelor din automatizare și apărare.",
+  heroVideoId: "_Sl8diqCAFw",
   articles: ARTICLES,
 };
 

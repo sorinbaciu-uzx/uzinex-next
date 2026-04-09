@@ -75,6 +75,11 @@ export const SCHEMAS: Record<string, BlockSchema> = {
       titleLine1: { type: "text", label: "Titlu — linia 1" },
       titleHighlight: { type: "text", label: "Titlu — evidențiat" },
       description: { type: "textarea", label: "Descriere", rows: 3 },
+      heroVideoId: {
+        type: "text",
+        label: "YouTube Video ID pentru hero /noutati",
+        help: "Doar ID-ul (ex: _Sl8diqCAFw), nu URL-ul complet. Lasă gol pentru a afișa imaginea articolului featured.",
+      },
       articles: {
         type: "list",
         label: "Articole",
