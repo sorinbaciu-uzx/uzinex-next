@@ -220,14 +220,8 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
 
           {/* CTA block */}
           <div className="px-4 py-4 bg-[#082545] text-white">
-            <div className="text-[10px] uppercase tracking-[0.2em] mono font-bold text-uzx-orange mb-1.5">
+            <div className="text-[10px] uppercase tracking-[0.2em] mono font-bold text-uzx-orange mb-3">
               Discută cu un inginer
-            </div>
-            <div
-              className="serif text-sm text-white leading-[1.2] mb-3"
-              style={{ letterSpacing: "-0.01em" }}
-            >
-              Ofertă personalizată în 24 ore lucrătoare.
             </div>
             <div className="space-y-1.5">
               <a
