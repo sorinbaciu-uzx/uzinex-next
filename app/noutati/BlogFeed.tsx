@@ -6,6 +6,63 @@ import type { Article } from "@/components/NewsSection";
 
 const PAGE_SIZE = 6;
 
+/* ───── hover animation CSS ───── */
+const HOVER_CSS = `
+.article-card .article-img {
+  transition: transform 900ms cubic-bezier(0.22,1,0.36,1),
+              filter 700ms ease-out;
+  filter: grayscale(25%) contrast(1.03);
+  transform-origin: center;
+  will-change: transform;
+}
+.article-card:hover .article-img {
+  transform: scale(1.12) rotate(-0.6deg);
+  filter: grayscale(0%) contrast(1.08) saturate(1.05);
+}
+.article-card .accent-bar {
+  transition: width 700ms cubic-bezier(0.77,0,0.175,1);
+}
+.article-card:hover .accent-bar {
+  width: 100%;
+}
+.article-card .wipe-overlay {
+  background: linear-gradient(215deg,
+    rgba(8,37,69,0) 0%,
+    rgba(8,37,69,0) 45%,
+    rgba(8,37,69,0.55) 70%,
+    rgba(8,37,69,0.85) 100%);
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  transition: clip-path 800ms cubic-bezier(0.77,0,0.175,1);
+}
+.article-card:hover .wipe-overlay {
+  clip-path: polygon(0 100%, 0 35%, 100% 0%, 100% 100%);
+}
+.article-card .caption {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 500ms ease-out 150ms,
+              transform 600ms cubic-bezier(0.22,1,0.36,1) 150ms;
+}
+.article-card:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+.article-card .caption-bar {
+  width: 0;
+  transition: width 700ms cubic-bezier(0.77,0,0.175,1) 250ms;
+}
+.article-card:hover .caption-bar {
+  width: 3rem;
+}
+.article-card .caption-text {
+  letter-spacing: 0.05em;
+  transition: letter-spacing 600ms ease-out 200ms;
+}
+.article-card:hover .caption-text {
+  letter-spacing: 0.15em;
+}
+`;
+
 const CATEGORY_COLORS: Record<Article["category"], string> = {
   Comunicat: "#f5851f",
   Articol: "#1e6bb8",
@@ -39,6 +96,7 @@ export function BlogFeed({ articles }: { articles: Article[] }) {
 
   return (
     <div>
+      <style dangerouslySetInnerHTML={{ __html: HOVER_CSS }} />
       {/* ── TABS ── */}
       <div className="flex items-center gap-2 flex-wrap mb-10 pb-6 border-b hairline">
         {TABS.map((t) => {
@@ -203,59 +261,61 @@ function Row({ article }: { article: Article }) {
 
         <Link
           href={`/noutati/${article.slug}`}
-          className="block border hairline overflow-hidden group relative"
+          className="article-card block border hairline overflow-hidden group relative isolate"
+          style={{ "--accent": accent } as React.CSSProperties}
         >
           {article.image ? (
-            <>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full aspect-[4/5] object-cover transition-all duration-[600ms] ease-out group-hover:scale-[1.08] group-hover:brightness-90"
-              />
-              {/* overlay — dark gradient with accent line */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background:
-                    "linear-gradient(180deg, transparent 40%, rgba(8,37,69,0.75) 100%)",
-                }}
-              />
-              {/* hover caption */}
-              <div className="absolute inset-x-0 bottom-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <div
-                  className="h-[2px] w-8 mb-2"
-                  style={{ background: accent }}
-                />
-                <div className="text-white text-[11px] font-medium inline-flex items-center gap-1">
-                  Citește articolul <span>›</span>
-                </div>
-              </div>
-            </>
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={article.image}
+              alt={article.title}
+              className="article-img w-full aspect-[4/5] object-cover"
+            />
           ) : (
-            <>
+            <div
+              className="article-img w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden"
+              style={{
+                background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
+              }}
+            >
               <div
-                className="w-full aspect-[4/5] flex items-center justify-center relative overflow-hidden transition-transform duration-[600ms] ease-out group-hover:scale-[1.05]"
+                className="absolute inset-0 opacity-25"
                 style={{
-                  background: `linear-gradient(135deg, ${accent} 0%, #082545 100%)`,
+                  backgroundImage:
+                    "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
                 }}
+              />
+              <div
+                className="serif text-white/90 text-2xl font-light relative z-10"
+                style={{ letterSpacing: "-0.02em" }}
               >
-                <div
-                  className="absolute inset-0 opacity-25 transition-opacity duration-500 group-hover:opacity-40"
-                  style={{
-                    backgroundImage:
-                      "repeating-linear-gradient(45deg, transparent 0 24px, rgba(255,255,255,0.08) 24px 25px)",
-                  }}
-                />
-                <div
-                  className="serif text-white/90 text-2xl font-light relative z-10 transition-transform duration-500 group-hover:-translate-y-1"
-                  style={{ letterSpacing: "-0.02em" }}
-                >
-                  {article.category}
-                </div>
+                {article.category}
               </div>
-            </>
+            </div>
           )}
+
+          {/* top accent bar wipe — expands from left */}
+          <span
+            className="accent-bar pointer-events-none absolute top-0 left-0 h-[3px] w-0 z-20"
+            style={{ background: accent }}
+          />
+
+          {/* diagonal color wipe overlay */}
+          <span
+            className="pointer-events-none absolute inset-0 z-10 wipe-overlay"
+            aria-hidden
+          />
+
+          {/* bottom caption — slides up + letter spacing expansion */}
+          <div className="caption pointer-events-none absolute inset-x-0 bottom-0 p-4 z-20">
+            <div
+              className="caption-bar h-[2px] mb-2"
+              style={{ background: accent }}
+            />
+            <div className="caption-text text-white text-[11px] font-medium inline-flex items-center gap-1 uppercase tracking-wider mono">
+              Citește articolul <span>›</span>
+            </div>
+          </div>
         </Link>
       </div>
     </article>
