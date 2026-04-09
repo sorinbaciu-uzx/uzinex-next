@@ -1,8 +1,9 @@
 import { cookies } from "next/headers";
 import { randomBytes } from "crypto";
 import { prisma } from "./db";
+import { SESSION_COOKIE } from "./session-cookie";
 
-export const SESSION_COOKIE = "uzx_admin";
+export { SESSION_COOKIE };
 const SESSION_DAYS = 14;
 
 export async function createSession(): Promise<string> {

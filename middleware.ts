@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { SESSION_COOKIE } from "./lib/auth";
+import { SESSION_COOKIE } from "./lib/session-cookie";
 
 // Edge middleware: redirect unauthenticated requests away from /admin to /admin/login
 // Real session validity is re-checked server-side in admin pages.

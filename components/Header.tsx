@@ -281,7 +281,7 @@ export function Header() {
           {/* Right side */}
           <div className="flex items-center gap-2 lg:gap-3">
             <a
-              href="#"
+              href="/autentificare"
               className="hidden md:inline text-[13px] text-white/80 hover:text-white transition"
             >
               Autentificare
@@ -447,7 +447,7 @@ export function Header() {
               })}
 
               <motion.a
-                href="#"
+                href="/autentificare"
                 onClick={() => setOpen(false)}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
