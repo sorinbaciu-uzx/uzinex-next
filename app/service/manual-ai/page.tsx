@@ -102,6 +102,14 @@ export default function ServiceManualAIPage() {
                 vocal sau prin imagini și primesc răspunsuri precise,
                 contextualizate, cu instrucțiuni pas-cu-pas adaptate
                 echipamentului lor specific. Disponibil offline, 24/7.
+                <br />
+                <br />
+                <span className="text-ink-700">
+                  Nu ai luat echipamentul de la noi?
+                </span>{" "}
+                Îți putem construi la comandă, contra cost, un manual AI
+                personalizat pentru orice utilaj industrial — indiferent de
+                brand, model sau vechime.
               </p>
             </div>
           </div>
