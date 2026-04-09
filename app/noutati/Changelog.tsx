@@ -77,15 +77,16 @@ export function Changelog({ data }: { data: ChangelogData }) {
             <div className="lg:col-span-8">
               <div
                 ref={scrollRef}
-                className="changelog-track max-h-[420px] lg:max-h-[480px] overflow-y-auto pr-2 -mr-2"
+                className="changelog-track max-h-[420px] lg:max-h-[480px] overflow-y-auto pr-4 -mr-2"
                 style={{
                   scrollbarWidth: "thin",
+                  scrollbarColor: "#d6d6da transparent",
                 }}
               >
                 <style>{`
-                  .changelog-track::-webkit-scrollbar { width: 4px; }
+                  .changelog-track::-webkit-scrollbar { width: 2px; }
                   .changelog-track::-webkit-scrollbar-track { background: transparent; }
-                  .changelog-track::-webkit-scrollbar-thumb { background: #d6d6da; }
+                  .changelog-track::-webkit-scrollbar-thumb { background: #d6d6da; border-radius: 0; }
                   .changelog-track::-webkit-scrollbar-thumb:hover { background: #1e6bb8; }
                 `}</style>
                 <div className="divide-y divide-ink-200 divide-dashed">
