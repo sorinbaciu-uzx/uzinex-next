@@ -146,6 +146,15 @@ const SERVICE_ITEMS: SubItem[] = [
   { label: "Manual de service cu AI", href: "/service/manual-ai" },
 ];
 
+const FINANTARE_ITEMS: SubItem[] = [
+  { label: "Credite & leasing", href: "/finantare/credite-leasing" },
+  {
+    label: "Finanțare europeană & guvernamentală",
+    href: "/finantare/europeana-guvernamentala",
+  },
+  { label: "Credit furnizor (direct la noi)", href: "/finantare/credit-furnizor" },
+];
+
 const NAV: NavItem[] = [
   { label: "Echipa", href: "/echipa" },
   { label: "Studii de caz", href: "/studii-de-caz" },
@@ -161,7 +170,12 @@ const NAV: NavItem[] = [
     type: "dropdown",
     items: RESURSE_ITEMS,
   },
-  { label: "Consultanță fonduri UE", href: "/consultanta-fonduri-europene" },
+  {
+    label: "Finanțare",
+    href: "/finantare",
+    type: "dropdown",
+    items: FINANTARE_ITEMS,
+  },
   {
     label: "Service",
     href: "/service",
