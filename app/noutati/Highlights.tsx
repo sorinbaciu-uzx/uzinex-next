@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
 import type { Highlight } from "@/components/NewsSection";
 
 export function Highlights({ items }: { items: Highlight[] }) {
   if (!items || items.length === 0) return null;
 
-  // duplicate items for seamless infinite loop
   const doubled = [...items, ...items];
+  const dur = items.length * 6;
 
   return (
     <section className="bg-ink-50 border-y hairline">
@@ -25,25 +24,24 @@ export function Highlights({ items }: { items: Highlight[] }) {
         </div>
       </div>
 
-      {/* Infinite marquee track */}
+      <style>{`
+        @keyframes hl-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .hl-marquee {
+          animation: hl-scroll ${dur}s linear infinite;
+        }
+        .hl-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="overflow-hidden pb-12 lg:pb-16 lg:mr-[340px]">
-        <motion.div
-          className="flex gap-5 lg:gap-6 hl-marquee"
+        <div
+          className="hl-marquee flex gap-5 lg:gap-6"
           style={{ width: "max-content" }}
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            x: {
-              duration: items.length * 6,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
-          whileHover={{ animationPlayState: "paused" }}
         >
-          <style>{`
-            .hl-marquee:hover { animation-play-state: paused !important; }
-            .hl-marquee > * { flex-shrink: 0; }
-          `}</style>
           {doubled.map((h, i) => {
             const bg = h.color || "#1e6bb8";
             const card = (
@@ -80,7 +78,7 @@ export function Highlights({ items }: { items: Highlight[] }) {
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
