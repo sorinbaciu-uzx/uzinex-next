@@ -53,8 +53,8 @@ const GUARANTEES = [
     num: "05",
     title: "Garanție personală administrator",
     icon: "",
-    desc: "Administratorul sau asociatul majoritar semnează un angajament personal de plată (fidejusiune) prin care garantează solidar cu societatea obligațiile din contractul de credit furnizor.",
-    details: ["Fidejusiune personală solidară", "Semnată de administrator/asociat", "Complementară altor garanții"],
+    desc: "Administratorul sau asociatul majoritar semnează un angajament personal de plată (fidejusiune) prin care garantează solidar cu societatea obligațiile din contractul de credit furnizor. Garanția poate include și bunuri proprii ale administratorului — imobile, autovehicule sau alte active personale — diferite de echipamentele finanțate, oferind un nivel suplimentar de acoperire a riscului.",
+    details: ["Fidejusiune personală solidară", "Poate include bunuri proprii (imobile, auto, active)", "Semnată de administrator/asociat"],
     accent: "#0a4d96",
   },
   {
