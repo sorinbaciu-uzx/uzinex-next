@@ -10,10 +10,10 @@ import { ContactCTA } from "@/components/ContactCTA";
 /* ─────── DATA ─────── */
 
 const CONDITIONS = [
-  { value: "0 — 30%", label: "Avans", desc: "Negociabil în funcție de valoarea comenzii și istoricul clientului." },
-  { value: "3 — 24", label: "Rate lunare", desc: "Eșalonare pe 3 până la 24 de luni, cu rată fixă stabilită la semnare." },
-  { value: "0%", label: "Dobândă", desc: "Fără dobândă în anumite configurații. În rest, dobândă fixă transparentă." },
-  { value: "24h", label: "Decizie", desc: "Aprobare internă Uzinex în maxim 24 de ore de la depunerea dosarului." },
+  { value: "10 — 30%", label: "Avans obligatoriu", desc: "Minim 10% din valoare. Procentul crește proporțional cu riscul evaluat." },
+  { value: "3 — 18", label: "Rate lunare", desc: "Eșalonare cu rată fixă stabilită la semnare, incluzând costul finanțării." },
+  { value: "Fixă", label: "Dobândă transparentă", desc: "Dobândă fixă pe toată durata, stabilită la evaluare — nu există dobândă 0%." },
+  { value: "Riguros", label: "Proces de calificare", desc: "Analiză financiară internă: bilanț, datorii, capacitate de plată, garanții." },
 ];
 
 const GUARANTEES = [
@@ -84,20 +84,20 @@ const STEPS = [
 ];
 
 const ADVANTAGES = [
-  { title: "Fără bancă", desc: "Nu treci prin birocrația bancară. Decizia e internă Uzinex — în 24h, nu în 3 săptămâni." },
-  { title: "Fără scoring CIP", desc: "Nu te interogăm în Centrala Riscului de Credit. Istoric bun la noi = aprobare." },
-  { title: "Fără comisioane ascunse", desc: "Rata include totul. Zero comision de analiză, zero comision de administrare." },
-  { title: "Echipament imediat", desc: "Nu aștepți aprobarea băncii ca să comanzi. Echipamentul intră în producție de la semnare." },
-  { title: "Garanții flexibile", desc: "Combinăm tipurile de garanții în funcție de profilul tău — nu e o formulă rigidă." },
-  { title: "Relație directă", desc: "Vorbești cu aceeași echipă și pentru echipament și pentru finanțare. Un singur interlocutor." },
+  { title: "Decizie rapidă", desc: "Evaluarea e internă, nu trece prin comitete bancare. Dacă te califici, primești răspuns în 1-3 zile lucrătoare." },
+  { title: "Fără CIP/BNR", desc: "Creditul furnizor nu se raportează la Centrala Riscului de Credit. Nu îți afectează scoring-ul bancar." },
+  { title: "Costuri transparente", desc: "Dobânda e fixă, stabilită la semnare. Rata include totul — fără comisioane ascunse sau variabile." },
+  { title: "Livrare la semnare", desc: "Echipamentul se comandă imediat ce contractul e semnat și garanțiile constituite. Nu aștepți banca." },
+  { title: "Garanții structurate", desc: "7 tipuri de garanții combinabile. Structura se adaptează la profilul tău — nu e o formulă unică." },
+  { title: "Evaluare serioasă", desc: "Analizăm bilanțul, datoriile și capacitatea reală de plată. Aprobăm doar clienții care pot susține ratele." },
 ];
 
 const FAQ = [
-  { q: "Ce se întâmplă dacă nu pot plăti o rată la timp?", a: "Te contactăm proactiv cu 7 zile înainte de scadență. Dacă ai o situație temporară, putem restructura graficul. Dacă rata rămâne neplătită, se execută garanția aferentă (BO sau CEC la scadență). Comunicarea deschisă previne 99% din probleme." },
+  { q: "Ce se întâmplă dacă nu pot plăti o rată la timp?", a: "Te contactăm proactiv cu 7 zile înainte de scadență. Dacă ai o situație temporară, putem discuta restructurarea. Dacă rata rămâne neplătită, se execută garanția aferentă (BO sau CEC la scadență) conform contractului. Neplata repetată duce la rezilierea contractului și recuperarea echipamentului." },
   { q: "Pot plăti anticipat fără penalități?", a: "Da. Plata anticipată totală sau parțială se face fără penalități. Garanțiile corespunzătoare se eliberează imediat." },
-  { q: "Creditul furnizor apare în CIP sau BNR?", a: "Nu. Creditul furnizor este un raport comercial direct între Uzinex și client. Nu se raportează la Centrala Riscului de Credit și nu afectează scoring-ul bancar al companiei tale." },
-  { q: "Ce valoare maximă pot finanța prin credit furnizor?", a: "Depinde de istoricul relației, garanțiile oferite și capacitatea de plată. Orientativ, finanțăm prin credit furnizor comenzi de până la €200.000. Pentru sume mai mari, recomandăm combinarea cu leasing bancar." },
-  { q: "Pot combina creditul furnizor cu fonduri europene?", a: "Da, în anumite structuri. De exemplu, avansul poate fi acoperit din fonduri UE, iar restul eșalonat prin credit furnizor. Echipa noastră de consultanță te ghidează." },
+  { q: "Cât este dobânda?", a: "Dobânda este fixă pe toată durata contractului, stabilită la momentul evaluării. Nivelul depinde de valoarea comenzii, durata eșalonării, garanțiile oferite și profilul financiar al companiei. Nu există dobândă 0% — costul finanțării este real și transparent." },
+  { q: "Ce valoare maximă pot finanța prin credit furnizor?", a: "Depinde de garanțiile oferite și capacitatea de plată demonstrată. Orientativ, finanțăm prin credit furnizor comenzi de până la €100.000. Pentru sume mai mari, recomandăm leasing bancar sau structuri mixte." },
+  { q: "Cine se califică și cine nu?", a: "Se califică companiile cu minim 1 an de activitate, bilanțul depus, fără datorii restante semnificative și cu capacitate demonstrabilă de a susține ratele lunare. Nu acordăm credit furnizor start-up-urilor fără istoric, companiilor cu datorii mari la buget sau celor care nu pot constitui garanțiile minime." },
 ];
 
 /* ─────── ANIMATED COUNTER ─────── */
@@ -214,10 +214,10 @@ export default function CreditFurnizorPage() {
                   </div>
                   <h1 className="serif text-4xl md:text-5xl lg:text-6xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
                     Credit furnizor{" "}
-                    <span className="font-light italic text-uzx-orange">fără intermediar bancar.</span>
+                    <span className="font-light italic text-uzx-orange">direct de la Uzinex.</span>
                   </h1>
                   <p className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl">
-                    Cumperi echipamentul industrial direct de la noi, în rate, fără să treci prin birocrația bancară. Decizia de aprobare e internă Uzinex — în maxim 24 de ore, nu în 3 săptămâni. Garanțiile sunt flexibile și adaptate profilului tău.
+                    Achiziționezi echipamentul în rate direct de la noi, fără intermediar bancar. Procesul de calificare este riguros — analizăm bilanțul, capacitatea de plată, istoricul comercial și garanțiile oferite. Nu acordăm finanțare oricui, dar clienților care se califică le oferim condiții corecte și decizie rapidă.
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:col-start-9">
@@ -247,10 +247,13 @@ export default function CreditFurnizorPage() {
               </div>
               <div className="lg:col-span-6 lg:col-start-7">
                 <p className="text-ink-600 leading-relaxed mb-5">
-                  Creditul furnizor este o formă de finanțare comercială în care Uzinex, în calitate de furnizor, îți acordă un termen de plată extins pentru echipamentele achiziționate. Practic, primești echipamentul imediat, iar plata se face eșalonat pe o perioadă de 3 până la 24 de luni.
+                  Creditul furnizor este o formă de finanțare comercială în care Uzinex, în calitate de furnizor, îți acordă un termen de plată eșalonat pentru echipamentele achiziționate. Plata se face pe o perioadă de 3 până la 18 de luni, cu dobândă fixă stabilită în funcție de risc.
+                </p>
+                <p className="text-ink-600 leading-relaxed mb-5">
+                  Spre deosebire de creditul bancar, relația contractuală este exclusiv între tine și Uzinex — fără intermediar financiar și fără raportare la CIP/BNR. Dar asta nu înseamnă că procesul e superficial.
                 </p>
                 <p className="text-ink-600 leading-relaxed">
-                  Spre deosebire de creditul bancar sau leasing, nu implică un intermediar financiar. Relația contractuală este exclusiv între tine și Uzinex. Asta înseamnă aprobare rapidă, zero comisioane bancare, zero raportare la CIP/BNR și flexibilitate totală în structurarea garanțiilor.
+                  <strong className="text-ink-900">Calificarea este riguroasă.</strong> Analizăm ultimele 2 bilanțuri, datoriile curente, capacitatea reală de plată a ratelor și garanțiile pe care le poți constitui. Clienții cu istoric comercial la Uzinex și profil financiar solid beneficiază de condiții preferențiale. Ceilalți sunt redirecționați către soluțiile de leasing bancar.
                 </p>
               </div>
             </div>
@@ -373,12 +376,12 @@ export default function CreditFurnizorPage() {
                 <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">Contracte credit furnizor</div>
               </div>
               <div className="py-4 px-4 lg:px-8">
-                <div className="serif text-4xl lg:text-5xl text-uzx-blue num">24h</div>
+                <div className="serif text-4xl lg:text-5xl text-uzx-blue num">1-3 zile</div>
                 <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">Decizie de aprobare</div>
               </div>
               <div className="py-4 px-4 lg:px-8">
-                <div className="serif text-4xl lg:text-5xl text-uzx-blue num">0%</div>
-                <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">Comisioane bancare</div>
+                <div className="serif text-4xl lg:text-5xl text-uzx-blue num">Fixă</div>
+                <div className="text-[11px] uppercase tracking-wider text-ink-500 mt-3">Dobândă transparentă</div>
               </div>
               <div className="py-4 px-4 lg:px-8">
                 <div className="serif text-4xl lg:text-5xl text-uzx-blue num"><AnimCounter target={7} /></div>
@@ -429,15 +432,15 @@ export default function CreditFurnizorPage() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-7">
                 <h2 className="serif text-3xl md:text-4xl leading-[0.95] mb-4" style={{ letterSpacing: "-0.03em" }}>
-                  Solicită credit furnizor<br /><span className="font-light text-uzx-orange">în maxim 24 de ore.</span>
+                  Verifică dacă te califici<br /><span className="font-light text-uzx-orange">pentru credit furnizor.</span>
                 </h2>
                 <p className="text-white/70 leading-relaxed">
-                  Spune-ne ce echipament vrei și primești o propunere completă: avans, număr de rate, garanțiile necesare și graficul de plată — totul în maxim 24 de ore de la cerere.
+                  Spune-ne ce echipament te interesează, trimite-ne ultimul bilanț și primești o evaluare preliminară în 1-3 zile lucrătoare: dacă te califici, ce avans e necesar, structura ratelor și garanțiile solicitate.
                 </p>
               </div>
               <div className="lg:col-span-4 lg:col-start-9 flex flex-col gap-3">
                 <a href="/#contact" className="bg-uzx-orange hover:bg-uzx-orange2 text-white text-sm px-6 py-4 transition flex items-center justify-center gap-3 group font-medium">
-                  Solicită credit furnizor <span className="group-hover:translate-x-1 transition">→</span>
+                  Solicită evaluare preliminară <span className="group-hover:translate-x-1 transition">→</span>
                 </a>
                 <a href="tel:+40769081081" className="border border-white/30 hover:border-white text-white text-sm px-6 py-3 transition flex items-center justify-center gap-2">
                   +40 769 081 081
