@@ -71,7 +71,7 @@ export default async function NoutatiPage() {
                 />
                 <div className="container-x py-12 lg:py-20 relative">
                   <div className="max-w-6xl mx-auto">
-                    <HeroFeatured article={featured} videoId={heroVideoId} />
+                    <HeroFeatured article={featured} />
                   </div>
                 </div>
               </section>

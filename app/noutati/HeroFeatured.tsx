@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { Article } from "@/components/NewsSection";
+import { GlobeAnimation } from "./GlobeAnimation";
 
 const CATEGORY_COLORS: Record<Article["category"], string> = {
   Comunicat: "#f5851f",
@@ -12,7 +13,6 @@ const CATEGORY_COLORS: Record<Article["category"], string> = {
 
 export function HeroFeatured({
   article,
-  videoId,
 }: {
   article: Article;
   videoId?: string;
@@ -87,57 +87,9 @@ export function HeroFeatured({
           </Link>
         </div>
 
-        {/* ── RIGHT: AUTOPLAY LOOP VIDEO (object-cover) ── */}
-        <div className="relative min-h-[280px] md:min-h-[360px] lg:min-h-full order-1 lg:order-2 overflow-hidden bg-black">
-          {videoId ? (
-            <>
-              {/* YouTube iframe sized + scaled to crop black bars */}
-              <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0`}
-                  title={article.title}
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  className="absolute top-1/2 left-1/2 min-w-[177.78vh] min-h-[56.25vw] w-[200%] h-[200%] border-0"
-                  style={{
-                    transform: "translate(-50%, -50%) scale(1.15)",
-                    transformOrigin: "center center",
-                  }}
-                  frameBorder={0}
-                />
-              </div>
-              {/* subtle bottom gradient to keep it feeling cinematic */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(180deg, transparent 60%, rgba(8,37,69,0.35) 100%)",
-                }}
-              />
-              <div className="absolute top-4 right-4 bg-black/70 text-white text-[10px] uppercase tracking-wider mono px-2 py-1 flex items-center gap-1.5 z-10">
-                <span className="w-1.5 h-1.5 bg-red-500 inline-block animate-pulse" />
-                Live reel
-              </div>
-            </>
-          ) : article.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={article.image}
-              alt={article.title}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          ) : (
-            <div
-              className="absolute inset-0 flex items-center justify-center"
-              style={{
-                background:
-                  "linear-gradient(135deg, #1e6bb8 0%, #082545 50%, #6b3410 100%)",
-              }}
-            >
-              <div className="serif text-white/90 text-6xl font-light">
-                uzinex
-              </div>
-            </div>
-          )}
+        {/* ── RIGHT: ANIMATED GLOBE ── */}
+        <div className="relative min-h-[280px] md:min-h-[360px] lg:min-h-full order-1 lg:order-2 overflow-hidden">
+          <GlobeAnimation />
         </div>
       </div>
     </div>
