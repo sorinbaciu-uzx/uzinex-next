@@ -19,10 +19,10 @@ const CONDITIONS = [
 const GUARANTEES = [
   {
     num: "01",
-    title: "Bilete la ordin",
+    title: "Bilete la ordin avalizate",
     icon: "",
-    desc: "Emise de client la valoarea fiecărei rate, cu scadența lunară corespunzătoare graficului de plată. La maturitate, biletul la ordin devine titlu executoriu — cea mai frecventă și cea mai simplă garanție utilizată în creditul furnizor.",
-    details: ["Titlu executoriu la scadență", "Un BO per rată sau BO global", "Emise de SRL/SA, avalizate de administrator"],
+    desc: "Emise de client la valoarea fiecărei rate, cu scadența lunară corespunzătoare graficului de plată, și avalizate personal de administrator sau asociatul majoritar. Avalul transformă administratorul în garant solidar — la scadență, biletul devine titlu executoriu atât împotriva societății, cât și a persoanei fizice care a avalizat.",
+    details: ["Titlu executoriu la scadență", "Un BO per rată sau BO global", "Avalizate personal de administrator/asociat"],
     accent: "#1e6bb8",
   },
   {
