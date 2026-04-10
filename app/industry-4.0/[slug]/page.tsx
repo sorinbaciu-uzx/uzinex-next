@@ -4,6 +4,14 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
+import { UnboxingChecklist } from "@/components/solution-anims/UnboxingChecklist";
+import { FlowchartSteps } from "@/components/solution-anims/FlowchartSteps";
+import { CounterMetrics } from "@/components/solution-anims/CounterMetrics";
+
+type SectionAnim =
+  | { type: "checklist"; items: string[] }
+  | { type: "flowchart"; steps: { label: string; time?: string }[]; totalTime?: string }
+  | { type: "counter"; metrics: { value: number; prefix?: string; suffix?: string; label: string }[] };
 
 type Direction = {
   slug: string;
@@ -12,7 +20,7 @@ type Direction = {
   subtitle: string;
   accent: string;
   heroDescription: string;
-  sections: { title: string; body: string }[];
+  sections: { title: string; body: string; anim?: SectionAnim }[];
   benefits: { label: string; value: string }[];
   useCases: string[];
   ctaTitle: string;
@@ -32,14 +40,17 @@ const DIRECTIONS: Direction[] = [
       {
         title: "Ce primești concret",
         body: "Kit-ul de Digitalizare Nivel 1 include senzori IIoT industriali (temperatură, vibrații triaxiale, consum energetic), gateway de comunicare LoRa/Wi-Fi, configurarea completă și un dashboard web + mobile accesibil de pe orice dispozitiv. Toate datele sunt stocate local, fără dependență de cloud extern.",
+        anim: { type: "checklist", items: ["Senzori IIoT industriali", "Gateway LoRa/Wi-Fi", "Dashboard web + mobile", "Configurare completă", "Stocare date locală"] },
       },
       {
         title: "Cum funcționează",
         body: "Tehnicienii Uzinex vin la fața locului, montează senzorii pe utilajele selectate (fără găurire, fără oprire, montaj magnetic sau adeziv industrial) și configurează gateway-ul în rețeaua ta. În 2-4 ore ești online. Dashboard-ul arată OEE, timpi de staționare, alerte de prag și istoric pe 12 luni.",
+        anim: { type: "flowchart", steps: [{ label: "Analiză", time: "T+0h" }, { label: "Montaj", time: "T+1h" }, { label: "Config", time: "T+2h" }, { label: "Online", time: "T+4h" }], totalTime: "2-4 ore" },
       },
       {
         title: "De ce contează pentru tine",
         body: "Fără date, deciziile se iau pe intuiție. Cu monitorizare IIoT, știi exact cât produce fiecare utilaj, unde sunt blocajele și ce echipament trebuie înlocuit sau reparat. Clienții noștri recuperează investiția în 3-6 luni doar prin reducerea timpilor de staționare.",
+        anim: { type: "counter", metrics: [{ value: 47000, prefix: "€", label: "economisiți / an" }, { value: 95, suffix: "%", label: "mai puțin downtime" }, { value: 320, suffix: "%", label: "ROI în an 1" }] },
       },
     ],
     benefits: [
@@ -69,14 +80,17 @@ const DIRECTIONS: Direction[] = [
       {
         title: "Ce primești concret",
         body: "Un braț robotic colaborativ complet integrat: selecție model pe baza aplicației tale, instalare mecanică și electrică, programare proceduri standard de mișcare, training operatori și suport tehnic post-instalare. Totul la cheie, fără surprize.",
+        anim: { type: "checklist", items: ["Selecție model pe aplicație", "Instalare mecanică + electrică", "Programare proceduri mișcare", "Training operatori 2 zile", "Suport tehnic post-instalare"] },
       },
       {
         title: "Cum funcționează integrarea",
         body: "Analizăm fluxul tău de producție, identificăm operațiile repetitive sau periculoase și propunem configurația optimă. Instalarea + programarea durează 3-5 zile. Operatorii învață să lucreze cu cobotul în maxim 2 zile — interfața este intuitivă, nu necesită cunoștințe de robotică.",
+        anim: { type: "flowchart", steps: [{ label: "Analiză flux", time: "Ziua 1" }, { label: "Instalare", time: "Ziua 2-3" }, { label: "Programare", time: "Ziua 4" }, { label: "Training", time: "Ziua 5" }], totalTime: "3-5 zile" },
       },
       {
         title: "De ce contează pentru tine",
         body: "Lipsa forței de muncă este realitate. Un cobot operează 24/7 fără pauze, concedii sau erori de oboseală. ROI-ul tipic este 12-18 luni. Iar cu prețurile Uzinex (30-40% sub piață), pragul de profitabilitate vine și mai repede.",
+        anim: { type: "counter", metrics: [{ value: 35, suffix: "%", label: "sub prețul pieței" }, { value: 14, suffix: " luni", label: "ROI mediu" }, { value: 24, suffix: "/7", label: "funcționare non-stop" }] },
       },
     ],
     benefits: [
@@ -106,14 +120,17 @@ const DIRECTIONS: Direction[] = [
       {
         title: "Ce primești concret",
         body: "Monitorizare continuă a parametrilor critici (vibrații, temperatură, consum), modele de predicție antrenate pe datele tale specifice, alerte automate cu prioritizare și integrare cu stocul de piese de schimb Uzinex pentru livrare preventivă.",
+        anim: { type: "checklist", items: ["Monitorizare parametri critici", "Modele predicție personalizate", "Alerte automate prioritizate", "Integrare stoc piese OEM", "Livrare preventivă next-day"] },
       },
       {
         title: "Cum funcționează",
         body: "Senzorii IIoT (Kit Nivel 1 sau superiori) colectează date continuu. Algoritmii identifică tiparele de degradare și calculează timpul rămas până la defecțiune. Când o componentă se apropie de prag, primești alertă și piesa este deja în drum.",
+        anim: { type: "flowchart", steps: [{ label: "Senzori", time: "Continuu" }, { label: "Analiză AI", time: "Real-time" }, { label: "Alertă", time: "72h+" }, { label: "Piesă livrată", time: "Next-day" }], totalTime: "Automat 24/7" },
       },
       {
         title: "De ce contează pentru tine",
         body: "O oprire neplanificată costă între 5.000 și 50.000 EUR pe oră, depinzând de industrie. Cu mentenanță predictivă, elimini aceste costuri complet. Este esențial și pentru contractele publice și sectorul apărării, unde reziliența operațională este obligatorie.",
+        anim: { type: "counter", metrics: [{ value: 95, suffix: "%", label: "downtime eliminat" }, { value: 40, suffix: "%", label: "costuri mentenanță reduse" }, { value: 50000, prefix: "€", label: "economie / oprire evitată" }] },
       },
     ],
     benefits: [
@@ -143,14 +160,17 @@ const DIRECTIONS: Direction[] = [
       {
         title: "Ce primești concret",
         body: "Sistem complet de inspecție vizuală: cameră(e) industrială HD/4K, iluminare specializată, software de analiză cu modele AI antrenate pe tipologia pieselor tale, PLC de integrare cu banda și raportare automată lot-by-lot.",
+        anim: { type: "checklist", items: ["Cameră industrială HD/4K", "Iluminare specializată", "Software AI antrenat pe piesele tale", "PLC integrare bandă", "Raportare automată lot-by-lot"] },
       },
       {
         title: "Cum funcționează",
         body: "Montăm camerele deasupra benzii existente. Software-ul este antrenat pe mostre bune și defecte din producția ta (nu pe date generice). Fiecare piesă este inspectată în timp real. Cele cu defecte sunt marcate sau ejectate automat. Toate datele sunt loggate pentru audit.",
+        anim: { type: "flowchart", steps: [{ label: "Montaj", time: "Ziua 1" }, { label: "Mostre", time: "Ziua 2" }, { label: "Antrenare AI", time: "Ziua 3-4" }, { label: "Producție", time: "Ziua 5" }], totalTime: "5 zile" },
       },
       {
         title: "De ce contează pentru tine",
         body: "Dacă produci repere pentru export, clauze de calitate stricte (PPM sub 50) pot face diferența între a păstra sau a pierde un contract. Inspecția optică reduce rebuturile cu peste 90% și generează documentație de calitate automată.",
+        anim: { type: "counter", metrics: [{ value: 90, suffix: "%+", label: "rebuturi eliminate" }, { value: 120, suffix: " fps", label: "viteză inspecție" }, { value: 50, suffix: " PPM", label: "sub pragul export" }] },
       },
     ],
     benefits: [
@@ -180,14 +200,17 @@ const DIRECTIONS: Direction[] = [
       {
         title: "Ce primești concret",
         body: "Module Edge Gateway compatibile multi-protocol (Modbus, OPC-UA, Profinet, EtherNet/IP), scripturile de comunicare personalizate pe utilajele tale, integrare cu ERP-ul/MES-ul existent și un dashboard de monitorizare a conectivității.",
+        anim: { type: "checklist", items: ["Edge Gateway multi-protocol", "Scripturi comunicare custom", "Integrare ERP/MES existent", "Dashboard conectivitate", "Suport Modbus, OPC-UA, Profinet"] },
       },
       {
         title: "Cum funcționează",
         body: "Montăm gateway-ul fizic lângă utilaj (sau pe șina DIN din tablou). Scriem scripturile care traduc protocoalele utilajelor tale în REST/JSON compatibil cu sistemul tău. Configurarea tipică durează sub 2 săptămâni. Datele curg automat, fără intervenție umană.",
+        anim: { type: "flowchart", steps: [{ label: "Audit", time: "Ziua 1-2" }, { label: "Montaj GW", time: "Ziua 3-5" }, { label: "Scripturi", time: "Ziua 6-10" }, { label: "Live", time: "Ziua 12" }], totalTime: "Sub 2 săptămâni" },
       },
       {
         title: "De ce contează pentru tine",
         body: "Fișele de producție pe hârtie generează erori, pierd timp și nu pot fi auditate ușor. Cu Edge Computing, fiecare operație este logată digital în timp real. Managerul ia decizii pe date reale, nu pe estimări de acum 3 zile.",
+        anim: { type: "counter", metrics: [{ value: 100, suffix: "%", label: "date digitale, zero hârtie" }, { value: 200, suffix: "ms", label: "latență date live" }, { value: 14, suffix: " zile", label: "timp implementare" }] },
       },
     ],
     benefits: [
@@ -217,14 +240,17 @@ const DIRECTIONS: Direction[] = [
       {
         title: "Ce primești concret",
         body: "Software dezvoltat de la zero sau adaptat pe specificul tău industrial: panouri SCADA cu sinoptice custom, interfețe HMI pentru operatori, module de trasabilitate lot-by-lot, generare automată rapoarte pentru audit și integrare cu orice sistem existent (ERP, MES, PLC).",
+        anim: { type: "checklist", items: ["Panouri SCADA personalizate", "Interfețe HMI operatori", "Trasabilitate lot-by-lot", "Raportare automată audit", "Integrare ERP/MES/PLC", "Cod sursă complet livrat"] },
       },
       {
         title: "Cum funcționează",
         body: "Pornim de la o analiză funcțională a procesului tău (1-2 zile la fața locului). Propunem o arhitectură tehnică, dezvoltăm iterativ cu feedback-ul tău, instalăm pe serverele tale și facem training. Totul livrat cu cod sursă complet, fără licențe recurente.",
+        anim: { type: "flowchart", steps: [{ label: "Analiză", time: "1-2 zile" }, { label: "Arhitectură", time: "Săpt. 1" }, { label: "Dezvoltare", time: "Săpt. 2-6" }, { label: "Deploy", time: "Săpt. 7" }], totalTime: "6-8 săptămâni" },
       },
       {
         title: "De ce contează pentru tine",
         body: "Software-ul SaaS generic te forțează să-ți adaptezi procesul la soft, nu invers. Cu software pe comandă, softul se adaptează la tine. Nu plătești abonamente lunare, nu depinzi de vendor, și ai control total asupra datelor și funcționalității.",
+        anim: { type: "counter", metrics: [{ value: 0, prefix: "€", suffix: "/lună", label: "licențe recurente" }, { value: 100, suffix: "%", label: "cod proprietar" }, { value: 0, suffix: "", prefix: "", label: "dependență vendor" }] },
       },
     ],
     benefits: [
@@ -361,10 +387,19 @@ export default async function DirectionPage({
                     {s.title}
                   </h2>
                 </div>
-                <div className="lg:col-span-6 lg:col-start-7">
+                <div className="lg:col-span-6 lg:col-start-7 space-y-8">
                   <p className="text-ink-600 leading-relaxed text-base">
                     {s.body}
                   </p>
+                  {s.anim?.type === "checklist" && (
+                    <UnboxingChecklist items={s.anim.items} accent={d.accent} />
+                  )}
+                  {s.anim?.type === "flowchart" && (
+                    <FlowchartSteps steps={s.anim.steps} totalTime={s.anim.totalTime} accent={d.accent} />
+                  )}
+                  {s.anim?.type === "counter" && (
+                    <CounterMetrics metrics={s.anim.metrics} accent={d.accent} />
+                  )}
                 </div>
               </div>
             </div>
