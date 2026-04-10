@@ -256,17 +256,39 @@ export function CatalogTabs() {
           </div>
         </div>
 
-        {/* CATEGORY SELECTOR — dropdown + prev/next */}
-        <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div className="hidden sm:flex items-center gap-3 text-[11px] mono uppercase tracking-[0.2em] text-ink-400">
-            <span className="w-8 h-px bg-ink-300" />
-            <span>
-              Categoria {cat.num} <span className="text-ink-300">/</span> {String(CATEGORIES.length).padStart(2, "0")}
-            </span>
+        {/* CATEGORY SELECTOR — arrows left, dropdown right */}
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          {/* LEFT: category counter + arrows below */}
+          <div className="flex flex-col gap-3">
+            <div className="hidden sm:flex items-center gap-3 text-[11px] mono uppercase tracking-[0.2em] text-ink-400">
+              <span className="w-8 h-px bg-ink-300" />
+              <span>
+                Categoria {cat.num} <span className="text-ink-300">/</span> {String(CATEGORIES.length).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="hidden sm:flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => goTo(-1)}
+                aria-label="Categoria anterioară"
+                className="w-9 h-9 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition text-sm"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                onClick={() => goTo(1)}
+                aria-label="Categoria următoare"
+                className="w-9 h-9 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition text-sm"
+              >
+                →
+              </button>
+            </div>
           </div>
 
-          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[360px]">
-            <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono mb-1.5 flex items-center gap-2">
+          {/* RIGHT: dropdown selector (compact) */}
+          <div ref={dropdownRef} className="relative flex-1 sm:flex-none sm:min-w-[280px] sm:max-w-[320px]">
+            <div className="text-[9px] uppercase tracking-[0.2em] text-uzx-orange mono mb-1 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange animate-pulse" />
               Selectează o categorie
             </div>
@@ -275,22 +297,22 @@ export function CatalogTabs() {
               onClick={() => setDropdownOpen((o) => !o)}
               aria-haspopup="listbox"
               aria-expanded={dropdownOpen}
-              className="w-full flex items-center gap-3 px-4 py-2.5 border-2 border-uzx-orange bg-white hover:bg-uzx-orange/5 transition text-left group shadow-[0_3px_0_0_rgba(245,133,31,0.15)]"
+              className="w-full flex items-center gap-2.5 px-3 py-2 border-2 border-uzx-orange bg-white hover:bg-uzx-orange/5 transition text-left group shadow-[0_2px_0_0_rgba(245,133,31,0.15)]"
             >
-              <span className="serif text-xl text-uzx-orange num shrink-0 mono">
+              <span className="serif text-base text-uzx-orange num shrink-0 mono">
                 {cat.num}
               </span>
-              <span className="w-px h-7 bg-ink-200 shrink-0" />
+              <span className="w-px h-5 bg-ink-200 shrink-0" />
               <span className="flex-1 min-w-0">
-                <span className="block text-[9px] uppercase tracking-widest text-ink-400 mono leading-tight">
+                <span className="block text-[8px] uppercase tracking-widest text-ink-400 mono leading-tight">
                   Categorie activă
                 </span>
-                <span className="serif text-base lg:text-lg text-ink-900 block truncate leading-tight">
+                <span className="serif text-sm text-ink-900 block truncate leading-tight">
                   {cat.tab}
                 </span>
               </span>
               <span
-                className="flex items-center justify-center w-8 h-8 bg-uzx-orange text-white text-xs shrink-0 transition-transform group-hover:scale-110"
+                className="flex items-center justify-center w-6 h-6 bg-uzx-orange text-white text-[10px] shrink-0 transition-transform group-hover:scale-110"
                 style={{ transform: dropdownOpen ? "rotate(180deg)" : "none" }}
               >
                 ▾
@@ -319,7 +341,7 @@ export function CatalogTabs() {
                             setActive(c.id);
                             setDropdownOpen(false);
                           }}
-                          className={`w-full flex items-center justify-between gap-3 px-4 py-3 text-sm transition text-left ${
+                          className={`w-full flex items-center justify-between gap-3 px-3 py-2.5 text-sm transition text-left ${
                             isActive
                               ? "text-uzx-orange bg-uzx-orange/5"
                               : "text-ink-700 hover:bg-ink-50"
@@ -345,25 +367,6 @@ export function CatalogTabs() {
                 </motion.ul>
               )}
             </AnimatePresence>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-2 shrink-0">
-            <button
-              type="button"
-              onClick={() => goTo(-1)}
-              aria-label="Categoria anterioară"
-              className="w-11 h-11 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              onClick={() => goTo(1)}
-              aria-label="Categoria următoare"
-              className="w-11 h-11 border hairline flex items-center justify-center text-ink-700 hover:border-uzx-blue hover:text-uzx-blue transition"
-            >
-              →
-            </button>
           </div>
         </div>
 
