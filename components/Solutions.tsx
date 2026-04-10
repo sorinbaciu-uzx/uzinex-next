@@ -24,58 +24,58 @@ export type SolutionsData = {
 const SOLUTIONS: Solution[] = [
   {
     num: "01",
-    industry: "Producție & manufactură",
-    image: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80&auto=format&fit=crop",
+    industry: "IIoT & Monitorizare Plug & Play",
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&q=80&auto=format&fit=crop",
     description:
-      "Linii complete pentru fabrici de procesare metal, plastic și ansamble: debitare laser, prelucrare CNC, sudură robotizată și inspecție automată.",
-    bullets: ["Mașini de tăiere laser fibră", "Centre CNC & strunguri", "Brațe robotice de sudură"],
-    package: "UZX-Manufacturing",
+      "Rețea de senzori inteligenți aplicați pe utilaje noi sau vechi, colectând date în timp real: temperatură, vibrații, consum energetic, ciclu de lucru. Clientul vede direct pe tabletă sau telefon cât timp stă utilajul degeaba (calcul OEE). Kit-ul de Digitalizare Nivel 1 cu fricțiune minimă, marje de peste 50% la pachetul integrat.",
+    bullets: ["Senzori IIoT industriali (temperatură, vibrații, consum)", "Dashboard OEE în timp real pe tabletă/mobil", "Instalare rapidă pe utilaje existente (retrofitting)"],
+    package: "UZX-IIoT",
   },
   {
     num: "02",
-    industry: "Logistică & depozitare",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80&auto=format&fit=crop",
+    industry: "Robotică colaborativă (Cobots)",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&auto=format&fit=crop",
     description:
-      "Echipamente complete pentru centre de distribuție și depozite e-commerce: manipulare, paletizare, sortare automată și soluții de depozitare verticală.",
-    bullets: ["Motostivuitoare electrice & diesel", "Linii automate de paletizare", "Sisteme de rafturi industriale"],
-    package: "UZX-Logistics",
+      "Brațe robotice concepute să lucreze în siguranță alături de operatori umani, fără cuști de protecție masive. Folosite pentru paletizare, încărcare/descărcare CNC-uri, asamblare sau sudură. Integrăm branduri asiatice de top, subminând prețurile distribuitorilor europeni cu până la 30-40%. Garantăm instalarea, programarea și intervenția rapidă.",
+    bullets: ["Cobots pentru paletizare & manipulare", "Programare proceduri standard de mișcare", "Prețuri cu 30-40% sub distribuitorii europeni"],
+    package: "UZX-Cobots",
   },
   {
     num: "03",
-    industry: "Energie & infrastructură",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80&auto=format&fit=crop",
+    industry: "Mentenanță predictivă",
+    image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&q=80&auto=format&fit=crop",
     description:
-      "Utilaje grele și echipamente energetice pentru proiecte de infrastructură mare: termo, eolian, hidro, transport energie și exploatări miniere.",
-    bullets: ["Macarale & utilaje de ridicare", "Generatoare & echipamente energetice", "Excavatoare grele heavy-duty"],
-    package: "UZX-Energy",
+      "Utilizarea datelor de la senzorii IIoT și a algoritmilor pentru a prezice exact când o componentă mecanică va ceda, permițând înlocuirea înainte de a opri producția. Uzinex monitorizează starea echipamentului și aduce piesa de schimb pe linia de producție înainte ca utilajul să se strice — zero timpi morți, independență operațională totală.",
+    bullets: ["Predicție defecțiuni pe bază de date IIoT", "Livrare preventivă piese de schimb", "Critică pentru licitații publice și sectorul apărării"],
+    package: "UZX-Predictive",
   },
   {
     num: "04",
-    industry: "Procesare & reciclare",
-    image: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=600&q=80&auto=format&fit=crop",
+    industry: "Inspecție optică (Machine Vision)",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80&auto=format&fit=crop",
     description:
-      "Linii complete pentru reciclare deșeuri, ambalare, etichetare și dozare. Soluții turnkey pentru fabrici de procesare materiale și economie circulară.",
-    bullets: ["Linii de sortare & granulare", "Mașini de ambalare automată", "Sisteme de etichetare & dozare"],
-    package: "UZX-Process",
+      "Camere de înaltă rezoluție și software care inspectează automat fiecare piesă produsă pe o bandă, identificând defecte de milimetri la viteze umane imposibil de atins. Se instalează deasupra benzilor existente. Ciclu scurt de vânzare — demo direct pe piesele clientului. Ideal pentru companiile care produc repere pentru export cu clauze stricte privind rebuturile.",
+    bullets: ["Camere industriale de înaltă rezoluție", "Detectare defecte sub-milimetrice în timp real", "Instalare pe benzile de producție existente"],
+    package: "UZX-Vision",
   },
   {
     num: "05",
-    industry: "Auto & metalurgie",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80&auto=format&fit=crop",
+    industry: "Edge Computing & Conectivitate MES",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop",
     description:
-      "Echipamente pentru industria auto și prelucrarea metalelor: linii de asamblare robotizate, presse, sudură automată și control dimensional.",
-    bullets: ["Celule robotice de sudură", "Mașini de inspecție 3D", "Linii de asamblare modulare"],
-    package: "UZX-Automotive",
+      "Module Edge Gateway care preiau limbajele utilajelor (indiferent de marcă) și le traduc într-un format pe care software-ul de management al clientului (ERP/MES) îl poate citi automat. Eliminăm fișele de producție pe hârtie. Asigurăm hardware-ul de conectare și scrierea scripturilor de comunicare — zero timp pierdut cu introducerea manuală a datelor.",
+    bullets: ["Edge Gateway compatibil multi-brand", "Integrare automată ERP/MES", "Eliminarea hârtiei din fluxul de producție"],
+    package: "UZX-Edge",
   },
 ];
 
 export const SOLUTIONS_DEFAULT: SolutionsData = {
-  eyebrow: "06 / Soluții tehnice",
-  titleLine1: "Recomandări în",
-  titleLine2: "funcție de aplicație.",
+  eyebrow: "06 / Industry 4.0",
+  titleLine1: "Soluții integrate",
+  titleLine2: "pentru fabrica viitorului.",
   description:
-    "Selectează tipul de aplicație, iar inginerii noștri îți recomandă combinația optimă de echipamente.",
-  ctaLabel: "Solicită o recomandare personalizată",
+    "Cinci direcții tehnologice pe care le integrăm la cheie: de la senzorii IIoT plug & play, la cobots, mentenanță predictivă, inspecție optică și conectivitate MES.",
+  ctaLabel: "Solicită o evaluare gratuită",
   ctaHref: "#contact",
   items: SOLUTIONS,
 };
