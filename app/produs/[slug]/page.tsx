@@ -506,9 +506,19 @@ export default async function Page({ params }: Props) {
           });
         }
 
+        // Strip WordPress [embed]URL[/embed] shortcodes from paragraph text —
+        // the video is shown via a proper video enrichment at the same position
+        // (see scripts/build-enrichments.js for the pairing). Paragraphs that
+        // become empty after stripping are dropped by the filter below; the
+        // enrichment recipes know about this and target post-stripping indices.
+        const stripped = effBlocks.map((b) =>
+          b.type === "paragraph"
+            ? { ...b, text: b.text.replace(/\[embed\][^[]+\[\/embed\]/gi, "").trim() }
+            : b
+        );
         // Filter empty paragraph blocks from the ORIGINAL description (the related-
         // products paragraph is appended separately so it always lands at the end).
-        const cleanEffBlocks = effBlocks.filter(
+        const cleanEffBlocks = stripped.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
 

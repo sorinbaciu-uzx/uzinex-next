@@ -24,8 +24,18 @@ function toEmbedUrl(videoIdOrUrl: string): string | null {
     if (u.hostname.includes("youtube.com")) {
       const v = u.searchParams.get("v");
       if (v) return `https://www.youtube.com/embed/${v}`;
-      // /embed/ID path — already an embed URL
       if (u.pathname.startsWith("/embed/")) return u.toString();
+    }
+    // Vimeo: vimeo.com/ID -> player.vimeo.com/video/ID
+    if (u.hostname.includes("vimeo.com")) {
+      const segments = u.pathname.split("/").filter(Boolean);
+      const id = segments[0];
+      if (id && /^\d+$/.test(id)) {
+        return `https://player.vimeo.com/video/${id}`;
+      }
+      if (u.hostname === "player.vimeo.com" && u.pathname.startsWith("/video/")) {
+        return u.toString();
+      }
     }
   } catch {
     return null;

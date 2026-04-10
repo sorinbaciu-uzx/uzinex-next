@@ -1064,7 +1064,7 @@
   "masina-cnc-pentru-fabricarea-mobilierului-cu-alimentare-automata": [
     {
       "type": "quote",
-      "insertAfterParagraph": 8,
+      "insertAfterParagraph": 7,
       "data": {
         "text": "La o productie de 200–400 de panouri pe zi, diferenta de viteza de deplasare se traduce in ore de productie suplimentara pe tura.",
         "attribution": "Din descrierea produsului"
@@ -1072,7 +1072,7 @@
     },
     {
       "type": "usecases",
-      "insertAfterParagraph": 17,
+      "insertAfterParagraph": 16,
       "data": {
         "heading": "Unde se potrivește",
         "cases": [
@@ -1093,7 +1093,7 @@
     },
     {
       "type": "image",
-      "insertAfterParagraph": 20,
+      "insertAfterParagraph": 19,
       "data": {
         "src": "/images/produse/1325-auto-feeding-cnc-furniture-making-machine1.webp",
         "alt": "Mașină CNC pentru fabricarea mobilierului cu alimentare automată — vedere de ansamblu",
@@ -1103,7 +1103,7 @@
     },
     {
       "type": "faq",
-      "insertAfterParagraph": 26,
+      "insertAfterParagraph": 25,
       "data": {
         "question": "Câte scule pot fi încărcate simultan în magazinul ATC?",
         "answer": "Magazinul ATC standard este dimensionat pentru rețeta tipică de producție. Configurația exactă se definește la ofertare în funcție de operațiile tale."
@@ -1111,12 +1111,20 @@
     },
     {
       "type": "image",
-      "insertAfterParagraph": 32,
+      "insertAfterParagraph": 31,
       "data": {
         "src": "/images/produse/1325-auto-feeding-cnc-furniture-making-machine1.webp",
         "alt": "Mașină CNC pentru fabricarea mobilierului cu alimentare automată — detaliu",
         "caption": "Detaliu al componentelor interne ale centrului CNC.",
         "galleryIndex": 2
+      }
+    },
+    {
+      "type": "video",
+      "insertAfterParagraph": 1,
+      "data": {
+        "video": "https://vimeo.com/1026833584",
+        "caption": "Video demonstrativ — Mașină CNC pentru fabricarea mobilierului cu alimentare automată"
       }
     }
   ],
