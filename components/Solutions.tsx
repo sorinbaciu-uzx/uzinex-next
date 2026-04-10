@@ -67,6 +67,15 @@ const SOLUTIONS: Solution[] = [
     bullets: ["Compatibil cu orice brand de utilaj", "Date de producție live în ERP/MES, fără hârtie", "Timp de implementare: sub 2 săptămâni"],
     package: "UZX-Edge",
   },
+  {
+    num: "06",
+    industry: "Software industrial pe comandă",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80&auto=format&fit=crop",
+    description:
+      "Ai un proces pe care niciun soft de raft nu-l rezolvă? Îți dezvoltăm aplicații industriale la comandă — de la panouri SCADA personalizate și interfețe HMI, la sisteme de planificare producție, trasabilitate lot și raportare automată. Codul e al tău, rulează pe serverele tale, fără abonamente lunare sau dependență de vendor.",
+    bullets: ["SCADA, HMI și panouri de control personalizate", "Trasabilitate completă lot-by-lot pentru audit", "Cod proprietar, fără licențe recurente"],
+    package: "UZX-Software",
+  },
 ];
 
 export const SOLUTIONS_DEFAULT: SolutionsData = {
