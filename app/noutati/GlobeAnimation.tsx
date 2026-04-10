@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /* ─── CONFIG ─── */
-const SWEEP_SPEED = 0.8;          // rotations per second
+const SWEEP_SPEED = 0.15;         // rotations per second
 const UNITS = [
   { code: "ALPHA-01", r: 0.55, angle: 45,  status: "ACTIVE", type: "PV-MOB" },
   { code: "BRAVO-03", r: 0.72, angle: 160, status: "ACTIVE", type: "PV-FIX" },
