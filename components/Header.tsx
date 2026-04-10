@@ -157,7 +157,19 @@ const FINANTARE_ITEMS: SubItem[] = [
 ];
 
 const NAV: NavItem[] = [
-  { label: "Industry 4.0", href: "/#solutii" },
+  {
+    label: "Industry 4.0",
+    href: "/industry-4.0",
+    type: "dropdown",
+    items: [
+      { label: "IIoT & Monitorizare", href: "/industry-4.0/iiot-monitorizare" },
+      { label: "Robotică colaborativă", href: "/industry-4.0/robotica-colaborativa" },
+      { label: "Mentenanță predictivă", href: "/industry-4.0/mentenanta-predictiva" },
+      { label: "Inspecție optică", href: "/industry-4.0/inspectie-optica" },
+      { label: "Edge Computing & MES", href: "/industry-4.0/edge-computing-mes" },
+      { label: "Software industrial", href: "/industry-4.0/software-industrial" },
+    ],
+  },
   { label: "Studii de caz", href: "/studii-de-caz" },
   {
     label: "Catalog tehnic",
