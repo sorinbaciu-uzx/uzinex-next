@@ -26,14 +26,21 @@ export function Highlights({ items }: { items: Highlight[] }) {
 
       <style>{`
         @keyframes hl-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
         .hl-marquee {
-          animation: hl-scroll ${dur}s linear infinite;
+          animation: hl-scroll ${dur * 2}s linear infinite;
+          will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
         .hl-marquee:hover {
           animation-play-state: paused;
+        }
+        .hl-marquee > * {
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
       `}</style>
 
@@ -46,7 +53,7 @@ export function Highlights({ items }: { items: Highlight[] }) {
             const bg = h.color || "#1e6bb8";
             const card = (
               <div
-                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] p-7 lg:p-8 flex flex-col shadow-[0_24px_50px_-20px_rgba(8,37,69,0.35)] text-white transition-transform hover:-translate-y-1"
+                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] p-7 lg:p-8 flex flex-col shadow-[0_24px_50px_-20px_rgba(8,37,69,0.35)] text-white"
                 style={{ background: bg }}
               >
                 <div className="serif text-[22px] lg:text-2xl leading-[1.12] mb-3">
