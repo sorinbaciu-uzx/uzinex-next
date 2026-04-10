@@ -25,35 +25,31 @@ export function Highlights({ items }: { items: Highlight[] }) {
       </div>
 
       <style>{`
-        @keyframes hl-scroll {
-          0% { transform: translate3d(0, 0, 0); }
-          100% { transform: translate3d(-50%, 0, 0); }
+        .hl-track-outer {
+          overflow: hidden;
         }
-        .hl-marquee {
-          animation: hl-scroll ${dur * 2}s linear infinite;
+        .hl-marquee-wrap {
+          display: flex;
+          width: fit-content;
+          animation: hl-slide ${dur * 2}s linear infinite;
           will-change: transform;
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
         }
-        .hl-marquee:hover {
+        .hl-marquee-wrap:hover {
           animation-play-state: paused;
         }
-        .hl-marquee > * {
-          backface-visibility: hidden;
-          -webkit-backface-visibility: hidden;
+        @keyframes hl-slide {
+          from { transform: translateX(0); }
+          to { transform: translateX(calc(-50% - 12px)); }
         }
       `}</style>
 
-      <div className="overflow-hidden pb-12 lg:pb-16 lg:mr-[340px]">
-        <div
-          className="hl-marquee flex gap-5 lg:gap-6"
-          style={{ width: "max-content" }}
-        >
+      <div className="hl-track-outer pb-12 lg:pb-16 lg:mr-[340px]">
+        <div className="hl-marquee-wrap gap-5 lg:gap-6">
           {doubled.map((h, i) => {
             const bg = h.color || "#1e6bb8";
             const card = (
               <div
-                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] p-7 lg:p-8 flex flex-col shadow-[0_24px_50px_-20px_rgba(8,37,69,0.35)] text-white"
+                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] p-7 lg:p-8 flex flex-col text-white border border-white/10"
                 style={{ background: bg }}
               >
                 <div className="serif text-[22px] lg:text-2xl leading-[1.12] mb-3">
