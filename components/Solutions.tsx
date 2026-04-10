@@ -33,7 +33,7 @@ const SOLUTIONS: Solution[] = [
   },
   {
     num: "02",
-    industry: "Robotică colaborativă (Cobots)",
+    industry: "Robotică colaborativă",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&auto=format&fit=crop",
     description:
       "Rezolvă lipsa de personal fără să triplezi costurile. Cobotul lucrează în siguranță lângă oamenii tăi — paletizează, alimentează CNC-ul, sudează — în timp ce tu recuperezi investiția în 12-18 luni. Prețuri cu 30-40% sub distribuitorii europeni, cu instalare și programare incluse de la noi.",
@@ -51,7 +51,7 @@ const SOLUTIONS: Solution[] = [
   },
   {
     num: "04",
-    industry: "Inspecție optică (Machine Vision)",
+    industry: "Inspecție optică",
     image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80&auto=format&fit=crop",
     description:
       "Elimină rebuturile înainte să ajungă la client. Camerele noastre inspectează fiecare piesă la viteze pe care niciun operator nu le poate atinge, detectând defecte sub-milimetrice. Se montează pe banda existentă, fără modificări. Ideal dacă produci pentru export și ai clauze stricte de calitate.",
