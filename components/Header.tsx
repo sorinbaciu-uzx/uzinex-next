@@ -153,7 +153,7 @@ const FINANTARE_ITEMS: SubItem[] = [
     label: "Finanțare europeană & guvernamentală",
     href: "/finantare/europeana-guvernamentala",
   },
-  { label: "Credit furnizor (direct la noi)", href: "/finantare/credit-furnizor" },
+  { label: "Credit furnizor", href: "/finantare/credit-furnizor" },
 ];
 
 const NAV: NavItem[] = [
