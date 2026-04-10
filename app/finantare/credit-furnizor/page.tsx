@@ -61,8 +61,8 @@ const GUARANTEES = [
     num: "06",
     title: "Ipotecă mobiliară",
     icon: "",
-    desc: "Ipotecă constituită asupra echipamentului industrial livrat, cu înscriere la Cartea Funciară sau AEGRM. Oferă drept de preferință la executare și se aplică de regulă pentru echipamente cu valoare mare (peste €50.000).",
-    details: ["Drept de preferință la executare", "Înscriere în registrele publice", "Recomandat pentru valori > €50.000"],
+    desc: "Ipotecă constituită asupra echipamentului industrial livrat, cu înscriere la Cartea Funciară sau AEGRM. Oferă drept de preferință la executare față de alți creditori și rămâne activă până la plata integrală a creditului furnizor.",
+    details: ["Drept de preferință la executare", "Înscriere în registrele publice", "Activă până la plata integrală"],
     accent: "#004990",
   },
   {
