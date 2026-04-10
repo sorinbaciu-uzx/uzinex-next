@@ -233,7 +233,7 @@ const DIRECTIONS: Direction[] = [
     num: "06",
     title: "Software industrial pe comandă",
     subtitle: "Codul e al tău, fără licențe recurente, niciodată",
-    accent: "#6b3410",
+    accent: "#f5851f",
     heroDescription:
       "Ai un proces pe care niciun soft de raft nu-l rezolvă? Îți dezvoltăm aplicații industriale la comandă — de la panouri SCADA personalizate și interfețe HMI, la sisteme de planificare producție, trasabilitate lot și raportare automată. Codul e al tău, rulează pe serverele tale.",
     sections: [

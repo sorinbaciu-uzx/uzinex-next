@@ -84,7 +84,7 @@ const DIRECTIONS = [
     description:
       "De la panouri SCADA personalizate și interfețe HMI, la trasabilitate lot și raportare automată. Rulează pe serverele tale, fără abonamente sau dependență de vendor.",
     highlights: ["SCADA & HMI personalizate", "Trasabilitate lot-by-lot", "Cod proprietar, zero licențe"],
-    accent: "#6b3410",
+    accent: "#f5851f",
   },
 ];
 
