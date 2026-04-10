@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { ContactCTA } from "@/components/ContactCTA";
+import { DiagnosisMockup } from "@/components/DiagnosisMockup";
 
 export const metadata: Metadata = {
   title: "Service inclus la livrare — Uzinex",
@@ -226,6 +227,8 @@ export default function ServiceInclusPage() {
                   de la tine. Tehnicianul deține întotdeauna controlul asupra
                   utilajului.
                 </p>
+
+                <DiagnosisMockup />
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
