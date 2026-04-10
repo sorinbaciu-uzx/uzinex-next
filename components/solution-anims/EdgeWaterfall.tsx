@@ -1,130 +1,328 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
-const SOURCES = ["CNC-01", "Presă-02", "Laser-03", "Robot-04", "Conv-05"];
-const RAW_CHARS = "0x4F 9A 7C FF 02 E3 B1 48 6D A0 F2 1B C8 3E 7F 55".split(" ");
-const TABLE_ROWS = [
-  { ts: "14:32:01", machine: "CNC-01", oee: "87.4%", status: "OK" },
-  { ts: "14:32:01", machine: "Presă-02", oee: "91.2%", status: "OK" },
-  { ts: "14:32:02", machine: "Laser-03", oee: "78.6%", status: "⚠" },
-  { ts: "14:32:02", machine: "Robot-04", oee: "94.1%", status: "OK" },
-  { ts: "14:32:03", machine: "Conv-05", oee: "82.3%", status: "OK" },
+const MACHINES = [
+  {
+    label: "CNC",
+    angle: -72,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="w-4 h-4">
+        <rect x="3" y="3" width="18" height="14" rx="1" />
+        <path d="M7 21h10M12 17v4" />
+      </svg>
+    ),
+  },
+  {
+    label: "Presă",
+    angle: -36,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="w-4 h-4">
+        <path d="M12 2v8M8 6h8M6 14h12v6H6z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Laser",
+    angle: 0,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="w-4 h-4">
+        <path d="M12 2L2 22h20L12 2z" />
+        <path d="M12 10v6" />
+      </svg>
+    ),
+  },
+  {
+    label: "Stivuitor",
+    angle: 36,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="w-4 h-4">
+        <rect x="3" y="8" width="12" height="10" rx="1" />
+        <path d="M18 12h3v6h-3M6 18v3M12 18v3" />
+        <circle cx="6" cy="21" r="1" fill="currentColor" />
+        <circle cx="12" cy="21" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: "Robot",
+    angle: 72,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className="w-4 h-4">
+        <path d="M12 2a2 2 0 012 2v3h-4V4a2 2 0 012-2z" />
+        <rect x="4" y="7" width="16" height="10" rx="2" />
+        <circle cx="9" cy="12" r="1.5" fill="currentColor" />
+        <circle cx="15" cy="12" r="1.5" fill="currentColor" />
+        <path d="M8 17v4M16 17v4" />
+      </svg>
+    ),
+  },
 ];
 
+const CYCLE = 7;
+const CX = 120;
+const CY = 85;
+const R = 65;
+
 export function EdgeWaterfall() {
-  const [visibleRows, setVisibleRows] = useState(0);
-  const [cycle, setCycle] = useState(0);
-
-  useEffect(() => {
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    setVisibleRows(0);
-    TABLE_ROWS.forEach((_, i) => {
-      timers.push(setTimeout(() => setVisibleRows(i + 1), 3000 + i * 600));
-    });
-    timers.push(setTimeout(() => setCycle((c) => c + 1), 9000));
-    return () => timers.forEach(clearTimeout);
-  }, [cycle]);
-
   return (
     <div className="w-full aspect-[16/10] bg-[#0a0e14] relative overflow-hidden">
-      {/* RAW DATA — falling from sources */}
-      <div className="absolute top-0 left-0 right-0 h-[45%] flex gap-0 overflow-hidden">
-        {SOURCES.map((src, col) => (
-          <div
-            key={src}
-            className="flex-1 relative overflow-hidden"
-            style={{ borderRight: "1px solid rgba(255,255,255,0.05)" }}
-          >
-            <div className="text-[7px] mono text-white/30 text-center py-1 uppercase tracking-wider">
-              {src}
-            </div>
-            {Array.from({ length: 8 }).map((_, row) => (
-              <motion.div
-                key={`${cycle}-${col}-${row}`}
-                className="text-[8px] mono text-center leading-tight"
-                style={{ color: "rgba(30,107,184,0.5)" }}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: [0, 0.7, 0.3, 0], y: [-10, 0, 10, 20] }}
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-6"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(30,107,184,0.2) 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
+      />
+
+      <svg viewBox="0 0 320 180" className="w-full h-full relative z-10">
+        {/* Connection lines from machines to gateway — with animated particles */}
+        {MACHINES.map((m, i) => {
+          const rad = ((m.angle - 90) * Math.PI) / 180;
+          const mx = CX + R * Math.cos(rad);
+          const my = CY + R * Math.sin(rad);
+          return (
+            <g key={i}>
+              {/* Static line */}
+              <line
+                x1={mx}
+                y1={my}
+                x2={CX}
+                y2={CY}
+                stroke="rgba(30,107,184,0.15)"
+                strokeWidth="0.5"
+                strokeDasharray="2 3"
+              />
+              {/* Animated particle flowing to center */}
+              <motion.circle
+                r="2"
+                fill="#1e6bb8"
+                animate={{
+                  cx: [mx, CX],
+                  cy: [my, CY],
+                  opacity: [0, 1, 1, 0],
+                }}
                 transition={{
                   duration: 2,
-                  delay: row * 0.25 + col * 0.1,
-                  repeat: 2,
-                  repeatDelay: 0.5,
+                  delay: i * 0.8,
+                  repeat: Infinity,
+                  repeatDelay: CYCLE - 2,
+                  ease: "easeInOut",
                 }}
+              />
+              <motion.circle
+                r="1.5"
+                fill="#1e6bb8"
+                animate={{
+                  cx: [mx, CX],
+                  cy: [my, CY],
+                  opacity: [0, 0.6, 0.6, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  delay: i * 0.8 + 0.3,
+                  repeat: Infinity,
+                  repeatDelay: CYCLE - 2,
+                  ease: "easeInOut",
+                }}
+              />
+            </g>
+          );
+        })}
+
+        {/* Gateway to ERP line */}
+        <line
+          x1={CX}
+          y1={CY}
+          x2={280}
+          y2={30}
+          stroke="rgba(245,133,31,0.2)"
+          strokeWidth="1"
+        />
+        <motion.line
+          x1={CX}
+          y1={CY}
+          x2={280}
+          y2={30}
+          stroke="#f5851f"
+          strokeWidth="1.5"
+          animate={{
+            pathLength: [0, 0, 1, 1, 0],
+            opacity: [0, 0, 0.8, 0.8, 0],
+          }}
+          transition={{
+            duration: CYCLE,
+            repeat: Infinity,
+            times: [0, 0.55, 0.7, 0.85, 0.95],
+          }}
+        />
+
+        {/* Machine nodes */}
+        {MACHINES.map((m, i) => {
+          const rad = ((m.angle - 90) * Math.PI) / 180;
+          const mx = CX + R * Math.cos(rad);
+          const my = CY + R * Math.sin(rad);
+          return (
+            <g key={`node-${i}`}>
+              <motion.rect
+                x={mx - 14}
+                y={my - 14}
+                width={28}
+                height={28}
+                fill="rgba(30,107,184,0.1)"
+                stroke="rgba(30,107,184,0.3)"
+                strokeWidth="0.5"
+                animate={{
+                  stroke: [
+                    "rgba(30,107,184,0.3)",
+                    "rgba(30,107,184,0.3)",
+                    "rgba(30,107,184,0.8)",
+                    "rgba(30,107,184,0.8)",
+                    "rgba(30,107,184,0.3)",
+                  ],
+                }}
+                transition={{
+                  duration: CYCLE,
+                  repeat: Infinity,
+                  times: [0, i * 0.1, i * 0.1 + 0.08, 0.8, 0.95],
+                }}
+              />
+              {/* icon positioned via foreignObject */}
+              <foreignObject x={mx - 8} y={my - 8} width={16} height={16}>
+                <div className="text-[#1e6bb8] flex items-center justify-center w-full h-full">
+                  {m.icon}
+                </div>
+              </foreignObject>
+              <text
+                x={mx}
+                y={my + 22}
+                textAnchor="middle"
+                className="text-[6px]"
+                fill="rgba(255,255,255,0.4)"
+                fontFamily="monospace"
               >
-                {RAW_CHARS[(col * 3 + row) % RAW_CHARS.length]}
-              </motion.div>
-            ))}
-          </div>
-        ))}
-      </div>
+                {m.label}
+              </text>
+            </g>
+          );
+        })}
 
-      {/* CONVERSION LINE — Gateway */}
-      <div className="absolute top-[43%] left-0 right-0 z-10">
-        <div className="h-px bg-uzx-orange/40 relative">
-          <motion.div
-            className="absolute inset-0 h-px bg-uzx-orange"
-            animate={{ scaleX: [0, 1], transformOrigin: "left" }}
-            transition={{ duration: 1.5, delay: 2, repeat: Infinity, repeatDelay: 7 }}
-          />
-        </div>
-        <div className="flex items-center justify-center -mt-3">
-          <div className="bg-[#0a0e14] px-3 py-1 border border-uzx-orange/30 flex items-center gap-2">
-            <motion.div
-              className="w-2.5 h-2.5 border border-uzx-orange bg-uzx-orange/20"
-              animate={{ rotate: [0, 180, 360] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            />
-            <span className="text-[9px] mono text-uzx-orange uppercase tracking-widest font-bold">
-              Edge Gateway
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* STRUCTURED TABLE — appears below */}
-      <div className="absolute bottom-0 left-0 right-0 h-[48%] px-4 pb-3 pt-2">
-        {/* Header */}
-        <div className="grid grid-cols-4 gap-1 mb-1">
-          {["Timestamp", "Utilaj", "OEE", "Status"].map((h) => (
-            <div key={h} className="text-[7px] mono text-white/25 uppercase tracking-wider">
-              {h}
-            </div>
-          ))}
-        </div>
-        {/* Rows */}
-        <div className="space-y-0.5">
-          {TABLE_ROWS.slice(0, visibleRows).map((row, i) => (
-            <motion.div
-              key={`${cycle}-${i}`}
-              className="grid grid-cols-4 gap-1 py-1 border-b border-white/5"
-              initial={{ opacity: 0, x: 5 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <span className="text-[9px] mono text-white/50">{row.ts}</span>
-              <span className="text-[9px] mono text-white/70">{row.machine}</span>
-              <span className={`text-[9px] mono font-bold ${row.status === "⚠" ? "text-uzx-orange" : "text-green-400"}`}>
-                {row.oee}
-              </span>
-              <span className={`text-[9px] mono ${row.status === "⚠" ? "text-uzx-orange" : "text-green-400"}`}>
-                {row.status}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Output label */}
-        <motion.div
-          className="mt-2 text-[8px] mono text-white/30 uppercase tracking-wider text-right"
-          animate={{ opacity: [0, 0, 1, 1, 0] }}
-          transition={{ duration: 9, repeat: Infinity, times: [0, 0.5, 0.6, 0.85, 0.95] }}
+        {/* Central GATEWAY node */}
+        <motion.rect
+          x={CX - 20}
+          y={CY - 20}
+          width={40}
+          height={40}
+          fill="rgba(245,133,31,0.1)"
+          stroke="#f5851f"
+          strokeWidth="1"
+          animate={{
+            boxShadow: [
+              "0 0 0 0 rgba(245,133,31,0)",
+              "0 0 20px 5px rgba(245,133,31,0.3)",
+            ],
+          }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+        />
+        {/* Gateway pulse */}
+        <motion.rect
+          x={CX - 20}
+          y={CY - 20}
+          width={40}
+          height={40}
+          fill="none"
+          stroke="#f5851f"
+          strokeWidth="0.5"
+          animate={{
+            scale: [1, 1.5, 1.5],
+            opacity: [0.6, 0, 0],
+          }}
+          style={{ transformOrigin: `${CX}px ${CY}px` }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+        <text
+          x={CX}
+          y={CY - 2}
+          textAnchor="middle"
+          className="text-[6px]"
+          fill="#f5851f"
+          fontFamily="monospace"
+          fontWeight="bold"
         >
-          → JSON/REST → ERP client
-        </motion.div>
-      </div>
+          GATEWAY
+        </text>
+        <text
+          x={CX}
+          y={CY + 6}
+          textAnchor="middle"
+          className="text-[5px]"
+          fill="rgba(245,133,31,0.6)"
+          fontFamily="monospace"
+        >
+          Edge
+        </text>
+
+        {/* ERP node */}
+        <motion.rect
+          x={260}
+          y={15}
+          width={50}
+          height={30}
+          fill="rgba(30,107,184,0.05)"
+          stroke="rgba(30,107,184,0.3)"
+          strokeWidth="0.5"
+          animate={{
+            fill: [
+              "rgba(30,107,184,0.05)",
+              "rgba(30,107,184,0.05)",
+              "rgba(30,107,184,0.15)",
+              "rgba(30,107,184,0.15)",
+              "rgba(30,107,184,0.05)",
+            ],
+          }}
+          transition={{
+            duration: CYCLE,
+            repeat: Infinity,
+            times: [0, 0.65, 0.72, 0.85, 0.95],
+          }}
+        />
+        <text
+          x={285}
+          y={28}
+          textAnchor="middle"
+          className="text-[6px]"
+          fill="rgba(255,255,255,0.5)"
+          fontFamily="monospace"
+          fontWeight="bold"
+        >
+          ERP
+        </text>
+        <motion.text
+          x={285}
+          y={38}
+          textAnchor="middle"
+          className="text-[5px]"
+          fontFamily="monospace"
+          animate={{
+            fill: [
+              "rgba(255,255,255,0.2)",
+              "rgba(255,255,255,0.2)",
+              "rgb(74,222,128)",
+              "rgb(74,222,128)",
+              "rgba(255,255,255,0.2)",
+            ],
+          }}
+          transition={{
+            duration: CYCLE,
+            repeat: Infinity,
+            times: [0, 0.65, 0.72, 0.85, 0.95],
+          }}
+        >
+          Producție: LIVE
+        </motion.text>
+      </svg>
     </div>
   );
 }
