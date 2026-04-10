@@ -97,7 +97,7 @@ export const SOLUTIONS_DEFAULT: SolutionsData = {
   titleLine1: "Soluții integrate",
   titleLine2: "pentru fabrica viitorului.",
   description:
-    "Cinci direcții tehnologice pe care le integrăm la cheie: de la senzorii IIoT plug & play, la cobots, mentenanță predictivă, inspecție optică și conectivitate MES.",
+    "Șase direcții tehnologice pe care le integrăm la cheie: de la senzorii IIoT plug & play, la cobots, mentenanță predictivă, inspecție optică, conectivitate MES și software industrial pe comandă.",
   ctaLabel: "Solicită o evaluare gratuită",
   ctaHref: "#contact",
   items: SOLUTIONS,
