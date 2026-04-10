@@ -41,8 +41,8 @@ export default async function Home() {
       <VideoGallery data={c.video_gallery as VideoGalleryData | undefined} />
       <TestimonialMarquee data={c.testimonials as TestimonialsData | undefined} />
       <CatalogTabs />
-      <NewsSection data={c.news as NewsData | undefined} />
       <Solutions data={c.solutions as SolutionsData | undefined} />
+      <NewsSection data={c.news as NewsData | undefined} />
       <QASection data={c.qa as QAData | undefined} />
       <ContactCTA data={c.contact_cta as ContactCTAData | undefined} />
       <Footer />
