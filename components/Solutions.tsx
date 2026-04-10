@@ -8,6 +8,15 @@ import { VisionCameraPOV } from "./solution-anims/VisionCameraPOV";
 import { EdgeWaterfall } from "./solution-anims/EdgeWaterfall";
 import { SoftwareIDE } from "./solution-anims/SoftwareIDE";
 
+const SLUG_MAP: Record<string, string> = {
+  "UZX-IIoT": "/industry-4.0/iiot-monitorizare",
+  "UZX-Cobots": "/industry-4.0/robotica-colaborativa",
+  "UZX-Predictive": "/industry-4.0/mentenanta-predictiva",
+  "UZX-Vision": "/industry-4.0/inspectie-optica",
+  "UZX-Edge": "/industry-4.0/edge-computing-mes",
+  "UZX-Software": "/industry-4.0/software-industrial",
+};
+
 const ANIM_MAP: Record<string, React.FC> = {
   "UZX-IIoT": IIoTExploded,
   "UZX-Cobots": CobotsPriceCompare,
@@ -155,7 +164,9 @@ export function Solutions({ data }: { data?: SolutionsData | null }) {
               </div>
               <div className="lg:col-span-4">
                 <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-3">Industrie</div>
-                <h3 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight">{s.industry}</h3>
+                <h3 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight">
+                  <a href={SLUG_MAP[s.package] || "#"} className="hover:text-uzx-blue transition">{s.industry}</a>
+                </h3>
                 <p className="text-ink-600 leading-relaxed mt-4">{s.description}</p>
                 <ul className="mt-6 space-y-2 text-sm text-ink-700">
                   {s.bullets.map((b) => (
@@ -168,7 +179,7 @@ export function Solutions({ data }: { data?: SolutionsData | null }) {
               <div className="lg:col-span-3 lg:border-l hairline lg:pl-8">
                 <div className="text-xs uppercase tracking-[0.2em] text-uzx-orange mb-3">Pachet recomandat</div>
                 <div className="serif text-2xl text-ink-900">{s.package}</div>
-                <a href="#" className="text-xs text-ink-700 underline-link mt-4 inline-block">
+                <a href={SLUG_MAP[s.package] || "#"} className="text-xs text-ink-700 underline-link mt-4 inline-block hover:text-uzx-blue transition">
                   Vezi detalii →
                 </a>
               </div>
