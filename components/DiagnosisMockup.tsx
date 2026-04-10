@@ -49,7 +49,7 @@ export function DiagnosisMockup() {
   }, [cycle]);
 
   return (
-    <div className="mt-10">
+    <div className="mt-12 lg:mt-16">
       {/* Terminal frame */}
       <div className="border-[3px] border-ink-900 bg-[#0a0e14] overflow-hidden">
         {/* Title bar */}

@@ -227,8 +227,6 @@ export default function ServiceInclusPage() {
                   de la tine. Tehnicianul deține întotdeauna controlul asupra
                   utilajului.
                 </p>
-
-                <DiagnosisMockup />
               </div>
 
               <div className="lg:col-span-6 lg:col-start-7">
@@ -249,6 +247,8 @@ export default function ServiceInclusPage() {
                 </div>
               </div>
             </div>
+
+            <DiagnosisMockup />
           </div>
         </section>
 
