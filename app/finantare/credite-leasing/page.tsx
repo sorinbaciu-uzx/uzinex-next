@@ -205,6 +205,25 @@ const PARTNERS: Partner[] = [
     eligibil: "SRL, SA cu minim 1 an activitate",
     accent: "#006a4e",
   },
+  {
+    name: "Autonom",
+    tagline: "Leasing operațional pentru echipamente și flote",
+    type: "LEASING OPERAȚIONAL",
+    specs: [
+      { label: "Avans", value: "0 — 10%" },
+      { label: "Durată", value: "12 — 60 luni" },
+      { label: "Valoare minimă", value: "€3.000 + TVA" },
+      { label: "Aprobare", value: "24 — 48 ore" },
+    ],
+    details: [
+      "Leasing operațional pur — off-balance sheet, nu afectează bilanțul",
+      "Rata lunară include mentenanța și asigurarea (opțional)",
+      "La final: returnare, prelungire sau achiziție la valoare reziduală",
+      "Cel mai mare operator de leasing operațional din România",
+    ],
+    eligibil: "PFA, SRL, SA — inclusiv companii noi cu garanții suplimentare",
+    accent: "#e30613",
+  },
 ];
 
 const TYPES = [
