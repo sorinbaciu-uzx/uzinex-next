@@ -20,7 +20,7 @@ const GUARANTEES = [
   {
     num: "01",
     title: "Bilete la ordin",
-    icon: "📄",
+    icon: "",
     desc: "Emise de client la valoarea fiecărei rate, cu scadența lunară corespunzătoare graficului de plată. La maturitate, biletul la ordin devine titlu executoriu — cea mai frecventă și cea mai simplă garanție utilizată în creditul furnizor.",
     details: ["Titlu executoriu la scadență", "Un BO per rată sau BO global", "Emise de SRL/SA, avalizate de administrator"],
     accent: "#1e6bb8",
@@ -28,7 +28,7 @@ const GUARANTEES = [
   {
     num: "02",
     title: "Gaj pe echipament",
-    icon: "🔒",
+    icon: "",
     desc: "Echipamentul livrat servește drept garanție reală mobiliară până la plata integrală. Gajul se înscrie în Arhiva Electronică de Garanții Reale Mobiliare (AEGRM) și se radiază automat după ultima rată.",
     details: ["Înscriere în AEGRM", "Echipamentul rămâne la client", "Radiere la plata integrală"],
     accent: "#082545",
@@ -36,7 +36,7 @@ const GUARANTEES = [
   {
     num: "03",
     title: "CEC-uri postdatate",
-    icon: "🏦",
+    icon: "",
     desc: "File CEC emise la valoarea fiecărei rate cu scadența corespunzătoare graficului. Oferă un nivel suplimentar de siguranță prin circuitul bancar și devin titlu executoriu la refuzul la plată.",
     details: ["O filă CEC per rată lunară", "Circuitul bancar asigură transparența", "Executare directă la neplată"],
     accent: "#f5851f",
@@ -44,7 +44,7 @@ const GUARANTEES = [
   {
     num: "04",
     title: "Cesiune de creanțe",
-    icon: "📋",
+    icon: "",
     desc: "Clientul cesionează către Uzinex creanțele pe care le are de încasat de la proprii clienți, în valoare echivalentă cu soldul rămas din creditul furnizor. Se notifică debitorul cedat.",
     details: ["Notificare debitor cedat", "Valoare echivalentă soldului restant", "Mecanism sigur pentru sume mari"],
     accent: "#155290",
@@ -52,7 +52,7 @@ const GUARANTEES = [
   {
     num: "05",
     title: "Garanție personală administrator",
-    icon: "✍️",
+    icon: "",
     desc: "Administratorul sau asociatul majoritar semnează un angajament personal de plată (fidejusiune) prin care garantează solidar cu societatea obligațiile din contractul de credit furnizor.",
     details: ["Fidejusiune personală solidară", "Semnată de administrator/asociat", "Complementară altor garanții"],
     accent: "#0a4d96",
@@ -60,7 +60,7 @@ const GUARANTEES = [
   {
     num: "06",
     title: "Ipotecă mobiliară",
-    icon: "⚙️",
+    icon: "",
     desc: "Ipotecă constituită asupra echipamentului industrial livrat, cu înscriere la Cartea Funciară sau AEGRM. Oferă drept de preferință la executare și se aplică de regulă pentru echipamente cu valoare mare (peste €50.000).",
     details: ["Drept de preferință la executare", "Înscriere în registrele publice", "Recomandat pentru valori > €50.000"],
     accent: "#004990",
@@ -68,7 +68,7 @@ const GUARANTEES = [
   {
     num: "07",
     title: "Scrisoare de garanție bancară",
-    icon: "🏛️",
+    icon: "",
     desc: "Banca clientului emite o scrisoare de garanție irevocabilă și necondiționată în favoarea Uzinex, acoperind valoarea integrală sau parțială a creditului furnizor. Cea mai puternică garanție posibilă.",
     details: ["Irevocabilă și necondiționată", "Emisă de banca clientului", "Acoperire integrală sau parțială"],
     accent: "#2d7d46",
@@ -288,7 +288,6 @@ export default function CreditFurnizorPage() {
                         style={{ borderLeftWidth: 3, borderLeftColor: g.accent }}
                       >
                         <div className="flex items-start gap-4">
-                          <span className="text-2xl shrink-0">{g.icon}</span>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-3 mb-2">
                               <span className="text-[10px] mono font-bold" style={{ color: g.accent }}>{g.num}</span>
