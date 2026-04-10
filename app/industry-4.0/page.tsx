@@ -3,6 +3,21 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
+import { IIoTExploded } from "@/components/solution-anims/IIoTExploded";
+import { CobotsPriceCompare } from "@/components/solution-anims/CobotsPriceCompare";
+import { PredictiveGraph } from "@/components/solution-anims/PredictiveGraph";
+import { VisionCameraPOV } from "@/components/solution-anims/VisionCameraPOV";
+import { EdgeWaterfall } from "@/components/solution-anims/EdgeWaterfall";
+import { SoftwareIDE } from "@/components/solution-anims/SoftwareIDE";
+
+const ANIM_MAP: Record<string, React.FC> = {
+  "iiot-monitorizare": IIoTExploded,
+  "robotica-colaborativa": CobotsPriceCompare,
+  "mentenanta-predictiva": PredictiveGraph,
+  "inspectie-optica": VisionCameraPOV,
+  "edge-computing-mes": EdgeWaterfall,
+  "software-industrial": SoftwareIDE,
+};
 
 export const metadata: Metadata = {
   title: "Industry 4.0 — Soluții integrate pentru fabrica viitorului | Uzinex",
@@ -121,6 +136,15 @@ export default function Industry40HubPage() {
                     href={`/industry-4.0/${d.slug}`}
                     className="bg-white p-8 lg:p-10 group hover:bg-ink-50 transition flex flex-col"
                   >
+                    {/* Animation */}
+                    {ANIM_MAP[d.slug] && (() => {
+                      const Anim = ANIM_MAP[d.slug];
+                      return (
+                        <div className="mb-6 border hairline overflow-hidden">
+                          <Anim />
+                        </div>
+                      );
+                    })()}
                     <div
                       className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-4"
                       style={{ color: d.accent }}
