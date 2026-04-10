@@ -1,7 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
+import { IIoTExploded } from "./solution-anims/IIoTExploded";
+import { CobotsPriceCompare } from "./solution-anims/CobotsPriceCompare";
+import { PredictiveGraph } from "./solution-anims/PredictiveGraph";
+import { VisionCameraPOV } from "./solution-anims/VisionCameraPOV";
+import { EdgeWaterfall } from "./solution-anims/EdgeWaterfall";
+import { SoftwareIDE } from "./solution-anims/SoftwareIDE";
+
+const ANIM_MAP: Record<string, React.FC> = {
+  "UZX-IIoT": IIoTExploded,
+  "UZX-Cobots": CobotsPriceCompare,
+  "UZX-Predictive": PredictiveGraph,
+  "UZX-Vision": VisionCameraPOV,
+  "UZX-Edge": EdgeWaterfall,
+  "UZX-Software": SoftwareIDE,
+};
 
 export type Solution = {
   num: string;
@@ -119,16 +133,22 @@ export function Solutions({ data }: { data?: SolutionsData | null }) {
               className="bg-white grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 lg:p-12 items-center"
             >
               <div className="lg:col-span-3">
-                <div className="aspect-[4/3] overflow-hidden bg-ink-100 relative">
-                  <Image
-                    src={s.image}
-                    alt={s.industry}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 25vw"
-                    className="object-cover grayscale-[30%]"
-                    loading="lazy"
-                  />
-                </div>
+                {ANIM_MAP[s.package] ? (
+                  (() => {
+                    const Anim = ANIM_MAP[s.package];
+                    return <Anim />;
+                  })()
+                ) : (
+                  <div className="aspect-[16/10] overflow-hidden bg-ink-100 relative">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={s.image}
+                      alt={s.industry}
+                      className="w-full h-full object-cover grayscale-[30%]"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
               </div>
               <div className="lg:col-span-1">
                 <div className="serif text-2xl text-ink-300 num">{s.num}</div>
