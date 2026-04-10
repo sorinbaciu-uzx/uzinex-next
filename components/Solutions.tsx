@@ -27,8 +27,8 @@ const SOLUTIONS: Solution[] = [
     industry: "IIoT & Monitorizare Plug & Play",
     image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&q=80&auto=format&fit=crop",
     description:
-      "Rețea de senzori inteligenți aplicați pe utilaje noi sau vechi, colectând date în timp real: temperatură, vibrații, consum energetic, ciclu de lucru. Clientul vede direct pe tabletă sau telefon cât timp stă utilajul degeaba (calcul OEE). Kit-ul de Digitalizare Nivel 1 cu fricțiune minimă, marje de peste 50% la pachetul integrat.",
-    bullets: ["Senzori IIoT industriali (temperatură, vibrații, consum)", "Dashboard OEE în timp real pe tabletă/mobil", "Instalare rapidă pe utilaje existente (retrofitting)"],
+      "Află în timp real cât produce fiecare utilaj și cât timp stă degeaba. Montăm senzori pe orice echipament — nou sau vechi — și în câteva ore ai dashboard-ul OEE pe telefon. Fără cablaje complicate, fără oprirea producției. Primul pas concret spre digitalizare, cu ROI vizibil din prima lună.",
+    bullets: ["Dashboard OEE pe telefon din prima zi", "Montare pe orice utilaj, fără oprirea producției", "Investiție recuperată în 3-6 luni"],
     package: "UZX-IIoT",
   },
   {
@@ -36,8 +36,8 @@ const SOLUTIONS: Solution[] = [
     industry: "Robotică colaborativă (Cobots)",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&auto=format&fit=crop",
     description:
-      "Brațe robotice concepute să lucreze în siguranță alături de operatori umani, fără cuști de protecție masive. Folosite pentru paletizare, încărcare/descărcare CNC-uri, asamblare sau sudură. Integrăm branduri asiatice de top, subminând prețurile distribuitorilor europeni cu până la 30-40%. Garantăm instalarea, programarea și intervenția rapidă.",
-    bullets: ["Cobots pentru paletizare & manipulare", "Programare proceduri standard de mișcare", "Prețuri cu 30-40% sub distribuitorii europeni"],
+      "Rezolvă lipsa de personal fără să triplezi costurile. Cobotul lucrează în siguranță lângă oamenii tăi — paletizează, alimentează CNC-ul, sudează — în timp ce tu recuperezi investiția în 12-18 luni. Prețuri cu 30-40% sub distribuitorii europeni, cu instalare și programare incluse de la noi.",
+    bullets: ["ROI în 12-18 luni, fără personal suplimentar", "Instalare + programare incluse în pachet", "Cu 30-40% sub prețurile distribuitorilor europeni"],
     package: "UZX-Cobots",
   },
   {
@@ -45,8 +45,8 @@ const SOLUTIONS: Solution[] = [
     industry: "Mentenanță predictivă",
     image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=600&q=80&auto=format&fit=crop",
     description:
-      "Utilizarea datelor de la senzorii IIoT și a algoritmilor pentru a prezice exact când o componentă mecanică va ceda, permițând înlocuirea înainte de a opri producția. Uzinex monitorizează starea echipamentului și aduce piesa de schimb pe linia de producție înainte ca utilajul să se strice — zero timpi morți, independență operațională totală.",
-    bullets: ["Predicție defecțiuni pe bază de date IIoT", "Livrare preventivă piese de schimb", "Critică pentru licitații publice și sectorul apărării"],
+      "Nu mai aștepta să se strice. Algoritmii noștri analizează datele de la senzori și îți spun exact ce piesă va ceda și când — noi o aducem pe linia ta de producție înainte de defecțiune. Zero opriri neplanificate, zero penalități contractuale, liniște operațională totală.",
+    bullets: ["Zero opriri neplanificate ale producției", "Piesa de schimb ajunge înainte de defecțiune", "Esențial pentru contracte publice și sector apărare"],
     package: "UZX-Predictive",
   },
   {
@@ -54,8 +54,8 @@ const SOLUTIONS: Solution[] = [
     industry: "Inspecție optică (Machine Vision)",
     image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80&auto=format&fit=crop",
     description:
-      "Camere de înaltă rezoluție și software care inspectează automat fiecare piesă produsă pe o bandă, identificând defecte de milimetri la viteze umane imposibil de atins. Se instalează deasupra benzilor existente. Ciclu scurt de vânzare — demo direct pe piesele clientului. Ideal pentru companiile care produc repere pentru export cu clauze stricte privind rebuturile.",
-    bullets: ["Camere industriale de înaltă rezoluție", "Detectare defecte sub-milimetrice în timp real", "Instalare pe benzile de producție existente"],
+      "Elimină rebuturile înainte să ajungă la client. Camerele noastre inspectează fiecare piesă la viteze pe care niciun operator nu le poate atinge, detectând defecte sub-milimetrice. Se montează pe banda existentă, fără modificări. Ideal dacă produci pentru export și ai clauze stricte de calitate.",
+    bullets: ["Detectare defecte sub 1mm, în timp real", "Montare pe bandă existentă, fără modificări", "Rebuturi cu 90%+ mai puține la clienții de export"],
     package: "UZX-Vision",
   },
   {
@@ -63,8 +63,8 @@ const SOLUTIONS: Solution[] = [
     industry: "Edge Computing & Conectivitate MES",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop",
     description:
-      "Module Edge Gateway care preiau limbajele utilajelor (indiferent de marcă) și le traduc într-un format pe care software-ul de management al clientului (ERP/MES) îl poate citi automat. Eliminăm fișele de producție pe hârtie. Asigurăm hardware-ul de conectare și scrierea scripturilor de comunicare — zero timp pierdut cu introducerea manuală a datelor.",
-    bullets: ["Edge Gateway compatibil multi-brand", "Integrare automată ERP/MES", "Eliminarea hârtiei din fluxul de producție"],
+      "Conectează utilajele la biroul tău, indiferent de brand sau vechime. Gateway-ul nostru traduce automat datele din orice mașină în formatul ERP-ului tău — fără introducere manuală, fără fișe de hârtie, fără erori umane. Managerul vede producția live, operatorul primește instrucțiuni digitale.",
+    bullets: ["Compatibil cu orice brand de utilaj", "Date de producție live în ERP/MES, fără hârtie", "Timp de implementare: sub 2 săptămâni"],
     package: "UZX-Edge",
   },
 ];
