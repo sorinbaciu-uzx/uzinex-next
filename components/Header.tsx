@@ -137,6 +137,7 @@ const CATALOG_GROUPS: CategoryGroup[] = [
 
 const RESURSE_ITEMS: SubItem[] = [
   { label: "Noutăți & comunicări", href: "/noutati" },
+  { label: "Echipa", href: "/echipa" },
   { label: "Materiale utile", href: "/materiale-utile" },
 ];
 
@@ -156,7 +157,7 @@ const FINANTARE_ITEMS: SubItem[] = [
 ];
 
 const NAV: NavItem[] = [
-  { label: "Echipa", href: "/echipa" },
+  { label: "Industry 4.0", href: "/#solutii" },
   { label: "Studii de caz", href: "/studii-de-caz" },
   {
     label: "Catalog tehnic",
