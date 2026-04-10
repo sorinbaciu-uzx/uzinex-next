@@ -158,6 +158,12 @@ const FINANTARE_ITEMS: SubItem[] = [
 
 const NAV: NavItem[] = [
   {
+    label: "Catalog tehnic",
+    href: "/magazin",
+    type: "mega",
+    groups: CATALOG_GROUPS,
+  },
+  {
     label: "Industry 4.0",
     href: "/industry-4.0",
     type: "dropdown",
@@ -172,16 +178,10 @@ const NAV: NavItem[] = [
   },
   { label: "Studii de caz", href: "/studii-de-caz" },
   {
-    label: "Catalog tehnic",
-    href: "/magazin",
-    type: "mega",
-    groups: CATALOG_GROUPS,
-  },
-  {
-    label: "Resurse",
-    href: "#",
+    label: "Service",
+    href: "/service",
     type: "dropdown",
-    items: RESURSE_ITEMS,
+    items: SERVICE_ITEMS,
   },
   {
     label: "Finanțare",
@@ -190,10 +190,10 @@ const NAV: NavItem[] = [
     items: FINANTARE_ITEMS,
   },
   {
-    label: "Service",
-    href: "/service",
+    label: "Resurse",
+    href: "#",
     type: "dropdown",
-    items: SERVICE_ITEMS,
+    items: RESURSE_ITEMS,
   },
   { label: "Cariere", href: "/cariere" },
   { label: "Contact", href: "/#contact" },
