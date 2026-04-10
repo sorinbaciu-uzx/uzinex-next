@@ -23,11 +23,93 @@ const STEPS = [
   { num: "04", title: "Livrare & instalare", desc: "Echipamentul e livrat, instalat și pus în funcțiune de echipa Uzinex. Plătești prima rată la 30 de zile." },
 ];
 
-const PARTNERS = [
-  { name: "GRENKE", desc: "Leasing operațional și financiar cu aprobare rapidă, specializat pe echipamente industriale." },
-  { name: "BT Leasing", desc: "Soluții flexibile de la Banca Transilvania — leasing financiar cu dobânzi competitive." },
-  { name: "BRD", desc: "Credite pentru investiții industriale cu perioada de grație și dobândă variabilă avantajoasă." },
-  { name: "Garanti BBVA", desc: "Finanțare echipamente cu structuri adaptate pentru IMM-uri și companii medii." },
+type Partner = {
+  name: string;
+  tagline: string;
+  type: string;
+  specs: { label: string; value: string }[];
+  details: string[];
+  eligibil: string;
+  accent: string;
+};
+
+const PARTNERS: Partner[] = [
+  {
+    name: "GRENKE",
+    tagline: "Lider european în leasing de echipamente",
+    type: "LEASING",
+    specs: [
+      { label: "Avans", value: "0%" },
+      { label: "Durată", value: "18 — 60 luni" },
+      { label: "Valoare minimă", value: "€500 + TVA" },
+      { label: "Aprobare", value: "6 — 24 ore" },
+    ],
+    details: [
+      "Comision administrare: 1% din valoarea contractului (minim €50)",
+      "Valoare reziduală: 5% din prețul inițial",
+      "Rată fixă în EUR pe toată durata contractului",
+      "Asigurare inclusă: 1.47% (active IT) / 2.10% (alte active fixe)",
+    ],
+    eligibil: "Persoane juridice și PFA",
+    accent: "#1e6bb8",
+  },
+  {
+    name: "BT Leasing",
+    tagline: "Leasing financiar de la Banca Transilvania",
+    type: "LEASING FINANCIAR",
+    specs: [
+      { label: "Avans", value: "10 — 30%" },
+      { label: "Durată", value: "24 — 60 luni" },
+      { label: "Valoare minimă", value: "€5.000 + TVA" },
+      { label: "Aprobare", value: "24 — 48 ore" },
+    ],
+    details: [
+      "Dobândă fixă sau variabilă, în EUR sau RON",
+      "Valoare reziduală: 1 — 20% negociabilă",
+      "Comision de analiză: 0.5 — 1% (negociabil la volum)",
+      "Asigurare CASCO obligatorie pentru utilaje mobile",
+    ],
+    eligibil: "SRL, SA cu minim 1 an activitate",
+    accent: "#f5851f",
+  },
+  {
+    name: "BRD",
+    tagline: "Credite pentru investiții industriale",
+    type: "CREDIT INVESTIȚII",
+    specs: [
+      { label: "Avans", value: "15 — 25%" },
+      { label: "Durată", value: "12 — 84 luni" },
+      { label: "Valoare minimă", value: "€10.000" },
+      { label: "Aprobare", value: "3 — 5 zile" },
+    ],
+    details: [
+      "Dobândă variabilă: EURIBOR + marjă de la 3.5%",
+      "Perioadă de grație: până la 6 luni",
+      "Echipamentul devine proprietatea ta din prima zi",
+      "Posibilitate refinanțare echipamente existente",
+    ],
+    eligibil: "SRL, SA cu minim 2 ani activitate și cifră de afaceri > €100K",
+    accent: "#082545",
+  },
+  {
+    name: "Garanti BBVA",
+    tagline: "Finanțare adaptată pentru IMM-uri",
+    type: "CREDIT / LEASING",
+    specs: [
+      { label: "Avans", value: "0 — 20%" },
+      { label: "Durată", value: "12 — 72 luni" },
+      { label: "Valoare minimă", value: "€3.000" },
+      { label: "Aprobare", value: "24 — 72 ore" },
+    ],
+    details: [
+      "Dobândă fixă pe primii 2 ani, apoi variabilă",
+      "Structuri flexibile: leasing + credit mixt",
+      "Comision de analiză: 0% pentru clienții Uzinex",
+      "Posibilitate cofinanțare cu fonduri europene",
+    ],
+    eligibil: "PFA, SRL, SA — inclusiv start-up-uri cu minim 6 luni",
+    accent: "#155290",
+  },
 ];
 
 const TYPES = [
@@ -217,18 +299,57 @@ export default function CrediteLeasingPage() {
               <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12" style={{ letterSpacing: "-0.03em" }}>
                 Lucrăm cu cei mai buni<br /><span className="font-light text-uzx-orange">pentru rata ta optimă.</span>
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink-200 border-y border-ink-200">
+              <div className="space-y-6">
                 {PARTNERS.map((p, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.4 }}
-                    className="bg-white p-8 flex flex-col"
+                    transition={{ delay: i * 0.08, duration: 0.4 }}
+                    className="bg-white border hairline p-6 lg:p-8"
+                    style={{ borderLeftWidth: 3, borderLeftColor: p.accent }}
                   >
-                    <div className="serif text-2xl text-ink-900 mb-4">{p.name}</div>
-                    <p className="text-xs text-ink-600 leading-relaxed">{p.desc}</p>
+                    {/* Header */}
+                    <div className="flex items-start justify-between gap-4 mb-6">
+                      <div>
+                        <div className="serif text-2xl text-ink-900">{p.name}</div>
+                        <div className="text-sm text-ink-500 mt-1">{p.tagline}</div>
+                      </div>
+                      <span className="text-[10px] mono uppercase tracking-wider border hairline px-3 py-1 text-ink-600 shrink-0">
+                        {p.type}
+                      </span>
+                    </div>
+
+                    {/* Specs grid */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-6 pb-6 border-b hairline">
+                      {p.specs.map((s, j) => (
+                        <div key={j}>
+                          <div className="text-[10px] mono text-ink-400 uppercase tracking-wider mb-1">
+                            {s.label}
+                          </div>
+                          <div className="serif text-xl text-ink-900" style={{ letterSpacing: "-0.02em" }}>
+                            {s.value}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Details bullets */}
+                    <ul className="space-y-2 mb-4">
+                      {p.details.map((d, j) => (
+                        <li key={j} className="flex items-start gap-2.5 text-sm text-ink-600">
+                          <span className="shrink-0 mt-[6px] w-1.5 h-1.5" style={{ background: p.accent }} />
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Eligibility */}
+                    <div className="text-xs text-ink-500">
+                      <span className="mono uppercase tracking-wider text-ink-400">Eligibil:</span>{" "}
+                      {p.eligibil}
+                    </div>
                   </motion.div>
                 ))}
               </div>
