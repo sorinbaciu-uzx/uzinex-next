@@ -1,42 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 import type { Highlight } from "@/components/NewsSection";
 
 export function Highlights({ items }: { items: Highlight[] }) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [isDown, setIsDown] = useState(false);
-  const [dragged, setDragged] = useState(false);
-  const startX = useRef(0);
-  const startScroll = useRef(0);
-
   if (!items || items.length === 0) return null;
 
-  function onPointerDown(e: React.PointerEvent<HTMLDivElement>) {
-    if (!trackRef.current) return;
-    setIsDown(true);
-    setDragged(false);
-    startX.current = e.clientX;
-    startScroll.current = trackRef.current.scrollLeft;
-    trackRef.current.setPointerCapture(e.pointerId);
-  }
-  function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
-    if (!isDown || !trackRef.current) return;
-    const dx = e.clientX - startX.current;
-    if (Math.abs(dx) > 5) setDragged(true);
-    trackRef.current.scrollLeft = startScroll.current - dx;
-  }
-  function onPointerUp(e: React.PointerEvent<HTMLDivElement>) {
-    setIsDown(false);
-    if (trackRef.current) {
-      try {
-        trackRef.current.releasePointerCapture(e.pointerId);
-      } catch {}
-    }
-    // clear dragged flag after click bubble so links can be suppressed
-    setTimeout(() => setDragged(false), 0);
-  }
+  // duplicate items for seamless infinite loop
+  const doubled = [...items, ...items];
 
   return (
     <section className="bg-ink-50 border-y hairline">
@@ -49,35 +21,34 @@ export function Highlights({ items }: { items: Highlight[] }) {
             >
               Momente importante
             </h2>
-            <div className="text-xs mono text-ink-400 hidden md:block">
-              — Trage pentru a naviga →
-            </div>
           </div>
         </div>
       </div>
 
-      {/* drag track — width bounded on lg+ so it stops before the sticky rail */}
-      <div
-        ref={trackRef}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-        className={`hl-track overflow-x-auto overscroll-x-contain select-none pb-12 lg:pb-16 lg:mr-[340px] ${
-          isDown ? "cursor-grabbing" : "cursor-grab"
-        }`}
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-        }}
-      >
-        <style>{`.hl-track::-webkit-scrollbar { display: none; }`}</style>
-        <div className="flex gap-5 lg:gap-6 px-6 lg:pl-[max(calc((100vw-72rem)/2),1.5rem)] lg:pr-6">
-          {items.map((h, i) => {
+      {/* Infinite marquee track */}
+      <div className="overflow-hidden pb-12 lg:pb-16 lg:mr-[340px]">
+        <motion.div
+          className="flex gap-5 lg:gap-6 hl-marquee"
+          style={{ width: "max-content" }}
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: {
+              duration: items.length * 6,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+          whileHover={{ animationPlayState: "paused" }}
+        >
+          <style>{`
+            .hl-marquee:hover { animation-play-state: paused !important; }
+            .hl-marquee > * { flex-shrink: 0; }
+          `}</style>
+          {doubled.map((h, i) => {
             const bg = h.color || "#1e6bb8";
             const card = (
               <div
-                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] p-7 lg:p-8 flex flex-col shadow-[0_24px_50px_-20px_rgba(8,37,69,0.35)] text-white transition-transform hover:-translate-y-1 pointer-events-none"
+                className="w-[280px] lg:w-[320px] h-[400px] lg:h-[440px] p-7 lg:p-8 flex flex-col shadow-[0_24px_50px_-20px_rgba(8,37,69,0.35)] text-white transition-transform hover:-translate-y-1"
                 style={{ background: bg }}
               >
                 <div className="serif text-[22px] lg:text-2xl leading-[1.12] mb-3">
@@ -96,23 +67,20 @@ export function Highlights({ items }: { items: Highlight[] }) {
             );
             return h.href ? (
               <Link
-                key={i}
+                key={`${i}-${h.title}`}
                 href={h.href}
                 draggable={false}
-                onClick={(e) => {
-                  if (dragged) e.preventDefault();
-                }}
-                className="shrink-0 block pointer-events-auto"
+                className="shrink-0 block"
               >
                 {card}
               </Link>
             ) : (
-              <div key={i} className="shrink-0 pointer-events-auto">
+              <div key={`${i}-${h.title}`} className="shrink-0">
                 {card}
               </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
