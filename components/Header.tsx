@@ -201,7 +201,7 @@ const NAV: NavItem[] = [
 
 /* ───────────────────────────── COMPONENT ───────────────────────────── */
 
-export function Header({ solid = false }: { solid?: boolean } = {}) {
+export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?: "ro" | "en" } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
@@ -238,9 +238,9 @@ export function Header({ solid = false }: { solid?: boolean } = {}) {
               +40 769 081 081
             </a>
             <span className="text-white/30">|</span>
-            <a href="#">RO</a>
+            <a href="/" className={lang === "ro" ? "" : "opacity-50"}>RO</a>
             <span className="text-white/30">/</span>
-            <a href="#" className="opacity-50">
+            <a href="/en" className={lang === "en" ? "" : "opacity-50"}>
               EN
             </a>
           </div>
