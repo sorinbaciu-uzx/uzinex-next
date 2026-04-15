@@ -37,184 +37,53 @@ export function Hero({ data }: { data?: HeroData | null }) {
   const d = data ?? HERO_DEFAULT;
   return (
     <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[120px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
-      {/* ─── Animated blueprint background ─── */}
+      {/* ─── Background + Globe ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 100% 90% at 80% 45%, #2d7dc9 0%, #1e6bb8 15%, #155290 30%, #0e3866 50%, #082545 75%, #051a33 100%)",
+              "radial-gradient(ellipse 80% 90% at 75% 50%, #1a4a7a 0%, #0e3866 30%, #082545 60%, #051a33 100%)",
           }}
         />
 
+        {/* Blueprint grid (subtle) */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-[0.18]"
+          className="absolute inset-0 w-full h-full opacity-[0.1]"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <pattern id="bp-grid-sm" width="40" height="40" patternUnits="userSpaceOnUse">
               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7fb0ff" strokeWidth="0.4" />
             </pattern>
-            <pattern id="bp-grid-lg" width="200" height="200" patternUnits="userSpaceOnUse">
-              <path d="M 200 0 L 0 0 0 200" fill="none" stroke="#7fb0ff" strokeWidth="1" />
-            </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#bp-grid-sm)" />
-          <rect width="100%" height="100%" fill="url(#bp-grid-lg)" />
         </svg>
 
-        {/* Scan line */}
-        <motion.div
-          className="absolute inset-x-0 h-px"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(127,176,255,0.8), transparent)",
-          }}
-          animate={{ top: ["0%", "100%"], opacity: [0, 1, 1, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
+        {/* 3D Globe iframe - positioned right */}
+        <div className="absolute top-0 right-0 w-[65%] h-full hidden lg:block">
+          <iframe
+            src="/globe.html"
+            className="w-full h-full border-0"
+            style={{ pointerEvents: "auto" }}
+            title="Uzinex Global Network"
+            loading="eager"
+          />
+          {/* Left fade so globe blends into content area */}
+          <div
+            className="absolute inset-y-0 left-0 w-[40%] pointer-events-none"
+            style={{
+              background: "linear-gradient(90deg, #082545 0%, rgba(8,37,69,0.7) 40%, transparent 100%)",
+            }}
+          />
+        </div>
 
-        <svg
-          viewBox="0 0 1600 900"
-          preserveAspectRatio="xMidYMid slice"
-          className="absolute inset-0 w-full h-full opacity-30"
-        >
-          {/* BIG GEAR */}
-          <g transform="translate(1200,420)">
-            <motion.g
-              animate={{ rotate: 360 }}
-              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-              style={{ transformOrigin: "0px 0px", transformBox: "fill-box" }}
-            >
-              <circle r="180" fill="none" stroke="#7fb0ff" strokeWidth="1.5" opacity="0.5" />
-              <circle r="150" fill="none" stroke="#7fb0ff" strokeWidth="1" opacity="0.4" />
-              <circle r="40" fill="none" stroke="#7fb0ff" strokeWidth="2" />
-              <circle r="8" fill="#7fb0ff" />
-              <g stroke="#7fb0ff" strokeWidth="2" fill="none">
-                <line x1="0" y1="-180" x2="0" y2="-200" />
-                <line x1="0" y1="180" x2="0" y2="200" />
-                <line x1="-180" y1="0" x2="-200" y2="0" />
-                <line x1="180" y1="0" x2="200" y2="0" />
-                <line x1="-127" y1="-127" x2="-141" y2="-141" />
-                <line x1="127" y1="-127" x2="141" y2="-141" />
-                <line x1="-127" y1="127" x2="-141" y2="141" />
-                <line x1="127" y1="127" x2="141" y2="141" />
-              </g>
-              <line x1="-150" y1="0" x2="150" y2="0" stroke="#7fb0ff" strokeWidth="1" opacity="0.6" />
-              <line x1="0" y1="-150" x2="0" y2="150" stroke="#7fb0ff" strokeWidth="1" opacity="0.6" />
-              <line x1="-106" y1="-106" x2="106" y2="106" stroke="#7fb0ff" strokeWidth="1" opacity="0.6" />
-              <line x1="-106" y1="106" x2="106" y2="-106" stroke="#7fb0ff" strokeWidth="1" opacity="0.6" />
-            </motion.g>
-          </g>
-
-          {/* MEDIUM GEAR */}
-          <g transform="translate(1430,200)">
-            <motion.g
-              animate={{ rotate: -360 }}
-              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-              style={{ transformOrigin: "0px 0px", transformBox: "fill-box" }}
-            >
-              <circle r="90" fill="none" stroke="#7fb0ff" strokeWidth="1.5" opacity="0.6" />
-              <circle r="20" fill="none" stroke="#7fb0ff" strokeWidth="2" />
-              <circle r="4" fill="#7fb0ff" />
-              <g stroke="#7fb0ff" strokeWidth="2">
-                <line x1="0" y1="-90" x2="0" y2="-105" />
-                <line x1="0" y1="90" x2="0" y2="105" />
-                <line x1="-90" y1="0" x2="-105" y2="0" />
-                <line x1="90" y1="0" x2="105" y2="0" />
-                <line x1="-64" y1="-64" x2="-74" y2="-74" />
-                <line x1="64" y1="-64" x2="74" y2="-74" />
-                <line x1="-64" y1="64" x2="-74" y2="74" />
-                <line x1="64" y1="64" x2="74" y2="74" />
-              </g>
-            </motion.g>
-          </g>
-
-          {/* SMALL GEAR */}
-          <g transform="translate(1090,200)">
-            <motion.g
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              style={{ transformOrigin: "0px 0px", transformBox: "fill-box" }}
-            >
-              <circle r="55" fill="none" stroke="#7fb0ff" strokeWidth="1.5" opacity="0.6" />
-              <circle r="12" fill="none" stroke="#7fb0ff" strokeWidth="1.5" />
-              <circle r="3" fill="#7fb0ff" />
-              <g stroke="#7fb0ff" strokeWidth="1.5">
-                <line x1="0" y1="-55" x2="0" y2="-65" />
-                <line x1="0" y1="55" x2="0" y2="65" />
-                <line x1="-55" y1="0" x2="-65" y2="0" />
-                <line x1="55" y1="0" x2="65" y2="0" />
-                <line x1="-39" y1="-39" x2="-46" y2="-46" />
-                <line x1="39" y1="-39" x2="46" y2="-46" />
-                <line x1="-39" y1="39" x2="-46" y2="46" />
-                <line x1="39" y1="39" x2="46" y2="46" />
-              </g>
-            </motion.g>
-          </g>
-
-          {/* Schematic */}
-          <g stroke="#7fb0ff" strokeWidth="1" fill="none" opacity="0.4">
-            <motion.path
-              d="M 80 700 L 280 700 L 280 600 L 480 600"
-              strokeDasharray="4 4"
-              animate={{ strokeDashoffset: [0, -100] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-            />
-            <circle cx="80" cy="700" r="4" fill="#7fb0ff" />
-            <circle cx="280" cy="600" r="4" fill="#7fb0ff" />
-            <circle cx="480" cy="600" r="4" fill="#7fb0ff" />
-            <text x="90" y="690" fontFamily="IBM Plex Mono" fontSize="11" fill="#7fb0ff" opacity="0.7">NODE_01</text>
-            <text x="290" y="590" fontFamily="IBM Plex Mono" fontSize="11" fill="#7fb0ff" opacity="0.7">CTRL_HUB</text>
-            <text x="490" y="590" fontFamily="IBM Plex Mono" fontSize="11" fill="#7fb0ff" opacity="0.7">OUTPUT</text>
-          </g>
-
-          {/* Crosshair */}
-          <g stroke="#7fb0ff" strokeWidth="1" fill="none" opacity="0.5">
-            <circle cx="200" cy="200" r="40" />
-            <circle cx="200" cy="200" r="60" strokeDasharray="2 4" />
-            <line x1="140" y1="200" x2="260" y2="200" />
-            <line x1="200" y1="140" x2="200" y2="260" />
-            <text x="270" y="205" fontFamily="IBM Plex Mono" fontSize="10" fill="#7fb0ff" opacity="0.7">SCAN_AREA</text>
-          </g>
-
-          {/* Pulsing dots */}
-          {[
-            { cx: 300, cy: 450, delay: 0 },
-            { cx: 600, cy: 350, delay: 0.7 },
-            { cx: 850, cy: 500, delay: 1.4 },
-            { cx: 1100, cy: 700, delay: 2.1 },
-            { cx: 500, cy: 800, delay: 0.3 },
-          ].map((dot, i) => (
-            <motion.circle
-              key={i}
-              cx={dot.cx}
-              cy={dot.cy}
-              r="3"
-              fill="#7fb0ff"
-              animate={{ scale: [1, 2, 1], opacity: [0.3, 1, 0.3] }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: dot.delay,
-              }}
-              style={{ transformOrigin: `${dot.cx}px ${dot.cy}px` }}
-            />
-          ))}
-
-          <g fontFamily="IBM Plex Mono" fontSize="9" fill="#7fb0ff" opacity="0.5">
-            <text x="20" y="30">X: 0000.000</text>
-            <text x="20" y="50">Y: 0000.000</text>
-            <text x="20" y="70">Z: +0125.40</text>
-          </g>
-        </svg>
-
+        {/* Left overlay for text readability */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(8,37,69,0.92) 0%, rgba(8,37,69,0.55) 40%, rgba(8,37,69,0.15) 70%, rgba(8,37,69,0) 100%)",
+              "linear-gradient(90deg, rgba(8,37,69,0.95) 0%, rgba(8,37,69,0.8) 30%, rgba(8,37,69,0.3) 55%, transparent 70%)",
           }}
         />
       </div>

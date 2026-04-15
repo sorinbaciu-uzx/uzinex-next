@@ -13,124 +13,111 @@ type NavItem =
   | { label: string; href: string; type: "mega"; groups: CategoryGroup[] }
   | { label: string; href: string; type: "dropdown"; items: SubItem[] };
 
+// Helper to build /magazin URLs with encoded query params
+const mag = (cat?: string, sub?: string) => {
+  if (!cat) return "/magazin";
+  const params = new URLSearchParams();
+  params.set("cat", cat);
+  if (sub) params.set("sub", sub);
+  return `/magazin?${params.toString()}`;
+};
+
 const CATALOG_GROUPS: CategoryGroup[] = [
   {
-    name: "Intralogistică",
-    href: "/#catalog",
+    name: "Utilaje de construcții",
+    href: mag("Utilaje de construcții"),
     items: [
-      { label: "Motostivuitoare diesel", href: "/#catalog" },
-      { label: "Electrostivuitoare", href: "/#catalog" },
-      { label: "Transpaleți electrici", href: "/#catalog" },
-      { label: "Sisteme de rafturi", href: "/#catalog" },
+      { label: "Excavatoare", href: mag("Utilaje de construcții", "Excavatoare") },
+      { label: "Concasoare", href: mag("Utilaje de construcții", "Concasoare") },
+      { label: "Accesorii utilaje de construcții", href: mag("Utilaje de construcții", "Accesorii utilaje de construcții") },
     ],
   },
   {
-    name: "Laser & CNC",
-    href: "/#catalog",
+    name: "Utilaje CNC",
+    href: mag("Utilaje CNC"),
     items: [
-      { label: "Tăiere laser fibră", href: "/#catalog" },
-      { label: "Centre CNC verticale", href: "/#catalog" },
-      { label: "Strunguri CNC", href: "/#catalog" },
-      { label: "Mașini de sudură", href: "/#catalog" },
+      { label: "CNC metal", href: mag("Utilaje CNC", "CNC metal") },
+      { label: "CNC mobilă", href: mag("Utilaje CNC", "CNC mobilă") },
+      { label: "CNC piatră", href: mag("Utilaje CNC", "CNC piatră") },
+      { label: "Router CNC", href: mag("Utilaje CNC", "Router CNC") },
+      { label: "CNC diverse", href: mag("Utilaje CNC", "CNC diverse") },
     ],
   },
   {
-    name: "Robotică & automatizare",
-    href: "/#catalog",
+    name: "Strunguri",
+    href: mag("Strunguri"),
     items: [
-      { label: "Brațe robotice 6 axe", href: "/#catalog" },
-      { label: "Celule de paletizare", href: "/#catalog" },
-      { label: "Cobots colaborativi", href: "/#catalog" },
-      { label: "Sisteme de viziune (AI)", href: "/#catalog" },
+      { label: "Strunguri CNC", href: mag("Strunguri", "Strunguri CNC") },
+      { label: "Strunguri universale", href: mag("Strunguri", "Strunguri universale") },
+      { label: "Strunguri heavy duty", href: mag("Strunguri", "Strunguri heavy duty") },
+      { label: "Mini strunguri", href: mag("Strunguri", "Mini strunguri") },
     ],
   },
   {
-    name: "Utilaje grele",
-    href: "/#catalog",
+    name: "Mașini de tăiere laser",
+    href: mag("Mașini de tăiere laser"),
     items: [
-      { label: "Excavatoare", href: "/#catalog" },
-      { label: "Macarale & ridicare", href: "/#catalog" },
-      { label: "Echipamente energetice", href: "/#catalog" },
-      { label: "Cupe & atașamente", href: "/#catalog" },
-    ],
-  },
-  {
-    name: "Piese de schimb",
-    href: "/#catalog",
-    items: [
-      { label: "Piese OEM", href: "/#catalog" },
-      { label: "Filtre & lubrifianți", href: "/#catalog" },
-      { label: "Kituri uzură", href: "/#catalog" },
-      { label: "Componente hidraulice", href: "/#catalog" },
-    ],
-  },
-  {
-    name: "Service tehnic",
-    href: "/#catalog",
-    items: [
-      { label: "Punere în funcțiune", href: "/#catalog" },
-      { label: "Mentenanță preventivă", href: "/#catalog" },
-      { label: "Reparații în garanție", href: "/#catalog" },
-      { label: "Intervenție rapidă", href: "/#catalog" },
-    ],
-  },
-  {
-    name: "Apărare & securitate",
-    href: "/#catalog",
-    items: [
-      { label: "Sisteme de supraveghere", href: "/#catalog" },
-      { label: "Generatoare autonome", href: "/#catalog" },
-      { label: "Adăposturi modulare", href: "/#catalog" },
-      { label: "Simulatoare training", href: "/#catalog" },
+      { label: "Laser fibră", href: mag("Mașini de tăiere laser", "Laser fibră") },
+      { label: "Laser cu bobină", href: mag("Mașini de tăiere laser", "Laser cu bobină") },
     ],
   },
   {
     name: "Mașini de prelucrare lemn",
-    href: "/magazin?cat=Mașini+de+prelucrare+lemn",
+    href: mag("Mașini de prelucrare lemn"),
     items: [
-      { label: "Mașini de aplicat cant", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
-      { label: "Mașini pentru uși", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
-      { label: "Fierăstraie pentru lemn", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
-      { label: "Mașini de finisat lemn", href: "/magazin?cat=Mașini+de+prelucrare+lemn" },
+      { label: "Mașini de aplicat cant", href: mag("Mașini de prelucrare lemn", "Mașini de aplicat cant") },
+      { label: "Mașini pentru uși", href: mag("Mașini de prelucrare lemn", "Mașini pentru uși") },
+      { label: "Fierăstraie pentru lemn", href: mag("Mașini de prelucrare lemn", "Fierăstraie pentru lemn") },
+      { label: "Mașini de finisat lemn", href: mag("Mașini de prelucrare lemn", "Mașini de finisat lemn") },
     ],
   },
   {
     name: "Echipamente de ambalare",
-    href: "/magazin?cat=Echipamente+de+ambalare",
+    href: mag("Echipamente de ambalare"),
     items: [
-      { label: "Fabricare cutii carton", href: "/magazin?cat=Echipamente+de+ambalare" },
-      { label: "Ambalare paleți & termocontractabilă", href: "/magazin?cat=Echipamente+de+ambalare" },
-      { label: "Sigilare și formare cutii", href: "/magazin?cat=Echipamente+de+ambalare" },
-      { label: "Mașini de legat cu bandă", href: "/magazin?cat=Echipamente+de+ambalare" },
+      { label: "Fabricare cutii carton", href: mag("Echipamente de ambalare", "Fabricare cutii carton") },
+      { label: "Ambalare paleți", href: mag("Echipamente de ambalare", "Ambalare paleți") },
+      { label: "Ambalare termocontractabilă", href: mag("Echipamente de ambalare", "Ambalare termocontractabilă") },
+      { label: "Sigilare și formare cutii", href: mag("Echipamente de ambalare", "Sigilare și formare cutii") },
+      { label: "Mașini de legat cu bandă", href: mag("Echipamente de ambalare", "Mașini de legat cu bandă") },
+      { label: "Ambalare diverse", href: mag("Echipamente de ambalare", "Ambalare diverse") },
     ],
   },
   {
     name: "Etichetare & dozare",
-    href: "/magazin?cat=Echipamente+de+etichetare+și+dozare",
+    href: mag("Echipamente de etichetare și dozare"),
     items: [
-      { label: "Mașini de etichetare", href: "/magazin?cat=Echipamente+de+etichetare+și+dozare" },
-      { label: "Mașini de umplere și plafonare", href: "/magazin?cat=Echipamente+de+etichetare+și+dozare" },
-      { label: "Mașini de dezmembrat", href: "/magazin?cat=Echipamente+de+etichetare+și+dozare" },
+      { label: "Mașini de etichetare", href: mag("Echipamente de etichetare și dozare", "Mașini de etichetare") },
+      { label: "Mașini de umplere și plafonare", href: mag("Echipamente de etichetare și dozare", "Mașini de umplere și plafonare") },
+      { label: "Mașini de dezmembrat", href: mag("Echipamente de etichetare și dozare", "Mașini de dezmembrat") },
     ],
   },
   {
     name: "Reciclare",
-    href: "/magazin?cat=Echipamente+de+reciclare",
+    href: mag("Echipamente de reciclare"),
     items: [
-      { label: "Mașini de balotat și presare", href: "/magazin?cat=Echipamente+de+reciclare" },
-      { label: "Mașini de tocat și mărunțit", href: "/magazin?cat=Echipamente+de+reciclare" },
-      { label: "Echipamente de separare", href: "/magazin?cat=Echipamente+de+reciclare" },
-      { label: "Echipamente auxiliare reciclare", href: "/magazin?cat=Echipamente+de+reciclare" },
+      { label: "Mașini de balotat și presare", href: mag("Echipamente de reciclare", "Mașini de balotat și presare") },
+      { label: "Mașini de tocat și mărunțit", href: mag("Echipamente de reciclare", "Mașini de tocat și mărunțit") },
+      { label: "Echipamente de separare", href: mag("Echipamente de reciclare", "Echipamente de separare") },
+      { label: "Echipamente auxiliare pentru reciclare", href: mag("Echipamente de reciclare", "Echipamente auxiliare pentru reciclare") },
     ],
   },
   {
     name: "Inspecție industrială",
-    href: "/magazin?cat=Echipamente+de+inspecție+industrială",
+    href: mag("Echipamente de inspecție industrială"),
     items: [
-      { label: "Roboți CCTV pentru conducte", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
-      { label: "Camere push pentru conducte", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
-      { label: "Camere PTZ / periscop", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
-      { label: "Videoscoape industriale", href: "/magazin?cat=Echipamente+de+inspecție+industrială" },
+      { label: "Roboți CCTV pentru inspecția conductelor", href: mag("Echipamente de inspecție industrială", "Roboți CCTV pentru inspecția conductelor") },
+      { label: "Camere push pentru inspecția conductelor", href: mag("Echipamente de inspecție industrială", "Camere push pentru inspecția conductelor") },
+      { label: "Camere PTZ / periscop pentru cămine și canalizare", href: mag("Echipamente de inspecție industrială", "Camere PTZ / periscop pentru cămine și canalizare") },
+      { label: "Videoscoape industriale", href: mag("Echipamente de inspecție industrială", "Videoscoape industriale") },
+      { label: "Camere NDT și inspecții speciale", href: mag("Echipamente de inspecție industrială", "Camere NDT și inspecții speciale") },
+    ],
+  },
+  {
+    name: "Echipamente energetice",
+    href: mag("Echipamente energetice"),
+    items: [
+      { label: "Pompe de căldură", href: mag("Echipamente energetice", "Pompe de căldură") },
     ],
   },
 ];

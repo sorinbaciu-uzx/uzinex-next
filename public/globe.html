@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzinex - Hero Globe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            overflow: hidden;
+            background: transparent;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: white;
+            cursor: grab;
+        }
+        body:active { cursor: grabbing; }
+        html { background: transparent; }
+
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0; left: 0;
+            z-index: 1;
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            transition: opacity 1s ease-out;
+        }
+        .spinner {
+            width: 50px; height: 50px;
+            border: 2px solid rgba(255,255,255,0.08);
+            border-top-color: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .loading-text { display: none; }
+    </style>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+        import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+
+        // ---- Scene setup ----
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        // No background color - let CSS background show through
+
+        const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.set(16, 10, 20);
+
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true,
+            powerPreference: "high-performance"
+        });
+        renderer.setClearColor(0x000000, 0);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 0.85;
+        container.appendChild(renderer.domElement);
+
+        // ---- Post-processing ----
+        const composer = new EffectComposer(renderer);
+        composer.addPass(new RenderPass(scene, camera));
+
+        const bloomPass = new UnrealBloomPass(
+            new THREE.Vector2(window.innerWidth, window.innerHeight),
+            1.8, 0.4, 0.85
+        );
+        bloomPass.threshold = 2.0;
+        bloomPass.strength = 0.6;
+        bloomPass.radius = 0.25;
+        composer.addPass(bloomPass);
+
+        // Subtle vignette only (no grain for clean hero look)
+        const vignetteShader = {
+            uniforms: { tDiffuse: { value: null } },
+            vertexShader: `
+                varying vec2 vUv;
+                void main() {
+                    vUv = uv;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform sampler2D tDiffuse;
+                varying vec2 vUv;
+                void main() {
+                    vec4 color = texture2D(tDiffuse, vUv);
+                    float dist = distance(vUv, vec2(0.5));
+                    float vig = smoothstep(0.75, 0.35, dist);
+                    color.rgb *= mix(0.5, 1.0, vig);
+                    gl_FragColor = color;
+                }
+            `
+        };
+        composer.addPass(new ShaderPass(vignetteShader));
+
+        // ---- Controls ----
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.04;
+        controls.enablePan = false;
+        controls.enableZoom = false;
+        controls.minDistance = 13;
+        controls.maxDistance = 35;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.25;
+
+        let interactionTimer = null;
+        const pauseAutoRotate = () => {
+            controls.autoRotate = false;
+            clearTimeout(interactionTimer);
+            interactionTimer = setTimeout(() => { controls.autoRotate = true; }, 4000);
+        };
+        renderer.domElement.addEventListener('pointerdown', pauseAutoRotate);
+
+        // ---- Globe ----
+        const globeGroup = new THREE.Group();
+        globeGroup.rotation.z = 23.5 * Math.PI / 180;
+        scene.add(globeGroup);
+
+        const GLOBE_RADIUS = 10;
+
+        // Lighting - subtle, cool-toned
+        scene.add(new THREE.AmbientLight(0x8090b0, 0.4));
+
+        const sunLight = new THREE.DirectionalLight(0xdde4f0, 0.9);
+        sunLight.position.set(25, 15, 15);
+        scene.add(sunLight);
+
+        const fillLight = new THREE.DirectionalLight(0x1a3a6a, 0.5);
+        fillLight.position.set(-25, -5, -25);
+        scene.add(fillLight);
+
+        const rimLight = new THREE.DirectionalLight(0x2060a0, 0.3);
+        rimLight.position.set(-20, 10, 5);
+        scene.add(rimLight);
+
+        // Textures
+        const manager = new THREE.LoadingManager();
+        manager.onLoad = () => {
+            const loaderEl = document.getElementById('loader');
+            loaderEl.style.opacity = '0';
+            setTimeout(() => loaderEl.remove(), 1000);
+        };
+
+        const tl = new THREE.TextureLoader(manager);
+        const earthMap = tl.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg');
+        const earthNormal = tl.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_normal_2048.jpg');
+        const earthLights = tl.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_lights_2048.png');
+
+        // Earth with day/night shader
+        const earthGeo = new THREE.SphereGeometry(GLOBE_RADIUS, 96, 96);
+
+        const earthShaderMat = new THREE.ShaderMaterial({
+            uniforms: {
+                dayTexture: { value: earthMap },
+                nightTexture: { value: earthLights },
+                normalMap: { value: earthNormal },
+                sunDirection: { value: new THREE.Vector3(25, 15, 15).normalize() }
+            },
+            vertexShader: `
+                varying vec2 vUv;
+                varying vec3 vNormal;
+                void main() {
+                    vUv = uv;
+                    vNormal = normalize(normalMatrix * normal);
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform sampler2D dayTexture;
+                uniform sampler2D nightTexture;
+                uniform vec3 sunDirection;
+                varying vec2 vUv;
+                varying vec3 vNormal;
+
+                void main() {
+                    vec3 normal = normalize(vNormal);
+                    float NdotL = dot(normal, sunDirection);
+                    float dayFactor = smoothstep(-0.15, 0.25, NdotL);
+
+                    vec3 dayColor = texture2D(dayTexture, vUv).rgb;
+                    vec3 nightColor = texture2D(nightTexture, vUv).rgb;
+
+                    // Desaturate day texture slightly for a cooler, more professional look
+                    float lum = dot(dayColor, vec3(0.299, 0.587, 0.114));
+                    dayColor = mix(vec3(lum), dayColor, 0.6);
+                    // Shift towards blue
+                    dayColor *= vec3(0.85, 0.9, 1.1);
+
+                    vec3 litDay = dayColor * (0.2 + 0.8 * max(0.0, NdotL));
+                    vec3 litNight = nightColor * vec3(0.7, 0.8, 1.0) * 0.8;
+
+                    gl_FragColor = vec4(mix(litNight, litDay, dayFactor), 1.0);
+                }
+            `
+        });
+
+        const earthMesh = new THREE.Mesh(earthGeo, earthShaderMat);
+        globeGroup.add(earthMesh);
+
+        // Cloud layer
+        const cloudGeo = new THREE.SphereGeometry(GLOBE_RADIUS * 1.005, 64, 64);
+        const cloudMat = new THREE.MeshStandardMaterial({
+            alphaMap: tl.load('https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_clouds_2048.png'),
+            transparent: true,
+            opacity: 0.12,
+            color: 0xffffff,
+            depthWrite: false,
+            roughness: 1.0,
+            metalness: 0.0
+        });
+        cloudMat.alphaMap.wrapS = cloudMat.alphaMap.wrapT = THREE.RepeatWrapping;
+        const cloudMesh = new THREE.Mesh(cloudGeo, cloudMat);
+        globeGroup.add(cloudMesh);
+
+        // Atmosphere glow - subtle blue rim
+        const atmosVert = `
+            varying vec3 vNormal;
+            void main() {
+                vNormal = normalize(normalMatrix * normal);
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+        const atmosMat = new THREE.ShaderMaterial({
+            vertexShader: atmosVert,
+            fragmentShader: `
+                varying vec3 vNormal;
+                void main() {
+                    float intensity = pow(0.6 - dot(vNormal, vec3(0, 0, 1.0)), 4.0);
+                    gl_FragColor = vec4(0.15, 0.35, 0.7, 1.0) * intensity;
+                }
+            `,
+            blending: THREE.AdditiveBlending,
+            side: THREE.BackSide,
+            transparent: true,
+            depthWrite: false
+        });
+        scene.add(new THREE.Mesh(new THREE.SphereGeometry(GLOBE_RADIUS * 1.12, 64, 64), atmosMat));
+
+        // ---- Utility ----
+        function latLongToVector3(lat, lon, radius) {
+            const phi = (90 - lat) * (Math.PI / 180);
+            const theta = (lon + 180) * (Math.PI / 180);
+            return new THREE.Vector3(
+                -(radius * Math.sin(phi) * Math.cos(theta)),
+                radius * Math.cos(phi),
+                radius * Math.sin(phi) * Math.sin(theta)
+            );
+        }
+
+        // ---- Locations ----
+        const locations = [
+            { lat: 47.1585, lon: 27.6014, name: "Iasi", type: "hub" },
+            { lat: 44.4268, lon: 26.1025, name: "Bucuresti", type: "node" },
+            { lat: 22.5431, lon: 114.0579, name: "Shenzhen", type: "hub" },
+            { lat: 31.2304, lon: 121.4737, name: "Shanghai", type: "node" },
+            { lat: 48.1351, lon: 11.5820, name: "Munchen", type: "node" },
+            { lat: 25.2048, lon: 55.2708, name: "Dubai", type: "node" },
+            { lat: 34.3416, lon: 108.9398, name: "Xi'an", type: "node" },
+            { lat: 43.2220, lon: 76.8512, name: "Almaty", type: "node" },
+            { lat: 41.0082, lon: 28.9784, name: "Istanbul", type: "node" }
+        ];
+
+        const locationVectors = {};
+        const pulsingDots = [];
+
+        // Subtle dot materials - gentle glow, not blown out
+        const hubMat = new THREE.MeshStandardMaterial({
+            color: 0x000000, emissive: 0xf97316, emissiveIntensity: 2.0
+        });
+        const nodeMat = new THREE.MeshStandardMaterial({
+            color: 0x000000, emissive: 0x4a9ece, emissiveIntensity: 1.5
+        });
+
+        locations.forEach(loc => {
+            const pos = latLongToVector3(loc.lat, loc.lon, GLOBE_RADIUS + 0.1);
+            locationVectors[loc.name] = pos;
+
+            const isHub = loc.type === "hub";
+            const dot = new THREE.Mesh(
+                new THREE.SphereGeometry(isHub ? 0.14 : 0.08, 16, 16),
+                isHub ? hubMat : nodeMat
+            );
+            dot.position.copy(pos);
+            globeGroup.add(dot);
+            pulsingDots.push(dot);
+
+            // Subtle pulse ring for hubs only
+            if (isHub) {
+                const ring = new THREE.Mesh(
+                    new THREE.RingGeometry(0.15, 0.25, 32),
+                    new THREE.MeshBasicMaterial({
+                        color: 0xf97316, transparent: true, opacity: 0.3,
+                        side: THREE.DoubleSide, depthWrite: false
+                    })
+                );
+                ring.position.copy(pos);
+                ring.lookAt(pos.clone().multiplyScalar(2));
+                ring.userData.isPulseRing = true;
+                globeGroup.add(ring);
+                pulsingDots.push(ring);
+            }
+        });
+
+        // ---- Routes ----
+        function createRoute(startName, endName, type) {
+            const start = locationVectors[startName];
+            const end = locationVectors[endName];
+            if (!start || !end) return null;
+
+            const dist = start.distanceTo(end);
+            const mid = start.clone().lerp(end, 0.5);
+            mid.normalize().multiplyScalar(GLOBE_RADIUS + (type === 'air' ? dist * 0.2 : 0.06));
+
+            const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
+            const points = curve.getPoints(60);
+            const isAir = type === 'air';
+            const color = isAir ? 0x4a9ece : 0xd97730;
+
+            // Static route line
+            const geo = new THREE.BufferGeometry().setFromPoints(points);
+            globeGroup.add(new THREE.Line(geo, new THREE.LineBasicMaterial({
+                color, transparent: true, opacity: isAir ? 0.15 : 0.2
+            })));
+
+            // Animated trail
+            const trailLength = 20;
+            const trailGeo = new THREE.BufferGeometry();
+            const trailPositions = new Float32Array(trailLength * 3);
+            const trailOpacities = new Float32Array(trailLength);
+            trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPositions, 3));
+            trailGeo.setAttribute('alpha', new THREE.BufferAttribute(trailOpacities, 1));
+
+            const trail = new THREE.Points(trailGeo, new THREE.ShaderMaterial({
+                uniforms: { uColor: { value: new THREE.Color(color) } },
+                vertexShader: `
+                    attribute float alpha;
+                    varying float vAlpha;
+                    void main() {
+                        vAlpha = alpha;
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                        gl_PointSize = 2.5;
+                    }
+                `,
+                fragmentShader: `
+                    uniform vec3 uColor;
+                    varying float vAlpha;
+                    void main() {
+                        float d = length(gl_PointCoord - vec2(0.5));
+                        if (d > 0.5) discard;
+                        gl_FragColor = vec4(uColor, vAlpha * smoothstep(0.5, 0.0, d));
+                    }
+                `,
+                transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
+            }));
+            globeGroup.add(trail);
+
+            return { curve, trail, trailLength, type };
+        }
+
+        const routes = [
+            createRoute("Shenzhen", "Iasi", "air"),
+            createRoute("Shanghai", "Munchen", "air"),
+            createRoute("Dubai", "Bucuresti", "air"),
+            createRoute("Shenzhen", "Xi'an", "train"),
+            createRoute("Xi'an", "Almaty", "train"),
+            createRoute("Almaty", "Istanbul", "train"),
+            createRoute("Istanbul", "Bucuresti", "train"),
+            createRoute("Bucuresti", "Iasi", "train"),
+            createRoute("Bucuresti", "Munchen", "train")
+        ].filter(Boolean);
+
+        // ---- Vehicles (smaller, subtler) ----
+        function createVehicle(isAir) {
+            const g = new THREE.Group();
+            const color = isAir ? 0x4a9ece : 0xd97730;
+            const mat = new THREE.MeshStandardMaterial({
+                color: 0x000000, emissive: color, emissiveIntensity: 1.8,
+                roughness: 0.3, metalness: 0.9
+            });
+
+            if (isAir) {
+                g.add(new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.015, 0.18, 6).rotateX(Math.PI / 2), mat));
+                g.add(new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.005, 0.04).translate(0, 0, 0.015), mat));
+            } else {
+                g.add(new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.04, 0.08), mat));
+                g.add(new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.035, 0.06).translate(0, 0, -0.09), mat));
+            }
+
+            g.scale.setScalar(0.4);
+            return g;
+        }
+
+        const vehicles = [];
+        routes.forEach((route) => {
+            const isAir = route.type === 'air';
+            const mesh = createVehicle(isAir);
+            globeGroup.add(mesh);
+            vehicles.push({
+                mesh, curve: route.curve, trail: route.trail, trailLength: route.trailLength,
+                speed: isAir ? (0.001 + Math.random() * 0.0006) : (0.0004 + Math.random() * 0.0002),
+                offset: Math.random()
+            });
+        });
+
+        // ---- Resize ----
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ---- Animation ----
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+
+            globeGroup.rotation.y += 0.0002;
+            cloudMesh.rotation.y += 0.0001;
+
+            // Subtle pulsing
+            const pulse = 1 + Math.sin(t * 3) * 0.15;
+            pulsingDots.forEach(dot => {
+                if (dot.userData.isPulseRing) {
+                    const p = ((t * 0.4) % 2);
+                    dot.scale.setScalar(1 + p * 2.5);
+                    dot.material.opacity = Math.max(0, 0.3 - p * 0.15);
+                } else {
+                    dot.scale.setScalar(pulse);
+                }
+            });
+
+            // Vehicles + trails
+            vehicles.forEach(v => {
+                v.offset = (v.offset + v.speed) % 1;
+                const pos = v.curve.getPointAt(v.offset);
+                const tangent = v.curve.getTangentAt(v.offset).normalize();
+                v.mesh.position.copy(pos);
+                v.mesh.up.copy(pos.clone().normalize());
+                v.mesh.lookAt(pos.clone().add(tangent));
+
+                const tp = v.trail.geometry.attributes.position;
+                const ta = v.trail.geometry.attributes.alpha;
+                for (let i = 0; i < v.trailLength; i++) {
+                    const tt = ((v.offset - (i / v.trailLength) * 0.04) % 1 + 1) % 1;
+                    const p = v.curve.getPointAt(tt);
+                    tp.setXYZ(i, p.x, p.y, p.z);
+                    ta.setX(i, 1 - (i / v.trailLength));
+                }
+                tp.needsUpdate = true;
+                ta.needsUpdate = true;
+            });
+
+            controls.update();
+            composer.render();
+        }
+
+        animate();
+    </script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { AddToQuoteButton } from "./AddToQuoteButton";
 import { PRODUCTS as ALL_PRODUCTS, type Product } from "./products";
@@ -110,6 +111,34 @@ function matches(p: Product, f: Filter): boolean {
 export function MagazinClient() {
   const [filter, setFilter] = useState<Filter>({ type: "all" });
   const [page, setPage] = useState(1);
+  const searchParams = useSearchParams();
+
+  // Initialize filter from URL query params (?cat=...&sub=...)
+  useEffect(() => {
+    const cat = searchParams.get("cat");
+    const sub = searchParams.get("sub");
+    if (cat && sub) {
+      // validate that this subcategory belongs to the category
+      const catNode = CATEGORIES.find((c) => c.name === cat);
+      if (catNode) {
+        const isValidSub = catNode.children.some((child) =>
+          typeof child === "string" ? child === sub : child.name === sub
+        );
+        if (isValidSub) {
+          setFilter({ type: "subcategory", value: sub, parent: cat });
+          return;
+        }
+      }
+    }
+    if (cat) {
+      // validate the category exists
+      const exists = CATEGORIES.some((c) => c.name === cat);
+      if (exists) {
+        setFilter({ type: "category", value: cat });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const filtered = useMemo(
     () => ALL_PRODUCTS.filter((p) => matches(p, filter)),
