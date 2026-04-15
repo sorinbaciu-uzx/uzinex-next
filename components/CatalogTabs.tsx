@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
+import { CatalogAnim, type CatalogAnimKind } from "./CatalogAnim";
 
-type Product = { name: string; spec: string; img: string; href?: string };
+type Product = { name: string; spec: string; img?: string; href?: string; anim: CatalogAnimKind };
 type Category = {
   id: string;
   num: string;
@@ -36,10 +36,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: "/magazin",
     products: [
-      { name: "Motostivuitoare diesel", spec: "3 — 16 tone · Heavy duty", img: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Electrostivuitoare", spec: "Li-Ion · Zero emisii", img: "https://images.unsplash.com/photo-1601598851547-4302969d0614?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Transpaleți electrici", spec: "1 — 3 tone · Compact", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Sisteme de rafturi", spec: "Heavy / VNA / Drive-in", img: "https://images.unsplash.com/photo-1586528116493-a029325540fa?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
+      { name: "Motostivuitoare diesel", spec: "3 — 16 tone · Heavy duty", img: "", href: "/magazin", anim: "forklift-diesel" },
+      { name: "Electrostivuitoare", spec: "Li-Ion · Zero emisii", img: "", href: "/magazin", anim: "forklift-electric" },
+      { name: "Transpaleți electrici", spec: "1 — 3 tone · Compact", img: "", href: "/magazin", anim: "pallet-jack" },
+      { name: "Sisteme de rafturi", spec: "Heavy / VNA / Drive-in", img: "", href: "/magazin", anim: "racking" },
     ],
   },
   {
@@ -52,10 +52,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Utilaje CNC"),
     products: [
-      { name: "Tăiere laser fibră", spec: "1.5 — 30 kW · IPG / nLight", img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&q=80&auto=format&fit=crop", href: mag("Mașini de tăiere laser", "Laser fibră") },
-      { name: "Centre CNC verticale", spec: "3 / 4 / 5 axe", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80&auto=format&fit=crop", href: mag("Utilaje CNC", "CNC metal") },
-      { name: "Strunguri CNC", spec: "Turnare & filetare", img: "https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=500&q=80&auto=format&fit=crop", href: mag("Strunguri", "Strunguri CNC") },
-      { name: "Mașini de sudură", spec: "MIG / TIG / Plasma", img: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
+      { name: "Tăiere laser fibră", spec: "1.5 — 30 kW · IPG / nLight", img: "", href: mag("Mașini de tăiere laser", "Laser fibră"), anim: "laser-fiber" },
+      { name: "Centre CNC verticale", spec: "3 / 4 / 5 axe", img: "", href: mag("Utilaje CNC", "CNC metal"), anim: "cnc-mill" },
+      { name: "Strunguri CNC", spec: "Turnare & filetare", img: "", href: mag("Strunguri", "Strunguri CNC"), anim: "cnc-lathe" },
+      { name: "Mașini de sudură", spec: "MIG / TIG / Plasma", img: "", href: "/magazin", anim: "welding" },
     ],
   },
   {
@@ -68,10 +68,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: "/magazin",
     products: [
-      { name: "Brațe robotice 6 axe", spec: "5 — 500 kg payload", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Celule de paletizare", spec: "Turnkey · până la 1500 cps/h", img: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Cobots colaborativi", spec: "Sigur lângă operator", img: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Sisteme de viziune", spec: "AI · Defect detection", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
+      { name: "Brațe robotice 6 axe", spec: "5 — 500 kg payload", img: "", href: "/magazin", anim: "robot-arm" },
+      { name: "Celule de paletizare", spec: "Turnkey · până la 1500 cps/h", img: "", href: "/magazin", anim: "palletizer" },
+      { name: "Cobots colaborativi", spec: "Sigur lângă operator", img: "", href: "/magazin", anim: "cobot" },
+      { name: "Sisteme de viziune", spec: "AI · Defect detection", img: "", href: "/magazin", anim: "vision" },
     ],
   },
   {
@@ -84,10 +84,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Utilaje de construcții"),
     products: [
-      { name: "Excavatoare", spec: "5 — 90 tone", img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=500&q=80&auto=format&fit=crop", href: mag("Utilaje de construcții", "Excavatoare") },
-      { name: "Macarale & ridicare", spec: "Fixe & mobile", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Echipamente energetice", spec: "Generatoare & turbine", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente energetice") },
-      { name: "Cupe & atașamente", spec: "Hardox 500 / custom", img: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=500&q=80&auto=format&fit=crop", href: mag("Utilaje de construcții", "Accesorii utilaje de construcții") },
+      { name: "Excavatoare", spec: "5 — 90 tone", img: "", href: mag("Utilaje de construcții", "Excavatoare"), anim: "excavator" },
+      { name: "Macarale & ridicare", spec: "Fixe & mobile", img: "", href: "/magazin", anim: "crane" },
+      { name: "Echipamente energetice", spec: "Generatoare & turbine", img: "", href: mag("Echipamente energetice"), anim: "generator" },
+      { name: "Cupe & atașamente", spec: "Hardox 500 / custom", img: "", href: mag("Utilaje de construcții", "Accesorii utilaje de construcții"), anim: "bucket" },
     ],
   },
   {
@@ -100,10 +100,10 @@ const CATEGORIES: Category[] = [
     cta: "Caută piese",
     ctaHref: "/magazin",
     products: [
-      { name: "Piese OEM", spec: "Garanție producător", img: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Filtre & lubrifianți", spec: "Toate clasele ISO", img: "https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Kituri uzură", spec: "Dinți, lame, bolțuri", img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Componente hidraulice", spec: "Cilindri · pompe · valve", img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
+      { name: "Piese OEM", spec: "Garanție producător", img: "", href: "/magazin", anim: "oem-parts" },
+      { name: "Filtre & lubrifianți", spec: "Toate clasele ISO", img: "", href: "/magazin", anim: "filters" },
+      { name: "Kituri uzură", spec: "Dinți, lame, bolțuri", img: "", href: "/magazin", anim: "wear-kit" },
+      { name: "Componente hidraulice", spec: "Cilindri · pompe · valve", img: "", href: "/magazin", anim: "hydraulic" },
     ],
   },
   {
@@ -116,10 +116,10 @@ const CATEGORIES: Category[] = [
     cta: "Discută cu un inginer",
     ctaHref: "/service",
     products: [
-      { name: "Punere în funcțiune", spec: "Instalare & training", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80&auto=format&fit=crop", href: "/service/inclus-la-livrare" },
-      { name: "Mentenanță preventivă", spec: "Plan anual personalizat", img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=500&q=80&auto=format&fit=crop", href: "/service/abonamente" },
-      { name: "Reparații în garanție", spec: "60 luni · Toate produsele", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80&auto=format&fit=crop", href: "/service/inclus-la-livrare" },
-      { name: "Intervenție rapidă", spec: "Sub 24h · Național", img: "https://images.unsplash.com/photo-1574170609180-ec61b03f5d2c?w=500&q=80&auto=format&fit=crop", href: "/service/abonamente" },
+      { name: "Punere în funcțiune", spec: "Instalare & training", img: "", href: "/service/inclus-la-livrare", anim: "commissioning" },
+      { name: "Mentenanță preventivă", spec: "Plan anual personalizat", img: "", href: "/service/abonamente", anim: "preventive" },
+      { name: "Reparații în garanție", spec: "60 luni · Toate produsele", img: "", href: "/service/inclus-la-livrare", anim: "warranty" },
+      { name: "Intervenție rapidă", spec: "Sub 24h · Național", img: "", href: "/service/abonamente", anim: "rapid" },
     ],
   },
   {
@@ -132,10 +132,10 @@ const CATEGORIES: Category[] = [
     cta: "Solicită dosar tehnic",
     ctaHref: "/magazin",
     products: [
-      { name: "Sisteme de supraveghere", spec: "Termoviziune · AI detection", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Generatoare autonome", spec: "Hibrid · silent · tactice", img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Adăposturi modulare", spec: "Containere operaționale NATO", img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
-      { name: "Simulatoare training", spec: "VR · AR · scenarii tactice", img: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=500&q=80&auto=format&fit=crop", href: "/magazin" },
+      { name: "Sisteme de supraveghere", spec: "Termoviziune · AI detection", img: "", href: "/magazin", anim: "thermal" },
+      { name: "Generatoare autonome", spec: "Hibrid · silent · tactice", img: "", href: "/magazin", anim: "autonomous-gen" },
+      { name: "Adăposturi modulare", spec: "Containere operaționale NATO", img: "", href: "/magazin", anim: "shelter" },
+      { name: "Simulatoare training", spec: "VR · AR · scenarii tactice", img: "", href: "/magazin", anim: "simulator" },
     ],
   },
   {
@@ -148,10 +148,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Mașini de prelucrare lemn"),
     products: [
-      { name: "Mașini de aplicat cant", spec: "Automate & semi-auto", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80&auto=format&fit=crop", href: mag("Mașini de prelucrare lemn", "Mașini de aplicat cant") },
-      { name: "Mașini pentru uși", spec: "Linii complete producție", img: "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=500&q=80&auto=format&fit=crop", href: mag("Mașini de prelucrare lemn", "Mașini pentru uși") },
-      { name: "Fierăstraie pentru lemn", spec: "Panglică · circular · sector", img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80&auto=format&fit=crop", href: mag("Mașini de prelucrare lemn", "Fierăstraie pentru lemn") },
-      { name: "Mașini de finisat lemn", spec: "Șlefuire · lăcuire · polishing", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80&auto=format&fit=crop", href: mag("Mașini de prelucrare lemn", "Mașini de finisat lemn") },
+      { name: "Mașini de aplicat cant", spec: "Automate & semi-auto", img: "", href: mag("Mașini de prelucrare lemn", "Mașini de aplicat cant"), anim: "edgebander" },
+      { name: "Mașini pentru uși", spec: "Linii complete producție", img: "", href: mag("Mașini de prelucrare lemn", "Mașini pentru uși"), anim: "door-machine" },
+      { name: "Fierăstraie pentru lemn", spec: "Panglică · circular · sector", img: "", href: mag("Mașini de prelucrare lemn", "Fierăstraie pentru lemn"), anim: "saw-wood" },
+      { name: "Mașini de finisat lemn", spec: "Șlefuire · lăcuire · polishing", img: "", href: mag("Mașini de prelucrare lemn", "Mașini de finisat lemn"), anim: "sander" },
     ],
   },
   {
@@ -164,10 +164,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Echipamente de ambalare"),
     products: [
-      { name: "Fabricare cutii carton", spec: "Flexo · offset · digital", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de ambalare", "Fabricare cutii carton") },
-      { name: "Ambalare paleți", spec: "Înfășurare stretch automată", img: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de ambalare", "Ambalare paleți") },
-      { name: "Sigilare & formare cutii", spec: "Linii continue", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de ambalare", "Sigilare și formare cutii") },
-      { name: "Termocontractabilă", spec: "Tunele & mașini cu cameră", img: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de ambalare", "Ambalare termocontractabilă") },
+      { name: "Fabricare cutii carton", spec: "Flexo · offset · digital", img: "", href: mag("Echipamente de ambalare", "Fabricare cutii carton"), anim: "carton" },
+      { name: "Ambalare paleți", spec: "Înfășurare stretch automată", img: "", href: mag("Echipamente de ambalare", "Ambalare paleți"), anim: "stretch" },
+      { name: "Sigilare & formare cutii", spec: "Linii continue", img: "", href: mag("Echipamente de ambalare", "Sigilare și formare cutii"), anim: "sealing" },
+      { name: "Termocontractabilă", spec: "Tunele & mașini cu cameră", img: "", href: mag("Echipamente de ambalare", "Ambalare termocontractabilă"), anim: "shrink" },
     ],
   },
   {
@@ -180,10 +180,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Echipamente de etichetare și dozare"),
     products: [
-      { name: "Mașini de etichetare", spec: "Wrap-around · top · side", img: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de etichetare și dozare", "Mașini de etichetare") },
-      { name: "Umplere & plafonare", spec: "Lichide · vâscoase · pudre", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de etichetare și dozare", "Mașini de umplere și plafonare") },
-      { name: "Mașini de dezmembrat", spec: "Linii dedicate", img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de etichetare și dozare", "Mașini de dezmembrat") },
-      { name: "Marcare industrială", spec: "Inkjet · laser · hot-stamp", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de etichetare și dozare") },
+      { name: "Mașini de etichetare", spec: "Wrap-around · top · side", img: "", href: mag("Echipamente de etichetare și dozare", "Mașini de etichetare"), anim: "labeling" },
+      { name: "Umplere & plafonare", spec: "Lichide · vâscoase · pudre", img: "", href: mag("Echipamente de etichetare și dozare", "Mașini de umplere și plafonare"), anim: "filling" },
+      { name: "Mașini de dezmembrat", spec: "Linii dedicate", img: "", href: mag("Echipamente de etichetare și dozare", "Mașini de dezmembrat"), anim: "disassembly" },
+      { name: "Marcare industrială", spec: "Inkjet · laser · hot-stamp", img: "", href: mag("Echipamente de etichetare și dozare"), anim: "marking" },
     ],
   },
   {
@@ -196,10 +196,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Echipamente de reciclare"),
     products: [
-      { name: "Balotare & presare", spec: "Hârtie · carton · plastic · metal", img: "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de reciclare", "Mașini de balotat și presare") },
-      { name: "Tocare & mărunțire", spec: "Shredder · granulatoare", img: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de reciclare", "Mașini de tocat și mărunțit") },
-      { name: "Echipamente separare", spec: "Magnetic · optic · densimetric", img: "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de reciclare", "Echipamente de separare") },
-      { name: "Auxiliare reciclare", spec: "Conveyor · buncăre · alimentatoare", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de reciclare", "Echipamente auxiliare pentru reciclare") },
+      { name: "Balotare & presare", spec: "Hârtie · carton · plastic · metal", img: "", href: mag("Echipamente de reciclare", "Mașini de balotat și presare"), anim: "baler" },
+      { name: "Tocare & mărunțire", spec: "Shredder · granulatoare", img: "", href: mag("Echipamente de reciclare", "Mașini de tocat și mărunțit"), anim: "shredder" },
+      { name: "Echipamente separare", spec: "Magnetic · optic · densimetric", img: "", href: mag("Echipamente de reciclare", "Echipamente de separare"), anim: "separator" },
+      { name: "Auxiliare reciclare", spec: "Conveyor · buncăre · alimentatoare", img: "", href: mag("Echipamente de reciclare", "Echipamente auxiliare pentru reciclare"), anim: "conveyor" },
     ],
   },
   {
@@ -212,10 +212,10 @@ const CATEGORIES: Category[] = [
     cta: "Vezi toate modelele",
     ctaHref: mag("Echipamente de inspecție industrială"),
     products: [
-      { name: "Roboți CCTV conducte", spec: "Diametru 50 — 2000 mm", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de inspecție industrială", "Roboți CCTV pentru inspecția conductelor") },
-      { name: "Camere push", spec: "Inspecție canalizare & țevi", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de inspecție industrială", "Camere push pentru inspecția conductelor") },
-      { name: "Camere PTZ / periscop", spec: "Cămine & spații închise", img: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de inspecție industrială", "Camere PTZ / periscop pentru cămine și canalizare") },
-      { name: "Videoscoape industriale", spec: "Inspecții NDT certificate", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&q=80&auto=format&fit=crop", href: mag("Echipamente de inspecție industrială", "Videoscoape industriale") },
+      { name: "Roboți CCTV conducte", spec: "Diametru 50 — 2000 mm", img: "", href: mag("Echipamente de inspecție industrială", "Roboți CCTV pentru inspecția conductelor"), anim: "cctv-crawler" },
+      { name: "Camere push", spec: "Inspecție canalizare & țevi", img: "", href: mag("Echipamente de inspecție industrială", "Camere push pentru inspecția conductelor"), anim: "push-cam" },
+      { name: "Camere PTZ / periscop", spec: "Cămine & spații închise", img: "", href: mag("Echipamente de inspecție industrială", "Camere PTZ / periscop pentru cămine și canalizare"), anim: "ptz" },
+      { name: "Videoscoape industriale", spec: "Inspecții NDT certificate", img: "", href: mag("Echipamente de inspecție industrială", "Videoscoape industriale"), anim: "videoscope" },
     ],
   },
 ];
@@ -442,16 +442,8 @@ export function CatalogTabs() {
                 >
                   <div className="text-xs lg:text-sm text-ink-700 leading-tight">{p.name}</div>
                   <div className="w-8 h-px bg-uzx-orange mt-1.5" />
-                  <div className="flex-1 flex items-center justify-center my-3 relative h-20 lg:h-24">
-                    <Image
-                      src={p.img}
-                      alt={p.name}
-                      width={400}
-                      height={96}
-                      sizes="(max-width: 768px) 50vw, 20vw"
-                      className="w-full h-20 lg:h-24 object-cover grayscale group-hover:grayscale-0 transition"
-                      loading="lazy"
-                    />
+                  <div className="flex-1 flex items-center justify-center my-3 relative h-20 lg:h-24 overflow-hidden">
+                    <CatalogAnim kind={p.anim} />
                   </div>
                   <div className="text-[9px] mono text-ink-400 uppercase truncate">{p.spec}</div>
                 </motion.a>
