@@ -23,12 +23,14 @@ const HERO_STATS = [
 
 const BENEFITS = [
   { icon: "01", title: "Proiecte cu impact real", desc: "Lucrezi la linii de producție, cobots, laser fiber, MES și stații fotovoltaice industriale. Nu la demo-uri — la instalații care funcționează 24/7." },
-  { icon: "02", title: "AI de frontieră, zi de zi", desc: "Lucrezi cu cele mai avansate sisteme de inteligență artificială de pe planetă — Claude, GPT, Gemini — integrate în fluxul tău de ofertare, proiectare și diagnoză. Nu experimentăm cu AI. Îl folosim deja." },
+  { icon: "02", title: "AI de frontieră, zi de zi", desc: "Folosești zilnic cele mai avansate sisteme de inteligență artificială de pe planetă în fluxul tău de ofertare, proiectare și diagnoză. Nu experimentăm cu AI. Îl folosim deja — integrat în instrumentele noastre interne." },
   { icon: "03", title: "Tehnologii premium", desc: "Siemens, Mitsubishi, ABB, Schneider, Fanuc, Yaskawa, IPG. Certificări producător plătite integral." },
   { icon: "04", title: "Mentorat + seniori", desc: "Fiecare junior e asociat cu un inginer senior 3-5 ani experiență. Nu te arunci în gol." },
   { icon: "05", title: "Parc științific Iași", desc: "Sediu în Tehnopolis — clădire modernă cu laborator propriu, parcare, cafeteria, spațiu de prototipare." },
   { icon: "06", title: "Pachet transparent", desc: "Salariu fix + bonus performanță + bonus proiect. Grila publică intern, fără negociere ascunsă." },
   { icon: "07", title: "Training & conferințe", desc: "Participare la Hannover Messe, Automatica, EMO, plus cursuri TÜV / Siemens / Fanuc anual." },
+  { icon: "08", title: "Abonament medical & dental", desc: "Abonament privat Regina Maria sau Sanador pentru tine și familie. Consultații, analize, intervenții stomatologice — toate acoperite." },
+  { icon: "09", title: "Echilibru real work-life", desc: "Program flexibil cu 2-3 zile hibrid/săptămână (roluri eligibile), 25+ zile concediu, fără weekend-uri sau overtime neplătit. Family-friendly." },
 ];
 
 type Role = {
