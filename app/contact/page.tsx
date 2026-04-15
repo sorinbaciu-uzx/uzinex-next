@@ -173,34 +173,81 @@ function ContactAnim() {
    PAGE
    ═════════════════════════════════════════════════════════════════════ */
 
-export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+type SubmitState = "idle" | "sending" | "success" | "error";
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+/** Map the form subject to a Monday board intent */
+function subjectToIntent(subject: string): "leads" | "service" | "finantare" | "hr" {
+  const s = subject.toLowerCase();
+  if (s.includes("service") || s.includes("mentenan")) return "service";
+  if (s.includes("finan")) return "finantare";
+  if (s.includes("cariere") || s.includes("stagii")) return "hr";
+  return "leads"; // default: oferte echipament, licitații, colaborare, altceva
+}
+
+export default function ContactPage() {
+  const [state, setState] = useState<SubmitState>("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
-    const name = fd.get("name")?.toString() ?? "";
-    const company = fd.get("company")?.toString() ?? "";
-    const email = fd.get("email")?.toString() ?? "";
-    const phone = fd.get("phone")?.toString() ?? "";
+    const name = fd.get("name")?.toString().trim() ?? "";
+    const company = fd.get("company")?.toString().trim() ?? "";
+    const email = fd.get("email")?.toString().trim() ?? "";
+    const phone = fd.get("phone")?.toString().trim() ?? "";
     const subject = fd.get("subject")?.toString() ?? "Contact de pe site";
-    const message = fd.get("message")?.toString() ?? "";
+    const message = fd.get("message")?.toString().trim() ?? "";
+    const honeypot = fd.get("website")?.toString() ?? ""; // hidden anti-bot field
 
-    const body = [
-      `Nume: ${name}`,
-      `Companie: ${company}`,
-      `Email: ${email}`,
-      `Telefon: ${phone}`,
-      `Subiect: ${subject}`,
-      "",
-      "Mesaj:",
-      message,
-    ].join("\n");
+    const intent = subjectToIntent(subject);
+    const sourceUrl = typeof window !== "undefined" ? window.location.href : undefined;
 
-    const mailto = `mailto:info@uzinex.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setSubmitted(true);
+    setState("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          intent,
+          name,
+          email,
+          phone,
+          company,
+          message,
+          subject,
+          sourceUrl,
+          honeypot,
+          extra: intent === "leads" ? { tipCerere: subject } : {},
+        }),
+      });
+      const json = await res.json();
+      if (res.ok && json.ok) {
+        setState("success");
+        form.reset();
+      } else {
+        throw new Error(json.error ?? "Submit failed");
+      }
+    } catch (err) {
+      // Fallback: deschide clientul de email
+      setState("error");
+      setErrorMsg(err instanceof Error ? err.message : "Eroare necunoscută");
+      const body = [
+        `Nume: ${name}`,
+        `Companie: ${company}`,
+        `Email: ${email}`,
+        `Telefon: ${phone}`,
+        `Subiect: ${subject}`,
+        "",
+        "Mesaj:",
+        message,
+      ].join("\n");
+      const mailto = `mailto:info@uzinex.ro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Deschid într-un tab nou ca să nu piardă userul pagina
+      window.location.href = mailto;
+    }
   };
 
   return (
@@ -343,6 +390,14 @@ export default function ContactPage() {
                   />
                   <FormField label="Mesaj" name="message" type="textarea" required placeholder="Descrie pe scurt nevoia ta: echipament, volum, termene, buget estimat..." />
 
+                  {/* Honeypot — câmp ascuns pentru boți. Userii reali nu-l completează. */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                    <label>
+                      Website (nu completa)
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                    </label>
+                  </div>
+
                   <div className="flex items-start gap-3 text-xs text-ink-500 pt-2 border-t hairline">
                     <input type="checkbox" required className="mt-0.5" />
                     <label>
@@ -357,14 +412,21 @@ export default function ContactPage() {
                   <div className="flex flex-wrap items-center gap-4 pt-2">
                     <button
                       type="submit"
-                      className="bg-uzx-orange hover:bg-uzx-orange/90 text-white text-sm px-7 py-3.5 transition flex items-center gap-3 group font-medium"
+                      disabled={state === "sending"}
+                      className="bg-uzx-orange hover:bg-uzx-orange/90 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm px-7 py-3.5 transition flex items-center gap-3 group font-medium"
                     >
-                      Trimite mesajul
+                      {state === "sending" ? "Se trimite..." : "Trimite mesajul"}
                       <span className="group-hover:translate-x-1 transition">→</span>
                     </button>
-                    {submitted && (
-                      <span className="text-xs text-uzx-blue mono">
-                        ✓ Se deschide clientul de email. Finalizează trimiterea acolo.
+                    {state === "success" && (
+                      <span className="text-xs text-uzx-blue mono flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
+                        ✓ Mulțumim! Mesajul tău a ajuns la noi. Te contactăm în 24h.
+                      </span>
+                    )}
+                    {state === "error" && (
+                      <span className="text-xs text-ink-600 mono">
+                        Am deschis clientul de email ca fallback. Finalizează trimiterea acolo.
                       </span>
                     )}
                   </div>

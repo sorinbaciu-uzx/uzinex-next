@@ -824,7 +824,7 @@ export default function FinantareEuropeanaPage() {
           title="Nu știi de unde să începi? Începe cu un apel de 30 de minute."
           desc="Un inginer Uzinex analizează obiectul tău de activitate și îți sugerează programele cu cea mai mare intensitate. Fără documente, fără angajament."
           action="Programează apel"
-          href="mailto:contact@uzinex.ro?subject=Apel%20evaluare%20finantare"
+          href="mailto:info@uzinex.ro?subject=Apel%20evaluare%20finantare"
         />
 
         {/* ───── EU PROGRAMS ───── */}
@@ -864,7 +864,7 @@ export default function FinantareEuropeanaPage() {
           title="Ai echipament clar în minte? Trimite-ne specificațiile."
           desc="Îți pregătim proforma cu preț ferm + fișa tehnică detaliată + dovezile de conformitate necesare pentru dosarul de finanțare, în 5 zile lucrătoare."
           action="Trimite spec. tehnice"
-          href="mailto:contact@uzinex.ro?subject=Spec%20tehnice%20pentru%20dosar"
+          href="mailto:info@uzinex.ro?subject=Spec%20tehnice%20pentru%20dosar"
         />
 
         {/* ───── GOVERNMENT PROGRAMS ───── */}
@@ -904,7 +904,7 @@ export default function FinantareEuropeanaPage() {
           title="Lucrezi cu consultant propriu? Îl sprijinim cu fișele noastre."
           desc="Trimitem consultantului tău acreditat toată documentația tehnică necesară: proforme, specificații, certificate CE/ISO, studiu de fezabilitate — în formatul cerut de autoritatea de management."
           action="Trimite CUI consultant"
-          href="mailto:contact@uzinex.ro?subject=Colaborare%20consultant"
+          href="mailto:info@uzinex.ro?subject=Colaborare%20consultant"
         />
 
         {/* ───── PROCESS ───── */}
@@ -994,7 +994,7 @@ export default function FinantareEuropeanaPage() {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-5">
                 <a
-                  href="mailto:contact@uzinex.ro?subject=Evaluare%20eligibilitate%20fonduri"
+                  href="mailto:info@uzinex.ro?subject=Evaluare%20eligibilitate%20fonduri"
                   className="bg-uzx-orange hover:bg-uzx-orange/90 text-white text-sm px-7 py-4 transition font-medium inline-flex items-center gap-3 group"
                 >
                   Trimite solicitare
