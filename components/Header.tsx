@@ -435,7 +435,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                               className="block py-1.5 text-sm text-white/75 hover:text-uzx-orange"
                             >
                               {"group" in sub && sub.group && (
-                                <span className="text-[10px] uppercase tracking-widest text-white/40 mr-2 mono">
+                                <span className="text-[10px] uppercase tracking-widest text-white/60 mr-2 mono">
                                   {sub.group} ·
                                 </span>
                               )}
@@ -487,7 +487,7 @@ function MegaMenuContent() {
       <div className="grid grid-cols-12 gap-0 min-h-[380px]">
         {/* LEFT RAIL — categories */}
         <aside className="col-span-4 border-r border-white/10 pr-6">
-          <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mono mb-4 px-3">
+          <div className="text-[10px] uppercase tracking-[0.22em] text-white/60 mono mb-4 px-3">
             Categorii
           </div>
           <ul className="space-y-0.5">
@@ -537,7 +537,7 @@ function MegaMenuContent() {
             </div>
             <a
               href={group.href}
-              className="text-[11px] mono uppercase tracking-wider text-white/50 hover:text-white transition"
+              className="text-[11px] mono uppercase tracking-wider text-white/70 hover:text-white transition"
             >
               Vezi toate →
             </a>

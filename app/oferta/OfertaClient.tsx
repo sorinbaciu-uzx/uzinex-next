@@ -280,18 +280,18 @@ export function OfertaClient() {
                           <button
                             type="button"
                             onClick={() => updateQty(it.sku, -1)}
-                            className="w-6 h-6 flex items-center justify-center text-ink-500 hover:bg-ink-50 hover:text-uzx-orange transition text-xs"
+                            className="w-7 h-7 flex items-center justify-center text-ink-500 hover:bg-ink-50 hover:text-uzx-orange transition text-xs"
                             aria-label="Scade"
                           >
                             −
                           </button>
-                          <span className="w-5 text-center text-[11px] mono text-ink-900">
+                          <span className="w-6 text-center text-[11px] mono text-ink-900">
                             {it.qty}
                           </span>
                           <button
                             type="button"
                             onClick={() => updateQty(it.sku, +1)}
-                            className="w-6 h-6 flex items-center justify-center text-ink-500 hover:bg-ink-50 hover:text-uzx-orange transition text-xs"
+                            className="w-7 h-7 flex items-center justify-center text-ink-500 hover:bg-ink-50 hover:text-uzx-orange transition text-xs"
                             aria-label="Crește"
                           >
                             +
@@ -300,7 +300,7 @@ export function OfertaClient() {
                         <button
                           type="button"
                           onClick={() => remove(it.sku)}
-                          className="w-5 h-5 flex items-center justify-center text-ink-300 hover:text-uzx-orange transition text-sm"
+                          className="w-7 h-7 flex items-center justify-center text-ink-400 hover:text-uzx-orange transition text-sm"
                           aria-label="Elimină"
                         >
                           ×

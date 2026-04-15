@@ -429,6 +429,8 @@ export default function MaterialeUtilePage() {
                                   src={`https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`}
                                   alt=""
                                   loading="lazy"
+                                  width={320}
+                                  height={180}
                                   className="w-full h-full object-cover"
                                 />
                                 {isActive && (

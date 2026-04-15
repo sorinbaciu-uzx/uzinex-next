@@ -34,17 +34,19 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <Hero data={c.hero as HeroData | undefined} />
-      <AuthorityStrip data={c.authority as AuthorityData | undefined} />
-      <CaseStudies data={c.case_studies_home as CaseStudiesHomeData | undefined} />
-      <Certifications data={c.certifications as CertificationsData | undefined} />
-      <VideoGallery data={c.video_gallery as VideoGalleryData | undefined} />
-      <TestimonialMarquee data={c.testimonials as TestimonialsData | undefined} />
-      <CatalogTabs />
-      <Solutions data={c.solutions as SolutionsData | undefined} />
-      <NewsSection data={c.news as NewsData | undefined} />
-      <QASection data={c.qa as QAData | undefined} />
-      <ContactCTA data={c.contact_cta as ContactCTAData | undefined} />
+      <main>
+        <Hero data={c.hero as HeroData | undefined} />
+        <AuthorityStrip data={c.authority as AuthorityData | undefined} />
+        <CaseStudies data={c.case_studies_home as CaseStudiesHomeData | undefined} />
+        <Certifications data={c.certifications as CertificationsData | undefined} />
+        <VideoGallery data={c.video_gallery as VideoGalleryData | undefined} />
+        <TestimonialMarquee data={c.testimonials as TestimonialsData | undefined} />
+        <CatalogTabs />
+        <Solutions data={c.solutions as SolutionsData | undefined} />
+        <NewsSection data={c.news as NewsData | undefined} />
+        <QASection data={c.qa as QAData | undefined} />
+        <ContactCTA data={c.contact_cta as ContactCTAData | undefined} />
+      </main>
       <Footer />
     </>
   );

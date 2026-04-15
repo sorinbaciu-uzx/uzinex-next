@@ -130,7 +130,7 @@ export function Hero({ data }: { data?: HeroData | null }) {
           <div className="space-y-6">
             {d.stats.map((s, i) => (
               <div key={i}>
-                <div className="text-[11px] uppercase tracking-[0.2em] text-ink-400 mono">{s.label}</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-ink-300 mono">{s.label}</div>
                 <div className="serif text-2xl text-white mt-1">{s.value}</div>
               </div>
             ))}
@@ -138,7 +138,7 @@ export function Hero({ data }: { data?: HeroData | null }) {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-6 right-6 z-10 flex items-center gap-2 text-[10px] mono uppercase tracking-widest text-white/50">
+      <div className="absolute bottom-6 right-6 z-10 flex items-center gap-2 text-[10px] mono uppercase tracking-widest text-white/70">
         <motion.span
           className="w-1.5 h-1.5 rounded-full bg-red-500"
           animate={{ opacity: [1, 0.3, 1] }}
