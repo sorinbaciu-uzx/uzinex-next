@@ -359,32 +359,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                 className="hidden lg:block absolute left-0 right-0 border-t border-white/10"
                 style={{ background: "#082545" }}
               >
-                <div className="container-x py-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-                    {CATALOG_GROUPS.map((group) => (
-                      <div key={group.name}>
-                        <a
-                          href={group.href}
-                          className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 block hover:text-white transition"
-                        >
-                          {group.name}
-                        </a>
-                        <ul className="space-y-2">
-                          {group.items.map((sub) => (
-                            <li key={sub.label}>
-                              <a
-                                href={sub.href}
-                                className="text-sm text-white/75 hover:text-white hover:translate-x-1 inline-block transition"
-                              >
-                                {sub.label}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <MegaMenuContent />
               </motion.div>
             )}
         </AnimatePresence>
@@ -499,5 +474,92 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+/* ─── MEGA MENU: left rail (categories) + right panel (subcategories) ─── */
+function MegaMenuContent() {
+  const [activeGroup, setActiveGroup] = useState(CATALOG_GROUPS[0]?.name);
+  const group = CATALOG_GROUPS.find((g) => g.name === activeGroup) ?? CATALOG_GROUPS[0];
+
+  return (
+    <div className="container-x py-8">
+      <div className="grid grid-cols-12 gap-0 min-h-[380px]">
+        {/* LEFT RAIL — categories */}
+        <aside className="col-span-4 border-r border-white/10 pr-6">
+          <div className="text-[10px] uppercase tracking-[0.22em] text-white/40 mono mb-4 px-3">
+            Categorii
+          </div>
+          <ul className="space-y-0.5">
+            {CATALOG_GROUPS.map((g) => {
+              const isActive = activeGroup === g.name;
+              return (
+                <li key={g.name}>
+                  <a
+                    href={g.href}
+                    onMouseEnter={() => setActiveGroup(g.name)}
+                    onFocus={() => setActiveGroup(g.name)}
+                    className={`flex items-center justify-between gap-3 px-3 py-2.5 text-sm transition ${
+                      isActive
+                        ? "bg-white/10 text-white"
+                        : "text-white/70 hover:bg-white/5 hover:text-white"
+                    }`}
+                  >
+                    <span>{g.name}</span>
+                    <span
+                      className={`text-xs transition ${
+                        isActive ? "text-uzx-orange" : "text-white/20"
+                      }`}
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </aside>
+
+        {/* RIGHT PANEL — subcategories of active category */}
+        <div className="col-span-8 pl-8">
+          <div className="flex items-baseline justify-between mb-5">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-uzx-orange mono mb-1">
+                Subcategorii
+              </div>
+              <a
+                href={group.href}
+                className="serif text-xl text-white hover:text-uzx-orange transition"
+                style={{ letterSpacing: "-0.02em" }}
+              >
+                {group.name}
+              </a>
+            </div>
+            <a
+              href={group.href}
+              className="text-[11px] mono uppercase tracking-wider text-white/50 hover:text-white transition"
+            >
+              Vezi toate →
+            </a>
+          </div>
+
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
+            {group.items.map((sub) => (
+              <li key={sub.label}>
+                <a
+                  href={sub.href}
+                  className="group flex items-center gap-3 py-2 text-sm text-white/75 hover:text-white transition"
+                >
+                  <span className="w-1 h-1 bg-uzx-orange/40 group-hover:bg-uzx-orange transition shrink-0" />
+                  <span className="group-hover:translate-x-1 transition">
+                    {sub.label}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
