@@ -12,7 +12,6 @@ import { AUTHORITY_DEFAULT } from "@/components/AuthorityStrip";
 import { CERTIFICATIONS_DEFAULT } from "@/components/Certifications";
 import { CASE_STUDIES_ALL_DEFAULT } from "@/components/CaseStudiesGallery";
 import { TEAM_DEFAULT } from "@/app/echipa/page";
-import { CARIERE_DEFAULT } from "@/app/cariere/page";
 
 export const DEFAULT_CONTENT: Record<string, unknown> = {
   hero: HERO_DEFAULT,
@@ -27,7 +26,6 @@ export const DEFAULT_CONTENT: Record<string, unknown> = {
   qa: QA_DEFAULT,
   contact_cta: CONTACT_CTA_DEFAULT,
   team: TEAM_DEFAULT,
-  cariere: CARIERE_DEFAULT,
   // still not wired
   catalog_tabs: {},
   footer: {},
@@ -48,5 +46,4 @@ export const WIRED_KEYS = new Set([
   "qa",
   "contact_cta",
   "team",
-  "cariere",
 ]);
