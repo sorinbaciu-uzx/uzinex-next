@@ -67,7 +67,7 @@ export function Hero({ data }: { data?: HeroData | null }) {
             className="w-full h-full border-0"
             style={{ pointerEvents: "auto" }}
             title="Uzinex Global Network"
-            loading="eager"
+            loading="lazy"
           />
           {/* Left fade so globe blends into content area */}
           <div
@@ -90,12 +90,9 @@ export function Hero({ data }: { data?: HeroData | null }) {
 
       {/* ─── Content ─── */}
       <div className="container-x pt-14 lg:pt-16 pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10">
-        <motion.div
-          className="lg:col-span-8"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        {/* H1 column — NO motion wrapper. H1 is the LCP candidate; if it starts
+            at opacity:0 Lighthouse can't measure LCP and reports NO_LCP error. */}
+        <div className="lg:col-span-8">
           <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
             <span className="w-8 h-px bg-white/40" />
             <span>{d.eyebrow}</span>
@@ -122,7 +119,7 @@ export function Hero({ data }: { data?: HeroData | null }) {
               {d.secondaryCtaLabel}
             </a>
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
           className="lg:col-span-4 lg:border-l border-white/15 lg:pl-12 flex flex-col justify-end"
