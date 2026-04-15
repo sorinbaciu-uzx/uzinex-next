@@ -1,10 +1,254 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
+
+/* ─────── SVG tech animations ─────── */
+
+const SHARED_CSS = `
+@keyframes fg-rot { to { transform: rotate(360deg); } }
+@keyframes fg-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes fg-dash { to { stroke-dashoffset: -20; } }
+@keyframes fg-count { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+@keyframes fg-grow { 0% { transform: scaleY(0); } 100% { transform: scaleY(1); } }
+@keyframes fg-flow { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+@keyframes fg-drop { 0% { transform: translateY(-10%); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(120%); opacity: 0; } }
+`;
+
+/** Hero animation — EU flag with flowing capital streams into industrial coin */
+function HeroAnim() {
+  return (
+    <svg className="w-full h-full" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet">
+      <style>{SHARED_CSS}</style>
+      {/* EU stars orbit */}
+      <g style={{ transformOrigin: "80px 80px", animation: "fg-rot 20s linear infinite" }}>
+        {Array.from({ length: 12 }).map((_, i) => {
+          const a = (i * 30 * Math.PI) / 180;
+          const x = 80 + Math.cos(a) * 42;
+          const y = 80 + Math.sin(a) * 42;
+          return (
+            <polygon
+              key={i}
+              points={`${x},${y - 4} ${x + 1},${y - 1} ${x + 4},${y - 1} ${x + 1.5},${y + 1} ${x + 2.5},${y + 4} ${x},${y + 2} ${x - 2.5},${y + 4} ${x - 1.5},${y + 1} ${x - 4},${y - 1} ${x - 1},${y - 1}`}
+              fill="#f5851f"
+              style={{ animation: `fg-pulse 2s ease-in-out infinite ${i * 0.1}s` }}
+            />
+          );
+        })}
+      </g>
+      <circle cx="80" cy="80" r="8" fill="#f5851f" />
+      <text x="80" y="84" textAnchor="middle" fill="#082545" fontSize="10" fontFamily="monospace" fontWeight="bold">€</text>
+
+      {/* Flow lines EU → industrial */}
+      {[0, 1, 2].map((i) => (
+        <g key={i}>
+          <path
+            d={`M 100 ${70 + i * 10} Q 160 ${70 + i * 10}, 220 ${100}`}
+            fill="none"
+            stroke="#f5851f"
+            strokeWidth="1.5"
+            strokeDasharray="5 4"
+            style={{ animation: `fg-dash 1.5s linear infinite ${i * 0.2}s` }}
+          />
+        </g>
+      ))}
+
+      {/* Industrial gear receiver */}
+      <g style={{ transformOrigin: "240px 100px", animation: "fg-rot 10s linear infinite" }}>
+        <circle cx="240" cy="100" r="26" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="2" />
+        {Array.from({ length: 12 }).map((_, i) => {
+          const a = (i * 30 * Math.PI) / 180;
+          const x1 = 240 + Math.cos(a) * 26;
+          const y1 = 100 + Math.sin(a) * 26;
+          const x2 = 240 + Math.cos(a) * 32;
+          const y2 = 100 + Math.sin(a) * 32;
+          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="rgba(255,255,255,0.8)" strokeWidth="3" />;
+        })}
+        <circle cx="240" cy="100" r="8" fill="#1e6bb8" />
+      </g>
+
+      {/* Bar chart rising */}
+      {[0, 1, 2, 3].map((i) => (
+        <rect
+          key={i}
+          x={40 + i * 14}
+          y={160 - (i + 1) * 10}
+          width="10"
+          height={(i + 1) * 10}
+          fill="#f5851f"
+          opacity="0.8"
+          style={{ transformOrigin: `${45 + i * 14}px 160px`, animation: `fg-grow 2s ease-out infinite ${i * 0.2}s` }}
+        />
+      ))}
+      <line x1="30" y1="160" x2="110" y2="160" stroke="rgba(255,255,255,0.4)" />
+
+      {/* Telemetry tags */}
+      <text x="40" y="175" fill="rgba(255,255,255,0.5)" fontSize="7" fontFamily="monospace">
+        VAL. INV. ↗
+      </text>
+      <text x="210" y="140" fill="rgba(255,255,255,0.5)" fontSize="7" fontFamily="monospace">
+        CAPACITATE PRODUCTIVĂ
+      </text>
+      <text x="105" y="60" fill="#f5851f" fontSize="7" fontFamily="monospace">
+        NERAMBURSABIL
+      </text>
+    </svg>
+  );
+}
+
+/** EU programs section banner animation — network topology */
+function NetworkAnim() {
+  const nodes = [
+    { x: 40, y: 40, label: "UE" },
+    { x: 120, y: 20, label: "HZE" },
+    { x: 200, y: 40, label: "DGT" },
+    { x: 280, y: 20, label: "ERS" },
+    { x: 160, y: 80, label: "RO" },
+    { x: 80, y: 100, label: "IMM" },
+    { x: 240, y: 100, label: "R&D" },
+  ];
+  const edges: [number, number][] = [
+    [0, 4], [1, 4], [2, 4], [3, 4], [4, 5], [4, 6], [0, 1], [2, 3],
+  ];
+  return (
+    <svg className="w-full h-full" viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet">
+      <style>{SHARED_CSS}</style>
+      {/* Edges */}
+      {edges.map(([a, b], i) => (
+        <line
+          key={i}
+          x1={nodes[a].x}
+          y1={nodes[a].y}
+          x2={nodes[b].x}
+          y2={nodes[b].y}
+          stroke="#f5851f"
+          strokeWidth="1"
+          strokeDasharray="3 3"
+          opacity="0.6"
+          style={{ animation: `fg-dash 1.5s linear infinite ${i * 0.15}s` }}
+        />
+      ))}
+      {/* Nodes */}
+      {nodes.map((n, i) => (
+        <g key={i}>
+          <circle cx={n.x} cy={n.y} r="10" fill="rgba(30,107,184,0.15)" stroke="#1e6bb8" />
+          <circle cx={n.x} cy={n.y} r="4" fill="#f5851f" style={{ animation: `fg-pulse 2s ease-in-out infinite ${i * 0.2}s` }}/>
+          <text x={n.x} y={n.y + 22} textAnchor="middle" fill="#082545" fontSize="7" fontFamily="monospace" fontWeight="bold">{n.label}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+/** Government programs section banner animation — budget distribution */
+function BudgetAnim() {
+  const bars = [
+    { label: "IND. PREL.", v: 90, color: "#c05621" },
+    { label: "PoCIDIF", v: 35, color: "#2b6cb0" },
+    { label: "FM — ENERGIE", v: 62, color: "#2f855a" },
+    { label: "POR", v: 28, color: "#4a90e2" },
+    { label: "PoTJ", v: 50, color: "#c05621" },
+    { label: "E-MOBILITY", v: 40, color: "#4a90e2" },
+  ];
+  return (
+    <svg className="w-full h-full" viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet">
+      <style>{SHARED_CSS}</style>
+      {/* Baseline */}
+      <line x1="20" y1="95" x2="300" y2="95" stroke="#082545" strokeWidth="1" opacity="0.3"/>
+      {/* Grid */}
+      {[20, 40, 60, 80].map((y, i) => (
+        <line key={i} x1="20" y1={95 - y} x2="300" y2={95 - y} stroke="#082545" strokeWidth="0.4" strokeDasharray="2 3" opacity="0.15"/>
+      ))}
+      {bars.map((b, i) => (
+        <g key={i}>
+          <rect
+            x={30 + i * 45}
+            y={95 - b.v}
+            width="30"
+            height={b.v}
+            fill={b.color}
+            opacity="0.85"
+            style={{ transformOrigin: `${45 + i * 45}px 95px`, animation: `fg-grow 2s ease-out infinite ${i * 0.2}s` }}
+          />
+          <text x={45 + i * 45} y="108" textAnchor="middle" fill="#082545" fontSize="6" fontFamily="monospace" fontWeight="bold">{b.label}</text>
+        </g>
+      ))}
+      <text x="20" y="15" fill="#082545" fontSize="8" fontFamily="monospace" opacity="0.6">BUGET ALOCAT (mil. EUR)</text>
+      <text x="270" y="15" fill="#f5851f" fontSize="8" fontFamily="monospace" fontWeight="bold">2025–2029</text>
+    </svg>
+  );
+}
+
+/** Process section animation — funnel */
+function FunnelAnim() {
+  return (
+    <svg className="w-full h-full" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid meet">
+      <style>{SHARED_CSS}</style>
+      {/* Funnel shape */}
+      <polygon points="30,30 290,30 230,90 230,160 90,160 90,90" fill="none" stroke="#082545" strokeWidth="1.2" opacity="0.25"/>
+      {/* Input items descending */}
+      {[0, 1, 2, 3, 4].map((i) => (
+        <circle
+          key={i}
+          cx={60 + i * 50}
+          cy={40}
+          r="5"
+          fill="#1e6bb8"
+          style={{ animation: `fg-drop 2.4s ease-in infinite ${i * 0.3}s` }}
+        />
+      ))}
+      {/* Stage labels */}
+      <text x="160" y="45" textAnchor="middle" fill="#082545" fontSize="9" fontFamily="monospace" opacity="0.6">EVALUARE</text>
+      <text x="160" y="88" textAnchor="middle" fill="#082545" fontSize="9" fontFamily="monospace" opacity="0.6">DOSAR TEHNIC</text>
+      <text x="160" y="125" textAnchor="middle" fill="#082545" fontSize="9" fontFamily="monospace" opacity="0.6">APROBARE</text>
+      {/* Output - approved contract */}
+      <g style={{ animation: "fg-pulse 2s ease-in-out infinite" }}>
+        <rect x="140" y="150" width="40" height="14" fill="#f5851f"/>
+        <text x="160" y="161" textAnchor="middle" fill="#fff" fontSize="8" fontFamily="monospace" fontWeight="bold">SEMNAT ✓</text>
+      </g>
+    </svg>
+  );
+}
+
+/* Mini CTA banner component */
+function InlineCTA({ title, desc, action, href, accent = "#f5851f" }: { title: string; desc: string; action: string; href: string; accent?: string }) {
+  return (
+    <section className="py-10 lg:py-14 relative overflow-hidden" style={{ background: "#0b2c52" }}>
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+      <div className="container-x relative">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div className="flex-1">
+            <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] mono mb-2" style={{ color: accent }}>
+              <span className="w-6 h-px" style={{ background: accent }} />
+              Next step
+            </div>
+            <h3 className="serif text-xl lg:text-2xl text-white leading-tight" style={{ letterSpacing: "-0.02em" }}>
+              {title}
+            </h3>
+            <p className="text-sm text-ink-300 mt-2 max-w-2xl">{desc}</p>
+          </div>
+          <Link
+            href={href}
+            className="shrink-0 bg-white hover:bg-ink-100 text-ink-900 text-sm px-6 py-3.5 transition flex items-center gap-3 group font-medium self-start"
+          >
+            {action}
+            <span className="group-hover:translate-x-1 transition">→</span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ─────────────────────────────────────────────────────────────────────────
    /finantare/europeana-guvernamentala — Pagină dedicată fondurilor europene
@@ -453,7 +697,7 @@ export default function FinantareEuropeanaPage() {
     <div className="min-h-screen bg-white text-ink-900">
       <Header solid />
 
-      <main className="pt-[140px]">
+      <main>
         {/* ───── HERO ───── */}
         <section className="border-b hairline relative overflow-hidden" style={{ background: "#082545" }}>
           <div
@@ -464,10 +708,17 @@ export default function FinantareEuropeanaPage() {
               backgroundSize: "40px 40px",
             }}
           />
-          <div className="container-x relative py-16 lg:py-24">
+          <div className="container-x relative py-14 lg:py-20">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-                <div className="lg:col-span-8">
+              <nav className="flex items-center gap-1.5 text-[10px] mono uppercase tracking-wider text-white/50 mb-6">
+                <Link href="/" className="hover:text-uzx-orange transition">Acasă</Link>
+                <span className="text-white/30">/</span>
+                <span className="text-white/80">Finanțare</span>
+                <span className="text-white/30">/</span>
+                <span className="text-uzx-orange">Europeană & guvernamentală</span>
+              </nav>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div className="lg:col-span-7">
                   <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-6 mono">
                     <span className="w-8 h-px bg-white/40" />
                     <span>Finanțare · Europeană & guvernamentală</span>
@@ -485,32 +736,49 @@ export default function FinantareEuropeanaPage() {
                     guvernamentale (Industria Prelucrătoare, Fondul pentru Modernizare, E-MOBILITY RO). Uzinex
                     livrează echipamentele eligibile; partenerii consultanți acreditați redactează cererea.
                   </p>
-                  <div className="flex flex-wrap items-center gap-5 mt-8">
+                  <div className="flex flex-wrap items-center gap-4 mt-8">
                     <a
                       href="#programe"
-                      className="bg-white hover:bg-ink-100 text-ink-900 text-sm px-7 py-4 transition flex items-center gap-3 group font-medium"
+                      className="bg-uzx-orange hover:bg-uzx-orange/90 text-white text-sm px-7 py-4 transition flex items-center gap-3 group font-medium"
                     >
                       Vezi programele eligibile
                       <span className="group-hover:translate-x-1 transition">→</span>
                     </a>
-                    <a href="#contact" className="text-sm text-white underline-link hover:text-ink-200">
-                      Solicită evaluare de eligibilitate
+                    <a
+                      href="#contact"
+                      className="bg-white/10 hover:bg-white/20 text-white text-sm px-7 py-4 transition flex items-center gap-3 group font-medium border border-white/20"
+                    >
+                      Evaluare eligibilitate 48h
+                    </a>
+                    <a href="tel:+40769081081" className="text-sm text-white underline-link hover:text-ink-200">
+                      +40 769 081 081
                     </a>
                   </div>
                 </div>
-                <div className="lg:col-span-4 lg:border-l border-white/15 lg:pl-8">
-                  <div className="grid grid-cols-2 gap-4">
-                    {HERO_STATS.map((s, i) => (
-                      <div key={i} className="border-l-2 border-uzx-orange pl-3">
-                        <div className="serif text-2xl lg:text-3xl text-white num" style={{ letterSpacing: "-0.02em" }}>
-                          {s.value}
-                        </div>
-                        <div className="text-[10px] mono text-white/60 uppercase tracking-wider mt-1">{s.label}</div>
-                        <div className="text-[10px] text-ink-300 mt-0.5">{s.hint}</div>
-                      </div>
-                    ))}
+                <div className="lg:col-span-5 relative">
+                  <div className="w-full aspect-[8/5] bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10">
+                    <HeroAnim />
                   </div>
                 </div>
+              </div>
+
+              {/* Hero stats — full width below */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mt-12 lg:mt-16 pt-10 border-t border-white/10">
+                {HERO_STATS.map((s, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 + i * 0.1, duration: 0.4 }}
+                    className="border-l-2 border-uzx-orange pl-4"
+                  >
+                    <div className="serif text-2xl lg:text-4xl text-white num" style={{ letterSpacing: "-0.02em" }}>
+                      {s.value}
+                    </div>
+                    <div className="text-[10px] mono text-white/60 uppercase tracking-wider mt-1.5">{s.label}</div>
+                    <div className="text-[10px] text-ink-300 mt-0.5">{s.hint}</div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
@@ -551,64 +819,119 @@ export default function FinantareEuropeanaPage() {
           </div>
         </section>
 
+        {/* ───── INLINE CTA after intro ───── */}
+        <InlineCTA
+          title="Nu știi de unde să începi? Începe cu un apel de 30 de minute."
+          desc="Un inginer Uzinex analizează obiectul tău de activitate și îți sugerează programele cu cea mai mare intensitate. Fără documente, fără angajament."
+          action="Programează apel"
+          href="mailto:contact@uzinex.ro?subject=Apel%20evaluare%20finantare"
+        />
+
         {/* ───── EU PROGRAMS ───── */}
         <section id="programe" className="border-b hairline py-14 lg:py-20 bg-ink-50">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                — Programe europene
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
+                <div className="lg:col-span-7">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                    — Programe europene
+                  </div>
+                  <h2
+                    className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
+                    style={{ letterSpacing: "-0.03em" }}
+                  >
+                    Fonduri europene<br />
+                    <span className="font-light text-uzx-orange">directe & prin autoritățile naționale.</span>
+                  </h2>
+                  <p className="text-sm text-ink-500 max-w-2xl">
+                    Programe gestionate de Comisia Europeană (Horizon, Digital Europe, Erasmus+) sau cofinanțate la nivel
+                    național (PoCIDIF, PNRR, POR). Intensitățile variază între 50% și 100% funcție de regiune și tipul proiectului.
+                  </p>
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="w-full aspect-[8/3] bg-white border hairline p-3">
+                    <NetworkAnim />
+                  </div>
+                </div>
               </div>
-              <h2
-                className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
-                style={{ letterSpacing: "-0.03em" }}
-              >
-                Fonduri europene<br />
-                <span className="font-light text-uzx-orange">directe & prin autoritățile naționale.</span>
-              </h2>
-              <p className="text-sm text-ink-500 max-w-3xl mb-12">
-                Programe gestionate de Comisia Europeană (Horizon, Digital Europe, Erasmus+) sau cofinanțate la nivel
-                național (PoCIDIF, PNRR, POR). Intensitățile variază între 50% și 100% funcție de regiune și tipul proiectului.
-              </p>
               <ProgramsList programs={EU_PROGRAMS} />
             </div>
           </div>
         </section>
 
+        {/* ───── INLINE CTA between EU & GOV ───── */}
+        <InlineCTA
+          title="Ai echipament clar în minte? Trimite-ne specificațiile."
+          desc="Îți pregătim proforma cu preț ferm + fișa tehnică detaliată + dovezile de conformitate necesare pentru dosarul de finanțare, în 5 zile lucrătoare."
+          action="Trimite spec. tehnice"
+          href="mailto:contact@uzinex.ro?subject=Spec%20tehnice%20pentru%20dosar"
+        />
+
         {/* ───── GOVERNMENT PROGRAMS ───── */}
         <section className="border-b hairline py-14 lg:py-20 bg-white">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                — Scheme guvernamentale
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
+                <div className="lg:col-span-7">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                    — Scheme guvernamentale
+                  </div>
+                  <h2
+                    className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
+                    style={{ letterSpacing: "-0.03em" }}
+                  >
+                    Ajutor de stat național<br />
+                    <span className="font-light text-uzx-orange">pentru investiții industriale.</span>
+                  </h2>
+                  <p className="text-sm text-ink-500 max-w-2xl">
+                    Scheme de ajutor gestionate de Ministerul Economiei, Ministerul Energiei, AFIR și AFM. Dedicate
+                    firmelor stabilite în România, cu sediu productiv pe teritoriul național.
+                  </p>
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="w-full aspect-[8/3] bg-ink-50 border hairline p-3">
+                    <BudgetAnim />
+                  </div>
+                </div>
               </div>
-              <h2
-                className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
-                style={{ letterSpacing: "-0.03em" }}
-              >
-                Ajutor de stat național<br />
-                <span className="font-light text-uzx-orange">pentru investiții industriale.</span>
-              </h2>
-              <p className="text-sm text-ink-500 max-w-3xl mb-12">
-                Scheme de ajutor gestionate de Ministerul Economiei, Ministerul Energiei, AFIR și AFM. Dedicate
-                firmelor stabilite în România, cu sediu productiv pe teritoriul național.
-              </p>
               <ProgramsList programs={GOV_PROGRAMS} />
             </div>
           </div>
         </section>
 
+        {/* ───── INLINE CTA before process ───── */}
+        <InlineCTA
+          title="Lucrezi cu consultant propriu? Îl sprijinim cu fișele noastre."
+          desc="Trimitem consultantului tău acreditat toată documentația tehnică necesară: proforme, specificații, certificate CE/ISO, studiu de fezabilitate — în formatul cerut de autoritatea de management."
+          action="Trimite CUI consultant"
+          href="mailto:contact@uzinex.ro?subject=Colaborare%20consultant"
+        />
+
         {/* ───── PROCESS ───── */}
         <section className="border-b hairline py-14 lg:py-20 bg-ink-50">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Proces</div>
-              <h2
-                className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12"
-                style={{ letterSpacing: "-0.03em" }}
-              >
-                De la evaluare la livrare.<br />
-                <span className="font-light text-uzx-orange">4 pași, transparent.</span>
-              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
+                <div className="lg:col-span-7">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Proces</div>
+                  <h2
+                    className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
+                    style={{ letterSpacing: "-0.03em" }}
+                  >
+                    De la evaluare la livrare.<br />
+                    <span className="font-light text-uzx-orange">4 pași, transparent.</span>
+                  </h2>
+                  <p className="text-sm text-ink-500 max-w-2xl">
+                    Procesul standard din momentul primului apel până la instalarea echipamentului în hală.
+                    Fără surprize de parcurs — fiecare etapă are livrabil clar.
+                  </p>
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="w-full aspect-[16/9] bg-white border hairline p-3">
+                    <FunnelAnim />
+                  </div>
+                </div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink-200 border hairline">
                 {STEPS.map((s) => (
