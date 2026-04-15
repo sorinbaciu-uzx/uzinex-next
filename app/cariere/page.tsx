@@ -16,18 +16,19 @@ const APPLY_HREF = "mailto:info@uzinex.ro?subject=Aplicatie%20Uzinex";
 
 const HERO_STATS = [
   { v: "5", label: "Ingineri în echipă", hint: "În creștere · 7-8 până la final 2026" },
-  { v: "15", label: "Ani experiență", hint: "Integrator industrial" },
-  { v: "200+", label: "Proiecte livrate", hint: "B2B · B2G · apărare" },
+  { v: "30", label: "Ani expertiză tehnică", hint: "Cumulat · leadership industrial" },
+  { v: "100+", label: "Proiecte livrate", hint: "B2B · B2G · apărare" },
   { v: "24h", label: "Timp răspuns aplicație", hint: "Screening inițial" },
 ];
 
 const BENEFITS = [
   { icon: "01", title: "Proiecte cu impact real", desc: "Lucrezi la linii de producție, cobots, laser fiber, MES și stații fotovoltaice industriale. Nu la demo-uri — la instalații care funcționează 24/7." },
-  { icon: "02", title: "Tehnologii premium", desc: "Siemens, Mitsubishi, ABB, Schneider, Fanuc, Yaskawa, IPG. Certificări producător plătite integral." },
-  { icon: "03", title: "Mentorat + seniori", desc: "Fiecare junior e asociat cu un inginer senior 3-5 ani experiență. Nu te arunci în gol." },
-  { icon: "04", title: "Parc științific Iași", desc: "Sediu în Tehnopolis — clădire modernă cu laborator propriu, parcare, cafeteria, spațiu de prototipare." },
-  { icon: "05", title: "Pachet transparent", desc: "Salariu fix + bonus performanță + bonus proiect. Grila publică intern, fără negociere ascunsă." },
-  { icon: "06", title: "Training & conferințe", desc: "Participare la Hannover Messe, Automatica, EMO, plus cursuri TÜV / Siemens / Fanuc anual." },
+  { icon: "02", title: "AI de frontieră, zi de zi", desc: "Lucrezi cu cele mai avansate sisteme de inteligență artificială de pe planetă — Claude, GPT, Gemini — integrate în fluxul tău de ofertare, proiectare și diagnoză. Nu experimentăm cu AI. Îl folosim deja." },
+  { icon: "03", title: "Tehnologii premium", desc: "Siemens, Mitsubishi, ABB, Schneider, Fanuc, Yaskawa, IPG. Certificări producător plătite integral." },
+  { icon: "04", title: "Mentorat + seniori", desc: "Fiecare junior e asociat cu un inginer senior 3-5 ani experiență. Nu te arunci în gol." },
+  { icon: "05", title: "Parc științific Iași", desc: "Sediu în Tehnopolis — clădire modernă cu laborator propriu, parcare, cafeteria, spațiu de prototipare." },
+  { icon: "06", title: "Pachet transparent", desc: "Salariu fix + bonus performanță + bonus proiect. Grila publică intern, fără negociere ascunsă." },
+  { icon: "07", title: "Training & conferințe", desc: "Participare la Hannover Messe, Automatica, EMO, plus cursuri TÜV / Siemens / Fanuc anual." },
 ];
 
 type Role = {
@@ -506,7 +507,8 @@ export default function CarierePage() {
                   <p className="text-base lg:text-lg text-ink-200 max-w-2xl leading-relaxed">
                     Căutăm <strong className="text-white">ingineri</strong> și <strong className="text-white">specialiști digitalizare</strong> care
                     vor să lucreze pe proiecte reale: linii de producție, cobots, laser fiber, MES, stații
-                    fotovoltaice industriale. Fără ceremonii, fără KPI absurzi — doar inginerie care funcționează.
+                    fotovoltaice industriale. <strong className="text-white">Folosești zilnic cele mai avansate sisteme AI de pe planetă</strong> în
+                    ofertare, proiectare și diagnoză. Fără ceremonii, fără KPI absurzi — doar inginerie care funcționează.
                   </p>
                   <div className="flex flex-wrap items-center gap-4 mt-8">
                     <a
