@@ -6,10 +6,10 @@
  *
  * Env vars required (configured in .env.local + Vercel):
  *   MONDAY_API_TOKEN              — long-lived personal token
- *   MONDAY_BOARD_LEADS            — 5094672978
- *   MONDAY_BOARD_SERVICE          — 5094672984
- *   MONDAY_BOARD_FINANTARE        — 5094672987
- *   MONDAY_BOARD_HR               — 5094672991
+ *   MONDAY_BOARD_LEADS            — 5094675025 (CRM workspace 6171291)
+ *   MONDAY_BOARD_SERVICE          — 5094675030
+ *   MONDAY_BOARD_FINANTARE        — 5094675033
+ *   MONDAY_BOARD_HR               — 5094675039
  *
  * Board column IDs are hard-coded here because they were created programmatically
  * and their IDs are stable. If a column is renamed in Monday, the ID does NOT change.
@@ -60,56 +60,61 @@ const BOARD_IDS: Record<Intent, string | undefined> = {
 
 /**
  * Column ID map per board, generated when boards were created.
+ * Workspace: Website Uzinex (CRM) — 6171291
  * DO NOT edit unless a column was deleted/recreated in Monday UI.
  */
 const COLUMNS = {
   leads: {
-    status: "color_mm2e2jdv",
-    tipCerere: "color_mm2exjx1",
-    email: "email_mm2e3s0m",
-    phone: "phone_mm2eegcf",
-    company: "text_mm2ehtkm",
-    message: "long_text_mm2eh7nt",
-    sourcePage: "link_mm2ena4g",
-    dateReceived: "date_mm2eq7y8",
+    // Board 5094675025
+    status: "color_mm2esxp8",
+    tipCerere: "color_mm2egg3m",
+    email: "email_mm2edh8z",
+    phone: "phone_mm2e52xe",
+    company: "text_mm2eyacg",
+    message: "long_text_mm2ec8j8",
+    sourcePage: "link_mm2eawej",
+    dateReceived: "date_mm2et4mp",
   },
   service: {
-    status: "color_mm2ew446",
-    tipInterventie: "color_mm2e5vrf",
-    email: "email_mm2e31b2",
-    phone: "phone_mm2e4mkn",
-    company: "text_mm2em8gj",
-    echipament: "text_mm2efgj7",
-    locatie: "text_mm2edb08",
-    message: "long_text_mm2e6d0z",
-    sourcePage: "link_mm2eb1at",
-    dateReceived: "date_mm2ery2p",
+    // Board 5094675030
+    status: "color_mm2ey1t",
+    tipInterventie: "color_mm2ehaq1",
+    email: "email_mm2ebq3j",
+    phone: "phone_mm2e80ed",
+    company: "text_mm2ek9we",
+    echipament: "text_mm2egz3d",
+    locatie: "text_mm2ebkp5",
+    message: "long_text_mm2exdgg",
+    sourcePage: "link_mm2ec0gb",
+    dateReceived: "date_mm2edax6",
   },
   finantare: {
-    status: "color_mm2e62x6",
-    tipFinantare: "color_mm2etr8n",
-    email: "email_mm2e12sm",
-    phone: "phone_mm2ea20y",
-    company: "text_mm2eavk4",
-    cui: "text_mm2ex1rp",
-    regiune: "text_mm2eqwjf",
-    valoare: "numeric_mm2e6nbk",
-    message: "long_text_mm2ezyff",
-    sourcePage: "link_mm2edt9a",
-    dateReceived: "date_mm2eercw",
+    // Board 5094675033
+    status: "color_mm2emv08",
+    tipFinantare: "color_mm2e4a2q",
+    email: "email_mm2e2208",
+    phone: "phone_mm2et3ww",
+    company: "text_mm2ebkaj",
+    cui: "text_mm2ey102",
+    regiune: "text_mm2e3mc7",
+    valoare: "numeric_mm2enx05",
+    message: "long_text_mm2ev30a",
+    sourcePage: "link_mm2e76kj",
+    dateReceived: "date_mm2erry",
   },
   hr: {
-    status: "color_mm2e55qx",
-    tipAplicatie: "color_mm2ej6ht",
-    pilon: "color_mm2esjdc",
-    email: "email_mm2e9w1n",
-    phone: "phone_mm2ex032",
-    rolAplicat: "text_mm2etm6j",
-    universitate: "text_mm2egssb",
-    linkedin: "link_mm2ejy0f",
-    message: "long_text_mm2ep8c4",
-    sourcePage: "link_mm2e1c9p",
-    dateReceived: "date_mm2er00g",
+    // Board 5094675039
+    status: "color_mm2ebae0",
+    tipAplicatie: "color_mm2ee35a",
+    pilon: "color_mm2emwes",
+    email: "email_mm2et3ay",
+    phone: "phone_mm2e8typ",
+    rolAplicat: "text_mm2emxqw",
+    universitate: "text_mm2efc6p",
+    linkedin: "link_mm2exrdk",
+    message: "long_text_mm2eyafe",
+    sourcePage: "link_mm2edm6j",
+    dateReceived: "date_mm2eydd9",
   },
 } as const;
 
