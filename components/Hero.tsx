@@ -25,7 +25,7 @@ export const HERO_DEFAULT: HeroData = {
   ctaLabel: "Vezi catalogul tehnic",
   ctaHref: "/magazin",
   secondaryCtaLabel: "Discută cu un inginer",
-  secondaryCtaHref: "#contact",
+  secondaryCtaHref: "/contact",
   stats: [
     { label: "Intervenție fizică", value: "sub 24 ore" },
     { label: "Echipă de ingineri", value: "consultanță tehnică" },

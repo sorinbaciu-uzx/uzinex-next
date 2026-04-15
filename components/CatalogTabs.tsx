@@ -114,7 +114,7 @@ const CATEGORIES: Category[] = [
     description:
       "Echipă de tehnicieni specializați, intervenții la fața locului și contracte de mentenanță preventivă cu SLA garantat.",
     cta: "Discută cu un inginer",
-    ctaHref: "/service",
+    ctaHref: "/contact",
     products: [
       { name: "Punere în funcțiune", spec: "Instalare & training", img: "", href: "/service/inclus-la-livrare", anim: "commissioning" },
       { name: "Mentenanță preventivă", spec: "Plan anual personalizat", img: "", href: "/service/abonamente", anim: "preventive" },

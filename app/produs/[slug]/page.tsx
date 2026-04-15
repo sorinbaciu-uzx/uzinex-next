@@ -455,9 +455,7 @@ export default async function Page({ params }: Props) {
               Tot ce vrei să știi înainte de cumpărare.
             </h2>
             <a
-              href="/oferta"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               className="mt-5 inline-flex items-center gap-2 text-[13px] py-2.5 px-5 bg-uzx-blue hover:bg-uzx-blue2 text-white transition"
             >
               Discută cu un inginer →

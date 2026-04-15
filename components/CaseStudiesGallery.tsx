@@ -770,7 +770,7 @@ export function CaseStudiesGallery({ data }: { data?: CaseStudiesAllData | null 
             </div>
             <div className="lg:col-span-4 lg:col-start-9 flex flex-col gap-3">
               <a
-                href="/#contact"
+                href="/contact"
                 className="bg-uzx-blue hover:bg-uzx-blue2 text-white text-sm px-7 py-4 inline-flex items-center justify-center gap-3 group transition"
               >
                 Discută cu un inginer

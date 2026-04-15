@@ -80,7 +80,7 @@ export default async function ContPage() {
                 </div>
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="bg-white p-6 hover:bg-ink-50 transition group"
               >
                 <div className="text-[11px] uppercase tracking-wider text-uzx-orange mono mb-2">

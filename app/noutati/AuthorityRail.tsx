@@ -224,7 +224,7 @@ export function AuthorityRail({ videoId }: { videoId: string }) {
           <div className="px-4 py-4 bg-[#082545] text-white">
             <div className="space-y-1.5">
               <a
-                href="/#contact"
+                href="/contact"
                 className="block w-full bg-uzx-orange hover:bg-uzx-orange2 text-white text-[12px] font-medium px-3 py-3 text-center transition"
               >
                 Discută cu un inginer →

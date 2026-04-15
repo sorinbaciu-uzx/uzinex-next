@@ -30,7 +30,7 @@ export const CONTACT_CTA_DEFAULT: ContactCTAData = {
   addressLine1: "Parc Științific & Tehnologic Tehnopolis",
   addressLine2: "Bd. Poitiers nr. 10, 700671 Iași",
   ctaLabel: "Discută cu un inginer",
-  ctaHref: "#",
+  ctaHref: "/contact",
 };
 
 export function ContactCTA({ data }: { data?: ContactCTAData | null }) {
