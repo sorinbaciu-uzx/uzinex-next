@@ -183,7 +183,7 @@ const NAV: NavItem[] = [
     items: RESURSE_ITEMS,
   },
   { label: "Cariere", href: "/cariere" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 /* ───────────────────────────── COMPONENT ───────────────────────────── */
@@ -315,7 +315,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
               Autentificare
             </a>
             <a
-              href="/#contact"
+              href="/contact"
               className="bg-uzx-orange hover:bg-uzx-orange2 text-white text-[11px] sm:text-xs lg:text-[13px] px-2.5 sm:px-3 lg:px-5 py-1.5 lg:py-2.5 transition whitespace-nowrap"
             >
               Discută cu un inginer
