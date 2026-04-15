@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { AddToQuoteButton } from "./AddToQuoteButton";
 import { PRODUCTS as ALL_PRODUCTS, type Product } from "./products";
@@ -108,36 +107,35 @@ function matches(p: Product, f: Filter): boolean {
   return true;
 }
 
+// Parse ?cat=X&sub=Y into a Filter, or fall back to "all"
+function filterFromSearch(search: string): Filter {
+  if (!search) return { type: "all" };
+  const params = new URLSearchParams(search.startsWith("?") ? search.slice(1) : search);
+  const cat = params.get("cat");
+  const sub = params.get("sub");
+  if (cat && sub) {
+    const catNode = CATEGORIES.find((c) => c.name === cat);
+    const validSub = catNode?.children.some((child) =>
+      typeof child === "string" ? child === sub : child.name === sub
+    );
+    if (validSub) return { type: "subcategory", value: sub, parent: cat };
+  }
+  if (cat && CATEGORIES.some((c) => c.name === cat)) {
+    return { type: "category", value: cat };
+  }
+  return { type: "all" };
+}
+
 export function MagazinClient() {
   const [filter, setFilter] = useState<Filter>({ type: "all" });
   const [page, setPage] = useState(1);
-  const searchParams = useSearchParams();
 
-  // Initialize filter from URL query params (?cat=...&sub=...)
+  // Initialize filter from URL on mount; also react to same-page query changes
   useEffect(() => {
-    const cat = searchParams.get("cat");
-    const sub = searchParams.get("sub");
-    if (cat && sub) {
-      // validate that this subcategory belongs to the category
-      const catNode = CATEGORIES.find((c) => c.name === cat);
-      if (catNode) {
-        const isValidSub = catNode.children.some((child) =>
-          typeof child === "string" ? child === sub : child.name === sub
-        );
-        if (isValidSub) {
-          setFilter({ type: "subcategory", value: sub, parent: cat });
-          return;
-        }
-      }
-    }
-    if (cat) {
-      // validate the category exists
-      const exists = CATEGORIES.some((c) => c.name === cat);
-      if (exists) {
-        setFilter({ type: "category", value: cat });
-      }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const apply = () => setFilter(filterFromSearch(window.location.search));
+    apply();
+    window.addEventListener("popstate", apply);
+    return () => window.removeEventListener("popstate", apply);
   }, []);
 
   const filtered = useMemo(
