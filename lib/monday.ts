@@ -50,12 +50,12 @@ export type LeadInput = {
   };
 };
 
-/** Which board gets each intent */
+/** Which board gets each intent (trim in case env var has trailing newline) */
 const BOARD_IDS: Record<Intent, string | undefined> = {
-  leads: process.env.MONDAY_BOARD_LEADS,
-  service: process.env.MONDAY_BOARD_SERVICE,
-  finantare: process.env.MONDAY_BOARD_FINANTARE,
-  hr: process.env.MONDAY_BOARD_HR,
+  leads: process.env.MONDAY_BOARD_LEADS?.trim(),
+  service: process.env.MONDAY_BOARD_SERVICE?.trim(),
+  finantare: process.env.MONDAY_BOARD_FINANTARE?.trim(),
+  hr: process.env.MONDAY_BOARD_HR?.trim(),
 };
 
 /**
@@ -179,7 +179,7 @@ function buildColumnValues(input: LeadInput): Record<string, unknown> {
  * Returns the item id on success, throws on error (caller handles fallback).
  */
 export async function createLead(input: LeadInput): Promise<{ id: string; board: string }> {
-  const token = process.env.MONDAY_API_TOKEN;
+  const token = process.env.MONDAY_API_TOKEN?.trim();
   if (!token) throw new Error("MONDAY_API_TOKEN not configured");
 
   const boardId = BOARD_IDS[input.intent];
