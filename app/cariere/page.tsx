@@ -12,10 +12,10 @@ import { Footer } from "@/components/Footer";
    Design modern, animații SVG tehnice, 3 CTA-uri "Aplică"
    ───────────────────────────────────────────────────────────────────── */
 
-const APPLY_HREF = "mailto:cariere@uzinex.ro?subject=Aplicatie%20Uzinex";
+const APPLY_HREF = "mailto:info@uzinex.ro?subject=Aplicatie%20Uzinex";
 
 const HERO_STATS = [
-  { v: "40+", label: "Ingineri în echipă", hint: "Mecanică · electro · automatizări" },
+  { v: "5", label: "Ingineri în echipă", hint: "În creștere · 7-8 până la final 2026" },
   { v: "15", label: "Ani experiență", hint: "Integrator industrial" },
   { v: "200+", label: "Proiecte livrate", hint: "B2B · B2G · apărare" },
   { v: "24h", label: "Timp răspuns aplicație", hint: "Screening inițial" },
@@ -40,25 +40,25 @@ type Role = {
 
 const ENG_ROLES: Role[] = [
   {
-    title: "Inginer proiectant CNC & laser",
+    title: "Inginer proiectant CNC & laser + ofertare",
     level: "Mid",
     location: "Iași · hibrid 2 zile/săpt.",
     type: "Full-time",
-    tags: ["SolidWorks", "G-code", "CAM", "Fanuc / Siemens"],
+    tags: ["SolidWorks", "G-code", "CAM", "Fanuc / Siemens", "Proforme"],
   },
   {
-    title: "Inginer automatizări & PLC",
+    title: "Inginer automatizări & PLC + ofertare",
     level: "Toate nivelele",
     location: "Iași · on-site",
     type: "Full-time",
-    tags: ["Siemens TIA", "Beckhoff", "Ladder", "SCADA"],
+    tags: ["Siemens TIA", "Beckhoff", "Ladder", "SCADA", "Proforme tehnice"],
   },
   {
-    title: "Inginer robotică industrială",
+    title: "Inginer robotică industrială + ofertare",
     level: "Senior",
     location: "Iași + deplasări",
     type: "Full-time",
-    tags: ["Fanuc", "ABB RobotStudio", "Cobots UR", "Vision"],
+    tags: ["Fanuc", "ABB RobotStudio", "Cobots UR", "Vision", "Costing"],
   },
   {
     title: "Inginer punere în funcțiune (commissioning)",
@@ -567,8 +567,9 @@ export default function CarierePage() {
                 </div>
                 <div className="lg:col-span-7">
                   <p className="text-ink-600 text-base leading-relaxed">
-                    Nu suntem o corporație — suntem o echipă de 40+ ingineri care livrează săptămânal proiecte
-                    industriale reale. Fiecare nou coleg e o decizie — nu o cifră în headcount. Aici e ce te așteaptă.
+                    Suntem o echipă mică și agilă — <strong className="text-ink-900">5 ingineri</strong> care
+                    livrează proiecte industriale reale. Creștem cu grijă, nu cu headcount forțat. Fiecare nou
+                    coleg e o decizie conștientă — ai impact direct din săptămâna întâi.
                   </p>
                 </div>
               </div>
@@ -666,7 +667,7 @@ export default function CarierePage() {
                       </h3>
                       <p className="text-sm text-ink-600 leading-relaxed max-w-xl">
                         {pillar === "ingineri"
-                          ? "Proiectare, punere în funcțiune, mentenanță. Lucrezi cu CNC, laser fiber, cobots, PLC Siemens/Beckhoff, robotică Fanuc. Vii o dată la client, te întorci cu echipament instalat și operator format."
+                          ? "Proiectare, ofertare tehnică, punere în funcțiune, mentenanță. Lucrezi cu CNC, laser fiber, cobots, PLC Siemens/Beckhoff, robotică Fanuc. Ești responsabil end-to-end: de la discuția cu clientul și construirea proformei cu preț ferm, până la predarea echipamentului instalat și operatorul format. Nu există silos între proiectare și comercial — fiecare inginer face și ofertare."
                           : "MES, IIoT, AI vision, data engineering. Construiești platforme care iau date din PLC-uri și le duc la Grafana/dashboard-uri decizionale. Scrii cod care rulează pe edge devices lângă utilaje, nu doar pe laptop."}
                       </p>
                     </div>
@@ -744,28 +745,54 @@ export default function CarierePage() {
                   Revenim când apare ceva potrivit.
                 </p>
                 <a
-                  href="mailto:cariere@uzinex.ro?subject=%5BAPLICATIE%20SPONTANA%5D"
+                  href="mailto:info@uzinex.ro?subject=%5BAPLICATIE%20SPONTANA%5D"
                   className="text-sm text-uzx-blue underline-link hover:text-uzx-orange transition inline-flex items-center gap-2 group"
                 >
-                  cariere@uzinex.ro
+                  info@uzinex.ro
                   <span className="group-hover:translate-x-0.5 transition">↗</span>
                 </a>
               </div>
-              <div className="bg-white p-8 lg:p-10">
-                <div className="text-[10px] mono text-uzx-orange uppercase tracking-wider mb-3">— Studenți & stagii</div>
+              <div className="bg-white p-8 lg:p-10 relative" style={{ borderTop: "3px solid #f5851f" }}>
+                <div className="inline-flex items-center gap-2 text-[10px] mono uppercase tracking-wider mb-3 text-uzx-orange">
+                  <motion.span
+                    className="w-1.5 h-1.5 rounded-full bg-uzx-orange"
+                    animate={{ opacity: [1, 0.3, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                  Studenți · practică & stagii
+                </div>
                 <h3 className="serif text-2xl text-ink-900 leading-tight mb-4" style={{ letterSpacing: "-0.02em" }}>
-                  Program de internship<br />plătit, 3-6 luni.
+                  Acceptăm studenți<br />pentru <span className="text-uzx-orange font-light">practică.</span>
                 </h3>
-                <p className="text-sm text-ink-600 leading-relaxed mb-6">
-                  Pentru studenții anul 3-4 sau master (Automatică, Mecanică, Calculatoare, IT). Pachet
-                  plătit + mentor senior + acces laborator. Conversie la full-time pentru 70% din stagiari.
+                <p className="text-sm text-ink-600 leading-relaxed mb-4">
+                  Primim studenți la <strong className="text-ink-900">practică de vară</strong> (90-120 ore conform programei)
+                  și <strong className="text-ink-900">internship-uri plătite</strong> (3-6 luni). Domenii: Automatică,
+                  Mecanică, Electrotehnică, Calculatoare, IT.
                 </p>
+                <ul className="space-y-1.5 text-sm text-ink-700 mb-6">
+                  <li className="flex items-start gap-2">
+                    <span className="shrink-0 mt-[7px] w-1.5 h-1.5 bg-uzx-orange" />
+                    Semnăm convenție de practică cu facultatea
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="shrink-0 mt-[7px] w-1.5 h-1.5 bg-uzx-orange" />
+                    Tutore dedicat · mentor inginer senior
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="shrink-0 mt-[7px] w-1.5 h-1.5 bg-uzx-orange" />
+                    Proiect real cu deliverable la final
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="shrink-0 mt-[7px] w-1.5 h-1.5 bg-uzx-orange" />
+                    Posibilitate conversie full-time după absolvire
+                  </li>
+                </ul>
                 <a
-                  href="mailto:cariere@uzinex.ro?subject=%5BINTERNSHIP%5D"
-                  className="text-sm text-uzx-blue underline-link hover:text-uzx-orange transition inline-flex items-center gap-2 group"
+                  href="mailto:info@uzinex.ro?subject=%5BPRACTICA%20STUDENT%5D"
+                  className="inline-flex items-center gap-2 bg-uzx-orange hover:bg-uzx-orange/90 text-white text-sm px-5 py-3 transition font-medium group"
                 >
-                  Aplică stagiu
-                  <span className="group-hover:translate-x-0.5 transition">→</span>
+                  Aplică pentru practică
+                  <span className="group-hover:translate-x-1 transition">→</span>
                 </a>
               </div>
             </div>
@@ -789,7 +816,7 @@ export default function CarierePage() {
                 <span className="font-light text-uzx-orange">Să vedem dacă suntem potriviți.</span>
               </h2>
               <p className="text-ink-300 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-                Trimite CV-ul la <strong className="text-white">cariere@uzinex.ro</strong> cu rolul în subiect și
+                Trimite CV-ul la <strong className="text-white">info@uzinex.ro</strong> cu rolul în subiect și
                 3 rânduri despre ce proiecte te-ar pasiona la noi. Îți răspundem în 24h lucrătoare.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-5">
