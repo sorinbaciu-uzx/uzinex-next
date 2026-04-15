@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 type Item = { sku: string; name: string; qty: number };
+type SubmitState = "idle" | "sending" | "success" | "error";
 
 const BENEFITS: { icon: string; title: string; body: string }[] = [
   {
@@ -31,6 +32,8 @@ const BENEFITS: { icon: string; title: string; body: string }[] = [
 export function OfertaClient() {
   const [items, setItems] = useState<Item[]>([]);
   const [loaded, setLoaded] = useState(false);
+  const [state, setState] = useState<SubmitState>("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
 
   useEffect(() => {
     try {
@@ -62,6 +65,95 @@ export function OfertaClient() {
       persist(next);
       return next;
     });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const nume = fd.get("nume")?.toString().trim() ?? "";
+    const prenume = fd.get("prenume")?.toString().trim() ?? "";
+    const firma = fd.get("firma")?.toString().trim() ?? "";
+    const cui = fd.get("cui")?.toString().trim() ?? "";
+    const telefon = fd.get("telefon")?.toString().trim() ?? "";
+    const email = fd.get("email")?.toString().trim() ?? "";
+    const mesaj = fd.get("mesaj")?.toString().trim() ?? "";
+    const seap = fd.get("seap") === "on";
+    const honeypot = fd.get("website")?.toString() ?? "";
+
+    if (items.length === 0) {
+      setErrorMsg("Adaugă cel puțin un produs din catalog înainte de a trimite cererea.");
+      setState("error");
+      return;
+    }
+
+    // Build message: products list + user notes + SEAP flag
+    const productLines = items.map((it, i) => `${i + 1}. ${it.sku} — ${it.name} × ${it.qty} buc`).join("\n");
+    const fullMessage = [
+      "═══ PRODUSE SOLICITATE ═══",
+      productLines,
+      "",
+      `═══ TOTAL: ${items.reduce((s, i) => s + i.qty, 0)} buc · ${items.length} articole ═══`,
+      "",
+      seap ? "★ Solicitare publicare în SEAP / SICAP: DA" : "",
+      "",
+      mesaj ? "═══ DETALII SUPLIMENTARE ═══" : "",
+      mesaj,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    setState("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          intent: "leads",
+          name: `${nume} ${prenume}`.trim() || nume || prenume,
+          email,
+          phone: telefon,
+          company: firma,
+          message: fullMessage,
+          subject: seap ? "Oferta echipament + SEAP/SICAP" : "Oferta echipament",
+          sourceUrl: typeof window !== "undefined" ? window.location.href : undefined,
+          honeypot,
+          extra: {
+            tipCerere: seap ? "Licitatie SEAP/SICAP" : "Oferta echipament",
+            cui,
+          },
+        }),
+      });
+      const json = await res.json();
+      if (res.ok && json.ok) {
+        setState("success");
+        // Golesc cart-ul după trimitere reușită
+        setItems([]);
+        try {
+          localStorage.removeItem("uzinex_quote_cart");
+        } catch {}
+      } else {
+        throw new Error(json.error ?? "Submit failed");
+      }
+    } catch (err) {
+      setState("error");
+      const msg = err instanceof Error ? err.message : "Eroare necunoscută";
+      setErrorMsg(msg);
+      // Fallback mailto
+      const body = [
+        `Nume: ${nume} ${prenume}`,
+        `Companie: ${firma}`,
+        `CUI: ${cui}`,
+        `Email: ${email}`,
+        `Telefon: ${telefon}`,
+        "",
+        fullMessage,
+      ].join("\n");
+      const mailto = `mailto:info@uzinex.ro?subject=${encodeURIComponent("Oferta echipament")}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    }
   };
 
   return (
@@ -239,56 +331,90 @@ export function OfertaClient() {
                 <h2 className="serif text-base text-ink-900">Solicită oferta personalizată</h2>
               </div>
 
-              <form
-                className="px-5 lg:px-6 py-3 grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-1.5"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <Field label="Nume" name="nume" />
-                <Field label="Prenume" name="prenume" />
-                <div className="sm:col-span-2">
-                  <Field label="Nume firmă" name="firma" />
-                </div>
-                <div className="sm:col-span-2">
-                  <Field label="CUI" name="cui" />
-                </div>
-                <Field label="Telefon" name="telefon" type="tel" />
-                <Field label="Email" name="email" type="email" />
-
-                <div className="sm:col-span-2">
-                  <label className="text-[10px] mono uppercase tracking-wider text-ink-500">
-                    Mesaj
-                  </label>
-                  <textarea
-                    name="mesaj"
-                    rows={1}
-                    placeholder="Detalii suplimentare despre cerere…"
-                    className="mt-0.5 w-full text-[12px] px-3 py-1.5 border border-ink-200 focus:outline-none focus:border-uzx-blue focus:ring-2 focus:ring-uzx-blue/10 transition resize-y min-h-[36px]"
-                  />
-                </div>
-
-                <div className="sm:col-span-2 bg-uzx-blue/5 border border-uzx-blue/15 px-3 py-1.5">
-                  <label className="flex items-center gap-2.5 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      name="seap"
-                      className="w-3.5 h-3.5 accent-uzx-orange cursor-pointer"
-                    />
-                    <span className="text-[11px] text-ink-700 leading-tight">
-                      Vrei să publici acest produs și în{" "}
-                      <span className="text-uzx-blue font-semibold">SEAP / SICAP</span>?
-                    </span>
-                  </label>
-                </div>
-
-                <div className="sm:col-span-2 mt-0.5">
-                  <button
-                    type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 text-[12px] py-2.5 bg-uzx-orange hover:bg-uzx-orange2 text-white font-medium transition shadow-md shadow-uzx-orange/20"
+              {state === "success" ? (
+                <div className="px-5 lg:px-6 py-8 text-center">
+                  <div className="w-12 h-12 mx-auto bg-green-100 border border-green-300 flex items-center justify-center text-green-700 text-xl">
+                    ✓
+                  </div>
+                  <h3 className="serif text-lg text-ink-900 mt-4">Cererea a fost trimisă!</h3>
+                  <p className="text-[12px] text-ink-600 leading-relaxed mt-2 max-w-sm mx-auto">
+                    Mulțumim! Echipa noastră va analiza solicitarea și revine cu o ofertă personalizată în maxim
+                    24 de ore lucrătoare.
+                  </p>
+                  <a
+                    href="/magazin"
+                    className="inline-block mt-5 text-[11px] py-2 px-4 bg-uzx-blue hover:bg-uzx-blue2 text-white transition shadow-md shadow-uzx-blue/20"
                   >
-                    Trimite cererea →
-                  </button>
+                    Înapoi la catalog
+                  </a>
                 </div>
-              </form>
+              ) : (
+                <form
+                  className="px-5 lg:px-6 py-3 grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-1.5"
+                  onSubmit={handleSubmit}
+                >
+                  <Field label="Nume" name="nume" required />
+                  <Field label="Prenume" name="prenume" />
+                  <div className="sm:col-span-2">
+                    <Field label="Nume firmă" name="firma" />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <Field label="CUI" name="cui" />
+                  </div>
+                  <Field label="Telefon" name="telefon" type="tel" />
+                  <Field label="Email" name="email" type="email" required />
+
+                  <div className="sm:col-span-2">
+                    <label className="text-[10px] mono uppercase tracking-wider text-ink-500">
+                      Mesaj
+                    </label>
+                    <textarea
+                      name="mesaj"
+                      rows={1}
+                      placeholder="Detalii suplimentare despre cerere…"
+                      className="mt-0.5 w-full text-[12px] px-3 py-1.5 border border-ink-200 focus:outline-none focus:border-uzx-blue focus:ring-2 focus:ring-uzx-blue/10 transition resize-y min-h-[36px]"
+                    />
+                  </div>
+
+                  {/* Honeypot — câmp ascuns pentru boți */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+                    <label>
+                      Website (nu completa)
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                    </label>
+                  </div>
+
+                  <div className="sm:col-span-2 bg-uzx-blue/5 border border-uzx-blue/15 px-3 py-1.5">
+                    <label className="flex items-center gap-2.5 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        name="seap"
+                        className="w-3.5 h-3.5 accent-uzx-orange cursor-pointer"
+                      />
+                      <span className="text-[11px] text-ink-700 leading-tight">
+                        Vrei să publici acest produs și în{" "}
+                        <span className="text-uzx-blue font-semibold">SEAP / SICAP</span>?
+                      </span>
+                    </label>
+                  </div>
+
+                  {state === "error" && errorMsg && (
+                    <div className="sm:col-span-2 bg-red-50 border border-red-200 px-3 py-2 text-[11px] text-red-700">
+                      ⚠ {errorMsg}. Am deschis clientul de email ca fallback.
+                    </div>
+                  )}
+
+                  <div className="sm:col-span-2 mt-0.5">
+                    <button
+                      type="submit"
+                      disabled={state === "sending"}
+                      className="w-full inline-flex items-center justify-center gap-2 text-[12px] py-2.5 bg-uzx-orange hover:bg-uzx-orange2 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium transition shadow-md shadow-uzx-orange/20"
+                    >
+                      {state === "sending" ? "Se trimite..." : "Trimite cererea →"}
+                    </button>
+                  </div>
+                </form>
+              )}
             </div>
           </div>
 
@@ -333,19 +459,22 @@ function Field({
   label,
   name,
   type = "text",
+  required = false,
 }: {
   label: string;
   name: string;
   type?: string;
+  required?: boolean;
 }) {
   return (
     <div>
       <label className="text-[10px] mono uppercase tracking-wider text-ink-500">
-        {label}
+        {label} {required && <span className="text-uzx-orange">*</span>}
       </label>
       <input
         type={type}
         name={name}
+        required={required}
         className="mt-0.5 w-full text-[12px] px-3 py-1 border border-ink-200 focus:outline-none focus:border-uzx-blue focus:ring-2 focus:ring-uzx-blue/10 transition"
       />
     </div>
