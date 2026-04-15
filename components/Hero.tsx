@@ -154,11 +154,16 @@ export function Hero({ data }: { data?: HeroData | null }) {
       </div>
 
       <div className="absolute bottom-6 right-6 z-10 flex items-center gap-2 text-[10px] mono uppercase tracking-widest text-white/70">
-        <motion.span
-          className="w-1.5 h-1.5 rounded-full bg-red-500"
-          animate={{ opacity: [1, 0.3, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        />
+        {/* CSS-only pulse — keeps animation running without a JS rAF loop */}
+        <style>{`
+          @keyframes uzx-live-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+          }
+          .uzx-live-dot { animation: uzx-live-pulse 2s ease-in-out infinite; }
+          @media (prefers-reduced-motion: reduce) { .uzx-live-dot { animation: none; } }
+        `}</style>
+        <span className="w-1.5 h-1.5 rounded-full bg-red-500 uzx-live-dot" />
         LIVE · UZX FACILITY
       </div>
     </section>

@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
-
 const CLIENT_LOGOS = [
   { name: "Cărămidă Modulară România", src: "/clients/caramida.png" },
   { name: "Iron", src: "/clients/iron.png" },
@@ -129,17 +127,30 @@ function Column({
   const doubled = [...data, ...data];
   return (
     <div className="overflow-hidden h-full">
-      <motion.div
-        className="flex flex-col gap-6"
+      {/* CSS-only vertical marquee. Each column gets a unique animation name
+          via the `duration` prop so multiple columns can run at different speeds. */}
+      <style>{`
+        @keyframes uzx-test-col-${duration} {
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(0, -50%, 0); }
+        }
+        .uzx-test-col-${duration} {
+          animation: uzx-test-col-${duration} ${duration}s linear infinite;
+          will-change: transform;
+        }
+        .uzx-test-col-${duration}:hover { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+          .uzx-test-col-${duration} { animation: none; }
+        }
+      `}</style>
+      <div
+        className={`flex flex-col gap-6 uzx-test-col-${duration}`}
         style={{ marginTop: `${offset}px` }}
-        animate={{ y: ["0%", "-50%"] }}
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
-        whileHover={{ animationPlayState: "paused" }}
       >
         {doubled.map((t, i) => (
           <Card key={i} t={t} />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -199,17 +210,33 @@ export function TestimonialMarquee({ data }: { data?: TestimonialsData | null })
                 {d.logosTitle}
               </div>
               <div className="overflow-hidden">
-                <motion.div
-                  className="flex items-center gap-10"
+                {/* CSS-only marquee. Replaces motion/react infinite animation
+                    which was keeping requestAnimationFrame active and blocking
+                    Lighthouse's network-idle / LCP measurement. */}
+                <style>{`
+                  @keyframes uzx-clients-marquee {
+                    from { transform: translate3d(0, 0, 0); }
+                    to { transform: translate3d(-50%, 0, 0); }
+                  }
+                  .uzx-clients-track {
+                    animation: uzx-clients-marquee 30s linear infinite;
+                    will-change: transform;
+                  }
+                  @media (prefers-reduced-motion: reduce) {
+                    .uzx-clients-track { animation: none; }
+                  }
+                `}</style>
+                <div
+                  className="flex items-center gap-10 uzx-clients-track"
                   style={{ width: "max-content" }}
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                 >
                   {[...d.logos, ...d.logos].map((c, i) => (
                     <div key={i} className="shrink-0 h-14 flex items-center justify-center">
                       <img
                         src={c.src}
                         alt={c.name}
+                        loading="lazy"
+                        decoding="async"
                         className="max-h-full w-auto object-contain"
                         style={{
                           filter: "brightness(0) invert(1) opacity(0.75)",
@@ -217,7 +244,7 @@ export function TestimonialMarquee({ data }: { data?: TestimonialsData | null })
                       />
                     </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>

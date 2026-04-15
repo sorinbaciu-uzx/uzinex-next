@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
-
 export type CertificationsData = {
   eyebrow: string;
   titleLine1: string;
@@ -84,18 +82,31 @@ export function Certifications({ data }: { data?: CertificationsData | null }) {
             {d.brandsTitle}
           </div>
           <div className="overflow-hidden">
-            <motion.div
-              className="flex gap-16"
+            {/* CSS-only marquee — replaces motion/react infinite animation
+                that was keeping rAF active and blocking Lighthouse LCP. */}
+            <style>{`
+              @keyframes uzx-brands-marquee {
+                from { transform: translate3d(0, 0, 0); }
+                to { transform: translate3d(-50%, 0, 0); }
+              }
+              .uzx-brands-track {
+                animation: uzx-brands-marquee 40s linear infinite;
+                will-change: transform;
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .uzx-brands-track { animation: none; }
+              }
+            `}</style>
+            <div
+              className="flex gap-16 uzx-brands-track"
               style={{ width: "max-content" }}
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             >
               {[...d.brands, ...d.brands].map((b, i) => (
                 <span key={i} className="serif text-2xl text-ink-400 whitespace-nowrap">
                   {b}
                 </span>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
