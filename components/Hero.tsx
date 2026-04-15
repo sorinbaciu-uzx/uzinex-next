@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
 
 export type HeroData = {
   eyebrow: string;
@@ -136,12 +135,10 @@ export function Hero({ data }: { data?: HeroData | null }) {
           </div>
         </div>
 
-        <motion.div
-          className="lg:col-span-4 lg:border-l border-white/15 lg:pl-12 flex flex-col justify-end"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
+        {/* Stats column — NO motion. On mobile this stacks below the H1
+            and could be the LCP candidate; opacity:0 fade-in was preventing
+            Lighthouse from measuring LCP. Now visible from first paint. */}
+        <div className="lg:col-span-4 lg:border-l border-white/15 lg:pl-12 flex flex-col justify-end">
           <div className="space-y-6">
             {d.stats.map((s, i) => (
               <div key={i}>
@@ -150,7 +147,7 @@ export function Hero({ data }: { data?: HeroData | null }) {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-6 right-6 z-10 flex items-center gap-2 text-[10px] mono uppercase tracking-widest text-white/70">
