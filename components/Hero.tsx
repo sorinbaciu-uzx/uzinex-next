@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 export type HeroData = {
@@ -35,6 +36,17 @@ export const HERO_DEFAULT: HeroData = {
 
 export function Hero({ data }: { data?: HeroData | null }) {
   const d = data ?? HERO_DEFAULT;
+
+  // Defer globe iframe by 2s after mount: keeps it for visual richness but
+  // doesn't block LCP measurement. The hero's gradient + grid pattern make it
+  // look great even before the globe shows up. Without this, Lighthouse desktop
+  // can't measure LCP because Three.js + WebGL textures keep the network busy.
+  const [showGlobe, setShowGlobe] = useState(false);
+  useEffect(() => {
+    const t = window.setTimeout(() => setShowGlobe(true), 2000);
+    return () => window.clearTimeout(t);
+  }, []);
+
   return (
     <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[120px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
       {/* ─── Background + Globe ─── */}
@@ -60,15 +72,18 @@ export function Hero({ data }: { data?: HeroData | null }) {
           <rect width="100%" height="100%" fill="url(#bp-grid-sm)" />
         </svg>
 
-        {/* 3D Globe iframe - positioned right */}
+        {/* 3D Globe iframe - positioned right. Loaded after a 2s delay so the
+            heavy Three.js bundle + WebGL textures don't block LCP. */}
         <div className="absolute top-0 right-0 w-[65%] h-full hidden lg:block">
-          <iframe
-            src="/globe.html"
-            className="w-full h-full border-0"
-            style={{ pointerEvents: "auto" }}
-            title="Uzinex Global Network"
-            loading="lazy"
-          />
+          {showGlobe && (
+            <iframe
+              src="/globe.html"
+              className="w-full h-full border-0"
+              style={{ pointerEvents: "auto" }}
+              title="Uzinex Global Network"
+              loading="lazy"
+            />
+          )}
           {/* Left fade so globe blends into content area */}
           <div
             className="absolute inset-y-0 left-0 w-[40%] pointer-events-none"
