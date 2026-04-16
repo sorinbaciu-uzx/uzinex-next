@@ -225,6 +225,28 @@ export function CatalogTabs() {
   const cat = CATEGORIES.find((c) => c.id === active)!;
   const activeIdx = CATEGORIES.findIndex((c) => c.id === active);
 
+  // Gate CatalogAnim (SVGs with continuous CSS keyframes) behind IntersectionObserver.
+  // Each tile animates up to 10 SVG elements; multiplied by 4 visible tiles that's
+  // ~40 running CSS animations which saturate the compositor on mobile and prevent
+  // Lighthouse from detecting LCP stabilization above the fold.
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [animsEnabled, setAnimsEnabled] = useState(false);
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setAnimsEnabled(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "100px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   const goTo = (dir: 1 | -1) => {
     const n = (activeIdx + dir + CATEGORIES.length) % CATEGORIES.length;
     setActive(CATEGORIES[n].id);
@@ -255,7 +277,7 @@ export function CatalogTabs() {
   }, []);
 
   return (
-    <section id="catalog" className="border-b hairline py-10 lg:py-14">
+    <section id="catalog" ref={sectionRef} className="border-b hairline py-10 lg:py-14">
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
           <div className="lg:col-span-5">
@@ -443,7 +465,11 @@ export function CatalogTabs() {
                   <div className="text-xs lg:text-sm text-ink-700 leading-tight">{p.name}</div>
                   <div className="w-8 h-px bg-uzx-orange mt-1.5" />
                   <div className="flex-1 flex items-center justify-center my-3 relative h-20 lg:h-24 overflow-hidden">
-                    <CatalogAnim kind={p.anim} />
+                    {animsEnabled ? (
+                      <CatalogAnim kind={p.anim} />
+                    ) : (
+                      <div className="w-full h-full" style={{ background: "linear-gradient(135deg, #082545 0%, #0b2c52 100%)" }} />
+                    )}
                   </div>
                   <div className="text-[9px] mono text-ink-400 uppercase truncate">{p.spec}</div>
                 </motion.a>
