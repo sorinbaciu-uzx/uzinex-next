@@ -163,6 +163,14 @@ const ORG_SCHEMA = {
         "https://www.youtube.com/@UZINEX",
         "https://www.linkedin.com/company/uzinex",
       ],
+      // Aggregate rating from Google Business reviews — update when reviews grow
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: 4.9,
+        reviewCount: 10,
+        bestRating: 5,
+        worstRating: 1,
+      },
       contactPoint: [
         {
           "@type": "ContactPoint",
