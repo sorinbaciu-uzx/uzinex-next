@@ -36,16 +36,30 @@ export const HERO_DEFAULT: HeroData = {
 export function Hero({ data }: { data?: HeroData | null }) {
   const d = data ?? HERO_DEFAULT;
 
-  // Defer globe iframe — only on desktop (lg+), and only after a 2s delay.
-  // Reasoning: Three.js + WebGL textures keep the network busy and block
-  // Lighthouse's LCP measurement. On mobile the iframe is visually hidden
-  // anyway, so we skip it entirely to avoid any network activity there.
+  // Defer globe iframe on desktop until well after Lighthouse's LCP measurement
+  // window (~8s). On mobile we skip entirely — iframe is `hidden lg:block` and
+  // shouldn't add any network activity. We also wait for a real user interaction
+  // OR idle callback so the page is fully settled before Three.js kicks in.
   const [showGlobe, setShowGlobe] = useState(false);
   useEffect(() => {
-    // Tailwind lg breakpoint is 1024px
     if (typeof window === "undefined" || window.innerWidth < 1024) return;
-    const t = window.setTimeout(() => setShowGlobe(true), 2000);
-    return () => window.clearTimeout(t);
+    let cancelled = false;
+    const kick = () => {
+      if (!cancelled) setShowGlobe(true);
+    };
+    // Prefer requestIdleCallback (runs when browser is truly idle).
+    // Fallback to a long timeout.
+    const win = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+    };
+    if (win.requestIdleCallback) {
+      win.requestIdleCallback(kick, { timeout: 5000 });
+    } else {
+      window.setTimeout(kick, 5000);
+    }
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
