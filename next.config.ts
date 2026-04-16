@@ -106,6 +106,16 @@ const nextConfig: NextConfig = {
       { source: "/informatii-utile/:path*", destination: "/materiale-utile", permanent: true },
       { source: "/informatii-utileold", destination: "/materiale-utile", permanent: true },
       { source: "/credite-si-leasing", destination: "/finantare/credite-leasing", permanent: true },
+
+      // ─── Legacy sitemap URLs (WordPress Yoast SEO convention) ───
+      // Bing/GSC still reference these URLs from the old WP site.
+      // Redirect them to the new Next.js sitemap so crawlers find the correct one.
+      { source: "/sitemap_index.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/post-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/page-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/product-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/category-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/product_cat-sitemap.xml", destination: "/sitemap.xml", permanent: true },
     ];
   },
 };
