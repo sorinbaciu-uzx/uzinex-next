@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { IIoTExploded } from "./solution-anims/IIoTExploded";
 import { CobotsPriceCompare } from "./solution-anims/CobotsPriceCompare";
@@ -7,6 +8,37 @@ import { PredictiveGraph } from "./solution-anims/PredictiveGraph";
 import { VisionCameraPOV } from "./solution-anims/VisionCameraPOV";
 import { EdgeWaterfall } from "./solution-anims/EdgeWaterfall";
 import { SoftwareIDE } from "./solution-anims/SoftwareIDE";
+
+/**
+ * Renders children only when scrolled into view. Each solution animation
+ * internally uses `motion` with `repeat: Infinity` — mounting all 6 of them
+ * at once on page load keeps the main thread busy and blocks Lighthouse
+ * from measuring LCP on mobile (6× CPU throttling). Gating them behind
+ * IntersectionObserver means the hero/above-fold content gets a clean
+ * main thread during LCP detection.
+ */
+function LazyAnim({ children }: { children: React.ReactNode }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return <div ref={ref}>{visible ? children : <div className="aspect-[16/10] bg-ink-50" />}</div>;
+}
 
 const SLUG_MAP: Record<string, string> = {
   "UZX-IIoT": "/industry-4.0/iiot-monitorizare",
@@ -145,7 +177,11 @@ export function Solutions({ data }: { data?: SolutionsData | null }) {
                 {ANIM_MAP[s.package] ? (
                   (() => {
                     const Anim = ANIM_MAP[s.package];
-                    return <Anim />;
+                    return (
+                      <LazyAnim>
+                        <Anim />
+                      </LazyAnim>
+                    );
                   })()
                 ) : (
                   <div className="aspect-[16/10] overflow-hidden bg-ink-100 relative">

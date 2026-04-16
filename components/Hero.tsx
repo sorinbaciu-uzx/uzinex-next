@@ -36,12 +36,14 @@ export const HERO_DEFAULT: HeroData = {
 export function Hero({ data }: { data?: HeroData | null }) {
   const d = data ?? HERO_DEFAULT;
 
-  // Defer globe iframe by 2s after mount: keeps it for visual richness but
-  // doesn't block LCP measurement. The hero's gradient + grid pattern make it
-  // look great even before the globe shows up. Without this, Lighthouse desktop
-  // can't measure LCP because Three.js + WebGL textures keep the network busy.
+  // Defer globe iframe — only on desktop (lg+), and only after a 2s delay.
+  // Reasoning: Three.js + WebGL textures keep the network busy and block
+  // Lighthouse's LCP measurement. On mobile the iframe is visually hidden
+  // anyway, so we skip it entirely to avoid any network activity there.
   const [showGlobe, setShowGlobe] = useState(false);
   useEffect(() => {
+    // Tailwind lg breakpoint is 1024px
+    if (typeof window === "undefined" || window.innerWidth < 1024) return;
     const t = window.setTimeout(() => setShowGlobe(true), 2000);
     return () => window.clearTimeout(t);
   }, []);
