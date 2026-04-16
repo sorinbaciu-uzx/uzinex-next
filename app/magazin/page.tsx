@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MagazinClient } from "./MagazinClient";
+import { PRODUCTS } from "./products";
+import { itemListSchema, collectionPageSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Catalog tehnic — 180+ utilaje industriale",
@@ -17,8 +19,43 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const collection = collectionPageSchema({
+    title: "Catalog tehnic Uzinex — 180+ utilaje industriale",
+    description:
+      "Utilaje CNC, laser fiber, roboți industriali, echipamente ambalare, reciclare, energie, inspecție. Catalog filtrabil pe categorii și subcategorii.",
+    url: "/magazin",
+    numItems: PRODUCTS.length,
+  });
+
+  // ItemList cu primele 100 produse (limita schema.org pentru rich results).
+  // Google accept max ~100 items în ItemList; restul accesibile prin paginare.
+  const list = itemListSchema(
+    PRODUCTS.slice(0, 100).map((p) => ({
+      name: p.name,
+      url: `/produs/${p.slug}`,
+    })),
+    "Catalog produse Uzinex"
+  );
+
+  const crumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Catalog tehnic", url: "/magazin" },
+  ]);
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(list) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumb) }}
+      />
       <div style={{ background: "#082545" }}>
         <Header />
       </div>

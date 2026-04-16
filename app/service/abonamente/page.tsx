@@ -4,16 +4,38 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceSubscriptions } from "@/components/ServiceSubscriptions";
 import { ContactCTA } from "@/components/ContactCTA";
+import { serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Abonamente Service — Uzinex",
+  title: "Abonamente Service",
   description:
     "Contracte de mentenanță preventivă Uzinex cu SLA garantat: costuri previzibile, intervenție sub 24 de ore, rapoarte tehnice lunare și piese originale OEM incluse.",
+  alternates: { canonical: "/service/abonamente" },
 };
 
 export default function ServiceAbonamentePage() {
+  const svc = serviceSchema({
+    name: "Abonamente Service Uzinex",
+    description:
+      "Contracte de mentenanță preventivă cu SLA garantat, rapoarte tehnice lunare, piese OEM incluse și intervenție sub 24h.",
+    serviceType: "Industrial equipment maintenance subscription",
+    url: "/service/abonamente",
+  });
+  const crumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Service", url: "/service" },
+    { name: "Abonamente", url: "/service/abonamente" },
+  ]);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(svc) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumb) }}
+      />
       <Header solid />
       <main className="bg-white border-b hairline">
         {/* HEADER */}

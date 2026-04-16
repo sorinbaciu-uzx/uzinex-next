@@ -5,11 +5,13 @@ import { Footer } from "@/components/Footer";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { ContactCTA } from "@/components/ContactCTA";
 import { DiagnosisMockup } from "@/components/DiagnosisMockup";
+import { serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Service inclus la livrare — Uzinex",
+  title: "Service inclus la livrare",
   description:
     "Ce primești gratuit cu fiecare echipament livrat de Uzinex: punere în funcțiune, training operatori, garanție standard 60 luni, intervenție sub 24h, piese originale OEM, diagnoză colaborativă remote.",
+  alternates: { canonical: "/service/inclus-la-livrare" },
 };
 
 const PROMISES = [
@@ -63,8 +65,28 @@ const DIAGNOSIS_FEATURES = [
 ];
 
 export default function ServiceInclusPage() {
+  const svc = serviceSchema({
+    name: "Service inclus la livrare Uzinex",
+    description:
+      "Punere în funcțiune, training operatori, garanție 60 luni, intervenție sub 24h, piese OEM, diagnoză colaborativă remote — incluse cu fiecare echipament.",
+    serviceType: "Equipment commissioning and warranty service",
+    url: "/service/inclus-la-livrare",
+  });
+  const crumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Service", url: "/service" },
+    { name: "Inclus la livrare", url: "/service/inclus-la-livrare" },
+  ]);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(svc) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumb) }}
+      />
       <Header solid />
       <main className="bg-white border-b hairline">
         {/* HEADER */}

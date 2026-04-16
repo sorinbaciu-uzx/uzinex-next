@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import MaterialeUtileClient from "./MaterialeUtileClient";
-import { breadcrumbSchema } from "@/lib/seo";
+import { PLAYLISTS } from "./playlists";
+import { breadcrumbSchema, videoSchema, itemListSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Materiale utile — 48 episoade gratuite Lean Manufacturing",
@@ -35,12 +36,52 @@ export default function Page() {
     { name: "Resurse", url: "/materiale-utile" },
     { name: "Materiale utile", url: "/materiale-utile" },
   ]);
+
+  // Flatten all 48 videos from 3 playlists
+  const allVideos = PLAYLISTS.flatMap((pl) =>
+    pl.videos.map((v) => ({
+      ...v,
+      playlistKey: pl.key,
+      playlistTitle: pl.title,
+    }))
+  );
+
+  // ItemList with all videos (max 100 per schema guidelines)
+  const videoListSchema = itemListSchema(
+    allVideos.map((v) => ({
+      name: v.title,
+      url: `/materiale-utile#${v.id}`,
+    })),
+    "Materiale utile Uzinex — 48 episoade video gratuite"
+  );
+
+  // Individual VideoObject schemas for each video — helps Google/Bing rank for
+  // video searches and may surface in Google Video carousels.
+  const videoSchemas = allVideos.map((v) =>
+    videoSchema({
+      name: v.title,
+      description: `${v.playlistTitle}. Episod din biblioteca Uzinex — ${v.title}.`,
+      youtubeId: v.id,
+    })
+  );
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumb) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoListSchema) }}
+      />
+      {videoSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <MaterialeUtileClient />
     </>
   );

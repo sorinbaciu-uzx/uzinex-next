@@ -264,10 +264,11 @@ export function serviceSchema(s: ServiceSchemaInput) {
     description: s.description,
     serviceType: s.serviceType,
     provider: ORG_REF,
-    areaServed: {
-      "@type": "Country",
-      name: s.areaServed || "Romania",
-    },
+    areaServed: [
+      { "@type": "Country", name: "Romania" },
+      { "@type": "Country", name: "Moldova" },
+      { "@type": "Place", name: "European Union" },
+    ],
     url: `${SITE_URL}${s.url}`,
     availableChannel: {
       "@type": "ServiceChannel",

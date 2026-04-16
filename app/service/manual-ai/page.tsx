@@ -4,11 +4,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AIManualMockup } from "@/components/AIManualMockup";
 import { ContactCTA } from "@/components/ContactCTA";
+import { serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Manual de service cu AI — Uzinex",
+  title: "Manual de service cu AI",
   description:
     "Manuale interactive cu inteligență artificială pentru fiecare echipament livrat de Uzinex: limbaj natural, comandă vocală, recunoaștere prin imagini, disponibil offline 24/7.",
+  alternates: { canonical: "/service/manual-ai" },
 };
 
 const FEATURES = [
@@ -65,8 +67,28 @@ const FEATURES = [
 ];
 
 export default function ServiceManualAIPage() {
+  const svc = serviceSchema({
+    name: "Manual de service cu AI — Uzinex",
+    description:
+      "Manuale interactive cu AI pentru echipamente industriale: limbaj natural, comandă vocală, recunoaștere imagini, disponibile offline 24/7.",
+    serviceType: "AI-powered equipment documentation and support",
+    url: "/service/manual-ai",
+  });
+  const crumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Service", url: "/service" },
+    { name: "Manual AI", url: "/service/manual-ai" },
+  ]);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(svc) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumb) }}
+      />
       <Header solid />
       <main className="bg-white border-b hairline">
         {/* HEADER */}

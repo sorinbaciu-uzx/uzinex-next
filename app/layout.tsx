@@ -148,10 +148,11 @@ const ORG_SCHEMA = {
         latitude: 47.1594,
         longitude: 27.6098,
       },
-      areaServed: {
-        "@type": "Country",
-        name: "Romania",
-      },
+      areaServed: [
+        { "@type": "Country", name: "Romania" },
+        { "@type": "Country", name: "Moldova" },
+        { "@type": "Place", name: "European Union" },
+      ],
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -177,7 +178,7 @@ const ORG_SCHEMA = {
           "@type": "ContactPoint",
           telephone: "+40769081081",
           contactType: "sales",
-          areaServed: "RO",
+          areaServed: ["RO", "MD", "EU"],
           availableLanguage: ["Romanian", "English"],
           email: "info@uzinex.ro",
         },
