@@ -57,6 +57,16 @@ export function productSchema(p: ProductSchemaInput) {
         ? `${SITE_URL}${p.image.startsWith("/") ? "" : "/"}${p.image}`
         : `${SITE_URL}/opengraph-image`;
 
+  // NOTE: We intentionally do NOT include an `offers` block because Uzinex
+  // products are B2B quote-based — public prices don't exist yet. Google's
+  // Product rich results require `offers.price`, so including an incomplete
+  // offer causes "Merchant listings: 1 invalid item" errors.
+  //
+  // When prices become available, add back:
+  //   offers: { "@type": "Offer", price: "X", priceCurrency: "RON", ... }
+  //
+  // Without offers, the Product schema is still valid and provides name,
+  // image, brand, breadcrumbs — shown in SERP as enhanced listings.
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -67,24 +77,12 @@ export function productSchema(p: ProductSchemaInput) {
     mpn: p.sku,
     category: p.category,
     image: imgUrl,
+    url: `${SITE_URL}/produs/${p.slug}`,
     brand: {
       "@type": "Brand",
       name: p.brand || "Uzinex",
     },
-    // We don't publish public prices (B2B quote-based), but we can still
-    // mark availability so Google knows the product is live.
-    offers: {
-      "@type": "Offer",
-      url: `${SITE_URL}/produs/${p.slug}`,
-      priceCurrency: "RON",
-      // Schema.org allows omitting price for "Request for quote" B2B.
-      // Use PriceSpecification with a hint instead.
-      availability: "https://schema.org/InStock",
-      itemCondition: "https://schema.org/NewCondition",
-      seller: ORG_REF,
-      areaServed: { "@type": "Country", name: "Romania" },
-      businessFunction: "https://purl.org/goodrelations/v1#Sell",
-    },
+    manufacturer: ORG_REF,
   };
 }
 
