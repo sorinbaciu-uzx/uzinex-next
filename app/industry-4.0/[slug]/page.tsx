@@ -7,6 +7,7 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { UnboxingChecklist } from "@/components/solution-anims/UnboxingChecklist";
 import { FlowchartSteps } from "@/components/solution-anims/FlowchartSteps";
 import { CounterMetrics } from "@/components/solution-anims/CounterMetrics";
+import { breadcrumbSchema } from "@/lib/seo";
 
 type SectionAnim =
   | { type: "checklist"; items: string[] }
@@ -282,9 +283,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const d = DIRECTIONS.find((x) => x.slug === slug);
   if (!d) return { title: "Industry 4.0 — Uzinex" };
+  const canonicalPath = `/industry-4.0/${d.slug}`;
   return {
-    title: `${d.title} — Industry 4.0 | Uzinex`,
+    title: `${d.title} — Industry 4.0`,
     description: d.heroDescription,
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      title: `${d.title} — Industry 4.0 Uzinex`,
+      description: d.heroDescription,
+      url: canonicalPath,
+      type: "website",
+    },
   };
 }
 
@@ -299,8 +308,18 @@ export default async function DirectionPage({
 
   const others = DIRECTIONS.filter((x) => x.slug !== slug);
 
+  const crumbJsonLd = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Industry 4.0", url: "/industry-4.0" },
+    { name: d.title, url: `/industry-4.0/${d.slug}` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbJsonLd) }}
+      />
       <Header solid />
       <main className="bg-white border-b hairline">
         {/* HEADER */}

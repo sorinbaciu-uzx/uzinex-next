@@ -4,8 +4,16 @@ import { Footer } from "@/components/Footer";
 import { MagazinClient } from "./MagazinClient";
 
 export const metadata: Metadata = {
-  title: "Catalog tehnic — Uzinex",
-  description: "Catalog tehnic Uzinex: utilaje și echipamente industriale.",
+  title: "Catalog tehnic — 180+ utilaje industriale",
+  description:
+    "Catalog tehnic Uzinex cu 180+ utilaje CNC, laser fiber, roboți, echipamente de ambalare, reciclare, energie, inspecție. Filtrare pe categorii, fișe tehnice descărcabile, eligibil SEAP/SICAP.",
+  alternates: { canonical: "/magazin" },
+  openGraph: {
+    title: "Catalog tehnic Uzinex — 180+ utilaje industriale",
+    description:
+      "Utilaje CNC, laser, roboți, echipamente pentru fabrică. Catalog complet cu filtrare categorică și fișe tehnice.",
+    url: "/magazin",
+  },
 };
 
 export default function Page() {

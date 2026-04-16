@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero, type HeroData } from "@/components/Hero";
 import { AuthorityStrip, type AuthorityData } from "@/components/AuthorityStrip";
@@ -12,6 +13,27 @@ import { QASection, type QAData } from "@/components/QASection";
 import { ContactCTA, type ContactCTAData } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
 import { getContents } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title:
+    "Uzinex — Tehnologie industrială performantă și servicii superioare",
+  description:
+    "Integrator industrial din Iași cu 180+ echipamente: CNC, laser fiber, cobots, Industry 4.0. Finanțare europeană & SEAP/SICAP. Service 24h. Discută cu un inginer.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "ro-RO": "/",
+      "en-US": "/en",
+    },
+  },
+  openGraph: {
+    title:
+      "Uzinex — Tehnologie industrială performantă și servicii superioare",
+    description:
+      "180+ echipamente industriale · Industry 4.0 la cheie · Finanțare europeană & SEAP/SICAP · Service 24h la nivel național.",
+    url: "/",
+  },
+};
 
 // ISR: re-render at most once per minute, plus instant invalidation
 // triggered by `revalidatePath` from /api/admin/content/[key].

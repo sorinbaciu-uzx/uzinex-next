@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PRODUCTS } from "@/app/magazin/products";
 import { AddToQuoteButton } from "@/app/magazin/AddToQuoteButton";
 import { SimilarCarousel } from "./SimilarCarousel";
+import { productSchema, breadcrumbSchema } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -79,8 +80,33 @@ export default async function Page({ params }: Props) {
     .split(/\s*[|·—–]\s*/)[0]
     .trim();
 
+  // ─── JSON-LD schemas (Product + BreadcrumbList) ───
+  const prodJsonLd = productSchema({
+    name: p.name,
+    description: p.shortSpec + ". " + (p.description || ""),
+    sku: p.sku,
+    slug: p.slug,
+    image: p.image,
+    category: p.category,
+  });
+  const crumbJsonLd = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Catalog tehnic", url: "/magazin" },
+    ...(p.category ? [{ name: p.category, url: `/magazin` }] : []),
+    { name: p.name, url: `/produs/${p.slug}` },
+  ]);
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(prodJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbJsonLd) }}
+      />
+
       <div style={{ background: "#082545" }}>
         <Header />
       </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { faqSchema } from "@/lib/seo";
 
 export type QAItem = { q: string; a: string };
 export type QAData = {
@@ -62,8 +63,15 @@ export function QASection({ data }: { data?: QAData | null }) {
   const d = data ?? QA_DEFAULT;
   const [open, setOpen] = useState<number | null>(0);
 
+  // FAQ schema — enables rich result "People also ask" expandable questions in SERP
+  const faqJsonLd = faqSchema(d.items.map((i) => ({ question: i.q, answer: i.a })));
+
   return (
     <section id="qa" className="border-b hairline py-10 lg:py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>

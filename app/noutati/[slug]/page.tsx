@@ -9,6 +9,7 @@ import {
   type Article,
 } from "@/components/NewsSection";
 import { getContent } from "@/lib/content";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -38,9 +39,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const { article } = await getArticle(slug);
   if (!article) return { title: "Articol — Uzinex" };
+  const canonicalPath = `/noutati/${article.slug}`;
   return {
-    title: `${article.title} — Uzinex`,
+    title: article.title,
     description: article.excerpt,
+    alternates: { canonical: canonicalPath },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      url: canonicalPath,
+      ...(article.image ? { images: [{ url: article.image }] } : {}),
+    },
   };
 }
 
@@ -93,8 +103,31 @@ export default async function ArticlePage({
     .split(/\n\s*\n/)
     .filter(Boolean);
 
+  // ─── JSON-LD: NewsArticle + BreadcrumbList ───
+  const artJsonLd = articleSchema({
+    slug: article.slug,
+    title: article.title,
+    excerpt: article.excerpt,
+    category: article.category,
+    datePublished: article.date,
+    image: article.image,
+  });
+  const crumbJsonLd = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Noutăți", url: "/noutati" },
+    { name: article.title, url: `/noutati/${article.slug}` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(artJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbJsonLd) }}
+      />
       <Header solid />
       <main className="bg-white border-b hairline">
         {/* ─────── HEADER / META ─────── */}
