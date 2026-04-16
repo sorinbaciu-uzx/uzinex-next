@@ -2,10 +2,18 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
+// Reduce font-file count to stabilize LCP on slow mobile networks.
+// Each font file we preload is a race condition for LCP: when a file arrives
+// late, the text re-paints and LCP candidate changes. Lighthouse mobile
+// (4G throttled) often fails with NO_LCP when there are many preloaded fonts.
+// Only Space Grotesk is preloaded (used for above-the-fold H1/serif titles).
+// Inter and IBM Plex Mono use fallback-matching so they swap invisibly.
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -13,13 +21,15 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   preload: true,
+  adjustFontFallback: true,
 });
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
-  weight: ["300", "400", "500"],
-  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
+  subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
