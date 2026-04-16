@@ -49,29 +49,21 @@ export function Hero({ data }: { data?: HeroData | null }) {
   }, []);
 
   return (
-    <section className="relative overflow-hidden border-b text-white -mt-[140px] pt-[120px]" style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}>
+    <section
+      className="relative overflow-hidden border-b text-white -mt-[140px] pt-[120px]"
+      style={{
+        background: "#082545",
+        borderColor: "rgba(255,255,255,0.08)",
+        // Combined: solid base + radial gradient highlight + CSS grid pattern.
+        // Replaces separate SVG <pattern> element which was slow to composite
+        // on mobile CPU-throttled rendering. All in one paint layer now.
+        backgroundImage:
+          "radial-gradient(ellipse 80% 90% at 75% 50%, #1a4a7a 0%, #0e3866 30%, transparent 60%), linear-gradient(rgba(127,176,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(127,176,255,0.06) 1px, transparent 1px)",
+        backgroundSize: "auto, 40px 40px, 40px 40px",
+      }}
+    >
       {/* ─── Background + Globe ─── */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 90% at 75% 50%, #1a4a7a 0%, #0e3866 30%, #082545 60%, #051a33 100%)",
-          }}
-        />
-
-        {/* Blueprint grid (subtle) */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.1]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="bp-grid-sm" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7fb0ff" strokeWidth="0.4" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#bp-grid-sm)" />
-        </svg>
 
         {/* 3D Globe iframe - positioned right. Loaded after a 2s delay so the
             heavy Three.js bundle + WebGL textures don't block LCP. */}
