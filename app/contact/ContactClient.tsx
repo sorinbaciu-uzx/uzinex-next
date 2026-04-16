@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { trackLead } from "@/components/Analytics";
 
 /* ─────────────────────────────────────────────────────────────────────────
    /contact — pagină de contact Uzinex
@@ -227,6 +228,8 @@ export default function ContactClient() {
       if (res.ok && json.ok) {
         setState("success");
         form.reset();
+        // Fire conversion events (GA4, Meta Pixel, LinkedIn) — no-op if pixels not set
+        trackLead(intent);
       } else {
         throw new Error(json.error ?? "Submit failed");
       }

@@ -242,3 +242,94 @@ export function collectionPageSchema(input: {
     ...(input.numItems ? { numberOfItems: input.numItems } : {}),
   };
 }
+
+// ══════════════════════════════════════════════════════════════════════════
+// SERVICE (mentenanță, intervenții, consultanță)
+// ══════════════════════════════════════════════════════════════════════════
+
+export type ServiceSchemaInput = {
+  name: string;
+  description: string;
+  url: string;
+  serviceType: string; // "Mentenanță preventivă", "Service de urgență" etc.
+  areaServed?: string; // default: Romania
+};
+
+export function serviceSchema(s: ServiceSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}${s.url}#service`,
+    name: s.name,
+    description: s.description,
+    serviceType: s.serviceType,
+    provider: ORG_REF,
+    areaServed: {
+      "@type": "Country",
+      name: s.areaServed || "Romania",
+    },
+    url: `${SITE_URL}${s.url}`,
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${SITE_URL}/contact`,
+      servicePhone: "+40769081081",
+      availableLanguage: ["Romanian", "English"],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: BRAND_RATING.value,
+      reviewCount: BRAND_RATING.count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  };
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// VIDEO OBJECT (YouTube embeds, materiale-utile)
+// ══════════════════════════════════════════════════════════════════════════
+
+export type VideoSchemaInput = {
+  name: string;
+  description: string;
+  youtubeId: string;
+  uploadDate?: string; // ISO string
+  duration?: string; // ISO 8601 e.g. "PT5M30S"
+};
+
+export function videoSchema(v: VideoSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: v.name,
+    description: v.description.slice(0, 500),
+    thumbnailUrl: `https://i.ytimg.com/vi/${v.youtubeId}/maxresdefault.jpg`,
+    uploadDate: v.uploadDate || "2026-01-01T00:00:00Z",
+    contentUrl: `https://www.youtube.com/watch?v=${v.youtubeId}`,
+    embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
+    ...(v.duration ? { duration: v.duration } : {}),
+    publisher: ORG_REF,
+    inLanguage: "ro-RO",
+  };
+}
+
+// ══════════════════════════════════════════════════════════════════════════
+// ITEM LIST — catalog/shop listing (helpful for /magazin)
+// ══════════════════════════════════════════════════════════════════════════
+
+export type ItemListEntry = { name: string; url: string };
+
+export function itemListSchema(items: ItemListEntry[], listName: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: listName,
+    numberOfItems: items.length,
+    itemListElement: items.slice(0, 100).map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: item.url.startsWith("http") ? item.url : `${SITE_URL}${item.url}`,
+    })),
+  };
+}

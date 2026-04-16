@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
+import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
 // Reduce font-file count to stabilize LCP on slow mobile networks.
@@ -220,7 +221,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
         />
       </head>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { trackLead } from "@/components/Analytics";
 
 type Item = { sku: string; name: string; qty: number };
 type SubmitState = "idle" | "sending" | "success" | "error";
@@ -129,6 +130,8 @@ export function OfertaClient() {
       const json = await res.json();
       if (res.ok && json.ok) {
         setState("success");
+        // Fire conversion events (GA4, Meta Pixel, LinkedIn)
+        trackLead("leads");
         // Golesc cart-ul după trimitere reușită
         setItems([]);
         try {

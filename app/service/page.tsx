@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
+import { serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Service tehnic — Inclus, abonamente și manuale AI",
@@ -60,8 +61,28 @@ const CARDS = [
 ];
 
 export default function ServiceHubPage() {
+  const svcJsonLd = serviceSchema({
+    name: "Service tehnic Uzinex",
+    description:
+      "Servicii de mentenanță, intervenție 24h, reparații în garanție și manuale interactive AI pentru echipamente industriale CNC, laser, cobots și linii de producție.",
+    serviceType: "Industrial equipment maintenance",
+    url: "/service",
+  });
+  const crumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Service", url: "/service" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(svcJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumb) }}
+      />
       <Header solid />
       <main className="bg-white border-b hairline">
         {/* HEADER */}
