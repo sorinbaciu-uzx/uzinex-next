@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PRODUCTS } from "@/app/magazin/products";
 import { NEWS_DEFAULT } from "@/components/NewsSection";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Dynamic sitemap for uzinex.ro
@@ -13,7 +14,7 @@ import { NEWS_DEFAULT } from "@/components/NewsSection";
  * Excludes: /magazin?cat=... filter URLs (same page, different query params)
  */
 
-const BASE = "https://uzinex-next.vercel.app";
+const BASE = SITE_URL;
 
 // Industry 4.0 directions — hardcoded to avoid circular import from page.tsx
 const INDUSTRY_40_SLUGS = [

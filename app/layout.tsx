@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Reduce font-file count to stabilize LCP on slow mobile networks.
@@ -31,8 +32,6 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
   preload: false,
 });
-
-const SITE_URL = "https://uzinex-next.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

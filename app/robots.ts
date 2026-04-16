@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * robots.txt for uzinex.ro
@@ -12,7 +13,7 @@ import type { MetadataRoute } from "next";
  *   - *?cat=, *?sub= — faceted filter URLs (avoid duplicate content)
  */
 
-const BASE = "https://uzinex-next.vercel.app";
+const BASE = SITE_URL;
 
 export default function robots(): MetadataRoute.Robots {
   return {

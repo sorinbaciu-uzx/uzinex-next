@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Uzinex — Industrial Equipment & Technology Solutions",
   description:
     "Complete industrial integration: intralogistics, laser & CNC, robotics, heavy machinery, spare parts and technical service. Talk to an engineer.",
   alternates: {
-    canonical: "https://uzinex-next.vercel.app/en",
+    canonical: `${SITE_URL}/en`,
     languages: {
-      "ro": "https://uzinex-next.vercel.app/",
-      "en": "https://uzinex-next.vercel.app/en",
+      ro: `${SITE_URL}/`,
+      en: `${SITE_URL}/en`,
     },
   },
 };
