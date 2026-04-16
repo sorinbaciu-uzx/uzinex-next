@@ -231,13 +231,23 @@ export function TestimonialMarquee({ data }: { data?: TestimonialsData | null })
                   style={{ width: "max-content" }}
                 >
                   {[...d.logos, ...d.logos].map((c, i) => (
-                    <div key={i} className="shrink-0 h-14 flex items-center justify-center">
+                    // Reserve fixed 160×56 slot per logo so late-loaded images
+                    // don't trigger layout shift. This is the main source of
+                    // CLS on mobile which was invalidating LCP candidates and
+                    // causing intermittent NO_LCP errors in Lighthouse.
+                    <div
+                      key={i}
+                      className="shrink-0 flex items-center justify-center"
+                      style={{ width: 160, height: 56 }}
+                    >
                       <img
                         src={c.src}
                         alt={c.name}
                         loading="lazy"
                         decoding="async"
-                        className="max-h-full w-auto object-contain"
+                        width={160}
+                        height={56}
+                        className="max-h-full max-w-full w-auto object-contain"
                         style={{
                           filter: "brightness(0) invert(1) opacity(0.75)",
                         }}

@@ -94,6 +94,8 @@ export function Footer() {
                   alt="Plăți online securizate prin NETOPIA Payments — acceptăm Visa și Mastercard"
                   className="w-full h-auto block"
                   loading="lazy"
+                  width={400}
+                  height={80}
                 />
               </div>
             </div>
