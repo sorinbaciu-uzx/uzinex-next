@@ -5,9 +5,10 @@ import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
 
 export const metadata: Metadata = {
-  title: "Service tehnic Uzinex — inclus, abonamente și manuale AI",
+  title: "Service tehnic — Inclus, abonamente și manuale AI",
   description:
     "Trei direcții de service tehnic Uzinex: ce primești gratuit cu fiecare echipament, contractele de abonament pentru mentenanță preventivă și manualele interactive cu inteligență artificială.",
+  alternates: { canonical: "/service" },
 };
 
 const CARDS = [

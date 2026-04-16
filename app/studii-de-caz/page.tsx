@@ -7,9 +7,10 @@ import { getContent } from "@/lib/content";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Studii de caz — Uzinex",
+  title: "Studii de caz — Proiecte industriale reale",
   description:
     "Descoperă proiectele Uzinex livrate pentru clienți din producție, logistică, energie, infrastructură, procesare, apărare și auto. Soluții industriale la cheie cu rezultate măsurabile.",
+  alternates: { canonical: "/studii-de-caz" },
 };
 
 export default async function Page() {

@@ -20,9 +20,16 @@ const ANIM_MAP: Record<string, React.FC> = {
 };
 
 export const metadata: Metadata = {
-  title: "Industry 4.0 — Soluții integrate pentru fabrica viitorului | Uzinex",
+  title: "Industry 4.0 — Soluții integrate pentru fabrica viitorului",
   description:
     "Șase direcții tehnologice integrate la cheie: IIoT, robotică colaborativă, mentenanță predictivă, inspecție optică, Edge Computing și software industrial pe comandă.",
+  alternates: { canonical: "/industry-4.0" },
+  openGraph: {
+    title: "Industry 4.0 Uzinex — 6 direcții tehnologice la cheie",
+    description:
+      "IIoT, cobots, mentenanță predictivă, inspecție optică, Edge/MES, software industrial. Fabrica viitorului, integrată de Uzinex.",
+    url: "/industry-4.0",
+  },
 };
 
 const DIRECTIONS = [

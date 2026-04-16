@@ -4,9 +4,10 @@ import { Footer } from "@/components/Footer";
 import { OfertaClient } from "./OfertaClient";
 
 export const metadata: Metadata = {
-  title: "Cere ofertă — Uzinex",
+  title: "Cere ofertă personalizată",
   description:
-    "Solicită o ofertă personalizată pentru echipamentele Uzinex. Completează datele și echipa noastră te contactează.",
+    "Solicită o ofertă personalizată pentru echipamentele Uzinex. Completează datele și echipa noastră te contactează în 24h lucrătoare.",
+  alternates: { canonical: "/oferta" },
 };
 
 export default function Page() {

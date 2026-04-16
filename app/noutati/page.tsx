@@ -13,9 +13,10 @@ import { AuthorityRail } from "./AuthorityRail";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog Uzinex — noutăți, comunicări, studii",
+  title: "Noutăți industriale — Blog Uzinex",
   description:
     "Comunicate, articole, anunțuri și studii despre integrarea industrială, finanțările europene și automatizarea industriei românești.",
+  alternates: { canonical: "/noutati" },
 };
 
 export default async function NoutatiPage() {
