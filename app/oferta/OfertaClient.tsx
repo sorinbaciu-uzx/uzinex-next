@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { trackLead } from "@/components/Analytics";
+import { PRODUCTS } from "@/app/magazin/products";
 
 type Item = { sku: string; name: string; qty: number };
 type SubmitState = "idle" | "sending" | "success" | "error";
@@ -124,6 +125,10 @@ export function OfertaClient() {
           extra: {
             tipCerere: seap ? "Licitatie SEAP/SICAP" : "Oferta echipament",
             cui,
+            products: items.map((it) => {
+              const p = PRODUCTS.find((x) => x.sku === it.sku);
+              return { sku: it.sku, name: it.name, slug: p?.slug ?? "", qty: it.qty };
+            }),
           },
         }),
       });

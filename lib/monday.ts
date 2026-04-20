@@ -16,6 +16,8 @@
  * If a column is DELETED and recreated, update the COLUMNS map below.
  */
 
+import { SITE_URL } from "./site";
+
 const MONDAY_API_URL = "https://api.monday.com/v2";
 
 type Intent = "leads" | "service" | "finantare" | "hr";
@@ -47,6 +49,8 @@ export type LeadInput = {
     universitate?: string;
     linkedin?: string;
     tipCerere?: string;
+    /** Products in the quote cart — used by `leads` intent to build the Produs column */
+    products?: Array<{ sku?: string; name: string; slug: string; qty?: number }>;
   };
 };
 
@@ -130,7 +134,17 @@ function buildColumnValues(input: LeadInput): Record<string, unknown> {
     const c = COLUMNS.leads;
     if (input.company) base[c.company] = safe(input.company);
     if (input.extra?.cui) base[c.cui] = safe(input.extra.cui);
-    if (input.subject) base[c.productDisplay] = safe(input.subject);
+    // Produs: primul produs cu link + (+N alte produse) daca sunt mai multe.
+    // Lista completa ramane in coloana Mesaj.
+    const products = input.extra?.products?.filter((p) => p.slug);
+    if (products && products.length) {
+      const first = products[0];
+      const firstLine = `${first.name}\n${SITE_URL}/produs/${first.slug}`;
+      const rest = products.length - 1;
+      base[c.productDisplay] = rest > 0 ? `${firstLine}\n(+${rest} alte produse)` : firstLine;
+    } else if (input.subject) {
+      base[c.productDisplay] = safe(input.subject);
+    }
     if (input.email) base[c.email] = { email: input.email, text: input.email };
     if (input.phone) base[c.phone] = { phone: input.phone, countryShortName: "RO" };
     // SEAP derived from tipCerere (se poate extinde cu un flag dedicat mai tarziu)
