@@ -89,9 +89,10 @@ export function OfertaClient() {
       return;
     }
 
-    // Build message: products list + user notes + SEAP flag
+    // Mailto fallback body — keep the full context (products + totals + SEAP + message).
+    // Monday receives only the textarea content in the Mesaj column; products go in Produs column, SEAP in SEAP column.
     const productLines = items.map((it, i) => `${i + 1}. ${it.sku} — ${it.name} × ${it.qty} buc`).join("\n");
-    const fullMessage = [
+    const mailtoBody = [
       "═══ PRODUSE SOLICITATE ═══",
       productLines,
       "",
@@ -118,7 +119,7 @@ export function OfertaClient() {
           email,
           phone: telefon,
           company: firma,
-          message: fullMessage,
+          message: mesaj,
           subject: seap ? "Oferta echipament + SEAP/SICAP" : "Oferta echipament",
           sourceUrl: typeof window !== "undefined" ? window.location.href : undefined,
           honeypot,
@@ -157,7 +158,7 @@ export function OfertaClient() {
         `Email: ${email}`,
         `Telefon: ${telefon}`,
         "",
-        fullMessage,
+        mailtoBody,
       ].join("\n");
       const mailto = `mailto:info@uzinex.ro?subject=${encodeURIComponent("Oferta echipament")}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
