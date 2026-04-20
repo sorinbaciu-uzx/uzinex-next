@@ -6,7 +6,7 @@
  *
  * Env vars required (configured in .env.local + Vercel):
  *   MONDAY_API_TOKEN              — long-lived personal token
- *   MONDAY_BOARD_LEADS            — 5094675025 (CRM workspace 6171291)
+ *   MONDAY_BOARD_LEADS            — 5092118529 (board YWRAQ portat din WordPress)
  *   MONDAY_BOARD_SERVICE          — 5094675030
  *   MONDAY_BOARD_FINANTARE        — 5094675033
  *   MONDAY_BOARD_HR               — 5094675039
@@ -65,15 +65,15 @@ const BOARD_IDS: Record<Intent, string | undefined> = {
  */
 const COLUMNS = {
   leads: {
-    // Board 5094675025
-    status: "color_mm2esxp8",
-    tipCerere: "color_mm2egg3m",
-    email: "email_mm2edh8z",
-    phone: "phone_mm2e52xe",
-    company: "text_mm2eyacg",
-    message: "long_text_mm2ec8j8",
-    sourcePage: "link_mm2eawej",
-    dateReceived: "date_mm2et4mp",
+    // Board 5092118529 — YWRAQ (portat din WordPress)
+    company: "lead_company",
+    cui: "text_mm1s607t",
+    productDisplay: "text",
+    email: "lead_email",
+    phone: "lead_phone",
+    seap: "text_mm1q870v",
+    message: "long_text_mm1q2mrq",
+    manufacturerLink: "long_text_mm1qay42",
   },
   service: {
     // Board 5094675030
@@ -128,14 +128,14 @@ function buildColumnValues(input: LeadInput): Record<string, unknown> {
 
   if (input.intent === "leads") {
     const c = COLUMNS.leads;
-    base[c.status] = { label: "New" };
-    if (input.extra?.tipCerere) base[c.tipCerere] = { label: input.extra.tipCerere };
+    if (input.company) base[c.company] = safe(input.company);
+    if (input.extra?.cui) base[c.cui] = safe(input.extra.cui);
+    if (input.subject) base[c.productDisplay] = safe(input.subject);
     if (input.email) base[c.email] = { email: input.email, text: input.email };
     if (input.phone) base[c.phone] = { phone: input.phone, countryShortName: "RO" };
-    if (input.company) base[c.company] = safe(input.company);
+    // SEAP derived from tipCerere (se poate extinde cu un flag dedicat mai tarziu)
+    base[c.seap] = input.extra?.tipCerere === "Licitatie SEAP/SICAP" ? "Da" : "Nu";
     if (input.message) base[c.message] = safe(input.message);
-    if (input.sourceUrl) base[c.sourcePage] = url(input.sourceUrl);
-    base[c.dateReceived] = { date: today };
   } else if (input.intent === "service") {
     const c = COLUMNS.service;
     base[c.status] = { label: "New" };

@@ -174,6 +174,42 @@ function lev(a, b) {
   return dp[a.length][b.length];
 }
 
+// --- manual datasheet overrides (keyed by slug) ---
+// For products where the CSV description doesn't contain a Google Drive link,
+// but we have the datasheet URL from another source.
+const DATASHEET_OVERRIDES = {
+  "linie-automata-fabricare-cutii-carton-ondulat-personalizate-uzinex":
+    "https://drive.google.com/file/d/1Bv-a5djiehT6Xt0fb15x_ADfHMSyRxB8/view?usp=sharing",
+  "masina-de-ambalat-paleti":
+    "https://drive.google.com/file/d/1Gx2Qqw6Fkzgh48-PTGcjojxu8mbk5By-/view?usp=sharing",
+  "masina-de-ambalat-paleti-tip-m":
+    "https://drive.google.com/file/d/1c8mdDRIzPkqPigxM81FRKxnLe0Pj8s89/view?usp=sharing",
+  "masina-de-ambalat-paleti-kpw-tp1650f":
+    "https://drive.google.com/file/d/1kMMhs4LDcQPcunNfTYJqMGoSa_kr_23V/view?usp=sharing",
+  "masina-de-ambalat-robotizata-kpw-z4510":
+    "https://drive.google.com/file/d/1xxUcofJQcGlPvVWqUH1g2RiGr9zjSwJr/view?usp=sharing",
+  "masina-de-ambalat-paleti-cu-brat-rotativ-kpw-yb1800l":
+    "https://drive.google.com/file/d/1gxWCvVw_S-0Uax8R80t-f4c1r9AOlA-m/view?usp=sharing",
+  "masina-semiautomata-de-ambalat-folie-stretch-kpw-m800-uzinex":
+    "https://drive.google.com/file/d/1UDKqBITAjYmBIFPU6UQrs2e3WjNQpo6c/view?usp=sharing",
+  "mini-masina-de-ambalat-folie-stretch-kpw-mn600-uzinex":
+    "https://drive.google.com/file/d/1MNmn5hAk2e5R8hcH_A9iB-wMtkel6FNH/view?usp=sharing",
+  "masina-de-ambalat-bagaje-kpw-zxl600-uzinex":
+    "https://drive.google.com/file/d/1F34tdC8nIDjEnUrmVkBfvCzMsA0vcG3O/view?usp=sharing",
+  "masina-automata-de-ambalat-cu-bobina-stretch-kpw-yt2000-uzinex":
+    "https://drive.google.com/file/d/1NuGcOlASExZ26v1oD1-IfI5pTGW27irS/view?usp=sharing",
+  "statie-mobila-de-zdrobire-si-sortare-cu-senile":
+    "https://drive.google.com/file/d/1l8lk9xfLBSFOVn2DbgJCUTegNrp8JczR/view?usp=sharing",
+  "cupa-concasor-uj-200":
+    "https://drive.google.com/file/d/1gmd9W3Rofj0LGMmqGAN9g1HDHZJzxNPP/view?usp=sharing",
+  "cupa-concasor-bkm":
+    "https://drive.google.com/file/d/1nFobX_lxCFmyCCfYEI9tJNSVHd-5hCuq/view?usp=sharing",
+  "concasor-mobil-cu-falci":
+    "https://drive.google.com/file/d/1Eob45DhijMnpSeMFClahmvrRyGJLMhup/view?usp=sharing",
+  "0-8t-mini-excavator":
+    "https://drive.google.com/file/d/1gmd9W3Rofj0LGMmqGAN9g1HDHZJzxNPP/view?usp=sharing",
+};
+
 // --- taxonomy ---
 const TAX = {
   "Utilaje de construcții": {
@@ -332,9 +368,20 @@ for (let r = 1; r < rows.length; r++) {
   const description = stripHtml(descHtml);
   const descriptionBlocks = parseDescriptionBlocks(descHtml);
 
-  // extract Google Drive datasheet link from description HTML
+  // slug from name (for routing) — computed early so it can key overrides
+  const slug = name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  // extract Google Drive datasheet link from description HTML, with manual override fallback
   const driveMatch = descHtml.match(/https?:\/\/(?:drive|docs)\.google\.com\/[^\s"<>)]+/);
-  const datasheetUrl = driveMatch ? driveMatch[0].replace(/&amp;/g, "&") : "";
+  const datasheetUrl =
+    (driveMatch ? driveMatch[0].replace(/&amp;/g, "&") : "") ||
+    DATASHEET_OVERRIDES[slug] ||
+    "";
 
   // categories
   const catsRaw = (row[H.cats] || "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -366,22 +413,25 @@ for (let r = 1; r < rows.length; r++) {
   // image — match against existing files in public/images/produse, no copy
   const imgsRaw = (row[H.imgs] || "").split(",").map((s) => s.trim()).filter(Boolean);
   let imagePath = "";
+  let found;
   if (imgsRaw.length) {
     const url = imgsRaw[0];
     const base = (url.split("/").pop() || "").split("?")[0];
     const baseLower = base.toLowerCase();
     const stemLower = baseLower.replace(/\.[^.]+$/, "");
-    let found = mediaByNorm.get(baseLower) || mediaByStem.get(stemLower);
+    found = mediaByNorm.get(baseLower) || mediaByStem.get(stemLower);
     if (!found) {
       const alt = stemLower.replace(/-scaled$/, "");
       found = mediaByStem.get(alt);
     }
-    if (found) {
-      imagePath = `${PUBLIC_DIR_REL}/${found}`;
-      imgMatched++;
-    } else {
-      imgFallback++;
-    }
+  }
+  // fallback: match by slug (e.g. "<slug>.webp" or "<slug>-1.webp")
+  if (!found && slug) {
+    found = mediaByStem.get(slug) || mediaByStem.get(`${slug}-1`);
+  }
+  if (found) {
+    imagePath = `${PUBLIC_DIR_REL}/${found}`;
+    imgMatched++;
   } else {
     imgFallback++;
   }
@@ -396,14 +446,6 @@ for (let r = 1; r < rows.length; r++) {
   const seoDescription =
     (row[H.seoDesc] || row[H.seoDescAlt] || "").trim() || shortSpec;
   const focusKeyword = (row[H.focusKw] || "").trim();
-
-  // slug from name (for routing)
-  const slug = name
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
 
   products.push({
     sku: finalSku,

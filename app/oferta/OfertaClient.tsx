@@ -413,7 +413,7 @@ export function OfertaClient() {
                       disabled={state === "sending"}
                       className="w-full inline-flex items-center justify-center gap-2 text-[12px] py-2.5 bg-uzx-orange hover:bg-uzx-orange2 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium transition shadow-md shadow-uzx-orange/20"
                     >
-                      {state === "sending" ? "Se trimite..." : "Trimite cererea →"}
+                      {state === "sending" ? "Se trimite..." : "Trimite cererea"}
                     </button>
                   </div>
                 </form>
