@@ -17,6 +17,7 @@
  */
 
 import { SITE_URL } from "./site";
+import type { AnafData } from "./anaf";
 
 const MONDAY_API_URL = "https://api.monday.com/v2";
 
@@ -51,6 +52,8 @@ export type LeadInput = {
     tipCerere?: string;
     /** Products in the quote cart — used by `leads` intent to build the Produs column */
     products?: Array<{ sku?: string; name: string; slug: string; qty?: number }>;
+    /** ANAF enrichment — fetched server-side in /api/lead before createLead */
+    anaf?: AnafData;
   };
 };
 
@@ -78,6 +81,17 @@ const COLUMNS = {
     seap: "text_mm1q870v",
     message: "long_text_mm1q2mrq",
     manufacturerLink: "long_text_mm1qay42",
+    // ANAF enrichment
+    county: "text_mm2kbwb8",
+    locality: "text_mm2kwwme",
+    caenCode: "text_mm2k2td3",
+    caenDescription: "text_mm2kvjah",
+    vatPayer: "boolean_mm2kqyn4",
+    companyStatus: "color_mm2k8sz6",
+    foundingDate: "date_mm2kd7da",
+    turnover: "numeric_mm2kscqx",
+    netProfit: "numeric_mm2k3b03",
+    employees: "numeric_mm2krskv",
   },
   service: {
     // Board 5094675030
@@ -150,6 +164,20 @@ function buildColumnValues(input: LeadInput): Record<string, unknown> {
     // SEAP derived from tipCerere (se poate extinde cu un flag dedicat mai tarziu)
     base[c.seap] = input.extra?.tipCerere === "Licitatie SEAP/SICAP" ? "Da" : "Nu";
     if (input.message) base[c.message] = safe(input.message);
+    // ANAF enrichment — populated server-side in /api/lead when CUI is present
+    const anaf = input.extra?.anaf;
+    if (anaf) {
+      if (anaf.county) base[c.county] = safe(anaf.county);
+      if (anaf.locality) base[c.locality] = safe(anaf.locality);
+      if (anaf.caenCode) base[c.caenCode] = safe(anaf.caenCode);
+      if (anaf.caenDescription) base[c.caenDescription] = safe(anaf.caenDescription);
+      if (typeof anaf.vatActive === "boolean") base[c.vatPayer] = { checked: anaf.vatActive ? "true" : "false" };
+      if (anaf.companyStatus) base[c.companyStatus] = { label: anaf.companyStatus };
+      if (anaf.registrationDate) base[c.foundingDate] = { date: anaf.registrationDate };
+      if (typeof anaf.turnoverRon === "number") base[c.turnover] = anaf.turnoverRon;
+      if (typeof anaf.netProfitRon === "number") base[c.netProfit] = anaf.netProfitRon;
+      if (typeof anaf.avgEmployees === "number") base[c.employees] = anaf.avgEmployees;
+    }
   } else if (input.intent === "service") {
     const c = COLUMNS.service;
     base[c.status] = { label: "New" };

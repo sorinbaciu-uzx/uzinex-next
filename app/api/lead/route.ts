@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createLead, type LeadInput } from "@/lib/monday";
+import { fetchAnafData, normalizeCui } from "@/lib/anaf";
 
 /**
  * POST /api/lead — main entry point for ALL website lead forms / CTAs.
@@ -86,6 +87,20 @@ export async function POST(req: NextRequest) {
       subject: body.subject,
       extra: body.extra,
     };
+
+    // ANAF enrichment — only for `leads` intent when a CUI is present.
+    // Failures are non-fatal: the lead is created even if ANAF lookup fails or times out.
+    if (input.intent === "leads") {
+      const cui = normalizeCui(input.extra?.cui);
+      if (cui) {
+        try {
+          const anaf = await fetchAnafData(cui);
+          if (anaf) input.extra = { ...input.extra, anaf };
+        } catch (e) {
+          console.warn("[/api/lead] ANAF lookup failed:", e instanceof Error ? e.message : String(e));
+        }
+      }
+    }
 
     const result = await createLead(input);
 
