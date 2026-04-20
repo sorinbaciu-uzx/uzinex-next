@@ -11,6 +11,7 @@
  */
 
 const DEMOANAF_BASE = "https://demoanaf.ro/api";
+const ANAF_TVA_ENDPOINT = "https://webservicesp.anaf.ro/PlatitorTvaRest/api/v9/ws/tva";
 const REQUEST_TIMEOUT_MS = 6000;
 
 export type AnafData = {
@@ -59,6 +60,34 @@ async function fetchJson<T>(url: string, signal: AbortSignal): Promise<T | null>
   }
 }
 
+/** Convert demoanaf vatStatus string to tri-state boolean (unknown → undefined). */
+function parseVatStatus(s?: string): boolean | undefined {
+  if (s === "active") return true;
+  if (s === "inactive") return false;
+  return undefined; // "verifying" or anything else → unknown
+}
+
+/** Query ANAF directly for definitive VAT status. Returns undefined if call fails. */
+async function fetchVatFromAnaf(cui: string, signal: AbortSignal): Promise<boolean | undefined> {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const res = await fetch(ANAF_TVA_ENDPOINT, {
+      method: "POST",
+      signal,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify([{ cui: Number(cui), data: today }]),
+    });
+    if (!res.ok) return undefined;
+    const json = (await res.json()) as {
+      found?: Array<{ inregistrare_scop_Tva?: { scpTVA?: boolean } }>;
+    };
+    const scp = json.found?.[0]?.inregistrare_scop_Tva?.scpTVA;
+    return typeof scp === "boolean" ? scp : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 type CompanyResp = {
   success: boolean;
   data?: {
@@ -94,22 +123,27 @@ export async function fetchAnafData(cuiRaw: string): Promise<AnafData | null> {
   const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
   const currentYear = new Date().getFullYear();
-  const [company, balanceY1, balanceY2] = await Promise.all([
+  const [company, balanceY1, balanceY2, vatFromAnaf] = await Promise.all([
     fetchJson<CompanyResp>(`${DEMOANAF_BASE}/company/${cui}`, controller.signal),
     fetchJson<BalanceResp>(`${DEMOANAF_BASE}/company/${cui}/balance/${currentYear - 1}`, controller.signal),
     fetchJson<BalanceResp>(`${DEMOANAF_BASE}/company/${cui}/balance/${currentYear - 2}`, controller.signal),
+    fetchVatFromAnaf(cui, controller.signal),
   ]);
   clearTimeout(timer);
 
   const cd = company?.success ? company.data : undefined;
   const bal = (balanceY1?.success && balanceY1.data) || (balanceY2?.success && balanceY2.data) || undefined;
 
-  if (!cd && !bal) return null;
+  if (!cd && !bal && typeof vatFromAnaf !== "boolean") return null;
 
   const indicatorValue = (code: string): number | undefined => {
     const i = bal?.indicators?.find((x) => x.code === code);
     return typeof i?.value === "number" ? i.value : undefined;
   };
+
+  // Prefer ANAF's direct answer; fallback to demoanaf's tri-state parser.
+  // If both inconclusive → undefined (Monday checkbox left unchanged).
+  const vatActive = vatFromAnaf ?? parseVatStatus(cd?.vatStatus);
 
   return {
     name: cd?.name,
@@ -118,7 +152,7 @@ export async function fetchAnafData(cuiRaw: string): Promise<AnafData | null> {
     registrationDate: toISODate(cd?.registrationDate),
     county: cd?.headquartersAddress?.county,
     locality: cd?.headquartersAddress?.locality,
-    vatActive: cd?.vatStatus === "active",
+    vatActive,
     companyStatus: cd?.onrcStatusLabel,
     caenCode: bal?.caenCode,
     caenDescription: bal?.caenDescription,
