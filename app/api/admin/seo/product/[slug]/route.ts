@@ -65,6 +65,7 @@ export async function PUT(
   if (typeof body.name === "string") patch.name = body.name;
   if (typeof body.shortSpec === "string") patch.shortSpec = body.shortSpec;
   if (typeof body.image === "string") patch.image = body.image;
+  if (typeof body.imageAlt === "string") patch.imageAlt = body.imageAlt;
   if (Array.isArray(body.gallery)) patch.gallery = body.gallery;
   if (typeof body.datasheetUrl === "string")
     patch.datasheetUrl = body.datasheetUrl;

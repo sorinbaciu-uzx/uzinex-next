@@ -6,15 +6,22 @@ import Image from "next/image";
 /**
  * Drag & drop + click to select + preview + remove.
  * Upload prin /api/admin/upload → Vercel Blob.
+ * Include și câmp alt text pentru SEO + accesibilitate.
  */
 export function ImageUploadField({
   value,
   onChange,
   label = "Imagine produs",
+  altValue,
+  onAltChange,
+  altPlaceholder,
 }: {
   value: string;
   onChange: (url: string) => void;
   label?: string;
+  altValue?: string;
+  onAltChange?: (alt: string) => void;
+  altPlaceholder?: string;
 }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -154,6 +161,28 @@ export function ImageUploadField({
       {error && (
         <div className="mt-3 text-xs text-red-600 border border-red-200 bg-red-50 p-2">
           {error}
+        </div>
+      )}
+
+      {/* ALT TEXT */}
+      {onAltChange && (
+        <div className="mt-4 border-t hairline pt-4">
+          <label className="text-[10px] uppercase tracking-wider text-uzx-orange font-mono block mb-2 font-semibold">
+            Alt text (SEO + accesibilitate)
+          </label>
+          <input
+            type="text"
+            value={altValue || ""}
+            onChange={(e) => onAltChange(e.target.value)}
+            placeholder={altPlaceholder || "Ex: Presă de balotat industrială 500kg — Uzinex"}
+            className="w-full border hairline px-3 py-2 text-sm focus:outline-none focus:border-uzx-blue"
+          />
+          <div className="text-[11px] text-ink-500 mt-2 leading-relaxed">
+            Descrie imaginea într-o frază. Include keyword-ul principal dacă e
+            natural. Google folosește asta pentru Google Images ranking și
+            screen reader-ele pentru a descrie imaginea utilizatorilor cu
+            dizabilități vizuale.
+          </div>
         </div>
       )}
 

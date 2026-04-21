@@ -37,6 +37,7 @@ export function SEOEditor({
   const [name, setName] = useState(product.name);
   const [shortSpec, setShortSpec] = useState(product.shortSpec);
   const [image, setImage] = useState(product.image);
+  const [imageAlt, setImageAlt] = useState(product.imageAlt || "");
   const [gallery, setGallery] = useState<MediaItem[]>(product.gallery || []);
   const [datasheetUrl, setDatasheetUrl] = useState(product.datasheetUrl || "");
   const [category, setCategory] = useState(product.category);
@@ -99,6 +100,7 @@ export function SEOEditor({
     name !== product.name ||
     shortSpec !== product.shortSpec ||
     image !== product.image ||
+    imageAlt !== (product.imageAlt || "") ||
     JSON.stringify(gallery) !== JSON.stringify(product.gallery || []) ||
     datasheetUrl !== (product.datasheetUrl || "") ||
     category !== product.category ||
@@ -150,6 +152,7 @@ export function SEOEditor({
             name,
             shortSpec,
             image,
+            imageAlt,
             gallery,
             datasheetUrl,
             category,
@@ -346,6 +349,9 @@ export function SEOEditor({
                 value={image}
                 onChange={setImage}
                 label="Imagine principală produs (hero + OpenGraph)"
+                altValue={imageAlt}
+                onAltChange={setImageAlt}
+                altPlaceholder={`Ex: ${name} — Uzinex (industrial, garantat 60 luni)`}
               />
 
               <MediaGalleryField value={gallery} onChange={setGallery} />

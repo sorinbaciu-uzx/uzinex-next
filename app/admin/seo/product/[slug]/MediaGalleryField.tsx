@@ -297,10 +297,21 @@ export function MediaGalleryField({
         </div>
       )}
 
-      <div className="text-[11px] text-ink-500 leading-relaxed">
-        <b>Sfat SEO:</b> completează câmpul <b>Alt text</b> cu o descriere
-        scurtă a imaginii (include keyword-ul principal dacă e relevant).
-        Ajută la ranking pentru Google Images + accesibilitate.
+      <div className="text-[11px] text-ink-500 leading-relaxed bg-ink-50 border hairline p-3">
+        {count === 0 ? (
+          <>
+            <b>Sfat SEO:</b> după ce adaugi imagini aici, sub fiecare thumbnail
+            va apărea un câmp <b>Alt text</b> — completează-l cu o descriere
+            scurtă (include keyword-ul principal dacă e natural). Ajută la
+            ranking în Google Images + accesibilitate pentru screen readers.
+          </>
+        ) : (
+          <>
+            <b>Tip:</b> câmpul <b>Alt text</b> de sub fiecare thumbnail descrie
+            imaginea pentru Google Images + screen readers. Include keyword-ul
+            principal dacă e natural.
+          </>
+        )}
       </div>
     </div>
   );

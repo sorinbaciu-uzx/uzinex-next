@@ -33,6 +33,8 @@ export type ProductOverride = {
   name?: string;
   shortSpec?: string;
   image?: string; // main hero image (Vercel Blob URL sau extern)
+  /** Alt text pentru imaginea principală (SEO + a11y). Default: numele produsului. */
+  imageAlt?: string;
   /** Galerie media — 0-8 items: imagini (Vercel Blob) + YouTube embeds */
   gallery?: MediaItem[];
   datasheetUrl?: string;
@@ -113,6 +115,7 @@ export function mergeProductWithOverride(
     name: override.name ?? base.name,
     shortSpec: override.shortSpec ?? base.shortSpec,
     image: override.image ?? base.image,
+    imageAlt: override.imageAlt ?? base.imageAlt,
     gallery: override.gallery ?? base.gallery,
     datasheetUrl: override.datasheetUrl ?? base.datasheetUrl,
     category: override.category ?? base.category,

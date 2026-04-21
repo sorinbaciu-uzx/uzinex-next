@@ -13,6 +13,8 @@ export type Product = {
   subcategory?: string;
   subSubcategory?: string;
   image: string;
+  /** Alt text pentru imaginea principală (default: numele produsului). */
+  imageAlt?: string;
   datasheetUrl: string;
   descriptionBlocks: DescriptionBlock[];
   seoTitle: string;

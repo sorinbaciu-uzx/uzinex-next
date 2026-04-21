@@ -219,7 +219,7 @@ export default async function Page({ params }: Props) {
                     {p.image ? (
                       <Image
                         src={p.image}
-                        alt={p.name}
+                        alt={p.imageAlt || p.name}
                         width={500}
                         height={360}
                         className="object-contain max-h-full w-auto"
@@ -244,7 +244,7 @@ export default async function Page({ params }: Props) {
                 {p.gallery && p.gallery.length > 0 && (
                   <ProductGallery
                     mainImage={p.image}
-                    mainAlt={p.name}
+                    mainAlt={p.imageAlt || p.name}
                     gallery={p.gallery}
                   />
                 )}
