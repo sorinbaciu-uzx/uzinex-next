@@ -14,6 +14,7 @@
 
 import { prisma } from "@/lib/db";
 import { PRODUCTS, type Product } from "@/app/magazin/products";
+import type { MediaItem } from "@/lib/media";
 import {
   flattenDescriptionBlocks,
 } from "./text-utils";
@@ -31,7 +32,9 @@ export type ProductOverride = {
   // Basic fields
   name?: string;
   shortSpec?: string;
-  image?: string; // Vercel Blob URL
+  image?: string; // main hero image (Vercel Blob URL sau extern)
+  /** Galerie media — 0-8 items: imagini (Vercel Blob) + YouTube embeds */
+  gallery?: MediaItem[];
   datasheetUrl?: string;
   category?: string;
   subcategory?: string;
@@ -110,6 +113,7 @@ export function mergeProductWithOverride(
     name: override.name ?? base.name,
     shortSpec: override.shortSpec ?? base.shortSpec,
     image: override.image ?? base.image,
+    gallery: override.gallery ?? base.gallery,
     datasheetUrl: override.datasheetUrl ?? base.datasheetUrl,
     category: override.category ?? base.category,
     subcategory: override.subcategory ?? base.subcategory,

@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PRODUCTS, type DescriptionBlock } from "@/app/magazin/products";
 import { AddToQuoteButton } from "@/app/magazin/AddToQuoteButton";
 import { SimilarCarousel } from "./SimilarCarousel";
+import { ProductGallery } from "./ProductGallery";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 
@@ -141,12 +142,17 @@ export default async function Page({ params }: Props) {
     .trim();
 
   // ─── JSON-LD schemas (Product + BreadcrumbList) ───
+  const galleryImages = (p.gallery || [])
+    .filter((m) => m.type === "image")
+    .map((m) => (m as { type: "image"; url: string }).url);
+
   const prodJsonLd = productSchema({
     name: p.name,
     description: p.shortSpec + ". " + (p.description || ""),
     sku: p.sku,
     slug: p.slug,
     image: p.image,
+    galleryImages,
     category: p.category,
   });
   const crumbJsonLd = breadcrumbSchema([
@@ -199,38 +205,49 @@ export default async function Page({ params }: Props) {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-6">
-              <div className="relative bg-white shadow-2xl shadow-black/30 overflow-hidden max-w-md mx-auto">
-                <div className="absolute inset-x-0 top-0 h-1.5 bg-uzx-orange z-10" />
-                <div className="absolute top-4 left-4 text-[10px] mono uppercase tracking-[0.15em] text-ink-400 z-10">
-                  {p.sku}
-                </div>
-                <div className="absolute top-4 right-4 text-[9px] mono uppercase tracking-[0.15em] text-uzx-blue border border-uzx-blue/20 bg-uzx-blue/5 px-2 py-0.5 z-10">
-                  {p.subcategory || p.category}
+              <div className="max-w-md mx-auto">
+                <div className="relative bg-white shadow-2xl shadow-black/30 overflow-hidden">
+                  <div className="absolute inset-x-0 top-0 h-1.5 bg-uzx-orange z-10" />
+                  <div className="absolute top-4 left-4 text-[10px] mono uppercase tracking-[0.15em] text-ink-400 z-10">
+                    {p.sku}
+                  </div>
+                  <div className="absolute top-4 right-4 text-[9px] mono uppercase tracking-[0.15em] text-uzx-blue border border-uzx-blue/20 bg-uzx-blue/5 px-2 py-0.5 z-10">
+                    {p.subcategory || p.category}
+                  </div>
+
+                  <div className="h-[280px] lg:h-[320px] flex items-center justify-center px-12 pt-6 pb-4">
+                    {p.image ? (
+                      <Image
+                        src={p.image}
+                        alt={p.name}
+                        width={500}
+                        height={360}
+                        className="object-contain max-h-full w-auto"
+                        priority
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center justify-center text-ink-300">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="2" />
+                          <circle cx="9" cy="9" r="2" />
+                          <path d="m21 15-5-5L5 21" />
+                        </svg>
+                        <span className="mt-3 text-[10px] mono uppercase tracking-wider text-ink-300">
+                          imagine indisponibilă
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
-                <div className="h-[280px] lg:h-[320px] flex items-center justify-center px-12 pt-6 pb-4">
-                  {p.image ? (
-                    <Image
-                      src={p.image}
-                      alt={p.name}
-                      width={500}
-                      height={360}
-                      className="object-contain max-h-full w-auto"
-                      priority
-                    />
-                  ) : (
-                    <div className="flex flex-col items-center justify-center text-ink-300">
-                      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" />
-                        <circle cx="9" cy="9" r="2" />
-                        <path d="m21 15-5-5L5 21" />
-                      </svg>
-                      <span className="mt-3 text-[10px] mono uppercase tracking-wider text-ink-300">
-                        imagine indisponibilă
-                      </span>
-                    </div>
-                  )}
-                </div>
+                {/* Galerie thumbnails + lightbox (doar dacă există items) */}
+                {p.gallery && p.gallery.length > 0 && (
+                  <ProductGallery
+                    mainImage={p.image}
+                    mainAlt={p.name}
+                    gallery={p.gallery}
+                  />
+                )}
               </div>
             </div>
 

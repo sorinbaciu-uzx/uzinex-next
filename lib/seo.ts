@@ -53,17 +53,23 @@ export type ProductSchemaInput = {
   sku: string;
   slug: string;
   image?: string;
+  /** Optional gallery imagini — toate sunt incluse în schema.org image array pentru rich results */
+  galleryImages?: string[];
   category?: string;
   brand?: string;
 };
 
+function absoluteImageUrl(img: string | undefined): string {
+  if (!img) return `${SITE_URL}/opengraph-image`;
+  if (img.startsWith("http")) return img;
+  return `${SITE_URL}${img.startsWith("/") ? "" : "/"}${img}`;
+}
+
 export function productSchema(p: ProductSchemaInput) {
-  const imgUrl =
-    p.image && p.image.startsWith("http")
-      ? p.image
-      : p.image
-        ? `${SITE_URL}${p.image.startsWith("/") ? "" : "/"}${p.image}`
-        : `${SITE_URL}/opengraph-image`;
+  const mainImg = absoluteImageUrl(p.image);
+  const galleryImgs = (p.galleryImages || []).map(absoluteImageUrl);
+  // Google rich results accept array pentru image — main-ul primul, apoi galerie
+  const imageArr = [mainImg, ...galleryImgs].filter((v, i, arr) => arr.indexOf(v) === i);
 
   // NOTE: We intentionally do NOT include an `offers` block because Uzinex
   // products are B2B quote-based — public prices don't exist yet. Google's
@@ -84,7 +90,7 @@ export function productSchema(p: ProductSchemaInput) {
     sku: p.sku,
     mpn: p.sku,
     category: p.category,
-    image: imgUrl,
+    image: imageArr.length > 1 ? imageArr : imageArr[0],
     url: `${SITE_URL}/produs/${p.slug}`,
     brand: {
       "@type": "Brand",

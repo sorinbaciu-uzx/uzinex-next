@@ -13,7 +13,9 @@ import { HistoryPanel } from "./HistoryPanel";
 import { AIRewriteModal } from "./AIRewriteModal";
 import { CompetitorModal } from "./CompetitorModal";
 import { ImageUploadField } from "./ImageUploadField";
+import { MediaGalleryField } from "./MediaGalleryField";
 import { DescriptionBlocksEditor } from "./DescriptionBlocksEditor";
+import type { MediaItem } from "@/lib/media";
 
 type Tab = "basic" | "description" | "seo";
 
@@ -35,6 +37,7 @@ export function SEOEditor({
   const [name, setName] = useState(product.name);
   const [shortSpec, setShortSpec] = useState(product.shortSpec);
   const [image, setImage] = useState(product.image);
+  const [gallery, setGallery] = useState<MediaItem[]>(product.gallery || []);
   const [datasheetUrl, setDatasheetUrl] = useState(product.datasheetUrl || "");
   const [category, setCategory] = useState(product.category);
   const [subcategory, setSubcategory] = useState(product.subcategory || "");
@@ -96,6 +99,7 @@ export function SEOEditor({
     name !== product.name ||
     shortSpec !== product.shortSpec ||
     image !== product.image ||
+    JSON.stringify(gallery) !== JSON.stringify(product.gallery || []) ||
     datasheetUrl !== (product.datasheetUrl || "") ||
     category !== product.category ||
     subcategory !== (product.subcategory || "") ||
@@ -146,6 +150,7 @@ export function SEOEditor({
             name,
             shortSpec,
             image,
+            gallery,
             datasheetUrl,
             category,
             subcategory,
@@ -340,8 +345,10 @@ export function SEOEditor({
               <ImageUploadField
                 value={image}
                 onChange={setImage}
-                label="Imagine principală produs"
+                label="Imagine principală produs (hero + OpenGraph)"
               />
+
+              <MediaGalleryField value={gallery} onChange={setGallery} />
 
               <div className="bg-white border hairline p-5">
                 <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
