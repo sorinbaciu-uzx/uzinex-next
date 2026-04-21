@@ -27,15 +27,11 @@ type ViewerItem = HeroImage | MediaItem;
  * apoi galerie foto — stable sort (ES2019+).
  */
 export function ProductGallery({
-  sku,
-  categoryBadge,
   mainImage,
   mainAlt,
   productName,
   gallery,
 }: {
-  sku: string;
-  categoryBadge: string;
   mainImage: string;
   mainAlt: string;
   productName: string;
@@ -91,20 +87,12 @@ export function ProductGallery({
   const showStrip = total > 1;
 
   return (
-    <div className="max-w-md mx-auto">
-      {/* HERO BOX */}
-      <div className="relative bg-white shadow-2xl shadow-black/30 overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-1.5 bg-uzx-orange z-10" />
-        <div className="absolute top-4 left-4 text-[10px] mono uppercase tracking-[0.15em] text-ink-400 z-10">
-          {sku}
-        </div>
-        <div className="absolute top-4 right-4 text-[9px] mono uppercase tracking-[0.15em] text-uzx-blue border border-uzx-blue/20 bg-uzx-blue/5 px-2 py-0.5 z-10">
-          {categoryBadge}
-        </div>
-
-        <div className="h-[280px] lg:h-[320px] flex items-center justify-center px-4 pt-6 pb-4">
+    <div className="max-w-lg mx-auto">
+      {/* HERO BOX — clean, no overlays */}
+      <div className="relative bg-white overflow-hidden">
+        <div className="h-[340px] lg:h-[420px] flex items-center justify-center p-8 lg:p-10">
           {heroItem && heroItem.type === "youtube" ? (
-            // HERO = VIDEO THUMBNAIL + PLAY OVERLAY
+            // HERO = VIDEO THUMBNAIL + PLAY OVERLAY (KUKA style, clean)
             <button
               type="button"
               onClick={() => setOpenIndex(0)}
@@ -115,7 +103,6 @@ export function ProductGallery({
               <img
                 src={youtubeThumbnailUrl(heroItem.videoId, "maxres")}
                 onError={(e) => {
-                  // fallback to hqdefault if maxres doesn't exist
                   (e.target as HTMLImageElement).src = youtubeThumbnailUrl(
                     heroItem.videoId,
                     "hq"
@@ -124,8 +111,7 @@ export function ProductGallery({
                 alt={heroItem.alt || productName}
                 className="w-full h-full object-cover"
               />
-              {/* Dark overlay + play button */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-white/95 shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                   <svg
                     width="26"
@@ -137,10 +123,6 @@ export function ProductGallery({
                     <path d="M6 3v20l17-10z" />
                   </svg>
                 </div>
-              </div>
-              {/* Badge YouTube */}
-              <div className="absolute bottom-3 right-3 bg-red-600 text-white text-[9px] mono uppercase tracking-wider px-2 py-1">
-                ▶ Video · YouTube
               </div>
             </button>
           ) : heroItem && heroItem.type === "image" ? (
@@ -154,16 +136,11 @@ export function ProductGallery({
               <Image
                 src={heroItem.url}
                 alt={heroItem.alt || productName}
-                width={500}
-                height={360}
+                width={600}
+                height={420}
                 className="object-contain max-h-full w-full"
                 priority
               />
-              {showStrip && (
-                <div className="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] mono uppercase tracking-wider px-2 py-1 opacity-0 group-hover:opacity-100 transition">
-                  + {total - 1} items · click
-                </div>
-              )}
             </button>
           ) : (
             // NO MEDIA
@@ -190,17 +167,35 @@ export function ProductGallery({
         </div>
       </div>
 
-      {/* STRIP — doar când sunt > 1 items */}
+      {/* STRIP — all Media button + thumbnails */}
       {showStrip && (
-        <div className="mt-3 flex items-center gap-2 overflow-x-auto pb-1">
-          {items.map((item, i) => {
+        <div className="mt-5 flex items-center gap-2 flex-wrap">
+          <button
+            type="button"
+            onClick={() => setOpenIndex(0)}
+            className="inline-flex items-center gap-2 px-3.5 h-16 bg-white border border-ink-200 hover:border-uzx-orange text-ink-700 text-xs font-medium transition shrink-0"
+            aria-label="Deschide toată galeria media"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
+              <rect x="1.5" y="2.5" width="10" height="7" />
+              <rect x="4.5" y="5.5" width="10" height="7" />
+            </svg>
+            All Media
+          </button>
+          {items.slice(0, 3).map((item, i) => {
             const thumb =
               item.type === "image"
                 ? item.url
                 : mediaThumbnailUrl(item as MediaItem);
             const isYt = item.type === "youtube";
-            const isActive =
-              heroItem === item || (openIndex !== null && openIndex === i);
+            const isActive = heroItem === item;
             return (
               <button
                 key={i}
@@ -210,7 +205,7 @@ export function ProductGallery({
                   "relative flex-shrink-0 w-16 h-16 bg-white overflow-hidden transition group " +
                   (isActive
                     ? "border-2 border-uzx-orange"
-                    : "border border-white/20 hover:border-uzx-orange")
+                    : "border border-ink-200 hover:border-uzx-orange")
                 }
                 title={(item as { alt?: string }).alt || "Media " + (i + 1)}
                 aria-label={"Deschide media " + (i + 1)}
@@ -219,120 +214,170 @@ export function ProductGallery({
                 <img
                   src={thumb}
                   alt={(item as { alt?: string }).alt || "Media " + (i + 1)}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
                 {isYt && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 pointer-events-none">
-                    <div className="w-5 h-5 rounded-full bg-white/90 flex items-center justify-center">
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="#000">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 pointer-events-none">
+                    <div className="w-6 h-6 rounded-full bg-white/95 flex items-center justify-center">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="#ef4444">
                         <path d="M2.5 1.5v7l5.5-3.5z" />
                       </svg>
                     </div>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-uzx-orange/0 group-hover:bg-uzx-orange/20 transition pointer-events-none" />
               </button>
             );
           })}
-          <div className="text-[10px] text-white/60 font-mono shrink-0 pl-2">
-            {total} {total === 1 ? "item" : "items"}
-          </div>
+          {total > 3 && (
+            <button
+              type="button"
+              onClick={() => setOpenIndex(3)}
+              className="relative w-16 h-16 bg-white border border-ink-200 hover:border-uzx-orange flex items-center justify-center text-ink-700 text-sm font-medium transition shrink-0"
+              aria-label={`Încă ${total - 3} items`}
+            >
+              +{total - 3}
+            </button>
+          )}
         </div>
       )}
 
-      {/* LIGHTBOX */}
+      {/* LIGHTBOX — KUKA style: white modal, clear header, squared arrows */}
       {openIndex !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4 lg:p-8"
           onClick={() => setOpenIndex(null)}
         >
-          <button
-            type="button"
-            onClick={() => setOpenIndex(null)}
-            className="absolute top-4 right-4 text-white/70 hover:text-white text-3xl z-10"
-            aria-label="Închide"
-          >
-            ✕
-          </button>
-
-          <div className="absolute top-4 left-4 text-white/50 text-xs font-mono uppercase tracking-wider z-10">
-            {openIndex + 1} / {total}
-          </div>
-
-          {total > 1 && (
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                prev();
-              }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 text-white/70 hover:text-white text-3xl z-10 flex items-center justify-center"
-              aria-label="Anterior"
-            >
-              ‹
-            </button>
-          )}
-
+          {/* WHITE MODAL */}
           <div
-            className="w-full h-full max-w-6xl max-h-[88vh] flex items-center justify-center"
+            className="bg-white w-full max-w-[1400px] max-h-[92vh] flex flex-col shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-            {(() => {
-              const item = items[openIndex];
-              if (item.type === "image") {
-                return (
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.url}
-                      alt={
-                        (item as { alt?: string }).alt ||
-                        "Imagine " + (openIndex + 1)
-                      }
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                );
-              }
-              if (item.type === "youtube") {
-                return (
-                  <div
-                    className="relative w-full"
-                    style={{ maxWidth: "1280px", aspectRatio: "16 / 9" }}
+            {/* HEADER BAR */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-ink-100 bg-gradient-to-b from-ink-50 to-white">
+              <div className="text-base text-ink-700 font-medium">
+                {items[openIndex].type === "image" ? "Imagine" : "Video"}{" "}
+                {openIndex + 1}/{total}
+              </div>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(null)}
+                  className="w-8 h-8 flex items-center justify-center text-ink-700 hover:text-ink-900 transition"
+                  aria-label="Închide"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
                   >
-                    <iframe
-                      src={youtubeEmbedUrl(item.videoId, true)}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={(item as { alt?: string }).alt || "Video YouTube"}
-                    />
-                  </div>
-                );
-              }
-              return null;
-            })()}
-          </div>
-
-          {total > 1 && (
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                next();
-              }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 text-white/70 hover:text-white text-3xl z-10 flex items-center justify-center"
-              aria-label="Următor"
-            >
-              ›
-            </button>
-          )}
-
-          {items[openIndex] && (items[openIndex] as { alt?: string }).alt && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm max-w-2xl text-center px-4">
-              {(items[openIndex] as { alt?: string }).alt}
+                    <path d="M4 4L16 16M16 4L4 16" />
+                  </svg>
+                </button>
+              </div>
             </div>
-          )}
+
+            {/* CONTENT AREA */}
+            <div className="relative flex-1 flex items-center justify-center min-h-[400px] overflow-hidden">
+              {/* PREV */}
+              {total > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prev();
+                  }}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-ink-200 hover:border-uzx-orange hover:text-uzx-orange text-ink-700 flex items-center justify-center z-10 transition"
+                  aria-label="Anterior"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="9,2 3,7 9,12" />
+                  </svg>
+                </button>
+              )}
+
+              {/* MEDIA */}
+              <div className="w-full h-full flex items-center justify-center p-8 lg:p-16">
+                {(() => {
+                  const item = items[openIndex];
+                  if (item.type === "image") {
+                    return (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={item.url}
+                        alt={
+                          (item as { alt?: string }).alt ||
+                          "Imagine " + (openIndex + 1)
+                        }
+                        className="max-w-full max-h-[70vh] object-contain"
+                      />
+                    );
+                  }
+                  if (item.type === "youtube") {
+                    return (
+                      <div
+                        className="relative w-full"
+                        style={{ maxWidth: "1200px", aspectRatio: "16 / 9" }}
+                      >
+                        <iframe
+                          src={youtubeEmbedUrl(item.videoId, true)}
+                          className="absolute inset-0 w-full h-full"
+                          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          title={(item as { alt?: string }).alt || "Video YouTube"}
+                        />
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
+              </div>
+
+              {/* NEXT */}
+              {total > 1 && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    next();
+                  }}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-ink-200 hover:border-uzx-orange hover:text-uzx-orange text-ink-700 flex items-center justify-center z-10 transition"
+                  aria-label="Următor"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="5,2 11,7 5,12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+
+            {/* FOOTER — alt text caption */}
+            {items[openIndex] && (items[openIndex] as { alt?: string }).alt && (
+              <div className="px-6 py-3 border-t border-ink-100 text-sm text-ink-600 text-center">
+                {(items[openIndex] as { alt?: string }).alt}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

@@ -176,37 +176,21 @@ export default async function Page({ params }: Props) {
         <Header />
       </div>
 
-      {/* HERO PRODUS */}
-      <section className="relative" style={{ background: "#082545" }}>
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(135deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 22px)",
-          }}
-        />
-        <div
-          className="absolute -right-32 -top-32 w-[420px] h-[420px] rounded-full pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(245,133,31,0.18) 0%, rgba(245,133,31,0) 70%)",
-          }}
-        />
-
-        <div className="container-x relative pt-10 pb-14 lg:pt-12 lg:pb-20">
-          <nav className="text-[11px] mono uppercase tracking-[0.2em] text-white/50 mb-8 flex items-center gap-2 flex-wrap">
+      {/* HERO PRODUS — KUKA style: white bg, 3-col (image + info + sidebar) */}
+      <section className="bg-white border-b hairline">
+        <div className="container-x pt-8 lg:pt-10 pb-10 lg:pb-14">
+          <nav className="text-[11px] mono uppercase tracking-[0.2em] text-ink-400 mb-8 flex items-center gap-2 flex-wrap">
             <a href="/" className="hover:text-uzx-orange transition">Acasă</a>
-            <span>/</span>
+            <span className="text-ink-300">/</span>
             <a href="/magazin" className="hover:text-uzx-orange transition">Catalog tehnic</a>
-            <span>/</span>
-            <span className="text-uzx-orange">{p.sku}</span>
+            <span className="text-ink-300">/</span>
+            <span className="text-ink-600">{p.category}</span>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            <div className="lg:col-span-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            {/* IMAGE COL */}
+            <div className="lg:col-span-5">
               <ProductGallery
-                sku={p.sku}
-                categoryBadge={p.subcategory || p.category}
                 mainImage={p.image}
                 mainAlt={p.imageAlt || p.name}
                 productName={p.name}
@@ -214,62 +198,147 @@ export default async function Page({ params }: Props) {
               />
             </div>
 
-            <div className="lg:col-span-6 text-white">
-              <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                — {breadcrumb}
-              </div>
+            {/* INFO COL */}
+            <div className="lg:col-span-4 text-ink-900">
+              {(p.subcategory || p.category) && (
+                <div className="inline-block text-xs text-ink-600 bg-ink-50 border border-ink-200 px-3 py-1 mb-4 rounded-full">
+                  {p.subcategory || p.category}
+                </div>
+              )}
+
               <h1
-                className="serif text-2xl md:text-3xl lg:text-4xl leading-[1.1]"
+                className="serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-ink-900"
                 style={{ letterSpacing: "-0.03em" }}
               >
                 {p.name}
               </h1>
+
+              <div className="mt-3 text-sm text-ink-500">
+                <span className="font-medium text-ink-700">Cod produs:</span>{" "}
+                <span className="font-mono">{p.sku}</span>
+              </div>
+
               {p.shortSpec && (
-                <p className="mt-4 text-white/75 text-sm leading-relaxed max-w-md">
+                <p className="mt-6 text-ink-600 text-base leading-relaxed">
                   {p.shortSpec}
                 </p>
               )}
 
-              <ul className="mt-6 space-y-2.5">
+              {/* ICON SPECS */}
+              <div className="mt-8 grid grid-cols-1 gap-3">
                 {[
-                  ["60 luni", "Garanție producător"],
-                  ["Service inclus", "Mentenanță națională"],
-                  ["Transport gratuit", "Livrare în toată țara"],
-                  ["SEAP / SICAP", "Eligibil achiziții publice"],
-                ].map(([title, sub]) => (
-                  <li key={title} className="flex items-start gap-2.5">
-                    <span className="mt-0.5 w-4 h-4 rounded-full bg-uzx-orange/15 border border-uzx-orange/40 flex items-center justify-center text-uzx-orange text-[10px] shrink-0">
-                      ✓
-                    </span>
-                    <div>
-                      <div className="text-[13px] text-white font-medium leading-tight">{title}</div>
-                      <div className="text-[11px] text-white/55 leading-tight mt-0.5">{sub}</div>
+                  {
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M11 2l8 4v5.5c0 5-3.5 8.5-8 9.5-4.5-1-8-4.5-8-9.5V6l8-4z" />
+                        <path d="M7.5 11l2.5 2.5L15 9" />
+                      </svg>
+                    ),
+                    title: "60 luni garanție",
+                    sub: "Producător + service inclus",
+                  },
+                  {
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M1 12h12M13 6h4l3 4v5h-7M6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM16 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                      </svg>
+                    ),
+                    title: "Transport & montaj",
+                    sub: "Gratuit în toată România",
+                  },
+                  {
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3 20h16M5 20V9l6-4 6 4v11M9 20v-5h4v5" />
+                      </svg>
+                    ),
+                    title: "SEAP / SICAP",
+                    sub: "Eligibil achiziții publice",
+                  },
+                  {
+                    icon: (
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M3 11h16M11 3c2.5 2.5 4 5.5 4 8s-1.5 5.5-4 8c-2.5-2.5-4-5.5-4-8s1.5-5.5 4-8z" />
+                      </svg>
+                    ),
+                    title: "Fonduri europene",
+                    sub: "PNRR · POR · Tranziție Justă",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <div className="shrink-0 text-uzx-blue mt-0.5">{item.icon}</div>
+                    <div className="flex-1">
+                      <div className="text-sm text-ink-900 font-medium leading-tight">
+                        {item.title}
+                      </div>
+                      <div className="text-xs text-ink-500 leading-tight mt-0.5">
+                        {item.sub}
+                      </div>
                     </div>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
 
-              <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-md">
-                <AddToQuoteButton sku={p.sku} name={p.name} variant="primary">
-                  Cere ofertă
-                </AddToQuoteButton>
-                {p.datasheetUrl ? (
+            {/* SIDEBAR COL */}
+            <div className="lg:col-span-3">
+              <div className="border border-ink-200 p-5 lg:p-6 bg-white">
+                <div className="text-[11px] mono uppercase tracking-wider text-uzx-orange mb-4">
+                  — Opțiuni comandă
+                </div>
+
+                <div className="flex flex-col gap-2.5">
+                  <AddToQuoteButton sku={p.sku} name={p.name} variant="primary">
+                    Cere ofertă personalizată
+                  </AddToQuoteButton>
+
+                  {p.datasheetUrl ? (
+                    <a
+                      href={p.datasheetUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-center text-[13px] py-2.5 border border-ink-300 text-ink-900 hover:bg-ink-50 transition inline-flex items-center justify-center gap-2"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M7 1v8M3 5l4 4 4-4M1 11h12" />
+                      </svg>
+                      Descarcă fișa tehnică
+                    </a>
+                  ) : (
+                    <span
+                      className="text-center text-[13px] py-2.5 border border-ink-200 text-ink-300 cursor-not-allowed"
+                      title="Fișa tehnică indisponibilă"
+                    >
+                      Fișă indisponibilă
+                    </span>
+                  )}
+
                   <a
-                    href={p.datasheetUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-center text-[13px] py-3 border border-white/30 text-white hover:bg-white hover:text-ink-900 transition"
+                    href="/contact"
+                    className="text-center text-[13px] py-2.5 border border-ink-300 text-ink-900 hover:bg-ink-50 transition inline-flex items-center justify-center gap-2"
                   >
-                    Descarcă fișa tehnică
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M13 2a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6l3 3v-3h1a2 2 0 0 0 2-2V2z" />
+                    </svg>
+                    Vorbește cu un inginer
                   </a>
-                ) : (
-                  <span
-                    className="text-center text-[13px] py-3 border border-white/15 text-white/40 cursor-not-allowed"
-                    title="Fișa tehnică indisponibilă"
-                  >
-                    Fișă indisponibilă
-                  </span>
-                )}
+                </div>
+
+                <div className="mt-5 pt-5 border-t border-ink-100 space-y-2 text-xs text-ink-500">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange"></span>
+                    <span>Răspuns în 30 minute</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange"></span>
+                    <span>Consultanță tehnică gratuită</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange"></span>
+                    <span>Configurare adaptată la cerere</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
