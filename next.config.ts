@@ -165,6 +165,16 @@ const nextConfig: NextConfig = {
       { source: "/informatii-utileold", destination: "/materiale-utile", permanent: true },
       { source: "/credite-si-leasing", destination: "/finantare/credite-leasing", permanent: true },
 
+      // ─── Produse WP vechi care NU MAI EXISTĂ în catalogul nou ───
+      // Când un produs a fost înlocuit cu altă variantă sau scos, redirectăm
+      // la categoria cea mai apropiată din /magazin (filtrat).
+      {
+        source: "/masina-de-etichetat-sticle-rotunde-kpw-by120-semi-automatica",
+        destination:
+          "/magazin?cat=Echipamente%20de%20etichetare%20%C8%99i%20dozare&sub=Ma%C8%99ini%20de%20etichetare",
+        permanent: true,
+      },
+
       // ─── Legacy sitemap URLs (WordPress Yoast SEO convention) ───
       // Bing/GSC still reference these URLs from the old WP site.
       // Redirect them to the new Next.js sitemap so crawlers find the correct one.
