@@ -30,11 +30,21 @@ export function ProductGallery({
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  // Combined list: main image first, then gallery items
+  // Combined list: main image + gallery items.
+  // Videos (YouTube) ALWAYS come first — user priority pentru brand
+  // storytelling (demo, operare, testimonial) înainte de galerie foto.
+  // Array.sort este stable din ES2019, deci imaginile păstrează
+  // ordinea definită de admin în editor.
   const items: GalleryList = [
     { type: "image" as const, url: mainImage, alt: mainAlt },
     ...gallery,
-  ].filter((m) => m.type !== "image" || !!m.url); // drop empty main
+  ]
+    .filter((m) => m.type !== "image" || !!m.url)
+    .sort((a, b) => {
+      if (a.type === "youtube" && b.type !== "youtube") return -1;
+      if (a.type !== "youtube" && b.type === "youtube") return 1;
+      return 0;
+    });
 
   const total = items.length;
   const hasGallery = total > 1;
