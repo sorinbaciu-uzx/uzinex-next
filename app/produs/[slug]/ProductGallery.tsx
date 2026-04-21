@@ -13,18 +13,15 @@ type HeroImage = { type: "image"; url: string; alt: string };
 type ViewerItem = HeroImage | MediaItem;
 
 /**
- * Galeria completă a produsului — hero + strip + lightbox.
+ * Galerie produs — "in-place swap" style:
+ * - Click pe thumbnail → schimbă DOAR imaginea hero (nu deschide lightbox)
+ * - Săgeți prev/next pe hero → navighează între items
+ * - Click pe "All Media" → deschide lightbox
+ * - Click pe hero (imagine) → deschide lightbox pentru zoom
+ * - Click pe hero (video) → deschide lightbox cu autoplay
  *
- * Comportament:
- * - Dacă există video YouTube în galerie → hero afișează thumbnailul
- *   videoclipului cu overlay play, click pe hero → deschide lightbox
- *   la video (autoplay).
- * - Dacă nu există video → hero afișează imaginea principală.
- * - Strip sub hero apare când sunt >1 items totale (incl. main + gallery).
- * - Lightbox: navigare prev/next, ESC close, click outside close.
- *
- * Ordinea în strip și lightbox: videoclipuri primele, apoi imaginea principală,
- * apoi galerie foto — stable sort (ES2019+).
+ * Ordine items: videoclipurile primele, apoi imaginea principală, apoi galerie
+ * (stable sort).
  */
 export function ProductGallery({
   mainImage,
@@ -37,9 +34,6 @@ export function ProductGallery({
   productName: string;
   gallery: MediaItem[];
 }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  // Build ordered list: videos first, main image, then rest
   const videos = gallery.filter((m): m is MediaItem & { type: "youtube" } =>
     m.type === "youtube"
   );
@@ -57,22 +51,26 @@ export function ProductGallery({
   ];
 
   const total = items.length;
-  const firstVideo = videos[0];
-  const heroItem: ViewerItem | null = firstVideo || mainAsItem;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  const activeItem = items[Math.min(activeIndex, total - 1)];
 
   const prev = useCallback(() => {
-    setOpenIndex((i) => (i === null ? null : (i - 1 + total) % total));
+    if (total <= 1) return;
+    setActiveIndex((i) => (i - 1 + total) % total);
   }, [total]);
 
   const next = useCallback(() => {
-    setOpenIndex((i) => (i === null ? null : (i + 1) % total));
+    if (total <= 1) return;
+    setActiveIndex((i) => (i + 1) % total);
   }, [total]);
 
-  // Keyboard nav + body scroll lock
+  // Keyboard nav in lightbox + close
   useEffect(() => {
-    if (openIndex === null) return;
+    if (!lightboxOpen) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpenIndex(null);
+      if (e.key === "Escape") setLightboxOpen(false);
       else if (e.key === "ArrowLeft") prev();
       else if (e.key === "ArrowRight") next();
     };
@@ -82,33 +80,34 @@ export function ProductGallery({
       window.removeEventListener("keydown", handler);
       document.body.style.overflow = "";
     };
-  }, [openIndex, prev, next]);
+  }, [lightboxOpen, prev, next]);
 
   const showStrip = total > 1;
+  const showArrows = total > 1;
 
   return (
     <div className="max-w-lg mx-auto">
-      {/* HERO BOX — clean, no overlays */}
-      <div className="relative bg-white overflow-hidden">
+      {/* HERO BOX */}
+      <div className="relative bg-white overflow-hidden group">
         <div className="h-[340px] lg:h-[420px] flex items-center justify-center p-8 lg:p-10">
-          {heroItem && heroItem.type === "youtube" ? (
-            // HERO = VIDEO THUMBNAIL + PLAY OVERLAY (KUKA style, clean)
+          {activeItem && activeItem.type === "youtube" ? (
+            // HERO = VIDEO THUMBNAIL cu play button
             <button
               type="button"
-              onClick={() => setOpenIndex(0)}
-              className="relative w-full h-full group overflow-hidden cursor-pointer"
-              aria-label={`Redă video: ${heroItem.alt || productName}`}
+              onClick={() => setLightboxOpen(true)}
+              className="relative w-full h-full overflow-hidden cursor-pointer"
+              aria-label={`Redă video: ${activeItem.alt || productName}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={youtubeThumbnailUrl(heroItem.videoId, "maxres")}
+                src={youtubeThumbnailUrl(activeItem.videoId, "maxres")}
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = youtubeThumbnailUrl(
-                    heroItem.videoId,
+                    activeItem.videoId,
                     "hq"
                   );
                 }}
-                alt={heroItem.alt || productName}
+                alt={activeItem.alt || productName}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -125,25 +124,24 @@ export function ProductGallery({
                 </div>
               </div>
             </button>
-          ) : heroItem && heroItem.type === "image" ? (
-            // HERO = MAIN IMAGE (clickable pentru lightbox)
+          ) : activeItem && activeItem.type === "image" ? (
+            // HERO = IMAGE (click opens lightbox zoom)
             <button
               type="button"
-              onClick={() => setOpenIndex(items.indexOf(heroItem))}
-              className="relative w-full h-full group cursor-zoom-in"
-              aria-label="Deschide galeria"
+              onClick={() => setLightboxOpen(true)}
+              className="relative w-full h-full cursor-zoom-in"
+              aria-label="Mărește imaginea"
             >
               <Image
-                src={heroItem.url}
-                alt={heroItem.alt || productName}
+                src={activeItem.url}
+                alt={activeItem.alt || productName}
                 width={600}
                 height={420}
                 className="object-contain max-h-full w-full"
-                priority
+                priority={activeIndex === 0}
               />
             </button>
           ) : (
-            // NO MEDIA
             <div className="flex flex-col items-center justify-center text-ink-300">
               <svg
                 width="80"
@@ -165,16 +163,65 @@ export function ProductGallery({
             </div>
           )}
         </div>
+
+        {/* NAV ARROWS — inline pe hero (swap, nu deschide lightbox) */}
+        {showArrows && (
+          <>
+            <button
+              type="button"
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-ink-200 hover:border-uzx-orange hover:text-uzx-orange text-ink-700 flex items-center justify-center shadow-sm transition z-10"
+              aria-label="Imagine anterioară"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="9,2 3,7 9,12" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-ink-200 hover:border-uzx-orange hover:text-uzx-orange text-ink-700 flex items-center justify-center shadow-sm transition z-10"
+              aria-label="Imagine următoare"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="5,2 11,7 5,12" />
+              </svg>
+            </button>
+
+            {/* Counter în colț jos dreapta */}
+            <div className="absolute bottom-3 right-3 text-[10px] mono uppercase tracking-wider text-ink-400 bg-white/80 px-2 py-1 z-10">
+              {activeIndex + 1} / {total}
+            </div>
+          </>
+        )}
       </div>
 
-      {/* STRIP — all Media button + thumbnails */}
+      {/* STRIP */}
       {showStrip && (
         <div className="mt-5 flex items-center gap-2 flex-wrap">
           <button
             type="button"
-            onClick={() => setOpenIndex(0)}
+            onClick={() => setLightboxOpen(true)}
             className="inline-flex items-center gap-2 px-3.5 h-16 bg-white border border-ink-200 hover:border-uzx-orange text-ink-700 text-xs font-medium transition shrink-0"
-            aria-label="Deschide toată galeria media"
+            aria-label="Deschide toată galeria media (lightbox)"
           >
             <svg
               width="16"
@@ -195,20 +242,21 @@ export function ProductGallery({
                 ? item.url
                 : mediaThumbnailUrl(item as MediaItem);
             const isYt = item.type === "youtube";
-            const isActive = heroItem === item;
+            const isActive = activeIndex === i;
             return (
               <button
                 key={i}
                 type="button"
-                onClick={() => setOpenIndex(i)}
+                onClick={() => setActiveIndex(i)}
                 className={
-                  "relative flex-shrink-0 w-16 h-16 bg-white overflow-hidden transition group " +
+                  "relative flex-shrink-0 w-16 h-16 bg-white overflow-hidden transition " +
                   (isActive
                     ? "border-2 border-uzx-orange"
                     : "border border-ink-200 hover:border-uzx-orange")
                 }
                 title={(item as { alt?: string }).alt || "Media " + (i + 1)}
-                aria-label={"Deschide media " + (i + 1)}
+                aria-label={`Arată media ${i + 1}`}
+                aria-pressed={isActive}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -231,9 +279,9 @@ export function ProductGallery({
           {total > 3 && (
             <button
               type="button"
-              onClick={() => setOpenIndex(3)}
+              onClick={() => setLightboxOpen(true)}
               className="relative w-16 h-16 bg-white border border-ink-200 hover:border-uzx-orange flex items-center justify-center text-ink-700 text-sm font-medium transition shrink-0"
-              aria-label={`Încă ${total - 3} items`}
+              aria-label={`Vezi toate ${total} media items`}
             >
               +{total - 3}
             </button>
@@ -241,13 +289,12 @@ export function ProductGallery({
         </div>
       )}
 
-      {/* LIGHTBOX — KUKA style: white modal, clear header, squared arrows */}
-      {openIndex !== null && (
+      {/* LIGHTBOX — doar când lightboxOpen = true */}
+      {lightboxOpen && (
         <div
           className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4 lg:p-8"
-          onClick={() => setOpenIndex(null)}
+          onClick={() => setLightboxOpen(false)}
         >
-          {/* WHITE MODAL */}
           <div
             className="bg-white w-full max-w-[1400px] max-h-[92vh] flex flex-col shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
@@ -255,34 +302,31 @@ export function ProductGallery({
             {/* HEADER BAR */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-ink-100 bg-gradient-to-b from-ink-50 to-white">
               <div className="text-base text-ink-700 font-medium">
-                {items[openIndex].type === "image" ? "Imagine" : "Video"}{" "}
-                {openIndex + 1}/{total}
+                {items[activeIndex]?.type === "image" ? "Imagine" : "Video"}{" "}
+                {activeIndex + 1}/{total}
               </div>
-              <div className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(null)}
-                  className="w-8 h-8 flex items-center justify-center text-ink-700 hover:text-ink-900 transition"
-                  aria-label="Închide"
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(false)}
+                className="w-8 h-8 flex items-center justify-center text-ink-700 hover:text-ink-900 transition"
+                aria-label="Închide"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M4 4L16 16M16 4L4 16" />
-                  </svg>
-                </button>
-              </div>
+                  <path d="M4 4L16 16M16 4L4 16" />
+                </svg>
+              </button>
             </div>
 
-            {/* CONTENT AREA */}
+            {/* CONTENT */}
             <div className="relative flex-1 flex items-center justify-center min-h-[400px] overflow-hidden">
-              {/* PREV */}
-              {total > 1 && (
+              {showArrows && (
                 <button
                   type="button"
                   onClick={(e) => {
@@ -307,10 +351,10 @@ export function ProductGallery({
                 </button>
               )}
 
-              {/* MEDIA */}
               <div className="w-full h-full flex items-center justify-center p-8 lg:p-16">
                 {(() => {
-                  const item = items[openIndex];
+                  const item = items[activeIndex];
+                  if (!item) return null;
                   if (item.type === "image") {
                     return (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -318,7 +362,7 @@ export function ProductGallery({
                         src={item.url}
                         alt={
                           (item as { alt?: string }).alt ||
-                          "Imagine " + (openIndex + 1)
+                          "Imagine " + (activeIndex + 1)
                         }
                         className="max-w-full max-h-[70vh] object-contain"
                       />
@@ -344,8 +388,7 @@ export function ProductGallery({
                 })()}
               </div>
 
-              {/* NEXT */}
-              {total > 1 && (
+              {showArrows && (
                 <button
                   type="button"
                   onClick={(e) => {
@@ -371,12 +414,13 @@ export function ProductGallery({
               )}
             </div>
 
-            {/* FOOTER — alt text caption */}
-            {items[openIndex] && (items[openIndex] as { alt?: string }).alt && (
-              <div className="px-6 py-3 border-t border-ink-100 text-sm text-ink-600 text-center">
-                {(items[openIndex] as { alt?: string }).alt}
-              </div>
-            )}
+            {/* FOOTER */}
+            {items[activeIndex] &&
+              (items[activeIndex] as { alt?: string }).alt && (
+                <div className="px-6 py-3 border-t border-ink-100 text-sm text-ink-600 text-center">
+                  {(items[activeIndex] as { alt?: string }).alt}
+                </div>
+              )}
           </div>
         </div>
       )}
