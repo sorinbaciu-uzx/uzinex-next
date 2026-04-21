@@ -1,0 +1,308 @@
+/**
+ * Product SEO merge layer.
+ *
+ * Strategie: produsele din data/produse.json rămân imutabile (sursa de bază).
+ * Edit-urile SEO se salvează în Prisma ContentBlock cu key "seo:product:<slug>"
+ * sau "seo:page:<key>". La runtime, le merge cu datele de bază.
+ *
+ * Aceasta permite:
+ * - Zero risc de corupere a fișierului JSON
+ * - Compatibilitate cu Vercel serverless (filesystem e ephemeral)
+ * - Versionare completă în Git pentru datele de bază
+ * - Flexibilitate editare per-field fără re-generare import
+ */
+
+import { prisma } from "@/lib/db";
+import { PRODUCTS, type Product } from "@/app/magazin/products";
+import {
+  flattenDescriptionBlocks,
+} from "./text-utils";
+import { analyzeSEO, suggestKeyword } from "./analyzer";
+import type { SEOAnalysis } from "./types";
+
+/**
+ * SEO overrides stored in DB ContentBlock.data for a product/page.
+ */
+export type SEOOverride = {
+  seoTitle?: string;
+  seoDescription?: string;
+  focusKeyword?: string;
+  description?: string; // optional full-description override
+  updatedAt?: string;
+  updatedBy?: string;
+  scoreAtSave?: number;
+  history?: Array<{
+    date: string;
+    score: number;
+    updatedBy?: string;
+  }>;
+};
+
+/**
+ * Compute the DB key for a product's SEO override.
+ */
+export function productSeoKey(slug: string): string {
+  return "seo:product:" + slug;
+}
+
+export function pageSeoKey(pageKey: string): string {
+  return "seo:page:" + pageKey;
+}
+
+/**
+ * Get a product by slug, with SEO overrides merged from DB.
+ * If no override exists, returns the product as-is from JSON.
+ */
+export async function getProductWithSEO(slug: string): Promise<{
+  product: Product;
+  override?: SEOOverride;
+}> {
+  const base = PRODUCTS.find((p) => p.slug === slug);
+  if (!base) throw new Error("Product not found: " + slug);
+
+  const block = await prisma.contentBlock.findUnique({
+    where: { key: productSeoKey(slug) },
+  });
+  const override = (block?.data as SEOOverride | null) || undefined;
+
+  if (!override) return { product: base };
+
+  // Merge: override fields win when present
+  const merged: Product = {
+    ...base,
+    seoTitle: override.seoTitle ?? base.seoTitle,
+    seoDescription: override.seoDescription ?? base.seoDescription,
+    focusKeyword: override.focusKeyword ?? base.focusKeyword,
+    description: override.description ?? base.description,
+  };
+  return { product: merged, override };
+}
+
+/**
+ * Sync version — for sync contexts where we've already fetched the override.
+ */
+export function mergeProductWithOverride(
+  base: Product,
+  override?: SEOOverride
+): Product {
+  if (!override) return base;
+  return {
+    ...base,
+    seoTitle: override.seoTitle ?? base.seoTitle,
+    seoDescription: override.seoDescription ?? base.seoDescription,
+    focusKeyword: override.focusKeyword ?? base.focusKeyword,
+    description: override.description ?? base.description,
+  };
+}
+
+/**
+ * Fetch all product SEO overrides in one DB call (pentru dashboard).
+ * Returnează un map slug → override.
+ */
+export async function getAllProductOverrides(): Promise<
+  Record<string, SEOOverride>
+> {
+  const blocks = await prisma.contentBlock.findMany({
+    where: {
+      key: { startsWith: "seo:product:" },
+    },
+  });
+  const map: Record<string, SEOOverride> = {};
+  for (const b of blocks) {
+    const slug = b.key.replace(/^seo:product:/, "");
+    map[slug] = b.data as SEOOverride;
+  }
+  return map;
+}
+
+/**
+ * Analizează un produs complet (cu override aplicat).
+ */
+export function analyzeProduct(product: Product): SEOAnalysis {
+  return analyzeSEO({
+    focusKeyword: product.focusKeyword || "",
+    seoTitle: product.seoTitle || product.name,
+    seoDescription: product.seoDescription || product.shortSpec,
+    slug: product.slug,
+    content: product.description,
+    name: product.name,
+    category: product.category,
+    subcategory: product.subcategory,
+    image: product.image,
+    sku: product.sku,
+    hasSchema: true, // all products have Product schema via Next.js
+    hasCanonical: true, // Next.js metadata auto-generates canonical
+  });
+}
+
+/**
+ * Analizează toate produsele — returnează lista cu scor și meta.
+ */
+export async function analyzeAllProducts(): Promise<
+  Array<{
+    slug: string;
+    name: string;
+    category: string;
+    subcategory?: string;
+    score: number;
+    verdict: string;
+    focusKeyword: string;
+    hasImage: boolean;
+    hasOverride: boolean;
+    updatedAt?: string;
+    criticalFails: number;
+  }>
+> {
+  const overrides = await getAllProductOverrides();
+  const results = PRODUCTS.map((p) => {
+    const ov = overrides[p.slug];
+    const merged = mergeProductWithOverride(p, ov);
+    const analysis = analyzeProduct(merged);
+    const criticalFails = analysis.checks.filter(
+      (c) => c.category === "critical" && !c.passed
+    ).length;
+    return {
+      slug: p.slug,
+      name: p.name,
+      category: p.category,
+      subcategory: p.subcategory,
+      score: analysis.score,
+      verdict: analysis.verdict,
+      focusKeyword: merged.focusKeyword,
+      hasImage: !!p.image,
+      hasOverride: !!ov,
+      updatedAt: ov?.updatedAt,
+      criticalFails,
+    };
+  });
+  return results;
+}
+
+/**
+ * Salvează SEO override pentru un produs.
+ * Auto-calculează scorul și-l adaugă în history.
+ */
+export async function saveProductSEO(
+  slug: string,
+  patch: Partial<SEOOverride>,
+  updatedBy?: string
+): Promise<{ override: SEOOverride; analysis: SEOAnalysis }> {
+  const base = PRODUCTS.find((p) => p.slug === slug);
+  if (!base) throw new Error("Product not found: " + slug);
+
+  const existing = await prisma.contentBlock.findUnique({
+    where: { key: productSeoKey(slug) },
+  });
+  const prevOverride = (existing?.data as SEOOverride | null) || {};
+
+  // Merge patches
+  const nextOverride: SEOOverride = {
+    ...prevOverride,
+    ...patch,
+  };
+
+  // Calculate score after merge
+  const merged = mergeProductWithOverride(base, nextOverride);
+  const analysis = analyzeProduct(merged);
+
+  // Update history (keep last 20 entries)
+  const history = prevOverride.history || [];
+  history.push({
+    date: new Date().toISOString(),
+    score: analysis.score,
+    updatedBy,
+  });
+  nextOverride.history = history.slice(-20);
+  nextOverride.updatedAt = new Date().toISOString();
+  nextOverride.updatedBy = updatedBy;
+  nextOverride.scoreAtSave = analysis.score;
+
+  await prisma.contentBlock.upsert({
+    where: { key: productSeoKey(slug) },
+    create: { key: productSeoKey(slug), data: nextOverride as object },
+    update: { data: nextOverride as object },
+  });
+
+  return { override: nextOverride, analysis };
+}
+
+/**
+ * Auto-suggest keywords pentru un produs.
+ */
+export function suggestKeywordForProduct(product: Product): string[] {
+  return suggestKeyword(product.name, product.category);
+}
+
+/**
+ * Lista paginilor editabile SEO (non-produs).
+ * Acestea sunt definite static în site — SEO-ul lor vine din Metadata export.
+ */
+export const EDITABLE_PAGES: Array<{
+  key: string;
+  path: string;
+  name: string;
+  category: string;
+}> = [
+  { key: "home", path: "/", name: "Pagină principală", category: "Principal" },
+  { key: "magazin", path: "/magazin", name: "Catalog tehnic", category: "Principal" },
+  { key: "contact", path: "/contact", name: "Contact", category: "Principal" },
+  { key: "service", path: "/service", name: "Service overview", category: "Service" },
+  {
+    key: "service_inclus",
+    path: "/service/inclus-la-livrare",
+    name: "Service inclus la livrare",
+    category: "Service",
+  },
+  {
+    key: "service_abonamente",
+    path: "/service/abonamente",
+    name: "Abonamente Service",
+    category: "Service",
+  },
+  {
+    key: "service_manual_ai",
+    path: "/service/manual-ai",
+    name: "Manual AI",
+    category: "Service",
+  },
+  {
+    key: "materiale_utile",
+    path: "/materiale-utile",
+    name: "Materiale utile (48 video)",
+    category: "Resurse",
+  },
+  {
+    key: "studii_caz",
+    path: "/studii-de-caz",
+    name: "Studii de caz",
+    category: "Resurse",
+  },
+  { key: "noutati", path: "/noutati", name: "Noutăți", category: "Resurse" },
+  { key: "cariere", path: "/cariere", name: "Cariere", category: "Principal" },
+  { key: "oferta", path: "/oferta", name: "Solicită ofertă", category: "Principal" },
+  { key: "echipa", path: "/echipa", name: "Echipă", category: "Principal" },
+  {
+    key: "industry40",
+    path: "/industry-4.0",
+    name: "Industry 4.0",
+    category: "Resurse",
+  },
+  {
+    key: "finantare_credit",
+    path: "/finantare/credit-furnizor",
+    name: "Credit furnizor",
+    category: "Finanțare",
+  },
+  {
+    key: "finantare_leasing",
+    path: "/finantare/credite-leasing",
+    name: "Credite & leasing",
+    category: "Finanțare",
+  },
+  {
+    key: "finantare_eu",
+    path: "/finantare/europeana-guvernamentala",
+    name: "Finanțare europeană",
+    category: "Finanțare",
+  },
+];

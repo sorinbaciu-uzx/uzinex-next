@@ -3,10 +3,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { PRODUCTS } from "@/app/magazin/products";
+import { PRODUCTS, type DescriptionBlock } from "@/app/magazin/products";
 import { AddToQuoteButton } from "@/app/magazin/AddToQuoteButton";
 import { SimilarCarousel } from "./SimilarCarousel";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
+import { getProductWithSEO } from "@/lib/seo/product-seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,13 +17,47 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const p = PRODUCTS.find((x) => x.slug === slug);
+  // Try merged (JSON + DB override); fallback to JSON only if DB unavailable at build
+  let p;
+  try {
+    const res = await getProductWithSEO(slug);
+    p = res.product;
+  } catch {
+    p = PRODUCTS.find((x) => x.slug === slug);
+  }
   if (!p) return { title: "Produs negăsit — Uzinex" };
   return {
     title: p.seoTitle || `${p.name} — Uzinex`,
     description: p.seoDescription || p.shortSpec,
     keywords: p.focusKeyword || undefined,
+    alternates: { canonical: `/produs/${p.slug}` },
   };
+}
+
+/**
+ * Produce blocks-de-afișat. Dacă există override cu descriere nouă,
+ * o parsează în paragrafe. Altfel, folosește blocks-urile originale.
+ */
+function effectiveBlocks(
+  product: { description: string; descriptionBlocks?: DescriptionBlock[] },
+  overrideDescription?: string | null
+): DescriptionBlock[] {
+  const base = product.descriptionBlocks || [];
+  if (
+    overrideDescription &&
+    overrideDescription.trim() !== product.description?.trim()
+  ) {
+    // Override has new content — parse markdown-ish paragraphs
+    const paragraphs = overrideDescription
+      .split(/\n\n+/)
+      .map((p) => p.trim())
+      .filter((p) => p.length > 30);
+    return paragraphs.map((text) => ({
+      type: "paragraph" as const,
+      text,
+    }));
+  }
+  return base;
 }
 
 const FAQ = [
@@ -53,8 +88,17 @@ const FEATURES = [
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
-  const p = PRODUCTS.find((x) => x.slug === slug);
-  if (!p) notFound();
+  // Merge JSON + DB SEO override (graceful fallback if DB unavailable)
+  let base, override;
+  try {
+    const res = await getProductWithSEO(slug);
+    base = res.product;
+    override = res.override;
+  } catch {
+    base = PRODUCTS.find((x) => x.slug === slug);
+  }
+  if (!base) notFound();
+  const p = base;
 
   // Similar: prioritize subSubcategory → subcategory → category, max 12 unique
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
@@ -238,7 +282,8 @@ export default async function Page({ params }: Props) {
 
       {/* DESCRIERE */}
       {(() => {
-        const restBlocks = (p.descriptionBlocks || []).filter(
+        const effBlocks = effectiveBlocks(p, override?.description);
+        const restBlocks = effBlocks.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
         const wordCount = (p.description || "").split(/\s+/).filter(Boolean).length;

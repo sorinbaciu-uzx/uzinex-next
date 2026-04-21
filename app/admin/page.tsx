@@ -1,97 +1,217 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { CONTENT_KEYS, KEY_LABELS } from "@/lib/content";
+import { PRODUCTS } from "@/app/magazin/products";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminDashboard() {
   let existing: { key: string; updatedAt: Date }[] = [];
   let dbError: string | null = null;
+  let seoOptimizedCount = 0;
   try {
     existing = await prisma.contentBlock.findMany({
       select: { key: true, updatedAt: true },
     });
+    seoOptimizedCount = existing.filter((r) =>
+      r.key.startsWith("seo:product:")
+    ).length;
   } catch (e) {
     dbError = (e as Error).message;
   }
   const map = new Map(existing.map((r) => [r.key, r.updatedAt]));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
+      {/* HEADER */}
       <div>
-        <h1 className="serif text-3xl text-ink-900">Conținut site</h1>
-        <p className="text-ink-500 mt-2">
-          Editează blocurile de conținut. Modificările se publică imediat.
+        <div className="text-[11px] uppercase tracking-[0.22em] text-uzx-orange font-mono mb-2">
+          — Backend UZINEX
+        </div>
+        <h1 className="serif text-3xl text-ink-900">Administrare site</h1>
+        <p className="text-ink-500 mt-2 max-w-2xl">
+          Gestionează conținutul, produsele și optimizarea SEO. Toate
+          modificările se publică instant pe uzinex.ro.
         </p>
       </div>
 
       {dbError && (
         <div className="border border-red-300 bg-red-50 text-red-900 p-4 text-sm">
-          Eroare DB: {dbError}
+          <b>Eroare DB:</b> {dbError}
           <div className="mt-2 text-xs">
-            Verifică <code>DATABASE_URL</code> în Vercel \u2192 Project Settings \u2192
+            Verifică <code>DATABASE_URL</code> în Vercel → Project Settings →
             Environment Variables, apoi rulează{" "}
             <code>npx prisma db push</code> și <code>npm run db:seed</code>.
           </div>
         </div>
       )}
 
-      <div>
-        <h2 className="serif text-xl text-ink-900 mb-3">Administrare</h2>
+      {/* QUICK ACTIONS — mari, vizibile, prioritate 1 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* SEO OPTIMIZATION — FEATURED */}
         <Link
-          href="/admin/users"
-          className="block bg-white border hairline p-5 hover:bg-ink-50 transition group"
+          href="/admin/seo"
+          className="relative overflow-hidden bg-gradient-to-br from-uzx-blue to-purple-700 text-white p-6 hover:shadow-xl transition group"
         >
-          <div className="flex items-center justify-between">
+          <div
+            className="absolute -top-px -right-px w-24 h-24 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(135deg, transparent 0%, transparent 50%, rgba(245,133,31,0.5) 50%)",
+            }}
+          />
+          <div className="text-[10px] uppercase tracking-[0.22em] opacity-70 font-mono mb-3">
+            ✨ Recomandat · AI powered
+          </div>
+          <div className="serif text-2xl leading-tight">
+            Optimizare SEO produse
+          </div>
+          <p className="text-sm text-white/80 mt-2 leading-relaxed">
+            Analiză 30+ verificări per produs · Live scoring · Rescriere cu
+            Claude Opus 4.x · SERP preview · Analiză concurent
+          </p>
+          <div className="flex items-center gap-4 mt-5 text-xs font-mono">
             <div>
-              <div className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono">
-                users
-              </div>
-              <div className="serif text-lg text-ink-900 mt-1">
-                Conturi clienți
-              </div>
-              <div className="text-xs text-ink-500 mt-1">
-                Creează, modifică și dezactivează conturile care se pot
-                autentifica pe site.
+              <div className="opacity-60 text-[10px]">PRODUSE</div>
+              <div className="text-xl font-semibold">{PRODUCTS.length}</div>
+            </div>
+            <div>
+              <div className="opacity-60 text-[10px]">OPTIMIZATE</div>
+              <div className="text-xl font-semibold">{seoOptimizedCount}</div>
+            </div>
+            <div>
+              <div className="opacity-60 text-[10px]">DE LUCRAT</div>
+              <div className="text-xl font-semibold">
+                {PRODUCTS.length - seoOptimizedCount}
               </div>
             </div>
-            <span className="text-2xl text-ink-300 group-hover:text-uzx-blue transition">
-              →
-            </span>
+          </div>
+          <div className="absolute bottom-4 right-5 text-3xl opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition">
+            →
+          </div>
+        </Link>
+
+        {/* USERS */}
+        <Link
+          href="/admin/users"
+          className="bg-white border hairline p-6 hover:bg-ink-50 transition group"
+        >
+          <div className="text-[10px] uppercase tracking-[0.22em] text-uzx-orange font-mono mb-3">
+            Administrare · acces
+          </div>
+          <div className="serif text-2xl text-ink-900 leading-tight">
+            Conturi clienți
+          </div>
+          <p className="text-sm text-ink-600 mt-2 leading-relaxed">
+            Creează, modifică și dezactivează conturile care se pot
+            autentifica pe site (cont.uzinex.ro).
+          </p>
+          <div className="text-3xl text-ink-300 mt-6 group-hover:text-uzx-blue group-hover:translate-x-1 transition inline-block">
+            →
           </div>
         </Link>
       </div>
 
-      <h2 className="serif text-xl text-ink-900 !mt-10">Conținut editorial</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border hairline">
-        {CONTENT_KEYS.map((key) => {
-          const updated = map.get(key);
-          return (
-            <Link
-              key={key}
-              href={`/admin/content/${key}`}
-              className="bg-white p-5 hover:bg-ink-50 transition flex items-center justify-between group"
-            >
-              <div>
-                <div className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono">
-                  {key}
+      {/* CONȚINUT EDITORIAL */}
+      <div>
+        <div className="flex items-center justify-between mb-3">
+          <div>
+            <h2 className="serif text-xl text-ink-900">Conținut editorial</h2>
+            <p className="text-xs text-ink-500 mt-1">
+              Hero, authority strip, studii de caz, certificări, footer etc.
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border hairline">
+          {CONTENT_KEYS.map((key) => {
+            const updated = map.get(key);
+            return (
+              <Link
+                key={key}
+                href={`/admin/content/${key}`}
+                className="bg-white p-4 hover:bg-ink-50 transition flex items-center justify-between group"
+              >
+                <div className="flex-1 min-w-0">
+                  <div className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono">
+                    {key}
+                  </div>
+                  <div className="serif text-base text-ink-900 mt-1 truncate">
+                    {KEY_LABELS[key] || key}
+                  </div>
+                  <div className="text-[11px] text-ink-500 mt-1">
+                    {updated
+                      ? `Actualizat ${new Date(updated).toLocaleDateString("ro-RO")}`
+                      : "Valori implicite din cod"}
+                  </div>
                 </div>
-                <div className="serif text-lg text-ink-900 mt-1">
-                  {KEY_LABELS[key] || key}
-                </div>
-                <div className="text-xs text-ink-500 mt-1">
-                  {updated
-                    ? `Actualizat ${new Date(updated).toLocaleString("ro-RO")}`
-                    : "Nu a fost editat — folosește valorile implicite din cod"}
-                </div>
-              </div>
-              <span className="text-2xl text-ink-300 group-hover:text-uzx-blue transition">
-                →
-              </span>
-            </Link>
-          );
-        })}
+                <span className="text-xl text-ink-300 group-hover:text-uzx-blue transition shrink-0">
+                  →
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* SHORTCUTS */}
+      <div>
+        <h2 className="serif text-xl text-ink-900 mb-3">Linkuri rapide</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-ink-200 border hairline">
+          <ShortcutCard
+            href="/"
+            label="Website"
+            sub="uzinex.ro"
+            external
+          />
+          <ShortcutCard
+            href="https://vercel.com/sorinbaciu-3691s-projects/uzinex-next"
+            label="Vercel"
+            sub="deploys + env vars"
+            external
+          />
+          <ShortcutCard
+            href="https://search.google.com/search-console"
+            label="Google SC"
+            sub="indexare + search"
+            external
+          />
+          <ShortcutCard
+            href="https://www.bing.com/webmasters"
+            label="Bing WMT"
+            sub="indexare Bing"
+            external
+          />
+        </div>
       </div>
     </div>
+  );
+}
+
+function ShortcutCard({
+  href,
+  label,
+  sub,
+  external,
+}: {
+  href: string;
+  label: string;
+  sub: string;
+  external?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="bg-white p-4 hover:bg-ink-50 transition group"
+    >
+      <div className="text-[11px] uppercase tracking-wider text-ink-400 font-mono">
+        {sub}
+      </div>
+      <div className="serif text-lg text-ink-900 mt-1 flex items-center gap-2">
+        {label}
+        {external && <span className="text-xs text-ink-400">↗</span>}
+      </div>
+    </a>
   );
 }
