@@ -1,4 +1,57 @@
 import type { NextConfig } from "next";
+import produseData from "./data/produse.json";
+
+type ProduseRow = { slug: string };
+
+/**
+ * Toate produsele sunt acum la /produs/[slug].
+ * În WordPress-ul vechi erau la /[slug] (fără prefixul /produs/).
+ * Generăm automat 301 pentru fiecare produs ca să recuperăm impresiile
+ * pe care Google le arată încă pe URL-urile vechi.
+ *
+ * Excludere defensivă: nu genera redirect dacă slug-ul ar coincide cu o
+ * rută statică cunoscută (contact, magazin, etc).
+ */
+const RESERVED_SLUGS = new Set([
+  "admin",
+  "api",
+  "cariere",
+  "cont",
+  "contact",
+  "echipa",
+  "en",
+  "finantare",
+  "industry-4.0",
+  "magazin",
+  "materiale-utile",
+  "noutati",
+  "oferta",
+  "autentificare",
+  "inregistrare",
+  "politica-anti-mita-coruptie",
+  "politica-calitate",
+  "politica-confidentialitate",
+  "politica-cookies",
+  "politica-egalitate-sanse",
+  "politica-livrare",
+  "politica-mediu",
+  "politica-retur",
+  "politica-sclavie-moderna",
+  "produs",
+  "robots.txt",
+  "service",
+  "sitemap.xml",
+  "studii-de-caz",
+  "termeni-conditii",
+]);
+
+const LEGACY_PRODUCT_REDIRECTS = (produseData as ProduseRow[])
+  .filter((p) => p.slug && !RESERVED_SLUGS.has(p.slug))
+  .map((p) => ({
+    source: `/${p.slug}`,
+    destination: `/produs/${p.slug}`,
+    permanent: true,
+  }));
 
 const nextConfig: NextConfig = {
   images: {
@@ -121,6 +174,11 @@ const nextConfig: NextConfig = {
       { source: "/product-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/category-sitemap.xml", destination: "/sitemap.xml", permanent: true },
       { source: "/product_cat-sitemap.xml", destination: "/sitemap.xml", permanent: true },
+
+      // ─── Auto-generated redirects pentru URL-urile vechi WordPress ───
+      // În WP vechi produsele erau la /[slug] direct (root-level permalink).
+      // Acum sunt la /produs/[slug]. 184 redirects 301 automate per produs.
+      ...LEGACY_PRODUCT_REDIRECTS,
     ];
   },
 };
