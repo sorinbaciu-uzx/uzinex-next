@@ -5,7 +5,7 @@ import {
   getProductWithSEO,
   saveProductSEO,
   suggestKeywordForProduct,
-  type SEOOverride,
+  type ProductOverride,
 } from "@/lib/seo/product-seo";
 import { revalidatePath } from "next/cache";
 
@@ -54,19 +54,33 @@ export async function PUT(
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
   const { slug } = await params;
-  const body = (await req.json().catch(() => null)) as Partial<SEOOverride>;
+  const body = (await req.json().catch(() => null)) as Partial<ProductOverride>;
   if (!body || typeof body !== "object") {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  // Allowed fields only — white-list pattern
-  const patch: Partial<SEOOverride> = {};
+  // Allowed fields only — white-list pattern (prevent prototype pollution etc.)
+  const patch: Partial<ProductOverride> = {};
+  // Basic fields
+  if (typeof body.name === "string") patch.name = body.name;
+  if (typeof body.shortSpec === "string") patch.shortSpec = body.shortSpec;
+  if (typeof body.image === "string") patch.image = body.image;
+  if (typeof body.datasheetUrl === "string")
+    patch.datasheetUrl = body.datasheetUrl;
+  if (typeof body.category === "string") patch.category = body.category;
+  if (typeof body.subcategory === "string") patch.subcategory = body.subcategory;
+  if (typeof body.subSubcategory === "string")
+    patch.subSubcategory = body.subSubcategory;
+  // Description
+  if (typeof body.description === "string") patch.description = body.description;
+  if (Array.isArray(body.descriptionBlocks))
+    patch.descriptionBlocks = body.descriptionBlocks;
+  // SEO
   if (typeof body.seoTitle === "string") patch.seoTitle = body.seoTitle;
   if (typeof body.seoDescription === "string")
     patch.seoDescription = body.seoDescription;
   if (typeof body.focusKeyword === "string")
     patch.focusKeyword = body.focusKeyword;
-  if (typeof body.description === "string") patch.description = body.description;
 
   try {
     const { override, analysis } = await saveProductSEO(slug, patch);

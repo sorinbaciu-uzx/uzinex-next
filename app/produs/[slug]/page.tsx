@@ -35,21 +35,37 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /**
- * Produce blocks-de-afișat. Dacă există override cu descriere nouă,
- * o parsează în paragrafe. Altfel, folosește blocks-urile originale.
+ * Produce blocks-de-afișat.
+ *
+ * Priority:
+ * 1. override.descriptionBlocks (editat manual în admin, block-based)
+ * 2. parse override.description în paragrafe (dacă AI a rescris doar plain text)
+ * 3. base.descriptionBlocks (original din JSON)
  */
 function effectiveBlocks(
   product: { description: string; descriptionBlocks?: DescriptionBlock[] },
-  overrideDescription?: string | null
+  override?: {
+    description?: string;
+    descriptionBlocks?: DescriptionBlock[];
+  } | null
 ): DescriptionBlock[] {
+  // Merged product already has descriptionBlocks set if override has them
+  // (mergeProductWithOverride handles this). But we also need to detect
+  // the case where description was overridden but not blocks — in that case,
+  // parse the description into paragraphs.
   const base = product.descriptionBlocks || [];
-  if (
-    overrideDescription &&
-    overrideDescription.trim() !== product.description?.trim()
-  ) {
-    // Override has new content — parse markdown-ish paragraphs
-    const paragraphs = overrideDescription
-      .split(/\n\n+/)
+  const hasBlocksOverride =
+    override?.descriptionBlocks && override.descriptionBlocks.length > 0;
+  const hasDescOverride =
+    override?.description &&
+    override.description.trim() !== product.description?.trim();
+
+  if (hasBlocksOverride) {
+    return override!.descriptionBlocks as DescriptionBlock[];
+  }
+  if (hasDescOverride) {
+    const paragraphs = override!
+      .description!.split(/\n\n+/)
       .map((p) => p.trim())
       .filter((p) => p.length > 30);
     return paragraphs.map((text) => ({
@@ -282,7 +298,7 @@ export default async function Page({ params }: Props) {
 
       {/* DESCRIERE */}
       {(() => {
-        const effBlocks = effectiveBlocks(p, override?.description);
+        const effBlocks = effectiveBlocks(p, override);
         const restBlocks = effBlocks.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );

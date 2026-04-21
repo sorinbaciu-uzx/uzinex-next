@@ -5,32 +5,55 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { analyzeSEO } from "@/lib/seo/analyzer";
 import type { SEOAnalysis } from "@/lib/seo/types";
-import type { Product } from "@/app/magazin/products";
-import type { SEOOverride } from "@/lib/seo/product-seo";
+import type { Product, DescriptionBlock } from "@/app/magazin/products";
+import type { ProductOverride } from "@/lib/seo/product-seo";
 import { SEOScorePanel } from "./SEOScorePanel";
 import { SERPPreview } from "./SERPPreview";
 import { HistoryPanel } from "./HistoryPanel";
 import { AIRewriteModal } from "./AIRewriteModal";
 import { CompetitorModal } from "./CompetitorModal";
+import { ImageUploadField } from "./ImageUploadField";
+import { DescriptionBlocksEditor } from "./DescriptionBlocksEditor";
+
+type Tab = "basic" | "description" | "seo";
 
 export function SEOEditor({
   product,
   override,
-  initialAnalysis,
+  initialAnalysis: _initialAnalysis,
   keywordSuggestions,
 }: {
   product: Product;
-  override: SEOOverride | null;
+  override: ProductOverride | null;
   initialAnalysis: SEOAnalysis;
   keywordSuggestions: string[];
 }) {
   const router = useRouter();
+  const [tab, setTab] = useState<Tab>("basic");
+
+  // Basic fields
+  const [name, setName] = useState(product.name);
+  const [shortSpec, setShortSpec] = useState(product.shortSpec);
+  const [image, setImage] = useState(product.image);
+  const [datasheetUrl, setDatasheetUrl] = useState(product.datasheetUrl || "");
+  const [category, setCategory] = useState(product.category);
+  const [subcategory, setSubcategory] = useState(product.subcategory || "");
+  const [subSubcategory, setSubSubcategory] = useState(
+    product.subSubcategory || ""
+  );
+
+  // Description fields
+  const [description, setDescription] = useState(product.description);
+  const [descriptionBlocks, setDescriptionBlocks] = useState<DescriptionBlock[]>(
+    product.descriptionBlocks || []
+  );
+
+  // SEO fields
   const [focusKeyword, setFocusKeyword] = useState(product.focusKeyword || "");
   const [seoTitle, setSeoTitle] = useState(product.seoTitle || product.name);
   const [seoDescription, setSeoDescription] = useState(
     product.seoDescription || product.shortSpec
   );
-  const [description, setDescription] = useState(product.description);
 
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">(
     "idle"
@@ -40,7 +63,7 @@ export function SEOEditor({
   const [showCompetitorModal, setShowCompetitorModal] = useState(false);
   const [metaLoading, setMetaLoading] = useState(false);
 
-  // Live analysis — re-run when any SEO field changes
+  // Live analysis — re-run when any field that affects SEO changes
   const analysis = useMemo<SEOAnalysis>(() => {
     return analyzeSEO({
       focusKeyword,
@@ -48,10 +71,10 @@ export function SEOEditor({
       seoDescription,
       slug: product.slug,
       content: description,
-      name: product.name,
-      category: product.category,
-      subcategory: product.subcategory,
-      image: product.image,
+      name,
+      category,
+      subcategory,
+      image,
       sku: product.sku,
       hasSchema: true,
       hasCanonical: true,
@@ -61,19 +84,28 @@ export function SEOEditor({
     seoTitle,
     seoDescription,
     description,
+    name,
+    category,
+    subcategory,
+    image,
     product.slug,
-    product.name,
-    product.category,
-    product.subcategory,
-    product.image,
     product.sku,
   ]);
 
   const isDirty =
+    name !== product.name ||
+    shortSpec !== product.shortSpec ||
+    image !== product.image ||
+    datasheetUrl !== (product.datasheetUrl || "") ||
+    category !== product.category ||
+    subcategory !== (product.subcategory || "") ||
+    subSubcategory !== (product.subSubcategory || "") ||
+    description !== product.description ||
+    JSON.stringify(descriptionBlocks) !==
+      JSON.stringify(product.descriptionBlocks || []) ||
     focusKeyword !== (product.focusKeyword || "") ||
     seoTitle !== (product.seoTitle || product.name) ||
-    seoDescription !== (product.seoDescription || product.shortSpec) ||
-    description !== product.description;
+    seoDescription !== (product.seoDescription || product.shortSpec);
 
   // Warn on unsaved changes
   useEffect(() => {
@@ -111,10 +143,18 @@ export function SEOEditor({
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            name,
+            shortSpec,
+            image,
+            datasheetUrl,
+            category,
+            subcategory,
+            subSubcategory,
+            description,
+            descriptionBlocks,
             focusKeyword,
             seoTitle,
             seoDescription,
-            description,
           }),
         }
       );
@@ -133,7 +173,12 @@ export function SEOEditor({
 
   async function resetToDefaults() {
     if (!override) return;
-    if (!confirm("Ștergi toate modificările SEO? Se revine la textul din import.")) return;
+    if (
+      !confirm(
+        "Ștergi TOATE modificările acestui produs și revii la valorile din importul original?"
+      )
+    )
+      return;
     setStatus("saving");
     try {
       const res = await fetch(
@@ -142,7 +187,6 @@ export function SEOEditor({
       );
       if (!res.ok) throw new Error("HTTP " + res.status);
       router.refresh();
-      // Full page reload to reset local state
       window.location.reload();
     } catch (err) {
       setError((err as Error).message);
@@ -157,7 +201,6 @@ export function SEOEditor({
     }
     setMetaLoading(true);
     try {
-      // First save current keyword so API can read it
       await fetch("/api/admin/seo/product/" + product.slug, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -177,7 +220,7 @@ export function SEOEditor({
       alert(
         "Generat de AI (Claude Opus). Cost: $" +
           (data.usage?.estimatedCostUSD || 0).toFixed(4) +
-          ". Revizuiește și apasă Salvează dacă îți place."
+          ". Revizuiește și apasă Salvează."
       );
     } catch (err) {
       alert("Eroare: " + (err as Error).message);
@@ -195,17 +238,16 @@ export function SEOEditor({
     if (draft.seoDescription) setSeoDescription(draft.seoDescription);
     if (draft.description) setDescription(draft.description);
     setShowAIModal(false);
+    setTab("seo"); // show result in SEO tab
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* HEADER */}
-      <div className="flex items-start justify-between gap-6 flex-wrap">
+      <div className="flex items-start justify-between gap-4 flex-wrap">
         <div className="flex-1 min-w-0">
-          <h1 className="serif text-3xl text-ink-900 leading-tight">
-            {product.name}
-          </h1>
-          <div className="flex items-center gap-3 mt-2 text-xs text-ink-500 flex-wrap">
+          <h1 className="serif text-2xl text-ink-900 leading-tight">{name}</h1>
+          <div className="flex items-center gap-3 mt-1.5 text-xs text-ink-500 flex-wrap">
             <span className="font-mono">SKU: {product.sku}</span>
             <span>·</span>
             <Link
@@ -221,27 +263,16 @@ export function SEOEditor({
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
-          <button
-            onClick={() => setShowCompetitorModal(true)}
-            className="border hairline bg-white px-3 py-2 text-xs hover:bg-ink-50 transition"
-          >
-            🔍 Analizează concurent
-          </button>
           {override && (
             <button
               onClick={resetToDefaults}
               disabled={status === "saving"}
               className="border hairline bg-white px-3 py-2 text-xs hover:bg-ink-50 transition text-red-600"
+              title="Șterge toate modificările, revine la importul original"
             >
-              ↺ Resetează
+              ↺ Reset
             </button>
           )}
-          <button
-            onClick={() => setShowAIModal(true)}
-            className="bg-gradient-to-r from-purple-600 to-uzx-blue hover:opacity-90 text-white px-4 py-2 text-sm font-medium transition"
-          >
-            ✨ Rescrie complet cu AI (Opus)
-          </button>
           <button
             onClick={save}
             disabled={status === "saving" || !isDirty}
@@ -262,156 +293,344 @@ export function SEOEditor({
         </div>
       )}
 
+      {/* TAB NAV */}
+      <div className="flex items-center gap-px bg-ink-200 border hairline">
+        <TabButton active={tab === "basic"} onClick={() => setTab("basic")}>
+          <span className="text-uzx-orange mr-1.5">01</span> Date produs
+          {isDirty && (name !== product.name ||
+            shortSpec !== product.shortSpec ||
+            image !== product.image ||
+            datasheetUrl !== (product.datasheetUrl || "") ||
+            category !== product.category) && (
+            <span className="ml-2 w-1.5 h-1.5 rounded-full bg-uzx-orange inline-block" />
+          )}
+        </TabButton>
+        <TabButton
+          active={tab === "description"}
+          onClick={() => setTab("description")}
+        >
+          <span className="text-uzx-orange mr-1.5">02</span> Conținut &
+          specificații
+          {JSON.stringify(descriptionBlocks) !==
+            JSON.stringify(product.descriptionBlocks || []) && (
+            <span className="ml-2 w-1.5 h-1.5 rounded-full bg-uzx-orange inline-block" />
+          )}
+        </TabButton>
+        <TabButton active={tab === "seo"} onClick={() => setTab("seo")}>
+          <span className="text-uzx-orange mr-1.5">03</span> SEO & vizibilitate
+          <span
+            className="ml-2 inline-flex items-center justify-center w-6 h-6 text-[10px] font-mono font-bold rounded-full"
+            style={{
+              background: analysis.verdictColor,
+              color: "white",
+            }}
+          >
+            {analysis.score}
+          </span>
+        </TabButton>
+      </div>
+
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* LEFT: FORM */}
+        {/* LEFT CONTENT */}
         <div className="lg:col-span-8 space-y-5">
-          {/* FOCUS KEYWORD */}
-          <div className="bg-white border hairline p-5">
-            <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-              <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
-                Focus keyword
-              </label>
-              {keywordSuggestions.length > 0 && !focusKeyword && (
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="text-xs text-ink-400">sugestii:</span>
-                  {keywordSuggestions.map((s) => (
-                    <button
-                      key={s}
-                      type="button"
-                      onClick={() => setFocusKeyword(s)}
-                      className="text-xs bg-ink-100 hover:bg-uzx-blue hover:text-white px-2 py-1 transition"
-                    >
-                      {s}
-                    </button>
-                  ))}
+          {/* BASIC TAB */}
+          {tab === "basic" && (
+            <>
+              <ImageUploadField
+                value={image}
+                onChange={setImage}
+                label="Imagine principală produs"
+              />
+
+              <div className="bg-white border hairline p-5">
+                <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                  Nume produs (titlu H1 pe pagină)
+                </label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full mt-2 border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue"
+                />
+                <div className="text-xs text-ink-500 mt-2">
+                  Titlu vizibil în hero-ul paginii. Diferit de SEO title (care
+                  apare în Google).
                 </div>
-              )}
-            </div>
-            <input
-              type="text"
-              value={focusKeyword}
-              onChange={(e) => setFocusKeyword(e.target.value)}
-              placeholder='Ex: "presă de balotat", "centru CNC 5 axe"'
-              className="w-full border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue"
-            />
-            <div className="text-xs text-ink-500 mt-2">
-              Keyword-ul principal pentru care vrei să rankezi în Google.
-              Analiza întreagă se face relativ la acesta.
-            </div>
-          </div>
-
-          {/* SEO TITLE */}
-          <div className="bg-white border hairline p-5">
-            <div className="flex items-center justify-between mb-2">
-              <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
-                SEO title
-              </label>
-              <span
-                className={
-                  "text-xs font-mono " +
-                  (seoTitle.length >= 30 && seoTitle.length <= 60
-                    ? "text-green-600"
-                    : "text-red-600")
-                }
-              >
-                {seoTitle.length}/60
-              </span>
-            </div>
-            <input
-              type="text"
-              value={seoTitle}
-              onChange={(e) => setSeoTitle(e.target.value)}
-              className="w-full border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue"
-            />
-            <div className="text-xs text-ink-500 mt-2">
-              Apare ca titlul albastru în Google. Target 30-60 caractere.
-              Include keyword + power word (ex: "profesional", "industrial") +
-              număr dacă e relevant.
-            </div>
-          </div>
-
-          {/* META DESCRIPTION */}
-          <div className="bg-white border hairline p-5">
-            <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-              <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
-                Meta description
-              </label>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={generateMetaOnly}
-                  disabled={metaLoading || !focusKeyword.trim()}
-                  className="text-xs border hairline bg-white px-2 py-1 hover:bg-ink-50 transition disabled:opacity-50"
-                  title="Generează cu Claude Opus — doar title + meta, rapid și ieftin"
-                >
-                  {metaLoading ? "..." : "✨ Generează cu AI"}
-                </button>
-                <span
-                  className={
-                    "text-xs font-mono " +
-                    (seoDescription.length >= 120 &&
-                    seoDescription.length <= 160
-                      ? "text-green-600"
-                      : "text-red-600")
-                  }
-                >
-                  {seoDescription.length}/160
-                </span>
               </div>
-            </div>
-            <textarea
-              value={seoDescription}
-              onChange={(e) => setSeoDescription(e.target.value)}
-              rows={3}
-              className="w-full border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue resize-y"
-            />
-            <div className="text-xs text-ink-500 mt-2">
-              Apare sub title în Google. Target 120-160 caractere. Include
-              keyword + CTA (ex: "Cere ofertă", "Afla preț").
-            </div>
-          </div>
 
-          {/* SERP PREVIEW */}
-          <SERPPreview
-            title={seoTitle}
-            description={seoDescription}
-            url={"uzinex.ro/produs/" + product.slug}
-          />
+              <div className="bg-white border hairline p-5">
+                <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                  Short spec (sub-titlu în hero)
+                </label>
+                <textarea
+                  value={shortSpec}
+                  onChange={(e) => setShortSpec(e.target.value)}
+                  rows={3}
+                  className="w-full mt-2 border hairline px-4 py-2.5 text-sm focus:outline-none focus:border-uzx-blue resize-y"
+                />
+                <div className="text-xs text-ink-500 mt-2">
+                  Sub-titlul alb din hero-ul albastru de pe pagina produs.
+                  Frază scurtă — 1-2 propoziții.
+                </div>
+              </div>
 
-          {/* DESCRIPTION (full text) */}
-          <div className="bg-white border hairline p-5">
-            <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-              <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
-                Descriere produs (corpul paginii)
-              </label>
-              <span className="text-xs font-mono text-ink-500">
-                {analysis.wordCount} cuvinte
-              </span>
-            </div>
-            <textarea
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              rows={22}
-              className="w-full border hairline px-4 py-2.5 text-sm focus:outline-none focus:border-uzx-blue resize-y font-mono leading-relaxed"
-              spellCheck={false}
-            />
-            <div className="text-xs text-ink-500 mt-2">
-              Textul complet al paginii de produs. Markdown-ul (##, ###, **
-              bold **, - listă) e suportat. Modificările aici se reflectă live
-              în scor și în pagina publică după Salvează.
-            </div>
-          </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-200 border hairline">
+                <div className="bg-white p-5">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    Categorie
+                  </label>
+                  <input
+                    type="text"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="w-full mt-2 border hairline px-3 py-2 text-sm focus:outline-none focus:border-uzx-blue"
+                  />
+                </div>
+                <div className="bg-white p-5">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    Subcategorie
+                  </label>
+                  <input
+                    type="text"
+                    value={subcategory}
+                    onChange={(e) => setSubcategory(e.target.value)}
+                    className="w-full mt-2 border hairline px-3 py-2 text-sm focus:outline-none focus:border-uzx-blue"
+                  />
+                </div>
+                <div className="bg-white p-5">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    Sub-sub categorie
+                  </label>
+                  <input
+                    type="text"
+                    value={subSubcategory}
+                    onChange={(e) => setSubSubcategory(e.target.value)}
+                    className="w-full mt-2 border hairline px-3 py-2 text-sm focus:outline-none focus:border-uzx-blue"
+                  />
+                </div>
+              </div>
 
-          {/* HISTORY */}
-          {override?.history && override.history.length > 0 && (
-            <HistoryPanel history={override.history} />
+              <div className="bg-white border hairline p-5">
+                <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                  Fișă tehnică (URL descărcare)
+                </label>
+                <input
+                  type="url"
+                  value={datasheetUrl}
+                  onChange={(e) => setDatasheetUrl(e.target.value)}
+                  placeholder="https://drive.google.com/file/d/..."
+                  className="w-full mt-2 border hairline px-4 py-2 text-sm focus:outline-none focus:border-uzx-blue font-mono"
+                />
+                <div className="text-xs text-ink-500 mt-2">
+                  Link către PDF-ul fișei tehnice. Apare ca buton "Descarcă
+                  fișa tehnică" pe pagina produs.
+                </div>
+              </div>
+
+              <div className="bg-ink-50 border hairline p-4 text-xs text-ink-600">
+                <div className="flex items-start gap-2">
+                  <span className="text-uzx-blue">ℹ</span>
+                  <div>
+                    <b>SKU</b> ({product.sku}) și <b>slug</b> ({product.slug})
+                    nu pot fi modificate — sunt identificatori unici folosiți
+                    pentru URL-uri și integrări (Monday CRM, sitemap, etc.).
+                    Dacă ai nevoie să schimbi slug-ul, facem un redirect
+                    manual.
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* DESCRIPTION TAB */}
+          {tab === "description" && (
+            <>
+              <div className="bg-white border hairline p-5">
+                <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    Descriere plată (text complet)
+                  </label>
+                  <span className="text-xs font-mono text-ink-500">
+                    {analysis.wordCount} cuvinte
+                  </span>
+                </div>
+                <textarea
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  rows={24}
+                  className="w-full border hairline px-4 py-2.5 text-sm focus:outline-none focus:border-uzx-blue resize-y font-mono leading-relaxed"
+                  spellCheck={false}
+                />
+                <div className="text-xs text-ink-500 mt-2">
+                  Textul complet al descrierii — folosit de motorul SEO pentru
+                  scoring și de Google pentru indexare. Editează-l direct sau
+                  folosește AI rewrite.
+                </div>
+              </div>
+
+              <DescriptionBlocksEditor
+                blocks={descriptionBlocks}
+                onChange={setDescriptionBlocks}
+              />
+
+              <div className="bg-ink-50 border hairline p-4 text-xs text-ink-600">
+                <div className="flex items-start gap-2">
+                  <span className="text-uzx-blue">ℹ</span>
+                  <div>
+                    <b>Blocurile</b> sunt afișate pe pagina produs în secțiunea
+                    "Detalii produs" — paragrafele apar ca text, tabelele apar
+                    ca tabele HTML. Ordonează-le cum vrei să fie vizibile
+                    clientului.
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* SEO TAB */}
+          {tab === "seo" && (
+            <>
+              {/* FOCUS KEYWORD */}
+              <div className="bg-white border hairline p-5">
+                <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    Focus keyword
+                  </label>
+                  {keywordSuggestions.length > 0 && !focusKeyword && (
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-xs text-ink-400">sugestii:</span>
+                      {keywordSuggestions.map((s) => (
+                        <button
+                          key={s}
+                          type="button"
+                          onClick={() => setFocusKeyword(s)}
+                          className="text-xs bg-ink-100 hover:bg-uzx-blue hover:text-white px-2 py-1 transition"
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <input
+                  type="text"
+                  value={focusKeyword}
+                  onChange={(e) => setFocusKeyword(e.target.value)}
+                  placeholder='Ex: "presă de balotat", "centru CNC 5 axe"'
+                  className="w-full border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue"
+                />
+                <div className="text-xs text-ink-500 mt-2">
+                  Keyword-ul principal pentru care vrei să rankezi în Google.
+                  Analiza întreagă se face relativ la acesta.
+                </div>
+              </div>
+
+              {/* SEO TITLE */}
+              <div className="bg-white border hairline p-5">
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    SEO title (apare în Google)
+                  </label>
+                  <span
+                    className={
+                      "text-xs font-mono " +
+                      (seoTitle.length >= 30 && seoTitle.length <= 60
+                        ? "text-green-600"
+                        : "text-red-600")
+                    }
+                  >
+                    {seoTitle.length}/60
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  value={seoTitle}
+                  onChange={(e) => setSeoTitle(e.target.value)}
+                  className="w-full border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue"
+                />
+                <div className="text-xs text-ink-500 mt-2">
+                  Target 30-60 caractere. Include keyword + power word (ex:
+                  "profesional", "industrial") + număr dacă e relevant.
+                </div>
+              </div>
+
+              {/* META DESCRIPTION */}
+              <div className="bg-white border hairline p-5">
+                <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                    Meta description
+                  </label>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={generateMetaOnly}
+                      disabled={metaLoading || !focusKeyword.trim()}
+                      className="text-xs border hairline bg-white px-2 py-1 hover:bg-ink-50 transition disabled:opacity-50"
+                      title="Generează cu Claude Opus — rapid și ieftin"
+                    >
+                      {metaLoading ? "..." : "✨ Generează cu AI"}
+                    </button>
+                    <span
+                      className={
+                        "text-xs font-mono " +
+                        (seoDescription.length >= 120 &&
+                        seoDescription.length <= 160
+                          ? "text-green-600"
+                          : "text-red-600")
+                      }
+                    >
+                      {seoDescription.length}/160
+                    </span>
+                  </div>
+                </div>
+                <textarea
+                  value={seoDescription}
+                  onChange={(e) => setSeoDescription(e.target.value)}
+                  rows={3}
+                  className="w-full border hairline px-4 py-2.5 text-base focus:outline-none focus:border-uzx-blue resize-y"
+                />
+              </div>
+
+              {/* SERP PREVIEW */}
+              <SERPPreview
+                title={seoTitle}
+                description={seoDescription}
+                url={"uzinex.ro/produs/" + product.slug}
+              />
+
+              {/* AI REWRITE ACTIONS */}
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  onClick={() => setShowCompetitorModal(true)}
+                  className="border hairline bg-white px-3 py-2 text-xs hover:bg-ink-50 transition"
+                >
+                  🔍 Analizează concurent
+                </button>
+                <button
+                  onClick={() => setShowAIModal(true)}
+                  className="bg-gradient-to-r from-purple-600 to-uzx-blue hover:opacity-90 text-white px-4 py-2 text-sm font-medium transition"
+                >
+                  ✨ Rescrie descrierea complet cu AI (Opus)
+                </button>
+              </div>
+
+              {/* HISTORY */}
+              {override?.history && override.history.length > 0 && (
+                <HistoryPanel history={override.history} />
+              )}
+            </>
           )}
         </div>
 
-        {/* RIGHT: SCORE */}
+        {/* RIGHT: SCORE (always visible) */}
         <div className="lg:col-span-4">
-          <div className="sticky top-6">
+          <div className="sticky top-6 space-y-3">
             <SEOScorePanel analysis={analysis} />
+            {isDirty && (
+              <div className="bg-uzx-orange/10 border border-uzx-orange/30 p-3 text-xs text-uzx-orange text-center font-medium">
+                ⚠ Ai modificări nesalvate. Ctrl+S să salvezi.
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -436,5 +655,33 @@ export function SEOEditor({
         />
       )}
     </div>
+  );
+}
+
+function TabButton({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="flex-1 px-4 py-3 text-sm font-medium transition flex items-center justify-center font-mono"
+      style={
+        active
+          ? { background: "white", color: "#111827" }
+          : {
+              background: "#f9fafb",
+              color: "#6b7280",
+            }
+      }
+    >
+      {children}
+    </button>
   );
 }

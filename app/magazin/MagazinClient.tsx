@@ -126,9 +126,15 @@ function filterFromSearch(search: string): Filter {
   return { type: "all" };
 }
 
-export function MagazinClient() {
+export function MagazinClient({
+  products,
+}: {
+  products?: Product[];
+} = {}) {
   const [filter, setFilter] = useState<Filter>({ type: "all" });
   const [page, setPage] = useState(1);
+
+  const sourceProducts = products ?? ALL_PRODUCTS;
 
   // Initialize filter from URL on mount; also react to same-page query changes
   useEffect(() => {
@@ -139,8 +145,8 @@ export function MagazinClient() {
   }, []);
 
   const filtered = useMemo(
-    () => ALL_PRODUCTS.filter((p) => matches(p, filter)),
-    [filter]
+    () => sourceProducts.filter((p) => matches(p, filter)),
+    [filter, sourceProducts]
   );
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const currentPage = Math.min(page, totalPages);

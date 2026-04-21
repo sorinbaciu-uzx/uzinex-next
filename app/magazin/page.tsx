@@ -4,6 +4,10 @@ import { Footer } from "@/components/Footer";
 import { MagazinClient } from "./MagazinClient";
 import { PRODUCTS } from "./products";
 import { itemListSchema, collectionPageSchema, breadcrumbSchema } from "@/lib/seo";
+import {
+  getAllProductOverrides,
+  mergeProductWithOverride,
+} from "@/lib/seo/product-seo";
 
 export const metadata: Metadata = {
   title: "Catalog tehnic — 180+ utilaje industriale",
@@ -18,19 +22,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  // Merge product overrides from DB (image, name, category, etc.)
+  // Graceful fallback: if DB unavailable, use static PRODUCTS.
+  let products = PRODUCTS;
+  try {
+    const overrides = await getAllProductOverrides();
+    products = PRODUCTS.map((p) => mergeProductWithOverride(p, overrides[p.slug]));
+  } catch {
+    // DB unavailable — use baseline
+  }
+
   const collection = collectionPageSchema({
     title: "Catalog tehnic Uzinex — 180+ utilaje industriale",
     description:
       "Utilaje CNC, laser fiber, roboți industriali, echipamente ambalare, reciclare, energie, inspecție. Catalog filtrabil pe categorii și subcategorii.",
     url: "/magazin",
-    numItems: PRODUCTS.length,
+    numItems: products.length,
   });
 
   // ItemList cu primele 100 produse (limita schema.org pentru rich results).
-  // Google accept max ~100 items în ItemList; restul accesibile prin paginare.
   const list = itemListSchema(
-    PRODUCTS.slice(0, 100).map((p) => ({
+    products.slice(0, 100).map((p) => ({
       name: p.name,
       url: `/produs/${p.slug}`,
     })),
@@ -83,7 +96,7 @@ export default function Page() {
         </div>
       </section>
 
-      <MagazinClient />
+      <MagazinClient products={products} />
 
       <Footer />
     </div>

@@ -21,13 +21,35 @@ import { analyzeSEO, suggestKeyword } from "./analyzer";
 import type { SEOAnalysis } from "./types";
 
 /**
- * SEO overrides stored in DB ContentBlock.data for a product/page.
+ * Product override stored in DB ContentBlock.data.
+ * Acoperă TOATE câmpurile editabile — admin-ul poate edita complet produsul,
+ * nu doar SEO. Fișa de bază rămâne în JSON ca safety net.
+ *
+ * Numele legacy "SEOOverride" e păstrat ca alias pentru compatibilitate.
  */
-export type SEOOverride = {
+export type ProductOverride = {
+  // Basic fields
+  name?: string;
+  shortSpec?: string;
+  image?: string; // Vercel Blob URL
+  datasheetUrl?: string;
+  category?: string;
+  subcategory?: string;
+  subSubcategory?: string;
+
+  // Description
+  description?: string;
+  descriptionBlocks?: Array<
+    | { type: "paragraph"; text: string }
+    | { type: "table"; rows: string[][] }
+  >;
+
+  // SEO fields
   seoTitle?: string;
   seoDescription?: string;
   focusKeyword?: string;
-  description?: string; // optional full-description override
+
+  // Tracking
   updatedAt?: string;
   updatedBy?: string;
   scoreAtSave?: number;
@@ -37,6 +59,9 @@ export type SEOOverride = {
     updatedBy?: string;
   }>;
 };
+
+/** Alias legacy. */
+export type SEOOverride = ProductOverride;
 
 /**
  * Compute the DB key for a product's SEO override.
@@ -50,12 +75,12 @@ export function pageSeoKey(pageKey: string): string {
 }
 
 /**
- * Get a product by slug, with SEO overrides merged from DB.
+ * Get a product by slug, with ALL overrides merged from DB.
  * If no override exists, returns the product as-is from JSON.
  */
 export async function getProductWithSEO(slug: string): Promise<{
   product: Product;
-  override?: SEOOverride;
+  override?: ProductOverride;
 }> {
   const base = PRODUCTS.find((p) => p.slug === slug);
   if (!base) throw new Error("Product not found: " + slug);
@@ -63,54 +88,58 @@ export async function getProductWithSEO(slug: string): Promise<{
   const block = await prisma.contentBlock.findUnique({
     where: { key: productSeoKey(slug) },
   });
-  const override = (block?.data as SEOOverride | null) || undefined;
+  const override = (block?.data as ProductOverride | null) || undefined;
 
   if (!override) return { product: base };
 
-  // Merge: override fields win when present
-  const merged: Product = {
-    ...base,
-    seoTitle: override.seoTitle ?? base.seoTitle,
-    seoDescription: override.seoDescription ?? base.seoDescription,
-    focusKeyword: override.focusKeyword ?? base.focusKeyword,
-    description: override.description ?? base.description,
-  };
-  return { product: merged, override };
+  return { product: mergeProductWithOverride(base, override), override };
 }
 
 /**
  * Sync version — for sync contexts where we've already fetched the override.
+ * Merge TOATE câmpurile editabile: basic + description + SEO.
  */
 export function mergeProductWithOverride(
   base: Product,
-  override?: SEOOverride
+  override?: ProductOverride
 ): Product {
   if (!override) return base;
   return {
     ...base,
+    // Basic
+    name: override.name ?? base.name,
+    shortSpec: override.shortSpec ?? base.shortSpec,
+    image: override.image ?? base.image,
+    datasheetUrl: override.datasheetUrl ?? base.datasheetUrl,
+    category: override.category ?? base.category,
+    subcategory: override.subcategory ?? base.subcategory,
+    subSubcategory: override.subSubcategory ?? base.subSubcategory,
+    // Description
+    description: override.description ?? base.description,
+    descriptionBlocks: override.descriptionBlocks ?? base.descriptionBlocks,
+    // SEO
     seoTitle: override.seoTitle ?? base.seoTitle,
     seoDescription: override.seoDescription ?? base.seoDescription,
     focusKeyword: override.focusKeyword ?? base.focusKeyword,
-    description: override.description ?? base.description,
   };
 }
 
 /**
- * Fetch all product SEO overrides in one DB call (pentru dashboard).
+ * Fetch all product overrides in one DB call (pentru dashboard).
  * Returnează un map slug → override.
  */
 export async function getAllProductOverrides(): Promise<
-  Record<string, SEOOverride>
+  Record<string, ProductOverride>
 > {
   const blocks = await prisma.contentBlock.findMany({
     where: {
       key: { startsWith: "seo:product:" },
     },
   });
-  const map: Record<string, SEOOverride> = {};
+  const map: Record<string, ProductOverride> = {};
   for (const b of blocks) {
     const slug = b.key.replace(/^seo:product:/, "");
-    map[slug] = b.data as SEOOverride;
+    map[slug] = b.data as ProductOverride;
   }
   return map;
 }
@@ -163,13 +192,13 @@ export async function analyzeAllProducts(): Promise<
     ).length;
     return {
       slug: p.slug,
-      name: p.name,
-      category: p.category,
-      subcategory: p.subcategory,
+      name: merged.name,
+      category: merged.category,
+      subcategory: merged.subcategory,
       score: analysis.score,
       verdict: analysis.verdict,
       focusKeyword: merged.focusKeyword,
-      hasImage: !!p.image,
+      hasImage: !!merged.image,
       hasOverride: !!ov,
       updatedAt: ov?.updatedAt,
       criticalFails,
@@ -179,24 +208,24 @@ export async function analyzeAllProducts(): Promise<
 }
 
 /**
- * Salvează SEO override pentru un produs.
- * Auto-calculează scorul și-l adaugă în history.
+ * Salvează override pentru un produs (orice câmp editabil).
+ * Auto-calculează scorul SEO și-l adaugă în history.
  */
 export async function saveProductSEO(
   slug: string,
-  patch: Partial<SEOOverride>,
+  patch: Partial<ProductOverride>,
   updatedBy?: string
-): Promise<{ override: SEOOverride; analysis: SEOAnalysis }> {
+): Promise<{ override: ProductOverride; analysis: SEOAnalysis }> {
   const base = PRODUCTS.find((p) => p.slug === slug);
   if (!base) throw new Error("Product not found: " + slug);
 
   const existing = await prisma.contentBlock.findUnique({
     where: { key: productSeoKey(slug) },
   });
-  const prevOverride = (existing?.data as SEOOverride | null) || {};
+  const prevOverride = (existing?.data as ProductOverride | null) || {};
 
   // Merge patches
-  const nextOverride: SEOOverride = {
+  const nextOverride: ProductOverride = {
     ...prevOverride,
     ...patch,
   };

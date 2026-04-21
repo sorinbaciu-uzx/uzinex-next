@@ -134,13 +134,15 @@ export function SEODashboard({
       <div className="flex items-start justify-between gap-6">
         <div>
           <div className="text-[11px] uppercase tracking-[0.22em] text-uzx-orange font-mono mb-2">
-            — SEO optimizer
+            — Editor produse
           </div>
-          <h1 className="serif text-3xl text-ink-900">Optimizare SEO produse</h1>
+          <h1 className="serif text-3xl text-ink-900">
+            Produsele tale ({stats.total})
+          </h1>
           <p className="text-ink-500 mt-2 max-w-2xl">
-            Analiză live 30+ verificări per produs. Scor calculat ca în Rank
-            Math, plus bonusuri specifice B2B industrial. Click pe un produs
-            pentru editor complet.
+            Click pe un produs pentru editor complet — imagini, nume, descriere
+            (paragrafe + tabele), categorii, fișă tehnică, SEO cu 22 verificări
+            și rescriere AI cu Claude Opus.
           </p>
         </div>
         <a

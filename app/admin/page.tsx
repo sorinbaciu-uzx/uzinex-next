@@ -61,14 +61,16 @@ export default async function AdminDashboard() {
             }}
           />
           <div className="text-[10px] uppercase tracking-[0.22em] opacity-70 font-mono mb-3">
-            ✨ Recomandat · AI powered
+            ✨ Recomandat · editor complet + AI
           </div>
           <div className="serif text-2xl leading-tight">
-            Optimizare SEO produse
+            Editor produse
           </div>
           <p className="text-sm text-white/80 mt-2 leading-relaxed">
-            Analiză 30+ verificări per produs · Live scoring · Rescriere cu
-            Claude Opus 4.x · SERP preview · Analiză concurent
+            Editează tot produsul — imagini (drag & drop), nume, categorii,
+            descriere (paragrafe + tabele), fișă tehnică. Plus motor SEO cu
+            22 verificări live, Claude Opus rewrite, SERP preview, analiză
+            concurent.
           </p>
           <div className="flex items-center gap-4 mt-5 text-xs font-mono">
             <div>

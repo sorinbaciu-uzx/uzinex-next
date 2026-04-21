@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "i.ytimg.com",
       },
+      // Vercel Blob storage (upload imagini produse din admin)
+      {
+        protocol: "https",
+        hostname: "**.public.blob.vercel-storage.com",
+      },
     ],
   },
   // Long cache for static assets (Vercel serves these from edge anyway).
