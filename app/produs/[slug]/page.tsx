@@ -390,8 +390,6 @@ export default async function Page({ params }: Props) {
         const restBlocks = effBlocks.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
-        const wordCount = (p.description || "").split(/\s+/).filter(Boolean).length;
-        const readMin = Math.max(1, Math.round(wordCount / 200));
 
         return (
           <section className="py-16 lg:py-24 bg-ink-50/40 border-y border-ink-100">
@@ -420,19 +418,6 @@ export default async function Page({ params }: Props) {
                 {/* DESCRIERE COMPLETĂ */}
                 <article className="lg:col-span-8">
                   <div className="bg-white border border-ink-100 shadow-sm overflow-hidden h-full">
-                    <div className="px-8 lg:px-10 py-5 border-b border-ink-100 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="w-7 h-7 rounded-full bg-uzx-blue/10 border border-uzx-blue/20 flex items-center justify-center text-uzx-blue text-xs font-semibold">
-                          ¶
-                        </span>
-                        <h3 className="serif text-base lg:text-lg text-ink-900">
-                          Detalii produs
-                        </h3>
-                      </div>
-                      <span className="text-[10px] mono uppercase tracking-wider text-ink-400">
-                        {readMin} min citire
-                      </span>
-                    </div>
                     <div className="px-8 lg:px-10 py-7 space-y-5 text-ink-600 text-[14px] leading-[1.85] font-light">
                       {restBlocks.length > 0 ? (
                         restBlocks.map((b, i) =>
@@ -490,10 +475,11 @@ export default async function Page({ params }: Props) {
                   </div>
                 </article>
 
-                {/* STICKY INFO SIDEBAR */}
+                {/* STICKY INFO SIDEBAR — centrat vertical în viewport indiferent de înălțime */}
                 <aside className="lg:col-span-4">
+                  <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:py-6">
                   <div
-                    className="lg:sticky lg:top-24 relative overflow-hidden bg-white border border-ink-100"
+                    className="relative overflow-hidden bg-white border border-ink-100 w-full"
                     style={{
                       boxShadow:
                         "0 30px 60px -25px rgba(30,107,184,0.25), 0 8px 20px -8px rgba(8,37,69,0.08)",
@@ -620,6 +606,7 @@ export default async function Page({ params }: Props) {
                       </div>
 
                     </div>
+                  </div>
                   </div>
                 </aside>
               </div>
