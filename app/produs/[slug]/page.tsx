@@ -311,11 +311,11 @@ export default async function Page({ params }: Props) {
                       </span>
                     </div>
                     {bnr && priceRon !== null && (
-                      <div className="mt-1.5">
-                        <div className="text-[13px] text-ink-700 font-medium">
+                      <div className="mt-2">
+                        <div className="text-[17px] text-ink-800 font-semibold">
                           ≈ {formatRon(priceRon)}
                         </div>
-                        <div className="text-[10px] mono text-ink-400 mt-0.5">
+                        <div className="text-[12px] mono text-ink-500 mt-1">
                           curs BNR {bnr.rate.toFixed(4).replace(".", ",")} RON / EUR · {formatBnrDate(bnr.date)}
                         </div>
                       </div>
@@ -600,11 +600,11 @@ export default async function Page({ params }: Props) {
                             </span>
                           </div>
                           {bnr && priceRon !== null && (
-                            <div className="mt-1">
-                              <div className="text-[12px] text-ink-700 font-medium">
+                            <div className="mt-1.5">
+                              <div className="text-[15px] text-ink-800 font-semibold">
                                 ≈ {formatRon(priceRon)}
                               </div>
-                              <div className="text-[9px] mono text-ink-400 mt-0.5">
+                              <div className="text-[11px] mono text-ink-500 mt-0.5">
                                 curs BNR {bnr.rate.toFixed(4).replace(".", ",")} · {formatBnrDate(bnr.date)}
                               </div>
                             </div>
