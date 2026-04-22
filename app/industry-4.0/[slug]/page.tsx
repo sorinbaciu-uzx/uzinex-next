@@ -9,6 +9,8 @@ import { FlowchartSteps } from "@/components/solution-anims/FlowchartSteps";
 import { CounterMetrics } from "@/components/solution-anims/CounterMetrics";
 import { breadcrumbSchema } from "@/lib/seo";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
+import { buildProductTargets } from "@/lib/internal-links";
+import { PRODUCTS } from "@/app/magazin/products";
 
 type SectionAnim =
   | { type: "checklist"; items: string[] }
@@ -312,6 +314,9 @@ export default async function DirectionPage({
   // Shared across every prose block on this page so each link target is used at most once.
   const alreadyLinked = new Set<string>();
   const currentPath = `/industry-4.0/${d.slug}`;
+  // Product targets — if any prose on this page mentions a product by full name,
+  // it becomes a contextual cross-link. Safe: strict full-name matching + 3/page cap.
+  const productTargets = buildProductTargets("", PRODUCTS);
 
   const crumbJsonLd = breadcrumbSchema([
     { name: "Acasă", url: "/" },
@@ -361,6 +366,8 @@ export default async function DirectionPage({
                 text={d.heroDescription}
                 alreadyLinked={alreadyLinked}
                 currentPath={currentPath}
+                extraTargets={productTargets}
+                maxProductLinksPerPage={3}
                 className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl"
               />
             </div>
@@ -419,6 +426,8 @@ export default async function DirectionPage({
                     text={s.body}
                     alreadyLinked={alreadyLinked}
                     currentPath={currentPath}
+                    extraTargets={productTargets}
+                    maxProductLinksPerPage={3}
                     className="text-ink-600 leading-relaxed text-base"
                   />
                   {s.anim?.type === "checklist" && (
@@ -465,6 +474,8 @@ export default async function DirectionPage({
                       text={uc}
                       alreadyLinked={alreadyLinked}
                       currentPath={currentPath}
+                      extraTargets={productTargets}
+                      maxProductLinksPerPage={3}
                       className="text-sm text-ink-700 leading-relaxed"
                     />
                   </div>
@@ -501,6 +512,8 @@ export default async function DirectionPage({
                   text={d.ctaBody}
                   alreadyLinked={alreadyLinked}
                   currentPath={currentPath}
+                  extraTargets={productTargets}
+                  maxProductLinksPerPage={3}
                   className="text-white/80 leading-relaxed"
                 />
               </div>

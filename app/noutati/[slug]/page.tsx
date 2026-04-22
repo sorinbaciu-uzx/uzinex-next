@@ -11,6 +11,8 @@ import {
 import { getContent } from "@/lib/content";
 import { articleSchema, breadcrumbSchema } from "@/lib/seo";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
+import { buildProductTargets } from "@/lib/internal-links";
+import { PRODUCTS } from "@/app/magazin/products";
 
 export const revalidate = 60;
 
@@ -107,6 +109,9 @@ export default async function ArticlePage({
   // Shared across every paragraph so each link target is used at most once.
   const alreadyLinked = new Set<string>();
   const currentPath = `/noutati/${article.slug}`;
+  // Product targets — articles that mention a product by full name get
+  // contextual cross-links (strict matching: full name, ≥15 char, 3/page cap).
+  const productTargets = buildProductTargets("", PRODUCTS);
 
   // ─── JSON-LD: NewsArticle + BreadcrumbList ───
   const artJsonLd = articleSchema({
@@ -203,6 +208,8 @@ export default async function ArticlePage({
                     text={p}
                     alreadyLinked={alreadyLinked}
                     currentPath={currentPath}
+                    extraTargets={productTargets}
+                    maxProductLinksPerPage={3}
                     className={
                       i === 0
                         ? "first-letter:float-left first-letter:serif first-letter:text-7xl first-letter:leading-[0.85] first-letter:pr-2 first-letter:pt-1 first-letter:text-uzx-orange"
