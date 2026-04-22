@@ -85,7 +85,10 @@ export function productSchema(p: ProductSchemaInput) {
           "@type": "AggregateOffer",
           priceCurrency: p.priceCurrency || "EUR",
           lowPrice: String(p.priceFrom),
-          availability: "https://schema.org/InStock",
+          // MadeToOrder — reflectă realitatea B2B industrial (configurat la
+          // comandă). Nu afișează "In stock" în SERP, dar păstrează
+          // eligibilitatea pentru Google Merchant Listings rich results.
+          availability: "https://schema.org/MadeToOrder",
           seller: ORG_REF,
           // Valid 1 an (admin poate actualiza pe măsură ce prețurile se schimbă)
           priceValidUntil: new Date(
