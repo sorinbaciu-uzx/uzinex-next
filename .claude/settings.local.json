@@ -11,7 +11,8 @@
       "Bash(curl -sI \"https://www.demoanaf.ro/\" --max-time 10)",
       "Bash(curl -s \"https://demoanaf.ro/\" --max-time 10)",
       "Bash(curl -s \"https://demoanaf.ro/api/company/2816464\" --max-time 10 -H \"Accept: application/json\" -H \"User-Agent: Mozilla/5.0\")",
-      "Bash(curl -s \"https://demoanaf.ro/api/company/2816464/balance/2023\" --max-time 10 -H \"Accept: application/json\" -H \"User-Agent: Mozilla/5.0\")"
+      "Bash(curl -s \"https://demoanaf.ro/api/company/2816464/balance/2023\" --max-time 10 -H \"Accept: application/json\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(npm run *)"
     ]
   }
 }
