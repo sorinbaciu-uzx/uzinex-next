@@ -10,8 +10,12 @@ import { SpecIcon } from "./SpecIcon";
 import { BenefitsStrip } from "./BenefitsStrip";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
-import { extractTopSpecs } from "@/lib/product-specs";
+import {
+  extractTopSpecs,
+  type SpecIcon as SpecIconType,
+} from "@/lib/product-specs";
 import { formatPrice } from "@/lib/format-price";
+import benefitsData from "@/data/product-benefits.json";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
@@ -247,29 +251,51 @@ export default async function Page({ params }: Props) {
                 </p>
               )}
 
-              {/* TECHNICAL SPECS — override admin (dacă există), altfel auto-extrage */}
+              {/* BENEFICII CHEIE — derivate din specs + transformate in benefit framing
+                  (data/product-benefits.json). Fallback la specs raw daca lipseste maparea. */}
               {(() => {
-                const specs =
-                  p.specs && p.specs.length > 0
-                    ? p.specs.slice(0, 4)
-                    : extractTopSpecs(p.descriptionBlocks, 4);
-                if (specs.length === 0) return null;
+                type BenefitRow = {
+                  icon: SpecIconType;
+                  title: string;
+                  value: string;
+                };
+                const benefitsMap = benefitsData as Record<
+                  string,
+                  Array<{ icon: string; benefitTitle: string; benefitValue: string }>
+                >;
+                const benefits = benefitsMap[p.slug];
+                const rows: BenefitRow[] =
+                  benefits && benefits.length > 0
+                    ? benefits.slice(0, 4).map((b) => ({
+                        icon: b.icon as SpecIconType,
+                        title: b.benefitTitle,
+                        value: b.benefitValue,
+                      }))
+                    : (p.specs && p.specs.length > 0
+                        ? p.specs.slice(0, 4)
+                        : extractTopSpecs(p.descriptionBlocks, 4)
+                      ).map((s) => ({
+                        icon: s.icon,
+                        title: s.title,
+                        value: s.value,
+                      }));
+                if (rows.length === 0) return null;
                 return (
                   <div className="mt-7 grid grid-cols-1 gap-3.5">
                     <div className="text-[11px] mono uppercase tracking-[0.15em] text-ink-400 mb-1">
-                      Specificații cheie
+                      Beneficii cheie
                     </div>
-                    {specs.map((spec, i) => (
+                    {rows.map((row, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <div className="shrink-0 text-uzx-blue mt-0.5">
-                          <SpecIcon icon={spec.icon} />
+                          <SpecIcon icon={row.icon} />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="text-[10px] uppercase tracking-wider text-ink-400 font-mono leading-tight">
-                            {spec.title}
+                            {row.title}
                           </div>
                           <div className="text-sm text-ink-900 font-medium leading-snug mt-0.5">
-                            {spec.value}
+                            {row.value}
                           </div>
                         </div>
                       </div>

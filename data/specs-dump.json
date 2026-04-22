@@ -1,0 +1,4434 @@
+[
+  {
+    "slug": "masina-cnc-3-sau-4-axe",
+    "name": "Mașină CNC 3 sau 4 axe",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "tools",
+        "title": "Magazin ATC",
+        "value": "Carusel cu 8 pozitii de scule"
+      },
+      {
+        "icon": "control",
+        "title": "Controler",
+        "value": "SYNTEC (interfata intuitiva)"
+      },
+      {
+        "icon": "protection",
+        "title": "Protectie cabluri",
+        "value": "Sistem robust Igus Germania"
+      },
+      {
+        "icon": "weight",
+        "title": "Masa de lucru",
+        "value": "Afundata (pentru piese groase) + T-slot si Vacuum"
+      }
+    ]
+  },
+  {
+    "slug": "centru-de-prelucrare-cnc-5-axe",
+    "name": "Centru de prelucrare CNC 5 axe",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "travel",
+        "title": "Cursa axa X",
+        "value": "1.300 – 2.000 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Ax principal (spindle)",
+        "value": "HITECO 10 kW"
+      },
+      {
+        "icon": "axis",
+        "title": "Cap taiere 5 axe",
+        "value": "HITECO / LX500"
+      },
+      {
+        "icon": "tools",
+        "title": "Magazin scule",
+        "value": "Carusel 8 pozitii, HSK F63"
+      }
+    ]
+  },
+  {
+    "slug": "centru-cnc-pentru-piatra-granit-si-quartz",
+    "name": "Centru CNC pentru Piatră, Granit și Quartz",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC piatră",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "380 V / 50 Hz / 3P"
+      },
+      {
+        "icon": "control",
+        "title": "Controler",
+        "value": "Ncstudio 95A-3S"
+      },
+      {
+        "icon": "default",
+        "title": "Zona de lucru",
+        "value": "1.500 × 3.000 × 300 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Masa de lucru",
+        "value": "Placa fenolica dura + 8 ventuze vacuum"
+      }
+    ]
+  },
+  {
+    "slug": "mini-strung-din-metal",
+    "name": "Mini Strung din Metal",
+    "category": "Strunguri",
+    "subcategory": "Mini strunguri",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor arbore",
+        "value": "0,55 kW"
+      },
+      {
+        "icon": "default",
+        "title": "Lungimea maxima a piesei de prelucrat",
+        "value": "350 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Intervalul de viteza al arborelui",
+        "value": "140 – 1.710 r/min"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate de prelucrare",
+        "value": "Sarcina usoara"
+      }
+    ]
+  },
+  {
+    "slug": "mini-strung-profesional",
+    "name": "Mini Strung Profesional",
+    "category": "Strunguri",
+    "subcategory": "Mini strunguri",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate netă/brută",
+        "value": "300 kg / 340 kg"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni ambalaj",
+        "value": "1500 × 760 × 700 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Distanța între centre",
+        "value": "600 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Motor și tensiune",
+        "value": "1.1 kW, 220V monofazat sau 380V trifazat"
+      }
+    ]
+  },
+  {
+    "slug": "mini-strung-universal-cu-banc",
+    "name": "Mini Strung Universal cu Banc",
+    "category": "Strunguri",
+    "subcategory": "Mini strunguri",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru maxim de balans",
+        "value": "300 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune",
+        "value": "220V / 380V"
+      },
+      {
+        "icon": "default",
+        "title": "Distanta intre centre",
+        "value": "750 mm"
+      }
+    ]
+  },
+  {
+    "slug": "strung-universal-cu-banc",
+    "name": "Strung Universal cu Banc",
+    "category": "Strunguri",
+    "subcategory": "Strunguri universale",
+    "specs": [
+      {
+        "icon": "travel",
+        "title": "Cursa transversala",
+        "value": "250 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiunea sculei",
+        "value": "20×20 mm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametrul cozii de pin",
+        "value": "65 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Balansa peste pat",
+        "value": "500 mm"
+      }
+    ]
+  },
+  {
+    "slug": "strung-heavy-duty",
+    "name": "Strung Heavy Duty",
+    "category": "Strunguri",
+    "subcategory": "Strunguri heavy duty",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru maxim prelucrare peste batiu",
+        "value": "1640 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Latimea ghidajului",
+        "value": "755 mm"
+      }
+    ]
+  },
+  {
+    "slug": "strung-cnc-pentru-strunjit-metal",
+    "name": "Strung CNC pentru Strunjit Metal",
+    "category": "Strunguri",
+    "subcategory": "Strunguri CNC",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru maxim strunjire peste pat",
+        "value": "800 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza ax principal",
+        "value": "Ax independent: 100–1600 rpm"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie de pozitionare",
+        "value": "±0.015 mm"
+      },
+      {
+        "icon": "travel",
+        "title": "Viteza deplasare rapida axa X / Z",
+        "value": "4 / 6 m/min"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-aplicat-cant-complet-automata-cu-urmarire-profil",
+    "name": "Mașină de Aplicat Cant Complet Automată cu Urmărire Profil",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini de aplicat cant",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni totale (LxlxH)",
+        "value": "5.840 × 970 × 1.800 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "12 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Viteza de alimentare",
+        "value": "15 – 23 m/min"
+      },
+      {
+        "icon": "default",
+        "title": "Ridicare electrica",
+        "value": "0,37 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-aplicat-cant-automata-cu-doua-rezervoare-de-adeziv",
+    "name": "Mașină de Aplicat Cant Automată, cu Două Rezervoare de Adeziv",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini de aplicat cant",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni totale (LxlxH)",
+        "value": "8.650 × 970 × 1.800 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "16,5 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Viteza de alimentare",
+        "value": "15 – 23 m/min"
+      },
+      {
+        "icon": "default",
+        "title": "Ridicare electrica",
+        "value": "0,37 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-aplicat-canturi-pe-contururi-circulare",
+    "name": "Mașină Automată de Aplicat Canturi pe Contururi Circulare",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini de aplicat cant",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni totale (LxlxH)",
+        "value": "5.600 × 960 × 1.600 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "10,8 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Viteza de alimentare",
+        "value": "15 – 23 m/min"
+      },
+      {
+        "icon": "default",
+        "title": "Ridicare electrica",
+        "value": "0,37 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-aplicat-canturi-pentru-dulapuri-cu-forme-speciale",
+    "name": "Mașină de aplicat canturi pentru dulapuri cu forme speciale",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini de aplicat cant",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "0,18 kW"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de aplicare",
+        "value": "0 – 26 cm/s"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni",
+        "value": "100 × 75 × 100 cm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "120 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-aplicat-canturi-semiautomata-pentru-placaj-portabila-pentru-ateliere-mici",
+    "name": "Mașină de Aplicat Canturi Semiautomată pentru Placaj, Portabilă, pentru Ateliere Mici",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini de aplicat cant",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Viteza de alimentare",
+        "value": "12 – 22 m/min"
+      },
+      {
+        "icon": "default",
+        "title": "Grosimea panoului",
+        "value": "10 – 60 mm"
+      },
+      {
+        "icon": "temperature",
+        "title": "Tablou control temperatura",
+        "value": "Autonics — Korea"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-taiere-usi-pe-patru-laturi-cu-incarcare-si-descarcare-automata",
+    "name": "Mașină de Tăiere Uși pe Patru Laturi cu Încărcare și Descărcare Automată",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini pentru uși",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "25 kW"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "3.000 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lungimea de procesare",
+        "value": "1.700 – 2.800 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "M2-1128"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-frezat-locasuri-balamale-si-incuietori-usi",
+    "name": "Mașină CNC Frezat Locașuri Balamale și Încuietori Uși",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "rpm",
+        "title": "Turatie maxima ax",
+        "value": "18.000 rpm"
+      },
+      {
+        "icon": "travel",
+        "title": "Viteza de deplasare X, Y",
+        "value": "60 m/min"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de procesare",
+        "value": "10–80 m/min (reglabila)"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune maxima usa",
+        "value": "2.800 × 1.000 × 70 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-pentru-realizarea-gaurilor-de-incuietori-si-balamale-pe-usi-din-lemn",
+    "name": "Mașină CNC pentru realizarea găurilor de încuietori și balamale pe uși din lemn",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC mobilă",
+    "specs": [
+      {
+        "icon": "travel",
+        "title": "Cursa X, Y",
+        "value": "1.300 × 2.500 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza lucru",
+        "value": "0–25 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Acuratete repozitionare",
+        "value": "±0,03 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220 V / 380 V, 3PH, 50/60 Hz"
+      }
+    ]
+  },
+  {
+    "slug": "celula-cnc-de-nesting-pentru-mobila-2-routere-atc-240-panouri-8h-etichetare-automata",
+    "name": "Celulă CNC de Nesting pentru Mobilă | 2 Routere ATC, 240 Panouri/8h, Etichetare Automată",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC mobilă",
+    "specs": [
+      {
+        "icon": "control",
+        "title": "Routere CNC ATC",
+        "value": "2 unitati cu schimbator automat de scule (ATC)"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate productie",
+        "value": "240 panouri / tura de 8 ore (~30 panouri/ora)"
+      },
+      {
+        "icon": "default",
+        "title": "Monitorizare",
+        "value": "Timp real, sistem centralizat"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-pentru-fabricarea-mobilierului-cu-alimentare-automata",
+    "name": "Mașină CNC pentru fabricarea mobilierului cu alimentare automată",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "travel",
+        "title": "Cursa X, Y",
+        "value": "1.300 × 2.500 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza lucru",
+        "value": "0–25 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Acuratete repozitionare",
+        "value": "±0,03 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220 V / 380 V, 3PH, 50/60 Hz"
+      }
+    ]
+  },
+  {
+    "slug": "fierastrau-cnc-de-mare-viteza-pentru-taierea-panourilor-din-lemn",
+    "name": "Fierăstrău CNC de Mare Viteză pentru Tăierea Panourilor din Lemn",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Fierăstraie pentru lemn",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni generale",
+        "value": "6.400 × 6.300 × 1.800 mm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametrul lamei principale",
+        "value": "350 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de rotatie lama principala",
+        "value": "4.800 rpm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Motor alimentare automata",
+        "value": "1,5 kW AC servo"
+      }
+    ]
+  },
+  {
+    "slug": "fierastrau-circular-cu-masa-glisanta-pentru-panouri",
+    "name": "Fierăstrău Circular cu Masă Glisantă pentru Panouri",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Fierăstraie pentru lemn",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni generale",
+        "value": "3.200 × 2.540 × 900 mm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametrul fierastraului principal",
+        "value": "300 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza fierastraului principal",
+        "value": "4.000 / 6.000 rpm"
+      },
+      {
+        "icon": "default",
+        "title": "Lungimea de taiere (dinti fierastrau)",
+        "value": "3.000 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-de-gaurire-pe-sase-laturi-cu-atc-si-capete-de-gaurire-in-patru-directii",
+    "name": "Mașină CNC de Găurire pe Șase Laturi cu ATC și Capete de Găurire în Patru Direcții",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Tensiune de lucru",
+        "value": "380V / 60Hz / 3PH"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime de procesare",
+        "value": "250 – 2.800 mm"
+      },
+      {
+        "icon": "tools",
+        "title": "Magazin ATC",
+        "value": "Linear, 6 scule"
+      },
+      {
+        "icon": "control",
+        "title": "Sistem de control",
+        "value": "Blue Elephant Custom System (+32% eficienta)"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-de-gaurire-cu-cap-dublu-si-sase-fete",
+    "name": "Mașină CNC de găurire cu cap dublu și șase fețe",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune de lucru",
+        "value": "1.300 × 2.500 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de rotatie fus principal",
+        "value": "4.800 rpm"
+      },
+      {
+        "icon": "axis",
+        "title": "Viteza axa X",
+        "value": "120 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie repozitionare",
+        "value": "±0,03 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-de-productie-a-cutiilor-din-carton",
+    "name": "Mașină CNC de producție a cutiilor din carton",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "3.500 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Putere",
+        "value": "16 kW, 380V, 50–60 Hz, 32A"
+      },
+      {
+        "icon": "default",
+        "title": "Latime maxima placa",
+        "value": "2.500 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "AB2500"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-de-gaurit-cu-sase-fete-pentru-productia-de-mobila-din-lemn",
+    "name": "Mașină CNC de găurit cu șase fețe pentru producția de mobilă din lemn",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC mobilă",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune de lucru",
+        "value": "1.300 × 2.500 mm"
+      },
+      {
+        "icon": "axis",
+        "title": "Viteza axa X",
+        "value": "120 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie repozitionare",
+        "value": "±0,03 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Arbori principali",
+        "value": "3,5 kW × 2, racire cu aer"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-gaurit-cu-mai-multe-capete-si-fierastrau",
+    "name": "Mașină de Găurit cu Mai Multe Capete și Fierăstrău",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Fierăstraie pentru lemn",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere arbore de gaurit",
+        "value": "2,2 kW"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de rotatie arbore",
+        "value": "0 – 18.000 rpm"
+      },
+      {
+        "icon": "travel",
+        "title": "Cursa de lucru",
+        "value": "2.800 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni generale",
+        "value": "3.600 × 1.250 × 1.300 mm"
+      }
+    ]
+  },
+  {
+    "slug": "presa-automata-de-vacuum-pentru-productia-de-mobilier",
+    "name": "Presă Automată de Vacuum pentru Producția de Mobilier",
+    "category": "Mașini de prelucrare lemn",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiunile intregii masini",
+        "value": "9.700 × 1.780 × 1.400 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "21 – 30 kW"
+      },
+      {
+        "icon": "consumption",
+        "title": "Consum efectiv de energie",
+        "value": "6 – 8 kW"
+      },
+      {
+        "icon": "temperature",
+        "title": "Temperatura maxima",
+        "value": "185°C"
+      }
+    ]
+  },
+  {
+    "slug": "linie-automata-fabricare-cutii-carton-ondulat-personalizate-uzinex",
+    "name": "Linie Automată Fabricare Cutii Carton Ondulat Personalizate | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Fabricare cutii carton",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune maximă cutie (L × l × H)",
+        "value": "800 × 600 × 215 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "380V, 50–60Hz, 50A"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "20 kW"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate totală",
+        "value": "10.000 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-pentru-gaurirea-balamalelor-pentru-mobila-cu-un-singur-cap",
+    "name": "Mașina CNC pentru găurirea balamalelor pentru mobilă cu un singur cap",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC mobilă",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "380 V / 220 V"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "1,5 kW"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza motor",
+        "value": "2.880 rpm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru maxim gaurit",
+        "value": "≤ 35 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-gaurit-cu-balama-dubla-pentru-mobila-din-lemn-cnc",
+    "name": "Mașină de găurit cu balama dublă pentru mobilă din lemn CNC",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC mobilă",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "380 V / 220 V"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza motor",
+        "value": "2.880 rpm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru maxim de gaurit",
+        "value": "≤ 35 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Adancime maxima de gaurit",
+        "value": "≤ 50 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-profilat-si-taiat-colturi-pentru-producerea-mobilei",
+    "name": "Mașina de profilat și tăiat colțuri pentru producerea mobilei",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC mobilă",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni gabarit",
+        "value": "710 × 500 × 460 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220 V"
+      },
+      {
+        "icon": "power",
+        "title": "Putere",
+        "value": "350 W"
+      },
+      {
+        "icon": "default",
+        "title": "Grosimea taierii",
+        "value": "0,3 – 3 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-lustruit-lemn",
+    "name": "Mașină automată de lustruit lemn",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini de finisat lemn",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere totala",
+        "value": "9,77 kW"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni nete",
+        "value": "3.100 × 1.750 × 1.850 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "1.500 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Latimea maxima de procesare",
+        "value": "sub 1.300 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-cnc-de-taiere-a-metalului-cu-banda-in-forma-de-t",
+    "name": "Mașină CNC de tăiere a metalului cu bandă în formă de T",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC metal",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "1,1 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "380 V / 220 V"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiunea zonei de lucru",
+        "value": "550 × 520 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "110 kg"
+      }
+    ]
+  },
+  {
+    "slug": "centru-de-prelucrare-cnc-multifunctional-pentru-fabricarea-usilor",
+    "name": "Centru de prelucrare CNC multifuncțional pentru fabricarea ușilor",
+    "category": "Mașini de prelucrare lemn",
+    "subcategory": "Mașini pentru uși",
+    "specs": [
+      {
+        "icon": "axis",
+        "title": "Calatoria axelor X / Y / Z",
+        "value": "1300 × 3000 × 200 mm"
+      },
+      {
+        "icon": "tools",
+        "title": "Mandrina ATC (ax principal)",
+        "value": "9 kW, racire cu aer, ISO30"
+      },
+      {
+        "icon": "default",
+        "title": "Mandrina orizontala",
+        "value": "2 capete, 5,5 kW, rotire 90°"
+      },
+      {
+        "icon": "control",
+        "title": "Sistem de control",
+        "value": "Syntech cu 8 axe"
+      }
+    ]
+  },
+  {
+    "slug": "freza-cnc-pentru-polistiren-cu-atc-linear",
+    "name": "Freză CNC pentru Polistiren cu ATC Linear",
+    "category": "Utilaje CNC",
+    "subcategory": "CNC diverse",
+    "specs": [
+      {
+        "icon": "travel",
+        "title": "Cursa X, Y",
+        "value": "1.800 × 2.400 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza lucru",
+        "value": "0–45 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Acuratete repozitionare",
+        "value": "±0,03 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Mandrina orizontala",
+        "value": "11 kW"
+      }
+    ]
+  },
+  {
+    "slug": "router-cnc-cu-4-procese-multihead-si-dispozitiv-rotativ",
+    "name": "Router CNC cu 4 procese multihead și dispozitiv rotativ",
+    "category": "Utilaje CNC",
+    "subcategory": "Router CNC",
+    "specs": [
+      {
+        "icon": "travel",
+        "title": "Cursa X, Y",
+        "value": "1.300 × 2.500 mm"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza lucru",
+        "value": "0–45 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Acuratete repozitionare",
+        "value": "±0,03 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Invertor",
+        "value": "3,7 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-taiere-laser-cu-bobina-de-tabla",
+    "name": "Mașină automată de tăiere Laser cu Bobină de Tablă",
+    "category": "Mașini de tăiere laser",
+    "subcategory": "Laser cu bobină",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Puterea laserului",
+        "value": "1 kW – 2 kW"
+      },
+      {
+        "icon": "axis",
+        "title": "Viteza maxima pe axele X/Y",
+        "value": "140 m/min"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de nivelare",
+        "value": "pana la 20 m/min"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie de pozitionare",
+        "value": "±0,05 mm"
+      }
+    ]
+  },
+  {
+    "slug": "laser-fibra-economic-pentru-ateliere",
+    "name": "Laser Fibră Economic pentru Ateliere",
+    "category": "Mașini de tăiere laser",
+    "subcategory": "Laser fibră",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere sursa laser (configurabila)",
+        "value": "1.000 – 6.000 W"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie de pozitionare",
+        "value": "±0,05 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Suprafata de lucru (max.)",
+        "value": "1.515 × 3.030 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni echipament",
+        "value": "4.320 × 2.250 × 1.950 mm / 5.350 × 3.350 × 1.950 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-paleti",
+    "name": "Mașină de ambalat paleți",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametrul plăcii rotative",
+        "value": "1.650 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiunea mașinii",
+        "value": "2.500 × 1.650 × 2.450 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutatea mașinii",
+        "value": "700 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Puterea mașinii",
+        "value": "1,5 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-paleti-tip-m",
+    "name": "Mașină de Ambalat Paleți Tip M",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": []
+  },
+  {
+    "slug": "masina-de-ambalat-paleti-kpw-tp1650f",
+    "name": "Mașină de ambalat paleți KPW-TP1650F",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": []
+  },
+  {
+    "slug": "masina-de-ambalat-robotizata-kpw-z4510",
+    "name": "Mașină de ambalat robotizată KPW-Z4510",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune minimă ambalaj",
+        "value": "600 × 600 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutatea mașinii",
+        "value": "350 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Puterea mașinii",
+        "value": "0,18 kW"
+      },
+      {
+        "icon": "default",
+        "title": "Înălțime maximă de ambalare",
+        "value": "2.100 mm / 2.400 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-paleti-cu-brat-rotativ-kpw-yb1800l",
+    "name": "Mașină de ambalat paleți cu braț rotativ KPW-YB1800L",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-YB1800L"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune ambalaj (L×l×H)",
+        "value": "1.200mm × 1.000mm × 1.600mm"
+      },
+      {
+        "icon": "power",
+        "title": "Puterea mașinii",
+        "value": "2,5 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiunea mașinii",
+        "value": "380V, 50Hz, trifazat"
+      }
+    ]
+  },
+  {
+    "slug": "masina-semiautomata-de-ambalat-folie-stretch-kpw-m800-uzinex",
+    "name": "Mașină Semiautomată de Ambalat Folie Stretch KPW-M800 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune maximă ambalaj (L × l × H)",
+        "value": "900 × 900 × 900 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "0,12 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V, 50/60Hz, monofazat"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru interior rolă folie",
+        "value": "76,2 mm"
+      }
+    ]
+  },
+  {
+    "slug": "mini-masina-de-ambalat-folie-stretch-kpw-mn600-uzinex",
+    "name": "Mini Mașina de Ambalat Folie Stretch KPW-MN600 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune maximă ambalaj (L × l × H)",
+        "value": "600 × 600 × 350–600 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate maximă produs",
+        "value": "100 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "1,2 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "110/220V, 50/60Hz, monofazat"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-bagaje-kpw-zxl600-uzinex",
+    "name": "Mașina de Ambalat Bagaje KPW-ZXL600 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare diverse",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate maximă bagaj",
+        "value": "100 kg"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "1.600 × 630 × 1.670 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere nominală",
+        "value": "0,48 kW"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-ZXL600"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-ambalat-cu-bobina-stretch-kpw-yt2000-uzinex",
+    "name": "Mașina Automată de Ambalat cu Bobină Stretch KPW-YT2000 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru platformă rotativă",
+        "value": "2.000 mm"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate maximă platformă",
+        "value": "2.000 kg"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "~3.100 × 2.000 × 2.000 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă mașină",
+        "value": "~1.500 kg"
+      }
+    ]
+  },
+  {
+    "slug": "statie-mobila-de-zdrobire-si-sortare-cu-senile",
+    "name": "Stație mobilă de zdrobire și sortare, cu șenile",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Etapa 1 — Alimentare",
+        "value": "Alimentator vibratoriu cu debit controlat automat"
+      },
+      {
+        "icon": "default",
+        "title": "Etapa 2 — Concasare primară",
+        "value": "Concasor cu fălci — zdrobire grosieră"
+      },
+      {
+        "icon": "travel",
+        "title": "Sistem de deplasare",
+        "value": "Șenile hidraulice — teren accidentat, fără drum amenajat"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale procesabile",
+        "value": "Granit, bazalt, calcar, cuarț, minereu, beton armat, asfalt, moloz"
+      }
+    ]
+  },
+  {
+    "slug": "pompa-de-caldura-aer-apa-r32-evi-dc-inverter-19-35-kw-cu-ecran-tactil",
+    "name": "Pompă de Căldură Aer-Apă R32 EVI DC Inverter 19–35 kW cu Ecran Tactil",
+    "category": "Echipamente energetice",
+    "subcategory": "Pompe de căldură",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "CGK050V3L-B",
+        "value": "220V / 1f / 50Hz"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-orizontala-stretch-kpw-sp1000",
+    "name": "Mașina de Ambalat Orizontală Stretch KPW-SP1000",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare paleți",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inel rotativ",
+        "value": "1.000 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni produs acceptate (L × H)",
+        "value": "300×300 mm — 650×650 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate maximă produs",
+        "value": "100–1.000 kg/ml bandă"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "3,0 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-legat-cu-banda-kpw-8060-uzinex",
+    "name": "Mașina Automată de Legat cu Bandă KPW-8060 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Mașini de legat cu bandă",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "1.100–1.400 W"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune cadru trecere (L × H)",
+        "value": "740 × 600 mm"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate maximă produs",
+        "value": "30–50 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime bandă PP acceptată",
+        "value": "9–15 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-semiautomata-de-legat-cu-banda-kpw-750",
+    "name": "Mașina Semiautomată de Legat cu Bandă KPW-750",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Mașini de legat cu bandă",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Tensiune maximă de strângere",
+        "value": "8–45 kg (reglabilă)"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "895 × 565 × 750 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~70 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "250 W"
+      }
+    ]
+  },
+  {
+    "slug": "masina-semiautomata-de-legat-paleti-kpw-1300-uzinex",
+    "name": "Mașina Semiautomată de Legat Paleți KPW-1300 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Mașini de legat cu bandă",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "~1.870 × 550 × 1.530 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~150 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "~0,5 kW"
+      },
+      {
+        "icon": "default",
+        "title": "Forță maximă de tensionare",
+        "value": "Până la 60 kg (reglabilă)"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-legat-cu-banda-orizontala-kpw-db800s-uzinex",
+    "name": "Mașina Automată de Legat cu Bandă Orizontală KPW-DB800S | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Mașini de legat cu bandă",
+    "specs": [
+      {
+        "icon": "certification",
+        "title": "Dimensiune arc standard (L × H)",
+        "value": "1.450 × 1.400 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "380V trifazic, 50Hz"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "~3,5 kW"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "~3.180 × 1.877 × 3.400 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-electrica-de-legat-paleti-kpw-jd-008-uzinex",
+    "name": "Mașina Automată Electrică de Legat Paleți KPW-JD-008 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Mașini de legat cu bandă",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "90–120 W"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V / 50Hz, monofazat"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "~1.000 × 700 × 1.400 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~70–90 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-bandat-kpw-sdj150-banda-pp-pet-12-25mm-uzinex",
+    "name": "Mașina Automată de Bandat KPW-SDJ150 | Bandă PP/PET 12–25mm | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Mașini de legat cu bandă",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V / 50–60Hz, monofazat"
+      },
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "300–500 W"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină (L × l × H)",
+        "value": "~1.000 × 700 × 1.200 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~70–100 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-sigilare-a-cutiilor-kpw-fx-1000-cutii-ora-5-modele",
+    "name": "Mașina de Sigilare a Cutiilor KPW-FX | 1000 Cutii/Oră | 5 Modele",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Sigilare și formare cutii",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "240 W"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220V / 110V, 50Hz / 60Hz, monofazat"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate maximă",
+        "value": "1.000 cutii / oră"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime cutie (mm)",
+        "value": "80–500"
+      }
+    ]
+  },
+  {
+    "slug": "masina-pneumatica-de-sigilare-a-cutiilor-kpw-zfx30-zfx50-uzinex",
+    "name": "Mașina Pneumatică de Sigilare a Cutiilor KPW-ZFX30 / ZFX50 | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Sigilare și formare cutii",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor (W)",
+        "value": "240"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate de lucru",
+        "value": "20 cutii/min (1.200/oră)"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină L × l × H (mm)",
+        "value": "1.570 × 800 × 1.200"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă (kg)",
+        "value": "200"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-format-carton-kpw-kx4040-erector-pneumatic-8-10-cutii-min-uzinex",
+    "name": "Mașina de Format Carton KPW-KX4040 | Erector Pneumatic 8–10 Cutii/Min | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Sigilare și formare cutii",
+    "specs": [
+      {
+        "icon": "consumption",
+        "title": "Consum aer comprimat",
+        "value": "200 L/min"
+      },
+      {
+        "icon": "default",
+        "title": "Presiune aer comprimat",
+        "value": "6 kg/cm² (0,6 MPa)"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-KX4040"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220V / 110V, 50Hz / 60Hz, monofazat"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-dezmembrat-sticle-rotunde-kpw-lp800-20-100mm-10-rpm-0-2kw-uzinex",
+    "name": "Mașina de Dezmembrat Sticle Rotunde KPW-LP800 | Ø20–100mm, 10 rpm, 0.2kW | UZINEX",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de dezmembrat",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru recipient (min–max)",
+        "value": "20–100 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "0,2 kW"
+      },
+      {
+        "icon": "default",
+        "title": "Înălțime recipient (min–max)",
+        "value": "30–120 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-LP800"
+      }
+    ]
+  },
+  {
+    "slug": "masina-semiautomata-de-etichetare-plata-kpw-bp120-eticheta-max-120mm-anti-blocare-uzinex",
+    "name": "Mașina Semiautomată de Etichetare Plată KPW-BP120 | Etichetă max 120mm, Anti-Blocare | UZINEX",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de etichetare",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V, 50/60Hz"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime maximă etichetă",
+        "value": "120 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-BP120"
+      },
+      {
+        "icon": "output",
+        "title": "Productivitate orientativă",
+        "value": "~100–120 produse/minut"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-etichetare-plata-kpw-qp150-120-150-prod-min-1mm-uzinex",
+    "name": "Mașina Automată de Etichetare Plată KPW-QP150 | 120–150 Prod/Min, ±1mm | UZINEX",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de etichetare",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni etichetă (max lățime × lungime)",
+        "value": "~150 × 200 mm"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie aplicare",
+        "value": "±1 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~150–180 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime produs (min–max)",
+        "value": "50–400 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-semiautomata-de-etichetare-laterala-kpw-bc150-1mm-40kg-pedala-uzinex",
+    "name": "Mașina Semiautomată de Etichetare Laterală KPW-BC150 | ±1mm, 40kg, Pedală | UZINEX",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de etichetare",
+    "specs": [
+      {
+        "icon": "precision",
+        "title": "Precizie aplicare",
+        "value": "±1 mm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru recipient (min–max)",
+        "value": "20–120 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V, 50/60Hz"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~40–50 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-etichetare-laterala-kpw-qc160",
+    "name": "Mașina Automată de Etichetare Laterală KPW-QC160",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de etichetare",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru recipient (min–max)",
+        "value": "20–120 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V, 50/60Hz"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~80–100 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime etichetă (min–max)",
+        "value": "30–160 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-umplere-semiautomata-kpw-g1w1-10-1000ml-creme-geluri-lichide-banc-lucru-uzinex",
+    "name": "Mașina de Umplere Semiautomată KPW-G1W1 | 10–1000ml, Creme+Geluri+Lichide, Banc Lucru | UZINEX",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de umplere și plafonare",
+    "specs": [
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-G1W1"
+      },
+      {
+        "icon": "capacity",
+        "title": "Volum de umplere",
+        "value": "10 ml – 1.000 ml (reglabil mecanic)"
+      },
+      {
+        "icon": "precision",
+        "title": "Precizie dozare",
+        "value": "±1–2%"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V / 110V, 50/60Hz, consum redus"
+      }
+    ]
+  },
+  {
+    "slug": "masina-automata-de-umplere-kpw-gz8t-8-capete-3000-rec-ora-1-precizie",
+    "name": "Mașina Automată de Umplere KPW-GZ8T | 8 Capete, 3000 Rec/Oră, ±1% Precizie",
+    "category": "Echipamente de etichetare și dozare",
+    "subcategory": "Mașini de umplere și plafonare",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "220V / 50Hz"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni (L×l×H)",
+        "value": "~1500 × 800 × 1800 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "~250 kg"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-GZ8T"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-termocontractabil-2-in-1-kpw-fm5540-produs-max-550-400mm-uzinex",
+    "name": "Mașina de Ambalat Termocontractabil 2 în 1 KPW-FM5540 | Produs max 550×400mm | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni maxime produs (L × l)",
+        "value": "550 × 400 mm"
+      },
+      {
+        "icon": "temperature",
+        "title": "Temperatură maximă de lucru",
+        "value": "300°C"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totală",
+        "value": "2,5 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220V / 50Hz, monofazat"
+      }
+    ]
+  },
+  {
+    "slug": "sigilator-semiautomat-in-l-cu-contractie-kpw-450l",
+    "name": "Sigilator Semiautomat în L cu Contracție KPW-450L",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-450L"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni bară sigilare L (lungime × lățime)",
+        "value": "450 × 350 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totală",
+        "value": "2,5 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220V / 50Hz, monofazat"
+      }
+    ]
+  },
+  {
+    "slug": "masina-semiautomata-de-etansare-in-l-cu-contractie-kpw-4020-tunnel-uzinex",
+    "name": "Mașina Semiautomată de Etanșare în L cu Contracție KPW-4020 Tunnel | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni zonă sigilare (L × l)",
+        "value": "400 × 200 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220V / 50Hz, monofazat"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~80–100 kg"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-4020 Tunnel"
+      }
+    ]
+  },
+  {
+    "slug": "echipament-de-etansare-in-l-cu-contractie-kpw-fl450-plc-3-5kw",
+    "name": "Echipament de Etanșare în L cu Contracție KPW-FL450 | PLC, 3–5kW",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere consumată",
+        "value": "3–5 kW"
+      },
+      {
+        "icon": "voltage",
+        "title": "Tensiune alimentare",
+        "value": "220V / 380V, 50/60 Hz"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Gabarit mașină L × l × H",
+        "value": "~1.500 × 800 × 1.200 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~150–250 kg"
+      }
+    ]
+  },
+  {
+    "slug": "aparat-de-etansare-in-l-cu-contractie-kpw-fl450",
+    "name": "Aparat de Etanșare în L cu Contracție KPW-FL450",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Lățime maximă folie",
+        "value": "~450 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-FL450"
+      },
+      {
+        "icon": "control",
+        "title": "Control parametri",
+        "value": "Panou digital cu afișaj LCD"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-etansare-in-l-cu-tunel-de-contractie-kpw-fl550",
+    "name": "Mașină de Etanșare în L cu Tunel de Contracție KPW-FL550",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Lățime maximă folie",
+        "value": "550 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "KPW-FL550"
+      },
+      {
+        "icon": "control",
+        "title": "Control parametri",
+        "value": "Panou digital cu afișaj LCD"
+      }
+    ]
+  },
+  {
+    "slug": "invelitoare-de-maneca-fl7540-pneumatic",
+    "name": "Învelitoare de mânecă FL7540 (Pneumatic)",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "AC 220 V / 50–60 Hz"
+      },
+      {
+        "icon": "default",
+        "title": "Sursă aer comprimat",
+        "value": "5–7 kg/cm²"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "FL-7540 (Pneumatic)"
+      },
+      {
+        "icon": "speed",
+        "title": "Viteza de ambalare",
+        "value": "6–9 pachete/minut"
+      }
+    ]
+  },
+  {
+    "slug": "invelitoare-de-maneca-fl-6540-pneumatic",
+    "name": "Învelitoare de mânecă FL 6540 (Pneumatic)",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Alimentare electrică",
+        "value": "AC 220 V / 50–60 Hz"
+      },
+      {
+        "icon": "power",
+        "title": "Putere încălzitor",
+        "value": "1,5 kW"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni mașină (L × l × H)",
+        "value": "925 × 940 × 1290 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate mașină",
+        "value": "aprox. 300 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-tunel-termocontractibil-bse6040a-24kw-0-15m-min-folie-pe-uzinex",
+    "name": "Mașina de Tunel Termocontractibil BSE6040A | 24kW, 0–15m/min, Folie PE | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare termocontractabilă",
+    "specs": [
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "BSE6040A"
+      },
+      {
+        "icon": "power",
+        "title": "Putere totală instalată",
+        "value": "~24 kW"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni utile tunel (L × l × H)",
+        "value": "~1.800 × 600 × 400 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "~280 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-ambalat-perne-kpw-350x-flow-wrapper-ffs-40-90-pac-min-uzinex",
+    "name": "Mașina de Ambalat Perne KPW-350X | Flow Wrapper FFS 40–90 Pac/Min | UZINEX",
+    "category": "Echipamente de ambalare",
+    "subcategory": "Ambalare diverse",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru rulou film (max)",
+        "value": "320–400 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere instalată",
+        "value": "2,4–3,0 kW"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate netă",
+        "value": "400–600 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime film (max)",
+        "value": "340–350 mm"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-balotat-hidraulica-verticala",
+    "name": "Mașină de Balotat Hidraulică Verticală",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de balotat și presare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "10 tone",
+        "value": "7,5 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-balotat-hidraulica-orizontala",
+    "name": "Mașină de Balotat Hidraulică Orizontală",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de balotat și presare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "60 tone",
+        "value": "18,5 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-presa-metalica",
+    "name": "Mașină de Presă Metalică",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de balotat și presare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "60 tone",
+        "value": "11 kW"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-tocat",
+    "name": "Mașină de Tocat",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "rpm",
+        "title": "Turatie intrare",
+        "value": "21 rpm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametrul axului de intrare",
+        "value": "Ø 180 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune gura de alimentare",
+        "value": "1.500 × 1.000 × 600 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate masina",
+        "value": "aprox. 5.200 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-stripare-a-deseurilor",
+    "name": "Mașină de Stripare a Deșeurilor",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "rpm",
+        "title": "Turatie",
+        "value": "4.500 rpm"
+      },
+      {
+        "icon": "power",
+        "title": "Putere pompa aer",
+        "value": "3 kW"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate masina",
+        "value": "3,5 kg"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni",
+        "value": "450 × 150 × 180 mm"
+      }
+    ]
+  },
+  {
+    "slug": "pulverizator-hidraulic",
+    "name": "Pulverizator hidraulic",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru de tăiere",
+        "value": "360–730 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Presiune de lucru",
+        "value": "13–16 bar"
+      }
+    ]
+  },
+  {
+    "slug": "excavator-hidraulic-de-roca-brewer",
+    "name": "Excavator hidraulic de rocă Brewer",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate echipament",
+        "value": "100 kg – 4.500+ kg"
+      },
+      {
+        "icon": "output",
+        "title": "Debit ulei hidraulic",
+        "value": "25–250 l/min"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru daltă",
+        "value": "40–210 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Presiune de lucru",
+        "value": "90–170 bar"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-concasor-uj-200",
+    "name": "Cupă concasor UJ 200",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate cupă",
+        "value": "0,65 m³"
+      },
+      {
+        "icon": "output",
+        "title": "Debit ulei",
+        "value": "150 l/min"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni (L×l×H)",
+        "value": "2.246 × 1.380 × 1.440 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate totală",
+        "value": "2.700 kg"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-concasor-bkm",
+    "name": "Cupă concasor BKM",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "BKM2200EP",
+        "value": "15–24"
+      }
+    ]
+  },
+  {
+    "slug": "concasor-mobil-cu-falci",
+    "name": "Concasor mobil cu fălci",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "certification",
+        "title": "Spor productivitate față de standard",
+        "value": "~25%"
+      },
+      {
+        "icon": "voltage",
+        "title": "Buncăr alimentare",
+        "value": "~7 m³ cu vibrații, arcuri oțel, debit controlat automat"
+      },
+      {
+        "icon": "control",
+        "title": "Sistem de control",
+        "value": "PLC avansat + telecomandă wireless"
+      },
+      {
+        "icon": "default",
+        "title": "Tip concasor",
+        "value": "Cu fălci (jaw crusher) — concasor mobil autonom"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-concasor-beton-70t",
+    "name": "Cupă concasor beton 70t",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate totală",
+        "value": "~2.300 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Magnet extracție armătură",
+        "value": "Opțional — 24V"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale procesabile",
+        "value": "Beton armat, asfalt, piatră naturală, deșeuri demolare, traverse și stâlpi de beton"
+      }
+    ]
+  },
+  {
+    "slug": "mini-crusher-bucket",
+    "name": "Mini Crusher Bucket",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate cupă",
+        "value": "~0,16 m³"
+      },
+      {
+        "icon": "output",
+        "title": "Debit ulei necesar",
+        "value": "45–50 L/min"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni gură alimentare (l × h)",
+        "value": "330 mm × 450 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate totală",
+        "value": "~880 kg"
+      }
+    ]
+  },
+  {
+    "slug": "concasor-mecanic-de-beton",
+    "name": "Concasor mecanic de beton",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Rotație cupă",
+        "value": "360° hidraulic"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale procesabile",
+        "value": "Beton armat, beton simplu, piatră, asfalt"
+      }
+    ]
+  },
+  {
+    "slug": "taietor-cu-tambur",
+    "name": "Tăietor cu tambur",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "MD80",
+        "value": "372"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-de-cernere-rotativa",
+    "name": "Cupă de cernere rotativă",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "3–35 tone"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale construcție",
+        "value": "Oțel de înaltă rezistență"
+      }
+    ]
+  },
+  {
+    "slug": "mini-screening-bucket",
+    "name": "Mini Screening Bucket",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "158 kg"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate cuvă",
+        "value": "0,33 m³"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru tambur rotativ",
+        "value": "610 mm"
+      },
+      {
+        "icon": "output",
+        "title": "Debit ulei necesar",
+        "value": "20–30 L/min"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-de-cernere-pentru-tocatoare",
+    "name": "Cupă de cernere pentru tocătoare",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "material",
+        "title": "Materiale construcție",
+        "value": "Q345, Q460, NM400"
+      },
+      {
+        "icon": "default",
+        "title": "Reducere timp zdrobire",
+        "value": "Până la 60% față de metodele convenționale"
+      }
+    ]
+  },
+  {
+    "slug": "graifer-hidraulic-pentru-demolare",
+    "name": "Graifer hidraulic pentru demolare",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "MDG06",
+        "value": "280"
+      }
+    ]
+  },
+  {
+    "slug": "graifer-hidraulic-pentru-excavator",
+    "name": "Graifer hidraulic pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Presiune de lucru",
+        "value": "21–25 MPa"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale",
+        "value": "Hardox, NM400, Q345, Q460, WH60"
+      }
+    ]
+  },
+  {
+    "slug": "multi-peel-clamp",
+    "name": "Multi Peel Clamp",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "~1.050 kg"
+      },
+      {
+        "icon": "output",
+        "title": "Debit hidraulic necesar",
+        "value": "80 L/min"
+      },
+      {
+        "icon": "default",
+        "title": "Deschidere maximă fălci",
+        "value": "1.960 mm"
+      },
+      {
+        "icon": "material",
+        "title": "Material",
+        "value": "Q345B + NM400"
+      }
+    ]
+  },
+  {
+    "slug": "fixed-orange-peel-grab",
+    "name": "Fixed Orange Peel Grab",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "16–23 tone"
+      },
+      {
+        "icon": "material",
+        "title": "Material",
+        "value": "Oțel de înaltă rezistență Hardox 450/500"
+      }
+    ]
+  },
+  {
+    "slug": "graifer-hidraulic-pentru-busteni",
+    "name": "Graifer hidraulic pentru bușteni",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate (MWR20)",
+        "value": "1.380 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Deschidere maximă fălci",
+        "value": "2.300 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "MWR20"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale fălci",
+        "value": "Q345, Q460, NM400, WH60, Hardox"
+      }
+    ]
+  },
+  {
+    "slug": "foarfeca-de-demolare",
+    "name": "Foarfecă de demolare",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Viteză față de ciocan pneumatic",
+        "value": "De 2–3 ori mai rapid"
+      }
+    ]
+  },
+  {
+    "slug": "foarfeca-hidraulica-pentru-resturi",
+    "name": "Foarfecă hidraulică pentru resturi",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "3.300 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Deschidere maximă fălci",
+        "value": "745 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "YZJ310"
+      }
+    ]
+  },
+  {
+    "slug": "foarfeca-excavator-eagle-shear-310",
+    "name": "Foarfecă excavator Eagle Shear 310",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "~1.350 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Presiune de lucru",
+        "value": "25–30 MPa (250–300 bar)"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "Eagle Shear 310"
+      }
+    ]
+  },
+  {
+    "slug": "foarfeca-hidraulica",
+    "name": "Foarfecă hidraulică",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "JS280RT",
+        "value": "2.100"
+      }
+    ]
+  },
+  {
+    "slug": "foarfeca-hidraulica-pentru-excavator",
+    "name": "Foarfecă hidraulică pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "JS280RT",
+        "value": "14–18"
+      }
+    ]
+  },
+  {
+    "slug": "foarfeca-de-copac-pentru-excavator",
+    "name": "Foarfecă de copac pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate (clasa 8–18t)",
+        "value": "~420 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Presiune hidraulică",
+        "value": "până la 250 bar"
+      },
+      {
+        "icon": "material",
+        "title": "Material lame",
+        "value": "Hardox® 450 / Hardox® 500"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-inclinabila",
+    "name": "Cupă înclinabilă",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Rotație tilt",
+        "value": "±45° în ambele direcții"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale",
+        "value": "NM400, Q355, Q460, WH60, Hardox 400"
+      }
+    ]
+  },
+  {
+    "slug": "excavator-thumb-bucket",
+    "name": "Excavator Thumb Bucket",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "material",
+        "title": "Materiale",
+        "value": "Q345B, NM360, Hardox 500"
+      },
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "6–30 tone"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-excavator-de-roca",
+    "name": "Cupă excavator de rocă",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Finisaj interior",
+        "value": "Neted, grosime 8–12 mm, duritate HRC 48–52"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale structură",
+        "value": "Q345B, Q460 (Mn16), WH60A, NM360, NM450, Hardox 400/500"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-cu-clapeta-pentru-excavator",
+    "name": "Cupă cu clapetă pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate",
+        "value": "0,5 m³ – 4 m³"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime deschidere maximă",
+        "value": "1.421–2.617 mm"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale structură",
+        "value": "Q345, Q460, NM400, WH60, Hardox 450"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-de-mare-putere",
+    "name": "Cupă de mare putere",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "material",
+        "title": "Materiale structură",
+        "value": "Q345B, Q460, Hardox 400/500, NM360/450, WH60A"
+      },
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "6–70 tone"
+      }
+    ]
+  },
+  {
+    "slug": "thumb-bucket",
+    "name": "Thumb Bucket",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Deschidere maximă fălci",
+        "value": "1.200 mm – 2.200 mm"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale structură",
+        "value": "Q345B, NM400, Hardox 500, WH60"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-standard-pentru-excavator",
+    "name": "Cupă standard pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Duritate suprafață activă",
+        "value": "HRC 53–58"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale structură",
+        "value": "Q345, Q460 (corp) + Hardox 400, NM400, WH60 (uzură)"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-de-excavator-pentru-roca",
+    "name": "Cupă de excavator pentru rocă",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "material",
+        "title": "Materiale structură",
+        "value": "Q345B, Q460D, NM400, Hardox 400/500, WH60A"
+      },
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "8–70 tone"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-de-minerit-pentru-excavator",
+    "name": "Cupă de minerit pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate",
+        "value": "0,25 m³ – 20 m³"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale structurale",
+        "value": "Q345B, Q460, WH60A"
+      },
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "6 – 90 tone"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-schelet-excavator",
+    "name": "Cupă schelet excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate",
+        "value": "0,58 m³ – 2,1 m³"
+      },
+      {
+        "icon": "default",
+        "title": "Lățime disponibilă",
+        "value": "760 mm – 1.830 mm (30″ – 72″)"
+      },
+      {
+        "icon": "material",
+        "title": "Material structură",
+        "value": "Oțel T1 sau Hardox-500"
+      }
+    ]
+  },
+  {
+    "slug": "buldozer-cu-trei-coade-ripper",
+    "name": "Buldozer cu trei coade Ripper",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate accesoriu",
+        "value": "~1.000 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Număr șenkeri (coade)",
+        "value": "3 (Three Shank)"
+      },
+      {
+        "icon": "material",
+        "title": "Material șenkeri",
+        "value": "Q345 / Q460 / NM400 / Hardox 400 / Hardox 500 / WH60"
+      }
+    ]
+  },
+  {
+    "slug": "ripper-pentru-excavator",
+    "name": "Ripper pentru excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "6–10",
+        "value": "60"
+      }
+    ]
+  },
+  {
+    "slug": "grebla-pentru-excavator-ripper",
+    "name": "Greblă pentru excavator Ripper",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "6–10",
+        "value": "60"
+      }
+    ]
+  },
+  {
+    "slug": "compactor-de-beton",
+    "name": "Compactor de beton",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "6T",
+        "value": "~6"
+      }
+    ]
+  },
+  {
+    "slug": "placa-de-compactare-a-suprafetei-excavatorului",
+    "name": "Placă de compactare a suprafeței excavatorului",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni placă activă",
+        "value": "745×450 mm / 700×480 mm / 844×500 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Excavatoare compatibile",
+        "value": "3–30 tone"
+      },
+      {
+        "icon": "material",
+        "title": "Material structură",
+        "value": "Oțel de înaltă rezistență"
+      }
+    ]
+  },
+  {
+    "slug": "brat-cu-raza-lunga-de-actiune",
+    "name": "Braț cu rază lungă de acțiune",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "15.200",
+        "value": "0,5"
+      }
+    ]
+  },
+  {
+    "slug": "cuplaj-rapid-cu-inclinare",
+    "name": "Cuplaj rapid cu înclinare",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "output",
+        "title": "Debit ulei",
+        "value": "10–20 L/min"
+      },
+      {
+        "icon": "default",
+        "title": "Presiune hidraulică",
+        "value": "40–380 bar"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate excavator",
+        "value": "0,8 – 37,9 tone"
+      },
+      {
+        "icon": "material",
+        "title": "Material structură",
+        "value": "Oțel Q355 sau Q460 (înaltă rezistență)"
+      }
+    ]
+  },
+  {
+    "slug": "cuplaj-rapid",
+    "name": "Cuplaj rapid",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "DEHNmini",
+        "value": "1,5–4"
+      }
+    ]
+  },
+  {
+    "slug": "magnet-de-placa-de-otel",
+    "name": "Magnet de placă de oțel",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni disponibile",
+        "value": "200mm–1.000mm+ (configurabil)"
+      },
+      {
+        "icon": "temperature",
+        "title": "Temperatură operare — neodim",
+        "value": "până la 200°C"
+      },
+      {
+        "icon": "default",
+        "title": "Coeficient de siguranță",
+        "value": "3:1 (certificat — modele industriale)"
+      },
+      {
+        "icon": "material",
+        "title": "Tip material magnetic",
+        "value": "Neodim (NdFeB) sau ceramică (ferită) — la alegere"
+      }
+    ]
+  },
+  {
+    "slug": "oem-excavator",
+    "name": "OEM Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Excavatoare pe șenile",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Braț Long Reach",
+        "value": "6–50 tone"
+      }
+    ]
+  },
+  {
+    "slug": "0-8t-mini-excavator",
+    "name": "0.8t Mini Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operativă",
+        "value": "~800 kg"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate cupă",
+        "value": "0,025–0,045 m³"
+      },
+      {
+        "icon": "default",
+        "title": "Adâncime maximă de săpare",
+        "value": "~1.800 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "Monde 0.8T"
+      }
+    ]
+  },
+  {
+    "slug": "1t-mini-excavator",
+    "name": "1t Mini Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operativă",
+        "value": "~1.000 kg"
+      },
+      {
+        "icon": "consumption",
+        "title": "Consum combustibil",
+        "value": "~0,794 L/h (teoretic)"
+      },
+      {
+        "icon": "certification",
+        "title": "Capacitate cupă standard",
+        "value": "0,02 m³"
+      },
+      {
+        "icon": "default",
+        "title": "Motor",
+        "value": "Diesel, 12–14 kW"
+      }
+    ]
+  },
+  {
+    "slug": "1-5t-mini-excavator",
+    "name": "1.5t Mini Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operativă",
+        "value": "980 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Putere nominală",
+        "value": "14 kW / 2.400 rpm"
+      },
+      {
+        "icon": "consumption",
+        "title": "Consum combustibil",
+        "value": "0,794 L/h (teoretic)"
+      },
+      {
+        "icon": "output",
+        "title": "Debit sistem hidraulic",
+        "value": "8,5 L/min"
+      }
+    ]
+  },
+  {
+    "slug": "08-mini-excavator",
+    "name": "08 Mini Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operativă",
+        "value": "~800 kg"
+      },
+      {
+        "icon": "certification",
+        "title": "Capacitate cupă standard",
+        "value": "0,025 m³"
+      },
+      {
+        "icon": "default",
+        "title": "Motor",
+        "value": "7,6 kW la 2.400 rpm"
+      },
+      {
+        "icon": "config",
+        "title": "Model",
+        "value": "Monde 08"
+      }
+    ]
+  },
+  {
+    "slug": "concasor-orizontal-cu-ciocan-de-fier-vechi",
+    "name": "Concasor orizontal cu ciocan de fier vechi",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate procesare",
+        "value": "5–8 t/h"
+      },
+      {
+        "icon": "power",
+        "title": "Putere motor (kW)",
+        "value": "315"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni L × l × H (m)",
+        "value": "4,5 × 2,2 × 4,9"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate echipament (kg)",
+        "value": "3.000"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-vertical-cu-ciocane-zy-vc-650-672-rpm-150-264kw-dublu-motor-aluminiu-800-3000-kg-h",
+    "name": "Tocător Vertical cu Ciocane ZY-VC | 650–672 rpm, 150–264kW Dublu Motor, Aluminiu 800–3000 kg/h",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor (dublu)",
+        "value": "75 × 2 kW (150 kW total)"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate producție",
+        "value": "800–1.000 kg/h"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru rotor",
+        "value": "1.000 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate hobă",
+        "value": "40 kg/buc"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-cu-arbore-dublu-hn-m-3-modele-4-30kw-cadru-tratat-termic-plc-inversare-uzinex",
+    "name": "Tocător cu Arbore Dublu HN-M | 3 Modele 4–30kW, Cadru Tratat Termic, PLC Inversare | UZINEX",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "4 kW"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate",
+        "value": "320 kg"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni (L×l×H)",
+        "value": "1.200×600×1.000 mm"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare",
+        "value": "380V trifazat"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-cu-un-singur-arbore-zy-s-rotor-v-spirala-sita-evacuare-5-modele-22-110kw-uzinex",
+    "name": "Tocător cu un Singur Arbore ZY-S | Rotor V/Spirală, Sită Evacuare, 5 Modele 22–110kW | UZINEX",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "ZY-S600",
+        "value": "22"
+      }
+    ]
+  },
+  {
+    "slug": "knife-crusher",
+    "name": "Knife Crusher",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate (kg/h)",
+        "value": "300–500"
+      },
+      {
+        "icon": "power",
+        "title": "Putere motor (kW)",
+        "value": "11"
+      },
+      {
+        "icon": "default",
+        "title": "Cuțite fixe",
+        "value": "2"
+      },
+      {
+        "icon": "material",
+        "title": "Material cuțite",
+        "value": "9CrSi / Cr12MoV / SKD-II / D2 (la alegere)"
+      }
+    ]
+  },
+  {
+    "slug": "hammer-crusher",
+    "name": "Hammer Crusher",
+    "category": "Utilaje de construcții",
+    "subcategory": "Concasoare",
+    "specs": [
+      {
+        "icon": "capacity",
+        "title": "Capacitate procesare",
+        "value": "800–1.000 kg/h"
+      },
+      {
+        "icon": "power",
+        "title": "Putere motoare principale",
+        "value": "75 kW × 2"
+      },
+      {
+        "icon": "rpm",
+        "title": "Viteză ax (rpm)",
+        "value": "650"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru rotor (mm)",
+        "value": "1.000"
+      }
+    ]
+  },
+  {
+    "slug": "separator-de-sarma-de-otel-zy-sw-300-1800-kg-h-lame-mobile-fixe-4-modele-uzinex",
+    "name": "Separator de Sârmă de Oțel ZY-SW | 300–1800 kg/h, Lame Mobile+Fixe, 4 Modele | UZINEX",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "30 kW"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate producție",
+        "value": "300 kg/h"
+      },
+      {
+        "icon": "voltage",
+        "title": "Deschidere alimentare",
+        "value": "600 × 400 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni echipament",
+        "value": "2.700×900×2.500 mm"
+      }
+    ]
+  },
+  {
+    "slug": "granulator-de-cauciuc",
+    "name": "Granulator de cauciuc",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "22 / 45 / 75 / 90 kW"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune granule",
+        "value": "Φ5,5 mm"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate de procesare",
+        "value": "300 / 600 / 800–1 000 / 1 000–1 200 kg/h"
+      },
+      {
+        "icon": "default",
+        "title": "Rată separare fibre textile",
+        "value": "≥ 99%"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-de-anvelope-intregi-zy-dt-capacitate-1-5-t-h-granule-3-8-cm-dublu-motor-plc",
+    "name": "Tocător de Anvelope Întregi ZY-DT | Capacitate 1–5 t/h, granule 3–8 cm, dublu motor PLC",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor (dublu)",
+        "value": "30 × 2 kW (60 kW total)"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune ieșire",
+        "value": "3–8 cm"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate producție",
+        "value": "1–1,5 t/h"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate echipament",
+        "value": "8,5 t"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-de-fier-vechi-zy-s-800-3000-kg-h-lame-cr12mov-plc-anti-suprasarcina-uzinex",
+    "name": "Tocător de Fier Vechi ZY-S | 800–3000 kg/h, Lame Cr12MoV, PLC Anti-Suprasarcină | UZINEX",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "22 kW"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate producție",
+        "value": "800–1.000 kg/h"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni echipament",
+        "value": "1.800 × 1.600 × 1.850 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate",
+        "value": "2.200 kg"
+      }
+    ]
+  },
+  {
+    "slug": "masina-de-balotat-hidraulic-vertical-30t-15kw-balot-100-300kg-4-6-buc-ora-uzinex",
+    "name": "Masina de Balotat Hidraulic Vertical 30T | 15kW, Balot 100–300kg, 4–6 buc/oră | UZINEX",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de balotat și presare",
+    "specs": [
+      {
+        "icon": "power",
+        "title": "Putere motor",
+        "value": "15 kW (miez cupru)"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni cameră de presare",
+        "value": "800 × 400 × 800 mm"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate producție",
+        "value": "4–6 baloti/oră"
+      },
+      {
+        "icon": "default",
+        "title": "Forță de presare (serie)",
+        "value": "10–120 tone KN"
+      }
+    ]
+  },
+  {
+    "slug": "mini-excavator-rippa-r32-2-pro",
+    "name": "Mini Excavator RIPPA R32-2 Pro",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operațională",
+        "value": "3.375 kg"
+      },
+      {
+        "icon": "power",
+        "title": "Putere maximă",
+        "value": "18,5 kW / 25 CP"
+      },
+      {
+        "icon": "capacity",
+        "title": "Volum cupă",
+        "value": "0,08 m³"
+      },
+      {
+        "icon": "default",
+        "title": "Rază maximă de săpare",
+        "value": "4.831 mm"
+      }
+    ]
+  },
+  {
+    "slug": "r10eco-mini-excavator",
+    "name": "R10ECO Mini Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operațională",
+        "value": "1.000 kg / 2.205 lb"
+      },
+      {
+        "icon": "power",
+        "title": "Putere maximă",
+        "value": "8,2 kW / 11 CP"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate cupă",
+        "value": "0,014 m³ / 0,49 ft³"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni transport (L × l × H)",
+        "value": "2.430 × 912 × 2.261 mm"
+      }
+    ]
+  },
+  {
+    "slug": "rippa-r13-professional-mini-excavator",
+    "name": "Rippa R13 Professional Mini Excavator",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "subSubcategory": "Miniexcavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operațională",
+        "value": "1.300 kg / 2.866 lb"
+      },
+      {
+        "icon": "power",
+        "title": "Putere maximă",
+        "value": "10,2 kW / 13,7 CP"
+      },
+      {
+        "icon": "capacity",
+        "title": "Capacitate cupă",
+        "value": "0,03 m³ / 1,1 ft³"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni transport (L × l × H)",
+        "value": "2.114 × 750 × 2.289 mm"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-excavator-rippa-r10-r13-r15-latime-200mm-lp0104010778",
+    "name": "Cupă excavator Rippa R10/R13/R15 lăţime: 200mm [LP0104010778]",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Lățime cupă",
+        "value": "200 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate operațională excavator",
+        "value": "1,0 – 1,8 tone"
+      },
+      {
+        "icon": "material",
+        "title": "Material",
+        "value": "Oțel de înaltă rezistență"
+      }
+    ]
+  },
+  {
+    "slug": "cupa-excavator-1000mm-rippa-r10-r13-r15-cupa-curatare-si-nivelare",
+    "name": "Cupă Excavator 1000mm Rippa R10/R13/R15 – Cupă Curățare și Nivelare",
+    "category": "Utilaje de construcții",
+    "subcategory": "Accesorii utilaje de construcții",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Lățime cupă",
+        "value": "1.000 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate operațională excavator",
+        "value": "1,0 – 1,8 tone"
+      },
+      {
+        "icon": "material",
+        "title": "Material",
+        "value": "Oțel de înaltă rezistență"
+      }
+    ]
+  },
+  {
+    "slug": "buldoexcavator-rippa-rb30",
+    "name": "Buldoexcavator Rippa RB30",
+    "category": "Utilaje de construcții",
+    "subcategory": "Excavatoare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate operationala",
+        "value": "8.000 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime totala (cupa pe sol)",
+        "value": "6.450 mm"
+      }
+    ]
+  },
+  {
+    "slug": "robot-de-inspectie-antiexplozie-pentru-cisterne-gt-260",
+    "name": "Robot de Inspecție Antiexplozie pentru Cisterne GT-260",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni crawler",
+        "value": "470 × 124 × 95 mm"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru minim acces",
+        "value": "≥ 115 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Distanță operare",
+        "value": "1 – 100 m"
+      },
+      {
+        "icon": "battery",
+        "title": "Autonomie baterie",
+        "value": "5 – 6 ore"
+      }
+    ]
+  },
+  {
+    "slug": "robot-inspectie-conducte-gtdr-200-camera-hd-panoramica-210",
+    "name": "Robot Inspectie Conducte GTDR-200 | Camera HD Panoramică 210°",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "100 – 2.500 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni tambur",
+        "value": "343 × 306 × 335 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate tambur + cablu",
+        "value": "23,3 kg"
+      },
+      {
+        "icon": "certification",
+        "title": "Diametru crawler standard",
+        "value": "165 – 295 mm (ajustare automată în mers)"
+      }
+    ]
+  },
+  {
+    "slug": "robot-cctv-canalizare-gt108-ptz-10x-zoom-crawler-200-3500mm",
+    "name": "Robot CCTV Canalizare GT108 | PTZ 10x Zoom | Crawler 200–3500mm",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "200–3.500 mm (8\"–137\")"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu",
+        "value": "100–300 m (customizabil)"
+      }
+    ]
+  },
+  {
+    "slug": "sistem-crawler-inspectie-conducte-gt102b-ptz-dual-10x-150-2000mm",
+    "name": "Sistem Crawler Inspecție Conducte GT102B | PTZ Dual 10x | 150–2000mm",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "150–2.000 mm (6\"–78\")"
+      },
+      {
+        "icon": "certification",
+        "title": "Lungime cablu standard",
+        "value": "150 m (customizabil)"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate controler",
+        "value": "6 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Rezoluție ecran",
+        "value": "1920 × 1080 pixeli Full HD"
+      }
+    ]
+  },
+  {
+    "slug": "camera-inspectie-canalizare-ultra-hd-gt104ws-4mp-6-roti-elevator",
+    "name": "Cameră Inspecție Canalizare Ultra HD GT104WS | 4MP | 6 Roți | Elevator",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "150–3.000 mm (6\"–118\")"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni corp crawler",
+        "value": "600 × 110 × 180 mm"
+      },
+      {
+        "icon": "power",
+        "title": "Greutate crawler (cu modul putere)",
+        "value": "19 kg"
+      },
+      {
+        "icon": "battery",
+        "title": "Autonomie baterie tabletă",
+        "value": "8 ore funcționare continuă"
+      }
+    ]
+  },
+  {
+    "slug": "robot-inspectie-conducte-wireless-gt102bpro-4mp-6-roti-200-000-lux",
+    "name": "Robot Inspecție Conducte Wireless GT102BPro | 4MP | 6 Roți | 200.000 LUX",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "150–2.500 mm (6\"–98\")"
+      },
+      {
+        "icon": "power",
+        "title": "Greutate crawler (cu modul putere)",
+        "value": "45 kg"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni ansamblu tambur + roți",
+        "value": "642 × 424 × 372 mm"
+      },
+      {
+        "icon": "certification",
+        "title": "Lungime cablu standard",
+        "value": "120 m (customizabil)"
+      }
+    ]
+  },
+  {
+    "slug": "robot-inspectie-conducte-industriale-gt400pro-anti-rasturnare-laser-4mp",
+    "name": "Robot Inspecție Conducte Industriale GT400Pro | Anti-Răsturnare | Laser | 4MP",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "200–3.000 mm"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni corp crawler",
+        "value": "630 × 185 × 150 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate crawler",
+        "value": "13 kg"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu",
+        "value": "100–150 m"
+      }
+    ]
+  },
+  {
+    "slug": "gt108pro-cctv-municipal-pipe-inspect-crawler-robot-camera",
+    "name": "GT108Pro CCTV Municipal Pipe Inspect Crawler Robot Camera",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru conducte compatibile",
+        "value": "200–3.500 mm (8\"–137\")"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiuni tambur",
+        "value": "642 × 424 × 372 mm"
+      },
+      {
+        "icon": "weight",
+        "title": "Greutate tambur",
+        "value": "40 kg, contor metraj integrat"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu",
+        "value": "100–300 m (customizabil)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-inspectie-tevi-industriale-gt102-laser-standard-49mm-120-600mm",
+    "name": "Cameră Inspecție Tevi Industriale GT102 | Laser Standard | Ø49mm | 120–600mm",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru tevi compatibile",
+        "value": "120–600 mm (5\"–24\")"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu",
+        "value": "100–150 m (customizabil)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-inspectie-tevi-gaze-gt102a-petrol-chimie-220-200m-ip68",
+    "name": "Cameră Inspecție Tevi Gaze GT102A | Petrol | Chimie | 220° | 200m | IP68",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru tevi compatibile",
+        "value": "120–600 mm (5\"–24\")"
+      },
+      {
+        "icon": "default",
+        "title": "Tambur electric",
+        "value": "Auto / Manual, 40 kg standard"
+      },
+      {
+        "icon": "certification",
+        "title": "Lungime cablu standard",
+        "value": "100 m (customizabil până la 200 m)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-inspectie-tevi-4mp-gt102apro-wireless-laser-120-600mm",
+    "name": "Cameră Inspecție Tevi 4MP GT102APro | Wireless | Laser | 120–600mm",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru tevi compatibile",
+        "value": "120–600 mm (5\"–24\")"
+      },
+      {
+        "icon": "default",
+        "title": "Tambur electric",
+        "value": "Auto / Manual, 40 kg standard"
+      },
+      {
+        "icon": "certification",
+        "title": "Lungime cablu standard",
+        "value": "120 m (customizabil până la 200 m)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-inspectie-tevi-mici-gt100-100mm-7-inch-portabil-200-000-lux",
+    "name": "Cameră Inspecție Tevi Mici GT100 | 100mm | 7 Inch Portabil | 200.000 LUX",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru cap cameră",
+        "value": "51 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu inspecție",
+        "value": "60–120 m (customizabil)"
+      }
+    ]
+  },
+  {
+    "slug": "robot-inspectie-pale-eoliene-gt380-circular-cold-light-ptz-10x-230-3500mm",
+    "name": "Robot Inspecție Pale Eoliene GT380 | Circular Cold Light | PTZ 10x | 230–3500mm",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Roboți CCTV pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru compatibil",
+        "value": "230–3.500 mm (9\"–138\")"
+      },
+      {
+        "icon": "travel",
+        "title": "Viteză deplasare",
+        "value": "1–25 m/minut, reglabilă"
+      },
+      {
+        "icon": "certification",
+        "title": "Lungime cablu standard",
+        "value": "100 m (customizabil)"
+      },
+      {
+        "icon": "default",
+        "title": "Pixeli cameră frontală",
+        "value": "2 Megapixeli"
+      }
+    ]
+  },
+  {
+    "slug": "camera-push-inspectie-conducte-gm320-7-lentile-8-800mm-touch-7-wifi",
+    "name": "Cameră Push Inspecție Conducte GM320 | 7 Lentile | 8–800mm | Touch 7\" | WiFi",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere push pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "8–800 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu",
+        "value": "10–120 m (customizabil)"
+      },
+      {
+        "icon": "battery",
+        "title": "Autonomie baterie",
+        "value": "Peste 6 ore funcționare continuă"
+      }
+    ]
+  },
+  {
+    "slug": "camera-push-rod-canalizare-gt220-all-in-one-10-inch-arc-coturi-20-400mm",
+    "name": "Cameră Push Rod Canalizare GT220 | All-in-One | 10 Inch | Arc Coturi | 20–400mm",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere push pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "20–400 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Lentile disponibile",
+        "value": "16mm / 21mm / 37mm / 51mm"
+      }
+    ]
+  },
+  {
+    "slug": "borescop-inspectie-conducte-gt-ptz-cablu-gfrp-4-lentile-9-800mm-8h",
+    "name": "Borescop Inspecție Conducte GT-PTZ | Cablu GFRP | 4 Lentile | 9–800mm | 8h",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere push pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "9–800 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime cablu",
+        "value": "30–120 m (customizabil)"
+      },
+      {
+        "icon": "battery",
+        "title": "Autonomie baterie",
+        "value": "8 ore funcționare continuă"
+      }
+    ]
+  },
+  {
+    "slug": "camera-video-inspectie-canalizare-gt230-5-lentile-5-5mm-laser-9-niveluri",
+    "name": "Cameră Video Inspecție Canalizare GT230 | 5 Lentile | 5.5mm | Laser | 9 Niveluri",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere push pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "7–800 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Lentila 5,5mm",
+        "value": "Intrare în conducte de la 7mm"
+      },
+      {
+        "icon": "battery",
+        "title": "Autonomie baterie",
+        "value": "6 ore fără alimentare la rețea (AC/DC compatibil)"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare",
+        "value": "AC / DC (autonomă sau la rețea)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-handheld-inspectie-tevi-gt31dv-spring-body-10-200mm-5-30m-touch",
+    "name": "Cameră Handheld Inspecție Tevi GT31DV | Spring Body | 10–200mm | 5–30m | Touch",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere push pentru inspecția conductelor",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "10–200 mm (10–150mm standard)"
+      },
+      {
+        "icon": "default",
+        "title": "Lentile disponibile",
+        "value": "3 mărimi: 8mm / 16mm / 21mm"
+      },
+      {
+        "icon": "battery",
+        "title": "Autonomie baterie",
+        "value": "Peste 2,5 ore fără alimentare externă"
+      },
+      {
+        "icon": "temperature",
+        "title": "Marcaj temporal",
+        "value": "Timp și dată pe înregistrare, contor metraj"
+      }
+    ]
+  },
+  {
+    "slug": "camera-ptz-inspectie-camine-gt75bxa-tija-pole-80-6000mm-zoom-10x-10x-ip68",
+    "name": "Cameră PTZ Inspecție Cămine GT75BXA | Tijă Pole | 80–6000mm | Zoom 10x+10x | IP68",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere PTZ / periscop pentru cămine și canalizare",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru cap cameră",
+        "value": "75 mm / 90 mm (la alegere)"
+      },
+      {
+        "icon": "default",
+        "title": "Basculare cap cameră",
+        "value": "180° flip"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare",
+        "value": "Baterie (portabil, fără rețea electrică)"
+      }
+    ]
+  },
+  {
+    "slug": "periscop-inspectie-conducte-gtw106-fibra-carbon-30x-zoom-4mp-1-25-6m",
+    "name": "Periscop Inspecție Conducte GTW106 | Fibră Carbon | 30x Zoom | 4MP | 1.25–6m",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere PTZ / periscop pentru cămine și canalizare",
+    "specs": [
+      {
+        "icon": "weight",
+        "title": "Greutate tijă",
+        "value": "~1 kg"
+      },
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "DN150–3.000 mm"
+      },
+      {
+        "icon": "temperature",
+        "title": "Interval temperatură operare",
+        "value": "-20°C → +60°C"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime tijă contractată",
+        "value": "1,25 m"
+      }
+    ]
+  },
+  {
+    "slug": "camera-telescopica-inspectie-canalizare-gtw06-12-inch-touch-10x-zoom-tunel",
+    "name": "Cameră Telescopică Inspecție Canalizare GTW06 | 12 Inch Touch | 10x Zoom | Tunel",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere PTZ / periscop pentru cămine și canalizare",
+    "specs": [
+      {
+        "icon": "temperature",
+        "title": "Interval temperatură operare",
+        "value": "-10°C → +50°C"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime tijă",
+        "value": "2–5 m (telescopică, reglabilă)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-anti-explozie-inspectie-rezervoare-gt200bx60-atex-120-10000mm-ce",
+    "name": "Cameră Anti-Explozie Inspecție Rezervoare GT200BX60 | ATEX | 120–10000mm | CE",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere PTZ / periscop pentru cămine și canalizare",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru cap cameră",
+        "value": "105 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Lungime tijă",
+        "value": "2–5 m (customizabilă)"
+      },
+      {
+        "icon": "certification",
+        "title": "Certificare",
+        "value": "CE"
+      },
+      {
+        "icon": "voltage",
+        "title": "Alimentare",
+        "value": "Baterie proprie — autonomă, fără rețea electrică"
+      }
+    ]
+  },
+  {
+    "slug": "videoscop-industrial-inspectie-gt160-sonda-2-8mm-4-200mm-wifi-hdmi-anti-cadere",
+    "name": "Videoscop Industrial Inspecție GT160 | Sondă 2.8mm | 4–200mm | WiFi HDMI | Anti-cădere",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Videoscoape industriale",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "4–200 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Diametre sondă disponibile",
+        "value": "2,8mm / 3,9mm / 6mm / 8mm"
+      },
+      {
+        "icon": "battery",
+        "title": "Baterie",
+        "value": "Litiu reîncărcabilă, detașabilă"
+      }
+    ]
+  },
+  {
+    "slug": "videoscop-4-directii-inspectie-gt120b-sonda-2mm-4-way-5-sonde-wifi-hdmi",
+    "name": "Videoscop 4 Direcții Inspecție GT120B | Sondă 2mm | 4-Way | 5 Sonde | WiFi HDMI",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Videoscoape industriale",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru inspecție",
+        "value": "4–200 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Sondă frontală",
+        "value": "Disponibilă (2–8mm)"
+      },
+      {
+        "icon": "battery",
+        "title": "Baterie",
+        "value": "Litiu reîncărcabilă, detașabilă"
+      }
+    ]
+  },
+  {
+    "slug": "camera-foraj-inspectie-puturi-gtv300-otel-aliat-360-patent-led-ac-dc",
+    "name": "Cameră Foraj Inspecție Puțuri GTV300 | Oțel Aliat | 360° | Patent LED | AC/DC",
+    "category": "Echipamente de inspecție industrială",
+    "subcategory": "Camere NDT și inspecții speciale",
+    "specs": [
+      {
+        "icon": "diameter",
+        "title": "Diametru cap cameră",
+        "value": "38 mm"
+      },
+      {
+        "icon": "control",
+        "title": "Ecran controller",
+        "value": "10 inch color IPS full screen"
+      },
+      {
+        "icon": "default",
+        "title": "Rezoluție",
+        "value": "1920 × 1080 pixeli"
+      },
+      {
+        "icon": "temperature",
+        "title": "Rezistență la temperatură",
+        "value": "Ridicată"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-cu-doua-axe-reciclare-d600-d2200-4-tipuri-cutite-skd11-hrc62",
+    "name": "Tocător cu Două Axe Reciclare | D600–D2200 | 4 Tipuri Cuțite | SKD11 HRC62",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Ciclu mentenanță",
+        "value": "500 ore (vs 300 ore standard)"
+      },
+      {
+        "icon": "certification",
+        "title": "Cuțite standard",
+        "value": "SKD11 oțel pentru matrițe, călit în vid HRC62, durabilitate 1,6×"
+      },
+      {
+        "icon": "config",
+        "title": "Model D800",
+        "value": "Capacitate 700–800 kg/h | Tablă oțel 3mm în 9 sec (vs 16 sec single-shaft) | Centrale de dezmembrare medii"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-cu-un-ax-reciclare-os-600-1600-plastic-rigid-granulometrie-controlata",
+    "name": "Tocător cu Un Ax Reciclare | OS-600–1600 | Plastic Rigid | Granulometrie Controlată",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "voltage",
+        "title": "Sistem de alimentare",
+        "value": "Piston hidraulic cu presiune controlată"
+      },
+      {
+        "icon": "default",
+        "title": "Piețe confirmate",
+        "value": "Europa, Asia de Sud-Est, America de Sud"
+      }
+    ]
+  },
+  {
+    "slug": "tocator-anvelope-reciclare-d600-d2200-otr-granule-50mm-piroliza-tdf",
+    "name": "Tocător Anvelope Reciclare | D600–D2200 | OTR | Granule 50mm | Piroliză | TDF",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "certification",
+        "title": "Granulometrie standard ieșire",
+        "value": "50mm (configurabilă)"
+      },
+      {
+        "icon": "default",
+        "title": "Anvelope camioane / TIR",
+        "value": "R17,5–R22,5; diametru exterior 780–1060mm; sârmă oțel înalt"
+      },
+      {
+        "icon": "config",
+        "title": "Modele disponibile",
+        "value": "D600 / D800 / D1000 / D1200 / D1400 / D1600 / D2000 / D2200"
+      }
+    ]
+  },
+  {
+    "slug": "concasor-plastic-reciclare-wgd-600-1200-granule-1cm-plc-cabluri",
+    "name": "Concasor Plastic Reciclare | WGD-600–1200 | Granule ~1cm | PLC | Cabluri",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Granulometrie la ieșire",
+        "value": "~1cm (8–15mm), controlată prin sita de descărcare"
+      },
+      {
+        "icon": "control",
+        "title": "Control",
+        "value": "Sistem PLC"
+      }
+    ]
+  },
+  {
+    "slug": "concasor-metal-reciclare-wcd-800-2200-ciocane-particule-cubice-teleoperare",
+    "name": "Concasor Metal Reciclare | WCD-800–2200 | Ciocane | Particule Cubice | Teleoperare",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Formă particule la ieșire",
+        "value": "Cubică — conținut redus de ace și flocuri"
+      },
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune particule",
+        "value": "Ajustabilă — la specificațiile clientului / topitoriei"
+      },
+      {
+        "icon": "control",
+        "title": "Control",
+        "value": "Automatizare completă cu teleoperare (control de la distanță)"
+      }
+    ]
+  },
+  {
+    "slug": "concasor-vertical-reciclare-metale-lcp-1000-1800-3-metode-500mm-feed-15-rec",
+    "name": "Concasor Vertical Reciclare Metale | LCP-1000–1800 | 3 Metode | 500mm Feed | +15% Rec",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Mașini de tocat și mărunțit",
+    "specs": [
+      {
+        "icon": "dimensions",
+        "title": "Dimensiune maximă feed",
+        "value": "500 mm"
+      },
+      {
+        "icon": "default",
+        "title": "Recuperare metale",
+        "value": "+10-15% față de echipamentele tradiționale"
+      },
+      {
+        "icon": "output",
+        "title": "Output particule",
+        "value": "Uniforme"
+      }
+    ]
+  },
+  {
+    "slug": "separator-electrostatic-reciclare-df1500-2000-99-puritate-dual-stage-pcb",
+    "name": "Separator Electrostatic Reciclare | DF1500/2000 | 99% Puritate | Dual Stage | PCB",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente de separare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Rată de recuperare",
+        "value": "≥99%"
+      }
+    ]
+  },
+  {
+    "slug": "separator-aer-reciclare-fx600-1500-95-eficienta-zero-contact-folii",
+    "name": "Separator Aer Reciclare | FX600–1500 | 95% Eficiență | Zero Contact | Folii",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente de separare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Eficiență separare",
+        "value": "≥95% pentru fracțiile ușoare față de grele"
+      },
+      {
+        "icon": "consumption",
+        "title": "Consum energetic",
+        "value": "Redus — design aerodinamic optimizat"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale ușoare procesate",
+        "value": "Folii plastice, rumeguș, fibre, praf ușor, material textil, deșeuri vegetale"
+      }
+    ]
+  },
+  {
+    "slug": "separator-curenti-turbionari-metale-neferoase-400-1400-30-rec-0-3000rpm",
+    "name": "Separator Curenți Turbionari Metale Neferoase | 400–1400 | +30% Rec | 0–3000rpm",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente de separare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Interval particule",
+        "value": "3–100 mm"
+      },
+      {
+        "icon": "config",
+        "title": "Model 600",
+        "value": "Rolă Ø300mm | 0–3000 rpm | Bandă 650mm | 4–6 t/h | 4,0+0,75 kW | 1.400 kg | 3100×1885×2000mm"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale separate",
+        "value": "Aluminiu, cupru, zinc, metale neferoase turnate — din deșeuri menajere, auto shred, DEEE, zguri"
+      }
+    ]
+  },
+  {
+    "slug": "separator-gravitational-densitate-reciclare-50mm-200-mesh-10-manual-puls-praf",
+    "name": "Separator Gravitațional Densitate Reciclare | 50mm–200 Mesh | 10× Manual | Puls Praf",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente de separare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Interval granulometrie",
+        "value": "50 mm → 200 mesh (75 micrometri) — cel mai larg interval din gamă"
+      }
+    ]
+  },
+  {
+    "slug": "sita-rotativa-tambur-sortare-materiale-umede-zero-infundare-motor-reductor",
+    "name": "Sită Rotativă Tambur Sortare | Materiale Umede | Zero Înfundare | Motor+Reductor",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente auxiliare pentru reciclare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Înlocuire sită",
+        "value": "Rapidă"
+      }
+    ]
+  },
+  {
+    "slug": "separator-magnetic-fier-reciclare-feros-purificare-uscat-umed-cobalt-nichel",
+    "name": "Separator Magnetic Fier Reciclare | Feros + Purificare | Uscat/Umed | Cobalt/Nichel",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente auxiliare pentru reciclare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Poziție în linie",
+        "value": "Prima etapă de separare"
+      },
+      {
+        "icon": "material",
+        "title": "Tip material",
+        "value": "Uscat și umed — granulometrie grosieră și fină"
+      },
+      {
+        "icon": "config",
+        "title": "Variante constructive",
+        "value": "Overband (suspendat), Magnetic Pulley (tambur), Wet Drum (separator umed)"
+      },
+      {
+        "icon": "consumption",
+        "title": "Consum energetic",
+        "value": "Minim la magnet permanent (numai banda de descărcare); controlat la electromagnet"
+      }
+    ]
+  },
+  {
+    "slug": "banda-transportoare-reciclare-industriala-cauciuc-pvc-placi-metal-customizabila",
+    "name": "Bandă Transportoare Reciclare Industrială | Cauciuc/PVC/Plăci Metal | Customizabilă",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente auxiliare pentru reciclare",
+    "specs": [
+      {
+        "icon": "default",
+        "title": "Lățime curea",
+        "value": "Customizabilă"
+      },
+      {
+        "icon": "material",
+        "title": "Materiale transportate",
+        "value": "Plastic, metal concasat, granulat cauciuc, DEEE, minereu, deșeuri menajere, deșeuri construcții"
+      }
+    ]
+  },
+  {
+    "slug": "colector-praf-puls-reciclare-auto-curatare-impuls-recuperare-material-conformitate",
+    "name": "Colector Praf Puls Reciclare | Auto-Curățare Impuls | Recuperare Material | Conformitate",
+    "category": "Echipamente de reciclare",
+    "subcategory": "Echipamente auxiliare pentru reciclare",
+    "specs": [
+      {
+        "icon": "certification",
+        "title": "Conformitate",
+        "value": "Directiva 2004/37/CE + norme naționale VLE-IS calitate aer industrial"
+      },
+      {
+        "icon": "control",
+        "title": "Control curățare",
+        "value": "Timer programabil sau senzor presiune diferențială"
+      }
+    ]
+  }
+]
