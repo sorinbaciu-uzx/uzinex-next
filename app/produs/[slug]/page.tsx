@@ -271,6 +271,24 @@ export default async function Page({ params }: Props) {
                     Cere ofertă personalizată
                   </AddToQuoteButton>
 
+                  {/* Asigurări rapide — chiar sub CTA-ul principal pentru a reduce frecarea */}
+                  <div className="space-y-1.5 text-xs text-ink-500 py-1">
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange shrink-0"></span>
+                      <span>Răspuns în 30 minute</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange shrink-0"></span>
+                      <span>Consultanță tehnică gratuită</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange shrink-0"></span>
+                      <span>Configurare adaptată la cerere</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-ink-100" />
+
                   {p.datasheetUrl ? (
                     <a
                       href={p.datasheetUrl}
@@ -301,21 +319,6 @@ export default async function Page({ params }: Props) {
                     </svg>
                     Vorbește cu un inginer
                   </a>
-                </div>
-
-                <div className="mt-5 pt-5 border-t border-ink-100 space-y-2 text-xs text-ink-500">
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange"></span>
-                    <span>Răspuns în 30 minute</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange"></span>
-                    <span>Consultanță tehnică gratuită</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange"></span>
-                    <span>Configurare adaptată la cerere</span>
-                  </div>
                 </div>
               </div>
             </div>
