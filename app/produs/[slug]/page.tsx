@@ -502,18 +502,9 @@ export default async function Page({ params }: Props) {
                     {/* top accent bar */}
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-uzx-blue via-uzx-blue to-uzx-orange" />
                     <div className="relative p-6 lg:p-7">
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono mb-3">
-                        — {breadcrumb}
+                      <div className="text-[11px] mono uppercase tracking-wider text-uzx-orange">
+                        — Opțiuni comandă
                       </div>
-                      <h3
-                        className="serif text-xl lg:text-2xl text-ink-900 leading-[1.15] line-clamp-2"
-                        style={{ letterSpacing: "-0.03em" }}
-                        title={cleanName}
-                      >
-                        {cleanName}
-                      </h3>
-
-                      <div className="mt-4 h-px bg-ink-100" />
 
                       <ul className="mt-5 space-y-2.5">
                         {[
@@ -581,20 +572,6 @@ export default async function Page({ params }: Props) {
                         <AddToQuoteButton sku={p.sku} name={p.name} variant="primary">
                           Cere ofertă personalizată
                         </AddToQuoteButton>
-
-                        {/* Asigurări rapide, sub CTA */}
-                        <div className="space-y-1 text-[11px] text-ink-500 py-1">
-                          <div className="flex items-center gap-2">
-                            <span className="w-1 h-1 rounded-full bg-uzx-orange shrink-0"></span>
-                            <span>Răspuns în 30 minute</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="w-1 h-1 rounded-full bg-uzx-orange shrink-0"></span>
-                            <span>Consultanță tehnică gratuită</span>
-                          </div>
-                        </div>
-
-                        <div className="pt-1 border-t border-ink-100" />
 
                         {p.datasheetUrl ? (
                           <a
