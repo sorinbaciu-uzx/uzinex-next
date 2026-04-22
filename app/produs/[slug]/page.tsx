@@ -506,6 +506,15 @@ export default async function Page({ params }: Props) {
                         — Opțiuni comandă
                       </div>
 
+                      <h3
+                        className="serif text-lg lg:text-xl text-ink-900 leading-[1.2] mt-3 break-words"
+                        style={{ letterSpacing: "-0.02em" }}
+                      >
+                        {p.name}
+                      </h3>
+
+                      <div className="mt-5 h-px bg-ink-100" />
+
                       <ul className="mt-5 space-y-2.5">
                         {[
                           [
