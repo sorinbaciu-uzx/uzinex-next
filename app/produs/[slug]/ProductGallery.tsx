@@ -16,7 +16,7 @@ type ViewerItem = HeroImage | MediaItem;
  * Galerie produs — "in-place swap" style:
  * - Click pe thumbnail → schimbă DOAR imaginea hero (nu deschide lightbox)
  * - Săgeți prev/next pe hero → navighează între items
- * - Click pe "All Media" → deschide lightbox
+ * - Click pe "Toată galeria" → deschide lightbox
  * - Click pe hero (imagine) → deschide lightbox pentru zoom
  * - Click pe hero (video) → deschide lightbox cu autoplay
  *
@@ -234,7 +234,7 @@ export function ProductGallery({
               <rect x="1.5" y="2.5" width="10" height="7" />
               <rect x="4.5" y="5.5" width="10" height="7" />
             </svg>
-            All Media
+            Toată galeria
           </button>
           {items.slice(0, 3).map((item, i) => {
             const thumb =

@@ -281,20 +281,23 @@ export default async function Page({ params }: Props) {
                       }));
                 if (rows.length === 0) return null;
                 return (
-                  <div className="mt-7 grid grid-cols-1 gap-3.5">
-                    <div className="text-[11px] mono uppercase tracking-[0.15em] text-ink-400 mb-1">
+                  <div className="mt-7 grid grid-cols-1 gap-5">
+                    <div className="text-[11px] mono uppercase tracking-[0.2em] text-ink-400">
                       Beneficii cheie
                     </div>
                     {rows.map((row, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <div className="shrink-0 text-uzx-blue mt-0.5">
+                      <div key={i} className="flex items-start gap-4">
+                        <div className="shrink-0 text-uzx-blue mt-1">
                           <SpecIcon icon={row.icon} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-[15px] text-ink-900 font-semibold leading-snug">
+                          <div
+                            className="serif text-[18px] text-ink-900 leading-[1.15]"
+                            style={{ letterSpacing: "-0.018em" }}
+                          >
                             {row.title}
                           </div>
-                          <div className="text-[12px] text-ink-500 leading-snug mt-1">
+                          <div className="text-[12px] text-ink-500 leading-snug mt-1.5 font-light">
                             {row.value}
                           </div>
                         </div>
