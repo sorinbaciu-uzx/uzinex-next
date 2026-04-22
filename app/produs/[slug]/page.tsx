@@ -304,7 +304,7 @@ export default async function Page({ params }: Props) {
                       </span>
                     </div>
                     {bnr && (
-                      <div className="text-[13px] mono text-uzx-blue font-semibold mt-2">
+                      <div className="text-[11px] mono text-uzx-blue font-semibold mt-2 whitespace-nowrap">
                         1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei · {formatBnrDate(bnr.date)}
                       </div>
                     )}
@@ -510,9 +510,9 @@ export default async function Page({ params }: Props) {
                   </div>
                 </article>
 
-                {/* STICKY INFO SIDEBAR — centrat vertical în viewport indiferent de înălțime */}
+                {/* STICKY INFO SIDEBAR — aliniat cu descrierea, sticky sus (sub header) */}
                 <aside className="lg:col-span-4">
-                  <div className="lg:sticky lg:top-0 lg:h-screen lg:flex lg:items-center lg:py-6">
+                  <div className="lg:sticky lg:top-24">
                   <div
                     className="relative overflow-hidden bg-white border border-ink-100 w-full"
                     style={{
@@ -585,7 +585,7 @@ export default async function Page({ params }: Props) {
                             </span>
                           </div>
                           {bnr && (
-                            <div className="text-[12px] mono text-uzx-blue font-semibold mt-1.5">
+                            <div className="text-[10px] mono text-uzx-blue font-semibold mt-1.5 whitespace-nowrap">
                               1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei · {formatBnrDate(bnr.date)}
                             </div>
                           )}
