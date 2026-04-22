@@ -396,17 +396,11 @@ export default async function Page({ params }: Props) {
             <div className="container-x">
               {/* HEADER CENTRED */}
               <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-14">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 mono inline-flex items-center gap-3">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
                   <span className="w-8 h-px bg-uzx-orange" />
                   Despre acest echipament
                   <span className="w-8 h-px bg-uzx-orange" />
                 </div>
-                <h2
-                  className="serif text-3xl lg:text-4xl text-ink-900 leading-[1.1]"
-                  style={{ letterSpacing: "-0.03em" }}
-                >
-                  {p.name}
-                </h2>
                 <div className="mt-5 flex items-center justify-center gap-3">
                   <span className="w-12 h-px bg-ink-200" />
                   <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
