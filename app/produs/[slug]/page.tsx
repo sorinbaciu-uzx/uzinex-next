@@ -394,17 +394,19 @@ export default async function Page({ params }: Props) {
         return (
           <section className="py-16 lg:py-24 bg-ink-50/40 border-y border-ink-100">
             <div className="container-x">
-              {/* HEADER CENTRED */}
-              <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-14">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
-                  <span className="w-8 h-px bg-uzx-orange" />
-                  Despre acest echipament
-                  <span className="w-8 h-px bg-uzx-orange" />
-                </div>
-                <div className="mt-5 flex items-center justify-center gap-3">
-                  <span className="w-12 h-px bg-ink-200" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
-                  <span className="w-12 h-px bg-ink-200" />
+              {/* HEADER — aliniat cu coloana descrierii (col-span-8) */}
+              <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-12 lg:mb-14">
+                <div className="lg:col-span-8 text-center">
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
+                    <span className="w-8 h-px bg-uzx-orange" />
+                    Despre acest echipament
+                    <span className="w-8 h-px bg-uzx-orange" />
+                  </div>
+                  <div className="mt-5 flex items-center justify-center gap-3">
+                    <span className="w-12 h-px bg-ink-200" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
+                    <span className="w-12 h-px bg-ink-200" />
+                  </div>
                 </div>
               </div>
 
