@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
+import { AllLinksNewTab } from "@/components/AllLinksNewTab";
 import "./globals.css";
 
 // Reduce font-file count to stabilize LCP on slow mobile networks.
@@ -224,6 +225,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans">
         <Analytics />
+        <AllLinksNewTab />
         {children}
       </body>
     </html>
