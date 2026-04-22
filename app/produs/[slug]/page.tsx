@@ -304,8 +304,8 @@ export default async function Page({ params }: Props) {
                       </span>
                     </div>
                     {bnr && (
-                      <div className="text-[12px] mono text-ink-500 mt-2">
-                        curs BNR {bnr.rate.toFixed(4).replace(".", ",")} RON / EUR · {formatBnrDate(bnr.date)}
+                      <div className="text-[13px] mono text-uzx-blue font-semibold mt-2">
+                        1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei · {formatBnrDate(bnr.date)}
                       </div>
                     )}
                     <div className="flex items-center gap-1.5 mt-2 text-[11px] text-ink-500">
@@ -585,8 +585,8 @@ export default async function Page({ params }: Props) {
                             </span>
                           </div>
                           {bnr && (
-                            <div className="text-[11px] mono text-ink-500 mt-1.5">
-                              curs BNR {bnr.rate.toFixed(4).replace(".", ",")} · {formatBnrDate(bnr.date)}
+                            <div className="text-[12px] mono text-uzx-blue font-semibold mt-1.5">
+                              1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei · {formatBnrDate(bnr.date)}
                             </div>
                           )}
                           <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-ink-500">
