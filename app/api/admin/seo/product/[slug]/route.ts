@@ -78,6 +78,20 @@ export async function PUT(
   if (Array.isArray(body.descriptionBlocks))
     patch.descriptionBlocks = body.descriptionBlocks;
   if (Array.isArray(body.specs)) patch.specs = body.specs;
+  // Pricing
+  if (typeof body.priceFrom === "number" && body.priceFrom > 0)
+    patch.priceFrom = body.priceFrom;
+  else if (body.priceFrom === null || body.priceFrom === 0)
+    patch.priceFrom = undefined; // clear price
+  if (
+    body.priceCurrency === "EUR" ||
+    body.priceCurrency === "RON" ||
+    body.priceCurrency === "USD"
+  )
+    patch.priceCurrency = body.priceCurrency;
+  if (typeof body.priceIncludesVAT === "boolean")
+    patch.priceIncludesVAT = body.priceIncludesVAT;
+  if (typeof body.priceNote === "string") patch.priceNote = body.priceNote;
   // SEO
   if (typeof body.seoTitle === "string") patch.seoTitle = body.seoTitle;
   if (typeof body.seoDescription === "string")

@@ -11,6 +11,7 @@ import { BenefitsStrip } from "./BenefitsStrip";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 import { extractTopSpecs } from "@/lib/product-specs";
+import { formatPrice } from "@/lib/format-price";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -156,6 +157,9 @@ export default async function Page({ params }: Props) {
     image: p.image,
     galleryImages,
     category: p.category,
+    priceFrom: p.priceFrom,
+    priceCurrency: p.priceCurrency,
+    priceIncludesVAT: p.priceIncludesVAT,
   });
   const crumbJsonLd = breadcrumbSchema([
     { name: "Acasă", url: "/" },
@@ -265,6 +269,43 @@ export default async function Page({ params }: Props) {
                 <div className="text-[11px] mono uppercase tracking-wider text-uzx-orange mb-4">
                   — Opțiuni comandă
                 </div>
+
+                {/* PRICE DISPLAY — doar dacă priceFrom e setat */}
+                {p.priceFrom && p.priceFrom > 0 && (
+                  <div className="mb-5 pb-5 border-b border-ink-100">
+                    <div className="text-[11px] uppercase tracking-wider text-ink-500 font-medium">
+                      De la
+                    </div>
+                    <div className="flex items-baseline gap-2 mt-0.5">
+                      <span
+                        className="serif text-[30px] lg:text-[34px] text-ink-900 font-semibold leading-none"
+                        style={{ letterSpacing: "-0.02em" }}
+                      >
+                        {formatPrice(p.priceFrom, p.priceCurrency || "EUR")}
+                      </span>
+                      <span className="text-xs text-ink-500 font-medium">
+                        {p.priceIncludesVAT ? "TVA inclus" : "+ TVA"}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1.5 mt-2 text-[11px] text-ink-500">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                      >
+                        <circle cx="6" cy="6" r="5" />
+                        <path d="M6 3.5v3M6 8v.5" strokeLinecap="round" />
+                      </svg>
+                      <span>
+                        {p.priceNote ||
+                          "Preț orientativ configurație de bază"}
+                      </span>
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex flex-col gap-2.5">
                   <AddToQuoteButton sku={p.sku} name={p.name} variant="primary">

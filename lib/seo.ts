@@ -57,6 +57,10 @@ export type ProductSchemaInput = {
   galleryImages?: string[];
   category?: string;
   brand?: string;
+  /** Preț "de la" pentru Google Merchant Listings rich results */
+  priceFrom?: number;
+  priceCurrency?: "EUR" | "RON" | "USD";
+  priceIncludesVAT?: boolean;
 };
 
 function absoluteImageUrl(img: string | undefined): string {
@@ -71,16 +75,33 @@ export function productSchema(p: ProductSchemaInput) {
   // Google rich results accept array pentru image — main-ul primul, apoi galerie
   const imageArr = [mainImg, ...galleryImgs].filter((v, i, arr) => arr.indexOf(v) === i);
 
-  // NOTE: We intentionally do NOT include an `offers` block because Uzinex
-  // products are B2B quote-based — public prices don't exist yet. Google's
-  // Product rich results require `offers.price`, so including an incomplete
-  // offer causes "Merchant listings: 1 invalid item" errors.
-  //
-  // When prices become available, add back:
-  //   offers: { "@type": "Offer", price: "X", priceCurrency: "RON", ... }
-  //
-  // Without offers, the Product schema is still valid and provides name,
-  // image, brand, breadcrumbs — shown in SERP as enhanced listings.
+  // Offers — includ doar dacă admin a setat preț explicit pentru produs.
+  // Fără offers, Product schema rămâne valid (cu aggregateRating).
+  // Cu offers + price, pagina devine eligibilă pentru Google Merchant
+  // Listings rich results (afișează preț în SERP).
+  const offers =
+    p.priceFrom && p.priceFrom > 0
+      ? {
+          "@type": "AggregateOffer",
+          priceCurrency: p.priceCurrency || "EUR",
+          lowPrice: String(p.priceFrom),
+          availability: "https://schema.org/InStock",
+          seller: ORG_REF,
+          // Valid 1 an (admin poate actualiza pe măsură ce prețurile se schimbă)
+          priceValidUntil: new Date(
+            Date.now() + 365 * 24 * 60 * 60 * 1000
+          )
+            .toISOString()
+            .slice(0, 10),
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: String(p.priceFrom),
+            priceCurrency: p.priceCurrency || "EUR",
+            valueAddedTaxIncluded: p.priceIncludesVAT === true,
+          },
+        }
+      : undefined;
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -97,6 +118,7 @@ export function productSchema(p: ProductSchemaInput) {
       name: p.brand || "Uzinex",
     },
     manufacturer: ORG_REF,
+    ...(offers ? { offers } : {}),
     // aggregateRating — from Google Business Profile reviews.
     // Google requires one of offers/review/aggregateRating for Product
     // rich results. Until we have per-product reviews or prices, we use

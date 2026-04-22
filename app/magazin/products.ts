@@ -25,6 +25,17 @@ export type Product = {
   gallery?: MediaItem[];
   /** Override specs highlight pentru hero — dacă lipsește, se auto-extrag. */
   specs?: ProductSpec[];
+  /**
+   * Preț de pornire (configurație de bază). Format cu "De la €X.XXX + TVA".
+   * Dacă lipsește → afișează doar CTA "Cere ofertă" (fără preț).
+   */
+  priceFrom?: number;
+  /** Moneda prețului afișat. Default: EUR. */
+  priceCurrency?: "EUR" | "RON" | "USD";
+  /** Preț TVA-inclus sau plus TVA. Default: false (B2B standard). */
+  priceIncludesVAT?: boolean;
+  /** Notă clarificativă sub preț (ex: "configurație de bază"). */
+  priceNote?: string;
 };
 
 export type DescriptionBlock =

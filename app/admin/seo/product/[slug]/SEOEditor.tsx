@@ -56,6 +56,18 @@ export function SEOEditor({
   );
   const [specs, setSpecs] = useState<ProductSpec[] | undefined>(product.specs);
 
+  // Price fields
+  const [priceFrom, setPriceFrom] = useState<number | "">(
+    product.priceFrom ?? ""
+  );
+  const [priceCurrency, setPriceCurrency] = useState<"EUR" | "RON" | "USD">(
+    product.priceCurrency || "EUR"
+  );
+  const [priceIncludesVAT, setPriceIncludesVAT] = useState<boolean>(
+    product.priceIncludesVAT === true
+  );
+  const [priceNote, setPriceNote] = useState(product.priceNote || "");
+
   // SEO fields
   const [focusKeyword, setFocusKeyword] = useState(product.focusKeyword || "");
   const [seoTitle, setSeoTitle] = useState(product.seoTitle || product.name);
@@ -114,6 +126,10 @@ export function SEOEditor({
     JSON.stringify(descriptionBlocks) !==
       JSON.stringify(product.descriptionBlocks || []) ||
     JSON.stringify(specs ?? null) !== JSON.stringify(product.specs ?? null) ||
+    (priceFrom === "" ? undefined : priceFrom) !== product.priceFrom ||
+    priceCurrency !== (product.priceCurrency || "EUR") ||
+    priceIncludesVAT !== (product.priceIncludesVAT === true) ||
+    priceNote !== (product.priceNote || "") ||
     focusKeyword !== (product.focusKeyword || "") ||
     seoTitle !== (product.seoTitle || product.name) ||
     seoDescription !== (product.seoDescription || product.shortSpec);
@@ -166,6 +182,10 @@ export function SEOEditor({
             description,
             descriptionBlocks,
             specs,
+            priceFrom: priceFrom === "" ? null : Number(priceFrom),
+            priceCurrency,
+            priceIncludesVAT,
+            priceNote,
             focusKeyword,
             seoTitle,
             seoDescription,
@@ -451,6 +471,137 @@ export function SEOEditor({
                   Link către PDF-ul fișei tehnice. Apare ca buton "Descarcă
                   fișa tehnică" pe pagina produs.
                 </div>
+              </div>
+
+              {/* PRICING SECTION */}
+              <div className="bg-white border hairline p-5 space-y-4">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div>
+                    <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                      Preț (afișat în hero)
+                    </label>
+                    <div className="text-xs text-ink-500 mt-1">
+                      Dacă lipsește → pe pagina produs apare doar CTA "Cere
+                      ofertă". Dacă setezi → apare "De la €X + TVA" deasupra
+                      CTA-ului.
+                    </div>
+                  </div>
+                  {priceFrom !== "" && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (confirm("Ștergi prețul? Pagina revine la 'doar ofertă'.")) {
+                          setPriceFrom("");
+                          setPriceNote("");
+                        }
+                      }}
+                      className="text-xs text-red-600 hover:text-red-800 transition"
+                    >
+                      Șterge preț
+                    </button>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-3">
+                  <div>
+                    <label className="text-[10px] uppercase tracking-wider text-ink-500 font-mono block mb-1">
+                      Preț de pornire
+                    </label>
+                    <input
+                      type="number"
+                      value={priceFrom}
+                      onChange={(e) =>
+                        setPriceFrom(
+                          e.target.value === "" ? "" : Number(e.target.value)
+                        )
+                      }
+                      placeholder="Ex: 24900"
+                      min={0}
+                      step={100}
+                      className="w-full border hairline px-3 py-2 text-base focus:outline-none focus:border-uzx-blue font-mono"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-[10px] uppercase tracking-wider text-ink-500 font-mono block mb-1">
+                      Monedă
+                    </label>
+                    <select
+                      value={priceCurrency}
+                      onChange={(e) =>
+                        setPriceCurrency(
+                          e.target.value as "EUR" | "RON" | "USD"
+                        )
+                      }
+                      className="w-full border hairline px-3 py-2 text-base bg-white focus:outline-none focus:border-uzx-blue"
+                    >
+                      <option value="EUR">EUR (€)</option>
+                      <option value="RON">RON (lei)</option>
+                      <option value="USD">USD ($)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <label className="flex items-center gap-2 text-sm text-ink-700 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={priceIncludesVAT}
+                    onChange={(e) => setPriceIncludesVAT(e.target.checked)}
+                    className="w-4 h-4"
+                  />
+                  <span>
+                    Prețul include TVA{" "}
+                    <span className="text-ink-400 text-xs">
+                      (uncheck = "+ TVA", standard B2B)
+                    </span>
+                  </span>
+                </label>
+
+                <div>
+                  <label className="text-[10px] uppercase tracking-wider text-ink-500 font-mono block mb-1">
+                    Notă sub preț (opțional)
+                  </label>
+                  <input
+                    type="text"
+                    value={priceNote}
+                    onChange={(e) => setPriceNote(e.target.value)}
+                    placeholder="Ex: Preț orientativ configurație de bază"
+                    className="w-full border hairline px-3 py-2 text-sm focus:outline-none focus:border-uzx-blue"
+                  />
+                </div>
+
+                {/* LIVE PREVIEW */}
+                {priceFrom !== "" && priceFrom > 0 && (
+                  <div className="bg-ink-50 border hairline p-3">
+                    <div className="text-[10px] uppercase tracking-wider text-ink-400 font-mono mb-1.5">
+                      Preview pe pagina produs
+                    </div>
+                    <div className="text-[11px] uppercase tracking-wider text-ink-500 font-medium">
+                      De la
+                    </div>
+                    <div className="flex items-baseline gap-2 mt-0.5">
+                      <span
+                        className="serif text-3xl text-ink-900 font-semibold"
+                        style={{ letterSpacing: "-0.02em" }}
+                      >
+                        {priceCurrency === "RON"
+                          ? new Intl.NumberFormat("ro-RO").format(
+                              Number(priceFrom)
+                            ) + " lei"
+                          : (priceCurrency === "EUR" ? "€" : "$") +
+                            new Intl.NumberFormat("ro-RO").format(
+                              Number(priceFrom)
+                            )}
+                      </span>
+                      <span className="text-xs text-ink-500 font-medium">
+                        {priceIncludesVAT ? "TVA inclus" : "+ TVA"}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-ink-500 mt-1">
+                      ⓘ{" "}
+                      {priceNote || "Preț orientativ configurație de bază"}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="bg-ink-50 border hairline p-4 text-xs text-ink-600">

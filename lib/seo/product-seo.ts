@@ -56,6 +56,12 @@ export type ProductOverride = {
    */
   specs?: ProductSpec[];
 
+  // ─── Pricing (opțional — dacă lipsește, se afișează doar "Cere ofertă") ───
+  priceFrom?: number;
+  priceCurrency?: "EUR" | "RON" | "USD";
+  priceIncludesVAT?: boolean;
+  priceNote?: string;
+
   // SEO fields
   seoTitle?: string;
   seoDescription?: string;
@@ -132,6 +138,11 @@ export function mergeProductWithOverride(
     description: override.description ?? base.description,
     descriptionBlocks: override.descriptionBlocks ?? base.descriptionBlocks,
     specs: override.specs ?? base.specs,
+    // Pricing
+    priceFrom: override.priceFrom ?? base.priceFrom,
+    priceCurrency: override.priceCurrency ?? base.priceCurrency,
+    priceIncludesVAT: override.priceIncludesVAT ?? base.priceIncludesVAT,
+    priceNote: override.priceNote ?? base.priceNote,
     // SEO
     seoTitle: override.seoTitle ?? base.seoTitle,
     seoDescription: override.seoDescription ?? base.seoDescription,
