@@ -15,6 +15,16 @@ import { formatPrice } from "@/lib/format-price";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
+import {
+  getBnrEurRate,
+  eurToRon,
+  formatRon,
+  formatBnrDate,
+} from "@/lib/bnr";
+
+// ISR: regenerate each product page at most once per hour so the displayed
+// BNR EUR→RON rate stays current (BNR publishes ~13:00 on weekdays).
+export const revalidate = 3600;
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -122,6 +132,16 @@ export default async function Page({ params }: Props) {
   }
   if (!base) notFound();
   const p = base;
+
+  // Official BNR EUR→RON rate, used to show a RON equivalent next to the EUR
+  // price. Returns null on any failure — callers must handle that gracefully.
+  const priceCurrency = p.priceCurrency || "EUR";
+  const bnr =
+    priceCurrency === "EUR" && p.priceFrom && p.priceFrom > 0
+      ? await getBnrEurRate()
+      : null;
+  const priceRon =
+    bnr && p.priceFrom ? eurToRon(p.priceFrom, bnr.rate) : null;
 
   // Similar: prioritize subSubcategory → subcategory → category, max 12 unique
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
@@ -290,6 +310,16 @@ export default async function Page({ params }: Props) {
                         {p.priceIncludesVAT ? "TVA inclus" : "+ TVA"}
                       </span>
                     </div>
+                    {bnr && priceRon !== null && (
+                      <div className="mt-1.5">
+                        <div className="text-[13px] text-ink-700 font-medium">
+                          ≈ {formatRon(priceRon)}
+                        </div>
+                        <div className="text-[10px] mono text-ink-400 mt-0.5">
+                          curs BNR {bnr.rate.toFixed(4).replace(".", ",")} RON / EUR · {formatBnrDate(bnr.date)}
+                        </div>
+                      </div>
+                    )}
                     <div className="flex items-center gap-1.5 mt-2 text-[11px] text-ink-500">
                       <svg
                         width="12"
@@ -569,6 +599,16 @@ export default async function Page({ params }: Props) {
                               {p.priceIncludesVAT ? "TVA inclus" : "+ TVA"}
                             </span>
                           </div>
+                          {bnr && priceRon !== null && (
+                            <div className="mt-1">
+                              <div className="text-[12px] text-ink-700 font-medium">
+                                ≈ {formatRon(priceRon)}
+                              </div>
+                              <div className="text-[9px] mono text-ink-400 mt-0.5">
+                                curs BNR {bnr.rate.toFixed(4).replace(".", ",")} · {formatBnrDate(bnr.date)}
+                              </div>
+                            </div>
+                          )}
                           <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-ink-500">
                             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.2">
                               <circle cx="6" cy="6" r="5" />
