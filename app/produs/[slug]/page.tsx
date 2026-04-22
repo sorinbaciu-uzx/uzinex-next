@@ -19,7 +19,7 @@ import benefitsData from "@/data/product-benefits.json";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
-import { getBnrEurRate, formatBnrDate } from "@/lib/bnr";
+import { getBnrEurRate } from "@/lib/bnr";
 
 // ISR: regenerate each product page at most once per hour so the displayed
 // BNR EUR→RON rate stays current (BNR publishes ~13:00 on weekdays).
@@ -331,7 +331,7 @@ export default async function Page({ params }: Props) {
                     </div>
                     {bnr && (
                       <div className="text-[11px] mono text-uzx-blue font-semibold mt-2 whitespace-nowrap">
-                        1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei · {formatBnrDate(bnr.date)}
+                        1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei
                       </div>
                     )}
                     <div className="flex items-center gap-1.5 mt-2 text-[11px] text-ink-500">
@@ -612,7 +612,7 @@ export default async function Page({ params }: Props) {
                           </div>
                           {bnr && (
                             <div className="text-[10px] mono text-uzx-blue font-semibold mt-1.5 whitespace-nowrap">
-                              1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei · {formatBnrDate(bnr.date)}
+                              1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei
                             </div>
                           )}
                           <div className="flex items-center gap-1.5 mt-1.5 text-[10px] text-ink-500">
