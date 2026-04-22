@@ -14,6 +14,7 @@ import { extractTopSpecs } from "@/lib/product-specs";
 import { formatPrice } from "@/lib/format-price";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
+import { buildRelatedParagraph } from "@/lib/related-products";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -389,7 +390,15 @@ export default async function Page({ params }: Props) {
       {/* DESCRIERE */}
       {(() => {
         const effBlocks = effectiveBlocks(p, override);
-        const restBlocks = effBlocks.filter(
+        // Append a generated "related products" sentence — its product-name
+        // mentions feed the existing linkify pipeline, producing contextual
+        // product-to-product links. Source text in produse.json is never
+        // modified; the paragraph is synthesized deterministically at render.
+        const relatedText = buildRelatedParagraph(p, PRODUCTS);
+        const blocksWithRelated: DescriptionBlock[] = relatedText
+          ? [...effBlocks, { type: "paragraph", text: relatedText }]
+          : effBlocks;
+        const restBlocks = blocksWithRelated.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
         // Shared across every paragraph so each internal-link target is used at most once per page.

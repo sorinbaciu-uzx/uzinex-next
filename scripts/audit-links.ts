@@ -10,6 +10,7 @@
  *      another product by full name)
  */
 import { linkify, buildProductTargets } from "../lib/internal-links";
+import { buildRelatedParagraph } from "../lib/related-products";
 import productsData from "../data/produse.json" with { type: "json" };
 
 type Block =
@@ -42,7 +43,12 @@ const MAX_PRODUCT_LINKS_PER_PAGE = 3;
 for (const p of products) {
   const seen = new Set<string>();
   const here = "/produs/" + p.slug;
-  const blocks = p.descriptionBlocks ?? [];
+  const originalBlocks = p.descriptionBlocks ?? [];
+  // Mirror the render-time behavior: append the generated related paragraph.
+  const relatedText = buildRelatedParagraph(p as never, products as never);
+  const blocks: Block[] = relatedText
+    ? [...originalBlocks, { type: "paragraph", text: relatedText }]
+    : originalBlocks;
   const extraTargets = buildProductTargets(p.slug, products, p);
 
   let n = 0;
