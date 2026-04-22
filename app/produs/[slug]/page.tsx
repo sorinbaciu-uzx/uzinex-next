@@ -291,10 +291,10 @@ export default async function Page({ params }: Props) {
                           <SpecIcon icon={row.icon} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-[10px] uppercase tracking-wider text-ink-400 font-mono leading-tight">
+                          <div className="text-[15px] text-ink-900 font-semibold leading-snug">
                             {row.title}
                           </div>
-                          <div className="text-sm text-ink-900 font-medium leading-snug mt-0.5">
+                          <div className="text-[12px] text-ink-500 leading-snug mt-1">
                             {row.value}
                           </div>
                         </div>
