@@ -397,7 +397,7 @@ export default async function Page({ params }: Props) {
               {/* HEADER — aliniat cu coloana descrierii (col-span-8) */}
               <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-12 lg:mb-14">
                 <div className="lg:col-span-8 text-center">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
+                  <div className="text-[13px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
                     <span className="w-8 h-px bg-uzx-orange" />
                     Despre acest echipament
                     <span className="w-8 h-px bg-uzx-orange" />
@@ -484,12 +484,8 @@ export default async function Page({ params }: Props) {
                     {/* top accent bar */}
                     <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-uzx-blue via-uzx-blue to-uzx-orange" />
                     <div className="relative p-6 lg:p-7">
-                      <div className="text-[11px] mono uppercase tracking-wider text-uzx-orange">
-                        — Opțiuni comandă
-                      </div>
-
                       <h3
-                        className="serif text-lg lg:text-xl text-ink-900 leading-[1.2] mt-3 break-words"
+                        className="serif text-lg lg:text-xl text-ink-900 leading-[1.2] break-words"
                         style={{ letterSpacing: "-0.02em" }}
                       >
                         {p.name}
