@@ -465,10 +465,22 @@ export default async function Page({ params }: Props) {
 
                       <ul className="mt-5 space-y-2.5">
                         {[
-                          ["60 luni", "Garanție producător"],
-                          ["Service inclus", "Mentenanță națională"],
-                          ["Transport gratuit", "Livrare în toată țara"],
-                          ["SEAP / SICAP", "Eligibil achiziții publice"],
+                          [
+                            "Investiție protejată",
+                            "5 ani garanție + suport post-vânzare",
+                          ],
+                          [
+                            "Manual de utilizare și mentenanță",
+                            "Cu inteligență artificială",
+                          ],
+                          [
+                            "Pregătit pentru achiziție publică",
+                            "Documentație compatibilă SEAP / SICAP",
+                          ],
+                          [
+                            "Conform DNSH",
+                            "Eligibil fonduri EU — PNRR, POR",
+                          ],
                         ].map(([title, sub]) => (
                           <li key={title} className="flex items-start gap-2.5">
                             <span className="mt-0.5 w-4 h-4 rounded-full bg-uzx-blue/10 border border-uzx-blue/30 flex items-center justify-center text-uzx-blue text-[10px] shrink-0 font-bold">
