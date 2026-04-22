@@ -506,17 +506,14 @@ export default async function Page({ params }: Props) {
                         — {breadcrumb}
                       </div>
                       <h3
-                        className="serif text-xl lg:text-2xl text-ink-900 leading-[1.15] line-clamp-2 min-h-[3.4rem]"
+                        className="serif text-xl lg:text-2xl text-ink-900 leading-[1.15] line-clamp-2"
                         style={{ letterSpacing: "-0.03em" }}
                         title={cleanName}
                       >
                         {cleanName}
                       </h3>
-                      <p className="mt-3 text-[12px] text-ink-500 leading-relaxed line-clamp-3 min-h-[3.6rem]">
-                        {p.shortSpec || "\u00a0"}
-                      </p>
 
-                      <div className="mt-5 h-px bg-ink-100" />
+                      <div className="mt-4 h-px bg-ink-100" />
 
                       <ul className="mt-5 space-y-2.5">
                         {[
