@@ -2,6 +2,7 @@
 // (Extended manually with `gallery` field — optional, populated via admin DB override)
 import data from "@/data/produse.json";
 import type { MediaItem } from "@/lib/media";
+import type { ProductSpec } from "@/lib/product-specs";
 
 export type Product = {
   sku: string;
@@ -22,6 +23,8 @@ export type Product = {
   focusKeyword: string;
   /** Galerie media adițională: 0-8 imagini + YouTube embeds. Populată via admin override. */
   gallery?: MediaItem[];
+  /** Override specs highlight pentru hero — dacă lipsește, se auto-extrag. */
+  specs?: ProductSpec[];
 };
 
 export type DescriptionBlock =

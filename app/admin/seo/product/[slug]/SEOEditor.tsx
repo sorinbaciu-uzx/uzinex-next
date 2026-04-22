@@ -15,7 +15,10 @@ import { CompetitorModal } from "./CompetitorModal";
 import { ImageUploadField } from "./ImageUploadField";
 import { MediaGalleryField } from "./MediaGalleryField";
 import { DescriptionBlocksEditor } from "./DescriptionBlocksEditor";
+import { ProductSpecsEditor } from "./ProductSpecsEditor";
 import type { MediaItem } from "@/lib/media";
+import type { ProductSpec } from "@/lib/product-specs";
+import { extractTopSpecs } from "@/lib/product-specs";
 
 type Tab = "basic" | "description" | "seo";
 
@@ -51,6 +54,7 @@ export function SEOEditor({
   const [descriptionBlocks, setDescriptionBlocks] = useState<DescriptionBlock[]>(
     product.descriptionBlocks || []
   );
+  const [specs, setSpecs] = useState<ProductSpec[] | undefined>(product.specs);
 
   // SEO fields
   const [focusKeyword, setFocusKeyword] = useState(product.focusKeyword || "");
@@ -109,6 +113,7 @@ export function SEOEditor({
     description !== product.description ||
     JSON.stringify(descriptionBlocks) !==
       JSON.stringify(product.descriptionBlocks || []) ||
+    JSON.stringify(specs ?? null) !== JSON.stringify(product.specs ?? null) ||
     focusKeyword !== (product.focusKeyword || "") ||
     seoTitle !== (product.seoTitle || product.name) ||
     seoDescription !== (product.seoDescription || product.shortSpec);
@@ -160,6 +165,7 @@ export function SEOEditor({
             subSubcategory,
             description,
             descriptionBlocks,
+            specs,
             focusKeyword,
             seoTitle,
             seoDescription,
@@ -355,6 +361,12 @@ export function SEOEditor({
               />
 
               <MediaGalleryField value={gallery} onChange={setGallery} />
+
+              <ProductSpecsEditor
+                autoExtracted={extractTopSpecs(descriptionBlocks, 4)}
+                value={specs}
+                onChange={setSpecs}
+              />
 
               <div className="bg-white border hairline p-5">
                 <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">

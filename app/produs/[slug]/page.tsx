@@ -6,8 +6,11 @@ import { PRODUCTS, type DescriptionBlock } from "@/app/magazin/products";
 import { AddToQuoteButton } from "@/app/magazin/AddToQuoteButton";
 import { SimilarCarousel } from "./SimilarCarousel";
 import { ProductGallery } from "./ProductGallery";
+import { SpecIcon } from "./SpecIcon";
+import { BenefitsStrip } from "./BenefitsStrip";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
+import { extractTopSpecs } from "@/lib/product-specs";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -207,8 +210,8 @@ export default async function Page({ params }: Props) {
               )}
 
               <h1
-                className="serif text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-ink-900"
-                style={{ letterSpacing: "-0.03em" }}
+                className="serif text-2xl md:text-[28px] lg:text-[32px] leading-[1.1] text-ink-900 max-w-xl"
+                style={{ letterSpacing: "-0.025em" }}
               >
                 {p.name}
               </h1>
@@ -219,66 +222,41 @@ export default async function Page({ params }: Props) {
               </div>
 
               {p.shortSpec && (
-                <p className="mt-6 text-ink-600 text-base leading-relaxed">
+                <p className="mt-5 text-ink-600 text-[15px] leading-relaxed max-w-xl">
                   {p.shortSpec}
                 </p>
               )}
 
-              {/* ICON SPECS */}
-              <div className="mt-8 grid grid-cols-1 gap-3">
-                {[
-                  {
-                    icon: (
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M11 2l8 4v5.5c0 5-3.5 8.5-8 9.5-4.5-1-8-4.5-8-9.5V6l8-4z" />
-                        <path d="M7.5 11l2.5 2.5L15 9" />
-                      </svg>
-                    ),
-                    title: "60 luni garanție",
-                    sub: "Producător + service inclus",
-                  },
-                  {
-                    icon: (
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M1 12h12M13 6h4l3 4v5h-7M6 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM16 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-                      </svg>
-                    ),
-                    title: "Transport & montaj",
-                    sub: "Gratuit în toată România",
-                  },
-                  {
-                    icon: (
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M3 20h16M5 20V9l6-4 6 4v11M9 20v-5h4v5" />
-                      </svg>
-                    ),
-                    title: "SEAP / SICAP",
-                    sub: "Eligibil achiziții publice",
-                  },
-                  {
-                    icon: (
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="M3 11h16M11 3c2.5 2.5 4 5.5 4 8s-1.5 5.5-4 8c-2.5-2.5-4-5.5-4-8s1.5-5.5 4-8z" />
-                      </svg>
-                    ),
-                    title: "Fonduri europene",
-                    sub: "PNRR · POR · Tranziție Justă",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex items-start gap-3">
-                    <div className="shrink-0 text-uzx-blue mt-0.5">{item.icon}</div>
-                    <div className="flex-1">
-                      <div className="text-sm text-ink-900 font-medium leading-tight">
-                        {item.title}
-                      </div>
-                      <div className="text-xs text-ink-500 leading-tight mt-0.5">
-                        {item.sub}
-                      </div>
+              {/* TECHNICAL SPECS — override admin (dacă există), altfel auto-extrage */}
+              {(() => {
+                const specs =
+                  p.specs && p.specs.length > 0
+                    ? p.specs.slice(0, 4)
+                    : extractTopSpecs(p.descriptionBlocks, 4);
+                if (specs.length === 0) return null;
+                return (
+                  <div className="mt-7 grid grid-cols-1 gap-3.5">
+                    <div className="text-[11px] mono uppercase tracking-[0.15em] text-ink-400 mb-1">
+                      Specificații cheie
                     </div>
+                    {specs.map((spec, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="shrink-0 text-uzx-blue mt-0.5">
+                          <SpecIcon icon={spec.icon} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[10px] uppercase tracking-wider text-ink-400 font-mono leading-tight">
+                            {spec.title}
+                          </div>
+                          <div className="text-sm text-ink-900 font-medium leading-snug mt-0.5">
+                            {spec.value}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                );
+              })()}
             </div>
 
             {/* SIDEBAR COL */}
@@ -344,6 +322,9 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* BANDĂ BENEFICII UZINEX — comună tuturor produselor */}
+      <BenefitsStrip />
 
       {/* DESCRIERE */}
       {(() => {

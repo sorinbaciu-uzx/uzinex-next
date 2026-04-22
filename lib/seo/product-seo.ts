@@ -15,6 +15,7 @@
 import { prisma } from "@/lib/db";
 import { PRODUCTS, type Product } from "@/app/magazin/products";
 import type { MediaItem } from "@/lib/media";
+import type { ProductSpec } from "@/lib/product-specs";
 import {
   flattenDescriptionBlocks,
 } from "./text-utils";
@@ -48,6 +49,12 @@ export type ProductOverride = {
     | { type: "paragraph"; text: string }
     | { type: "table"; rows: string[][] }
   >;
+
+  /**
+   * Custom specs highlight pentru hero (4 items max).
+   * Dacă lipsesc, se extrag automat din descriptionBlocks.
+   */
+  specs?: ProductSpec[];
 
   // SEO fields
   seoTitle?: string;
@@ -124,6 +131,7 @@ export function mergeProductWithOverride(
     // Description
     description: override.description ?? base.description,
     descriptionBlocks: override.descriptionBlocks ?? base.descriptionBlocks,
+    specs: override.specs ?? base.specs,
     // SEO
     seoTitle: override.seoTitle ?? base.seoTitle,
     seoDescription: override.seoDescription ?? base.seoDescription,

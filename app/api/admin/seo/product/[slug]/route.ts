@@ -77,6 +77,7 @@ export async function PUT(
   if (typeof body.description === "string") patch.description = body.description;
   if (Array.isArray(body.descriptionBlocks))
     patch.descriptionBlocks = body.descriptionBlocks;
+  if (Array.isArray(body.specs)) patch.specs = body.specs;
   // SEO
   if (typeof body.seoTitle === "string") patch.seoTitle = body.seoTitle;
   if (typeof body.seoDescription === "string")
