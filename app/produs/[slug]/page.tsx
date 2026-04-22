@@ -429,26 +429,23 @@ export default async function Page({ params }: Props) {
         return (
           <section className="py-16 lg:py-24 bg-ink-50/40 border-y border-ink-100">
             <div className="container-x">
-              {/* HEADER — aliniat cu coloana descrierii (col-span-8) */}
-              <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-12 lg:mb-14">
-                <div className="lg:col-span-8 text-center">
-                  <div className="text-[13px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
-                    <span className="w-8 h-px bg-uzx-orange" />
-                    Despre acest echipament
-                    <span className="w-8 h-px bg-uzx-orange" />
-                  </div>
-                  <div className="mt-5 flex items-center justify-center gap-3">
-                    <span className="w-12 h-px bg-ink-200" />
-                    <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
-                    <span className="w-12 h-px bg-ink-200" />
-                  </div>
-                </div>
-              </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 max-w-6xl mx-auto">
                 {/* DESCRIERE COMPLETĂ */}
                 <article className="lg:col-span-8">
                   <div className="bg-white border border-ink-100 shadow-sm overflow-hidden h-full">
+                    {/* HEADER — acum in interiorul cardului, peste descriere */}
+                    <div className="px-8 lg:px-10 pt-8 lg:pt-10 pb-2 text-center">
+                      <div className="text-[13px] uppercase tracking-[0.2em] text-uzx-orange mono inline-flex items-center gap-3">
+                        <span className="w-8 h-px bg-uzx-orange" />
+                        Despre acest echipament
+                        <span className="w-8 h-px bg-uzx-orange" />
+                      </div>
+                      <div className="mt-5 flex items-center justify-center gap-3">
+                        <span className="w-12 h-px bg-ink-200" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-uzx-orange" />
+                        <span className="w-12 h-px bg-ink-200" />
+                      </div>
+                    </div>
                     <div className="px-8 lg:px-10 py-7 space-y-5 text-ink-600 text-[14px] leading-[1.85] font-light">
                       {restBlocks.length > 0 ? (
                         restBlocks.map((b, i) =>
