@@ -10,6 +10,7 @@ import {
 } from "@/components/NewsSection";
 import { getContent } from "@/lib/content";
 import { articleSchema, breadcrumbSchema } from "@/lib/seo";
+import { AutoLinkedText } from "@/components/AutoLinkedText";
 
 export const revalidate = 60;
 
@@ -103,6 +104,10 @@ export default async function ArticlePage({
     .split(/\n\s*\n/)
     .filter(Boolean);
 
+  // Shared across every paragraph so each link target is used at most once.
+  const alreadyLinked = new Set<string>();
+  const currentPath = `/noutati/${article.slug}`;
+
   // ─── JSON-LD: NewsArticle + BreadcrumbList ───
   const artJsonLd = articleSchema({
     slug: article.slug,
@@ -193,16 +198,17 @@ export default async function ArticlePage({
             <article className="max-w-2xl mx-auto">
               <div className="space-y-6 text-ink-800 text-[17px] leading-[1.8]">
                 {paragraphs.map((p, i) => (
-                  <p
+                  <AutoLinkedText
                     key={i}
+                    text={p}
+                    alreadyLinked={alreadyLinked}
+                    currentPath={currentPath}
                     className={
                       i === 0
                         ? "first-letter:float-left first-letter:serif first-letter:text-7xl first-letter:leading-[0.85] first-letter:pr-2 first-letter:pt-1 first-letter:text-uzx-orange"
                         : undefined
                     }
-                  >
-                    {p}
-                  </p>
+                  />
                 ))}
               </div>
 

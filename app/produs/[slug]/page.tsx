@@ -12,6 +12,7 @@ import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 import { extractTopSpecs } from "@/lib/product-specs";
 import { formatPrice } from "@/lib/format-price";
+import { AutoLinkedText } from "@/components/AutoLinkedText";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -390,6 +391,9 @@ export default async function Page({ params }: Props) {
         const restBlocks = effBlocks.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
+        // Shared across every paragraph so each internal-link target is used at most once per page.
+        const alreadyLinked = new Set<string>();
+        const currentPath = `/produs/${p.slug}`;
 
         return (
           <section className="py-16 lg:py-24 bg-ink-50/40 border-y border-ink-100">
@@ -418,7 +422,12 @@ export default async function Page({ params }: Props) {
                       {restBlocks.length > 0 ? (
                         restBlocks.map((b, i) =>
                           b.type === "paragraph" ? (
-                            <p key={i}>{b.text}</p>
+                            <AutoLinkedText
+                              key={i}
+                              text={b.text}
+                              alreadyLinked={alreadyLinked}
+                              currentPath={currentPath}
+                            />
                           ) : (
                             <div
                               key={i}

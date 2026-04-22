@@ -8,6 +8,7 @@ import { UnboxingChecklist } from "@/components/solution-anims/UnboxingChecklist
 import { FlowchartSteps } from "@/components/solution-anims/FlowchartSteps";
 import { CounterMetrics } from "@/components/solution-anims/CounterMetrics";
 import { breadcrumbSchema } from "@/lib/seo";
+import { AutoLinkedText } from "@/components/AutoLinkedText";
 
 type SectionAnim =
   | { type: "checklist"; items: string[] }
@@ -308,6 +309,10 @@ export default async function DirectionPage({
 
   const others = DIRECTIONS.filter((x) => x.slug !== slug);
 
+  // Shared across every prose block on this page so each link target is used at most once.
+  const alreadyLinked = new Set<string>();
+  const currentPath = `/industry-4.0/${d.slug}`;
+
   const crumbJsonLd = breadcrumbSchema([
     { name: "Acasă", url: "/" },
     { name: "Industry 4.0", url: "/industry-4.0" },
@@ -352,9 +357,12 @@ export default async function DirectionPage({
               >
                 {d.title}
               </h1>
-              <p className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl">
-                {d.heroDescription}
-              </p>
+              <AutoLinkedText
+                text={d.heroDescription}
+                alreadyLinked={alreadyLinked}
+                currentPath={currentPath}
+                className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl"
+              />
             </div>
           </div>
         </section>
@@ -407,9 +415,12 @@ export default async function DirectionPage({
                   </h2>
                 </div>
                 <div className="lg:col-span-6 lg:col-start-7 space-y-8">
-                  <p className="text-ink-600 leading-relaxed text-base">
-                    {s.body}
-                  </p>
+                  <AutoLinkedText
+                    text={s.body}
+                    alreadyLinked={alreadyLinked}
+                    currentPath={currentPath}
+                    className="text-ink-600 leading-relaxed text-base"
+                  />
                   {s.anim?.type === "checklist" && (
                     <UnboxingChecklist items={s.anim.items} accent={d.accent} />
                   )}
@@ -450,9 +461,12 @@ export default async function DirectionPage({
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-sm text-ink-700 leading-relaxed">
-                      {uc}
-                    </p>
+                    <AutoLinkedText
+                      text={uc}
+                      alreadyLinked={alreadyLinked}
+                      currentPath={currentPath}
+                      className="text-sm text-ink-700 leading-relaxed"
+                    />
                   </div>
                 ))}
               </div>
@@ -483,7 +497,12 @@ export default async function DirectionPage({
                 >
                   {d.ctaTitle}
                 </h2>
-                <p className="text-white/80 leading-relaxed">{d.ctaBody}</p>
+                <AutoLinkedText
+                  text={d.ctaBody}
+                  alreadyLinked={alreadyLinked}
+                  currentPath={currentPath}
+                  className="text-white/80 leading-relaxed"
+                />
               </div>
               <div className="lg:col-span-4 lg:col-start-9 flex flex-col gap-3">
                 <a
