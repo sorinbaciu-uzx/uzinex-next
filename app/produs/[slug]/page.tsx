@@ -13,6 +13,7 @@ import { getProductWithSEO } from "@/lib/seo/product-seo";
 import { extractTopSpecs } from "@/lib/product-specs";
 import { formatPrice } from "@/lib/format-price";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
+import { buildProductTargets } from "@/lib/internal-links";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -394,6 +395,9 @@ export default async function Page({ params }: Props) {
         // Shared across every paragraph so each internal-link target is used at most once per page.
         const alreadyLinked = new Set<string>();
         const currentPath = `/produs/${p.slug}`;
+        // Product→product targets built once per render: every OTHER product's full name
+        // becomes a candidate anchor, excluding the current product and short/generic names.
+        const productTargets = buildProductTargets(p.slug, PRODUCTS, p);
 
         return (
           <section className="py-16 lg:py-24 bg-ink-50/40 border-y border-ink-100">
@@ -427,6 +431,8 @@ export default async function Page({ params }: Props) {
                               text={b.text}
                               alreadyLinked={alreadyLinked}
                               currentPath={currentPath}
+                              extraTargets={productTargets}
+                              maxProductLinksPerPage={3}
                             />
                           ) : (
                             <div

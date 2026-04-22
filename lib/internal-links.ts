@@ -205,87 +205,281 @@ type RawMatch = {
   end: number;
   href: string;
   patternLength: number;
+  /**
+   * Topical proximity for tie-breaking between two product-target matches
+   * that start at the same offset with the same length. 0 = unrelated,
+   * 1 = same category, 2 = same subcategory, 3 = same subSubcategory.
+   * Non-product (global) targets are scored 0 — they compete only on length.
+   */
+  proximity: number;
 };
+
+// ───────── Helpers ─────────
+
+function regexEscape(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
+ * NFD-decompose then strip combining marks. Produces a diacritic-free variant
+ * (e.g. "Mașină" → "Masina") so we can match text that was typed without
+ * diacritics against patterns compiled from the canonical name.
+ */
+function stripDiacritics(s: string): string {
+  return s.normalize("NFD").replace(/\p{Mn}/gu, "");
+}
 
 /**
  * Compile a pattern into a RegExp with word boundaries and case-insensitive flag.
- * Word boundary uses [A-Za-zĂÂÎȘȚăâîșț0-9] since \b doesn't handle diacritics.
+ * Word boundary uses a manual character class since `\b` doesn't respect
+ * Romanian diacritics.
  */
+const WORD_CLASS = "A-Za-zĂÂÎȘȚăâîșțșțȘȚ0-9";
 function compilePattern(pattern: string): RegExp {
-  // Lookbehind/lookahead for non-word chars (supports diacritics)
-  const WORD = "A-Za-zĂÂÎȘȚăâîșț0-9";
-  return new RegExp(`(?<![${WORD}])(?:${pattern})(?![${WORD}])`, "giu");
+  return new RegExp(
+    `(?<![${WORD_CLASS}])(?:${pattern})(?![${WORD_CLASS}])`,
+    "giu"
+  );
 }
+
+/**
+ * Module-level cache of compiled regexes. Keyed by the raw pattern source
+ * string; safe because patterns are always compiled with the same flags.
+ * WHY: linkify runs once per paragraph, and at build time we render 184+
+ * product pages × dozens of paragraphs × hundreds of patterns. Without
+ * caching, that's millions of regex constructions.
+ */
+const compiledCache = new Map<string, RegExp>();
+function getCompiled(pattern: string): RegExp {
+  let re = compiledCache.get(pattern);
+  if (!re) {
+    re = compilePattern(pattern);
+    compiledCache.set(pattern, re);
+  }
+  re.lastIndex = 0;
+  return re;
+}
+
+// ───────── Product-to-product targets ─────────
+
+/**
+ * Minimum length for a product name to be used as a link-able anchor.
+ * WHY: shorter names are generic ("Thumb Bucket", "Cuplaj rapid") — they would
+ * match casual prose that doesn't really refer to that specific product, which
+ * is a bad SEO signal and confuses users. Names at or above this threshold
+ * are specific enough that a full-name match is unambiguous in context.
+ */
+const MIN_PRODUCT_NAME_LEN = 15;
+
+export type ProductForLinking = {
+  slug: string;
+  name: string;
+  category?: string;
+  subcategory?: string;
+  subSubcategory?: string;
+};
+
+/**
+ * Build per-page link targets for every OTHER product in the catalog.
+ *
+ * Returns two pattern variants per product: the canonical name and (when
+ * different) a diacritic-stripped variant — so we match prose whether the
+ * author used "Mașină" or "Masina".
+ *
+ * Each target carries its product's taxonomy so `linkify` can break ties
+ * between two equally-long matches by preferring the topically closer one.
+ *
+ * @param sourceSlug - the product the current page is about, excluded from
+ *   targets. Pass `""` for non-product pages that still want product links.
+ * @param allProducts - the full catalog.
+ * @param sourceForProximity - used for topical tie-breaking. Defaults to
+ *   matching against the source product if found in the catalog.
+ */
+export function buildProductTargets(
+  sourceSlug: string,
+  allProducts: readonly ProductForLinking[],
+  sourceForProximity?: ProductForLinking
+): LinkTarget[] {
+  const source =
+    sourceForProximity ??
+    allProducts.find((p) => p.slug === sourceSlug) ??
+    null;
+
+  const out: LinkTarget[] = [];
+  for (const p of allProducts) {
+    if (p.slug === sourceSlug) continue;
+    if (p.name.length < MIN_PRODUCT_NAME_LEN) continue;
+
+    const patterns = [regexEscape(p.name)];
+    const noDia = stripDiacritics(p.name);
+    if (noDia !== p.name) patterns.push(regexEscape(noDia));
+
+    out.push({
+      href: `/produs/${p.slug}`,
+      patterns,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ...( { __meta: { taxonomy: p, source } } as any ),
+    });
+  }
+  return out;
+}
+
+/**
+ * Proximity score between a target product and the source product:
+ *   3 → same subSubcategory
+ *   2 → same subcategory
+ *   1 → same category
+ *   0 → unrelated
+ * Used only to break ties when two equally-long product names would match
+ * at the same position. WHY: if someone writes "Mașină CNC 3 sau 4 axe" in
+ * a description of another CNC product, we prefer linking to a CNC peer over
+ * an unrelated match of the same text length.
+ */
+function proximityScore(
+  target: ProductForLinking,
+  source: ProductForLinking | null
+): number {
+  if (!source) return 0;
+  if (
+    target.subSubcategory &&
+    source.subSubcategory &&
+    target.subSubcategory === source.subSubcategory
+  )
+    return 3;
+  if (
+    target.subcategory &&
+    source.subcategory &&
+    target.subcategory === source.subcategory
+  )
+    return 2;
+  if (
+    target.category &&
+    source.category &&
+    target.category === source.category
+  )
+    return 1;
+  return 0;
+}
+
+// Extract product-target meta (taxonomy) that `buildProductTargets` stashed on the target.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getTargetMeta(t: LinkTarget): { taxonomy?: ProductForLinking; source?: ProductForLinking | null } {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return ((t as any).__meta ?? {}) as { taxonomy?: ProductForLinking; source?: ProductForLinking | null };
+}
+
+// ───────── Linkify ─────────
+
+export type LinkifyOptions = {
+  /** Current page path — targets matching this href are skipped (no self-links). */
+  currentPath?: string;
+  /** Extra targets beyond the global LINK_TARGETS — typically from buildProductTargets. */
+  extraTargets?: readonly LinkTarget[];
+  /**
+   * Hard cap on how many hrefs starting with `/produs/` may be inserted into
+   * a single page (tracked via `alreadyLinked`). WHY: product-to-product
+   * linking can pile up fast in long descriptions and over-linking hurts SEO
+   * more than it helps.
+   */
+  maxProductLinksPerPage?: number;
+};
 
 /**
  * Linkify a single chunk of prose.
  *
- * @param text - the paragraph to process
+ * @param text - the paragraph to process.
  * @param alreadyLinked - hrefs already linked on this page. This set is READ
- *   AND WRITTEN: matches that result in a new link add their href here. Pass
- *   the SAME set across paragraphs of one page.
- * @param currentPath - path of the current page; targets with this href are
- *   skipped so a page never links to itself.
+ *   AND WRITTEN: when a match turns into a link, its href is added. Pass the
+ *   SAME set across every paragraph of one page.
+ * @param options - see `LinkifyOptions`.
  * @returns array of `string` and `{ text, href }` segments, in order.
  */
 export function linkify(
   text: string,
   alreadyLinked: Set<string>,
-  currentPath?: string
+  options?: LinkifyOptions
 ): Segment[] {
+  const { currentPath, extraTargets, maxProductLinksPerPage } = options ?? {};
+
   const rawMatches: RawMatch[] = [];
 
-  for (const target of LINK_TARGETS) {
-    if (alreadyLinked.has(target.href)) continue;
-    if (currentPath && target.href === currentPath) continue;
+  const scan = (targets: readonly LinkTarget[]) => {
+    for (const target of targets) {
+      if (alreadyLinked.has(target.href)) continue;
+      if (currentPath && target.href === currentPath) continue;
 
-    for (const patternSource of target.patterns) {
-      const re = compilePattern(patternSource);
-      let m: RegExpExecArray | null;
-      while ((m = re.exec(text)) !== null) {
-        rawMatches.push({
-          start: m.index,
-          end: m.index + m[0].length,
-          href: target.href,
-          patternLength: patternSource.length,
-        });
-        // Don't scan the same target twice for overlap concerns —
-        // we'll filter greedily below.
+      const meta = getTargetMeta(target);
+      const prox = meta.taxonomy
+        ? proximityScore(meta.taxonomy, meta.source ?? null)
+        : 0;
+
+      for (const patternSource of target.patterns) {
+        const re = getCompiled(patternSource);
+        let m: RegExpExecArray | null;
+        while ((m = re.exec(text)) !== null) {
+          rawMatches.push({
+            start: m.index,
+            end: m.index + m[0].length,
+            href: target.href,
+            patternLength: patternSource.length,
+            proximity: prox,
+          });
+        }
       }
     }
-  }
+  };
+
+  scan(LINK_TARGETS);
+  if (extraTargets && extraTargets.length > 0) scan(extraTargets);
 
   if (rawMatches.length === 0) return [text];
 
-  // Sort by: start ASC, then patternLength DESC (longer wins on ties),
-  // then end DESC.
+  // Sort by: start ASC, patternLength DESC (longer wins), proximity DESC
+  // (topically closer wins on ties), end DESC.
   rawMatches.sort((a, b) => {
     if (a.start !== b.start) return a.start - b.start;
     if (a.patternLength !== b.patternLength)
       return b.patternLength - a.patternLength;
+    if (a.proximity !== b.proximity) return b.proximity - a.proximity;
     return b.end - a.end;
   });
 
-  // Greedy non-overlap: keep earliest-starting, longest-pattern match;
-  // then skip any that overlap with it. Also only first match per href
-  // within this paragraph — so a term repeated in the same paragraph
-  // is linked only once.
+  // Greedy non-overlap + per-paragraph dedupe + per-page cap for product links.
   const picked: RawMatch[] = [];
   const seenHrefInParagraph = new Set<string>();
   let cursor = -1;
+
+  // Count existing product links on the page (rehydrated from the set).
+  let productLinksSoFar = 0;
+  if (maxProductLinksPerPage !== undefined) {
+    for (const h of alreadyLinked) {
+      if (h.startsWith("/produs/")) productLinksSoFar++;
+    }
+  }
+
   for (const m of rawMatches) {
     if (m.start < cursor) continue;
     if (seenHrefInParagraph.has(m.href)) continue;
     if (alreadyLinked.has(m.href)) continue;
+
+    const isProductLink = m.href.startsWith("/produs/");
+    if (
+      isProductLink &&
+      maxProductLinksPerPage !== undefined &&
+      productLinksSoFar >= maxProductLinksPerPage
+    ) {
+      continue;
+    }
+
     picked.push(m);
     seenHrefInParagraph.add(m.href);
     alreadyLinked.add(m.href);
+    if (isProductLink) productLinksSoFar++;
     cursor = m.end;
   }
 
   if (picked.length === 0) return [text];
 
-  // Build segments
   const segments: Segment[] = [];
   let i = 0;
   for (const m of picked) {

@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { linkify, type Segment } from "@/lib/internal-links";
+import {
+  linkify,
+  type Segment,
+  type LinkTarget,
+} from "@/lib/internal-links";
 
 type Props = {
   text: string;
@@ -11,6 +15,14 @@ type Props = {
   alreadyLinked: Set<string>;
   /** Current page path — matches pointing here are skipped. */
   currentPath?: string;
+  /**
+   * Extra link targets beyond the global registry — typically product targets
+   * from `buildProductTargets`. Safe to pass the same array to every instance
+   * on a page; the shared `alreadyLinked` set enforces per-page uniqueness.
+   */
+  extraTargets?: readonly LinkTarget[];
+  /** Hard cap on /produs/* links per page (via alreadyLinked). */
+  maxProductLinksPerPage?: number;
   /** Applied to the wrapper element. Defaults to nothing. */
   className?: string;
   /** Wrapper element. Defaults to `<p>` since prose paragraphs are the primary use case. */
@@ -21,10 +33,16 @@ export function AutoLinkedText({
   text,
   alreadyLinked,
   currentPath,
+  extraTargets,
+  maxProductLinksPerPage,
   className,
   as: As = "p",
 }: Props) {
-  const segments: Segment[] = linkify(text, alreadyLinked, currentPath);
+  const segments: Segment[] = linkify(text, alreadyLinked, {
+    currentPath,
+    extraTargets,
+    maxProductLinksPerPage,
+  });
 
   return (
     <As className={className}>
