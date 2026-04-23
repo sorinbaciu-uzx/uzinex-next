@@ -735,20 +735,6 @@ export default async function Page({ params }: Props) {
         );
       })()}
 
-      {/* SIMILAR */}
-      {similar.length > 0 && (
-        <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
-          <div className="container-x">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-              — Soluții tehnice similare
-            </div>
-            <div className="bg-white border border-ink-100 shadow-xl shadow-ink-900/5 px-6 lg:px-14 py-10 lg:py-12 mt-4">
-              <SimilarCarousel items={similar} />
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* FEATURES */}
       <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
         <div className="container-x">
@@ -899,6 +885,20 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* SIMILAR — sub 'Partenerul tau tehnic', aproape de final, dupa ce user-ul a fost convins */}
+      {similar.length > 0 && (
+        <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
+          <div className="container-x">
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+              — Soluții tehnice similare
+            </div>
+            <div className="bg-white border border-ink-100 shadow-xl shadow-ink-900/5 px-6 lg:px-14 py-10 lg:py-12 mt-4">
+              <SimilarCarousel items={similar} />
+            </div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>
