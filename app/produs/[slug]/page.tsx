@@ -21,6 +21,11 @@ import {
   ProductAnimationBlock,
   type ProductAnimation,
 } from "@/components/solution-anims/ProductAnimation";
+import enrichmentsData from "@/data/product-enrichments.json";
+import {
+  ProductEnrichmentBlock,
+  type ProductEnrichment,
+} from "@/components/product-enrichments/ProductEnrichment";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
@@ -448,11 +453,16 @@ export default async function Page({ params }: Props) {
         // modified; the paragraph is synthesized deterministically at render.
         const relatedText = buildRelatedParagraph(p, PRODUCTS);
 
-        // Per-product animation recipes (data/product-animations.json). Each entry
-        // declares an animation variant + where to insert it in the paragraph flow.
-        // Indexes are clamped to the real paragraph count; unknown slugs → no animations.
+        // Per-product animation + enrichment recipes. Both files are keyed by slug
+        // and describe a variant + where (paragraph index) to inject. Indexes are
+        // clamped to the real paragraph count; unknown slugs → no inserts.
         const animationsMap = animationsData as Record<string, ProductAnimation[]>;
+        const enrichmentsMap = enrichmentsData as Record<
+          string,
+          ProductEnrichment[]
+        >;
         const recipeAnims = animationsMap[p.slug] ?? [];
+        const recipeEnrichments = enrichmentsMap[p.slug] ?? [];
 
         // Filter empty paragraph blocks from the ORIGINAL description (the related-
         // products paragraph is appended separately so it always lands at the end).
@@ -460,37 +470,69 @@ export default async function Page({ params }: Props) {
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
 
-        // Build the ordered render list: original blocks, animations interleaved at
-        // their target paragraph index, overflow anims appended, related-products
-        // paragraph at the very end.
+        // Build the ordered render list: original blocks with animations AND
+        // enrichments interleaved at their target paragraph indices, then any
+        // overflow appended, then the related-products paragraph at the end.
+        // Multiple inserts at the same paragraph render in the order they were
+        // pulled from the (stable-sorted) queue — we sort so anims come before
+        // enrichments when they collide, which reads better visually (data beats
+        // editorial in the same slot).
         type RenderNode =
           | DescriptionBlock
-          | { type: "animation"; anim: ProductAnimation };
-        const withAnims: RenderNode[] = [];
-        const queue = [...recipeAnims].sort(
-          (a, b) => a.insertAfterParagraph - b.insertAfterParagraph
-        );
+          | { type: "animation"; anim: ProductAnimation }
+          | { type: "enrichment"; enr: ProductEnrichment };
+
+        type Insert =
+          | { kind: "animation"; anim: ProductAnimation; idx: number; order: number }
+          | { kind: "enrichment"; enr: ProductEnrichment; idx: number; order: number };
+        const inserts: Insert[] = [
+          ...recipeAnims.map((anim, i) => ({
+            kind: "animation" as const,
+            anim,
+            idx: anim.insertAfterParagraph,
+            order: i, // anims win ties against enrichments via `order` below
+          })),
+          ...recipeEnrichments.map((enr, i) => ({
+            kind: "enrichment" as const,
+            enr,
+            idx: enr.insertAfterParagraph,
+            order: 1000 + i,
+          })),
+        ];
+        inserts.sort((a, b) => {
+          if (a.idx !== b.idx) return a.idx - b.idx;
+          return a.order - b.order;
+        });
+
+        const withExtras: RenderNode[] = [];
         let origParaIdx = -1;
         for (const b of cleanEffBlocks) {
-          withAnims.push(b);
+          withExtras.push(b);
           if (b.type === "paragraph") {
             origParaIdx++;
-            while (
-              queue.length > 0 &&
-              queue[0].insertAfterParagraph <= origParaIdx
-            ) {
-              withAnims.push({ type: "animation", anim: queue.shift()! });
+            while (inserts.length > 0 && inserts[0].idx <= origParaIdx) {
+              const ins = inserts.shift()!;
+              if (ins.kind === "animation") {
+                withExtras.push({ type: "animation", anim: ins.anim });
+              } else {
+                withExtras.push({ type: "enrichment", enr: ins.enr });
+              }
             }
           }
         }
-        // Anims with indices beyond the last paragraph fall to the end of the body.
-        while (queue.length > 0) {
-          withAnims.push({ type: "animation", anim: queue.shift()! });
+        // Inserts that exceeded the last paragraph index fall to the end of the body.
+        while (inserts.length > 0) {
+          const ins = inserts.shift()!;
+          if (ins.kind === "animation") {
+            withExtras.push({ type: "animation", anim: ins.anim });
+          } else {
+            withExtras.push({ type: "enrichment", enr: ins.enr });
+          }
         }
         if (relatedText) {
-          withAnims.push({ type: "paragraph", text: relatedText });
+          withExtras.push({ type: "paragraph", text: relatedText });
         }
-        const restBlocks = withAnims;
+        const restBlocks = withExtras;
 
         // Shared across every paragraph so each internal-link target is used at most once per page.
         const alreadyLinked = new Set<string>();
@@ -539,6 +581,11 @@ export default async function Page({ params }: Props) {
                               <div key={i} className="my-6 -mx-2">
                                 <ProductAnimationBlock anim={b.anim} />
                               </div>
+                            );
+                          }
+                          if (b.type === "enrichment") {
+                            return (
+                              <ProductEnrichmentBlock key={i} e={b.enr} />
                             );
                           }
                           // table
