@@ -26,6 +26,7 @@ import {
   ProductEnrichmentBlock,
   type ProductEnrichment,
 } from "@/components/product-enrichments/ProductEnrichment";
+import faqsData from "@/data/product-faqs.json";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
@@ -102,7 +103,17 @@ function effectiveBlocks(
   return base;
 }
 
-const FAQ = [
+/**
+ * UNIVERSAL FAQ — answers that apply to every UZINEX equipment purchase,
+ * regardless of product. These are APPENDED after any product-specific FAQ
+ * loaded from `data/product-faqs.json`, so the section always closes with
+ * reassurance about logistics (transport, garanție, SEAP, finanțare) even
+ * when the technical questions above are deep-product-specific.
+ *
+ * When a product has ZERO entries in product-faqs.json, only these show —
+ * identical to the legacy behavior.
+ */
+const UNIVERSAL_FAQ = [
   {
     q: "Este inclus transportul?",
     a: "Da, transportul și punerea în funcțiune sunt incluse în prețul de achiziție pe teritoriul României.",
@@ -120,6 +131,9 @@ const FAQ = [
     a: "Da, oferim soluții de leasing și credite prin partenerii noștri financiari, cu aprobare rapidă.",
   },
 ];
+
+/** Shape of per-product FAQ entries loaded from `data/product-faqs.json`. */
+type ProductFaqEntry = { q: string; a: string };
 
 const FEATURES = [
   { title: "Calitate industrială", body: "Componente premium și standarde europene de fabricație." },
@@ -810,47 +824,66 @@ export default async function Page({ params }: Props) {
         );
       })()}
 
-      {/* FAQ — deasupra FEATURES; raspunde la intrebari inainte sa prezinti caracteristici */}
-      <section className="py-14 lg:py-20">
-        <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-              — Întrebări frecvente
+      {/* FAQ — deasupra FEATURES; raspunde la intrebari inainte sa prezinti caracteristici.
+          Per-product intrebari (din data/product-faqs.json) sus, intrebari universale jos. */}
+      {(() => {
+        const perProductFaqs = (
+          (faqsData as Record<string, ProductFaqEntry[]>)[p.slug] ?? []
+        ).filter((x) => x && x.q && x.a);
+        // Dedupe by question text (case-insensitive) — prevents showing the same
+        // question twice if a per-product one happens to duplicate a universal one.
+        const seenQuestions = new Set<string>(
+          perProductFaqs.map((x) => x.q.toLowerCase().trim())
+        );
+        const combinedFaqs = [
+          ...perProductFaqs,
+          ...UNIVERSAL_FAQ.filter(
+            (x) => !seenQuestions.has(x.q.toLowerCase().trim())
+          ),
+        ];
+        return (
+          <section className="py-14 lg:py-20">
+            <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
+              <div className="lg:col-span-4">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+                  — Întrebări frecvente
+                </div>
+                <h2
+                  className="serif text-2xl lg:text-3xl text-ink-900 leading-tight"
+                  style={{ letterSpacing: "-0.03em" }}
+                >
+                  Tot ce vrei să știi înainte de cumpărare.
+                </h2>
+                <a
+                  href="/contact"
+                  className="mt-5 inline-flex items-center gap-2 text-[13px] py-2.5 px-5 bg-uzx-blue hover:bg-uzx-blue2 text-white transition"
+                >
+                  Discută cu un inginer →
+                </a>
+              </div>
+              <div className="lg:col-span-8">
+                <div className="border border-ink-100 bg-white shadow-sm overflow-hidden divide-y divide-ink-100">
+                  {combinedFaqs.map((item, i) => (
+                    <details key={`${i}-${item.q}`} className="group">
+                      <summary className="cursor-pointer list-none px-6 py-4 flex items-center justify-between gap-4 hover:bg-ink-50/50 transition">
+                        <span className="serif text-sm lg:text-base text-ink-900 font-medium">
+                          {item.q}
+                        </span>
+                        <span className="text-uzx-orange text-lg shrink-0 transition group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <div className="px-6 pb-4 text-[13px] text-ink-500 leading-relaxed">
+                        {item.a}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </div>
             </div>
-            <h2
-              className="serif text-2xl lg:text-3xl text-ink-900 leading-tight"
-              style={{ letterSpacing: "-0.03em" }}
-            >
-              Tot ce vrei să știi înainte de cumpărare.
-            </h2>
-            <a
-              href="/contact"
-              className="mt-5 inline-flex items-center gap-2 text-[13px] py-2.5 px-5 bg-uzx-blue hover:bg-uzx-blue2 text-white transition"
-            >
-              Discută cu un inginer →
-            </a>
-          </div>
-          <div className="lg:col-span-8">
-            <div className="border border-ink-100 bg-white shadow-sm overflow-hidden divide-y divide-ink-100">
-              {FAQ.map((item) => (
-                <details key={item.q} className="group">
-                  <summary className="cursor-pointer list-none px-6 py-4 flex items-center justify-between gap-4 hover:bg-ink-50/50 transition">
-                    <span className="serif text-sm lg:text-base text-ink-900 font-medium">
-                      {item.q}
-                    </span>
-                    <span className="text-uzx-orange text-lg shrink-0 transition group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <div className="px-6 pb-4 text-[13px] text-ink-500 leading-relaxed">
-                    {item.a}
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        );
+      })()}
 
       {/* FEATURES */}
       <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
