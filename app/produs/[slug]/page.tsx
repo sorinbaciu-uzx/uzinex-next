@@ -16,6 +16,11 @@ import {
 } from "@/lib/product-specs";
 import { formatPrice } from "@/lib/format-price";
 import benefitsData from "@/data/product-benefits.json";
+import animationsData from "@/data/product-animations.json";
+import {
+  ProductAnimationBlock,
+  type ProductAnimation,
+} from "@/components/solution-anims/ProductAnimation";
 import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
@@ -442,12 +447,51 @@ export default async function Page({ params }: Props) {
         // product-to-product links. Source text in produse.json is never
         // modified; the paragraph is synthesized deterministically at render.
         const relatedText = buildRelatedParagraph(p, PRODUCTS);
-        const blocksWithRelated: DescriptionBlock[] = relatedText
-          ? [...effBlocks, { type: "paragraph", text: relatedText }]
-          : effBlocks;
-        const restBlocks = blocksWithRelated.filter(
+
+        // Per-product animation recipes (data/product-animations.json). Each entry
+        // declares an animation variant + where to insert it in the paragraph flow.
+        // Indexes are clamped to the real paragraph count; unknown slugs → no animations.
+        const animationsMap = animationsData as Record<string, ProductAnimation[]>;
+        const recipeAnims = animationsMap[p.slug] ?? [];
+
+        // Filter empty paragraph blocks from the ORIGINAL description (the related-
+        // products paragraph is appended separately so it always lands at the end).
+        const cleanEffBlocks = effBlocks.filter(
           (b) => b.type === "table" || b.text.replace(/\s|\\[rn]/g, "").length > 0
         );
+
+        // Build the ordered render list: original blocks, animations interleaved at
+        // their target paragraph index, overflow anims appended, related-products
+        // paragraph at the very end.
+        type RenderNode =
+          | DescriptionBlock
+          | { type: "animation"; anim: ProductAnimation };
+        const withAnims: RenderNode[] = [];
+        const queue = [...recipeAnims].sort(
+          (a, b) => a.insertAfterParagraph - b.insertAfterParagraph
+        );
+        let origParaIdx = -1;
+        for (const b of cleanEffBlocks) {
+          withAnims.push(b);
+          if (b.type === "paragraph") {
+            origParaIdx++;
+            while (
+              queue.length > 0 &&
+              queue[0].insertAfterParagraph <= origParaIdx
+            ) {
+              withAnims.push({ type: "animation", anim: queue.shift()! });
+            }
+          }
+        }
+        // Anims with indices beyond the last paragraph fall to the end of the body.
+        while (queue.length > 0) {
+          withAnims.push({ type: "animation", anim: queue.shift()! });
+        }
+        if (relatedText) {
+          withAnims.push({ type: "paragraph", text: relatedText });
+        }
+        const restBlocks = withAnims;
+
         // Shared across every paragraph so each internal-link target is used at most once per page.
         const alreadyLinked = new Set<string>();
         const currentPath = `/produs/${p.slug}`;
@@ -477,17 +521,28 @@ export default async function Page({ params }: Props) {
                     </div>
                     <div className="px-8 lg:px-10 py-7 space-y-5 text-ink-600 text-[14px] leading-[1.85] font-light">
                       {restBlocks.length > 0 ? (
-                        restBlocks.map((b, i) =>
-                          b.type === "paragraph" ? (
-                            <AutoLinkedText
-                              key={i}
-                              text={b.text}
-                              alreadyLinked={alreadyLinked}
-                              currentPath={currentPath}
-                              extraTargets={productTargets}
-                              maxProductLinksPerPage={3}
-                            />
-                          ) : (
+                        restBlocks.map((b, i) => {
+                          if (b.type === "paragraph") {
+                            return (
+                              <AutoLinkedText
+                                key={i}
+                                text={b.text}
+                                alreadyLinked={alreadyLinked}
+                                currentPath={currentPath}
+                                extraTargets={productTargets}
+                                maxProductLinksPerPage={3}
+                              />
+                            );
+                          }
+                          if (b.type === "animation") {
+                            return (
+                              <div key={i} className="my-6 -mx-2">
+                                <ProductAnimationBlock anim={b.anim} />
+                              </div>
+                            );
+                          }
+                          // table
+                          return (
                             <div
                               key={i}
                               className="overflow-x-auto -mx-2 my-2 border border-ink-100"
@@ -528,8 +583,8 @@ export default async function Page({ params }: Props) {
                                 </tbody>
                               </table>
                             </div>
-                          )
-                        )
+                          );
+                        })
                       ) : (
                         <p className="text-ink-400 italic">
                           Descriere extinsă indisponibilă pentru acest produs.
