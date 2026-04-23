@@ -810,39 +810,7 @@ export default async function Page({ params }: Props) {
         );
       })()}
 
-      {/* FEATURES */}
-      <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
-        <div className="container-x">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-            — Caracteristici & beneficii
-          </div>
-          <h2
-            className="serif text-2xl lg:text-3xl text-ink-900 leading-tight max-w-2xl"
-            style={{ letterSpacing: "-0.03em" }}
-          >
-            Construit pentru fiabilitate și performanță.
-          </h2>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {FEATURES.map((f) => (
-              <div
-                key={f.title}
-                className="group relative bg-white border border-ink-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition p-6 overflow-hidden"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-uzx-blue" />
-                <div className="w-10 h-10 rounded-full bg-uzx-orange/10 border border-uzx-orange/30 flex items-center justify-center text-uzx-orange font-semibold mt-2">
-                  ✓
-                </div>
-                <h3 className="serif text-base text-ink-900 mt-4 leading-snug">{f.title}</h3>
-                <div className="w-10 h-px bg-uzx-orange mt-2" />
-                <p className="mt-2.5 text-[12px] text-ink-500 leading-relaxed">{f.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
+      {/* FAQ — deasupra FEATURES; raspunde la intrebari inainte sa prezinti caracteristici */}
       <section className="py-14 lg:py-20">
         <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-4">
@@ -880,6 +848,38 @@ export default async function Page({ params }: Props) {
                 </details>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
+        <div className="container-x">
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
+            — Caracteristici & beneficii
+          </div>
+          <h2
+            className="serif text-2xl lg:text-3xl text-ink-900 leading-tight max-w-2xl"
+            style={{ letterSpacing: "-0.03em" }}
+          >
+            Construit pentru fiabilitate și performanță.
+          </h2>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {FEATURES.map((f) => (
+              <div
+                key={f.title}
+                className="group relative bg-white border border-ink-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition p-6 overflow-hidden"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-uzx-blue" />
+                <div className="w-10 h-10 rounded-full bg-uzx-orange/10 border border-uzx-orange/30 flex items-center justify-center text-uzx-orange font-semibold mt-2">
+                  ✓
+                </div>
+                <h3 className="serif text-base text-ink-900 mt-4 leading-snug">{f.title}</h3>
+                <div className="w-10 h-px bg-uzx-orange mt-2" />
+                <p className="mt-2.5 text-[12px] text-ink-500 leading-relaxed">{f.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
