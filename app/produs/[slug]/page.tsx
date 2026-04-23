@@ -462,7 +462,35 @@ export default async function Page({ params }: Props) {
           ProductEnrichment[]
         >;
         const recipeAnims = animationsMap[p.slug] ?? [];
-        const recipeEnrichments = enrichmentsMap[p.slug] ?? [];
+        const rawEnrichments = enrichmentsMap[p.slug] ?? [];
+
+        // Resolve image enrichments:
+        //  - Use gallery[galleryIndex - 1] when the hint resolves to a real image
+        //    entry; otherwise fall back to `data.src` (usually p.image).
+        //  - Drop duplicate images by final URL so multi-image recipes don't
+        //    double up when a product has only a hero and no gallery.
+        const seenImageUrls = new Set<string>();
+        const recipeEnrichments: ProductEnrichment[] = [];
+        for (const e of rawEnrichments) {
+          if (e.type !== "image") {
+            recipeEnrichments.push(e);
+            continue;
+          }
+          const hint = e.data.galleryIndex;
+          let resolvedSrc = e.data.src;
+          if (hint != null && hint > 0 && p.gallery && p.gallery.length > 0) {
+            const item = p.gallery[hint - 1];
+            if (item && item.type === "image" && item.url) {
+              resolvedSrc = item.url;
+            }
+          }
+          if (seenImageUrls.has(resolvedSrc)) continue; // dedupe duplicates
+          seenImageUrls.add(resolvedSrc);
+          recipeEnrichments.push({
+            ...e,
+            data: { ...e.data, src: resolvedSrc },
+          });
+        }
 
         // Filter empty paragraph blocks from the ORIGINAL description (the related-
         // products paragraph is appended separately so it always lands at the end).

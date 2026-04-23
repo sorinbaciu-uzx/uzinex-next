@@ -34,7 +34,18 @@ export type ProductEnrichment =
   | {
       type: "image";
       insertAfterParagraph: number;
-      data: { src: string; alt: string; caption: string };
+      data: {
+        /** Fallback URL used when the gallery hint below doesn't resolve. */
+        src: string;
+        alt: string;
+        caption: string;
+        /**
+         * Optional hint: 0 = hero image, 1+ = gallery[0], gallery[1]… If the
+         * product actually has a gallery entry at that slot, render picks it
+         * for variety. If not, the fallback `src` (usually p.image) is used.
+         */
+        galleryIndex?: number;
+      };
     }
   | {
       type: "video";
