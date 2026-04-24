@@ -6,8 +6,8 @@
 export function BenefitsStrip() {
   const items = [
     {
-      title: "60 luni garanție",
-      sub: "Producător + service inclus",
+      title: "AI tot grijă",
+      sub: "Manual & mentenanță cu AI",
       icon: (
         <svg
           width="24"
@@ -19,13 +19,16 @@ export function BenefitsStrip() {
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M12 2l9 4v6c0 5.5-3.8 9.8-9 11-5.2-1.2-9-5.5-9-11V6l9-4z" />
-          <path d="M8.5 12l2.5 2.5L16 9" />
+          <rect x="4" y="6" width="16" height="14" rx="2" />
+          <path d="M8 2v4M16 2v4M4 10h16" />
+          <circle cx="9" cy="14" r="1" />
+          <circle cx="15" cy="14" r="1" />
+          <path d="M9 17c.8.8 2 .8 3 .8s2.2 0 3-.8" />
         </svg>
       ),
     },
     {
-      title: "Transport & montaj",
+      title: "Transport & PIF",
       sub: "Gratuit în toată România",
       icon: (
         <svg
