@@ -31,6 +31,7 @@ import { AutoLinkedText } from "@/components/AutoLinkedText";
 import { buildProductTargets } from "@/lib/internal-links";
 import { buildRelatedParagraph } from "@/lib/related-products";
 import { getBnrEurRate } from "@/lib/bnr";
+import { splitIntoSections } from "@/lib/description-sections";
 
 // ISR: regenerate each product page at most once per hour so the displayed
 // BNR EUR→RON rate stays current (BNR publishes ~13:00 on weekdays).
@@ -634,77 +635,114 @@ export default async function Page({ params }: Props) {
                         <span className="w-12 h-px bg-ink-200" />
                       </div>
                     </div>
-                    <div className="px-8 lg:px-10 py-7 space-y-5 text-ink-600 text-[14px] leading-[1.85] font-light">
+                    <div className="px-8 lg:px-10 py-7 text-ink-600 text-[14px] leading-[1.85] font-light">
                       {restBlocks.length > 0 ? (
-                        restBlocks.map((b, i) => {
-                          if (b.type === "paragraph") {
+                        (() => {
+                          // Split into intro + collapsible sections for progressive
+                          // disclosure — intro reads instantly, the long tail
+                          // (Avantaje, Aplicații, Proces, De ce UZINEX, native
+                          // FAQ, etc.) is tucked behind accordion summaries.
+                          const sections = splitIntoSections(restBlocks);
+
+                          const renderBlock = (b: (typeof restBlocks)[number], i: number) => {
+                            if (b.type === "paragraph") {
+                              return (
+                                <AutoLinkedText
+                                  key={i}
+                                  text={b.text}
+                                  alreadyLinked={alreadyLinked}
+                                  currentPath={currentPath}
+                                  extraTargets={productTargets}
+                                  maxProductLinksPerPage={3}
+                                />
+                              );
+                            }
+                            if (b.type === "animation") {
+                              return (
+                                <div key={i} className="my-6 -mx-2">
+                                  <ProductAnimationBlock anim={b.anim} />
+                                </div>
+                              );
+                            }
+                            if (b.type === "enrichment") {
+                              return (
+                                <ProductEnrichmentBlock key={i} e={b.enr} />
+                              );
+                            }
+                            // table
                             return (
-                              <AutoLinkedText
+                              <div
                                 key={i}
-                                text={b.text}
-                                alreadyLinked={alreadyLinked}
-                                currentPath={currentPath}
-                                extraTargets={productTargets}
-                                maxProductLinksPerPage={3}
-                              />
-                            );
-                          }
-                          if (b.type === "animation") {
-                            return (
-                              <div key={i} className="my-6 -mx-2">
-                                <ProductAnimationBlock anim={b.anim} />
+                                className="overflow-x-auto -mx-2 my-2 border border-ink-100"
+                              >
+                                <table className="w-full text-[13px]">
+                                  <tbody>
+                                    {b.rows.map((row, ri) => {
+                                      const isHeader = ri === 0;
+                                      return (
+                                        <tr
+                                          key={ri}
+                                          className={
+                                            isHeader
+                                              ? "bg-ink-50"
+                                              : "border-t border-ink-100 hover:bg-ink-50/50 transition"
+                                          }
+                                        >
+                                          {row.map((cell, ci) => {
+                                            const Tag = isHeader ? "th" : "td";
+                                            return (
+                                              <Tag
+                                                key={ci}
+                                                className={`px-4 py-2.5 align-top text-left ${
+                                                  isHeader
+                                                    ? "text-[11px] mono uppercase tracking-wider text-ink-500 font-semibold"
+                                                    : ci === 0
+                                                    ? "text-ink-500 w-[40%]"
+                                                    : "text-ink-900 font-medium"
+                                                }`}
+                                              >
+                                                {cell || "—"}
+                                              </Tag>
+                                            );
+                                          })}
+                                        </tr>
+                                      );
+                                    })}
+                                  </tbody>
+                                </table>
                               </div>
                             );
-                          }
-                          if (b.type === "enrichment") {
+                          };
+
+                          return sections.map((section, sIdx) => {
+                            if (section.title === null) {
+                              // Intro — always visible, no wrapper
+                              return (
+                                <div key={sIdx} className="space-y-5">
+                                  {section.blocks.map(renderBlock)}
+                                </div>
+                              );
+                            }
                             return (
-                              <ProductEnrichmentBlock key={i} e={b.enr} />
+                              <details
+                                key={sIdx}
+                                className="group border-t border-ink-100 mt-6 pt-5"
+                              >
+                                <summary className="cursor-pointer list-none flex items-center justify-between gap-4 hover:text-uzx-blue transition">
+                                  <span className="text-[12px] uppercase tracking-[0.18em] mono text-uzx-orange font-semibold">
+                                    {section.title}
+                                  </span>
+                                  <span className="text-uzx-orange text-xl shrink-0 transition-transform duration-200 group-open:rotate-45">
+                                    +
+                                  </span>
+                                </summary>
+                                <div className="mt-5 space-y-5">
+                                  {section.blocks.map(renderBlock)}
+                                </div>
+                              </details>
                             );
-                          }
-                          // table
-                          return (
-                            <div
-                              key={i}
-                              className="overflow-x-auto -mx-2 my-2 border border-ink-100"
-                            >
-                              <table className="w-full text-[13px]">
-                                <tbody>
-                                  {b.rows.map((row, ri) => {
-                                    const isHeader = ri === 0;
-                                    return (
-                                      <tr
-                                        key={ri}
-                                        className={
-                                          isHeader
-                                            ? "bg-ink-50"
-                                            : "border-t border-ink-100 hover:bg-ink-50/50 transition"
-                                        }
-                                      >
-                                        {row.map((cell, ci) => {
-                                          const Tag = isHeader ? "th" : "td";
-                                          return (
-                                            <Tag
-                                              key={ci}
-                                              className={`px-4 py-2.5 align-top text-left ${
-                                                isHeader
-                                                  ? "text-[11px] mono uppercase tracking-wider text-ink-500 font-semibold"
-                                                  : ci === 0
-                                                  ? "text-ink-500 w-[40%]"
-                                                  : "text-ink-900 font-medium"
-                                              }`}
-                                            >
-                                              {cell || "—"}
-                                            </Tag>
-                                          );
-                                        })}
-                                      </tr>
-                                    );
-                                  })}
-                                </tbody>
-                              </table>
-                            </div>
-                          );
-                        })
+                          });
+                        })()
                       ) : (
                         <p className="text-ink-400 italic">
                           Descriere extinsă indisponibilă pentru acest produs.
