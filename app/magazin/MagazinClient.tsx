@@ -163,12 +163,15 @@ export function MagazinClient({
   // pagination: compact like 1 2 3 4 … 14 15 16
   const pageNumbers = (): (number | "…")[] => {
     if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
-    const arr: (number | "…")[] = [];
-    arr.push(1, 2, 3, 4);
-    if (currentPage > 5 && currentPage < totalPages - 3) {
-      arr.push("…", currentPage);
+    const arr: (number | "…")[] = [1, 2, 3, 4];
+    if (currentPage >= 5 && currentPage <= totalPages - 3) {
+      if (currentPage > 5) arr.push("…");
+      arr.push(currentPage);
+      if (currentPage < totalPages - 3) arr.push("…");
+    } else {
+      arr.push("…");
     }
-    arr.push("…", totalPages - 2, totalPages - 1, totalPages);
+    arr.push(totalPages - 2, totalPages - 1, totalPages);
     return arr;
   };
 
