@@ -506,6 +506,27 @@ export default async function Page({ params }: Props) {
           });
         }
 
+        // Auto-inject a video enrichment when the gallery has a YouTube entry
+        // (set via admin panel, stored in DB as override.gallery) and the
+        // recipe doesn't already have one. Keeps video visible inside the
+        // description body, not just in the gallery widget at the top.
+        const hasVideoInRecipe = recipeEnrichments.some(
+          (e) => e.type === "video"
+        );
+        if (!hasVideoInRecipe && p.gallery && p.gallery.length > 0) {
+          const firstYoutube = p.gallery.find((g) => g.type === "youtube");
+          if (firstYoutube && firstYoutube.type === "youtube") {
+            recipeEnrichments.push({
+              type: "video",
+              insertAfterParagraph: 1,
+              data: {
+                video: firstYoutube.videoId,
+                caption: `Video demonstrativ — ${p.name}`,
+              },
+            });
+          }
+        }
+
         // Strip WordPress [embed]URL[/embed] shortcodes from paragraph text —
         // the video is shown via a proper video enrichment at the same position
         // (see scripts/build-enrichments.js for the pairing). Paragraphs that
