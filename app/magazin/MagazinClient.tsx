@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { AddToQuoteButton } from "./AddToQuoteButton";
 import { PRODUCTS as ALL_PRODUCTS, type Product } from "./products";
@@ -133,6 +133,18 @@ export function MagazinClient({
 } = {}) {
   const [filter, setFilter] = useState<Filter>({ type: "all" });
   const [page, setPage] = useState(1);
+  const productsTopRef = useRef<HTMLDivElement>(null);
+
+  const goToPage = (n: number) => {
+    setPage(n);
+    // Defer scroll until after re-render so the new product list is visible
+    requestAnimationFrame(() => {
+      const el = productsTopRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 96; // 96 = sticky header offset
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
 
   const sourceProducts = products ?? ALL_PRODUCTS;
 
@@ -349,6 +361,7 @@ export function MagazinClient({
 
         {/* GRID */}
         <div className="lg:col-span-9 flex flex-col">
+          <div ref={productsTopRef} aria-hidden="true" />
           {/* result count */}
           <div className="mb-5 flex items-center justify-between text-[11px] mono uppercase tracking-wider text-ink-400">
             <span>
@@ -451,7 +464,7 @@ export function MagazinClient({
                   <button
                     key={n}
                     type="button"
-                    onClick={() => setPage(n)}
+                    onClick={() => goToPage(n)}
                     className={`w-9 h-9 inline-flex items-center justify-center transition ${
                       n === currentPage
                         ? "text-uzx-blue font-semibold"
@@ -464,7 +477,7 @@ export function MagazinClient({
               )}
               <button
                 type="button"
-                onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
+                onClick={() => goToPage(Math.min(currentPage + 1, totalPages))}
                 disabled={currentPage >= totalPages}
                 className="w-9 h-9 inline-flex items-center justify-center text-ink-400 hover:text-uzx-blue transition text-xl disabled:opacity-30 disabled:hover:text-ink-400"
                 aria-label="Pagina următoare"
