@@ -224,12 +224,6 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
             <a href="tel:+40769081081" className="hover:opacity-100">
               +40 769 081 081
             </a>
-            <span className="text-white/30">|</span>
-            <a href="/" className={lang === "ro" ? "" : "opacity-50"}>RO</a>
-            <span className="text-white/30">/</span>
-            <a href="/en" className={lang === "en" ? "" : "opacity-50"}>
-              EN
-            </a>
           </div>
           <a href="tel:+40769081081" className="md:hidden opacity-80 hover:opacity-100">
             +40 769 081 081

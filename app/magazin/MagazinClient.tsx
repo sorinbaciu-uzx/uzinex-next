@@ -180,7 +180,7 @@ export function MagazinClient({
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
         {/* SIDEBAR FILTRE */}
         <aside className="lg:col-span-3">
-          <div className="lg:sticky lg:top-24 bg-white border border-ink-100 shadow-sm overflow-hidden">
+          <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto scroll-thin bg-white border border-ink-100 shadow-sm">
             <div className="px-6 pt-6 pb-4">
               <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono">
                 — Filtrează
@@ -385,28 +385,35 @@ export function MagazinClient({
                       {p.subcategory || p.category}
                     </span>
                   </div>
-                  <div className="pt-12 px-6 flex items-center justify-center h-56">
-                    {p.image ? (
-                      <Image
-                        src={p.image}
-                        alt={p.name}
-                        width={400}
-                        height={300}
-                        className="object-contain max-h-full w-auto group-hover:scale-105 transition duration-500"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex flex-col items-center justify-center text-ink-300">
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="3" y="3" width="18" height="18" rx="2" />
-                          <circle cx="9" cy="9" r="2" />
-                          <path d="m21 15-5-5L5 21" />
-                        </svg>
-                        <span className="mt-3 text-[10px] mono uppercase tracking-wider text-ink-300">
-                          imagine indisponibilă
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                  
+                   <a
+                      href={`/produs/${p.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pt-12 px-6 flex items-center justify-center h-56 cursor-pointer"
+                    >
+                      {p.image ? (
+                        <Image
+                          src={p.image}
+                          alt={p.name}
+                          width={400}
+                          height={300}
+                          className="object-contain max-h-full w-auto group-hover:scale-105 transition duration-500"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex flex-col items-center justify-center text-ink-300">
+                          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <circle cx="9" cy="9" r="2" />
+                            <path d="m21 15-5-5L5 21" />
+                          </svg>
+                          <span className="mt-3 text-[10px] mono uppercase tracking-wider text-ink-300">
+                            imagine indisponibilă
+                          </span>
+                        </div>
+                      )}
+                    </a>
+
                   <div className="px-6 pb-6 flex flex-col flex-1">
                     <h3 className="serif text-lg lg:text-xl text-ink-900 leading-snug font-medium">
                       {p.name}

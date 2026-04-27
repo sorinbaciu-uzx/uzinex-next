@@ -8467,8 +8467,8 @@
       "insertAfterParagraph": 24,
       "data": {
         "src": "/images/produse/robot-inspectie-antiexplozie-cisterne-gt-260-tractiune-6x6-1.webp",
-        "alt": "Robot de Inspecție Antiexplozie pentru Cisterne GT-260 — vedere de ansamblu",
-        "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
+        "alt": "Robot CCTV antiex GT-260 cu tracțiune 6×6 pentru cisterne",
+        "caption": "Robot CCTV Ex-rated cu tracțiune 6×6 — deplasare sigură în atmosferă potențial explozivă.",
         "galleryIndex": 0
       }
     },
@@ -8484,9 +8484,19 @@
       "type": "image",
       "insertAfterParagraph": 36,
       "data": {
-        "src": "/images/produse/robot-inspectie-antiexplozie-cisterne-gt-260-tractiune-6x6-1.webp",
-        "alt": "Robot de Inspecție Antiexplozie pentru Cisterne GT-260 — detaliu",
-        "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
+        "src": "/images/produse/robot-inspectie-antiexplozie-cisterne-gt-260-tractiune-6x6-2.webp",
+        "alt": "Detaliu cap inspecție GT-260 — cameră frontală cu iluminare LED",
+        "caption": "Cap de inspecție frontal cu cameră și iluminare LED integrată.",
+        "galleryIndex": 1
+      }
+    },
+    {
+      "type": "image",
+      "insertAfterParagraph": 40,
+      "data": {
+        "src": "/images/produse/robot-inspectie-antiexplozie-cisterne-gt-260-tractiune-6x6-3.webp",
+        "alt": "Sistem complet GT-260 — robot + tambur electric cu cablu Kevlar 100 m",
+        "caption": "Sistem complet livrat: robot Ex-rated + tambur electric cu cablu Kevlar de 100 m.",
         "galleryIndex": 2
       }
     }

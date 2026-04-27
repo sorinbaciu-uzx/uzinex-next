@@ -1,0 +1,4050 @@
+{
+  "masina-cnc-3-sau-4-axe": [
+    {
+      "title": "Sculptură 3D pentru mobilier",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Reliefuri și paneluri ornamentale",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Matrițe pentru turnătorie",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Atelier mecanic universal",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    }
+  ],
+  "centru-de-prelucrare-cnc-5-axe": [
+    {
+      "title": "Componente complexe aerospațiale",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Matrițe injecție mase plastice",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Producție serie auto-componente",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Atelier mecanic de înaltă precizie",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    }
+  ],
+  "centru-cnc-pentru-piatra-granit-si-quartz": [
+    {
+      "title": "Prelucrare granit și marmură",
+      "animation": "stone-polish",
+      "icon": "stone"
+    },
+    {
+      "title": "Plăci pentru construcții",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Blaturi bucătării și băi",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Decorații și sculpturi 3D",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "mini-strung-din-metal": [
+    {
+      "title": "Atelier mecanic de hobby",
+      "animation": "lathe-spinning",
+      "icon": "lathe"
+    },
+    {
+      "title": "Bucșe și piese mici",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Modelism și prototipare",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Învățământ și școli profesionale",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "mini-strung-profesional": [
+    {
+      "title": "Atelier mecanic mic",
+      "animation": "lathe-spinning",
+      "icon": "lathe"
+    },
+    {
+      "title": "Reparații industriale ușoare",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Producție bucșe și axe",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Componente mecanice de schimb",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "mini-strung-universal-cu-banc": [
+    {
+      "title": "Atelier mecanic universal",
+      "animation": "lathe-spinning",
+      "icon": "lathe"
+    },
+    {
+      "title": "Reparații piese de schimb",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Producție arbori și bucșe",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Învățământ tehnic",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "strung-universal-cu-banc": [
+    {
+      "title": "Producție arbori și piese rotative",
+      "animation": "lathe-spinning",
+      "icon": "lathe"
+    },
+    {
+      "title": "Reparații industriale",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Atelier mecanic universal",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Componente pentru industria auto",
+      "animation": "auto-industry",
+      "icon": "car"
+    }
+  ],
+  "strung-heavy-duty": [
+    {
+      "title": "Piese mari pentru industrie grea",
+      "animation": "lathe-spinning",
+      "icon": "lathe"
+    },
+    {
+      "title": "Componente navale și energetice",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Reparații utilaje industriale",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Producție arbori lungi",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "strung-cnc-pentru-strunjit-metal": [
+    {
+      "title": "Producție serie cu repetabilitate",
+      "animation": "lathe-spinning",
+      "icon": "lathe"
+    },
+    {
+      "title": "Componente pentru industria auto",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Piese complexe automate",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier mecanic de precizie",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    }
+  ],
+  "masina-de-aplicat-cant-complet-automata-cu-urmarire-profil": [
+    {
+      "title": "Producție mobilier de lux",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Aplicare cant pe profile complexe",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Linie integrată cu nesting",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "masina-de-aplicat-cant-automata-cu-doua-rezervoare-de-adeziv": [
+    {
+      "title": "Producție mobilier serie mare",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Aplicare cant cu schimb adeziv",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Linie automată end-of-line",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Atelier de tâmplărie industrial",
+      "animation": "wood-saw",
+      "icon": "saw"
+    }
+  ],
+  "masina-automata-de-aplicat-canturi-pe-contururi-circulare": [
+    {
+      "title": "Mese rotunde și forme curbate",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Producție mobilier de design",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Atelier specializat tâmplărie",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Linie integrată cu CNC",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "masina-de-aplicat-canturi-pentru-dulapuri-cu-forme-speciale": [
+    {
+      "title": "Dulapuri cu forme speciale",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Aplicare cant pe forme complexe",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Producție mobilier custom",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Linie integrată cu nesting",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "masina-de-aplicat-canturi-semiautomata-pentru-placaj-portabila-pentru-ateliere-mici": [
+    {
+      "title": "Atelier de tâmplărie mic",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Producție mobilier la comandă",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Reparații și retușuri canturi",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Showroom și service mobilier",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "masina-de-taiere-usi-pe-patru-laturi-cu-incarcare-si-descarcare-automata": [
+    {
+      "title": "Producție serie uși interior",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Aplicare cant pe canturi uși",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Atelier mobilier complet",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Linie automată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-cnc-frezat-locasuri-balamale-si-incuietori-usi": [
+    {
+      "title": "Producție uși de interior",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Producție mobilier serie",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Frezare locașuri balamale",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "masina-cnc-pentru-realizarea-gaurilor-de-incuietori-si-balamale-pe-usi-din-lemn": [
+    {
+      "title": "Producție serie uși interior",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Locașuri balamale și încuietori",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier mobilier și uși",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Aplicare cant pe canturi uși",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "celula-cnc-de-nesting-pentru-mobila-2-routere-atc-240-panouri-8h-etichetare-automata": [
+    {
+      "title": "Producție mobilier industrial",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Nesting plăci PAL/MDF",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Linie cu etichetare automată",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Linii integrate cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-cnc-pentru-fabricarea-mobilierului-cu-alimentare-automata": [
+    {
+      "title": "Producție mobilier de serie",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Nesting plăci PAL/MDF",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Linii de producție automate",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    }
+  ],
+  "fierastrau-cnc-de-mare-viteza-pentru-taierea-panourilor-din-lemn": [
+    {
+      "title": "Debitare panouri PAL/MDF",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Producție mobilier de serie",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Optimizare nesting cu CNC",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Linie automată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "fierastrau-circular-cu-masa-glisanta-pentru-panouri": [
+    {
+      "title": "Atelier de tâmplărie",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Debitare panouri și plăci",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Producție mobilier la comandă",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Aplicare cant după debitare",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "masina-cnc-de-gaurire-pe-sase-laturi-cu-atc-si-capete-de-gaurire-in-patru-directii": [
+    {
+      "title": "Găurire panouri PAL/MDF",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Producție mobilier serie",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Linie integrată cu nesting",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-cnc-de-gaurire-cu-cap-dublu-si-sase-fete": [
+    {
+      "title": "Găurire serie pentru mobilier",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Producție rapidă fronturi mobilier",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Linii integrate cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-cnc-de-productie-a-cutiilor-din-carton": [
+    {
+      "title": "Producție on-demand cutii",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "E-commerce și fulfillment",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Cutii personalizate la dimensiune",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Reducere stocuri carton",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    }
+  ],
+  "masina-cnc-de-gaurit-cu-sase-fete-pentru-productia-de-mobila-din-lemn": [
+    {
+      "title": "Găurire 6 fețe pentru mobilier",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Producție mobilier de serie",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Linie automată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-de-gaurit-cu-mai-multe-capete-si-fierastrau": [
+    {
+      "title": "Producție serie mobilier",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Găurire multiplă și debitare",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Linie automată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "presa-automata-de-vacuum-pentru-productia-de-mobilier": [
+    {
+      "title": "Producție mobilier furniruit",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Presare furnir pe panouri",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Producție uși și fronturi",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "linie-automata-fabricare-cutii-carton-ondulat-personalizate-uzinex": [
+    {
+      "title": "Producție on-demand cutii",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "E-commerce și fulfillment",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Cutii personalizate la dimensiune",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Reducere stocuri carton",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    }
+  ],
+  "masina-cnc-pentru-gaurirea-balamalelor-pentru-mobila-cu-un-singur-cap": [
+    {
+      "title": "Găurire balamale serie mică",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier mobilier mic",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Producție pe comandă mobilier",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Aplicare cant pe canturi",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "masina-de-gaurit-cu-balama-dubla-pentru-mobila-din-lemn-cnc": [
+    {
+      "title": "Găurire balamale duble",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Producție mobilier serie",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Linie integrată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-de-profilat-si-taiat-colturi-pentru-producerea-mobilei": [
+    {
+      "title": "Producție mobilier de design",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Profilat și tăiat colțuri",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Aplicare cant pe profile",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "masina-automata-de-lustruit-lemn": [
+    {
+      "title": "Finisare suprafețe lemn masiv",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Producție mobilier de lux",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "edge-banding",
+      "icon": "edge"
+    },
+    {
+      "title": "Linie automată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-cnc-de-taiere-a-metalului-cu-banda-in-forma-de-t": [
+    {
+      "title": "Tăiere profile metalice T",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Atelier metalic de precizie",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Producție serie auto-componente",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Construcții metalice",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    }
+  ],
+  "centru-de-prelucrare-cnc-multifunctional-pentru-fabricarea-usilor": [
+    {
+      "title": "Producție uși interior cu CNC",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Producție mobilier integrată",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Aplicare cant pe canturi uși",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "freza-cnc-pentru-polistiren-cu-atc-linear": [
+    {
+      "title": "Sculptură 3D polistiren",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Decorațiuni arhitecturale",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Modele și prototipuri",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Producție publicitate volumetrică",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "router-cnc-cu-4-procese-multihead-si-dispozitiv-rotativ": [
+    {
+      "title": "Producție rapidă mobilier",
+      "animation": "furniture-assembly",
+      "icon": "furniture"
+    },
+    {
+      "title": "Frezare 3D cu axă rotativă",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    },
+    {
+      "title": "Atelier de tâmplărie modern",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Aplicare cant pe panouri",
+      "animation": "edge-banding",
+      "icon": "edge"
+    }
+  ],
+  "masina-automata-de-taiere-laser-cu-bobina-de-tabla": [
+    {
+      "title": "Tăiere bobine de tablă",
+      "animation": "laser-cut",
+      "icon": "laser"
+    },
+    {
+      "title": "Producție serie auto",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Construcții metalice și HVAC",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Linie automată cu transport",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "laser-fibra-economic-pentru-ateliere": [
+    {
+      "title": "Tăiere oțel inox și aluminiu",
+      "animation": "laser-cut",
+      "icon": "laser"
+    },
+    {
+      "title": "Atelier metalic modern",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Componente auto și electrocasnice",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Producție de serie precisă",
+      "animation": "cnc-spindle",
+      "icon": "spindle"
+    }
+  ],
+  "masina-de-ambalat-paleti": [
+    {
+      "title": "Depozite și logistică generală",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Linii end-of-line automate",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Securizare paleți la transport",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Distribuție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-de-ambalat-paleti-tip-m": [
+    {
+      "title": "Centre de distribuție medii",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Securizare paleți la export",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Linii de producție continue",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Industrie alimentară și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-de-ambalat-paleti-kpw-tp1650f": [
+    {
+      "title": "Depozit logistic mediu",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "End-of-line cu sigilare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Pre-întindere folie 250%",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-de-ambalat-robotizata-kpw-z4510": [
+    {
+      "title": "Logistică automatizată mare",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Linii robotizate end-of-line",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Securizare la transport intercontinental",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Industrie alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-de-ambalat-paleti-cu-brat-rotativ-kpw-yb1800l": [
+    {
+      "title": "Paleți instabili sau fragili",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "End-of-line automat",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Securizare la transport",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Industrie chimică și producție grea",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "masina-semiautomata-de-ambalat-folie-stretch-kpw-m800-uzinex": [
+    {
+      "title": "Depozite mici și medii",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Service și magazine",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Securizare paleți rapidă",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Distribuție alimentară",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "mini-masina-de-ambalat-folie-stretch-kpw-mn600-uzinex": [
+    {
+      "title": "Atelier mic și magazine",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Securizare colete fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "Showroom-uri și expedieri",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Industrie alimentară mică",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-de-ambalat-bagaje-kpw-zxl600-uzinex": [
+    {
+      "title": "Aeroporturi și gări",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Hoteluri și terminale",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Securizare bagaje pasageri",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Curierat și colete fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "masina-automata-de-ambalat-cu-bobina-stretch-kpw-yt2000-uzinex": [
+    {
+      "title": "End-of-line automat depozit",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "Linii continue producție",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Securizare la transport",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Industrie alimentară și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "statie-mobila-de-zdrobire-si-sortare-cu-senile": [
+    {
+      "title": "Cariere mobile pe șantier",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare moloz și beton",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Procesare piatră naturală",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Lucrări de infrastructură",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "pompa-de-caldura-aer-apa-r32-evi-dc-inverter-19-35-kw-cu-ecran-tactil": [
+    {
+      "title": "Încălzire case rezidențiale",
+      "animation": "heat-pump",
+      "icon": "heat-pump"
+    },
+    {
+      "title": "Apă caldă menajeră",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    },
+    {
+      "title": "Eficiență energetică A+++",
+      "animation": "gear-mechanism",
+      "icon": "leaf"
+    },
+    {
+      "title": "Climatizare clădiri comerciale",
+      "animation": "conveyor-belt",
+      "icon": "factory"
+    }
+  ],
+  "masina-de-ambalat-orizontala-stretch-kpw-sp1000": [
+    {
+      "title": "Țevi, profile și produse lungi",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "End-of-line industrii grele",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Securizare profile metalice",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Construcții și HVAC",
+      "animation": "strapping",
+      "icon": "strap"
+    }
+  ],
+  "masina-automata-de-legat-cu-banda-kpw-8060-uzinex": [
+    {
+      "title": "Securizare colete în depozit",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Linii end-of-line automate",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "E-commerce și fulfillment",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "Industrie tipografică",
+      "animation": "label-print",
+      "icon": "label"
+    }
+  ],
+  "masina-semiautomata-de-legat-cu-banda-kpw-750": [
+    {
+      "title": "Atelier de expediție mic",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Service curierat",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "Producție serie medie",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Industrie tipografică",
+      "animation": "label-print",
+      "icon": "label"
+    }
+  ],
+  "masina-semiautomata-de-legat-paleti-kpw-1300-uzinex": [
+    {
+      "title": "Securizare paleți la export",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Depozit logistic mediu",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "End-of-line semiautomat",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Industrie alimentară și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-automata-de-legat-cu-banda-orizontala-kpw-db800s-uzinex": [
+    {
+      "title": "Linii continue de producție",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "End-of-line automat",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Industrie tipografică",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Producție serie alimentară",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-automata-electrica-de-legat-paleti-kpw-jd-008-uzinex": [
+    {
+      "title": "Logistică automatizată grea",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Securizare paleți la export",
+      "animation": "pallet-wrap",
+      "icon": "pallet"
+    },
+    {
+      "title": "End-of-line continuu",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Producție industrială mare",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "masina-automata-de-bandat-kpw-sdj150-banda-pp-pet-12-25mm-uzinex": [
+    {
+      "title": "Securizare colete și pachete",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "End-of-line automat",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "E-commerce și fulfillment",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "Producție serie medie",
+      "animation": "label-print",
+      "icon": "label"
+    }
+  ],
+  "masina-de-sigilare-a-cutiilor-kpw-fx-1000-cutii-ora-5-modele": [
+    {
+      "title": "Linie de ambalare carton",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "E-commerce și fulfillment",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Sigilare bandă adezivă automată",
+      "animation": "strapping",
+      "icon": "strap"
+    }
+  ],
+  "masina-pneumatica-de-sigilare-a-cutiilor-kpw-zfx30-zfx50-uzinex": [
+    {
+      "title": "Atelier mediu de expediție",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "Service curierat",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Producție serie variabilă",
+      "animation": "strapping",
+      "icon": "strap"
+    },
+    {
+      "title": "Industrie alimentară și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    }
+  ],
+  "masina-de-format-carton-kpw-kx4040-erector-pneumatic-8-10-cutii-min-uzinex": [
+    {
+      "title": "Linie de fabricare cutii",
+      "animation": "box-forming",
+      "icon": "box"
+    },
+    {
+      "title": "E-commerce și fulfillment",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Producție alimentară",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Marcare și etichetare cutii",
+      "animation": "label-print",
+      "icon": "label"
+    }
+  ],
+  "masina-de-dezmembrat-sticle-rotunde-kpw-lp800-20-100mm-10-rpm-0-2kw-uzinex": [
+    {
+      "title": "Reciclare sticle rotunde",
+      "animation": "bottle-fill",
+      "icon": "bottle"
+    },
+    {
+      "title": "Recuperare etichete și ambalaje",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Industrie cosmetică și farmacii",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Linie de pre-procesare reciclare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-semiautomata-de-etichetare-plata-kpw-bp120-eticheta-max-120mm-anti-blocare-uzinex": [
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Cosmetice și farmaceutice",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    },
+    {
+      "title": "Trasabilitate cu coduri de bare",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Atelier de ambalare semiautomat",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-automata-de-etichetare-plata-kpw-qp150-120-150-prod-min-1mm-uzinex": [
+    {
+      "title": "Linie automată end-of-line",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Trasabilitate cu coduri de bare",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Cosmetice și farmaceutice",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    }
+  ],
+  "masina-semiautomata-de-etichetare-laterala-kpw-bc150-1mm-40kg-pedala-uzinex": [
+    {
+      "title": "Sticle, flacoane și cutii",
+      "animation": "bottle-fill",
+      "icon": "bottle"
+    },
+    {
+      "title": "Cosmetice și produse de îngrijire",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Producție serie mică",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Atelier ambalare semiautomat",
+      "animation": "food-factory",
+      "icon": "fill"
+    }
+  ],
+  "masina-automata-de-etichetare-laterala-kpw-qc160": [
+    {
+      "title": "Linie continuă de etichetare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Trasabilitate produs final",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Cosmetice și farmaceutice",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    }
+  ],
+  "masina-de-umplere-semiautomata-kpw-g1w1-10-1000ml-creme-geluri-lichide-banc-lucru-uzinex": [
+    {
+      "title": "Cosmetice și creme corp",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    },
+    {
+      "title": "Producție alimentară mică",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Atelier farmaceutic",
+      "animation": "label-print",
+      "icon": "label"
+    },
+    {
+      "title": "Linie de ambalare manuală",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-automata-de-umplere-kpw-gz8t-8-capete-3000-rec-ora-1-precizie": [
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Cosmetice și produse de îngrijire",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    },
+    {
+      "title": "Linie completă end-of-line",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Plafonare și serializare automată",
+      "animation": "label-print",
+      "icon": "label"
+    }
+  ],
+  "masina-de-ambalat-termocontractabil-2-in-1-kpw-fm5540-produs-max-550-400mm-uzinex": [
+    {
+      "title": "Sigilare colete și bunuri",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Multipack băuturi și alimente",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Linie end-of-line automată",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Protecție produse fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "sigilator-semiautomat-in-l-cu-contractie-kpw-450l": [
+    {
+      "title": "Atelier de ambalare semiautomat",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Producție serie mică",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Cosmetice și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Protecție produse fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "masina-semiautomata-de-etansare-in-l-cu-contractie-kpw-4020-tunnel-uzinex": [
+    {
+      "title": "Atelier ambalare semiautomat",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Producție alimentară mică",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Linie end-of-line",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Protecție produse fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "echipament-de-etansare-in-l-cu-contractie-kpw-fl450-plc-3-5kw": [
+    {
+      "title": "Producție serie automată",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Industrie alimentară și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Linie end-of-line continuă",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Protecție produse fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "aparat-de-etansare-in-l-cu-contractie-kpw-fl450": [
+    {
+      "title": "Atelier ambalare semiautomat",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Producție serie medie",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Cosmetice și retail",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Protecție produse fragile",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "masina-de-etansare-in-l-cu-tunel-de-contractie-kpw-fl550": [
+    {
+      "title": "Sigilare colete largi",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Producție alimentară și băuturi",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Linie end-of-line continuă",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Protecție bunuri retail",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "invelitoare-de-maneca-fl7540-pneumatic": [
+    {
+      "title": "Sigilare cu mânecă termică",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Producție serie medie",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Industrie alimentară",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Protecție bunuri voluminoase",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "invelitoare-de-maneca-fl-6540-pneumatic": [
+    {
+      "title": "Sigilare cu mânecă termică",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Producție serie mică-medie",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Industrie alimentară",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Protecție bunuri retail",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "masina-de-tunel-termocontractibil-bse6040a-24kw-0-15m-min-folie-pe-uzinex": [
+    {
+      "title": "Tunel termocontractabil industrial",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Multipack băuturi și alimente",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Linie continuă end-of-line",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Protecție produse mari",
+      "animation": "box-forming",
+      "icon": "box"
+    }
+  ],
+  "masina-de-ambalat-perne-kpw-350x-flow-wrapper-ffs-40-90-pac-min-uzinex": [
+    {
+      "title": "Producție textile și pernă",
+      "animation": "shrink-tunnel",
+      "icon": "shrink"
+    },
+    {
+      "title": "Industrie alimentară fresh",
+      "animation": "food-factory",
+      "icon": "bottle"
+    },
+    {
+      "title": "Linie automată end-of-line",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Cosmetice și produse lifestyle",
+      "animation": "bottle-fill",
+      "icon": "fill"
+    }
+  ],
+  "masina-de-balotat-hidraulica-verticala": [
+    {
+      "title": "Balotat carton și hârtie",
+      "animation": "bale-press",
+      "icon": "press"
+    },
+    {
+      "title": "Compactare textile uzate",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Presare PET și folii plastic",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Reciclare moloz și DEEE",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "masina-de-balotat-hidraulica-orizontala": [
+    {
+      "title": "Linie continuă reciclare carton",
+      "animation": "bale-press",
+      "icon": "press"
+    },
+    {
+      "title": "Compactare volume mari plastic",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Reciclare textile la scară mare",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Centre de reciclare municipale",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-de-presa-metalica": [
+    {
+      "title": "Presare așchii metalice",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Reciclare auto și fier vechi",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Brichetare metale pentru topire",
+      "animation": "bale-press",
+      "icon": "press"
+    },
+    {
+      "title": "Recuperare metale neferoase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "masina-de-tocat": [
+    {
+      "title": "Reciclare plastic și PET",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Tocare anvelope și cauciuc",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Procesare DEEE",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Recuperare metale neferoase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "masina-de-stripare-a-deseurilor": [
+    {
+      "title": "Pre-procesare deșeuri amestecate",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Linie de sortare reciclare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Recuperare materiale valorificabile",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Centre municipale de deșeuri",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    }
+  ],
+  "pulverizator-hidraulic": [
+    {
+      "title": "Demolări beton armat selective",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Tăiere armătură și fier",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Reducere deșeuri construcții",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Renovări urbane",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "excavator-hidraulic-de-roca-brewer": [
+    {
+      "title": "Cariere de piatră dură",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Săpături în rocă fragmentată",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Lucrări miniere",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Demolări piatră",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    }
+  ],
+  "cupa-concasor-uj-200": [
+    {
+      "title": "Demolări beton armat",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare directă pe șantier",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Procesare piatră naturală",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Renovări urbane",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "cupa-concasor-bkm": [
+    {
+      "title": "Demolări beton armat",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare moloz pe șantier",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Procesare piatră naturală",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Excavatoare 15 – 70 t",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "concasor-mobil-cu-falci": [
+    {
+      "title": "Cariere de piatră",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare beton și moloz",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Procesare agregate construcții",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Mine la suprafață",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "cupa-concasor-beton-70t": [
+    {
+      "title": "Demolări mari beton armat",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare directă pe șantier",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Excavatoare 16 – 25 t",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Recuperare armătură cu magnet",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "mini-crusher-bucket": [
+    {
+      "title": "Lucrări urbane în spații înguste",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare moloz pentru mini-utilaje",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Renovări rezidențiale",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Procesare piatră pentru grădini",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    }
+  ],
+  "concasor-mecanic-de-beton": [
+    {
+      "title": "Demolări beton armat",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Reciclare beton și asfalt",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Reducere deșeuri construcții",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Lucrări de infrastructură",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "taietor-cu-tambur": [
+    {
+      "title": "Tăiere rocă și beton dur",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Frezare șanțuri pentru utilități",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Tuneluri și lucrări subterane",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Carieră și minerit subteran",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "cupa-de-cernere-rotativa": [
+    {
+      "title": "Cernere material pe șantier",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Sortare moloz și pietriș",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Reciclare deșeuri construcții",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Pregătire material reumplere",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "mini-screening-bucket": [
+    {
+      "title": "Cernere pentru mini-utilaje",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Lucrări urbane în spații înguste",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Amenajări grădini și alei",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Sortare moloz pe șantier mic",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "cupa-de-cernere-pentru-tocatoare": [
+    {
+      "title": "Cernere și mărunțire combinată",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Procesare nămoluri industriale",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Reciclare deșeuri amestecate",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Pregătire materiale reciclate",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "graifer-hidraulic-pentru-demolare": [
+    {
+      "title": "Sortare moloz după demolare",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Manipulare deșeuri construcții",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Reciclare beton armat",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Lucrări de demolare urbană",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "graifer-hidraulic-pentru-excavator": [
+    {
+      "title": "Manipulare deșeuri și fier vechi",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Încărcare bușteni și lemn",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Operațiuni portuare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Demolări selective",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    }
+  ],
+  "multi-peel-clamp": [
+    {
+      "title": "Manipulare materiale vrac",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Încărcare/descărcare bușteni",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Sortare deșeuri portuare",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Operațiuni terminale și port",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "fixed-orange-peel-grab": [
+    {
+      "title": "Manipulare minereu și balast",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Operațiuni portuare grele",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Reciclare auto",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Recuperare fier vechi",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "graifer-hidraulic-pentru-busteni": [
+    {
+      "title": "Industrie forestieră",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Încărcare/descărcare bușteni",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Defrișări și exploatări",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Operațiuni la depozite lemn",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "foarfeca-de-demolare": [
+    {
+      "title": "Demolări structuri metalice",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Tăiere I-beam și grinzi",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Intervenții urgență salvare",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Reciclare structuri sudate",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "foarfeca-hidraulica-pentru-resturi": [
+    {
+      "title": "Tăiere fier vechi voluminos",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Reciclare auto și caroserii",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Procesare deșeuri metal",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Demolări structuri grele",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "foarfeca-excavator-eagle-shear-310": [
+    {
+      "title": "Demolări metalice medii",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Reciclare auto și fier vechi",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Tăiere I-beam și plăci",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Procesare deșeuri metal",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "foarfeca-hidraulica": [
+    {
+      "title": "Demolări structuri metalice",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Reciclare auto și fier vechi",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Demolări medii-mari",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Procesare deșeuri industriale",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "foarfeca-hidraulica-pentru-excavator": [
+    {
+      "title": "Demolări structuri metalice",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Reciclare mașini uzate",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Tăiere fier vechi",
+      "animation": "industrial-press",
+      "icon": "press"
+    },
+    {
+      "title": "Linie de reciclare metale",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "foarfeca-de-copac-pentru-excavator": [
+    {
+      "title": "Defrișări și industrie forestieră",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Întreținere drumuri forestiere",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Linii utilități prin pădure",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Tăiere arbori cu prindere",
+      "animation": "grab-claw",
+      "icon": "claw"
+    }
+  ],
+  "cupa-inclinabila": [
+    {
+      "title": "Drenaj și șanțuri cu pantă",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Nivelare laterală teren",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Lucrări lângă obstacole",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Terasamente complexe",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "excavator-thumb-bucket": [
+    {
+      "title": "Manipulare bușteni și pietre",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Excavare cu prindere",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Sortare materiale neregulate",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Lucrări forestiere",
+      "animation": "wood-saw",
+      "icon": "saw"
+    }
+  ],
+  "cupa-excavator-de-roca": [
+    {
+      "title": "Săpături în rocă dură",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Lucrări miniere și cariere",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Excavare teren stâncos",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Demolări fundații rocă",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    }
+  ],
+  "cupa-cu-clapeta-pentru-excavator": [
+    {
+      "title": "Dragaj portuar și fluvial",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Manipulare sedimente umede",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Materiale vrac în port",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Minerit în medii umede",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "cupa-de-mare-putere": [
+    {
+      "title": "Minerit și cariere industriale",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Demolări structurale grele",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Excavatoare 6 – 70 t",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Reciclare moloz pe șantier",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    }
+  ],
+  "thumb-bucket": [
+    {
+      "title": "Excavare + prindere combinată",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Manipulare bușteni și pietre",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Lucrări forestiere",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Sortare materiale neregulate",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "cupa-standard-pentru-excavator": [
+    {
+      "title": "Săpături și terasamente",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Lucrări de infrastructură",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Manipulare pământ și pietriș",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Excavatoare 20 – 30 t",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    }
+  ],
+  "cupa-de-excavator-pentru-roca": [
+    {
+      "title": "Cariere și lucrări miniere",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Săpături în rocă fragmentată",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Infrastructură pe teren stâncos",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Demolări fundații rocă",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    }
+  ],
+  "cupa-de-minerit-pentru-excavator": [
+    {
+      "title": "Minerit la suprafață",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Cariere industriale grele",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Excavatoare 6 – 90 t",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Demolări infrastructură grea",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    }
+  ],
+  "cupa-schelet-excavator": [
+    {
+      "title": "Cernere material pe șantier",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Sortare nisip și pietriș",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Curățare teren de pietre",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Reciclare material reumplere",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "buldozer-cu-trei-coade-ripper": [
+    {
+      "title": "Scarificare teren înghețat",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Afânare rocă moale",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Pregătire teren agricol",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Lucrări forestiere și carieră",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "ripper-pentru-excavator": [
+    {
+      "title": "Scarificare strat compactat",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Săpături în argilă tare",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Lucrări de infrastructură",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Pregătire teren agricol",
+      "animation": "wood-saw",
+      "icon": "saw"
+    }
+  ],
+  "grebla-pentru-excavator-ripper": [
+    {
+      "title": "Curățare teren de rădăcini",
+      "animation": "wood-saw",
+      "icon": "saw"
+    },
+    {
+      "title": "Pregătire amenajări exterioare",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Săpături curățare",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Lucrări forestiere",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "compactor-de-beton": [
+    {
+      "title": "Compactare șanțuri și fundații",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    },
+    {
+      "title": "Pregătire teren pentru pavaj",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Construcție drumuri și parcări",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Asfaltare și amenajări",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "placa-de-compactare-a-suprafetei-excavatorului": [
+    {
+      "title": "Compactare suprafețe mari",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    },
+    {
+      "title": "Pregătire fundații clădiri",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Construcție drumuri și platforme",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Asfaltare și amenajări",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    }
+  ],
+  "brat-cu-raza-lunga-de-actiune": [
+    {
+      "title": "Demolări la distanță sigură",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Săpături în spații inaccesibile",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Dragaj canale și râuri",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Productivitate excavator crescută",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    }
+  ],
+  "cuplaj-rapid-cu-inclinare": [
+    {
+      "title": "Schimbare rapidă accesorii",
+      "animation": "quick-coupler",
+      "icon": "coupler"
+    },
+    {
+      "title": "Lucrări cu pantă variabilă",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Productivitate flotă excavator",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Săpături și nivelare combinată",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    }
+  ],
+  "cuplaj-rapid": [
+    {
+      "title": "Schimbare rapidă accesorii",
+      "animation": "quick-coupler",
+      "icon": "coupler"
+    },
+    {
+      "title": "Productivitate flotă excavator",
+      "animation": "gear-mechanism",
+      "icon": "gear"
+    },
+    {
+      "title": "Atelier mecanizat în șantier",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Reducere timp de mentenanță",
+      "animation": "industrial-press",
+      "icon": "press"
+    }
+  ],
+  "magnet-de-placa-de-otel": [
+    {
+      "title": "Recuperare metale feroase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Curățare șantier și hală",
+      "animation": "grab-claw",
+      "icon": "claw"
+    },
+    {
+      "title": "Reciclare auto și fier vechi",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Operațiuni portuare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "oem-excavator": [
+    {
+      "title": "Brațe lungi pentru flotă mare",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Cupe 4-în-1 multifuncționale",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Ciocane hidraulice demolare",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Lucrări de infrastructură",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "0-8t-mini-excavator": [
+    {
+      "title": "Lucrări urbane în spații înguste",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Săpături grădini și alei",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Instalații utilități și șanțuri",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Compactare și amenajări",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "1t-mini-excavator": [
+    {
+      "title": "Lucrări urbane în spații înguste",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Săpături grădini și alei",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Instalații utilități și șanțuri",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Compactare și amenajări",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "1-5t-mini-excavator": [
+    {
+      "title": "Lucrări urbane medii",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Săpături instalații rezidențiale",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Demolări mici și amenajări",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Pregătire fundații case",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "08-mini-excavator": [
+    {
+      "title": "Lucrări urbane în spații înguste",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Săpături grădini și alei",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Instalații utilități și șanțuri",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Compactare și amenajări",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "concasor-orizontal-cu-ciocan-de-fier-vechi": [
+    {
+      "title": "Reciclare auto și fier vechi",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Procesare șpan și deșeuri metal",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Recuperare metale neferoase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Linie de reciclare metale",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "tocator-vertical-cu-ciocane-zy-vc-650-672-rpm-150-264kw-dublu-motor-aluminiu-800-3000-kg-h": [
+    {
+      "title": "Reciclare aluminiu și metale",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Procesare auto-shred",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Tocare DEEE și electrocasnice",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Linie de reciclare metale",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "tocator-cu-arbore-dublu-hn-m-3-modele-4-30kw-cadru-tratat-termic-plc-inversare-uzinex": [
+    {
+      "title": "Reciclare plastic și deșeuri rigide",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Procesare DEEE și cabluri",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Anvelope și cauciuc",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Recuperare metale neferoase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "tocator-cu-un-singur-arbore-zy-s-rotor-v-spirala-sita-evacuare-5-modele-22-110kw-uzinex": [
+    {
+      "title": "Reciclare plastic și PET",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Granulometrie controlată prin sită",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Tocare textile și folii",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Procesare DEEE",
+      "animation": "electronic-board",
+      "icon": "chip"
+    }
+  ],
+  "knife-crusher": [
+    {
+      "title": "Reciclare plastic și PET",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Granulare materiale moi",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Procesare DEEE și cabluri",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Linie de reciclare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "hammer-crusher": [
+    {
+      "title": "Concasare cu ciocane mecanice",
+      "animation": "jaw-crusher",
+      "icon": "crusher-jaws"
+    },
+    {
+      "title": "Procesare cărămidă și beton",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Cariere de piatră și agregate",
+      "animation": "ripper-tooth",
+      "icon": "stone"
+    },
+    {
+      "title": "Reciclare moloz construcții",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "separator-de-sarma-de-otel-zy-sw-300-1800-kg-h-lame-mobile-fixe-4-modele-uzinex": [
+    {
+      "title": "Recuperare sârmă din anvelope",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Separare oțel din cauciuc",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Linie de reciclare anvelope",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Pregătire pentru piroliză TDF",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "granulator-de-cauciuc": [
+    {
+      "title": "Granulare anvelope reciclate",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Cauciuc pentru terenuri sport",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Pregătire combustibil TDF",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Linie de reciclare anvelope",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "tocator-de-anvelope-intregi-zy-dt-capacitate-1-5-t-h-granule-3-8-cm-dublu-motor-plc": [
+    {
+      "title": "Reciclare anvelope industriale",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Procesare anvelope OTR și TIR",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Pregătire piroliză TDF",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Linie integrată reciclare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "tocator-de-fier-vechi-zy-s-800-3000-kg-h-lame-cr12mov-plc-anti-suprasarcina-uzinex": [
+    {
+      "title": "Reciclare auto și fier vechi",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Tocare șpan și deșeuri metal",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Recuperare metale feroase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Linie reciclare metale",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "masina-de-balotat-hidraulic-vertical-30t-15kw-balot-100-300kg-4-6-buc-ora-uzinex": [
+    {
+      "title": "Centre de colectare deșeuri",
+      "animation": "bale-press",
+      "icon": "press"
+    },
+    {
+      "title": "Balotat carton și hârtie",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Reciclare PET și folii plastic",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Centre comerciale și retail",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "mini-excavator-rippa-r32-2-pro": [
+    {
+      "title": "Lucrări rezidențiale",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Săpături mici și medii",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Instalații utilități",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Amenajări exterioare",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "r10eco-mini-excavator": [
+    {
+      "title": "Lucrări urbane mici",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Grădini și alei rezidențiale",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Săpături instalații",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Compactare și pavaj",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "rippa-r13-professional-mini-excavator": [
+    {
+      "title": "Lucrări rezidențiale profesionale",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Săpături instalații utilități",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Demolări mici și amenajări",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Compactare șanțuri",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "cupa-excavator-rippa-r10-r13-r15-latime-200mm-lp0104010778": [
+    {
+      "title": "Săpături șanțuri pentru utilități",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Mini-excavator urban",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Cabluri și instalații",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Lucrări amenajări exterioare",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "cupa-excavator-1000mm-rippa-r10-r13-r15-cupa-curatare-si-nivelare": [
+    {
+      "title": "Curățare și nivelare teren",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Mini-excavator urban",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Amenajări grădini și alei",
+      "animation": "ripper-tooth",
+      "icon": "ripper"
+    },
+    {
+      "title": "Compactare șanțuri",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "buldoexcavator-rippa-rb30": [
+    {
+      "title": "Săpături și încărcare combinată",
+      "animation": "excavator-arm",
+      "icon": "excavator"
+    },
+    {
+      "title": "Lucrări rezidențiale și urbane",
+      "animation": "excavator-bucket",
+      "icon": "bucket"
+    },
+    {
+      "title": "Demolări medii",
+      "animation": "demolition-shears",
+      "icon": "shears"
+    },
+    {
+      "title": "Compactare suprafețe",
+      "animation": "compactor-plate",
+      "icon": "compactor"
+    }
+  ],
+  "robot-de-inspectie-antiexplozie-pentru-cisterne-gt-260": [
+    {
+      "title": "Inspecție cisterne combustibil",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Audit ATEX zone explozive",
+      "animation": "ptz-camera",
+      "icon": "shield"
+    },
+    {
+      "title": "Petrochimie și terminale petroliere",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Verificare interioare rezervoare",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "robot-inspectie-conducte-gtdr-200-camera-hd-panoramica-210": [
+    {
+      "title": "Inspecție rețele canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Vizualizare panoramică 210°",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Audit conducte HD detaliate",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Lucrări de intervenție",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "robot-cctv-canalizare-gt108-ptz-10x-zoom-crawler-200-3500mm": [
+    {
+      "title": "Inspecție rețele canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Diagnostic conducte industriale",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Localizare defecte cu PTZ",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Recepții și lucrări de intervenție",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "sistem-crawler-inspectie-conducte-gt102b-ptz-dual-10x-150-2000mm": [
+    {
+      "title": "Audit conducte 150–2000 mm",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Inspecție rețele canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "PTZ Dual 10x pentru defecte",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Crawler pentru intervenții",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "camera-inspectie-canalizare-ultra-hd-gt104ws-4mp-6-roti-elevator": [
+    {
+      "title": "Inspecție Ultra HD canalizare",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Audit rețele municipale",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Cap mobil cu elevator",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Crawler 6 roți pentru obstacole",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "robot-inspectie-conducte-wireless-gt102bpro-4mp-6-roti-200-000-lux": [
+    {
+      "title": "Inspecție wireless 4MP",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Iluminare 200.000 LUX",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Audit rețele canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Crawler 6 roți teren dificil",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "robot-inspectie-conducte-industriale-gt400pro-anti-rasturnare-laser-4mp": [
+    {
+      "title": "Inspecție industrie petrolieră",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Conducte industriale mari",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Măsurare cu laser 4MP",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Crawler anti-răsturnare",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "gt108pro-cctv-municipal-pipe-inspect-crawler-robot-camera": [
+    {
+      "title": "Audit rețele municipale",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Inspecție conducte mari",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Cameră PTZ pentru defecte",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Crawler municipal",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "camera-inspectie-tevi-industriale-gt102-laser-standard-49mm-120-600mm": [
+    {
+      "title": "Inspecție conducte 120 – 600 mm",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Măsurare cu laser standard",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Audit rețele industriale",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Recepții lucrări infrastructură",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "camera-inspectie-tevi-gaze-gt102a-petrol-chimie-220-200m-ip68": [
+    {
+      "title": "Inspecție conducte gaze",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Petrol și chimie industrială",
+      "animation": "sewer-network",
+      "icon": "shield"
+    },
+    {
+      "title": "PTZ 220° anti-coroziune",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Recepții 200m IP68",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "camera-inspectie-tevi-4mp-gt102apro-wireless-laser-120-600mm": [
+    {
+      "title": "Inspecție wireless 4MP",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Conducte 120 – 600 mm",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "PTZ cu laser 4MP",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Tabletă portabilă 12 inch",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "camera-inspectie-tevi-mici-gt100-100mm-7-inch-portabil-200-000-lux": [
+    {
+      "title": "Inspecție conducte interioare mici",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Service instalații sanitare",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Iluminare 200.000 LUX",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Diagnostic rețele rezidențiale",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    }
+  ],
+  "robot-inspectie-pale-eoliene-gt380-circular-cold-light-ptz-10x-230-3500mm": [
+    {
+      "title": "Inspecție pale eoliene",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "PTZ 10× cu lumină rece",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Audit turbine eoliene",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Mentenanță energie regenerabilă",
+      "animation": "crawler-tracks",
+      "icon": "leaf"
+    }
+  ],
+  "camera-push-inspectie-conducte-gm320-7-lentile-8-800mm-touch-7-wifi": [
+    {
+      "title": "Inspecție conducte interioare",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Service instalații sanitare",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "7 lentile pentru orice țeavă",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Audit rețele rezidențiale",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    }
+  ],
+  "camera-push-rod-canalizare-gt220-all-in-one-10-inch-arc-coturi-20-400mm": [
+    {
+      "title": "Inspecție conducte cu coturi",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "All-in-One 10 inch",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Diagnostic instalații sanitare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Service rezidențial",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    }
+  ],
+  "borescop-inspectie-conducte-gt-ptz-cablu-gfrp-4-lentile-9-800mm-8h": [
+    {
+      "title": "Inspecție conducte 9 – 800 mm",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Cablu GFRP rigid pentru coturi",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Audit cu 4 lentile",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Diagnostic conducte mici",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    }
+  ],
+  "camera-video-inspectie-canalizare-gt230-5-lentile-5-5mm-laser-9-niveluri": [
+    {
+      "title": "Inspecție conducte multiple",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Service instalații sanitare",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Audit cu laser 9 niveluri",
+      "animation": "ptz-camera",
+      "icon": "spark"
+    },
+    {
+      "title": "Diagnostic rețele canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    }
+  ],
+  "camera-handheld-inspectie-tevi-gt31dv-spring-body-10-200mm-5-30m-touch": [
+    {
+      "title": "Service instalații sanitare",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Inspecție conducte interioare",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Diagnostic rapid în teren",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Audit rețele rezidențiale",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    }
+  ],
+  "camera-ptz-inspectie-camine-gt75bxa-tija-pole-80-6000mm-zoom-10x-10x-ip68": [
+    {
+      "title": "Audit cămine vizitabile",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Inspecție rapidă canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Tuneluri și galerii utilități",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Pre-recepții lucrări infrastructură",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "periscop-inspectie-conducte-gtw106-fibra-carbon-30x-zoom-4mp-1-25-6m": [
+    {
+      "title": "Audit cămine la 6 m adâncime",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Inspecție tuneluri și camere",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Audit rețele canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Zoom 30× pe defecte distante",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    }
+  ],
+  "camera-telescopica-inspectie-canalizare-gtw06-12-inch-touch-10x-zoom-tunel": [
+    {
+      "title": "Audit tuneluri și galerii",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Inspecție rapidă canalizare",
+      "animation": "sewer-network",
+      "icon": "sewer"
+    },
+    {
+      "title": "Recepții lucrări infrastructură",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    },
+    {
+      "title": "Audit conducte mari diametre",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    }
+  ],
+  "camera-anti-explozie-inspectie-rezervoare-gt200bx60-atex-120-10000mm-ce": [
+    {
+      "title": "Inspecție rezervoare petroliere",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    },
+    {
+      "title": "Audit ATEX zone explozive",
+      "animation": "pipe-inspection",
+      "icon": "shield"
+    },
+    {
+      "title": "Petrol, chimie, gaze certificate",
+      "animation": "sewer-network",
+      "icon": "pipe"
+    },
+    {
+      "title": "Cisterne și rezervoare mari",
+      "animation": "crawler-tracks",
+      "icon": "crawler"
+    }
+  ],
+  "videoscop-industrial-inspectie-gt160-sonda-2-8mm-4-200mm-wifi-hdmi-anti-cadere": [
+    {
+      "title": "Inspecție motoare și turbine",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Audit componente HVAC",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Diagnostic auto și mentenanță",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Mentenanță zone greu accesibile",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    }
+  ],
+  "videoscop-4-directii-inspectie-gt120b-sonda-2mm-4-way-5-sonde-wifi-hdmi": [
+    {
+      "title": "Inspecție motoare și turbine",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Articulație 4-way completă",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Diagnostic sudură și asamblare",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Mentenanță zone greu accesibile",
+      "animation": "ptz-camera",
+      "icon": "ptz"
+    }
+  ],
+  "camera-foraj-inspectie-puturi-gtv300-otel-aliat-360-patent-led-ac-dc": [
+    {
+      "title": "Inspecție puțuri foraj",
+      "animation": "pipe-inspection",
+      "icon": "pipe"
+    },
+    {
+      "title": "Audit petrol și gaze",
+      "animation": "ptz-camera",
+      "icon": "shield"
+    },
+    {
+      "title": "Inspecție hidrogeologică",
+      "animation": "videoscope-probe",
+      "icon": "scope"
+    },
+    {
+      "title": "Cercetare apă subterană",
+      "animation": "sewer-network",
+      "icon": "leaf"
+    }
+  ],
+  "tocator-cu-doua-axe-reciclare-d600-d2200-4-tipuri-cutite-skd11-hrc62": [
+    {
+      "title": "Reciclare auto și electrocasnice",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Tocare DEEE și PCB",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Anvelope, cabluri și plastic",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Recuperare metale neferoase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "tocator-cu-un-ax-reciclare-os-600-1600-plastic-rigid-granulometrie-controlata": [
+    {
+      "title": "Reciclare plastic rigid",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Granulometrie controlată prin sită",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Procesare PET și textile",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Doze aluminiu și DEEE",
+      "animation": "electronic-board",
+      "icon": "chip"
+    }
+  ],
+  "tocator-anvelope-reciclare-d600-d2200-otr-granule-50mm-piroliza-tdf": [
+    {
+      "title": "Anvelope auto, TIR și OTR",
+      "animation": "tire-recycle",
+      "icon": "tire"
+    },
+    {
+      "title": "Pregătire piroliză și TDF",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Procesare anvelope agricole",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Linie reciclare anvelope",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "concasor-plastic-reciclare-wgd-600-1200-granule-1cm-plc-cabluri": [
+    {
+      "title": "Reciclare plastic și cabluri",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Granulometrie ~1 cm controlată",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Procesare DEEE",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Recuperare cupru din cabluri",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "concasor-metal-reciclare-wcd-800-2200-ciocane-particule-cubice-teleoperare": [
+    {
+      "title": "Reciclare auto și electrocasnice",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Procesare butoaie și caroserii",
+      "animation": "industrial-press",
+      "icon": "piston"
+    },
+    {
+      "title": "Recuperare metale și DEEE",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Particule cubice pentru topitorii",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "concasor-vertical-reciclare-metale-lcp-1000-1800-3-metode-500mm-feed-15-rec": [
+    {
+      "title": "Recuperare aluminiu și cupru",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Reciclare DEEE și PCB",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Procesare auto și frigidere",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Linie de reciclare metale",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "separator-electrostatic-reciclare-df1500-2000-99-puritate-dual-stage-pcb": [
+    {
+      "title": "Sortare PCB și DEEE",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Recuperare aluminiu-plastic",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Reciclare cabluri cupru",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Linie reciclare pulberi metal",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    }
+  ],
+  "separator-aer-reciclare-fx600-1500-95-eficienta-zero-contact-folii": [
+    {
+      "title": "Separare folii și fibre ușoare",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Reciclare textile și carton",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Procesare deșeuri amestecate",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Linie de reciclare municipală",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "separator-curenti-turbionari-metale-neferoase-400-1400-30-rec-0-3000rpm": [
+    {
+      "title": "Recuperare aluminiu și cupru",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Reciclare DEEE și auto-shred",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Linie reciclare metale",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Procesare auto și frigidere",
+      "animation": "auto-industry",
+      "icon": "car"
+    }
+  ],
+  "separator-gravitational-densitate-reciclare-50mm-200-mesh-10-manual-puls-praf": [
+    {
+      "title": "Recuperare cupru-plastic",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Granule baterii litiu",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Sortare densitometrică",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Linie reciclare materiale fine",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "sita-rotativa-tambur-sortare-materiale-umede-zero-infundare-motor-reductor": [
+    {
+      "title": "Cernere materiale umede",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Sortare cărbune și minereu",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Linie de reciclare granulate",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Centrale electrice și cocserii",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    }
+  ],
+  "separator-magnetic-fier-reciclare-feros-purificare-uscat-umed-cobalt-nichel": [
+    {
+      "title": "Recuperare metale feroase",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Reciclare cobalt și nichel",
+      "animation": "electronic-board",
+      "icon": "chip"
+    },
+    {
+      "title": "Procesare auto-shred",
+      "animation": "auto-industry",
+      "icon": "car"
+    },
+    {
+      "title": "Linie reciclare metale",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    }
+  ],
+  "banda-transportoare-reciclare-industriala-cauciuc-pvc-placi-metal-customizabila": [
+    {
+      "title": "Linie completă de sortare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Transport între tocătoare",
+      "animation": "shredder-twin",
+      "icon": "shredder"
+    },
+    {
+      "title": "Cernere și separare materiale",
+      "animation": "rotary-screen",
+      "icon": "screen"
+    },
+    {
+      "title": "Recuperare metale și DEEE",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    }
+  ],
+  "colector-praf-puls-reciclare-auto-curatare-impuls-recuperare-material-conformitate": [
+    {
+      "title": "Conformitate aer industrial",
+      "animation": "shredder-twin",
+      "icon": "shield"
+    },
+    {
+      "title": "Recuperare pulberi valorificabile",
+      "animation": "magnetic-separator",
+      "icon": "magnet"
+    },
+    {
+      "title": "Curățare hală reciclare",
+      "animation": "conveyor-belt",
+      "icon": "conveyor"
+    },
+    {
+      "title": "Protecție mediu și sănătate",
+      "animation": "rotary-screen",
+      "icon": "leaf"
+    }
+  ]
+}

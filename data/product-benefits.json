@@ -28,7 +28,7 @@
       "benefitValue": "Deplasare 1.300 – 2.000 mm pe axa X"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Putere pentru materiale dure",
       "benefitValue": "Spindle HITECO de 10 kW"
     },
@@ -55,7 +55,7 @@
       "benefitValue": "Controler Ncstudio 95A-3S"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Spațiu de lucru generos",
       "benefitValue": "Zonă utilă 1.500 × 3.000 × 300 mm"
     },
@@ -67,39 +67,39 @@
   ],
   "mini-strung-din-metal": [
     {
-      "icon": "power",
+      "icon": "lathe",
       "benefitTitle": "Pentru piese ușoare",
       "benefitValue": "Motor arbore de 0,55 kW"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Piese de lungime medie",
       "benefitValue": "Prelucrare până la 350 mm"
     },
     {
-      "icon": "speed",
+      "icon": "config",
       "benefitTitle": "Turație flexibilă la arbore",
       "benefitValue": "Interval 140 – 1.710 r/min"
     },
     {
-      "icon": "capacity",
+      "icon": "tools",
       "benefitTitle": "Potrivit pentru atelier mic",
       "benefitValue": "Sarcină ușoară, operații de birou"
     }
   ],
   "mini-strung-profesional": [
     {
-      "icon": "weight",
+      "icon": "lathe",
       "benefitTitle": "Stabilitate pentru atelier",
       "benefitValue": "Greutate netă/brut 300 / 340 kg"
     },
     {
-      "icon": "dimensions",
+      "icon": "power",
       "benefitTitle": "Gabarit de atelier mic",
       "benefitValue": "Ambalaj 1500 × 760 × 700 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Piese de lungime medie",
       "benefitValue": "Distanță între centre 600 mm"
     },
@@ -121,9 +121,14 @@
       "benefitValue": "Tensiune 220V / 380V"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Piese lungi între centre",
       "benefitValue": "Distanță între centre 750 mm"
+    },
+    {
+      "icon": "rpm",
+      "benefitTitle": "Turație ax cu 9 trepte",
+      "benefitValue": "60 – 2.000 rot/min"
     }
   ],
   "strung-universal-cu-banc": [
@@ -143,7 +148,7 @@
       "benefitValue": "Diametru coadă pinolă 65 mm"
     },
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Piese de mari dimensiuni",
       "benefitValue": "Balans peste pat 500 mm"
     }
@@ -155,14 +160,24 @@
       "benefitValue": "Diametru maxim 1640 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Ghidaj lat pentru rigiditate",
       "benefitValue": "Lățime ghidaj 755 mm"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Trecere ax pentru bare",
+      "benefitValue": "Diametru cărut max 1.250 mm"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Lungime configurabilă pe proiect",
+      "benefitValue": "Piesă maximă 1.500 – 12.000 mm"
     }
   ],
   "strung-cnc-pentru-strunjit-metal": [
     {
-      "icon": "diameter",
+      "icon": "lathe",
       "benefitTitle": "Piese mari peste pat",
       "benefitValue": "Diametru maxim strunjire 800 mm"
     },
@@ -177,7 +192,7 @@
       "benefitValue": "Precizie ±0,015 mm"
     },
     {
-      "icon": "travel",
+      "icon": "cnc",
       "benefitTitle": "Cicluri rapide de prelucrare",
       "benefitValue": "Deplasare rapidă X/Z 4 / 6 m/min"
     }
@@ -199,7 +214,7 @@
       "benefitValue": "Viteză alimentare 15 – 23 m/min"
     },
     {
-      "icon": "default",
+      "icon": "speed",
       "benefitTitle": "Ridicare electrică rapidă",
       "benefitValue": "Motor ridicare 0,37 kW"
     }
@@ -221,7 +236,7 @@
       "benefitValue": "Viteză alimentare 15 – 23 m/min"
     },
     {
-      "icon": "default",
+      "icon": "speed",
       "benefitTitle": "Ridicare electrică rapidă",
       "benefitValue": "Motor ridicare 0,37 kW"
     }
@@ -243,7 +258,7 @@
       "benefitValue": "Viteză alimentare 15 – 23 m/min"
     },
     {
-      "icon": "default",
+      "icon": "speed",
       "benefitTitle": "Ridicare electrică rapidă",
       "benefitValue": "Motor ridicare 0,37 kW"
     }
@@ -277,7 +292,7 @@
       "benefitValue": "Viteză alimentare 12 – 22 m/min"
     },
     {
-      "icon": "default",
+      "icon": "wood",
       "benefitTitle": "Acceptă panouri groase",
       "benefitValue": "Grosime panou 10 – 60 mm"
     },
@@ -285,6 +300,11 @@
       "icon": "temperature",
       "benefitTitle": "Control termic precis al adezivului",
       "benefitValue": "Tablou Autonics — Korea"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Acceptă cant gros sau subțire",
+      "benefitValue": "Bandă cant 0,4 – 3 mm"
     }
   ],
   "masina-de-taiere-usi-pe-patru-laturi-cu-incarcare-si-descarcare-automata": [
@@ -299,7 +319,7 @@
       "benefitValue": "Greutate 3.000 kg"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Uși de orice lungime curentă",
       "benefitValue": "Procesare 1.700 – 2.800 mm"
     },
@@ -365,14 +385,19 @@
       "benefitValue": "240 panouri / 8h (~30/oră)"
     },
     {
-      "icon": "default",
+      "icon": "wood",
       "benefitTitle": "Control din panou central",
       "benefitValue": "Monitorizare în timp real, centralizată"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Optimizat pentru mobilă",
+      "benefitValue": "PAL, MDF și panouri lemn"
     }
   ],
   "masina-cnc-pentru-fabricarea-mobilierului-cu-alimentare-automata": [
     {
-      "icon": "travel",
+      "icon": "wood",
       "benefitTitle": "Spațiu de lucru pentru panouri",
       "benefitValue": "Cursă X, Y 1.300 × 2.500 mm"
     },
@@ -394,7 +419,7 @@
   ],
   "fierastrau-cnc-de-mare-viteza-pentru-taierea-panourilor-din-lemn": [
     {
-      "icon": "dimensions",
+      "icon": "wood",
       "benefitTitle": "Gabarit pentru panouri mari",
       "benefitValue": "Dimensiuni 6.400 × 6.300 × 1.800 mm"
     },
@@ -404,7 +429,7 @@
       "benefitValue": "Diametru lamă principală 350 mm"
     },
     {
-      "icon": "speed",
+      "icon": "shears",
       "benefitTitle": "Tăiere la turație mare",
       "benefitValue": "Viteză lamă principală 4.800 rpm"
     },
@@ -421,7 +446,7 @@
       "benefitValue": "Dimensiuni 3.200 × 2.540 × 900 mm"
     },
     {
-      "icon": "diameter",
+      "icon": "wood",
       "benefitTitle": "Lamă principală robustă",
       "benefitValue": "Diametru fierăstrău principal 300 mm"
     },
@@ -431,7 +456,7 @@
       "benefitValue": "Viteză 4.000 / 6.000 rpm"
     },
     {
-      "icon": "default",
+      "icon": "shears",
       "benefitTitle": "Tăieri lungi fără repoziționare",
       "benefitValue": "Lungime tăiere 3.000 mm"
     }
@@ -443,7 +468,7 @@
       "benefitValue": "380V / 60Hz / 3PH"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Piese de orice lungime uzuală",
       "benefitValue": "Procesare 250 – 2.800 mm"
     },
@@ -492,7 +517,7 @@
       "benefitValue": "16 kW, 380V, 50–60 Hz, 32A"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Plăci de lățime mare",
       "benefitValue": "Lățime maximă placă 2.500 mm"
     },
@@ -504,7 +529,7 @@
   ],
   "masina-cnc-de-gaurit-cu-sase-fete-pentru-productia-de-mobila-din-lemn": [
     {
-      "icon": "dimensions",
+      "icon": "wood",
       "benefitTitle": "Spațiu de lucru pentru panouri",
       "benefitValue": "Zonă utilă 1.300 × 2.500 mm"
     },
@@ -519,7 +544,7 @@
       "benefitValue": "Precizie ±0,03 mm"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Dublu arbore cu răcire aer",
       "benefitValue": "3,5 kW × 2, răcire cu aer"
     }
@@ -629,7 +654,7 @@
       "benefitValue": "Diametru maxim găurit ≤ 35 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Găuri adânci într-o trecere",
       "benefitValue": "Adâncime maximă ≤ 50 mm"
     }
@@ -651,7 +676,7 @@
       "benefitValue": "Putere 350 W"
     },
     {
-      "icon": "default",
+      "icon": "shears",
       "benefitTitle": "Tăieri fine pentru mobilă",
       "benefitValue": "Grosime tăiere 0,3 – 3 mm"
     }
@@ -673,7 +698,7 @@
       "benefitValue": "Greutate 1.500 kg"
     },
     {
-      "icon": "default",
+      "icon": "wood",
       "benefitTitle": "Panouri late la o trecere",
       "benefitValue": "Lățime procesare sub 1.300 mm"
     }
@@ -702,7 +727,7 @@
   ],
   "centru-de-prelucrare-cnc-multifunctional-pentru-fabricarea-usilor": [
     {
-      "icon": "axis",
+      "icon": "cnc",
       "benefitTitle": "Uși mari prelucrate integral",
       "benefitValue": "Curse 1300 × 3000 × 200 mm"
     },
@@ -712,7 +737,7 @@
       "benefitValue": "Mandrină ATC 9 kW, ISO30"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Găurire laterală cu rotire 90°",
       "benefitValue": "2 capete, 5,5 kW, rotire 90°"
     },
@@ -739,7 +764,7 @@
       "benefitValue": "Acuratețe ±0,03 mm"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Tăiere orizontală puternică",
       "benefitValue": "Mandrină orizontală 11 kW"
     }
@@ -761,19 +786,19 @@
       "benefitValue": "Acuratețe ±0,03 mm"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Invertor pentru control fin",
       "benefitValue": "Invertor de 3,7 kW"
     }
   ],
   "masina-automata-de-taiere-laser-cu-bobina-de-tabla": [
     {
-      "icon": "power",
+      "icon": "laser",
       "benefitTitle": "Putere laser configurabilă",
       "benefitValue": "Sursă laser 1 kW – 2 kW"
     },
     {
-      "icon": "axis",
+      "icon": "travel",
       "benefitTitle": "Deplasare rapidă X/Y",
       "benefitValue": "Viteză maximă 140 m/min"
     },
@@ -783,29 +808,29 @@
       "benefitValue": "Viteză nivelare până la 20 m/min"
     },
     {
-      "icon": "precision",
+      "icon": "shears",
       "benefitTitle": "Tăieri foarte precise",
       "benefitValue": "Precizie poziționare ±0,05 mm"
     }
   ],
   "laser-fibra-economic-pentru-ateliere": [
     {
-      "icon": "power",
+      "icon": "laser",
       "benefitTitle": "Putere scalabilă pe proiect",
       "benefitValue": "Sursă laser 1.000 – 6.000 W"
     },
     {
-      "icon": "precision",
+      "icon": "shears",
       "benefitTitle": "Tăieri foarte precise",
       "benefitValue": "Precizie poziționare ±0,05 mm"
     },
     {
-      "icon": "default",
+      "icon": "claw",
       "benefitTitle": "Tablă mare într-o singură prindere",
       "benefitValue": "Suprafață lucru 1.515 × 3.030 mm"
     },
     {
-      "icon": "dimensions",
+      "icon": "power",
       "benefitTitle": "Două variante de gabarit",
       "benefitValue": "4.320 × 2.250 × 1.950 / 5.350 × 3.350 × 1.950 mm"
     }
@@ -832,8 +857,50 @@
       "benefitValue": "Putere 1,5 kW"
     }
   ],
-  "masina-de-ambalat-paleti-tip-m": [],
-  "masina-de-ambalat-paleti-kpw-tp1650f": [],
+  "masina-de-ambalat-paleti-tip-m": [
+    {
+      "icon": "wrap",
+      "benefitTitle": "Ambalare cu folie stretch PE",
+      "benefitValue": "Folie extensibilă LLDPE"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "Fixează coletul pe palet",
+      "benefitValue": "Protecție completă la transport"
+    },
+    {
+      "icon": "speed",
+      "benefitTitle": "Reglaj viteză și pre-stretch",
+      "benefitValue": "Setări per produs și palet"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Construcție industrială robustă",
+      "benefitValue": "Cadru oțel pentru utilizare zilnică"
+    }
+  ],
+  "masina-de-ambalat-paleti-kpw-tp1650f": [
+    {
+      "icon": "config",
+      "benefitTitle": "Model identificabil",
+      "benefitValue": "KPW-TP1650F, lățime palet 1.650 mm"
+    },
+    {
+      "icon": "wrap",
+      "benefitTitle": "Pre-întindere folie 250%",
+      "benefitValue": "Reduce consumul de folie la jumătate"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Operare automată",
+      "benefitValue": "Programe pre-setate per produs"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Construit pentru depozit",
+      "benefitValue": "Folie LLDPE, cadru oțel industrial"
+    }
+  ],
   "masina-de-ambalat-robotizata-kpw-z4510": [
     {
       "icon": "dimensions",
@@ -851,7 +918,7 @@
       "benefitValue": "Putere 0,18 kW"
     },
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Paleți înalți fără ajustări",
       "benefitValue": "Înălțime 2.100 mm / 2.400 mm"
     }
@@ -895,7 +962,7 @@
       "benefitValue": "220V, 50/60Hz, monofazat"
     },
     {
-      "icon": "diameter",
+      "icon": "wrap",
       "benefitTitle": "Folie standard disponibilă",
       "benefitValue": "Diametru interior rolă 76,2 mm"
     }
@@ -973,7 +1040,7 @@
       "benefitValue": "Alimentator vibratoriu"
     },
     {
-      "icon": "default",
+      "icon": "tools",
       "benefitTitle": "Zdrobire grosieră în primă etapă",
       "benefitValue": "Concasor cu fălci pentru rocă"
     },
@@ -990,9 +1057,24 @@
   ],
   "pompa-de-caldura-aer-apa-r32-evi-dc-inverter-19-35-kw-cu-ecran-tactil": [
     {
-      "icon": "default",
+      "icon": "voltage",
       "benefitTitle": "Model monofazat pentru casă",
       "benefitValue": "CGK050V3L-B, 220V / 1f / 50Hz"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Putere scalabilă pe casă/clădire",
+      "benefitValue": "Încălzire 19,8 – 35,5 kW"
+    },
+    {
+      "icon": "certification",
+      "benefitTitle": "Eficiență A+++ certificată",
+      "benefitValue": "COP până la 5,89 (A7/W35)"
+    },
+    {
+      "icon": "temperature",
+      "benefitTitle": "Funcționare la temperaturi extreme",
+      "benefitValue": "Operare până la –30°C"
     }
   ],
   "masina-de-ambalat-orizontala-stretch-kpw-sp1000": [
@@ -1034,7 +1116,7 @@
       "benefitValue": "Capacitate 30 – 50 kg"
     },
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Compatibilă cu bandă PP standard",
       "benefitValue": "Lățime bandă 9 – 15 mm"
     }
@@ -1078,7 +1160,7 @@
       "benefitValue": "Putere instalată ~0,5 kW"
     },
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Strângere fermă reglabilă",
       "benefitValue": "Forță până la 60 kg"
     }
@@ -1166,7 +1248,7 @@
       "benefitValue": "Până la 1.000 cutii/oră"
     },
     {
-      "icon": "default",
+      "icon": "box",
       "benefitTitle": "Acceptă 5 dimensiuni de cutii",
       "benefitValue": "Lățime cutie 80 – 500 mm"
     }
@@ -1200,7 +1282,7 @@
       "benefitValue": "Aer comprimat 200 L/min"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presiune standard de atelier",
       "benefitValue": "6 kg/cm² (0,6 MPa)"
     },
@@ -1217,7 +1299,7 @@
   ],
   "masina-de-dezmembrat-sticle-rotunde-kpw-lp800-20-100mm-10-rpm-0-2kw-uzinex": [
     {
-      "icon": "diameter",
+      "icon": "box",
       "benefitTitle": "Sticle mici și medii acceptate",
       "benefitValue": "Diametru 20 – 100 mm"
     },
@@ -1227,7 +1309,7 @@
       "benefitValue": "Motor 0,2 kW"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Recipient mic până la mediu",
       "benefitValue": "Înălțime 30 – 120 mm"
     },
@@ -1244,7 +1326,7 @@
       "benefitValue": "220V, 50/60Hz"
     },
     {
-      "icon": "default",
+      "icon": "label",
       "benefitTitle": "Etichete standard pentru plată",
       "benefitValue": "Lățime max etichetă 120 mm"
     },
@@ -1261,7 +1343,7 @@
   ],
   "masina-automata-de-etichetare-plata-kpw-qp150-120-150-prod-min-1mm-uzinex": [
     {
-      "icon": "dimensions",
+      "icon": "label",
       "benefitTitle": "Etichete mari acceptate",
       "benefitValue": "~150 × 200 mm"
     },
@@ -1276,7 +1358,7 @@
       "benefitValue": "Greutate netă ~150 – 180 kg"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Produse lungi până la 400 mm",
       "benefitValue": "Lungime produs 50 – 400 mm"
     }
@@ -1320,7 +1402,7 @@
       "benefitValue": "Greutate netă ~80 – 100 kg"
     },
     {
-      "icon": "default",
+      "icon": "label",
       "benefitTitle": "Etichete de orice lățime uzuală",
       "benefitValue": "Lățime etichetă 30 – 160 mm"
     }
@@ -1332,7 +1414,7 @@
       "benefitValue": "Model KPW-G1W1"
     },
     {
-      "icon": "capacity",
+      "icon": "box",
       "benefitTitle": "Dozaj flexibil pe produs",
       "benefitValue": "Volum umplere 10 – 1.000 ml"
     },
@@ -1376,7 +1458,7 @@
       "benefitValue": "Până la 550 × 400 mm"
     },
     {
-      "icon": "temperature",
+      "icon": "wrap",
       "benefitTitle": "Contracție rapidă a foliei",
       "benefitValue": "Temperatură maximă 300°C"
     },
@@ -1398,7 +1480,7 @@
       "benefitValue": "Model KPW-450L"
     },
     {
-      "icon": "dimensions",
+      "icon": "wrap",
       "benefitTitle": "Bară amplă pentru colete medii",
       "benefitValue": "Sigilare L 450 × 350 mm"
     },
@@ -1415,7 +1497,7 @@
   ],
   "masina-semiautomata-de-etansare-in-l-cu-contractie-kpw-4020-tunnel-uzinex": [
     {
-      "icon": "dimensions",
+      "icon": "wrap",
       "benefitTitle": "Produse mici până la medii",
       "benefitValue": "Sigilare 400 × 200 mm"
     },
@@ -1447,7 +1529,7 @@
       "benefitValue": "220V / 380V, 50/60 Hz"
     },
     {
-      "icon": "dimensions",
+      "icon": "wrap",
       "benefitTitle": "Gabarit pentru linie de ambalare",
       "benefitValue": "~1.500 × 800 × 1.200 mm"
     },
@@ -1459,7 +1541,7 @@
   ],
   "aparat-de-etansare-in-l-cu-contractie-kpw-fl450": [
     {
-      "icon": "default",
+      "icon": "wrap",
       "benefitTitle": "Folie lată pentru colete medii",
       "benefitValue": "Lățime maximă ~450 mm"
     },
@@ -1472,11 +1554,16 @@
       "icon": "control",
       "benefitTitle": "Reglaj ușor din LCD",
       "benefitValue": "Panou digital cu afișaj LCD"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Compatibil cu mai multe folii",
+      "benefitValue": "POF, PVC, PE"
     }
   ],
   "masina-de-etansare-in-l-cu-tunel-de-contractie-kpw-fl550": [
     {
-      "icon": "default",
+      "icon": "wrap",
       "benefitTitle": "Folie lată pentru colete mari",
       "benefitValue": "Lățime maximă 550 mm"
     },
@@ -1489,6 +1576,11 @@
       "icon": "control",
       "benefitTitle": "Reglaj ușor din LCD",
       "benefitValue": "Panou digital cu afișaj LCD"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Compatibil cu mai multe folii",
+      "benefitValue": "PE, PP, PVC, POF"
     }
   ],
   "invelitoare-de-maneca-fl7540-pneumatic": [
@@ -1498,7 +1590,7 @@
       "benefitValue": "AC 220 V / 50 – 60 Hz"
     },
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Aer comprimat de atelier",
       "benefitValue": "Sursă 5 – 7 kg/cm²"
     },
@@ -1547,7 +1639,7 @@
       "benefitValue": "Putere instalată ~24 kW"
     },
     {
-      "icon": "dimensions",
+      "icon": "wrap",
       "benefitTitle": "Tunel util pentru colete medii",
       "benefitValue": "~1.800 × 600 × 400 mm"
     },
@@ -1574,35 +1666,80 @@
       "benefitValue": "Greutate netă 400 – 600 kg"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Film larg pentru perne",
       "benefitValue": "Lățime film max 340 – 350 mm"
     }
   ],
   "masina-de-balotat-hidraulica-verticala": [
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presare pentru volume mici",
       "benefitValue": "10 tone, motor 7,5 kW"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Forță scalabilă pe volum",
+      "benefitValue": "10 – 120 tone, 9 modele"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Balot adaptat depozitului",
+      "benefitValue": "40 – 500 kg per balot"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Pentru carton, plastic, textile",
+      "benefitValue": "Haine, hârtie, PET, folie"
     }
   ],
   "masina-de-balotat-hidraulica-orizontala": [
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presare pentru volume mari",
       "benefitValue": "60 tone, motor 18,5 kW"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Forță scalabilă pe volum",
+      "benefitValue": "60 – 200 tone, 6 modele"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Baloți compacți pentru transport",
+      "benefitValue": "300 – 1.800 kg per balot"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Pentru linii continue de reciclare",
+      "benefitValue": "Carton, plastic, textile, metal"
     }
   ],
   "masina-de-presa-metalica": [
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presare metale feroase",
       "benefitValue": "60 tone, motor 11 kW"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Forță scalabilă pe șpan",
+      "benefitValue": "60 – 260 tone, 9 variante"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Brichete dense pentru topire",
+      "benefitValue": "15 – 250 kg per brichetă"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Pentru așchii feroase și neferoase",
+      "benefitValue": "Fontă, oțel, cupru, aluminiu"
     }
   ],
   "masina-de-tocat": [
     {
-      "icon": "rpm",
+      "icon": "shredder",
       "benefitTitle": "Tocare lentă de înaltă putere",
       "benefitValue": "Turație intrare 21 rpm"
     },
@@ -1646,19 +1783,29 @@
   ],
   "pulverizator-hidraulic": [
     {
-      "icon": "diameter",
+      "icon": "shears",
       "benefitTitle": "Compatibil cu obiecte mari",
       "benefitValue": "Diametru tăiere 360 – 730 mm"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presiune hidraulică stabilă",
       "benefitValue": "Presiune de lucru 13 – 16 bar"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Pentru excavatoare medii-grele",
+      "benefitValue": "1.860 – 2.630 kg, 20 – 45 t"
+    },
+    {
+      "icon": "certification",
+      "benefitTitle": "Certificări internaționale",
+      "benefitValue": "CE, ISO"
     }
   ],
   "excavator-hidraulic-de-roca-brewer": [
     {
-      "icon": "weight",
+      "icon": "excavator",
       "benefitTitle": "Gamă largă pentru orice excavator",
       "benefitValue": "100 kg – 4.500+ kg"
     },
@@ -1673,14 +1820,14 @@
       "benefitValue": "Diametru daltă 40 – 210 mm"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presiune mare pentru rocă",
       "benefitValue": "Presiune lucru 90 – 170 bar"
     }
   ],
   "cupa-concasor-uj-200": [
     {
-      "icon": "capacity",
+      "icon": "bucket",
       "benefitTitle": "Capacitate generoasă per ciclu",
       "benefitValue": "Cupă de 0,65 m³"
     },
@@ -1702,9 +1849,24 @@
   ],
   "cupa-concasor-bkm": [
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Pentru excavatoare 15 – 24 t",
       "benefitValue": "Model BKM2200EP, clasa 15 – 24 t"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "4 modele pentru orice flotă",
+      "benefitValue": "BKM2200EP – BKM5500EP, 15 – 70 t"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Volum cupă scalabil",
+      "benefitValue": "0,51 – 1,70 m³"
+    },
+    {
+      "icon": "diameter",
+      "benefitTitle": "Gură mare de alimentare",
+      "benefitValue": "Până la 1.450 × 580 mm"
     }
   ],
   "concasor-mobil-cu-falci": [
@@ -1724,7 +1886,7 @@
       "benefitValue": "PLC avansat + telecomandă wireless"
     },
     {
-      "icon": "default",
+      "icon": "crusher",
       "benefitTitle": "Concasare autonomă în șantier",
       "benefitValue": "Jaw crusher mobil autonom"
     }
@@ -1736,19 +1898,24 @@
       "benefitValue": "Greutate totală ~2.300 kg"
     },
     {
-      "icon": "default",
+      "icon": "voltage",
       "benefitTitle": "Extracție armătură opțională",
       "benefitValue": "Magnet 24V opțional"
     },
     {
-      "icon": "material",
+      "icon": "crusher",
       "benefitTitle": "Procesează orice demolare",
       "benefitValue": "Beton armat, asfalt, piatră naturală"
+    },
+    {
+      "icon": "capacity",
+      "benefitTitle": "Productivitate pe șantier",
+      "benefitValue": "Până la 70 t/h procesate"
     }
   ],
   "mini-crusher-bucket": [
     {
-      "icon": "capacity",
+      "icon": "bucket",
       "benefitTitle": "Capacitate pentru spații înguste",
       "benefitValue": "Cupă de ~0,16 m³"
     },
@@ -1770,26 +1937,51 @@
   ],
   "concasor-mecanic-de-beton": [
     {
-      "icon": "default",
+      "icon": "axis",
       "benefitTitle": "Rotație hidraulică 360°",
       "benefitValue": "Rotație cupă 360° hidraulic"
     },
     {
-      "icon": "material",
+      "icon": "crusher",
       "benefitTitle": "Procesează beton și rocă",
       "benefitValue": "Beton armat, piatră, asfalt"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Compatibil cu flotă largă",
+      "benefitValue": "Excavatoare 6 – 45 tone"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Cuplare rapidă pe excavator",
+      "benefitValue": "Sistem standard quick-coupler"
     }
   ],
   "taietor-cu-tambur": [
     {
-      "icon": "default",
+      "icon": "capacity",
       "benefitTitle": "Model MD80 pentru excavatoare medii",
       "benefitValue": "MD80, debit 372 l/min"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "5 modele pe tonajul utilajului",
+      "benefitValue": "MD80 – MD450, 3 – 45 t"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Cuplu mare pentru rocă dură",
+      "benefitValue": "Cuplu 3.200 – 36.000 Nm"
+    },
+    {
+      "icon": "diameter",
+      "benefitTitle": "Tambur scalabil pe aplicație",
+      "benefitValue": "Ø 360 – 730 mm"
     }
   ],
   "cupa-de-cernere-rotativa": [
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Compatibil cu flota ta",
       "benefitValue": "Excavatoare 3 – 35 tone"
     },
@@ -1797,6 +1989,16 @@
       "icon": "material",
       "benefitTitle": "Construcție durabilă la șoc",
       "benefitValue": "Oțel de înaltă rezistență"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "4 ecrane interschimbabile",
+      "benefitValue": "Ochiuri 20 – 150 mm"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Viteză tambur reglabilă",
+      "benefitValue": "Adaptabilă tipului de material"
     }
   ],
   "mini-screening-bucket": [
@@ -1806,7 +2008,7 @@
       "benefitValue": "Greutate 158 kg"
     },
     {
-      "icon": "capacity",
+      "icon": "bucket",
       "benefitTitle": "Capacitate pentru spații înguste",
       "benefitValue": "Cuvă de 0,33 m³"
     },
@@ -1828,21 +2030,46 @@
       "benefitValue": "Q345, Q460, NM400"
     },
     {
-      "icon": "default",
+      "icon": "speed",
       "benefitTitle": "Timp de zdrobire redus cu până la 60%",
       "benefitValue": "Până la 60% mai rapid"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Cinci operații simultan",
+      "benefitValue": "Sortare, zdrobire, amestec, încărcare, alimentare"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Lucrează material umed sau uscat",
+      "benefitValue": "Tocătoare hidraulice integrate"
     }
   ],
   "graifer-hidraulic-pentru-demolare": [
     {
-      "icon": "default",
+      "icon": "capacity",
       "benefitTitle": "Debit optim pentru excavatoare mici",
       "benefitValue": "Model MDG06, debit 280 l/min"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "5 modele pe tonajul utilajului",
+      "benefitValue": "MDG06 – MDG30, 4 – 40 t"
+    },
+    {
+      "icon": "diameter",
+      "benefitTitle": "Deschidere maxilar amplă",
+      "benefitValue": "Până la 2.400 mm"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Presiune hidraulică ridicată",
+      "benefitValue": "320 – 350 bar"
     }
   ],
   "graifer-hidraulic-pentru-excavator": [
     {
-      "icon": "default",
+      "icon": "claw",
       "benefitTitle": "Presiune mare pentru prindere fermă",
       "benefitValue": "Presiune de lucru 21 – 25 MPa"
     },
@@ -1850,6 +2077,16 @@
       "icon": "material",
       "benefitTitle": "Oțeluri premium pentru uzură",
       "benefitValue": "Hardox, NM400, Q345, Q460, WH60"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Compatibil cu flotă largă",
+      "benefitValue": "Excavatoare 1 – 40 tone"
+    },
+    {
+      "icon": "axis",
+      "benefitTitle": "Rotire 360° hidraulică",
+      "benefitValue": "Manipulare pe orice direcție"
     }
   ],
   "multi-peel-clamp": [
@@ -1864,7 +2101,7 @@
       "benefitValue": "Debit 80 L/min"
     },
     {
-      "icon": "default",
+      "icon": "tools",
       "benefitTitle": "Deschidere amplă pentru materiale mari",
       "benefitValue": "Fălci până la 1.960 mm"
     },
@@ -1876,7 +2113,7 @@
   ],
   "fixed-orange-peel-grab": [
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Pentru excavatoare medii",
       "benefitValue": "Excavatoare 16 – 23 tone"
     },
@@ -1884,6 +2121,16 @@
       "icon": "material",
       "benefitTitle": "Hardox dur la uzură grea",
       "benefitValue": "Hardox 450/500"
+    },
+    {
+      "icon": "claw",
+      "benefitTitle": "Patru gheare pentru material vrac",
+      "benefitValue": "Construcție claw în 4 puncte"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Acționare hidraulică directă",
+      "benefitValue": "Cilindru pe circuitul excavatorului"
     }
   ],
   "graifer-hidraulic-pentru-busteni": [
@@ -1893,7 +2140,7 @@
       "benefitValue": "Greutate MWR20 1.380 kg"
     },
     {
-      "icon": "default",
+      "icon": "claw",
       "benefitTitle": "Deschidere amplă pentru bușteni",
       "benefitValue": "Fălci până la 2.300 mm"
     },
@@ -1910,9 +2157,24 @@
   ],
   "foarfeca-de-demolare": [
     {
-      "icon": "default",
+      "icon": "speed",
       "benefitTitle": "De 2–3 ori mai rapidă",
       "benefitValue": "Față de ciocanul pneumatic"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Doi cilindri pentru forță maximă",
+      "benefitValue": "Acționare hidraulică dublă"
+    },
+    {
+      "icon": "shears",
+      "benefitTitle": "Taie orice tip de structură",
+      "benefitValue": "Beton armat, metal, țevi, cabluri"
+    },
+    {
+      "icon": "output",
+      "benefitTitle": "Trei funcții într-un accesoriu",
+      "benefitValue": "Tăiere, separare, îndepărtare"
     }
   ],
   "foarfeca-hidraulica-pentru-resturi": [
@@ -1922,7 +2184,7 @@
       "benefitValue": "Greutate 3.300 kg"
     },
     {
-      "icon": "default",
+      "icon": "tools",
       "benefitTitle": "Deschidere amplă pentru resturi",
       "benefitValue": "Fălci până la 745 mm"
     },
@@ -1930,6 +2192,11 @@
       "icon": "config",
       "benefitTitle": "Model identificabil",
       "benefitValue": "Model YZJ310"
+    },
+    {
+      "icon": "shears",
+      "benefitTitle": "Forță tăiere foarte mare",
+      "benefitValue": "295 tone forță laterală"
     }
   ],
   "foarfeca-excavator-eagle-shear-310": [
@@ -1939,7 +2206,7 @@
       "benefitValue": "Greutate ~1.350 kg"
     },
     {
-      "icon": "default",
+      "icon": "shears",
       "benefitTitle": "Presiune mare pentru metal",
       "benefitValue": "25 – 30 MPa (250 – 300 bar)"
     },
@@ -1947,20 +2214,55 @@
       "icon": "config",
       "benefitTitle": "Model identificabil",
       "benefitValue": "Model Eagle Shear 310"
+    },
+    {
+      "icon": "speed",
+      "benefitTitle": "Ciclu rapid de tăiere",
+      "benefitValue": "8 – 12 secunde per ciclu"
     }
   ],
   "foarfeca-hidraulica": [
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Pentru excavatoare mari",
       "benefitValue": "Model JS280RT, 2.100 kg"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "5 modele pe tonajul utilajului",
+      "benefitValue": "JS280RT – JS480RT, 14 – 39 t"
+    },
+    {
+      "icon": "diameter",
+      "benefitTitle": "Deschidere fălci scalabilă",
+      "benefitValue": "485 – 740 mm"
+    },
+    {
+      "icon": "shears",
+      "benefitTitle": "Presiune ridicată pentru metal",
+      "benefitValue": "250 – 350 bar"
     }
   ],
   "foarfeca-hidraulica-pentru-excavator": [
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Pentru excavatoare 14 – 18 t",
       "benefitValue": "Model JS280RT, clasa 14 – 18 t"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "5 modele pe tonajul utilajului",
+      "benefitValue": "JS280RT – JS480RT, 14 – 39 t"
+    },
+    {
+      "icon": "diameter",
+      "benefitTitle": "Deschidere fălci scalabilă",
+      "benefitValue": "485 – 740 mm"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Construcție heavy-duty",
+      "benefitValue": "2.100 – 4.600 kg"
     }
   ],
   "foarfeca-de-copac-pentru-excavator": [
@@ -1970,7 +2272,7 @@
       "benefitValue": "Clasa 8 – 18 t, greutate ~420 kg"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presiune hidraulică stabilă",
       "benefitValue": "Până la 250 bar"
     },
@@ -1978,11 +2280,16 @@
       "icon": "material",
       "benefitTitle": "Lame Hardox foarte dure",
       "benefitValue": "Hardox 450 / Hardox 500"
+    },
+    {
+      "icon": "shears",
+      "benefitTitle": "Tăiere copaci groși",
+      "benefitValue": "Până la Ø 350 mm"
     }
   ],
   "cupa-inclinabila": [
     {
-      "icon": "default",
+      "icon": "precision",
       "benefitTitle": "Flexibilitate la săpare",
       "benefitValue": "Tilt ±45° în ambele direcții"
     },
@@ -1990,40 +2297,70 @@
       "icon": "material",
       "benefitTitle": "Oțeluri premium pentru uzură",
       "benefitValue": "NM400, Q355, Q460, WH60, Hardox 400"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Capacitate scalabilă pe proiect",
+      "benefitValue": "0,1 – 5 m³"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Compatibil cu flotă largă",
+      "benefitValue": "Excavatoare 2 – 30 tone"
     }
   ],
   "excavator-thumb-bucket": [
     {
-      "icon": "material",
+      "icon": "bucket",
       "benefitTitle": "Oțeluri premium pentru uzură",
       "benefitValue": "Q345B, NM360, Hardox 500"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Compatibil cu flota ta",
       "benefitValue": "Excavatoare 6 – 30 tone"
+    },
+    {
+      "icon": "claw",
+      "benefitTitle": "Rotire 360° nelimitată",
+      "benefitValue": "Manipulare în orice direcție"
+    },
+    {
+      "icon": "certification",
+      "benefitTitle": "Certificări internaționale",
+      "benefitValue": "ISO9001, CE"
     }
   ],
   "cupa-excavator-de-roca": [
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Duritate ridicată interioară",
       "benefitValue": "Grosime 8 – 12 mm, HRC 48 – 52"
     },
     {
-      "icon": "material",
+      "icon": "bucket",
       "benefitTitle": "Oțeluri premium Q460 Mn16 și Hardox",
       "benefitValue": "Q345B, Q460 (Mn16), WH60A, NM360/450, Hardox 400/500"
+    },
+    {
+      "icon": "capacity",
+      "benefitTitle": "Capacitate scalabilă pe proiect",
+      "benefitValue": "0,1 – 8 m³"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Compatibil cu flotă largă",
+      "benefitValue": "Excavatoare 8 – 70 tone, 800 – 13.000 kg"
     }
   ],
   "cupa-cu-clapeta-pentru-excavator": [
     {
-      "icon": "capacity",
+      "icon": "bucket",
       "benefitTitle": "Capacitate scalabilă pe proiect",
       "benefitValue": "De la 0,5 m³ până la 4 m³"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Deschidere amplă pentru descărcare",
       "benefitValue": "Lățime 1.421 – 2.617 mm"
     },
@@ -2031,23 +2368,38 @@
       "icon": "material",
       "benefitTitle": "Structură din oțeluri premium",
       "benefitValue": "Q345, Q460, NM400, WH60, Hardox 450"
+    },
+    {
+      "icon": "certification",
+      "benefitTitle": "Certificări internaționale",
+      "benefitValue": "ISO9001:2008, CE, SGS"
     }
   ],
   "cupa-de-mare-putere": [
     {
-      "icon": "material",
+      "icon": "bucket",
       "benefitTitle": "Oțeluri multiple de înaltă rezistență",
       "benefitValue": "Q345B, Q460, Hardox 400/500, NM360/450, WH60A"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Gamă largă de compatibilități",
       "benefitValue": "Excavatoare 6 – 70 tone"
+    },
+    {
+      "icon": "capacity",
+      "benefitTitle": "Capacitate scalabilă pe proiect",
+      "benefitValue": "0,5 – 4 m³"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Plăci uzură suplimentare",
+      "benefitValue": "Fund, colțuri laterale, călcâi"
     }
   ],
   "thumb-bucket": [
     {
-      "icon": "default",
+      "icon": "claw",
       "benefitTitle": "Deschidere amplă la prindere",
       "benefitValue": "Fălci 1.200 – 2.200 mm"
     },
@@ -2055,18 +2407,38 @@
       "icon": "material",
       "benefitTitle": "Structură din oțeluri premium",
       "benefitValue": "Q345B, NM400, Hardox 500, WH60"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "Compatibil cu flotă largă",
+      "benefitValue": "Excavatoare 6 – 80 tone"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Funcție dublă într-un accesoriu",
+      "benefitValue": "Excavare + prindere materiale"
     }
   ],
   "cupa-standard-pentru-excavator": [
     {
-      "icon": "default",
+      "icon": "material",
       "benefitTitle": "Duritate ridicată la uzură",
       "benefitValue": "HRC 53 – 58"
     },
     {
-      "icon": "material",
+      "icon": "config",
       "benefitTitle": "Structură + zone de uzură",
       "benefitValue": "Q345, Q460 + Hardox 400, NM400, WH60"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Capacitate pentru sol obișnuit",
+      "benefitValue": "0,3 – 1,1 m³"
+    },
+    {
+      "icon": "certification",
+      "benefitTitle": "Garanție producător solidă",
+      "benefitValue": "12 luni sau 2.000 ore"
     }
   ],
   "cupa-de-excavator-pentru-roca": [
@@ -2076,14 +2448,24 @@
       "benefitValue": "Q345B, Q460D, NM400, Hardox 400/500, WH60A"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Gamă largă de compatibilități",
       "benefitValue": "Excavatoare 8 – 70 tone"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Capacitate scalabilă pe proiect",
+      "benefitValue": "0,1 – 8 m³"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Compatibil cu mărci majore",
+      "benefitValue": "CAT, Komatsu, Hitachi, SANY, Doosan, Hyundai"
     }
   ],
   "cupa-de-minerit-pentru-excavator": [
     {
-      "icon": "capacity",
+      "icon": "bucket",
       "benefitTitle": "Capacități scalabile pe proiect",
       "benefitValue": "De la 0,25 m³ până la 20 m³"
     },
@@ -2093,19 +2475,24 @@
       "benefitValue": "Q345B, Q460, WH60A"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Gamă largă de compatibilități",
       "benefitValue": "Excavatoare 6 – 90 tone"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "5 tipuri pe aplicație",
+      "benefitValue": "Standard, Heavy Duty, Rock, Multi-purpose, Clamshell"
     }
   ],
   "cupa-schelet-excavator": [
     {
-      "icon": "capacity",
+      "icon": "bucket",
       "benefitTitle": "Capacități scalabile pe proiect",
       "benefitValue": "0,58 m³ – 2,1 m³"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Lățimi disponibile adaptabile",
       "benefitValue": "760 – 1.830 mm (30″ – 72″)"
     },
@@ -2113,6 +2500,11 @@
       "icon": "material",
       "benefitTitle": "Oțel T1 sau Hardox-500",
       "benefitValue": "Oțel T1 sau Hardox-500"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Vârfuri bolt-on înlocuibile",
+      "benefitValue": "Schimb independent fără sudură"
     }
   ],
   "buldozer-cu-trei-coade-ripper": [
@@ -2122,7 +2514,7 @@
       "benefitValue": "Greutate accesoriu ~1.000 kg"
     },
     {
-      "icon": "default",
+      "icon": "tools",
       "benefitTitle": "Scarificare cu trei șenkeri",
       "benefitValue": "3 șenkeri (Three Shank)"
     },
@@ -2130,37 +2522,87 @@
       "icon": "material",
       "benefitTitle": "Oțeluri dure pentru uzură",
       "benefitValue": "Q345 / Q460 / NM400 / Hardox 400/500 / WH60"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "Trei tipuri pe teren",
+      "benefitValue": "Standard, Heavy-duty, Rocă"
     }
   ],
   "ripper-pentru-excavator": [
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Pentru excavatoare 6 – 10 t",
       "benefitValue": "Clasa 6 – 10 t, greutate 60 kg"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "9 mărimi pe tonajul utilajului",
+      "benefitValue": "Excavatoare 3 – 45 tone"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Oțeluri premium pentru uzură",
+      "benefitValue": "Q460 + NM400"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Pentru roca de manta și argilă",
+      "benefitValue": "Strat nisipos, straturi alterate"
     }
   ],
   "grebla-pentru-excavator-ripper": [
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Pentru excavatoare 6 – 10 t",
       "benefitValue": "Clasa 6 – 10 t, greutate 60 kg"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "9 mărimi pe tonajul utilajului",
+      "benefitValue": "Excavatoare 3 – 45 tone"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Oțeluri premium pentru uzură",
+      "benefitValue": "Q460 + NM400"
+    },
+    {
+      "icon": "excavator",
+      "benefitTitle": "Curățare teren și rădăcini",
+      "benefitValue": "Asemănător greblei de grădină"
     }
   ],
   "compactor-de-beton": [
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Model 6T pentru şantier mediu",
       "benefitValue": "6T, ~6 tone"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "4 modele pe tonajul utilajului",
+      "benefitValue": "6T – 30T, excavatoare 6 – 30 t"
+    },
+    {
+      "icon": "dimensions",
+      "benefitTitle": "Suprafață impact scalabilă",
+      "benefitValue": "700 × 480 până la 1.350 × 1.080 mm"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Vibrare hidraulică pe excavator",
+      "benefitValue": "Presiune 13 – 16 MPa"
     }
   ],
   "placa-de-compactare-a-suprafetei-excavatorului": [
     {
-      "icon": "dimensions",
+      "icon": "excavator",
       "benefitTitle": "Trei mărimi pe tip teren",
       "benefitValue": "745×450 / 700×480 / 844×500 mm"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Compatibil cu flota ta",
       "benefitValue": "Excavatoare 3 – 30 tone"
     },
@@ -2168,13 +2610,33 @@
       "icon": "material",
       "benefitTitle": "Oțel dur la uzură",
       "benefitValue": "Oțel de înaltă rezistență"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Frecvență vibratorie reglabilă",
+      "benefitValue": "Adaptabilă tipului de sol"
     }
   ],
   "brat-cu-raza-lunga-de-actiune": [
     {
-      "icon": "default",
+      "icon": "capacity",
       "benefitTitle": "Rază extinsă 15.200 mm",
       "benefitValue": "15.200 mm, cupă 0,5 m³"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "4 lungimi pe proiect",
+      "benefitValue": "15.200 – 22.000 mm totali"
+    },
+    {
+      "icon": "dimensions",
+      "benefitTitle": "Adâncime mare de excavare",
+      "benefitValue": "Până la 18.500 mm adâncime"
+    },
+    {
+      "icon": "bucket",
+      "benefitTitle": "Cupă scalabilă pe braț",
+      "benefitValue": "0,5 – 0,8 m³"
     }
   ],
   "cuplaj-rapid-cu-inclinare": [
@@ -2184,7 +2646,7 @@
       "benefitValue": "Debit ulei 10 – 20 L/min"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Presiune hidraulică flexibilă",
       "benefitValue": "40 – 380 bar"
     },
@@ -2201,9 +2663,24 @@
   ],
   "cuplaj-rapid": [
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Pentru miniexcavatoare 1,5 – 4 t",
       "benefitValue": "Model DEHNmini, clasa 1,5 – 4 t"
+    },
+    {
+      "icon": "weight",
+      "benefitTitle": "7 modele pe tonajul utilajului",
+      "benefitValue": "DEHNmini – DEHN17, 1,5 – 45 t"
+    },
+    {
+      "icon": "speed",
+      "benefitTitle": "Schimbare accesoriu rapidă",
+      "benefitValue": "Cuplare hidraulică standard"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Compatibil cu accesorii multiple",
+      "benefitValue": "Cupe, ciocane, foarfeci"
     }
   ],
   "magnet-de-placa-de-otel": [
@@ -2218,7 +2695,7 @@
       "benefitValue": "Neodim până la 200°C"
     },
     {
-      "icon": "default",
+      "icon": "certification",
       "benefitTitle": "Siguranță industrială certificată",
       "benefitValue": "Coeficient 3:1"
     },
@@ -2230,9 +2707,24 @@
   ],
   "oem-excavator": [
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Brațe lungi pentru flota ta",
       "benefitValue": "Long Reach 6 – 50 tone"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "6 accesorii într-o gamă",
+      "benefitValue": "Brațe, cupe, ciocane, grapă"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Acoperă ridicare grea și demolare",
+      "benefitValue": "Forță tăiere până la 153 kN"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Oțeluri premium pentru durabilitate",
+      "benefitValue": "Q345B, Hardox 450, NM400"
     }
   ],
   "0-8t-mini-excavator": [
@@ -2247,7 +2739,7 @@
       "benefitValue": "0,025 – 0,045 m³"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Săpare până la 1,8 m adâncime",
       "benefitValue": "Adâncime maximă ~1.800 mm"
     },
@@ -2274,7 +2766,7 @@
       "benefitValue": "Capacitate 0,02 m³"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Motor diesel de putere adecvată",
       "benefitValue": "Diesel, 12 – 14 kW"
     }
@@ -2313,7 +2805,7 @@
       "benefitValue": "Capacitate 0,025 m³"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Motor adaptat pentru clasa 0,8 t",
       "benefitValue": "7,6 kW la 2.400 rpm"
     },
@@ -2330,7 +2822,7 @@
       "benefitValue": "Capacitate 5 – 8 t/h"
     },
     {
-      "icon": "power",
+      "icon": "crusher",
       "benefitTitle": "Putere industrială pentru metal",
       "benefitValue": "Motor 315 kW"
     },
@@ -2391,9 +2883,24 @@
   ],
   "tocator-cu-un-singur-arbore-zy-s-rotor-v-spirala-sita-evacuare-5-modele-22-110kw-uzinex": [
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Modelul de bază ZY-S600",
       "benefitValue": "Motor 22 kW"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "5 modele pe capacitate",
+      "benefitValue": "ZY-S600 – ZY-S1500, 22 – 110 kW"
+    },
+    {
+      "icon": "dimensions",
+      "benefitTitle": "Cameră tăiere scalabilă",
+      "benefitValue": "600 × 600 până la 1.500 × 1.500 mm"
+    },
+    {
+      "icon": "shredder",
+      "benefitTitle": "Rotor V/spirală cu sită evacuare",
+      "benefitValue": "Granulometrie controlată"
     }
   ],
   "knife-crusher": [
@@ -2408,7 +2915,7 @@
       "benefitValue": "Motor de 11 kW"
     },
     {
-      "icon": "default",
+      "icon": "tools",
       "benefitTitle": "Configurație stabilă a camerei",
       "benefitValue": "2 cuțite fixe"
     },
@@ -2425,7 +2932,7 @@
       "benefitValue": "800 – 1.000 kg/h"
     },
     {
-      "icon": "power",
+      "icon": "crusher",
       "benefitTitle": "Putere dublă pentru metal",
       "benefitValue": "75 kW × 2"
     },
@@ -2469,7 +2976,7 @@
       "benefitValue": "22 / 45 / 75 / 90 kW"
     },
     {
-      "icon": "dimensions",
+      "icon": "shredder",
       "benefitTitle": "Granule fine, uniforme",
       "benefitValue": "Dimensiune Φ 5,5 mm"
     },
@@ -2479,7 +2986,7 @@
       "benefitValue": "300 / 600 / 800–1.000 / 1.000–1.200 kg/h"
     },
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Fibre textile separate ≥ 99%",
       "benefitValue": "Rată separare ≥ 99%"
     }
@@ -2491,7 +2998,7 @@
       "benefitValue": "30 × 2 kW (60 kW total)"
     },
     {
-      "icon": "dimensions",
+      "icon": "shredder",
       "benefitTitle": "Granule controlate, uniforme",
       "benefitValue": "Dimensiune ieșire 3 – 8 cm"
     },
@@ -2545,7 +3052,7 @@
       "benefitValue": "4 – 6 baloți/oră"
     },
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Forță scalabilă pe serie",
       "benefitValue": "10 – 120 tone KN"
     }
@@ -2567,7 +3074,7 @@
       "benefitValue": "Volum cupă 0,08 m³"
     },
     {
-      "icon": "default",
+      "icon": "travel",
       "benefitTitle": "Rază mare de săpare",
       "benefitValue": "Până la 4.831 mm"
     }
@@ -2618,7 +3125,7 @@
   ],
   "cupa-excavator-rippa-r10-r13-r15-latime-200mm-lp0104010778": [
     {
-      "icon": "default",
+      "icon": "bucket",
       "benefitTitle": "Cupă îngustă pentru șanțuri",
       "benefitValue": "Lățime cupă 200 mm"
     },
@@ -2631,11 +3138,16 @@
       "icon": "material",
       "benefitTitle": "Oțel rezistent la uzură",
       "benefitValue": "Oțel de înaltă rezistență"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Priză rapidă Rippa",
+      "benefitValue": "Compatibilă cu standardul OEM"
     }
   ],
   "cupa-excavator-1000mm-rippa-r10-r13-r15-cupa-curatare-si-nivelare": [
     {
-      "icon": "default",
+      "icon": "bucket",
       "benefitTitle": "Cupă lată pentru nivelare",
       "benefitValue": "Lățime cupă 1.000 mm"
     },
@@ -2648,18 +3160,33 @@
       "icon": "material",
       "benefitTitle": "Oțel rezistent la uzură",
       "benefitValue": "Oțel de înaltă rezistență"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Priză rapidă Rippa",
+      "benefitValue": "Compatibilă cu standardul OEM"
     }
   ],
   "buldoexcavator-rippa-rb30": [
     {
-      "icon": "weight",
+      "icon": "excavator",
       "benefitTitle": "Putere pentru șantiere medii",
       "benefitValue": "Greutate operațională 8.000 kg"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Rază completă de lucru",
       "benefitValue": "Lungime totală 6.450 mm"
+    },
+    {
+      "icon": "power",
+      "benefitTitle": "Motor Yuchai Euro3",
+      "benefitValue": "91 kW pentru lucru continuu"
+    },
+    {
+      "icon": "capacity",
+      "benefitTitle": "Cupă frontală generoasă",
+      "benefitValue": "1,5 m³, lățime 2.300 mm"
     }
   ],
   "robot-de-inspectie-antiexplozie-pentru-cisterne-gt-260": [
@@ -2674,7 +3201,7 @@
       "benefitValue": "Acces de la ≥ 115 mm"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Inspecții la distanță mare",
       "benefitValue": "Distanță operare 1 – 100 m"
     },
@@ -2686,7 +3213,7 @@
   ],
   "robot-inspectie-conducte-gtdr-200-camera-hd-panoramica-210": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Gamă largă de conducte",
       "benefitValue": "Compatibil 100 – 2.500 mm"
     },
@@ -2708,19 +3235,29 @@
   ],
   "robot-cctv-canalizare-gt108-ptz-10x-zoom-crawler-200-3500mm": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Conducte mari pentru municipal",
       "benefitValue": "Compatibil 200 – 3.500 mm (8\"–137\")"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Cablu lung, la cerere",
       "benefitValue": "Lungime 100 – 300 m"
+    },
+    {
+      "icon": "camera",
+      "benefitTitle": "PTZ cu zoom 10x",
+      "benefitValue": "Rotație 360° + flip 220°"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "IP68 anti-coroziune",
+      "benefitValue": "Lucru în medii agresive"
     }
   ],
   "sistem-crawler-inspectie-conducte-gt102b-ptz-dual-10x-150-2000mm": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Gamă largă de conducte",
       "benefitValue": "Compatibil 150 – 2.000 mm (6\"–78\")"
     },
@@ -2735,24 +3272,24 @@
       "benefitValue": "Greutate controler 6 kg"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Imagine clară Full HD",
       "benefitValue": "Rezoluție 1920 × 1080 pixeli"
     }
   ],
   "camera-inspectie-canalizare-ultra-hd-gt104ws-4mp-6-roti-elevator": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Gamă largă de conducte",
       "benefitValue": "Compatibil 150 – 3.000 mm (6\"–118\")"
     },
     {
-      "icon": "dimensions",
+      "icon": "power",
       "benefitTitle": "Crawler compact pentru conducte",
       "benefitValue": "Corp 600 × 110 × 180 mm"
     },
     {
-      "icon": "power",
+      "icon": "weight",
       "benefitTitle": "Crawler ușor de manevrat",
       "benefitValue": "Greutate 19 kg cu modul putere"
     },
@@ -2764,7 +3301,7 @@
   ],
   "robot-inspectie-conducte-wireless-gt102bpro-4mp-6-roti-200-000-lux": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Gamă largă de conducte",
       "benefitValue": "Compatibil 150 – 2.500 mm (6\"–98\")"
     },
@@ -2786,29 +3323,29 @@
   ],
   "robot-inspectie-conducte-industriale-gt400pro-anti-rasturnare-laser-4mp": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Conducte industriale mari",
       "benefitValue": "Compatibil 200 – 3.000 mm"
     },
     {
-      "icon": "dimensions",
+      "icon": "power",
       "benefitTitle": "Crawler compact pentru conducte",
       "benefitValue": "Corp 630 × 185 × 150 mm"
     },
     {
-      "icon": "weight",
+      "icon": "laser",
       "benefitTitle": "Ușor de manevrat în teren",
       "benefitValue": "Crawler 13 kg"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Cablu lung pentru inspecții extinse",
       "benefitValue": "Lungime 100 – 150 m"
     }
   ],
   "gt108pro-cctv-municipal-pipe-inspect-crawler-robot-camera": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Conducte mari pentru municipal",
       "benefitValue": "Compatibil 200 – 3.500 mm (8\"–137\")"
     },
@@ -2823,21 +3360,31 @@
       "benefitValue": "Tambur 40 kg, cu contor"
     },
     {
-      "icon": "default",
+      "icon": "config",
       "benefitTitle": "Cablu lung, la cerere",
       "benefitValue": "Lungime 100 – 300 m"
     }
   ],
   "camera-inspectie-tevi-industriale-gt102-laser-standard-49mm-120-600mm": [
     {
-      "icon": "diameter",
+      "icon": "laser",
       "benefitTitle": "Țevi mici și medii",
       "benefitValue": "Compatibil 120 – 600 mm (5\"–24\")"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Cablu lung pentru inspecții extinse",
       "benefitValue": "Lungime 100 – 150 m"
+    },
+    {
+      "icon": "axis",
+      "benefitTitle": "PTZ + laser de măsurare",
+      "benefitValue": "Rotație 360° + flip 180°"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "IP68 anti-coroziune",
+      "benefitValue": "Cap metalic anti-coliziune Ø 49 mm"
     }
   ],
   "camera-inspectie-tevi-gaze-gt102a-petrol-chimie-220-200m-ip68": [
@@ -2847,7 +3394,7 @@
       "benefitValue": "Compatibil 120 – 600 mm (5\"–24\")"
     },
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Tambur automat sau manual",
       "benefitValue": "Auto / Manual, 40 kg standard"
     },
@@ -2855,23 +3402,33 @@
       "icon": "certification",
       "benefitTitle": "Cablu extensibil până la 200 m",
       "benefitValue": "Standard 100 m, până la 200 m"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "IP68 pentru petrol și chimie",
+      "benefitValue": "Anti-coroziune, full waterproof"
     }
   ],
   "camera-inspectie-tevi-4mp-gt102apro-wireless-laser-120-600mm": [
     {
-      "icon": "diameter",
+      "icon": "laser",
       "benefitTitle": "Țevi mici și medii",
       "benefitValue": "Compatibil 120 – 600 mm (5\"–24\")"
     },
     {
-      "icon": "default",
+      "icon": "weight",
       "benefitTitle": "Tambur automat sau manual",
       "benefitValue": "Auto / Manual, 40 kg standard"
     },
     {
-      "icon": "certification",
+      "icon": "config",
       "benefitTitle": "Cablu extensibil până la 200 m",
       "benefitValue": "Standard 120 m, până la 200 m"
+    },
+    {
+      "icon": "camera",
+      "benefitTitle": "Tabletă wireless 12 inch 4MP",
+      "benefitValue": "Stocare 128 GB, fără fir"
     }
   ],
   "camera-inspectie-tevi-mici-gt100-100mm-7-inch-portabil-200-000-lux": [
@@ -2881,14 +3438,24 @@
       "benefitValue": "Diametru 51 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Cablu configurabil pentru teren",
       "benefitValue": "Lungime 60 – 120 m"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Iluminare frontală foarte puternică",
+      "benefitValue": "200.000 LUX, ajustabilă"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "Portabil + IP68",
+      "benefitValue": "Controler 7 inch handheld"
     }
   ],
   "robot-inspectie-pale-eoliene-gt380-circular-cold-light-ptz-10x-230-3500mm": [
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Pale mari și conducte mari",
       "benefitValue": "Compatibil 230 – 3.500 mm (9\"–138\")"
     },
@@ -2903,7 +3470,7 @@
       "benefitValue": "Lungime 100 m (customizabil)"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Cameră frontală 2MP",
       "benefitValue": "2 Megapixeli"
     }
@@ -2915,7 +3482,7 @@
       "benefitValue": "Inspecție 8 – 800 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Cablu configurabil pe proiect",
       "benefitValue": "Lungime 10 – 120 m"
     },
@@ -2923,6 +3490,11 @@
       "icon": "battery",
       "benefitTitle": "Autonomie extinsă în teren",
       "benefitValue": "Peste 6 ore funcționare continuă"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Touchscreen 7\" + WiFi",
+      "benefitValue": "Live stream + control remote"
     }
   ],
   "camera-push-rod-canalizare-gt220-all-in-one-10-inch-arc-coturi-20-400mm": [
@@ -2932,9 +3504,19 @@
       "benefitValue": "Inspecție 20 – 400 mm"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Patru lentile pe tip țeavă",
       "benefitValue": "16 / 21 / 37 / 51 mm"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "All-in-one cu ecran 10\"",
+      "benefitValue": "Tastatură integrată pentru editare"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "IP68 + arc pentru coturi",
+      "benefitValue": "Trece coturi 90° fără blocaj"
     }
   ],
   "borescop-inspectie-conducte-gt-ptz-cablu-gfrp-4-lentile-9-800mm-8h": [
@@ -2944,7 +3526,7 @@
       "benefitValue": "Inspecție 9 – 800 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Cablu configurabil pe proiect",
       "benefitValue": "Lungime 30 – 120 m"
     },
@@ -2952,16 +3534,21 @@
       "icon": "battery",
       "benefitTitle": "Autonomie extinsă în teren",
       "benefitValue": "8 ore funcționare continuă"
+    },
+    {
+      "icon": "camera",
+      "benefitTitle": "Iluminare până la 100.000 LUX",
+      "benefitValue": "PTZ 360° / 220° flip"
     }
   ],
   "camera-video-inspectie-canalizare-gt230-5-lentile-5-5mm-laser-9-niveluri": [
     {
-      "icon": "diameter",
+      "icon": "laser",
       "benefitTitle": "Țevi foarte înguste acceptate",
       "benefitValue": "Inspecție 7 – 800 mm"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Intră în țevi de la 7 mm",
       "benefitValue": "Lentilă 5,5 mm, intrare 7 mm"
     },
@@ -2971,7 +3558,7 @@
       "benefitValue": "6 ore (AC/DC compatibil)"
     },
     {
-      "icon": "voltage",
+      "icon": "config",
       "benefitTitle": "Autonomă sau la rețea",
       "benefitValue": "Alimentare AC / DC"
     }
@@ -2983,7 +3570,7 @@
       "benefitValue": "Inspecție 10 – 200 mm (10 – 150 mm standard)"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Trei lentile pe tip țeavă",
       "benefitValue": "3 mărimi: 8 / 16 / 21 mm"
     },
@@ -3005,7 +3592,7 @@
       "benefitValue": "75 mm / 90 mm la alegere"
     },
     {
-      "icon": "default",
+      "icon": "axis",
       "benefitTitle": "Vizualizare completă prin flip",
       "benefitValue": "Basculare 180° flip"
     },
@@ -3013,6 +3600,11 @@
       "icon": "voltage",
       "benefitTitle": "Autonomie extinsă în teren",
       "benefitValue": "Baterie proprie, fără priză"
+    },
+    {
+      "icon": "camera",
+      "benefitTitle": "Zoom optic 10x + electronic 10x",
+      "benefitValue": "Vizibilitate până la 6 m"
     }
   ],
   "periscop-inspectie-conducte-gtw106-fibra-carbon-30x-zoom-4mp-1-25-6m": [
@@ -3022,7 +3614,7 @@
       "benefitValue": "Greutate ~1 kg"
     },
     {
-      "icon": "diameter",
+      "icon": "pipe",
       "benefitTitle": "Conducte medii și mari",
       "benefitValue": "Inspecție DN150 – 3.000 mm"
     },
@@ -3032,7 +3624,7 @@
       "benefitValue": "Temperatură -20°C → +60°C"
     },
     {
-      "icon": "default",
+      "icon": "power",
       "benefitTitle": "Tijă compactă la transport",
       "benefitValue": "Lungime contractată 1,25 m"
     }
@@ -3044,9 +3636,19 @@
       "benefitValue": "Temperatură -10°C → +50°C"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Tijă telescopică reglabilă",
       "benefitValue": "Lungime 2 – 5 m, reglabilă"
+    },
+    {
+      "icon": "camera",
+      "benefitTitle": "Touchscreen 12\" + zoom 10x",
+      "benefitValue": "Rezoluție 2000 × 1200"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "IP68 pentru tunel sau canal",
+      "benefitValue": "Rezistă la apă și praf"
     }
   ],
   "camera-anti-explozie-inspectie-rezervoare-gt200bx60-atex-120-10000mm-ce": [
@@ -3056,7 +3658,7 @@
       "benefitValue": "Diametru 105 mm"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Tijă customizabilă pe aplicație",
       "benefitValue": "Lungime 2 – 5 m"
     },
@@ -3078,7 +3680,7 @@
       "benefitValue": "Inspecție 4 – 200 mm"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Sondă pe fiecare tip de țeavă",
       "benefitValue": "2,8 / 3,9 / 6 / 8 mm"
     },
@@ -3086,6 +3688,11 @@
       "icon": "battery",
       "benefitTitle": "Baterie ușor înlocuibilă",
       "benefitValue": "Litiu reîncărcabilă, detașabilă"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "WiFi + HDMI + carcasă anti-cădere",
+      "benefitValue": "Iluminare 20.000 – 100.000 LUX"
     }
   ],
   "videoscop-4-directii-inspectie-gt120b-sonda-2mm-4-way-5-sonde-wifi-hdmi": [
@@ -3095,7 +3702,7 @@
       "benefitValue": "Inspecție 4 – 200 mm"
     },
     {
-      "icon": "default",
+      "icon": "camera",
       "benefitTitle": "Sondă frontală pentru zone greu accesibile",
       "benefitValue": "Disponibilă 2 – 8 mm"
     },
@@ -3103,6 +3710,11 @@
       "icon": "battery",
       "benefitTitle": "Baterie ușor înlocuibilă",
       "benefitValue": "Litiu reîncărcabilă, detașabilă"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Articulație 4-way completă",
+      "benefitValue": "Sus / jos / stânga / dreapta"
     }
   ],
   "camera-foraj-inspectie-puturi-gtv300-otel-aliat-360-patent-led-ac-dc": [
@@ -3117,7 +3729,7 @@
       "benefitValue": "10 inch color IPS full screen"
     },
     {
-      "icon": "default",
+      "icon": "dimensions",
       "benefitTitle": "Imagine clară Full HD",
       "benefitValue": "Rezoluție 1920 × 1080 pixeli"
     },
@@ -3129,12 +3741,12 @@
   ],
   "tocator-cu-doua-axe-reciclare-d600-d2200-4-tipuri-cutite-skd11-hrc62": [
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Mentenanță mai rară cu 67%",
       "benefitValue": "500 ore (vs 300 ore standard)"
     },
     {
-      "icon": "certification",
+      "icon": "shredder",
       "benefitTitle": "Cuțite SKD11 călite în vid",
       "benefitValue": "HRC62, durabilitate 1,6×"
     },
@@ -3142,6 +3754,11 @@
       "icon": "config",
       "benefitTitle": "Model D800: 9 sec vs 16 sec",
       "benefitValue": "700 – 800 kg/h; tablă 3 mm în 9 sec (vs 16 sec)"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Rată avarie sub media industriei",
+      "benefitValue": "0,35 – 0,48% (vs 1,2%)"
     }
   ],
   "tocator-cu-un-ax-reciclare-os-600-1600-plastic-rigid-granulometrie-controlata": [
@@ -3151,19 +3768,29 @@
       "benefitValue": "Piston hidraulic cu presiune"
     },
     {
-      "icon": "default",
+      "icon": "certification",
       "benefitTitle": "Prezență dovedită pe 3 continente",
       "benefitValue": "Europa, Asia de Sud-Est, America de Sud"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "6 modele pentru orice volum",
+      "benefitValue": "OS-600 – OS-1600"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Plastic rigid și PET",
+      "benefitValue": "PVC, HDPE, PP, ABS, PC, folii, textile"
     }
   ],
   "tocator-anvelope-reciclare-d600-d2200-otr-granule-50mm-piroliza-tdf": [
     {
-      "icon": "certification",
+      "icon": "shredder",
       "benefitTitle": "Granule uniforme, configurabile",
       "benefitValue": "Standard 50 mm"
     },
     {
-      "icon": "default",
+      "icon": "diameter",
       "benefitTitle": "Anvelope camioane / TIR",
       "benefitValue": "R17,5 – R22,5, Ø 780 – 1060 mm"
     },
@@ -3171,11 +3798,16 @@
       "icon": "config",
       "benefitTitle": "Opt modele pentru orice capacitate",
       "benefitValue": "D600 / D800 / D1000 / D1200 / D1400 / D1600 / D2000 / D2200"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Adaptare automată la tip anvelopă",
+      "benefitValue": "Fără reajustare la schimb"
     }
   ],
   "concasor-plastic-reciclare-wgd-600-1200-granule-1cm-plc-cabluri": [
     {
-      "icon": "default",
+      "icon": "shredder",
       "benefitTitle": "Granulometrie de ~1 cm",
       "benefitValue": "8 – 15 mm, controlată prin sită"
     },
@@ -3183,11 +3815,21 @@
       "icon": "control",
       "benefitTitle": "Automatizare PLC fiabilă",
       "benefitValue": "Sistem PLC"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "4 modele pe capacitate",
+      "benefitValue": "WGD-600 – WGD-1200"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Plastic rigid, cabluri, compozit",
+      "benefitValue": "ABS, PE, PP, PC, PVC, cabluri"
     }
   ],
   "concasor-metal-reciclare-wcd-800-2200-ciocane-particule-cubice-teleoperare": [
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Particule cubice, puține flocuri",
       "benefitValue": "Formă cubică, ace reduse"
     },
@@ -3200,6 +3842,11 @@
       "icon": "control",
       "benefitTitle": "Operare de la distanță",
       "benefitValue": "Automatizare completă cu teleoperare"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "7 modele pe capacitate",
+      "benefitValue": "WCD-800 – WCD-2200"
     }
   ],
   "concasor-vertical-reciclare-metale-lcp-1000-1800-3-metode-500mm-feed-15-rec": [
@@ -3209,7 +3856,7 @@
       "benefitValue": "Feed maxim 500 mm"
     },
     {
-      "icon": "default",
+      "icon": "crusher",
       "benefitTitle": "Recuperare metale cu +10 – 15%",
       "benefitValue": "+10 – 15% față de tradițional"
     },
@@ -3217,18 +3864,38 @@
       "icon": "output",
       "benefitTitle": "Particule uniforme la ieșire",
       "benefitValue": "Dimensiuni uniforme"
+    },
+    {
+      "icon": "shredder",
+      "benefitTitle": "3 metode într-un singur utilaj",
+      "benefitValue": "Lame / ciocane / lanțuri"
     }
   ],
   "separator-electrostatic-reciclare-df1500-2000-99-puritate-dual-stage-pcb": [
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Recuperare foarte ridicată",
       "benefitValue": "Rată de recuperare ≥ 99%"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "4 modele pe puritate cerută",
+      "benefitValue": "DF1500/2000 single sau dual stage"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Separare uscată, fără reagenți",
+      "benefitValue": "Zero apă, zero chimicale"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Optimizat pentru DEEE și PCB",
+      "benefitValue": "Cupru-plastic, aluminiu, PCB-uri"
     }
   ],
   "separator-aer-reciclare-fx600-1500-95-eficienta-zero-contact-folii": [
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Separare eficientă ≥ 95%",
       "benefitValue": "≥ 95% fracțiile ușoare vs grele"
     },
@@ -3241,11 +3908,16 @@
       "icon": "material",
       "benefitTitle": "Separă orice material ușor",
       "benefitValue": "Folii, rumeguș, fibre, praf"
+    },
+    {
+      "icon": "config",
+      "benefitTitle": "5 modele pe debit",
+      "benefitValue": "FX600 – FX1500"
     }
   ],
   "separator-curenti-turbionari-metale-neferoase-400-1400-30-rec-0-3000rpm": [
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Particule mici și medii",
       "benefitValue": "Interval 3 – 100 mm"
     },
@@ -3258,25 +3930,60 @@
       "icon": "material",
       "benefitTitle": "Recuperează metale neferoase",
       "benefitValue": "Aluminiu, cupru, zinc din DEEE"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Recuperare +30% față de tradițional",
+      "benefitValue": "98% puritate la ieșire"
     }
   ],
   "separator-gravitational-densitate-reciclare-50mm-200-mesh-10-manual-puls-praf": [
     {
-      "icon": "default",
+      "icon": "output",
       "benefitTitle": "Cel mai larg interval din gamă",
       "benefitValue": "50 mm → 200 mesh (75 micrometri)"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "10× mai eficient decât manual",
+      "benefitValue": "Sortare densitometrică automată"
+    },
+    {
+      "icon": "protection",
+      "benefitTitle": "Eliminare praf cu sistem puls",
+      "benefitValue": "Zero scurgeri în hală"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Pentru metale, baterii, minereu",
+      "benefitValue": "Cupru, aluminiu, granule litiu"
     }
   ],
   "sita-rotativa-tambur-sortare-materiale-umede-zero-infundare-motor-reductor": [
     {
-      "icon": "default",
+      "icon": "speed",
       "benefitTitle": "Mentenanță rapidă a sitei",
       "benefitValue": "Înlocuire rapidă"
+    },
+    {
+      "icon": "dimensions",
+      "benefitTitle": "Zero înfundare la material umed",
+      "benefitValue": "Avantaj față de site vibrante"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Apertură configurabilă pe fracție",
+      "benefitValue": "Blocare rapidă, fără scule"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Pentru cărbune, minereu, agregat",
+      "benefitValue": "Nisip, pietriș, zguri, granule"
     }
   ],
   "separator-magnetic-fier-reciclare-feros-purificare-uscat-umed-cobalt-nichel": [
     {
-      "icon": "default",
+      "icon": "protection",
       "benefitTitle": "Protecție în prima etapă",
       "benefitValue": "Prima etapă de separare"
     },
@@ -3298,14 +4005,24 @@
   ],
   "banda-transportoare-reciclare-industriala-cauciuc-pvc-placi-metal-customizabila": [
     {
-      "icon": "default",
+      "icon": "conveyor",
       "benefitTitle": "Lățime configurabilă pe linie",
       "benefitValue": "Lățime customizabilă"
     },
     {
-      "icon": "material",
+      "icon": "config",
       "benefitTitle": "Transportă orice tip deșeu",
       "benefitValue": "Plastic, metal, DEEE, minereu"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "3 tipuri de curea",
+      "benefitValue": "Cauciuc, PVC sau plăci metalice"
+    },
+    {
+      "icon": "control",
+      "benefitTitle": "Viteză reglabilă cu variator",
+      "benefitValue": "Sincronizare cu linia"
     }
   ],
   "colector-praf-puls-reciclare-auto-curatare-impuls-recuperare-material-conformitate": [
@@ -3318,6 +4035,16 @@
       "icon": "control",
       "benefitTitle": "Curățare automată programabilă",
       "benefitValue": "Timer sau senzor presiune"
+    },
+    {
+      "icon": "tools",
+      "benefitTitle": "Curățare fără oprirea aspirației",
+      "benefitValue": "Pulse cu aer comprimat"
+    },
+    {
+      "icon": "material",
+      "benefitTitle": "Recuperează pulberi valorificabile",
+      "benefitValue": "Aluminiu, cupru, oțel, plastic"
     }
   ]
 }

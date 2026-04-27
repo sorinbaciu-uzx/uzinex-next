@@ -35,7 +35,25 @@ export type SpecIcon =
   | "rpm"
   | "precision"
   | "protection"
-  | "default";
+  | "default"
+  // Industrial-specific (adăugate pentru iconuri tematice per produs)
+  | "lathe"
+  | "cnc"
+  | "shredder"
+  | "crusher"
+  | "excavator"
+  | "bucket"
+  | "shears"
+  | "claw"
+  | "pipe"
+  | "camera"
+  | "laser"
+  | "wood"
+  | "pump"
+  | "conveyor"
+  | "wrap"
+  | "label"
+  | "box";
 
 export type ProductSpec = {
   icon: SpecIcon;

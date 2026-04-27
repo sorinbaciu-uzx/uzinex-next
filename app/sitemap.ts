@@ -51,18 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 1.0,
     },
-    {
-      url: `${BASE}/en`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-      alternates: {
-        languages: {
-          ro: BASE,
-          en: `${BASE}/en`,
-        },
-      },
-    },
   ];
 
   // ─── TOP-LEVEL STATIC PAGES ───

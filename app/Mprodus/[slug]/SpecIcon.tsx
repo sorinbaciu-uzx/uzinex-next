@@ -181,7 +181,7 @@ const Default = (p: Props) => (
 
 // ═══════ MAIN COMPONENT ═══════
 
-const iconMap: Record<SpecIconKey, (p: Props) => React.JSX.Element> = {
+const iconMap: Partial<Record<SpecIconKey, (p: Props) => React.JSX.Element>> = {
   dimensions: Dimensions,
   weight: Weight,
   power: Power,

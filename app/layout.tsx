@@ -73,15 +73,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
-    languages: {
-      "ro-RO": "/",
-      "en-US": "/en",
-    },
   },
   openGraph: {
     type: "website",
     locale: "ro_RO",
-    alternateLocale: ["en_US"],
     url: SITE_URL,
     siteName: "Uzinex",
     title: "Uzinex — Tehnologie industrială performantă și servicii superioare",

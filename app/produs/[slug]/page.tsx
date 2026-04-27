@@ -12,6 +12,10 @@ import { VideoSection } from "./VideoSection";
 import { ApplicationsGrid } from "./ApplicationsGrid";
 import { ExpandableDescription } from "./ExpandableDescription";
 import { SpecsSection } from "./SpecsSection";
+import { ProductLeadForm } from "./ProductLeadForm";
+import productApplicationsData from "@/data/product-applications.json";
+import type { ApplicationAnimationId } from "@/components/product-applications";
+import type { Application } from "./ApplicationsGrid";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 import {
@@ -266,7 +270,19 @@ export default async function Page({ params }: Props) {
     ? firstYoutube.videoId
     : undefined;
 
-  const applications = DEFAULT_APPLICATIONS(p.image, p.gallery || []);
+  const applicationsMap = productApplicationsData as Record<
+    string,
+    Array<{ title: string; caption?: string; animation?: string; image?: string }>
+  >;
+  const customApplications = applicationsMap[p.slug];
+  const applications: Application[] = customApplications
+    ? customApplications.map((a) => ({
+        title: a.title,
+        caption: a.caption,
+        animation: a.animation as ApplicationAnimationId | undefined,
+        image: a.image,
+      }))
+    : DEFAULT_APPLICATIONS(p.image, p.gallery || []);
 
   const effBlocksForSpecs = effectiveBlocks(p, override);
   const specRows = specsFromBlocks(effBlocksForSpecs);
@@ -292,7 +308,7 @@ export default async function Page({ params }: Props) {
           <div className="mx-auto grid max-w-[1420px] grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
             {/* GALERIE */}
             <div className="lg:col-span-5 h-full">
-              <div className="h-full border border-ink-200 bg-white">
+              <div className="h-full bg-white">
                 <ProductGallery
                   mainImage={p.image}
                   mainAlt={p.imageAlt || p.name}
@@ -322,12 +338,6 @@ export default async function Page({ params }: Props) {
                   <span className="font-mono">{p.sku}</span>
                 </div>
 
-                {p.shortSpec && (
-                  <p className="mt-5 text-[13px] leading-7 text-ink-600 max-w-[95%]">
-                    {p.shortSpec}
-                  </p>
-                )}
-
                 {(() => {
                   type BenefitRow = {
                     icon: SpecIconType;
@@ -346,21 +356,32 @@ export default async function Page({ params }: Props) {
 
                   const benefits = benefitsMap[p.slug];
 
-                  const heroSpecs: BenefitRow[] =
-                    benefits && benefits.length > 0
-                      ? benefits.slice(0, 4).map((b) => ({
-                          icon: b.icon as SpecIconType,
-                          title: b.benefitTitle,
-                          value: b.benefitValue,
-                        }))
-                      : (p.specs && p.specs.length > 0
-                          ? p.specs.slice(0, 4)
-                          : extractTopSpecs(p.descriptionBlocks, 4)
-                        ).map((s) => ({
-                          icon: s.icon,
-                          title: s.title,
-                          value: s.value,
-                        }));
+                  const fromBenefits: BenefitRow[] = (benefits ?? []).map((b) => ({
+                    icon: b.icon as SpecIconType,
+                    title: b.benefitTitle,
+                    value: b.benefitValue,
+                  }));
+
+                  const fromSpecs: BenefitRow[] = (p.specs ?? []).map((s) => ({
+                    icon: s.icon,
+                    title: s.title,
+                    value: s.value,
+                  }));
+
+                  const fromExtracted: BenefitRow[] = extractTopSpecs(
+                    p.descriptionBlocks,
+                    8,
+                  ).map((s) => ({ icon: s.icon, title: s.title, value: s.value }));
+
+                  const seen = new Set<string>();
+                  const heroSpecs: BenefitRow[] = [];
+                  for (const row of [...fromBenefits, ...fromSpecs, ...fromExtracted]) {
+                    if (heroSpecs.length >= 4) break;
+                    const key = row.title.trim().toLowerCase();
+                    if (seen.has(key)) continue;
+                    seen.add(key);
+                    heroSpecs.push(row);
+                  }
 
                   if (heroSpecs.length === 0) return null;
 
@@ -440,121 +461,59 @@ export default async function Page({ params }: Props) {
 
             {/* COLOANA 3 — PREȚ + FORMULAR */}
             <aside className="lg:col-span-3 h-full">
-              <div className="h-full border border-ink-200 bg-white p-6 lg:p-7 shadow-sm">
+              <div className="h-full bg-white p-6 lg:p-7">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-5">
                   — Opțiuni comandă
                 </div>
 
-                <div className="text-[12px] uppercase tracking-[0.16em] text-ink-500 font-semibold">
-                  Preț de la
-                </div>
+                {p.priceFrom && p.priceFrom > 0 ? (
+                  <>
+                    <div className="text-[12px] uppercase tracking-[0.16em] text-ink-500 font-semibold">
+                      Preț de la
+                    </div>
 
-                <div className="mt-2 flex items-end gap-2 flex-wrap">
-                  <span className="text-[36px] lg:text-[42px] leading-none font-semibold text-[#111827] tracking-[-0.04em]">
-                    {p.priceFrom && p.priceFrom > 0
-                      ? formatPrice(p.priceFrom, p.priceCurrency || "EUR")
-                      : "€Pret"}
-                  </span>
+                    <div className="mt-2 flex items-end gap-2 flex-wrap">
+                      <span className="text-[36px] lg:text-[42px] leading-none font-semibold text-[#111827] tracking-[-0.04em]">
+                        {formatPrice(p.priceFrom, p.priceCurrency || "EUR")}
+                      </span>
 
-                  {p.priceFrom && p.priceFrom > 0 && (
-                    <span className="pb-1 text-[14px] font-semibold text-ink-500">
-                      {p.priceIncludesVAT ? "TVA inclus" : "+ TVA"}
-                    </span>
-                  )}
-                </div>
+                      <span className="pb-1 text-[14px] font-semibold text-ink-500">
+                        {p.priceIncludesVAT ? "TVA inclus" : "+ TVA"}
+                      </span>
+                    </div>
 
-                {bnr && (
-                  <div className="mt-4 text-[13px] mono font-bold text-[#015CA8]">
-                    1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei
-                  </div>
-                )}
+                    {bnr && (
+                      <div className="mt-4 text-[13px] mono font-bold text-[#015CA8]">
+                        1 Euro = {bnr.rate.toFixed(4).replace(".", ",")} lei
+                      </div>
+                    )}
 
-                <div className="mt-4 flex items-start gap-2 text-[13px] leading-relaxed text-ink-500">
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    className="mt-1 shrink-0"
-                  >
-                    <circle cx="6" cy="6" r="5" />
-                    <path d="M6 3.5v3M6 8v.5" strokeLinecap="round" />
-                  </svg>
+                    <div className="mt-4 flex items-start gap-2 text-[13px] leading-relaxed text-ink-500">
+                      <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        className="mt-1 shrink-0"
+                      >
+                        <circle cx="6" cy="6" r="5" />
+                        <path d="M6 3.5v3M6 8v.5" strokeLinecap="round" />
+                      </svg>
 
-                  <span>{p.priceNote || "Preț orientativ"}</span>
-                </div>
+                      <span>{p.priceNote || "Preț orientativ"}</span>
+                    </div>
 
-                <div className="my-5 h-px bg-ink-200" />
+                    <div className="my-5 h-px bg-ink-200" />
+                  </>
+                ) : null}
 
                 <p className="text-[13px] leading-relaxed text-ink-600 mb-4">
                   Cere o ofertă completând formularul.
                 </p>
 
-                <form className="space-y-3">
-                  <input type="hidden" name="productName" value={p.name} />
-                  <input type="hidden" name="productSku" value={p.sku} />
-
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#111827] mb-1.5">
-                      Nume și prenume *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      placeholder="Nume complet"
-                      className="w-full border border-ink-200 px-3 py-2.5 text-[13px] outline-none focus:border-uzx-orange"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#111827] mb-1.5">
-                      Telefon *
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder="07xx xxx xxx"
-                      className="w-full border border-ink-200 px-3 py-2.5 text-[13px] outline-none focus:border-uzx-orange"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#111827] mb-1.5">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="email@companie.ro"
-                      className="w-full border border-ink-200 px-3 py-2.5 text-[13px] outline-none focus:border-uzx-orange"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[12px] font-semibold text-[#111827] mb-1.5">
-                      CUI / Companie
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Ex: Uzinex S.R.L."
-                      className="w-full border border-ink-200 px-3 py-2.5 text-[13px] outline-none focus:border-uzx-orange"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="mt-2 flex w-full items-center justify-center gap-2 bg-uzx-orange px-4 py-3 text-[14px] font-bold text-white hover:bg-[#015CA8] transition"
-                  >
-                    Solicită ofertă
-                    <span>➤</span>
-                  </button>
-                </form>
+                <ProductLeadForm productName={p.name} productSku={p.sku} productSlug={p.slug} />
               </div>
             </aside>
           </div>
@@ -1067,9 +1026,9 @@ export default async function Page({ params }: Props) {
 
             <div className="lg:col-span-5">
               <p className="text-white/65 text-[13px] leading-relaxed max-w-md lg:ml-auto">
-                Peste 15 ani de experiență în furnizarea de echipamente
-                industriale, cu o rețea națională de service și o echipă de
-                ingineri dedicați.
+                Soluții industriale alese pentru performanță, 
+                fiabilitate și integrare
+                eficientă în fluxul de lucru.
               </p>
             </div>
           </div>
