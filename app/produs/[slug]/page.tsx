@@ -11,6 +11,7 @@ import { BenefitsStrip } from "./BenefitsStrip";
 import { VideoSection } from "./VideoSection";
 import { ApplicationsGrid } from "./ApplicationsGrid";
 import { ExpandableDescription } from "./ExpandableDescription";
+import { SpecsSection } from "./SpecsSection";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 import {
@@ -99,6 +100,19 @@ function effectiveBlocks(
   return base;
 }
 
+function specsFromBlocks(blocks: DescriptionBlock[]): [string, string][] {
+  for (const b of blocks) {
+    if (b.type === "table" && b.rows.length > 1) {
+      return b.rows
+        .slice(1)
+        .filter((r) => r.length >= 2)
+        .map((r) => [r[0], r[1]] as [string, string]);
+    }
+  }
+
+  return [];
+}
+
 const UNIVERSAL_FAQ = [
   {
     q: "Este inclus transportul?",
@@ -136,25 +150,6 @@ const DEFAULT_VIDEO_BULLETS = [
   {
     title: "Configurație adaptabilă",
     body: "Echipamentul poate fi ales în funcție de aplicație, material și volum de lucru.",
-  },
-];
-
-const FEATURES = [
-  {
-    title: "Calitate industrială",
-    body: "Componente premium și standarde europene de fabricație.",
-  },
-  {
-    title: "Suport tehnic",
-    body: "Echipă de ingineri pentru consultanță și mentenanță.",
-  },
-  {
-    title: "Eligibil SEAP",
-    body: "Disponibil pentru achiziții publice prin platformele guvernamentale.",
-  },
-  {
-    title: "Garanție extinsă",
-    body: "60 luni standard, cu opțiuni de extindere prin contract.",
   },
 ];
 
@@ -267,11 +262,14 @@ export default async function Page({ params }: Props) {
   const firstYoutube = (p.gallery || []).find((g) => g.type === "youtube");
 
   const videoId =
-    firstYoutube && firstYoutube.type === "youtube"
-      ? firstYoutube.videoId
-      : undefined;
+  firstYoutube && firstYoutube.type === "youtube"
+    ? firstYoutube.videoId
+    : undefined;
 
   const applications = DEFAULT_APPLICATIONS(p.image, p.gallery || []);
+
+  const effBlocksForSpecs = effectiveBlocks(p, override);
+  const specRows = specsFromBlocks(effBlocksForSpecs);
   return (
     <div className="bg-white">
       <script
@@ -574,6 +572,15 @@ export default async function Page({ params }: Props) {
         videoId={videoId}
         intro={`Descoperă precizia și viteza de prelucrare pentru ${p.name} în aplicații reale de producție.`}
         bullets={DEFAULT_VIDEO_BULLETS}
+      />
+
+      {/* SPECIFICAȚII */}
+      <SpecsSection
+        rows={specRows}
+        ctaTitle="Ai nevoie de configurație specifică?"
+        ctaSubtitle="Specialiștii noștri te ajută să alegi varianta potrivită pentru aplicația ta."
+        productName={p.name}
+        productSku={p.sku}
       />
 
       {/* DESCRIERE */}
@@ -941,112 +948,73 @@ export default async function Page({ params }: Props) {
         );
       })()}
 
-      {/* FAQ */}
-      {(() => {
-        const perProductFaqs = (
-          (faqsData as Record<string, ProductFaqEntry[]>)[p.slug] ?? []
-        ).filter((x) => x && x.q && x.a);
+      {/* FAQ COMPACT */}
+{(() => {
+  const perProductFaqs = (
+    (faqsData as Record<string, ProductFaqEntry[]>)[p.slug] ?? []
+  ).filter((x) => x && x.q && x.a);
 
-        const seenQuestions = new Set<string>(
-          perProductFaqs.map((x) => x.q.toLowerCase().trim())
-        );
+  const seenQuestions = new Set<string>(
+    perProductFaqs.map((x) => x.q.toLowerCase().trim())
+  );
 
-        const combinedFaqs = [
-          ...perProductFaqs,
-          ...UNIVERSAL_FAQ.filter(
-            (x) => !seenQuestions.has(x.q.toLowerCase().trim())
-          ),
-        ];
+  const combinedFaqs = [
+    ...perProductFaqs,
+    ...UNIVERSAL_FAQ.filter(
+      (x) => !seenQuestions.has(x.q.toLowerCase().trim())
+    ),
+  ];
 
-        return (
-          <section className="py-14 lg:py-20">
-            <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
-              <div className="lg:col-span-4">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                  — Întrebări frecvente
-                </div>
-
-                <h2
-                  className="serif text-2xl lg:text-3xl text-ink-900 leading-tight"
-                  style={{ letterSpacing: "-0.03em" }}
-                >
-                  Tot ce vrei să știi înainte de cumpărare.
-                </h2>
-
-                <a
-                  href="/contact"
-                  className="mt-5 inline-flex items-center gap-2 text-[13px] py-2.5 px-5 bg-uzx-blue hover:bg-uzx-blue2 text-white transition"
-                >
-                  Discută cu un inginer →
-                </a>
-              </div>
-
-              <div className="lg:col-span-8">
-                <div className="border border-ink-100 bg-white shadow-sm overflow-hidden divide-y divide-ink-100">
-                  {combinedFaqs.map((item, i) => (
-                    <details key={`${i}-${item.q}`} className="group">
-                      <summary className="cursor-pointer list-none px-6 py-4 flex items-center justify-between gap-4 hover:bg-ink-50/50 transition">
-                        <span className="serif text-sm lg:text-base text-ink-900 font-medium">
-                          {item.q}
-                        </span>
-
-                        <span className="text-uzx-orange text-lg shrink-0 transition group-open:rotate-45">
-                          +
-                        </span>
-                      </summary>
-
-                      <div className="px-6 pb-4 text-[13px] text-ink-500 leading-relaxed">
-                        {item.a}
-                      </div>
-                    </details>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-        );
-      })()}
-
-      {/* FEATURES */}
-      <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
-        <div className="container-x">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-            — Caracteristici & beneficii
-          </div>
-
-          <h2
-            className="serif text-2xl lg:text-3xl text-ink-900 leading-tight max-w-2xl"
-            style={{ letterSpacing: "-0.03em" }}
-          >
-            Construit pentru fiabilitate și performanță.
+  return (
+    <section className="py-8 lg:py-10 bg-white">
+      <div className="container-x">
+        <div className="flex items-center gap-3 mb-4">
+          <h2 className="text-[24px] leading-tight font-bold text-[#0b2b66]">
+            Întrebări frecvente
           </h2>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {FEATURES.map((f) => (
-              <div
-                key={f.title}
-                className="group relative bg-white border border-ink-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition p-6 overflow-hidden"
-              >
-                <div className="absolute inset-x-0 top-0 h-1 bg-uzx-blue" />
-
-                <div className="w-10 h-10 rounded-full bg-uzx-orange/10 border border-uzx-orange/30 flex items-center justify-center text-uzx-orange font-semibold mt-2">
-                  ✓
-                </div>
-
-                <h3 className="serif text-base text-ink-900 mt-4 leading-snug">
-                  {f.title}
-                </h3>
-
-                <div className="w-10 h-px bg-uzx-orange mt-2" />
-
-                <p className="mt-2.5 text-[12px] text-ink-500 leading-relaxed">
-                  {f.body}
-                </p>
-              </div>
-            ))}
-          </div>
+          <span className="h-px w-10 bg-uzx-orange" />
         </div>
-      </section>
+
+        <div className="border border-ink-200 bg-white divide-y divide-ink-100">
+          {combinedFaqs.map((item, i) => (
+            <details key={`${i}-${item.q}`} className="group">
+              <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between gap-4 hover:bg-ink-50 transition">
+                <span className="text-[14px] font-bold text-[#0b2b66]">
+                  {item.q}
+                </span>
+
+                <span className="text-uzx-orange text-xl leading-none transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+
+              <div className="px-4 pb-4 text-[13px] leading-relaxed text-ink-600">
+                {item.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+})()}
+
+      
+      {/* PRODUSE SIMILARE */}
+      {similar.length > 0 && (
+        <section className="py-8 lg:py-10 bg-white border-t border-ink-100">
+          <div className="container-x">
+            <div className="flex items-center gap-3 mb-5">
+              <h2 className="text-[24px] leading-tight font-bold text-[#0b2b66]">
+                Produse similare
+              </h2>
+              <span className="h-px w-10 bg-uzx-orange" />
+            </div>
+
+            <SimilarCarousel items={similar} />
+          </div>
+        </section>
+      )}
 
       {/* WHY UZINEX */}
       <section
@@ -1158,20 +1126,7 @@ export default async function Page({ params }: Props) {
         </div>
       </section>
 
-      {/* PRODUSE SIMILARE */}
-      {similar.length > 0 && (
-        <section className="py-14 lg:py-20 bg-ink-50/60 border-y border-ink-100">
-          <div className="container-x">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-              — Soluții tehnice similare
-            </div>
-
-            <div className="bg-white border border-ink-100 shadow-xl shadow-ink-900/5 px-6 lg:px-14 py-10 lg:py-12 mt-4">
-              <SimilarCarousel items={similar} />
-            </div>
-          </div>
-        </section>
-      )}
+      
 
       <Footer />
     </div>

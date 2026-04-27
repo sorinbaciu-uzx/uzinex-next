@@ -14,33 +14,50 @@ export function SimilarCarousel({ items }: Props) {
   useEffect(() => {
     const compute = () => {
       const w = window.innerWidth;
+
       if (w <= 640) setVisible(1);
       else if (w <= 1024) setVisible(2);
       else setVisible(3);
     };
+
     compute();
     window.addEventListener("resize", compute);
+
     return () => window.removeEventListener("resize", compute);
   }, []);
 
   useEffect(() => {
     setPage(0);
-  }, [visible]);
+  }, [visible, items.length]);
 
   const total = items.length;
-  const pages = Math.max(1, Math.ceil(total / visible));
-  const safePage = Math.min(page, pages - 1);
-  const offsetPct = (safePage * 100) / 1; // each "page" = visible items width
 
-  // touch swipe
+  // Dacă nu sunt produse suficiente pentru scroll, nu afișăm săgeți/dots.
+  const maxPage = Math.max(0, total - visible);
+  const pages = maxPage + 1;
+  const safePage = Math.min(page, maxPage);
+  const canSlide = total > visible;
+
+  // Mutăm câte un produs, nu o pagină întreagă, ca să nu apară gol.
+  const offsetPct = safePage * (100 / visible);
+
   const startX = useRef<number | null>(null);
+
   const onTouchStart = (e: React.TouchEvent) => {
     startX.current = e.changedTouches[0].clientX;
   };
+
   const onTouchEnd = (e: React.TouchEvent) => {
-    if (startX.current === null) return;
+    if (startX.current === null || !canSlide) return;
+
     const dx = startX.current - e.changedTouches[0].clientX;
-    if (Math.abs(dx) > 40) setPage((p) => Math.max(0, Math.min(pages - 1, p + (dx > 0 ? 1 : -1))));
+
+    if (Math.abs(dx) > 40) {
+      setPage((p) =>
+        Math.max(0, Math.min(maxPage, p + (dx > 0 ? 1 : -1)))
+      );
+    }
+
     startX.current = null;
   };
 
@@ -48,37 +65,63 @@ export function SimilarCarousel({ items }: Props) {
 
   return (
     <div className="relative">
-      {/* prev/next — minimal arrows */}
-      <button
-        type="button"
-        aria-label="Anterior"
-        onClick={() => setPage((p) => Math.max(0, p - 1))}
-        disabled={safePage === 0}
-        className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-10 items-center justify-center text-ink-500 hover:text-uzx-orange transition disabled:opacity-30 disabled:hover:text-ink-500 disabled:cursor-default"
-        style={{ left: "-40px" }}
-      >
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <button
-        type="button"
-        aria-label="Următor"
-        onClick={() => setPage((p) => Math.min(pages - 1, p + 1))}
-        disabled={safePage >= pages - 1}
-        className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-10 items-center justify-center text-ink-500 hover:text-uzx-orange transition disabled:opacity-30 disabled:hover:text-ink-500 disabled:cursor-default"
-        style={{ right: "-40px" }}
-      >
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
+      {canSlide && (
+        <>
+          <button
+            type="button"
+            aria-label="Anterior"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={safePage === 0}
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-10 items-center justify-center text-ink-500 hover:text-uzx-orange transition disabled:opacity-30 disabled:hover:text-ink-500 disabled:cursor-default"
+            style={{ left: "-40px" }}
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
 
-      <div className="overflow-hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+          <button
+            type="button"
+            aria-label="Următor"
+            onClick={() => setPage((p) => Math.min(maxPage, p + 1))}
+            disabled={safePage >= maxPage}
+            className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-10 items-center justify-center text-ink-500 hover:text-uzx-orange transition disabled:opacity-30 disabled:hover:text-ink-500 disabled:cursor-default"
+            style={{ right: "-40px" }}
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      <div
+        className="overflow-hidden"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         <div
           ref={trackRef}
           className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${offsetPct * 100}%)` }}
+          style={{ transform: `translateX(-${offsetPct}%)` }}
         >
           {items.map((p) => (
             <div
@@ -88,6 +131,7 @@ export function SimilarCarousel({ items }: Props) {
             >
               <article className="group relative bg-white border border-ink-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition flex flex-col overflow-hidden h-full">
                 <div className="absolute inset-x-0 top-0 h-1.5 bg-uzx-blue" />
+
                 <div className="pt-8 px-5 flex items-center justify-center h-44">
                   {p.image ? (
                     <Image
@@ -99,7 +143,16 @@ export function SimilarCarousel({ items }: Props) {
                     />
                   ) : (
                     <div className="flex flex-col items-center justify-center text-ink-300">
-                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        width="40"
+                        height="40"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <rect x="3" y="3" width="18" height="18" rx="2" />
                         <circle cx="9" cy="9" r="2" />
                         <path d="m21 15-5-5L5 21" />
@@ -107,11 +160,14 @@ export function SimilarCarousel({ items }: Props) {
                     </div>
                   )}
                 </div>
+
                 <div className="px-5 pb-5 flex flex-col flex-1">
                   <h3 className="serif text-[15px] text-ink-900 leading-snug font-medium text-center line-clamp-3 min-h-[60px]">
                     {p.name}
                   </h3>
+
                   <div className="w-10 h-px bg-uzx-orange mt-2 mx-auto" />
+
                   <div className="mt-auto pt-5">
                     <a
                       href={`/produs/${p.slug}`}
@@ -127,8 +183,7 @@ export function SimilarCarousel({ items }: Props) {
         </div>
       </div>
 
-      {/* dots */}
-      {pages > 1 && (
+      {canSlide && pages > 1 && (
         <div className="mt-6 flex items-center justify-center gap-2.5">
           {Array.from({ length: pages }).map((_, i) => (
             <button
@@ -137,7 +192,9 @@ export function SimilarCarousel({ items }: Props) {
               aria-label={`Pagina ${i + 1}`}
               onClick={() => setPage(i)}
               className={`w-2.5 h-2.5 transition ${
-                i === safePage ? "bg-ink-600 scale-110" : "bg-ink-300 hover:bg-ink-400"
+                i === safePage
+                  ? "bg-ink-600 scale-110"
+                  : "bg-ink-300 hover:bg-ink-400"
               }`}
             />
           ))}
