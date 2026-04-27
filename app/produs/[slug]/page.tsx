@@ -568,11 +568,13 @@ export default async function Page({ params }: Props) {
       <ApplicationsGrid items={applications} />
 
       {/* VIDEO */}
+      {videoId && (
       <VideoSection
         videoId={videoId}
         intro={`Descoperă precizia și viteza de prelucrare pentru ${p.name} în aplicații reale de producție.`}
         bullets={DEFAULT_VIDEO_BULLETS}
       />
+      )}
 
       {/* SPECIFICAȚII */}
       <SpecsSection

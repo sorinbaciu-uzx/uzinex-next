@@ -16,11 +16,12 @@ import { ImageUploadField } from "./ImageUploadField";
 import { MediaGalleryField } from "./MediaGalleryField";
 import { DescriptionBlocksEditor } from "./DescriptionBlocksEditor";
 import { ProductSpecsEditor } from "./ProductSpecsEditor";
-import type { MediaItem } from "@/lib/media";
+import { parseYouTubeUrl, type MediaItem } from "@/lib/media";
 import type { ProductSpec } from "@/lib/product-specs";
 import { extractTopSpecs } from "@/lib/product-specs";
 
 type Tab = "basic" | "description" | "seo";
+type DescriptionMode = "text" | "code";
 
 export function SEOEditor({
   product,
@@ -35,13 +36,26 @@ export function SEOEditor({
 }) {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("basic");
+  const [descriptionMode, setDescriptionMode] = useState<DescriptionMode>("text");
 
   // Basic fields
   const [name, setName] = useState(product.name);
   const [shortSpec, setShortSpec] = useState(product.shortSpec);
   const [image, setImage] = useState(product.image);
   const [imageAlt, setImageAlt] = useState(product.imageAlt || "");
+
+  const initialYoutube = (product.gallery || []).find(
+  (m) => m.type === "youtube"
+  );
   const [gallery, setGallery] = useState<MediaItem[]>(product.gallery || []);
+  const [hasProductVideo, setHasProductVideo] = useState(Boolean(initialYoutube));
+  const [productVideoUrl, setProductVideoUrl] = useState(
+    initialYoutube && initialYoutube.type === "youtube"
+      ? `https://www.youtube.com/watch?v=${initialYoutube.videoId}`
+      : ""
+  );
+  const [videoError, setVideoError] = useState("");
+
   const [datasheetUrl, setDatasheetUrl] = useState(product.datasheetUrl || "");
   const [category, setCategory] = useState(product.category);
   const [subcategory, setSubcategory] = useState(product.subcategory || "");
@@ -159,6 +173,41 @@ export function SEOEditor({
     return () => window.removeEventListener("keydown", handler);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDirty, status]);
+
+
+  function toggleProductVideo(enabled: boolean) {
+  setHasProductVideo(enabled);
+  setVideoError("");
+
+    if (!enabled) {
+      setProductVideoUrl("");
+      setGallery((prev) => prev.filter((item) => item.type !== "youtube"));
+    }
+  }
+
+  function updateProductVideoUrl(value: string) {
+    setProductVideoUrl(value);
+
+    if (!value.trim()) {
+      setVideoError("");
+      setGallery((prev) => prev.filter((item) => item.type !== "youtube"));
+      return;
+    }
+
+    const videoId = parseYouTubeUrl(value.trim());
+
+    if (!videoId) {
+      setVideoError("URL YouTube invalid. Pune un link de forma youtube.com/watch?v=... sau youtu.be/...");
+      return;
+    }
+
+    setVideoError("");
+
+    setGallery((prev) => [
+      { type: "youtube", videoId },
+      ...prev.filter((item) => item.type !== "youtube"),
+    ]);
+  }
 
   async function save() {
     setStatus("saving");
@@ -379,7 +428,55 @@ export function SEOEditor({
                 onAltChange={setImageAlt}
                 altPlaceholder={`Ex: ${name} — Uzinex (industrial, garantat 60 luni)`}
               />
+          <div className="bg-white border hairline p-5 space-y-4">
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                  Video produs
+                </label>
 
+                <div className="text-xs text-ink-500 mt-1 leading-relaxed">
+                  Activează doar dacă produsul are video. Dacă nu este activat, secțiunea video nu apare pe pagina produsului.
+                </div>
+              </div>
+
+              <label className="flex items-center gap-2 text-sm text-ink-700 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={hasProductVideo}
+                  onChange={(e) => toggleProductVideo(e.target.checked)}
+                  className="w-4 h-4"
+                />
+                <span>Produsul are video</span>
+              </label>
+            </div>
+
+            {hasProductVideo && (
+              <div>
+                <label className="text-[10px] uppercase tracking-wider text-ink-500 font-mono block mb-2">
+                  Link video YouTube
+                </label>
+
+                <input
+                  type="url"
+                  value={productVideoUrl}
+                  onChange={(e) => updateProductVideoUrl(e.target.value)}
+                  placeholder="https://www.youtube.com/watch?v=..."
+                  className="w-full border hairline px-3 py-2 text-sm focus:outline-none focus:border-uzx-blue font-mono"
+                />
+
+                {videoError ? (
+                  <div className="mt-2 text-xs text-red-600 border border-red-200 bg-red-50 p-2">
+                    {videoError}
+                  </div>
+                ) : (
+                  <div className="mt-2 text-xs text-ink-500">
+                    Video-ul va apărea automat în secțiunea video de pe pagina produsului.
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
               <MediaGalleryField value={gallery} onChange={setGallery} />
 
               <ProductSpecsEditor
@@ -623,25 +720,78 @@ export function SEOEditor({
           {tab === "description" && (
             <>
               <div className="bg-white border hairline p-5">
-                <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                  <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
-                    Descriere plată (text complet)
-                  </label>
+                <div className="flex items-center justify-between mb-3 flex-wrap gap-3">
+                  <div>
+                    <label className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono font-semibold">
+                      Descriere plată (text complet)
+                    </label>
+
+                    <div className="text-xs text-ink-500 mt-1">
+                      Editează descrierea în mod text simplu sau HTML/code, similar cu editorul din WordPress.
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-px border hairline bg-ink-100 p-0.5">
+                    <button
+                      type="button"
+                      onClick={() => setDescriptionMode("text")}
+                      className={
+                        "px-3 py-1.5 text-xs font-mono transition " +
+                        (descriptionMode === "text"
+                          ? "bg-white text-[#0b2b66] shadow-sm"
+                          : "text-ink-500 hover:text-[#0b2b66]")
+                      }
+                    >
+                      Text
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setDescriptionMode("code")}
+                      className={
+                        "px-3 py-1.5 text-xs font-mono transition " +
+                        (descriptionMode === "code"
+                          ? "bg-white text-[#0b2b66] shadow-sm"
+                          : "text-ink-500 hover:text-[#0b2b66]")
+                      }
+                    >
+                      Code
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between mb-2">
                   <span className="text-xs font-mono text-ink-500">
                     {analysis.wordCount} cuvinte
                   </span>
+
+                  <span className="text-xs font-mono text-ink-400">
+                    {descriptionMode === "text" ? "Mod text" : "Mod HTML / code"}
+                  </span>
                 </div>
+
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={24}
-                  className="w-full border hairline px-4 py-2.5 text-sm focus:outline-none focus:border-uzx-blue resize-y font-mono leading-relaxed"
-                  spellCheck={false}
+                  className={
+                    "w-full border hairline px-4 py-2.5 text-sm focus:outline-none focus:border-uzx-blue resize-y leading-relaxed " +
+                    (descriptionMode === "code"
+                      ? "font-mono bg-[#0b1020] text-[#e5e7eb]"
+                      : "font-sans bg-white text-ink-800")
+                  }
+                  spellCheck={descriptionMode === "text"}
+                  placeholder={
+                    descriptionMode === "code"
+                      ? `<h2>Titlu secțiune</h2>\n<p>Descriere produs...</p>\n<ul>\n  <li>Avantaj 1</li>\n  <li>Avantaj 2</li>\n</ul>`
+                      : "Scrie descrierea produsului..."
+                  }
                 />
+
                 <div className="text-xs text-ink-500 mt-2">
-                  Textul complet al descrierii — folosit de motorul SEO pentru
-                  scoring și de Google pentru indexare. Editează-l direct sau
-                  folosește AI rewrite.
+                  {descriptionMode === "code"
+                    ? "În modul Code poți scrie HTML. Se salvează în același câmp de descriere, nu modifică blocurile de mai jos."
+                    : "În modul Text editezi descrierea normal, fără formatare HTML vizibilă."}
                 </div>
               </div>
 
