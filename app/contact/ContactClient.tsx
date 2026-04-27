@@ -176,15 +176,6 @@ function ContactAnim() {
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
-/** Map the form subject to a Monday board intent */
-function subjectToIntent(subject: string): "leads" | "service" | "finantare" | "hr" {
-  const s = subject.toLowerCase();
-  if (s.includes("service") || s.includes("mentenan")) return "service";
-  if (s.includes("finan")) return "finantare";
-  if (s.includes("cariere") || s.includes("stagii")) return "hr";
-  return "leads"; // default: oferte echipament, licitații, colaborare, altceva
-}
-
 export default function ContactClient() {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -201,27 +192,24 @@ export default function ContactClient() {
     const message = fd.get("message")?.toString().trim() ?? "";
     const honeypot = fd.get("website")?.toString() ?? ""; // hidden anti-bot field
 
-    const intent = subjectToIntent(subject);
     const sourceUrl = typeof window !== "undefined" ? window.location.href : undefined;
 
     setState("sending");
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/lead", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          intent,
           name,
           email,
           phone,
           company,
-          message,
           subject,
+          message,
           sourceUrl,
           honeypot,
-          extra: intent === "leads" ? { tipCerere: subject } : {},
         }),
       });
       const json = await res.json();
@@ -229,7 +217,7 @@ export default function ContactClient() {
         setState("success");
         form.reset();
         // Fire conversion events (GA4, Meta Pixel, LinkedIn) — no-op if pixels not set
-        trackLead(intent);
+        trackLead("leads");
       } else {
         throw new Error(json.error ?? "Submit failed");
       }
