@@ -14,7 +14,7 @@ export function LegalPage({
 }) {
   return (
     <>
-      <Header />
+      <Header solid />
       <main className="bg-white border-b hairline">
         <div className="container-x py-16 lg:py-24 max-w-4xl mx-auto">
           <a
