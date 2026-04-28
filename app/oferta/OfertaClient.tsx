@@ -81,6 +81,7 @@ export function OfertaClient() {
     const email = fd.get("email")?.toString().trim() ?? "";
     const mesaj = fd.get("mesaj")?.toString().trim() ?? "";
     const seap = fd.get("seap") === "on";
+    const leasing = fd.get("leasing") === "on";
     const honeypot = fd.get("website")?.toString() ?? "";
 
     if (items.length === 0) {
@@ -99,6 +100,7 @@ export function OfertaClient() {
       `═══ TOTAL: ${items.reduce((s, i) => s + i.qty, 0)} buc · ${items.length} articole ═══`,
       "",
       seap ? "★ Solicitare publicare în SEAP / SICAP: DA" : "",
+      leasing ? "★ Solicită finanțare în rate / leasing: DA" : "",
       "",
       mesaj ? "═══ DETALII SUPLIMENTARE ═══" : "",
       mesaj,
@@ -120,11 +122,16 @@ export function OfertaClient() {
           phone: telefon,
           company: firma,
           message: mesaj,
-          subject: seap ? "Oferta echipament + SEAP/SICAP" : "Oferta echipament",
+          subject: [
+            "Oferta echipament",
+            seap && "SEAP/SICAP",
+            leasing && "LEASING",
+          ].filter(Boolean).join(" + "),
           sourceUrl: typeof window !== "undefined" ? window.location.href : undefined,
           honeypot,
           extra: {
             tipCerere: seap ? "Licitatie SEAP/SICAP" : "Oferta echipament",
+            leasing,
             cui,
             products: items.map((it) => {
               const p = PRODUCTS.find((x) => x.sku === it.sku);
@@ -403,6 +410,20 @@ export function OfertaClient() {
                       <span className="text-[11px] text-ink-700 leading-tight">
                         Vrei să publici acest produs și în{" "}
                         <span className="text-uzx-blue font-semibold">SEAP / SICAP</span>?
+                      </span>
+                    </label>
+                  </div>
+
+                  <div className="sm:col-span-2 bg-uzx-orange/5 border border-uzx-orange/20 px-3 py-1.5">
+                    <label className="flex items-center gap-2.5 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        name="leasing"
+                        className="w-3.5 h-3.5 accent-uzx-orange cursor-pointer"
+                      />
+                      <span className="text-[11px] text-ink-700 leading-tight">
+                        Vrei să achiziționezi în{" "}
+                        <span className="text-uzx-orange font-semibold">rate sau leasing</span>?
                       </span>
                     </label>
                   </div>

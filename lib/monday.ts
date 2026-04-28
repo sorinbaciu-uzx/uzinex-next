@@ -50,6 +50,10 @@ export type LeadInput = {
     universitate?: string;
     linkedin?: string;
     tipCerere?: string;
+    /** True dacă utilizatorul a bifat "vreau leasing / rate" pe pagina /oferta.
+        Pana avem o coloana dedicata in Monday, mesajul e marcat clar in subject
+        + corp si o coloana noua poate fi adaugata ulterior fara a strica nimic. */
+    leasing?: boolean;
     /** Identifies which form on the site sent the lead (used by email notification label) */
     formSource?: "contact" | "produs" | string;
     /** Products in the quote cart — used by `leads` intent to build the Produs column */
@@ -165,7 +169,14 @@ function buildColumnValues(input: LeadInput): Record<string, unknown> {
     if (input.phone) base[c.phone] = { phone: input.phone, countryShortName: "RO" };
     // SEAP derived from tipCerere (se poate extinde cu un flag dedicat mai tarziu)
     base[c.seap] = input.extra?.tipCerere === "Licitatie SEAP/SICAP" ? "Da" : "Nu";
-    if (input.message) base[c.message] = safe(input.message);
+    // Leasing flag — pana avem coloana dedicata, marcam in mesaj la inceput.
+    // Astfel echipa de sales vede direct in lista de leads daca lead-ul vrea
+    // finantare in rate, fara sa deschida cardul.
+    const leasingPrefix = input.extra?.leasing
+      ? "★ FINANȚARE LEASING / RATE: DA\n\n"
+      : "";
+    const fullMessage = leasingPrefix + (input.message ?? "");
+    if (fullMessage) base[c.message] = safe(fullMessage);
     // ANAF enrichment — populated server-side in /api/lead when CUI is present
     const anaf = input.extra?.anaf;
     if (anaf) {
