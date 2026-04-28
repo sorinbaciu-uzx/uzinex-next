@@ -26,6 +26,10 @@ import {
   CASE_STUDIES_HOME_DEFAULT,
   type CaseStudiesHomeData,
 } from "@/components/CaseStudies";
+import {
+  TestimonialMarquee,
+  type TestimonialsData,
+} from "@/components/TestimonialMarquee";
 import { getContents } from "@/lib/content";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
@@ -233,16 +237,24 @@ export default async function Page({ params }: Props) {
       : null;
 
   // Content blocks comune cu home — afișate și pe produs înainte de "Soluții similare":
-  //   • video_gallery → secțiunea "Uzinex la TV"
+  //   • video_gallery   → secțiunea "Uzinex la TV"
   //   • case_studies_home → secțiunea "Studii de caz"
+  //   • testimonials    → secțiunea "Spun ei, nu noi" (animată) — după similare
   // Pe pagina de produs ascundem numerotarea "01 /" / "02 /" specifică home-ului
   // (eyebrow-ul e folosit ca pas de capitol, ceea ce nu se aplică în context produs).
-  const homeBlocks = await getContents(["video_gallery", "case_studies_home"]);
+  const homeBlocks = await getContents([
+    "video_gallery",
+    "case_studies_home",
+    "testimonials",
+  ]);
   const rawVideoGallery = homeBlocks.video_gallery as
     | VideoGalleryData
     | undefined;
   const rawCaseStudies = homeBlocks.case_studies_home as
     | CaseStudiesHomeData
+    | undefined;
+  const rawTestimonials = homeBlocks.testimonials as
+    | TestimonialsData
     | undefined;
   const stripChapterPrefix = (s?: string) =>
     (s ?? "").replace(/^\s*\d+\s*\/\s*/, "");
@@ -253,6 +265,11 @@ export default async function Page({ params }: Props) {
     ...(rawCaseStudies ?? CASE_STUDIES_HOME_DEFAULT),
     eyebrow: "Studii de caz",
   };
+  // Stripeăm numerotarea "03 /" și pe testimoniale; restul (titluri, copy, logos
+  // și textele celor 3 coloane care urcă) provine din DB sau fallback hardcoded.
+  const testimonials: TestimonialsData | undefined = rawTestimonials
+    ? { ...rawTestimonials, eyebrow: stripChapterPrefix(rawTestimonials.eyebrow) }
+    : undefined;
 
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
 
@@ -1033,6 +1050,12 @@ export default async function Page({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* SPUN EI, NU NOI — testimoniale animate (3 coloane verticale + logos
+          orizontal). Acelasi content block ca pe home; numerotarea "03 /" e
+          stripuita pe pagina de produs ca sa nu para "capitol" (vezi pickEngineer
+          + stripChapterPrefix mai sus). */}
+      <TestimonialMarquee data={testimonials} />
 
       {/* WHY UZINEX */}
       <section
