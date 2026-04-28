@@ -16,6 +16,8 @@ import { ProductLeadForm } from "./ProductLeadForm";
 import productApplicationsData from "@/data/product-applications.json";
 import type { ApplicationAnimationId } from "@/components/product-applications";
 import type { Application } from "./ApplicationsGrid";
+import { VideoGallery, type VideoGalleryData } from "@/components/VideoGallery";
+import { getContent } from "@/lib/content";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 import {
@@ -220,6 +222,10 @@ export default async function Page({ params }: Props) {
     priceCurrency === "EUR" && p.priceFrom && p.priceFrom > 0
       ? await getBnrEurRate()
       : null;
+
+  // Galerie video "Uzinex la TV" — același content block ca pe home,
+  // afișat și pe produs înainte de "Soluții similare".
+  const videoGallery = await getContent<VideoGalleryData>("video_gallery");
 
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
 
@@ -956,7 +962,10 @@ export default async function Page({ params }: Props) {
   );
 })()}
 
-      
+
+      {/* UZINEX LA TV — galerie video media (TV, târguri, interviuri) */}
+      <VideoGallery data={videoGallery} />
+
       {/* PRODUSE SIMILARE */}
       {similar.length > 0 && (
         <section className="py-8 lg:py-10 bg-white border-t border-ink-100">
@@ -1083,7 +1092,6 @@ export default async function Page({ params }: Props) {
         </div>
       </section>
 
-      
 
       <Footer />
     </div>
