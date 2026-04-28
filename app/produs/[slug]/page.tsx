@@ -489,11 +489,11 @@ export default async function Page({ params }: Props) {
                         >
                           <path d="M7 1v8M3 5l4 4 4-4M1 11h12" />
                         </svg>
-                        Descarcă Specificațiile pentru Caietul de Sarcini
+                        Descarcă fișa tehnică
                       </a>
                     ) : (
                       <span className="inline-flex items-center justify-center border border-ink-200 px-4 py-3 text-[13px] text-ink-400 text-center leading-tight">
-                        Specificații indisponibile
+                        Fișă indisponibilă
                       </span>
                     )}
                   </div>
@@ -945,7 +945,7 @@ export default async function Page({ params }: Props) {
                               >
                                 <path d="M7 1v8M3 5l4 4 4-4M1 11h12" />
                               </svg>
-                              Descarcă Specificațiile pentru Caietul de Sarcini
+                              Descarcă fișa tehnică
                             </a>
                           )}
                         </div>
