@@ -492,13 +492,18 @@ export default async function Page({ params }: Props) {
               </div>
             </div>
 
-            {/* COLOANA 3 — PREȚ + FORMULAR */}
+            {/* COLOANA 3 — PREȚ + FORMULAR (card premium, accent orange-blue) */}
             <aside className="lg:col-span-3 h-full">
-              <div className="h-full bg-white p-6 lg:p-7">
-                <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-5">
-                  — Opțiuni comandă
-                </div>
-
+              <div
+                className="relative overflow-hidden bg-white border border-ink-100 h-full"
+                style={{
+                  boxShadow:
+                    "0 30px 60px -25px rgba(30,107,184,0.25), 0 8px 20px -8px rgba(8,37,69,0.08)",
+                }}
+              >
+                {/* top accent bar — same vocabulary as descriere sidebar */}
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-uzx-blue via-uzx-blue to-uzx-orange" />
+                <div className="relative h-full p-6 lg:p-7">
                 {p.priceFrom && p.priceFrom > 0 ? (
                   <>
                     <div className="text-[12px] uppercase tracking-[0.16em] text-ink-500 font-semibold">
@@ -543,6 +548,7 @@ export default async function Page({ params }: Props) {
                 ) : null}
 
                 <ProductLeadForm productName={p.name} productSku={p.sku} productSlug={p.slug} />
+                </div>
               </div>
             </aside>
           </div>

@@ -162,9 +162,9 @@ export function ProductLeadForm({ productName, productSku, productSlug }: Props)
   return (
     <>
       {/* Header "cine raspunde" — robotel + nume + role + raspuns mediu.
-          Numele si timpul sunt determinist alese din slug → consistent per
-          produs, dar variaza intre produse. Vezi pickEngineer() de mai sus. */}
-      <div className="flex items-center gap-3 mb-4 pb-4 border-b border-ink-100">
+          Layout stacked pe coloana din dreapta avatar-ului → numele complet
+          se vede mereu, fara truncare, indiferent de latimea sidebar-ului. */}
+      <div className="flex items-start gap-3 mb-5 pb-5 border-b border-ink-100">
         <div className="relative shrink-0">
           <RobotAvatar />
           <span
@@ -173,19 +173,16 @@ export function ProductLeadForm({ productName, productSku, productSlug }: Props)
           />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[12px] font-semibold text-ink-900 leading-tight truncate">
+          <div className="text-[13px] font-semibold text-ink-900 leading-tight">
             Răspunde {engineer.name}
           </div>
-          <div className="text-[10px] text-ink-500 mono leading-tight mt-0.5 truncate">
+          <div className="text-[11px] text-ink-500 mono leading-tight mt-1">
             {engineer.role}
           </div>
-        </div>
-        <div className="text-right shrink-0">
-          <div className="text-[10px] text-ink-400 mono uppercase tracking-wider">
-            Răspuns med.
-          </div>
-          <div className="text-[12px] font-bold text-uzx-orange leading-tight mt-0.5">
-            ~{engineer.responseMin} min
+          <div className="mt-2 inline-flex items-center gap-1.5 text-[10px] mono">
+            <span className="w-1 h-1 rounded-full bg-uzx-orange" />
+            <span className="text-ink-400 uppercase tracking-[0.12em]">răsp. mediu</span>
+            <span className="text-uzx-orange font-bold">~{engineer.responseMin} min</span>
           </div>
         </div>
       </div>
