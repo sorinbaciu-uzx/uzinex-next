@@ -13,7 +13,12 @@ export type CaseStudy = {
   youtubeId?: string;
 };
 
-export type CaseStudiesHomeData = { items: CaseStudy[] };
+export type CaseStudiesHomeData = {
+  items: CaseStudy[];
+  /** Eyebrow text — default "01 / Studii de caz". Override pe paginile interne
+      pentru a ascunde numerotarea specifica home-ului. */
+  eyebrow?: string;
+};
 
 const CASES: CaseStudy[] = [
   {
@@ -97,7 +102,7 @@ export function CaseStudies({ data }: { data?: CaseStudiesHomeData | null }) {
       <div className="container-x">
         <div className="text-center mb-8">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-            01 / Studii de caz
+            {data?.eyebrow ?? "01 / Studii de caz"}
           </div>
           <h2
             className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]"

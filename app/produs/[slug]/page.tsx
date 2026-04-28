@@ -16,8 +16,16 @@ import { ProductLeadForm } from "./ProductLeadForm";
 import productApplicationsData from "@/data/product-applications.json";
 import type { ApplicationAnimationId } from "@/components/product-applications";
 import type { Application } from "./ApplicationsGrid";
-import { VideoGallery, type VideoGalleryData } from "@/components/VideoGallery";
-import { CaseStudies, type CaseStudiesHomeData } from "@/components/CaseStudies";
+import {
+  VideoGallery,
+  VIDEO_GALLERY_DEFAULT,
+  type VideoGalleryData,
+} from "@/components/VideoGallery";
+import {
+  CaseStudies,
+  CASE_STUDIES_HOME_DEFAULT,
+  type CaseStudiesHomeData,
+} from "@/components/CaseStudies";
 import { getContents } from "@/lib/content";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
@@ -227,11 +235,24 @@ export default async function Page({ params }: Props) {
   // Content blocks comune cu home — afișate și pe produs înainte de "Soluții similare":
   //   • video_gallery → secțiunea "Uzinex la TV"
   //   • case_studies_home → secțiunea "Studii de caz"
+  // Pe pagina de produs ascundem numerotarea "01 /" / "02 /" specifică home-ului
+  // (eyebrow-ul e folosit ca pas de capitol, ceea ce nu se aplică în context produs).
   const homeBlocks = await getContents(["video_gallery", "case_studies_home"]);
-  const videoGallery = homeBlocks.video_gallery as VideoGalleryData | undefined;
-  const caseStudies = homeBlocks.case_studies_home as
+  const rawVideoGallery = homeBlocks.video_gallery as
+    | VideoGalleryData
+    | undefined;
+  const rawCaseStudies = homeBlocks.case_studies_home as
     | CaseStudiesHomeData
     | undefined;
+  const stripChapterPrefix = (s?: string) =>
+    (s ?? "").replace(/^\s*\d+\s*\/\s*/, "");
+  const videoGallery: VideoGalleryData | undefined = rawVideoGallery
+    ? { ...rawVideoGallery, eyebrow: stripChapterPrefix(rawVideoGallery.eyebrow) }
+    : { ...VIDEO_GALLERY_DEFAULT, eyebrow: stripChapterPrefix(VIDEO_GALLERY_DEFAULT.eyebrow) };
+  const caseStudies: CaseStudiesHomeData = {
+    ...(rawCaseStudies ?? CASE_STUDIES_HOME_DEFAULT),
+    eyebrow: "Studii de caz",
+  };
 
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
 
