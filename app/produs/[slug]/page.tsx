@@ -30,6 +30,7 @@ import {
   TestimonialMarquee,
   type TestimonialsData,
 } from "@/components/TestimonialMarquee";
+import { NewsSection, type NewsData } from "@/components/NewsSection";
 import { getContents } from "@/lib/content";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
@@ -237,15 +238,17 @@ export default async function Page({ params }: Props) {
       : null;
 
   // Content blocks comune cu home — afișate și pe produs înainte de "Soluții similare":
-  //   • video_gallery   → secțiunea "Uzinex la TV"
+  //   • video_gallery     → secțiunea "Uzinex la TV"
   //   • case_studies_home → secțiunea "Studii de caz"
-  //   • testimonials    → secțiunea "Spun ei, nu noi" (animată) — după similare
+  //   • testimonials      → secțiunea "Spun ei, nu noi" (animată) — după similare
+  //   • news              → secțiunea "Noutăți & comunicări" — după referințe
   // Pe pagina de produs ascundem numerotarea "01 /" / "02 /" specifică home-ului
   // (eyebrow-ul e folosit ca pas de capitol, ceea ce nu se aplică în context produs).
   const homeBlocks = await getContents([
     "video_gallery",
     "case_studies_home",
     "testimonials",
+    "news",
   ]);
   const rawVideoGallery = homeBlocks.video_gallery as
     | VideoGalleryData
@@ -256,6 +259,7 @@ export default async function Page({ params }: Props) {
   const rawTestimonials = homeBlocks.testimonials as
     | TestimonialsData
     | undefined;
+  const rawNews = homeBlocks.news as NewsData | undefined;
   const stripChapterPrefix = (s?: string) =>
     (s ?? "").replace(/^\s*\d+\s*\/\s*/, "");
   const videoGallery: VideoGalleryData | undefined = rawVideoGallery
@@ -269,6 +273,10 @@ export default async function Page({ params }: Props) {
   // și textele celor 3 coloane care urcă) provine din DB sau fallback hardcoded.
   const testimonials: TestimonialsData | undefined = rawTestimonials
     ? { ...rawTestimonials, eyebrow: stripChapterPrefix(rawTestimonials.eyebrow) }
+    : undefined;
+  // La fel, eliminăm "05 /" din eyebrow-ul Noutăților pe pagina de produs.
+  const news: NewsData | undefined = rawNews
+    ? { ...rawNews, eyebrow: stripChapterPrefix(rawNews.eyebrow) }
     : undefined;
 
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
@@ -1056,6 +1064,11 @@ export default async function Page({ params }: Props) {
           stripuita pe pagina de produs ca sa nu para "capitol" (vezi pickEngineer
           + stripChapterPrefix mai sus). */}
       <TestimonialMarquee data={testimonials} />
+
+      {/* NOUTATI & COMUNICARI — articole / press releases preluate din content
+          block "news" (acelasi ca home-ul). Plasat dupa referinte si inainte de
+          Why Uzinex pentru a inchide cu actualitate inainte de mesajul de brand. */}
+      <NewsSection data={news} />
 
       {/* WHY UZINEX */}
       <section
