@@ -144,7 +144,7 @@ export function VideoGallery({ data }: { data?: VideoGalleryData | null }) {
         {/* Horizontal scroll row (no scrollbar) */}
         <div
           ref={trackRef}
-          className="-mx-6 px-6 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory"
+          className="-mx-6 pl-[11vw] pr-[11vw] sm:px-6 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
@@ -157,7 +157,7 @@ export function VideoGallery({ data }: { data?: VideoGalleryData | null }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group text-left relative overflow-hidden border hairline hover:border-uzx-blue transition shrink-0 w-[78vw] sm:w-[320px] lg:w-[360px] snap-start"
+              className="group text-left relative overflow-hidden border hairline hover:border-uzx-blue transition shrink-0 w-[78vw] sm:w-[320px] lg:w-[360px] snap-center sm:snap-start"
             >
               <div className="aspect-video relative overflow-hidden bg-ink-100">
                 <Image

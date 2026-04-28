@@ -56,7 +56,7 @@ export function Footer() {
             </p>
 
             {/* Compliance badges */}
-            <div className="mt-8 space-y-3">
+            <div className="mt-8 space-y-3 max-w-[260px] sm:max-w-none">
               <a
                 href="https://anpc.ro/ce-este-sal/"
                 target="_blank"
@@ -88,7 +88,7 @@ export function Footer() {
             {/* Payment methods */}
             <div className="mt-6">
               <div className="text-[10px] uppercase tracking-wider text-ink-400 mono mb-3">Plăți securizate</div>
-              <div className="border hairline overflow-hidden">
+              <div className="border hairline overflow-hidden max-w-[260px] sm:max-w-none">
                 <img
                   src="/legal/netopia-payments.webp"
                   alt="Plăți online securizate prin NETOPIA Payments — acceptăm Visa și Mastercard"

@@ -89,7 +89,11 @@ export function ProductLeadForm({ productName, productSku, productSlug }: Props)
   }
 
   return (
-    <form className="space-y-3" onSubmit={handleSubmit}>
+    <>
+      <p className="text-[13px] leading-relaxed text-ink-600 mb-4">
+        Cere o ofertă completând formularul.
+      </p>
+      <form className="space-y-3" onSubmit={handleSubmit}>
       <input type="hidden" name="productName" value={productName} />
       <input type="hidden" name="productSku" value={productSku} />
 
@@ -169,6 +173,7 @@ export function ProductLeadForm({ productName, productSku, productSlug }: Props)
           </>
         )}
       </button>
-    </form>
+      </form>
+    </>
   );
 }

@@ -137,7 +137,7 @@ export function Hero({ data }: { data?: HeroData | null }) {
               {d.ctaLabel}
               <span className="group-hover:translate-x-1 transition">→</span>
             </a>
-            <a href={d.secondaryCtaHref} className="text-sm text-white underline-link hover:text-ink-200">
+            <a href={d.secondaryCtaHref} className="text-base lg:text-sm text-white underline-link hover:text-ink-200">
               {d.secondaryCtaLabel}
             </a>
           </div>

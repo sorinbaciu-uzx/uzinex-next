@@ -50,6 +50,11 @@ body {
 .hairline { border-color: #eeeef0; }
 .num { font-variant-numeric: tabular-nums; }
 
+/* Hide native <details>/<summary> markers (Safari iOS shows a black triangle
+   even when Tailwind's `list-none` is applied — that only covers list-style). */
+summary::-webkit-details-marker { display: none; }
+summary { list-style: none; }
+
 ::selection { background: #0e0e12; color: #fff; }
 
 /* Modern thin scrollbar — used on sidebars, modals, scrollable panels */

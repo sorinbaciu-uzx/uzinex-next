@@ -509,10 +509,6 @@ export default async function Page({ params }: Props) {
                   </>
                 ) : null}
 
-                <p className="text-[13px] leading-relaxed text-ink-600 mb-4">
-                  Cere o ofertă completând formularul.
-                </p>
-
                 <ProductLeadForm productName={p.name} productSku={p.sku} productSlug={p.slug} />
               </div>
             </aside>
@@ -1033,7 +1029,7 @@ export default async function Page({ params }: Props) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               [
                 "01",

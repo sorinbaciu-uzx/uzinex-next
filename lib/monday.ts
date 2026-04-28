@@ -50,6 +50,8 @@ export type LeadInput = {
     universitate?: string;
     linkedin?: string;
     tipCerere?: string;
+    /** Identifies which form on the site sent the lead (used by email notification label) */
+    formSource?: "contact" | "produs" | string;
     /** Products in the quote cart — used by `leads` intent to build the Produs column */
     products?: Array<{ sku?: string; name: string; slug: string; qty?: number }>;
     /** ANAF enrichment — fetched server-side in /api/lead before createLead */

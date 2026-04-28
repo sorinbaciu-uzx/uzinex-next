@@ -176,6 +176,15 @@ function ContactAnim() {
 
 type SubmitState = "idle" | "sending" | "success" | "error";
 
+/** Map the form subject to a Monday board intent */
+function subjectToIntent(subject: string): "leads" | "service" | "finantare" | "hr" {
+  const s = subject.toLowerCase();
+  if (s.includes("service") || s.includes("mentenan")) return "service";
+  if (s.includes("finan")) return "finantare";
+  if (s.includes("cariere") || s.includes("stagii")) return "hr";
+  return "leads"; // default: oferte echipament, licitații, colaborare, altceva
+}
+
 export default function ContactClient() {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -192,24 +201,27 @@ export default function ContactClient() {
     const message = fd.get("message")?.toString().trim() ?? "";
     const honeypot = fd.get("website")?.toString() ?? ""; // hidden anti-bot field
 
+    const intent = subjectToIntent(subject);
     const sourceUrl = typeof window !== "undefined" ? window.location.href : undefined;
 
     setState("sending");
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          intent,
           name,
           email,
           phone,
           company,
-          subject,
           message,
+          subject,
           sourceUrl,
           honeypot,
+          extra: { formSource: "contact", tipCerere: subject },
         }),
       });
       const json = await res.json();
@@ -217,7 +229,7 @@ export default function ContactClient() {
         setState("success");
         form.reset();
         // Fire conversion events (GA4, Meta Pixel, LinkedIn) — no-op if pixels not set
-        trackLead("leads");
+        trackLead(intent);
       } else {
         throw new Error(json.error ?? "Submit failed");
       }
@@ -356,6 +368,19 @@ export default function ContactClient() {
                   inginerul potrivit, nu un robot.
                 </p>
 
+                {state === "success" ? (
+                  <div className="border border-green-300 bg-green-50/60 px-4 py-10 text-center">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-700 text-xl font-bold">
+                      ✓
+                    </div>
+                    <h3 className="mt-4 text-base font-semibold text-ink-900">
+                      Mesajul a fost trimis!
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-600 max-w-sm mx-auto">
+                      Mulțumim pentru completarea formularului de contact! Te contactăm în maxim 24 de ore lucrătoare.
+                    </p>
+                  </div>
+                ) : (
                 <form onSubmit={handleSubmit} className="bg-white border hairline p-6 lg:p-8 space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <FormField label="Nume" name="name" type="text" required placeholder="Andrei Popescu" />
@@ -409,12 +434,6 @@ export default function ContactClient() {
                       {state === "sending" ? "Se trimite..." : "Trimite mesajul"}
                       <span className="group-hover:translate-x-1 transition">→</span>
                     </button>
-                    {state === "success" && (
-                      <span className="text-xs text-uzx-blue mono flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
-                        ✓ Mulțumim! Mesajul tău a ajuns la noi. Te contactăm în 24h.
-                      </span>
-                    )}
                     {state === "error" && (
                       <span className="text-xs text-ink-600 mono">
                         Am deschis clientul de email ca fallback. Finalizează trimiterea acolo.
@@ -422,6 +441,7 @@ export default function ContactClient() {
                     )}
                   </div>
                 </form>
+                )}
               </div>
 
               {/* Departments sidebar */}

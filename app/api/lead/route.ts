@@ -1,6 +1,140 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 import { createLead, type LeadInput } from "@/lib/monday";
 import { fetchAnafData, normalizeCui } from "@/lib/anaf";
+import { SITE_URL } from "@/lib/site";
+
+type ProductRef = { sku?: string; name?: string; slug?: string; qty?: number };
+
+const NOTIFY_TO = process.env.LEAD_NOTIFY_TO || process.env.CONTACT_TO || "sorin.baciu@uzinex.ro";
+const NOTIFY_FROM = process.env.CONTACT_FROM || "Uzinex Site <onboarding@resend.dev>";
+
+function productLink(slug?: string): string | null {
+  if (!slug) return null;
+  return `${SITE_URL}/produs/${slug}`;
+}
+
+const INTENT_LABEL: Record<LeadInput["intent"], string> = {
+  leads: "Ofertă / Lead produs",
+  service: "Service & mentenanță",
+  finantare: "Cerere finanțare",
+  hr: "Cerere HR / Cariere",
+};
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+async function sendLeadEmail(input: LeadInput, mondayId: string): Promise<void> {
+  if (!process.env.RESEND_API_KEY) {
+    console.warn("[lead] RESEND_API_KEY not set — email notification skipped");
+    return;
+  }
+
+  const isContactForm = input.extra?.formSource === "contact";
+  const intentLabel = isContactForm
+    ? "Formular Contact"
+    : INTENT_LABEL[input.intent] ?? input.intent;
+  const subject = input.subject?.trim() || `${intentLabel} de pe site`;
+
+  const products: ProductRef[] = Array.isArray(input.extra?.products)
+    ? (input.extra!.products as ProductRef[])
+    : [];
+  const firstProductName = products[0]?.name?.trim();
+
+  const extraRows: string[] = [];
+  if (input.extra && typeof input.extra === "object") {
+    for (const [k, v] of Object.entries(input.extra)) {
+      if (v == null || v === "") continue;
+      if (k === "products" && Array.isArray(v)) {
+        const rows = (v as ProductRef[])
+          .map((p) => {
+            const sku = p.sku ? escapeHtml(p.sku) : "—";
+            const name = p.name ? escapeHtml(p.name) : "(fără nume)";
+            const qty = p.qty && p.qty > 1 ? ` × ${p.qty}` : "";
+            const link = productLink(p.slug);
+            const namePart = link
+              ? `<a href="${escapeHtml(link)}" style="color:#1e6bb8;">${name}</a>`
+              : name;
+            return `<div style="padding:4px 0;"><span style="font-family:monospace;color:#555;">${sku}</span> — ${namePart}${qty}</div>`;
+          })
+          .join("");
+        extraRows.push(
+          `<tr><td style="padding:6px 0;color:#888;vertical-align:top;">Produse</td><td style="padding:6px 0;font-size:13px;">${rows}</td></tr>`
+        );
+        continue;
+      }
+      const value = typeof v === "object" ? JSON.stringify(v) : String(v);
+      extraRows.push(
+        `<tr><td style="padding:6px 0;color:#888;">${escapeHtml(k)}</td><td style="padding:6px 0;font-size:12px;">${escapeHtml(value)}</td></tr>`
+      );
+    }
+  }
+
+  const html = `
+    <div style="font-family:system-ui,-apple-system,sans-serif;max-width:640px;margin:0 auto;">
+      <div style="background:#082545;color:#fff;padding:20px 24px;">
+        <h1 style="margin:0;font-size:18px;font-weight:700;">Lead nou — ${escapeHtml(intentLabel)}</h1>
+        <p style="margin:4px 0 0;opacity:0.7;font-size:13px;">${escapeHtml(subject)}</p>
+      </div>
+      <div style="padding:24px;background:#fff;border:1px solid #eee;border-top:none;">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;">
+          <tr><td style="padding:6px 0;color:#888;width:130px;">Nume</td><td style="padding:6px 0;font-weight:600;">${escapeHtml(input.name)}</td></tr>
+          <tr><td style="padding:6px 0;color:#888;">Email</td><td style="padding:6px 0;"><a href="mailto:${escapeHtml(input.email)}" style="color:#1e6bb8;">${escapeHtml(input.email)}</a></td></tr>
+          ${input.phone ? `<tr><td style="padding:6px 0;color:#888;">Telefon</td><td style="padding:6px 0;"><a href="tel:${escapeHtml(input.phone)}" style="color:#1e6bb8;">${escapeHtml(input.phone)}</a></td></tr>` : ""}
+          ${input.company ? `<tr><td style="padding:6px 0;color:#888;">Companie</td><td style="padding:6px 0;">${escapeHtml(input.company)}</td></tr>` : ""}
+          ${input.sourceUrl ? `<tr><td style="padding:6px 0;color:#888;">Sursă</td><td style="padding:6px 0;font-size:12px;"><a href="${escapeHtml(input.sourceUrl)}" style="color:#1e6bb8;">${escapeHtml(input.sourceUrl)}</a></td></tr>` : ""}
+          <tr><td style="padding:6px 0;color:#888;">Monday ID</td><td style="padding:6px 0;font-family:monospace;font-size:12px;">${escapeHtml(mondayId)}</td></tr>
+          ${extraRows.join("")}
+        </table>
+        <div style="margin-top:20px;padding:16px;background:#f5f5f7;border-left:3px solid #f5851f;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:8px;">Mesaj</div>
+          <div style="white-space:pre-wrap;font-size:14px;line-height:1.6;">${escapeHtml(input.message)}</div>
+        </div>
+      </div>
+      <div style="padding:12px 24px;background:#f5f5f7;font-size:11px;color:#888;border:1px solid #eee;border-top:none;">
+        Trimis automat de uzinex.ro · răspunde direct la acest email pentru a contacta clientul · item Monday: ${escapeHtml(mondayId)}
+      </div>
+    </div>
+  `;
+
+  const plain = [
+    `Lead nou — ${intentLabel}`,
+    `Subiect: ${subject}`,
+    `─────────────────`,
+    `Nume: ${input.name}`,
+    `Email: ${input.email}`,
+    input.phone ? `Telefon: ${input.phone}` : "",
+    input.company ? `Companie: ${input.company}` : "",
+    input.sourceUrl ? `Sursă: ${input.sourceUrl}` : "",
+    `Monday ID: ${mondayId}`,
+    ``,
+    `Mesaj:`,
+    input.message,
+  ].filter(Boolean).join("\n");
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const result = await resend.emails.send({
+      from: NOTIFY_FROM,
+      to: [NOTIFY_TO],
+      replyTo: input.email,
+      subject: `[${intentLabel}] ${input.name} — ${firstProductName ?? subject}`,
+      html,
+      text: plain,
+    });
+    if (result.error) {
+      console.error("[lead] resend error:", result.error);
+    }
+  } catch (err) {
+    console.error("[lead] email send failed:", err);
+  }
+}
 
 /**
  * POST /api/lead — main entry point for ALL website lead forms / CTAs.
@@ -103,6 +237,9 @@ export async function POST(req: NextRequest) {
     }
 
     const result = await createLead(input);
+
+    // Email notification — non-fatal: lead is already in Monday.
+    await sendLeadEmail(input, result.id);
 
     return NextResponse.json({ ok: true, id: result.id, board: result.board });
   } catch (err) {

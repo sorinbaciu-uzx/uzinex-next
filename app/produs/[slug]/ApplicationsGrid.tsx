@@ -31,13 +31,13 @@ export function ApplicationsGrid({ items }: { items: Application[] }) {
           <span className="h-[3px] w-10 sm:w-14 bg-uzx-orange" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {items.slice(0, 4).map((app) => (
             <article
               key={app.title}
               className="group border border-ink-200 bg-white overflow-hidden transition hover:border-uzx-orange hover:shadow-lg"
             >
-              <div className="relative h-[130px] sm:h-[140px] lg:h-[145px] bg-ink-50 overflow-hidden">
+              <div className="relative h-[100px] sm:h-[140px] lg:h-[145px] bg-ink-50 overflow-hidden">
                 {app.animation ? (
                   <ApplicationAnimation id={app.animation} />
                 ) : app.image ? (
@@ -45,20 +45,20 @@ export function ApplicationsGrid({ items }: { items: Application[] }) {
                     src={app.image}
                     alt={app.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
                 ) : null}
               </div>
 
-              <div className="flex items-center gap-2.5 sm:gap-3 px-3 sm:px-4 py-3 sm:py-4 min-h-[72px] sm:min-h-[80px]">
+              <div className="flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2.5 sm:py-4 min-h-[60px] sm:min-h-[80px]">
                 {app.icon && (
-                  <div className="flex shrink-0 items-center justify-center text-uzx-orange [&_svg]:h-10 [&_svg]:w-10 sm:[&_svg]:h-12 sm:[&_svg]:w-12">
+                  <div className="flex shrink-0 items-center justify-center text-uzx-orange [&_svg]:h-7 [&_svg]:w-7 sm:[&_svg]:h-12 sm:[&_svg]:w-12">
                     <ApplicationIcon id={app.icon} />
                   </div>
                 )}
 
-                <h3 className="text-[15px] sm:text-[16px] lg:text-[17px] leading-snug font-bold text-[#0b2b66]">
+                <h3 className="text-[12px] sm:text-[16px] lg:text-[17px] leading-snug font-bold text-[#0b2b66]">
                   {app.title}
                 </h3>
               </div>

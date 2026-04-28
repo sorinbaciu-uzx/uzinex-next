@@ -170,7 +170,30 @@ export function SimilarCarousel({ items }: Props) {
       </div>
 
       {showControls && (
-        <div className="mt-6 flex items-center justify-center gap-2.5">
+        <div className="md:hidden mt-6 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            aria-label="Anterior"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={safePage === 0}
+            className="w-12 h-12 border border-ink-200 hairline flex items-center justify-center text-ink-700 hover:border-ink-900 hover:text-ink-900 transition text-lg disabled:opacity-30 disabled:cursor-default"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            aria-label="Următor"
+            onClick={() => setPage((p) => Math.min(pages - 1, p + 1))}
+            disabled={safePage >= pages - 1}
+            className="w-12 h-12 border border-ink-200 hairline flex items-center justify-center text-ink-700 hover:border-ink-900 hover:text-ink-900 transition text-lg disabled:opacity-30 disabled:cursor-default"
+          >
+            →
+          </button>
+        </div>
+      )}
+
+      {showControls && (
+        <div className="mt-4 md:mt-6 flex items-center justify-center gap-2.5">
           {Array.from({ length: pages }).map((_, i) => (
             <button
               key={i}
