@@ -979,11 +979,12 @@ export default async function Page({ params }: Props) {
   return (
     <section className="py-8 lg:py-10 bg-white">
       <div className="container-x">
-        <div className="flex items-center gap-3 mb-4">
-          <h2 className="text-[24px] leading-tight font-bold text-[#0b2b66]">
-            Întrebări frecvente
+        <div className="flex items-start gap-3 mb-4 flex-wrap">
+          <h2 className="text-[22px] lg:text-[24px] leading-tight font-bold text-[#0b2b66] max-w-3xl">
+            Întrebări frecvente despre{" "}
+            <span className="text-[#0b2b66]">{p.name}</span>
           </h2>
-          <span className="h-px w-10 bg-uzx-orange" />
+          <span className="h-px w-10 bg-uzx-orange mt-3 lg:mt-3.5 shrink-0" aria-hidden="true" />
         </div>
 
         <div className="border border-ink-200 bg-white divide-y divide-ink-100">
