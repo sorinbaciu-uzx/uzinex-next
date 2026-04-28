@@ -1,41 +1,68 @@
 "use client";
 
 import { motion } from "motion/react";
+import {
+  BlueprintFrame,
+  Dim,
+  NAVY,
+  ORANGE,
+  ANNOT,
+  FILL_NAVY,
+} from "./blueprint";
 
 export function RipperToothAnim() {
   return (
-    <svg viewBox="0 0 280 145" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-      <rect width="280" height="145" fill="#ffffff" />
+    <BlueprintFrame uid="ripper" title="Scarificare teren" code="UZX-RIP">
+      {/* ground line */}
+      <line x1="0" y1="105" x2="280" y2="105" stroke={ANNOT} strokeWidth="0.5" />
 
-      <line x1="0" y1="105" x2="280" y2="105" stroke="#cdd7e4" strokeWidth="1.4" />
-      <pattern id="rockPat" width="10" height="6" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="3" r="0.7" fill="#7a8493" />
-        <circle cx="7" cy="2" r="0.5" fill="#a89077" />
-      </pattern>
-      <rect x="0" y="105" width="280" height="40" fill="url(#rockPat)" opacity="0.5" />
+      {/* ground hatching (rocks below) */}
+      {Array.from({ length: 24 }).map((_, i) => (
+        <line key={i} x1={5 + i * 11} y1="115" x2={11 + i * 11} y2="105" stroke={ANNOT} strokeWidth="0.3" />
+      ))}
 
+      {/* ripper assembly — moves left/right */}
       <motion.g
-        animate={{ x: [-20, 30, -20] }}
+        animate={{ x: [-15, 25, -15] }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <rect x="120" y="50" width="40" height="22" rx="2" fill="#0b2b66" />
-        <polygon points="125,72 135,72 132,100 128,100" fill="#1e6bb8" stroke="#0b2b66" strokeWidth="1.2" />
-        <polygon points="138,72 148,72 145,105 141,105" fill="#1e6bb8" stroke="#0b2b66" strokeWidth="1.2" />
-        <polygon points="151,72 161,72 158,100 154,100" fill="#1e6bb8" stroke="#0b2b66" strokeWidth="1.2" />
-        <line x1="128" y1="100" x2="160" y2="105" stroke="#f5851f" strokeWidth="1" strokeDasharray="2 2" />
+        {/* mounting bracket */}
+        <rect x="120" y="50" width="40" height="22" rx="1" fill={FILL_NAVY} stroke={NAVY} strokeWidth="0.7" />
+        {/* mounting holes */}
+        <circle cx="128" cy="61" r="1.4" fill="none" stroke={NAVY} strokeWidth="0.3" />
+        <circle cx="152" cy="61" r="1.4" fill="none" stroke={NAVY} strokeWidth="0.3" />
+
+        {/* 3 teeth */}
+        {[125, 138, 151].map((x, i) => (
+          <g key={i}>
+            <polygon
+              points={`${x},72 ${x + 10},72 ${x + 7},${100 + (i === 1 ? 5 : 0)} ${x + 3},${100 + (i === 1 ? 5 : 0)}`}
+              fill={FILL_NAVY}
+              stroke={NAVY}
+              strokeWidth="0.7"
+            />
+          </g>
+        ))}
+
+        {/* depth line */}
+        <line x1="128" y1="100" x2="160" y2="105" stroke={ORANGE} strokeWidth="0.5" strokeDasharray="2 1.5" />
       </motion.g>
 
+      {/* fragments breaking from ground */}
       {[80, 100, 200, 220].map((cx, i) => (
         <motion.path
           key={i}
-          d={`M${cx} 110 L${cx + 6} 108 L${cx + 4} 115 L${cx - 2} 113 Z`}
-          fill="#7a8493"
-          animate={{ y: [0, -6, 0], opacity: [0.6, 1, 0.6] }}
+          d={`M${cx} 110 L${cx + 5} 108 L${cx + 4} 113 L${cx - 1} 112 Z`}
+          fill="none"
+          stroke={NAVY}
+          strokeWidth="0.4"
+          animate={{ y: [0, -5, 0], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 1.6, repeat: Infinity, delay: i * 0.3 }}
         />
       ))}
 
-      <text x="140" y="22" textAnchor="middle" fontSize="9" fill="#0b2b66" fontWeight="600" letterSpacing="2" fontFamily="ui-monospace, monospace">SCARIFICARE TEREN</text>
-    </svg>
+      <Dim x1={120} y1={45} x2={160} y2={45} label="L 600" side="top" delay={1.0} offset={6} />
+      <text x="180" y="90" fontSize="3.2" fill={ORANGE} fontFamily="ui-monospace, monospace">H 280 mm</text>
+    </BlueprintFrame>
   );
 }

@@ -1,87 +1,71 @@
 "use client";
 
 import { motion } from "motion/react";
+import {
+  BlueprintFrame,
+  Dim,
+  NAVY,
+  ORANGE,
+  ANNOT,
+  FILL_NAVY,
+} from "./blueprint";
 
 export function PipeInspectionAnim() {
   return (
-    <svg viewBox="0 0 280 145" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#e8eef5" />
-          <stop offset="100%" stopColor="#cdd7e4" />
-        </linearGradient>
-        <radialGradient id="lightCone" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0%" stopColor="#f5851f" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#f5851f" stopOpacity="0" />
-        </radialGradient>
-      </defs>
+    <BlueprintFrame uid="pipe-insp" title="Inspecție conducte" code="UZX-PIP">
+      {/* pipe — section view */}
+      <line x1="0" y1="50" x2="280" y2="50" stroke={NAVY} strokeWidth="0.7" />
+      <line x1="0" y1="95" x2="280" y2="95" stroke={NAVY} strokeWidth="0.7" />
+      <rect x="0" y="50" width="280" height="45" fill={FILL_NAVY} />
 
-      <rect width="280" height="145" fill="#ffffff" />
+      {/* center axis */}
+      <line x1="0" y1="72" x2="280" y2="72" stroke={ANNOT} strokeWidth="0.3" strokeDasharray="6 1.5 1 1.5" />
 
-      <rect x="0" y="50" width="280" height="45" fill="url(#pipeGrad)" />
-      <line x1="0" y1="50" x2="280" y2="50" stroke="#1e6bb8" strokeWidth="1.4" />
-      <line x1="0" y1="95" x2="280" y2="95" stroke="#1e6bb8" strokeWidth="1.4" />
-
+      {/* hatching for cut-away */}
       {[40, 90, 140, 190, 240].map((x, i) => (
         <motion.line
           key={i}
-          x1={x}
-          y1={55}
-          x2={x}
-          y2={90}
-          stroke="#1e6bb8"
-          strokeWidth="0.8"
-          strokeDasharray="2 3"
-          initial={{ opacity: 0.15 }}
-          animate={{ opacity: [0.15, 0.5, 0.15] }}
+          x1={x} y1="55" x2={x} y2="90"
+          stroke={ANNOT} strokeWidth="0.3" strokeDasharray="2 2"
+          initial={{ opacity: 0.2 }}
+          animate={{ opacity: [0.2, 0.5, 0.2] }}
           transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.3 }}
         />
       ))}
 
+      {/* crawler camera moving right then back */}
       <motion.g
         initial={{ x: 0 }}
         animate={{ x: [0, 200, 0] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <ellipse cx="50" cy="72" rx="40" ry="14" fill="url(#lightCone)" />
+        {/* light cone */}
+        <path d="M 42 72 L 105 60 L 105 84 Z" fill="rgba(245,133,31,0.18)" stroke={ORANGE} strokeWidth="0.3" />
 
-        <rect x="20" y="64" width="22" height="16" rx="2" fill="#0b2b66" />
-        <circle cx="42" cy="72" r="5" fill="#f5851f" />
-        <circle cx="42" cy="72" r="2.4" fill="#fff" />
+        {/* crawler body */}
+        <rect x="20" y="64" width="22" height="16" rx="1" fill={FILL_NAVY} stroke={NAVY} strokeWidth="0.6" />
 
-        <circle cx="22" cy="80" r="3" fill="#1e6bb8" />
-        <circle cx="40" cy="80" r="3" fill="#1e6bb8" />
-        <line x1="20" y1="80" x2="42" y2="80" stroke="#0b2b66" strokeWidth="1" />
+        {/* camera lens */}
+        <circle cx="42" cy="72" r="3.5" fill="none" stroke={ORANGE} strokeWidth="0.6" />
+        <circle cx="42" cy="72" r="1.5" fill={ORANGE} />
+
+        {/* tracks */}
+        <line x1="22" y1="80" x2="40" y2="80" stroke={NAVY} strokeWidth="0.5" />
+        <circle cx="22" cy="80" r="2" fill="none" stroke={NAVY} strokeWidth="0.4" />
+        <circle cx="40" cy="80" r="2" fill="none" stroke={NAVY} strokeWidth="0.4" />
       </motion.g>
 
+      {/* scan-active pulse */}
       <motion.circle
-        cx="42"
-        cy="72"
-        r="6"
-        fill="none"
-        stroke="#f5851f"
-        strokeWidth="1.5"
-        initial={{ opacity: 0, scale: 1 }}
-        animate={{ opacity: [0, 0.6, 0], scale: [1, 2.2, 2.6] }}
-        transition={{ duration: 1.6, repeat: Infinity }}
-        style={{ transformOrigin: "42px 72px" }}
-      />
-
-      <text x="140" y="20" textAnchor="middle" fontSize="9" fill="#0b2b66" fontWeight="600" letterSpacing="2" fontFamily="ui-monospace, monospace">
-        SCAN ACTIV
-      </text>
-      <motion.circle
-        cx="105"
-        cy="17"
-        r="2.5"
-        fill="#f5851f"
+        cx="40" cy="20" r="1.6"
+        fill={ORANGE}
         animate={{ opacity: [1, 0.3, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
       />
+      <text x="46" y="22" fontSize="3.2" fill={ORANGE} fontFamily="ui-monospace, monospace">SCAN ACTIV</text>
 
-      <text x="140" y="125" textAnchor="middle" fontSize="8" fill="#6b7a92" fontFamily="ui-monospace, monospace">
-        Ø 200 – 3.500 mm
-      </text>
-    </svg>
+      <Dim x1={0} y1={50} x2={0} y2={95} label="Ø 200" side="left" delay={1.0} offset={6} />
+      <text x="240" y="105" fontSize="3" fill={ANNOT} fontFamily="ui-monospace, monospace">L MAX 300 m</text>
+    </BlueprintFrame>
   );
 }

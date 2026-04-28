@@ -1,49 +1,66 @@
 "use client";
 
 import { motion } from "motion/react";
+import {
+  BlueprintFrame,
+  Dim,
+  NAVY,
+  ORANGE,
+  ANNOT,
+  FILL_NAVY,
+} from "./blueprint";
 
 export function CompactorPlateAnim() {
   return (
-    <svg viewBox="0 0 280 145" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-      <rect width="280" height="145" fill="#ffffff" />
+    <BlueprintFrame uid="compactor" title="Compactare · vibrare" code="UZX-CMP">
+      {/* ground line */}
+      <line x1="0" y1="115" x2="280" y2="115" stroke={ANNOT} strokeWidth="0.4" />
+      {/* ground hatching */}
+      {Array.from({ length: 24 }).map((_, i) => (
+        <line key={i} x1={5 + i * 11} y1="125" x2={11 + i * 11} y2="115" stroke={ANNOT} strokeWidth="0.3" />
+      ))}
 
-      <line x1="0" y1="115" x2="280" y2="115" stroke="#cdd7e4" strokeWidth="1.4" />
-      <pattern id="soilPat" width="6" height="8" patternUnits="userSpaceOnUse">
-        <circle cx="3" cy="4" r="0.6" fill="#a89077" />
-      </pattern>
-      <rect x="0" y="115" width="280" height="30" fill="url(#soilPat)" opacity="0.5" />
-
+      {/* compactor — vibrating */}
       <motion.g
-        animate={{ y: [0, 6, 0] }}
+        animate={{ y: [0, 4, 0] }}
         transition={{ duration: 0.4, repeat: Infinity, ease: "easeInOut" }}
       >
-        <rect x="80" y="55" width="120" height="20" fill="#0b2b66" rx="2" />
-        <rect x="86" y="60" width="108" height="10" fill="#1e6bb8" />
+        {/* engine */}
+        <rect x="80" y="55" width="120" height="20" rx="2" fill={FILL_NAVY} stroke={NAVY} strokeWidth="0.7" />
+        <rect x="86" y="60" width="108" height="10" fill="rgba(11,43,102,0.10)" stroke={NAVY} strokeWidth="0.3" />
 
-        <rect x="100" y="75" width="80" height="6" fill="#0b2b66" />
-        <rect x="90" y="81" width="100" height="22" fill="#7a8493" />
-        <line x1="92" y1="92" x2="188" y2="92" stroke="#0b2b66" strokeWidth="0.6" />
+        {/* mount */}
+        <rect x="100" y="75" width="80" height="6" fill={FILL_NAVY} stroke={NAVY} strokeWidth="0.6" />
+
+        {/* base plate */}
+        <rect x="90" y="81" width="100" height="22" fill={FILL_NAVY} stroke={NAVY} strokeWidth="0.7" />
+        <line x1="92" y1="92" x2="188" y2="92" stroke={NAVY} strokeWidth="0.3" strokeDasharray="2 1" opacity="0.7" />
       </motion.g>
 
-      <motion.g
+      {/* impact ring */}
+      <motion.ellipse
+        cx="140" cy="110" rx="55" ry="3"
+        fill="none" stroke={ORANGE} strokeWidth="0.6"
         animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
         transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
         style={{ transformOrigin: "140px 110px" }}
-      >
-        <ellipse cx="140" cy="110" rx="55" ry="4" fill="none" stroke="#f5851f" strokeWidth="1.4" />
-      </motion.g>
+      />
 
+      {/* bouncing fragments */}
       {[60, 80, 200, 220].map((cx, i) => (
         <motion.path
           key={i}
           d={`M${cx} 113 L${cx + 4} 110 L${cx + 2} 117 Z`}
-          fill="#a89077"
-          animate={{ y: [0, -5, 0] }}
+          fill="none" stroke={NAVY} strokeWidth="0.4"
+          animate={{ y: [0, -4, 0] }}
           transition={{ duration: 0.4, repeat: Infinity, delay: i * 0.05 }}
         />
       ))}
 
-      <text x="140" y="22" textAnchor="middle" fontSize="9" fill="#0b2b66" fontWeight="600" letterSpacing="2" fontFamily="ui-monospace, monospace">COMPACTARE · VIBRARE</text>
-    </svg>
+      <Dim x1={90} y1={104} x2={190} y2={104} label="L 600" side="bottom" delay={1.0} offset={5} />
+      <text x="20" y="135" fontSize="3.2" fill={ANNOT} fontFamily="ui-monospace, monospace">
+        F 30 kN · 90 Hz · 120 kg
+      </text>
+    </BlueprintFrame>
   );
 }

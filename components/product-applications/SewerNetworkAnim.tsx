@@ -1,6 +1,12 @@
 "use client";
 
 import { motion } from "motion/react";
+import {
+  BlueprintFrame,
+  NAVY,
+  ORANGE,
+  ANNOT,
+} from "./blueprint";
 
 export function SewerNetworkAnim() {
   const pipes = [
@@ -25,16 +31,15 @@ export function SewerNetworkAnim() {
   ];
 
   return (
-    <svg viewBox="0 0 280 145" className="h-full w-full" preserveAspectRatio="xMidYMid slice">
-      <rect width="280" height="145" fill="#ffffff" />
-
+    <BlueprintFrame uid="sewer" title="Rețea mapată" code="UZX-NET">
+      {/* pipe ghosts (faded) + active drawing */}
       {pipes.map((p, i) => (
         <g key={i}>
-          <path d={p.d} stroke="#e1e7ef" strokeWidth="6" fill="none" strokeLinecap="round" />
+          <path d={p.d} stroke={ANNOT} strokeWidth="0.5" fill="none" strokeDasharray="2 2" opacity="0.3" />
           <motion.path
             d={p.d}
-            stroke="#1e6bb8"
-            strokeWidth="2"
+            stroke={NAVY}
+            strokeWidth="1.2"
             fill="none"
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -50,6 +55,7 @@ export function SewerNetworkAnim() {
         </g>
       ))}
 
+      {/* nodes — junction boxes */}
       {nodes.map((n, i) => (
         <motion.g
           key={i}
@@ -63,34 +69,16 @@ export function SewerNetworkAnim() {
           }}
           style={{ transformOrigin: `${n.x}px ${n.y}px` }}
         >
-          <circle cx={n.x} cy={n.y} r="5" fill="#f5851f" />
-          <circle cx={n.x} cy={n.y} r="2" fill="#ffffff" />
+          <circle cx={n.x} cy={n.y} r="3" fill="none" stroke={ORANGE} strokeWidth="0.6" />
+          <circle cx={n.x} cy={n.y} r="1.2" fill={ORANGE} />
+          <text x={n.x + 4} y={n.y - 3} fontSize="2.4" fill={ANNOT} fontFamily="ui-monospace, monospace">N{i + 1}</text>
         </motion.g>
       ))}
 
-      <text
-        x="140"
-        y="20"
-        textAnchor="middle"
-        fontSize="9"
-        fill="#0b2b66"
-        fontWeight="600"
-        letterSpacing="2"
-        fontFamily="ui-monospace, monospace"
-      >
-        REȚEA MAPATĂ
+      {/* legend */}
+      <text x="20" y="135" fontSize="3" fill={ANNOT} fontFamily="ui-monospace, monospace">
+        CABLU MAX 300 m  ·  Ø 80 — 1 200 mm
       </text>
-
-      <text
-        x="140"
-        y="138"
-        textAnchor="middle"
-        fontSize="8"
-        fill="#6b7a92"
-        fontFamily="ui-monospace, monospace"
-      >
-        cablu până la 300 m
-      </text>
-    </svg>
+    </BlueprintFrame>
   );
 }
