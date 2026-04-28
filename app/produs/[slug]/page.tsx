@@ -17,7 +17,8 @@ import productApplicationsData from "@/data/product-applications.json";
 import type { ApplicationAnimationId } from "@/components/product-applications";
 import type { Application } from "./ApplicationsGrid";
 import { VideoGallery, type VideoGalleryData } from "@/components/VideoGallery";
-import { getContent } from "@/lib/content";
+import { CaseStudies, type CaseStudiesHomeData } from "@/components/CaseStudies";
+import { getContents } from "@/lib/content";
 import { productSchema, breadcrumbSchema } from "@/lib/seo";
 import { getProductWithSEO } from "@/lib/seo/product-seo";
 import {
@@ -223,9 +224,14 @@ export default async function Page({ params }: Props) {
       ? await getBnrEurRate()
       : null;
 
-  // Galerie video "Uzinex la TV" — același content block ca pe home,
-  // afișat și pe produs înainte de "Soluții similare".
-  const videoGallery = await getContent<VideoGalleryData>("video_gallery");
+  // Content blocks comune cu home — afișate și pe produs înainte de "Soluții similare":
+  //   • video_gallery → secțiunea "Uzinex la TV"
+  //   • case_studies_home → secțiunea "Studii de caz"
+  const homeBlocks = await getContents(["video_gallery", "case_studies_home"]);
+  const videoGallery = homeBlocks.video_gallery as VideoGalleryData | undefined;
+  const caseStudies = homeBlocks.case_studies_home as
+    | CaseStudiesHomeData
+    | undefined;
 
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
 
@@ -965,6 +971,9 @@ export default async function Page({ params }: Props) {
 
       {/* UZINEX LA TV — galerie video media (TV, târguri, interviuri) */}
       <VideoGallery data={videoGallery} />
+
+      {/* STUDII DE CAZ — preluate de pe home, social proof inainte de cross-sell */}
+      <CaseStudies data={caseStudies} />
 
       {/* PRODUSE SIMILARE */}
       {similar.length > 0 && (
