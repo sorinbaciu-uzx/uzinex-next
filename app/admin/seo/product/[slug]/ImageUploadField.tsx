@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { MediaLibraryPicker } from "./MediaLibraryPicker";
 
 /**
  * Drag & drop + click to select + preview + remove.
@@ -26,6 +27,7 @@ export function ImageUploadField({
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
   const [dragOver, setDragOver] = useState(false);
+  const [pickerOpen, setPickerOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   async function uploadFile(file: File) {
@@ -105,48 +107,71 @@ export function ImageUploadField({
           <div className="text-[11px] font-mono text-ink-500 break-all">
             {value}
           </div>
-          <div>
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={() => inputRef.current?.click()}
               disabled={uploading}
               className="text-xs border hairline bg-white px-3 py-1.5 hover:bg-ink-50 transition"
             >
-              {uploading ? "Se încarcă..." : "Înlocuiește"}
+              {uploading ? "Se încarcă..." : "Înlocuiește (upload)"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setPickerOpen(true)}
+              className="text-xs border hairline bg-white px-3 py-1.5 hover:bg-ink-50 transition"
+            >
+              Alege din bibliotecă
             </button>
           </div>
         </div>
       ) : (
-        <div
-          onDrop={onDrop}
-          onDragOver={(e) => {
-            e.preventDefault();
-            setDragOver(true);
-          }}
-          onDragLeave={() => setDragOver(false)}
-          onClick={() => inputRef.current?.click()}
-          className={
-            "border-2 border-dashed p-8 text-center cursor-pointer transition " +
-            (dragOver
-              ? "border-uzx-blue bg-uzx-blue/5"
-              : "border-ink-300 hover:border-uzx-blue hover:bg-ink-50")
-          }
-        >
-          {uploading ? (
-            <div>
-              <div className="w-10 h-10 mx-auto border-4 border-uzx-blue border-t-transparent rounded-full animate-spin mb-3" />
-              <div className="text-sm text-ink-700">Se încarcă...</div>
-            </div>
-          ) : (
-            <>
-              <div className="text-4xl text-ink-300 mb-2">📷</div>
-              <div className="text-sm text-ink-700 font-medium">
-                Trage o imagine aici sau click
+        <div className="space-y-2">
+          <div
+            onDrop={onDrop}
+            onDragOver={(e) => {
+              e.preventDefault();
+              setDragOver(true);
+            }}
+            onDragLeave={() => setDragOver(false)}
+            onClick={() => inputRef.current?.click()}
+            className={
+              "border-2 border-dashed p-8 text-center cursor-pointer transition " +
+              (dragOver
+                ? "border-uzx-blue bg-uzx-blue/5"
+                : "border-ink-300 hover:border-uzx-blue hover:bg-ink-50")
+            }
+          >
+            {uploading ? (
+              <div>
+                <div className="w-10 h-10 mx-auto border-4 border-uzx-blue border-t-transparent rounded-full animate-spin mb-3" />
+                <div className="text-sm text-ink-700">Se încarcă...</div>
               </div>
-              <div className="text-xs text-ink-500 mt-1">
-                PNG, JPG, WebP, SVG · max 8 MB
-              </div>
-            </>
-          )}
+            ) : (
+              <>
+                <div className="text-4xl text-ink-300 mb-2">📷</div>
+                <div className="text-sm text-ink-700 font-medium">
+                  Trage o imagine aici sau click
+                </div>
+                <div className="text-xs text-ink-500 mt-1">
+                  PNG, JPG, WebP, SVG · max 8 MB
+                </div>
+              </>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="flex-1 h-px bg-ink-200" />
+            <span className="text-[10px] uppercase tracking-wider text-ink-400 font-mono">
+              sau
+            </span>
+            <div className="flex-1 h-px bg-ink-200" />
+          </div>
+          <button
+            type="button"
+            onClick={() => setPickerOpen(true)}
+            className="w-full text-sm border hairline bg-white px-3 py-2.5 hover:bg-ink-50 transition"
+          >
+            📁 Alege din bibliotecă (public/images/produse)
+          </button>
         </div>
       )}
 
@@ -196,6 +221,12 @@ export function ImageUploadField({
         onChange={(e) => onChange(e.target.value)}
         placeholder="https://..."
         className="w-full mt-2 border hairline px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-uzx-blue"
+      />
+
+      <MediaLibraryPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => onChange(url)}
       />
     </div>
   );

@@ -6,6 +6,7 @@ import {
   parseYouTubeUrl,
   type MediaItem,
 } from "@/lib/media";
+import { MediaLibraryPicker } from "./MediaLibraryPicker";
 
 const MAX_ITEMS = 8;
 
@@ -24,6 +25,7 @@ export function MediaGalleryField({
   const [error, setError] = useState("");
   const [ytInput, setYtInput] = useState("");
   const [ytError, setYtError] = useState("");
+  const [pickerOpen, setPickerOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const count = value.length;
@@ -246,6 +248,13 @@ export function MediaGalleryField({
               }}
               className="hidden"
             />
+            <button
+              type="button"
+              onClick={() => setPickerOpen(true)}
+              className="mt-2 w-full text-xs border hairline bg-white hover:bg-ink-50 px-3 py-2 transition"
+            >
+              📁 Alege din bibliotecă
+            </button>
           </div>
 
           {/* ADD YOUTUBE */}
@@ -296,6 +305,22 @@ export function MediaGalleryField({
           {error}
         </div>
       )}
+
+      <MediaLibraryPicker
+        open={pickerOpen}
+        onClose={() => setPickerOpen(false)}
+        onPick={(url) => {
+          if (!canAdd) {
+            setError(`Maxim ${MAX_ITEMS} media items.`);
+            return;
+          }
+          if (value.some((m) => m.type === "image" && m.url === url)) {
+            setError("Imaginea e deja în galerie.");
+            return;
+          }
+          onChange([...value, { type: "image", url }]);
+        }}
+      />
 
       <div className="text-[11px] text-ink-500 leading-relaxed bg-ink-50 border hairline p-3">
         {count === 0 ? (
