@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
+    "prebuild": "node scripts/build-media-manifest.mjs",
     "postinstall": "prisma generate",
+    "media:manifest": "node scripts/build-media-manifest.mjs",
     "start": "next start",
     "lint": "eslint",
     "db:push": "prisma db push",
