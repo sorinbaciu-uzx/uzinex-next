@@ -192,6 +192,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileGroupExpanded, setMobileGroupExpanded] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
 
   useEffect(() => {
@@ -372,16 +373,10 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
           >
             <nav className="container-x flex flex-col gap-1 text-white pb-12">
               {NAV.map((item, i) => {
-                const hasChildren = "type" in item && (item.type === "mega" || item.type === "dropdown");
+                const isMega = "type" in item && item.type === "mega";
+                const isDropdown = "type" in item && item.type === "dropdown";
+                const hasChildren = isMega || isDropdown;
                 const expanded = mobileExpanded === item.label;
-                const subItems =
-                  "type" in item && item.type === "mega"
-                    ? item.groups.flatMap((g) =>
-                        g.items.map((it) => ({ ...it, group: g.name }))
-                      )
-                    : "type" in item && item.type === "dropdown"
-                    ? item.items.map((it) => ({ ...it, group: "" }))
-                    : [];
 
                 return (
                   <motion.div
@@ -404,9 +399,10 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                       {hasChildren && (
                         <button
                           type="button"
-                          onClick={() =>
-                            setMobileExpanded(expanded ? null : item.label)
-                          }
+                          onClick={() => {
+                            setMobileExpanded(expanded ? null : item.label);
+                            setMobileGroupExpanded(null);
+                          }}
                           aria-label={expanded ? "Ascunde submeniu" : "Arată submeniu"}
                           className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition"
                         >
@@ -419,20 +415,71 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                         </button>
                       )}
                     </div>
-                    {hasChildren && expanded && (
+
+                    {/* Mega menu — 2-level accordion (categories → subcategories) */}
+                    {isMega && expanded && (
+                      <ul className="pb-3">
+                        {(item as Extract<NavItem, { type: "mega" }>).groups.map((g) => {
+                          const groupOpen = mobileGroupExpanded === g.name;
+                          return (
+                            <li key={g.name} className="border-t border-white/5">
+                              <div className="flex items-center justify-between pl-4">
+                                <a
+                                  href={g.href}
+                                  onClick={() => setOpen(false)}
+                                  className="flex-1 py-3 text-[15px] text-white/85 hover:text-uzx-orange transition"
+                                >
+                                  {g.name}
+                                </a>
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    setMobileGroupExpanded(groupOpen ? null : g.name)
+                                  }
+                                  aria-label={
+                                    groupOpen ? "Ascunde subcategorii" : "Arată subcategorii"
+                                  }
+                                  className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition"
+                                >
+                                  <span
+                                    className="text-lg transition-transform"
+                                    style={{ transform: groupOpen ? "rotate(45deg)" : "none" }}
+                                  >
+                                    +
+                                  </span>
+                                </button>
+                              </div>
+                              {groupOpen && (
+                                <ul className="pl-8 pr-4 pb-3 space-y-1.5">
+                                  {g.items.map((sub) => (
+                                    <li key={sub.href}>
+                                      <a
+                                        href={sub.href}
+                                        onClick={() => setOpen(false)}
+                                        className="block py-1.5 text-sm text-white/70 hover:text-uzx-orange transition"
+                                      >
+                                        {sub.label}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+
+                    {/* Dropdown — single-level list */}
+                    {isDropdown && expanded && (
                       <ul className="pl-4 pb-4 space-y-2">
-                        {subItems.map((sub, idx) => (
-                          <li key={`${item.label}-${sub.label}-${idx}`}>
+                        {(item as Extract<NavItem, { type: "dropdown" }>).items.map((sub) => (
+                          <li key={sub.href}>
                             <a
                               href={sub.href}
                               onClick={() => setOpen(false)}
                               className="block py-1.5 text-sm text-white/75 hover:text-uzx-orange"
                             >
-                              {"group" in sub && sub.group && (
-                                <span className="text-[10px] uppercase tracking-widest text-white/60 mr-2 mono">
-                                  {sub.group} ·
-                                </span>
-                              )}
                               {sub.label}
                             </a>
                           </li>
