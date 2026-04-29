@@ -1033,31 +1033,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 19,
-      "data": {
-        "src": "/images/produse/atc-cnc-router-sample126_1648107360-285x320-1.webp",
-        "alt": "Celulă CNC de Nesting pentru Mobilă | 2 Routere ATC, 240 Panouri/8h, Etichetare Automată — vedere de ansamblu",
-        "caption": "Vedere de ansamblu a centrului CNC în atelierul de demonstrație.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 26,
       "data": {
         "question": "Câte scule pot fi încărcate simultan în magazinul ATC?",
         "answer": "Magazinul ATC standard este dimensionat pentru rețeta tipică de producție. Configurația exactă se definește la ofertare în funcție de operațiile tale."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 37,
-      "data": {
-        "src": "/images/produse/atc-cnc-router-sample126_1648107360-285x320-1.webp",
-        "alt": "Celulă CNC de Nesting pentru Mobilă | 2 Routere ATC, 240 Panouri/8h, Etichetare Automată — detaliu",
-        "caption": "Detaliu al componentelor interne ale centrului CNC.",
-        "galleryIndex": 2
       }
     }
   ],
@@ -2545,31 +2525,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 25,
-      "data": {
-        "src": "/images/produse/Masina-semiautomata-mini-de-ambalat-in-folie-stretch-KPW-M800-1.jpg",
-        "alt": "Mașină Semiautomată de Ambalat Folie Stretch KPW-M800 | UZINEX — vedere de ansamblu",
-        "caption": "Platforma de înfoliere pentru paleți industriali.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 30,
       "data": {
         "question": "Se poate integra în linia mea de producție existentă?",
         "answer": "Da, echipamentul se integrează cu benzi, paletizoare și sisteme SCADA prin semnale digitale standard. Integrarea se planifică la ofertare."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 40,
-      "data": {
-        "src": "/images/produse/Masina-semiautomata-mini-de-ambalat-in-folie-stretch-KPW-M800-1.jpg",
-        "alt": "Mașină Semiautomată de Ambalat Folie Stretch KPW-M800 | UZINEX — detaliu",
-        "caption": "Detaliu al grupului de sigilare și al ghidajelor.",
-        "galleryIndex": 2
       }
     }
   ],
@@ -3548,31 +3508,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 21,
-      "data": {
-        "src": "/images/produse/12.webp",
-        "alt": "Mașina Semiautomată de Etichetare Plată KPW-BP120 | Etichetă max 120mm, Anti-Blocare | UZINEX — vedere de ansamblu",
-        "caption": "Secțiunea de etichetare cu senzorii de poziție.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 27,
       "data": {
         "question": "Se pot schimba rapid rolele de etichete între serii?",
         "answer": "Da, schimbarea rolei este o operație de câteva minute, fără scule. Senzorii detectează capătul rolei și oprirea este automată."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 37,
-      "data": {
-        "src": "/images/produse/12.webp",
-        "alt": "Mașina Semiautomată de Etichetare Plată KPW-BP120 | Etichetă max 120mm, Anti-Blocare | UZINEX — detaliu",
-        "caption": "Detaliu constructiv al echipamentului în producție.",
-        "galleryIndex": 2
       }
     }
   ],
@@ -7027,31 +6967,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 18,
-      "data": {
-        "src": "/images/produse/50a6d6c9cb4540cdbc4141e2a3be9ecc.webp",
-        "alt": "Cuplaj rapid — vedere de ansamblu",
-        "caption": "Cupa hidraulică montată pe brațul excavatorului.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 20,
       "data": {
         "question": "Se pot adapta parametrii pentru aplicația specifică?",
         "answer": "Da, configurația se personalizează la ofertare în funcție de materialele, volumul și fluxul tău. UZINEX asigură consultanță tehnică gratuită."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 27,
-      "data": {
-        "src": "/images/produse/50a6d6c9cb4540cdbc4141e2a3be9ecc.webp",
-        "alt": "Cuplaj rapid — detaliu",
-        "caption": "Detaliu constructiv al echipamentului în producție.",
-        "galleryIndex": 2
       }
     }
   ],
@@ -8515,7 +8435,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_i72djai72djai72d.png",
+        "src": "/images/produse/Gemini_Generated_Image_i72djai72djai72d.webp",
         "alt": "Robot Inspectie Conducte GTDR-200 | Camera HD Panoramică 210° — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -8533,7 +8453,7 @@
       "type": "image",
       "insertAfterParagraph": 29,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_i72djai72djai72d.png",
+        "src": "/images/produse/Gemini_Generated_Image_i72djai72djai72d.webp",
         "alt": "Robot Inspectie Conducte GTDR-200 | Camera HD Panoramică 210° — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -8574,7 +8494,7 @@
       "type": "image",
       "insertAfterParagraph": 16,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_i3en3xi3en3xi3en.png",
+        "src": "/images/produse/Gemini_Generated_Image_i3en3xi3en3xi3en.webp",
         "alt": "Robot CCTV Canalizare GT108 | PTZ 10x Zoom | Crawler 200–3500mm — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -8592,7 +8512,7 @@
       "type": "image",
       "insertAfterParagraph": 25,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_i3en3xi3en3xi3en.png",
+        "src": "/images/produse/Gemini_Generated_Image_i3en3xi3en3xi3en.webp",
         "alt": "Robot CCTV Canalizare GT108 | PTZ 10x Zoom | Crawler 200–3500mm — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -8630,31 +8550,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 18,
-      "data": {
-        "src": "/images/produse/Gemini_Generated_Image_3mgle73mgle73mgl.png",
-        "alt": "Sistem Crawler Inspecție Conducte GT102B | PTZ Dual 10x | 150–2000mm — vedere de ansamblu",
-        "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 23,
       "data": {
         "question": "Ce diametru de conductă poate fi inspectat cu această cameră?",
         "answer": "Domeniul uzual este pe intervalul precizat în specificații. Pentru diametre mai mari există kituri de centrare și roboți CCTV complementari."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 28,
-      "data": {
-        "src": "/images/produse/Gemini_Generated_Image_3mgle73mgle73mgl.png",
-        "alt": "Sistem Crawler Inspecție Conducte GT102B | PTZ Dual 10x | 150–2000mm — detaliu",
-        "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
-        "galleryIndex": 2
       }
     }
   ],
@@ -8731,7 +8631,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_slt55jslt55jslt5.png",
+        "src": "/images/produse/Gemini_Generated_Image_slt55jslt55jslt5.webp",
         "alt": "Robot Inspecție Conducte Wireless GT102BPro | 4MP | 6 Roți | 200.000 LUX — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -8749,7 +8649,7 @@
       "type": "image",
       "insertAfterParagraph": 29,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_slt55jslt55jslt5.png",
+        "src": "/images/produse/Gemini_Generated_Image_slt55jslt55jslt5.webp",
         "alt": "Robot Inspecție Conducte Wireless GT102BPro | 4MP | 6 Roți | 200.000 LUX — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -8790,7 +8690,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_pharx4pharx4phar.png",
+        "src": "/images/produse/Gemini_Generated_Image_pharx4pharx4phar.webp",
         "alt": "Robot Inspecție Conducte Industriale GT400Pro | Anti-Răsturnare | Laser | 4MP — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -8808,7 +8708,7 @@
       "type": "image",
       "insertAfterParagraph": 29,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_pharx4pharx4phar.png",
+        "src": "/images/produse/Gemini_Generated_Image_pharx4pharx4phar.webp",
         "alt": "Robot Inspecție Conducte Industriale GT400Pro | Anti-Răsturnare | Laser | 4MP — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -8849,7 +8749,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_xnpfrbxnpfrbxnpf.png",
+        "src": "/images/produse/Gemini_Generated_Image_xnpfrbxnpfrbxnpf.webp",
         "alt": "GT108Pro CCTV Municipal Pipe Inspect Crawler Robot Camera — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -8867,7 +8767,7 @@
       "type": "image",
       "insertAfterParagraph": 29,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_xnpfrbxnpfrbxnpf.png",
+        "src": "/images/produse/Gemini_Generated_Image_xnpfrbxnpfrbxnpf.webp",
         "alt": "GT108Pro CCTV Municipal Pipe Inspect Crawler Robot Camera — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -8908,7 +8808,7 @@
       "type": "image",
       "insertAfterParagraph": 14,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_czrdptczrdptczrd.png",
+        "src": "/images/produse/Gemini_Generated_Image_czrdptczrdptczrd.webp",
         "alt": "Cameră Inspecție Tevi Industriale GT102 | Laser Standard | Ø49mm | 120–600mm — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -8926,7 +8826,7 @@
       "type": "image",
       "insertAfterParagraph": 24,
       "data": {
-        "src": "/images/produse/Gemini_Generated_Image_czrdptczrdptczrd.png",
+        "src": "/images/produse/Gemini_Generated_Image_czrdptczrdptczrd.webp",
         "alt": "Cameră Inspecție Tevi Industriale GT102 | Laser Standard | Ø49mm | 120–600mm — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -8967,7 +8867,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/GT102A_CCTV1.png",
+        "src": "/images/produse/GT102A_CCTV1.webp",
         "alt": "Cameră Inspecție Tevi Gaze GT102A | Petrol | Chimie | 220° | 200m | IP68 — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -8985,7 +8885,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/GT102A_CCTV1.png",
+        "src": "/images/produse/GT102A_CCTV1.webp",
         "alt": "Cameră Inspecție Tevi Gaze GT102A | Petrol | Chimie | 220° | 200m | IP68 — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9026,7 +8926,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/GT102APro1.png",
+        "src": "/images/produse/GT102APro1.webp",
         "alt": "Cameră Inspecție Tevi 4MP GT102APro | Wireless | Laser | 120–600mm — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9044,7 +8944,7 @@
       "type": "image",
       "insertAfterParagraph": 29,
       "data": {
-        "src": "/images/produse/GT102APro1.png",
+        "src": "/images/produse/GT102APro1.webp",
         "alt": "Cameră Inspecție Tevi 4MP GT102APro | Wireless | Laser | 120–600mm — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9085,7 +8985,7 @@
       "type": "image",
       "insertAfterParagraph": 14,
       "data": {
-        "src": "/images/produse/GT100Drain1.png",
+        "src": "/images/produse/GT100Drain1.webp",
         "alt": "Cameră Inspecție Tevi Mici GT100 | 100mm | 7 Inch Portabil | 200.000 LUX — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9103,7 +9003,7 @@
       "type": "image",
       "insertAfterParagraph": 24,
       "data": {
-        "src": "/images/produse/GT100Drain1.png",
+        "src": "/images/produse/GT100Drain1.webp",
         "alt": "Cameră Inspecție Tevi Mici GT100 | 100mm | 7 Inch Portabil | 200.000 LUX — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9144,7 +9044,7 @@
       "type": "image",
       "insertAfterParagraph": 14,
       "data": {
-        "src": "/images/produse/GT380Industrial2.png",
+        "src": "/images/produse/GT380Industrial2.webp",
         "alt": "Robot Inspecție Pale Eoliene GT380 | Circular Cold Light | PTZ 10x | 230–3500mm — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9162,7 +9062,7 @@
       "type": "image",
       "insertAfterParagraph": 26,
       "data": {
-        "src": "/images/produse/GT380Industrial2.png",
+        "src": "/images/produse/GT380Industrial2.webp",
         "alt": "Robot Inspecție Pale Eoliene GT380 | Circular Cold Light | PTZ 10x | 230–3500mm — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9203,7 +9103,7 @@
       "type": "image",
       "insertAfterParagraph": 16,
       "data": {
-        "src": "/images/produse/GM320Drainage2.png",
+        "src": "/images/produse/GM320Drainage2.webp",
         "alt": "Cameră Push Inspecție Conducte GM320 | 7 Lentile | 8–800mm | Touch 7\" | WiFi — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9221,7 +9121,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/GM320Drainage2.png",
+        "src": "/images/produse/GM320Drainage2.webp",
         "alt": "Cameră Push Inspecție Conducte GM320 | 7 Lentile | 8–800mm | Touch 7\" | WiFi — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9262,7 +9162,7 @@
       "type": "image",
       "insertAfterParagraph": 15,
       "data": {
-        "src": "/images/produse/GT220Sewer3.png",
+        "src": "/images/produse/GT220Sewer3.webp",
         "alt": "Cameră Push Rod Canalizare GT220 | All-in-One | 10 Inch | Arc Coturi | 20–400mm — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9280,7 +9180,7 @@
       "type": "image",
       "insertAfterParagraph": 25,
       "data": {
-        "src": "/images/produse/GT220Sewer3.png",
+        "src": "/images/produse/GT220Sewer3.webp",
         "alt": "Cameră Push Rod Canalizare GT220 | All-in-One | 10 Inch | Arc Coturi | 20–400mm — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9321,7 +9221,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/GT-PTZ-Portable2.png",
+        "src": "/images/produse/GT-PTZ-Portable2.webp",
         "alt": "Borescop Inspecție Conducte GT-PTZ | Cablu GFRP | 4 Lentile | 9–800mm | 8h — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9339,7 +9239,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/GT-PTZ-Portable2.png",
+        "src": "/images/produse/GT-PTZ-Portable2.webp",
         "alt": "Borescop Inspecție Conducte GT-PTZ | Cablu GFRP | 4 Lentile | 9–800mm | 8h — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9380,7 +9280,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/GT230-Camera1.png",
+        "src": "/images/produse/GT230-Camera1.webp",
         "alt": "Cameră Video Inspecție Canalizare GT230 | 5 Lentile | 5.5mm | Laser | 9 Niveluri — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9398,7 +9298,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/GT230-Camera1.png",
+        "src": "/images/produse/GT230-Camera1.webp",
         "alt": "Cameră Video Inspecție Canalizare GT230 | 5 Lentile | 5.5mm | Laser | 9 Niveluri — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9439,7 +9339,7 @@
       "type": "image",
       "insertAfterParagraph": 22,
       "data": {
-        "src": "/images/produse/GT31DV1.png",
+        "src": "/images/produse/GT31DV1.webp",
         "alt": "Cameră Handheld Inspecție Tevi GT31DV | Spring Body | 10–200mm | 5–30m | Touch — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9457,7 +9357,7 @@
       "type": "image",
       "insertAfterParagraph": 34,
       "data": {
-        "src": "/images/produse/GT31DV1.png",
+        "src": "/images/produse/GT31DV1.webp",
         "alt": "Cameră Handheld Inspecție Tevi GT31DV | Spring Body | 10–200mm | 5–30m | Touch — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9498,7 +9398,7 @@
       "type": "image",
       "insertAfterParagraph": 14,
       "data": {
-        "src": "/images/produse/GT75BXA3.png",
+        "src": "/images/produse/GT75BXA3.webp",
         "alt": "Cameră PTZ Inspecție Cămine GT75BXA | Tijă Pole | 80–6000mm | Zoom 10x+10x | IP68 — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9516,7 +9416,7 @@
       "type": "image",
       "insertAfterParagraph": 24,
       "data": {
-        "src": "/images/produse/GT75BXA3.png",
+        "src": "/images/produse/GT75BXA3.webp",
         "alt": "Cameră PTZ Inspecție Cămine GT75BXA | Tijă Pole | 80–6000mm | Zoom 10x+10x | IP68 — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9557,7 +9457,7 @@
       "type": "image",
       "insertAfterParagraph": 19,
       "data": {
-        "src": "/images/produse/GTW106-Periscope3.png",
+        "src": "/images/produse/GTW106-Periscope3.webp",
         "alt": "Periscop Inspecție Conducte GTW106 | Fibră Carbon | 30x Zoom | 4MP | 1.25–6m — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9575,7 +9475,7 @@
       "type": "image",
       "insertAfterParagraph": 29,
       "data": {
-        "src": "/images/produse/GTW106-Periscope3.png",
+        "src": "/images/produse/GTW106-Periscope3.webp",
         "alt": "Periscop Inspecție Conducte GTW106 | Fibră Carbon | 30x Zoom | 4MP | 1.25–6m — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9613,31 +9513,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 14,
-      "data": {
-        "src": "/images/produse/GTW106-Manhole1-1.png",
-        "alt": "Cameră Telescopică Inspecție Canalizare GTW06 | 12 Inch Touch | 10x Zoom | Tunel — vedere de ansamblu",
-        "caption": "Capul de inspecție cu camera HD și iluminare LED.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 17,
       "data": {
         "question": "Ce diametru de conductă poate fi inspectat cu această cameră?",
         "answer": "Domeniul uzual este pe intervalul precizat în specificații. Pentru diametre mai mari există kituri de centrare și roboți CCTV complementari."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 24,
-      "data": {
-        "src": "/images/produse/GTW106-Manhole1-1.png",
-        "alt": "Cameră Telescopică Inspecție Canalizare GTW06 | 12 Inch Touch | 10x Zoom | Tunel — detaliu",
-        "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
-        "galleryIndex": 2
       }
     }
   ],
@@ -9675,7 +9555,7 @@
       "type": "image",
       "insertAfterParagraph": 14,
       "data": {
-        "src": "/images/produse/GT200BX60_Anti-explosion2.png",
+        "src": "/images/produse/GT200BX60_Anti-explosion2.webp",
         "alt": "Cameră Anti-Explozie Inspecție Rezervoare GT200BX60 | ATEX | 120–10000mm | CE — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9693,7 +9573,7 @@
       "type": "image",
       "insertAfterParagraph": 24,
       "data": {
-        "src": "/images/produse/GT200BX60_Anti-explosion2.png",
+        "src": "/images/produse/GT200BX60_Anti-explosion2.webp",
         "alt": "Cameră Anti-Explozie Inspecție Rezervoare GT200BX60 | ATEX | 120–10000mm | CE — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9734,7 +9614,7 @@
       "type": "image",
       "insertAfterParagraph": 15,
       "data": {
-        "src": "/images/produse/gt160-industrial-video3.png",
+        "src": "/images/produse/gt160-industrial-video3.webp",
         "alt": "Videoscop Industrial Inspecție GT160 | Sondă 2.8mm | 4–200mm | WiFi HDMI | Anti-cădere — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9752,7 +9632,7 @@
       "type": "image",
       "insertAfterParagraph": 24,
       "data": {
-        "src": "/images/produse/gt160-industrial-video3.png",
+        "src": "/images/produse/gt160-industrial-video3.webp",
         "alt": "Videoscop Industrial Inspecție GT160 | Sondă 2.8mm | 4–200mm | WiFi HDMI | Anti-cădere — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9793,7 +9673,7 @@
       "type": "image",
       "insertAfterParagraph": 15,
       "data": {
-        "src": "/images/produse/GT120B-Industrial-video1.jpg",
+        "src": "/images/produse/GT120B-Industrial-video1.webp",
         "alt": "Videoscop 4 Direcții Inspecție GT120B | Sondă 2mm | 4-Way | 5 Sonde | WiFi HDMI — vedere de ansamblu",
         "caption": "Camera de inspecție pregătită pentru coborârea în conductă.",
         "galleryIndex": 0
@@ -9811,7 +9691,7 @@
       "type": "image",
       "insertAfterParagraph": 26,
       "data": {
-        "src": "/images/produse/GT120B-Industrial-video1.jpg",
+        "src": "/images/produse/GT120B-Industrial-video1.webp",
         "alt": "Videoscop 4 Direcții Inspecție GT120B | Sondă 2mm | 4-Way | 5 Sonde | WiFi HDMI — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9852,7 +9732,7 @@
       "type": "image",
       "insertAfterParagraph": 14,
       "data": {
-        "src": "/images/produse/GTV300-Borehole-Camera2.jpg",
+        "src": "/images/produse/GTV300-Borehole-Camera2.webp",
         "alt": "Cameră Foraj Inspecție Puțuri GTV300 | Oțel Aliat | 360° | Patent LED | AC/DC — vedere de ansamblu",
         "caption": "Capul de inspecție cu camera HD și iluminare LED.",
         "galleryIndex": 0
@@ -9870,7 +9750,7 @@
       "type": "image",
       "insertAfterParagraph": 24,
       "data": {
-        "src": "/images/produse/GTV300-Borehole-Camera2.jpg",
+        "src": "/images/produse/GTV300-Borehole-Camera2.webp",
         "alt": "Cameră Foraj Inspecție Puțuri GTV300 | Oțel Aliat | 360° | Patent LED | AC/DC — detaliu",
         "caption": "Detaliu al capului de inspecție și al iluminării integrate.",
         "galleryIndex": 2
@@ -9911,7 +9791,7 @@
       "type": "image",
       "insertAfterParagraph": 16,
       "data": {
-        "src": "/images/produse/Double-Shaft-Shredder1.png",
+        "src": "/images/produse/Double-Shaft-Shredder1.webp",
         "alt": "Tocător cu Două Axe Reciclare | D600–D2200 | 4 Tipuri Cuțite | SKD11 HRC62 — vedere de ansamblu",
         "caption": "Camera de presare și sistemul de legare a balotului.",
         "galleryIndex": 0
@@ -9929,7 +9809,7 @@
       "type": "image",
       "insertAfterParagraph": 30,
       "data": {
-        "src": "/images/produse/Double-Shaft-Shredder1.png",
+        "src": "/images/produse/Double-Shaft-Shredder1.webp",
         "alt": "Tocător cu Două Axe Reciclare | D600–D2200 | 4 Tipuri Cuțite | SKD11 HRC62 — detaliu",
         "caption": "Detaliu al rotorului și geometriei cuțitelor.",
         "galleryIndex": 2
@@ -9970,7 +9850,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Single-Shaft-Shredder1.png",
+        "src": "/images/produse/Single-Shaft-Shredder1.webp",
         "alt": "Tocător cu Un Ax Reciclare | OS-600–1600 | Plastic Rigid | Granulometrie Controlată — vedere de ansamblu",
         "caption": "Rotorul cu cuțite dimensionat pentru material dur.",
         "galleryIndex": 0
@@ -9988,7 +9868,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/Single-Shaft-Shredder1.png",
+        "src": "/images/produse/Single-Shaft-Shredder1.webp",
         "alt": "Tocător cu Un Ax Reciclare | OS-600–1600 | Plastic Rigid | Granulometrie Controlată — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
@@ -10029,7 +9909,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Tire-Shredder1.png",
+        "src": "/images/produse/Tire-Shredder1.webp",
         "alt": "Tocător Anvelope Reciclare | D600–D2200 | OTR | Granule 50mm | Piroliză | TDF — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10047,7 +9927,7 @@
       "type": "image",
       "insertAfterParagraph": 31,
       "data": {
-        "src": "/images/produse/Tire-Shredder1.png",
+        "src": "/images/produse/Tire-Shredder1.webp",
         "alt": "Tocător Anvelope Reciclare | D600–D2200 | OTR | Granule 50mm | Piroliză | TDF — detaliu",
         "caption": "Detaliu al rotorului și geometriei cuțitelor.",
         "galleryIndex": 2
@@ -10088,7 +9968,7 @@
       "type": "image",
       "insertAfterParagraph": 17,
       "data": {
-        "src": "/images/produse/plastic-crusher1.png",
+        "src": "/images/produse/plastic-crusher1.webp",
         "alt": "Concasor Plastic Reciclare | WGD-600–1200 | Granule ~1cm | PLC | Cabluri — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10106,7 +9986,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/plastic-crusher1.png",
+        "src": "/images/produse/plastic-crusher1.webp",
         "alt": "Concasor Plastic Reciclare | WGD-600–1200 | Granule ~1cm | PLC | Cabluri — detaliu",
         "caption": "Detaliul sistemului Igus pentru protecția cablurilor mobile.",
         "galleryIndex": 2
@@ -10147,7 +10027,7 @@
       "type": "image",
       "insertAfterParagraph": 19,
       "data": {
-        "src": "/images/produse/metal-crusher1.png",
+        "src": "/images/produse/metal-crusher1.webp",
         "alt": "Concasor Metal Reciclare | WCD-800–2200 | Ciocane | Particule Cubice | Teleoperare — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10165,7 +10045,7 @@
       "type": "image",
       "insertAfterParagraph": 31,
       "data": {
-        "src": "/images/produse/metal-crusher1.png",
+        "src": "/images/produse/metal-crusher1.webp",
         "alt": "Concasor Metal Reciclare | WCD-800–2200 | Ciocane | Particule Cubice | Teleoperare — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
@@ -10206,7 +10086,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/concasor-vertical-reciclare-metale3.png",
+        "src": "/images/produse/concasor-vertical-reciclare-metale3.webp",
         "alt": "Concasor Vertical Reciclare Metale | LCP-1000–1800 | 3 Metode | 500mm Feed | +15% Rec — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10224,7 +10104,7 @@
       "type": "image",
       "insertAfterParagraph": 30,
       "data": {
-        "src": "/images/produse/concasor-vertical-reciclare-metale3.png",
+        "src": "/images/produse/concasor-vertical-reciclare-metale3.webp",
         "alt": "Concasor Vertical Reciclare Metale | LCP-1000–1800 | 3 Metode | 500mm Feed | +15% Rec — detaliu",
         "caption": "Detaliul sistemului Igus pentru protecția cablurilor mobile.",
         "galleryIndex": 2
@@ -10265,7 +10145,7 @@
       "type": "image",
       "insertAfterParagraph": 17,
       "data": {
-        "src": "/images/produse/Separating-Equipment.png",
+        "src": "/images/produse/Separating-Equipment.webp",
         "alt": "Separator Electrostatic Reciclare | DF1500/2000 | 99% Puritate | Dual Stage | PCB — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10283,7 +10163,7 @@
       "type": "image",
       "insertAfterParagraph": 33,
       "data": {
-        "src": "/images/produse/Separating-Equipment.png",
+        "src": "/images/produse/Separating-Equipment.webp",
         "alt": "Separator Electrostatic Reciclare | DF1500/2000 | 99% Puritate | Dual Stage | PCB — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
@@ -10324,7 +10204,7 @@
       "type": "image",
       "insertAfterParagraph": 17,
       "data": {
-        "src": "/images/produse/air-separator3.png",
+        "src": "/images/produse/air-separator3.webp",
         "alt": "Separator Aer Reciclare | FX600–1500 | 95% Eficiență | Zero Contact | Folii — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10342,7 +10222,7 @@
       "type": "image",
       "insertAfterParagraph": 30,
       "data": {
-        "src": "/images/produse/air-separator3.png",
+        "src": "/images/produse/air-separator3.webp",
         "alt": "Separator Aer Reciclare | FX600–1500 | 95% Eficiență | Zero Contact | Folii — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
@@ -10383,7 +10263,7 @@
       "type": "image",
       "insertAfterParagraph": 15,
       "data": {
-        "src": "/images/produse/eddy-current-sorting-machine6.png",
+        "src": "/images/produse/eddy-current-sorting-machine6.webp",
         "alt": "Separator Curenți Turbionari Metale Neferoase | 400–1400 | +30% Rec | 0–3000rpm — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10401,7 +10281,7 @@
       "type": "image",
       "insertAfterParagraph": 28,
       "data": {
-        "src": "/images/produse/eddy-current-sorting-machine6.png",
+        "src": "/images/produse/eddy-current-sorting-machine6.webp",
         "alt": "Separator Curenți Turbionari Metale Neferoase | 400–1400 | +30% Rec | 0–3000rpm — detaliu",
         "caption": "Detaliu al rotorului și geometriei cuțitelor.",
         "galleryIndex": 2
@@ -10442,7 +10322,7 @@
       "type": "image",
       "insertAfterParagraph": 20,
       "data": {
-        "src": "/images/produse/airflow-gravity-separator.png",
+        "src": "/images/produse/airflow-gravity-separator.webp",
         "alt": "Separator Gravitațional Densitate Reciclare | 50mm–200 Mesh | 10× Manual | Puls Praf — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10460,7 +10340,7 @@
       "type": "image",
       "insertAfterParagraph": 34,
       "data": {
-        "src": "/images/produse/airflow-gravity-separator.png",
+        "src": "/images/produse/airflow-gravity-separator.webp",
         "alt": "Separator Gravitațional Densitate Reciclare | 50mm–200 Mesh | 10× Manual | Puls Praf — detaliu",
         "caption": "Detaliul sistemului Igus pentru protecția cablurilor mobile.",
         "galleryIndex": 2
@@ -10501,7 +10381,7 @@
       "type": "image",
       "insertAfterParagraph": 17,
       "data": {
-        "src": "/images/produse/drum-screen1.png",
+        "src": "/images/produse/drum-screen1.webp",
         "alt": "Sită Rotativă Tambur Sortare | Materiale Umede | Zero Înfundare | Motor+Reductor — vedere de ansamblu",
         "caption": "Cupa hidraulică montată pe brațul excavatorului.",
         "galleryIndex": 0
@@ -10519,7 +10399,7 @@
       "type": "image",
       "insertAfterParagraph": 30,
       "data": {
-        "src": "/images/produse/drum-screen1.png",
+        "src": "/images/produse/drum-screen1.webp",
         "alt": "Sită Rotativă Tambur Sortare | Materiale Umede | Zero Înfundare | Motor+Reductor — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
@@ -10619,7 +10499,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/Conveyor-Belt.png",
+        "src": "/images/produse/Conveyor-Belt.webp",
         "alt": "Bandă Transportoare Reciclare Industrială | Cauciuc/PVC/Plăci Metal | Customizabilă — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10637,7 +10517,7 @@
       "type": "image",
       "insertAfterParagraph": 31,
       "data": {
-        "src": "/images/produse/Conveyor-Belt.png",
+        "src": "/images/produse/Conveyor-Belt.webp",
         "alt": "Bandă Transportoare Reciclare Industrială | Cauciuc/PVC/Plăci Metal | Customizabilă — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
@@ -10678,7 +10558,7 @@
       "type": "image",
       "insertAfterParagraph": 18,
       "data": {
-        "src": "/images/produse/dust-collector2.png",
+        "src": "/images/produse/dust-collector2.webp",
         "alt": "Colector Praf Puls Reciclare | Auto-Curățare Impuls | Recuperare Material | Conformitate — vedere de ansamblu",
         "caption": "Utilajul de reciclare în configurația industrială.",
         "galleryIndex": 0
@@ -10696,7 +10576,7 @@
       "type": "image",
       "insertAfterParagraph": 30,
       "data": {
-        "src": "/images/produse/dust-collector2.png",
+        "src": "/images/produse/dust-collector2.webp",
         "alt": "Colector Praf Puls Reciclare | Auto-Curățare Impuls | Recuperare Material | Conformitate — detaliu",
         "caption": "Detaliu constructiv al echipamentului în producție.",
         "galleryIndex": 2
