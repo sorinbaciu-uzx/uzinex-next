@@ -4274,31 +4274,11 @@
       }
     },
     {
-      "type": "image",
-      "insertAfterParagraph": 21,
-      "data": {
-        "src": "/images/produse/Invelitoare-de-maneca-FL7540-Pneumatic.webp",
-        "alt": "Mașina de Tunel Termocontractibil BSE6040A | 24kW, 0–15m/min, Folie PE | UZINEX — vedere de ansamblu",
-        "caption": "Echipamentul de ambalare pregătit de linia de producție.",
-        "galleryIndex": 0
-      }
-    },
-    {
       "type": "faq",
       "insertAfterParagraph": 26,
       "data": {
         "question": "Se poate integra în linia mea de producție existentă?",
         "answer": "Da, echipamentul se integrează cu benzi, paletizoare și sisteme SCADA prin semnale digitale standard. Integrarea se planifică la ofertare."
-      }
-    },
-    {
-      "type": "image",
-      "insertAfterParagraph": 35,
-      "data": {
-        "src": "/images/produse/Invelitoare-de-maneca-FL7540-Pneumatic.webp",
-        "alt": "Mașina de Tunel Termocontractibil BSE6040A | 24kW, 0–15m/min, Folie PE | UZINEX — detaliu",
-        "caption": "Detaliu al grupului de sigilare și al ghidajelor.",
-        "galleryIndex": 2
       }
     }
   ],
