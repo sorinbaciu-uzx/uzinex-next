@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
 import { AllLinksNewTab } from "@/components/AllLinksNewTab";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // Reduce font-file count to stabilize LCP on slow mobile networks.
@@ -222,6 +223,7 @@ export default function RootLayout({
         <Analytics />
         <AllLinksNewTab />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
