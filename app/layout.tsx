@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
 import { AllLinksNewTab } from "@/components/AllLinksNewTab";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // Reduce font-file count to stabilize LCP on slow mobile networks.
@@ -224,6 +225,7 @@ export default function RootLayout({
         <AllLinksNewTab />
         {children}
         <SpeedInsights />
+        <VercelAnalytics />
       </body>
     </html>
   );
