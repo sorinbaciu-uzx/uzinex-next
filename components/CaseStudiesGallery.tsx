@@ -2,7 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+
+const DETAIL_PAGES: Record<string, string> = {
+  feg: "/studii-de-caz/future-energy-group",
+};
 
 type Industry =
   | "Toate"
@@ -733,6 +738,16 @@ export function CaseStudiesGallery({ data }: { data?: CaseStudiesAllData | null 
                         )}
                       </ul>
                     </div>
+
+                    {DETAIL_PAGES[c.id] && (
+                      <Link
+                        href={DETAIL_PAGES[c.id]}
+                        className="mt-5 inline-flex items-center gap-2 text-xs text-uzx-blue hover:text-uzx-orange underline-link self-start group/cta"
+                      >
+                        Citește studiul complet
+                        <span className="group-hover/cta:translate-x-1 transition">→</span>
+                      </Link>
+                    )}
                   </div>
                 </motion.article>
               ))}
