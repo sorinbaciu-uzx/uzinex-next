@@ -22,11 +22,11 @@ export type CaseStudiesHomeData = {
 
 const CASES: CaseStudy[] = [
   {
-    client: "FUTURE ENERGY GROUP S.R.L.",
+    client: "FUTURE ENERGY GROUP",
     image: "https://img.youtube.com/vi/DQO74tlDNNQ/maxresdefault.jpg",
-    alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
-    title: "Future Energy Group reduce timpul de instalare",
-    subtitle: "cu o nouă instalație de sudură industrială pusă în funcțiune în doar 2 ore",
+    alt: "Aparat laser 3-in-1 Uzinex livrat Future Energy Group București pentru sudură, curățare și debitare în atelierul fotovoltaic",
+    title: "Atelier fotovoltaic care a învățat să sudeze în 2 ore",
+    subtitle: "cu un aparat laser 3-in-1 (sudură + curățare + debitare) și o decizie inteligentă de capital",
     youtubeId: "DQO74tlDNNQ",
   },
   {

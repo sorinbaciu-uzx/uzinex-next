@@ -94,21 +94,22 @@ export function VideoPlayer({
 }
 
 export function PaybackCalculator() {
-  const [downtimeHours, setDowntimeHours] = useState(8);
-  const [hourlyValue, setHourlyValue] = useState(450);
-  const [contractValue, setContractValue] = useState(75000);
-  const [equipmentCost, setEquipmentCost] = useState(28000);
+  const [welderSalary, setWelderSalary] = useState(2500);
+  const [equipmentCost, setEquipmentCost] = useState(11000);
+  const [outsourcedMonthly, setOutsourcedMonthly] = useState(800);
+  const [yearsHorizon, setYearsHorizon] = useState(5);
 
-  const { savedPerIncident, paybackIncidents, paybackMonths } = useMemo(() => {
-    const saved = downtimeHours * hourlyValue;
-    const incidents = equipmentCost > 0 && saved > 0 ? equipmentCost / saved : 0;
-    const months = incidents > 0 ? incidents / 1.5 : 0;
+  const { paybackMonths, savedAtHorizon, totalAvoided } = useMemo(() => {
+    const monthlySaved = welderSalary + outsourcedMonthly;
+    const months = monthlySaved > 0 ? equipmentCost / monthlySaved : 0;
+    const totalSaved = monthlySaved * yearsHorizon * 12 - equipmentCost;
+    const avoided = welderSalary * yearsHorizon * 12;
     return {
-      savedPerIncident: saved,
-      paybackIncidents: incidents,
       paybackMonths: months,
+      savedAtHorizon: totalSaved,
+      totalAvoided: avoided,
     };
-  }, [downtimeHours, hourlyValue, equipmentCost]);
+  }, [welderSalary, equipmentCost, outsourcedMonthly, yearsHorizon]);
 
   const fmt = (n: number) =>
     new Intl.NumberFormat("ro-RO", { maximumFractionDigits: 0 }).format(n);
@@ -118,51 +119,51 @@ export function PaybackCalculator() {
       <div className="grid grid-cols-1 lg:grid-cols-5">
         <div className="lg:col-span-3 p-6 lg:p-10 border-b lg:border-b-0 lg:border-r hairline">
           <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-4">
-            Calculator payback · estimare
+            Replică decizia FEG · estimare payback
           </div>
           <h3
             className="serif text-xl lg:text-2xl text-ink-900 mb-6"
             style={{ letterSpacing: "-0.02em" }}
           >
-            Cât te-ar costa un downtime similar?
+            Cât te-ar costa să nu cumperi laser-ul?
           </h3>
 
           <div className="space-y-5">
             <Field
-              label="Ore de downtime fără echipament backup"
-              suffix="ore"
-              value={downtimeHours}
-              min={1}
-              max={120}
-              step={1}
-              onChange={setDowntimeHours}
-            />
-            <Field
-              label="Valoare medie generată / oră producție"
-              suffix="RON"
-              value={hourlyValue}
-              min={50}
+              label="Salariu sudor (brut, taxe incluse) / lună"
+              suffix="EUR"
+              value={welderSalary}
+              min={1500}
               max={5000}
-              step={50}
-              onChange={setHourlyValue}
+              step={100}
+              onChange={setWelderSalary}
             />
             <Field
-              label="Valoare contract sub risc de penalitate"
-              suffix="RON"
-              value={contractValue}
-              min={5000}
-              max={1000000}
-              step={5000}
-              onChange={setContractValue}
-            />
-            <Field
-              label="Investiție echipament nou"
-              suffix="RON"
+              label="Cost echipament laser 3-in-1"
+              suffix="EUR"
               value={equipmentCost}
               min={5000}
-              max={500000}
-              step={1000}
+              max={50000}
+              step={500}
               onChange={setEquipmentCost}
+            />
+            <Field
+              label="Cost lunar lucrări externalizate (sudură + curățare + debitare)"
+              suffix="EUR"
+              value={outsourcedMonthly}
+              min={0}
+              max={5000}
+              step={50}
+              onChange={setOutsourcedMonthly}
+            />
+            <Field
+              label="Orizont de calcul"
+              suffix="ani"
+              value={yearsHorizon}
+              min={1}
+              max={10}
+              step={1}
+              onChange={setYearsHorizon}
             />
           </div>
         </div>
@@ -174,42 +175,39 @@ export function PaybackCalculator() {
             </div>
             <div className="space-y-6">
               <Result
-                label="Valoare salvată / incident"
-                value={`${fmt(savedPerIncident)} RON`}
+                label="Economii lunare totale"
+                value={`${fmt(welderSalary + outsourcedMonthly)} EUR`}
+                hint="salariu evitat + externalizare evitată"
               />
               <Result
-                label="Acoperire risc contract"
-                value={
-                  contractValue > 0 && equipmentCost > 0
-                    ? `${Math.round((contractValue / equipmentCost) * 100)}%`
-                    : "—"
-                }
-                hint="raport contract / investiție"
-              />
-              <Result
-                label="Payback (incidente echivalente)"
-                value={paybackIncidents > 0 ? `${fmt(paybackIncidents)} incidente` : "—"}
-              />
-              <Result
-                label="Payback estimat"
+                label="Payback echipament"
                 value={paybackMonths > 0 ? `${paybackMonths.toFixed(1)} luni` : "—"}
-                hint="la 1.5 incidente / lună medie sectoriala"
                 emphasized
+              />
+              <Result
+                label={`Net economisit la ${yearsHorizon} ani`}
+                value={`${fmt(savedAtHorizon)} EUR`}
+                hint="după recuperarea investiției"
+              />
+              <Result
+                label={`Cost angajare evitat la ${yearsHorizon} ani`}
+                value={`${fmt(totalAvoided)} EUR`}
               />
             </div>
           </div>
 
           <div className="mt-8 pt-6 border-t hairline">
             <a
-              href="/contact?subject=Configurare%20echipament%20de%20sudur%C4%83%20industrial%C4%83"
+              href="/contact?subject=Echipament%20laser%203-in-1%20%E2%80%94%20probare%20%C3%AEn%20custodie"
               className="bg-uzx-blue hover:bg-uzx-blue2 text-white text-sm px-5 py-3 inline-flex items-center justify-center gap-3 group transition w-full"
             >
               Vreau ofertă pentru cazul meu
               <span className="group-hover:translate-x-1 transition">→</span>
             </a>
             <p className="text-[10px] mono text-ink-400 mt-3 leading-relaxed">
-              Estimare orientativă pe baza valorilor introduse. Pentru calcul exact
-              cere un studiu personalizat de la un inginer Uzinex.
+              Calcul orientativ doar pe economia salarială + externalizare. Nu include
+              veniturile potențiale din servicii noi pe care le poți oferi clienților
+              cu același echipament.
             </p>
           </div>
         </div>

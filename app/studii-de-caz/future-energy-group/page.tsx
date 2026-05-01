@@ -12,142 +12,113 @@ const YT_ID = "DQO74tlDNNQ";
 const HERO_IMG = `https://img.youtube.com/vi/${YT_ID}/maxresdefault.jpg`;
 
 export const metadata: Metadata = {
-  title: "Future Energy Group · Sudură industrială pusă în funcțiune în 2 ore",
+  title: "Future Energy Group · Cum un atelier fotovoltaic a sudat fără sudor",
   description:
-    "Studiu de caz: cum am livrat și pus în funcțiune o instalație de sudură industrială pentru Future Energy Group din Iași în 72h, salvând un contract energetic cu termen ferm. Date reale, KPI-uri măsurate, lecții învățate.",
+    "Studiu de caz: Future Energy Group, instalator de sisteme fotovoltaice premium din București cu 3 angajați și zero experiență la sudură. Au cumpărat un laser 3-in-1 (sudură, curățare, debitare) de 2000W. Owner-ul a învățat să sudeze perfect în 2 ore. Salariu sudor evitat: 2.500 €/lună.",
   alternates: { canonical: `/studii-de-caz/${SLUG}` },
   openGraph: {
-    title: "Future Energy Group · Sudură industrială pusă în funcțiune în 2 ore",
+    title: "Future Energy Group · Owner-ul a învățat să sudeze în 2 ore cu laser 3-in-1",
     description:
-      "De la cerere în vineri seară la primul cordon de sudură pe șantier luni la prânz — studiu de caz Uzinex pentru Future Energy Group.",
+      "Atelier fotovoltaic cu 3 angajați, fără sudor. Laser 2000W. Owner-ul a învățat să sudeze perfect în 2 ore. Studiu de caz Uzinex.",
     images: [HERO_IMG],
     type: "article",
   },
 };
 
-const TIMELINE: Array<{ day: string; date: string; title: string; body: string }> = [
+const TIMELINE: Array<{ phase: string; title: string; body: string }> = [
   {
-    day: "Ziua 0",
-    date: "Vineri, 17:42",
-    title: "Cerere primită pe WhatsApp",
+    phase: "Apel inițial",
+    title: "Future Energy Group — primii care s-au mișcat în zona lor",
     body:
-      "Director producție FEG ne contactează direct: aparatul lor de sudură industrială cedase în după-amiaza aceea, la 36h de demararea operațiunilor pe un șantier de stație electrică contractat cu termen ferm.",
+      "Future Energy Group sunt instalatori de sisteme fotovoltaice premium și operează un magazin de echipamente electrice în zona industrială din București. Pe măsură ce și-au crescut standardul de livrare, au identificat o oportunitate strategică pe care colegii lor de zonă încă nu o vedeau: capacitatea de a executa în atelier propriu cuști de aluminiu pentru organizarea cablajelor — un detaliu de calitate premium care diferențiază o instalație fotovoltaică serioasă de una obișnuită. Au cercetat soluții, au descoperit reclama noastră Google pentru aparate laser industriale și au sunat direct.",
   },
   {
-    day: "Ziua 0",
-    date: "Vineri, 19:10",
-    title: "Confirmare stoc + ofertă",
+    phase: "Decizia",
+    title: "Aparat în custodie din showroom — au cerut probă pe materialul lor",
     body:
-      "Inginer comercial verifică stocul depozit Iași, trimite ofertă fermă pentru aparat sudură industrială MIG/MAG echivalent + accesorii. Acceptată la 19:55.",
+      "Am dimensionat tehnic nevoia: laser 3-in-1 (sudură + curățare + debitare) de 2.000W, sursă MAX, pistol SUP23T. Echipa FEG a făcut due-diligence-ul firesc al unor antreprenori serioși — voiau să vadă cum se comportă tehnologia pe materialele lor concrete, nu pe demo-uri generice. Le-am livrat un aparat din showroom-ul nostru în custodie pe perioada de import aerian a aparatului propriu (≈15 zile lucrătoare). Acord clar: probați-l la voi, validați-l pe lucrările reale, plătiți după ce aterizează al vostru. Fără factură proformă, fără avans.",
   },
   {
-    day: "Ziua 1",
-    date: "Sâmbătă",
-    title: "Pregătire transport + verificare tehnică",
+    phase: "Probă internă",
+    title: "Owner-ul a stăpânit tehnologia în 2 ore",
     body:
-      "Echipa tehnică Uzinex testează echipamentul în depozit (parametri sudură, ciclu de lucru, calibrare amperaj) înainte de livrare. Set consumabile pre-configurat pentru oțel structural S355.",
+      "Aici se vede caracterul echipei FEG: deși niciunul dintre cei trei oameni nu mai sudase profesional anterior, owner-ul a abordat tehnologia cu seriozitate de inginer. În două ore de probă structurată a trecut de la prima încercare la cordoane de calitate premium pe aluminiu — viteza de adopție pe care o vezi la antreprenori care chiar înțeleg ce fac. Au început imediat producția cuștilor pentru cabluri pentru proiectele lor curente.",
   },
   {
-    day: "Ziua 3",
-    date: "Luni, 09:00",
-    title: "Livrare fizică la sediul FEG · Iași",
+    phase: "Livrare echipament propriu",
+    title: "≈15 zile lucrătoare · import aerian + montaj la sediu",
     body:
-      "Transport propriu Uzinex, fără intermediar. Descărcare cu motostivuitor pus la dispoziție de FEG.",
+      "Aparatul propriu al FEG a aterizat la București cu mică întârziere față de estimarea inițială. L-am ridicat de la cargo, l-am dus la sediul lor și am efectuat instalarea + trainingul (2 ore). Plata s-a făcut după instalare, conform înțelegerii.",
   },
   {
-    day: "Ziua 3",
-    date: "Luni, 09:00 – 11:00",
-    title: "Commissioning · 2 ore",
+    phase: "Commissioning · ce nu a mers din prima",
+    title: "Lipsa noastră: nu am pre-livrat consumabilele validate",
     body:
-      "Conectare electrică, calibrare cu probe pe oțel S355 din lotul șantierului, training operatori (2 sudori), verificare parametri MIG cu placa de probă.",
-  },
-  {
-    day: "Ziua 3",
-    date: "Luni, 13:30",
-    title: "Primul cordon de sudură pe șantier",
-    body:
-      "Echipa FEG sudează prima componentă pe stația energetică. Termen contractual respectat. Penalitate evitată: 14.500 RON/zi întârziere.",
+      "FEG s-a pregătit din timp pentru ziua punerii în funcțiune și a procurat din proprie inițiativă sârma de adaos de la un furnizor local — exact comportamentul pe care-l vrei la un client serios. Problema: noi ar fi trebuit să-i livrăm setul de consumabile validate odată cu echipamentul. Sârma local-procurată avea duritate sub-spec pentru alimentatorul aparatului. Am identificat și corectat în 20 minute, dar lecția a fost a noastră — nu a lor. De atunci, la fiecare vânzare de aparat laser livrăm setul inițial de sârmă validată în pachet.",
   },
 ];
 
 const RESULTS: Array<{ value: string; label: string; detail: string }> = [
   {
-    value: "2h",
-    label: "Commissioning + training",
+    value: "2 ore",
+    label: "Owner-ul · de la zero la sudură premium",
     detail:
-      "De la sosire la prima sudură de probă acceptată — fără tichet de service deschis ulterior.",
+      "Trei angajați, niciun sudor. După 2h de probă cu laser-ul, owner-ul producea cordoane de calitate premium pe aluminiu.",
   },
   {
-    value: "72h",
-    label: "Cerere → producție",
+    value: "2.500 €",
+    label: "/ lună · salariu sudor evitat",
     detail:
-      "Vineri 17:42 cerere, luni 13:30 prima sudură pe șantier. Inclusiv weekend.",
+      "Cost mediu de angajare a unui sudor calificat în București (brut + taxe). Pentru o nevoie ocazională, angajarea nu se justifica financiar.",
   },
   {
-    value: "100%",
-    label: "Conformitate suduri",
+    value: "11.000 €",
+    label: "Investiție echipament",
     detail:
-      "Inspecție VT + RT pe primele 12 cordoane critice — rebut zero la dirigintele de șantier.",
+      "Costul aparatului laser 3-in-1 livrat — sudură + curățare + debitare în același utilaj.",
   },
   {
-    value: "85%",
-    label: "Reducere downtime estimat",
+    value: "≈4,4 luni",
+    label: "Payback estimat doar din salarii",
     detail:
-      "Față de scenariul „comandă echipament nou pe canal standard” estimat la ~14 zile.",
+      "Calcul simplu: 11.000 € / 2.500 €/lună ≈ 4,4 luni. Fără să luăm în calcul lucrările pe care altfel le-ar fi externalizat.",
   },
   {
-    value: "14.500",
-    label: "RON / zi penalitate evitată",
+    value: "3-în-1",
+    label: "Sudură · curățare · debitare",
     detail:
-      "Calcul pe baza clauzei contract energetic — minim o zi întârziere ar fi declanșat penalități.",
+      "Același echipament servește trei nevoi: sudură premium pe inox/aluminiu/oțel, curățare cu laser (alternativă la sablare), debitare.",
   },
   {
-    value: "60 luni",
-    label: "Garanție echipament",
+    value: "1",
+    label: "Intervenție service în primul an",
     detail:
-      "Standard Uzinex pe toate aparatele de sudură industriale livrate, cu intervenție sub 24h.",
+      "O singură vizită — pentru schimb de lentile de protecție consumate. Niciun defect tehnic raportat pe utilaj.",
   },
 ];
 
 const LESSONS: Array<{ title: string; body: string }> = [
   {
-    title: "Cablajul de la fața locului era sub-standard",
+    title: "Importul aerian — întârziere minoră, custodia din showroom a acoperit-o",
     body:
-      "La ora 09:30 luni dimineață, la conectare, am descoperit că secțiunea cablurilor de alimentare existente la FEG (16 mm²) era sub-dimensionată pentru intensitatea nominală a noului aparat. Am livrat în 90 min un set de cabluri 25 mm² din depozitul Iași și am refăcut conectarea. Întârziere netă: 1h 20min. Lecție pentru clienți: la upgrade de putere, verifică secțiunea cablajului de alimentare ÎNAINTE de comandă — nu după. Trimitem o fișă tehnică pre-comandă cu cerințele de instalație începând cu acest proiect.",
+      "Aparatul propriu al FEG a întâmpinat o întârziere mică pe segmentul de import aerian. Pentru că livraserăm anterior aparatul din showroom în custodie, FEG nu a pierdut o singură zi de producție. Lecția: pentru tehnologii pe care clientul nu le-a mai folosit, livrarea în custodie pre-plată e o practică pe care am extins-o ca standard al vânzărilor noastre. FEG a fost primul caz unde am aplicat-o — și a confirmat valoarea ei.",
   },
   {
-    title: "Trainingul standard de 30 min nu a fost suficient",
+    title: "Lipsa noastră: nu am pre-livrat consumabilele validate cu aparatul",
     body:
-      "Operatorii FEG aveau experiență doar cu un model invertor TIG mai vechi. Tranziția la noul controller MIG sinergic a cerut training extins la 90 min, cu probă pe placa de control. Am rămas pe șantier până la 14:00 pentru asistență la primele 12 cordoane. Lecție: pentru clienți cu echipamente legacy, recomandăm acum implicit pachetul de training extins (90–120 min) din prima discuție comercială.",
+      "FEG a fost proactiv și a procurat din timp sârmă de adaos de la un furnizor local — exact comportamentul corect al unui client serios care vrea să fie pregătit pentru ziua punerii în funcțiune. Sârma respectivă avea însă duritate sub-spec pentru alimentatorul aparatului. Lecția a fost a noastră: ar fi trebuit să livrăm noi consumabilele validate odată cu utilajul. De atunci, în pachetul fiecărui aparat laser intră setul inițial de sârmă pre-validat în depozitul nostru.",
   },
   {
-    title: "Decizia de stoc a fost critică",
+    title: "Antreprenorii agile cumpără pe rezultate, nu pe documentație",
     body:
-      "Dacă echipamentul ar fi trebuit comandat la furnizor și expediat din afara țării, termenul minim ar fi fost 9–14 zile lucrătoare — peste fereastra contractuală a FEG. Politica noastră de a păstra în depozitul Iași stoc tampon din 4 categorii de echipamente critice (sudură, tăiere, manipulare, instrumentație) a făcut diferența. Costul de oportunitate al stocului local s-a amortizat într-o singură zi.",
+      "FEG a tăiat scurt prin partea de prezentări comerciale și a cerut direct o validare pe materialele lor. Lecție de business pentru noi: la antreprenori care construiesc activ ceva — și care își apără timpul — fișa tehnică PDF nu vinde la fel de bine ca o probă fizică în atelierul lor. De atunci propunem custodie de probă pentru orice tehnologie nouă, și vedem rate de conversie mai bune și clienți mai mulțumiți pe termen lung.",
   },
 ];
 
-const EQUIPMENT: Array<{ name: string; spec: string; href: string }> = [
-  {
-    name: "Aparat sudură industrială MIG/MAG sinergic",
-    spec: "350A · ciclu de lucru 60% · controller digital · compatibil oțel structural S355, S420",
-    href: "/contact?subject=Aparat%20sudur%C4%83%20industrial%C4%83%20MIG%2FMAG",
-  },
-  {
-    name: "Set cabluri putere 25 mm² + reductor presiune",
-    spec: "Cabluri Cu izolație neopren · reductor 2 trepte cu manometru dublu · regulator debit",
-    href: "/contact?subject=Set%20cabluri%20%C8%99i%20accesorii%20sudur%C4%83",
-  },
-  {
-    name: "Pistol MIG răcit cu apă + kit consumabile S355",
-    spec: "Pistol MB 401 · 4m · duze + difuzori + sârmă SG2 1.2mm · gaz protector M21 (Ar+CO₂)",
-    href: "/contact?subject=Consumabile%20sudur%C4%83%20MIG%20S355",
-  },
-  {
-    name: "Sistem de protecție operator",
-    spec: "Mască sudură auto-întunecare DIN 4/9-13 · mănuși · șorț din piele crupon · aspirator local fum",
-    href: "/contact?subject=Sistem%20protec%C8%9Bie%20operator%20sudur%C4%83",
-  },
+const TESTIMONIAL_QUOTES = [
+  "Avem multiple probleme în a face structuri speciale care deservesc sistemelor noastre, și soluția de aparat de sudură laser ne-a ajutat extrem de mult.",
+  "O colaborare bună, lină. Întotdeauna am avut parte de suport și de ajutor.",
+  "Ne-au pus la dispoziție tot ce am avut nevoie, de la manuale până la sfaturi utile din experiența lor.",
 ];
 
 export default function FegCaseStudyPage() {
@@ -159,21 +130,21 @@ export default function FegCaseStudyPage() {
 
   const article = articleSchema({
     slug: SLUG,
-    title: "Future Energy Group — sudură industrială pusă în funcțiune în 2 ore",
+    title:
+      "Future Energy Group — atelier fotovoltaic care a învățat să sudeze cu laser 3-in-1",
     excerpt:
-      "Cum am livrat în 72h o instalație de sudură industrială pentru un șantier energetic cu termen contractual ferm — cifre, timeline real și lecții învățate.",
+      "Cum un instalator de sisteme fotovoltaice cu 3 angajați și zero experiență la sudură a evitat costul angajării unui sudor (2.500 €/lună) cu un laser 3-in-1.",
     category: "Studiu de caz",
-    datePublished: "2026-03-12",
+    datePublished: "2024-09-01",
     image: HERO_IMG,
   });
 
   const video = videoSchema({
-    name: "Instalație de sudură industrială Uzinex pentru Future Energy Group",
+    name: "Testimonial Future Energy Group · aparat sudură laser",
     description:
-      "Walkthrough livrare și commissioning aparat sudură industrială MIG/MAG pentru Future Energy Group, Iași — pus în funcțiune în 2 ore.",
+      "Testimonial real al lui George de la Future Energy Group, București — utilizare aparat laser 3-in-1 pentru sudură, curățare și debitare structuri custom în atelierul fotovoltaic.",
     youtubeId: YT_ID,
-    uploadDate: "2026-03-12T10:00:00Z",
-    duration: "PT1M42S",
+    uploadDate: "2024-10-15T10:00:00Z",
   });
 
   return (
@@ -208,10 +179,10 @@ export default function FegCaseStudyPage() {
               <div className="lg:col-span-7">
                 <div className="flex flex-wrap items-center gap-3 text-[10px] lg:text-[11px] mono uppercase tracking-[0.2em] text-ink-500 mb-5">
                   <span className="bg-uzx-orange text-white px-2 py-0.5">
-                    Energie & infrastructură
+                    Energie regenerabilă · fotovoltaic
                   </span>
-                  <span>· Iași, RO</span>
-                  <span>· 2026</span>
+                  <span>· București, RO</span>
+                  <span>· 2024</span>
                 </div>
                 <h1
                   className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-5"
@@ -219,20 +190,21 @@ export default function FegCaseStudyPage() {
                 >
                   Future Energy Group:<br />
                   <span className="font-light text-uzx-orange">
-                    de la cerere vineri seară la primul cordon de sudură luni la 13:30.
+                    cum un atelier de 3 oameni a învățat să sudeze în 2 ore.
                   </span>
                 </h1>
                 <p className="text-base lg:text-lg text-ink-600 leading-relaxed max-w-2xl">
-                  Aparatul de sudură principal s-a defectat la 36h de demararea unui
-                  șantier energetic cu termen contractual ferm. Livrare echipament,
-                  punere în funcțiune și training — în 72h, weekend inclus. Penalitate
-                  evitată: 14.500 RON / zi.
+                  Instalator de sisteme fotovoltaice premium din București. Trei
+                  angajați. Zero experiență la sudură. Aveau nevoie să producă intern
+                  cuști de aluminiu pentru cabluri — calitate premium, fără să
+                  externalizeze. Angajarea unui sudor în București: 2.500 €/lună.
+                  Soluția: laser 3-in-1 de 2.000W. Owner-ul a învățat în două ore.
                 </p>
 
                 <div className="grid grid-cols-3 gap-3 lg:gap-6 mt-8 max-w-lg">
-                  <HeroStat value="72h" label="Cerere → producție" />
-                  <HeroStat value="2h" label="Commissioning" />
-                  <HeroStat value="100%" label="Conformitate suduri" />
+                  <HeroStat value="2h" label="Owner · de la zero la sudură" />
+                  <HeroStat value="2.500€" label="/ lună salariu evitat" />
+                  <HeroStat value="3-în-1" label="Sudură + curățare + debitare" />
                 </div>
               </div>
 
@@ -240,7 +212,7 @@ export default function FegCaseStudyPage() {
                 <VideoPlayer
                   youtubeId={YT_ID}
                   thumbnail={HERO_IMG}
-                  title="Future Energy Group · livrare și commissioning în 2 ore"
+                  title="Testimonial George · Future Energy Group"
                 />
               </div>
             </div>
@@ -250,14 +222,17 @@ export default function FegCaseStudyPage() {
         {/* 1. CARTELĂ CLIENT */}
         <Section number="01" eyebrow="Cartelă client">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 lg:gap-x-12">
-            <FactBlock label="Client" value="Future Energy Group S.R.L." />
-            <FactBlock label="Industrie" value="Energie & infrastructură" />
-            <FactBlock label="Locație" value="Iași, România" />
-            <FactBlock label="Anul proiect" value="2026" />
-            <FactBlock label="Dimensiune" value="~45 angajați" />
-            <FactBlock label="Profil" value="Producător echipamente energetice" />
-            <FactBlock label="Tip proiect" value="Echipare șantier · livrare urgentă" />
-            <FactBlock label="Status" value="Operațional · sub garanție" />
+            <FactBlock label="Client" value="Future Energy Group" />
+            <FactBlock label="Industrie" value="Sisteme fotovoltaice premium" />
+            <FactBlock label="Locație" value="București, România" />
+            <FactBlock label="Anul proiect" value="2024" />
+            <FactBlock label="Echipă" value="3 angajați" />
+            <FactBlock
+              label="Activitate"
+              value="Instalare PV + magazin echipamente electrice"
+            />
+            <FactBlock label="Cifra de afaceri 2024" value="4.952.174 lei" />
+            <FactBlock label="Tip vânzare" value="Custodie pre-plată · import aerian" />
           </div>
         </Section>
 
@@ -267,97 +242,142 @@ export default function FegCaseStudyPage() {
             className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6 max-w-3xl"
             style={{ letterSpacing: "-0.02em" }}
           >
-            Nu „voiau să se digitalizeze". Aveau un aparat defect și 36h până la primul
-            cordon contractat.
+            O echipă de 3 oameni cu standard de livrare premium și o decizie
+            financiară inteligentă de luat.
           </h2>
           <div className="prose-uzx max-w-3xl space-y-4 text-ink-600 text-base lg:text-[17px] leading-relaxed">
             <p>
-              Future Energy Group avea contractat echiparea unei stații electrice
-              regionale. Termenul ferm: prima sudură pe componentele structurale luni
-              dimineață, dirigintele de șantier prezent la inspecția cordoanelor.
+              Future Energy Group instalează sisteme fotovoltaice premium pentru
+              clienți privați în zona București. Pe măsură ce și-au crescut
+              standardul intern, au identificat o categorie de detaliu care
+              diferențiază o instalație premium: <strong className="text-ink-900">
+              cuști din aluminiu pentru organizarea cablajelor</strong>, executate
+              la nivel vizibil în instalații finite. Pentru a păstra control complet
+              pe calitate și termen, voiau să le producă intern.
             </p>
             <p>
-              Vineri la 16:30 — cu 36 de ore înainte de demararea operațiunilor —
-              aparatul lor principal de sudură industrială a cedat în atelierul de
-              pre-fabricație. Plăcile de control de pe controller-ul invertor s-au
-              ars. Reparația estimată de service-ul autorizat: 7–10 zile lucrătoare,
-              piesă de schimb din afara țării.
+              Soluția convențională — angajarea unui sudor calificat — nu era
+              optimă pentru economia operațională a unei echipe agile. Costul brut
+              al unui sudor cu experiență în București:{" "}
+              <strong className="text-ink-900">circa 2.500 € lunar (taxe incluse)</strong>.
+              Pentru un volum ocazional (sub o normă întreagă), structura de cost
+              nu se justifica. Externalizarea ar fi însemnat pierderea controlului
+              pe calitate. FEG a căutat o a treia variantă — și a găsit-o.
             </p>
             <p>
-              <strong className="text-ink-900">Riscul real:</strong> contract anulat sau
-              penalitate de 14.500 RON pentru fiecare zi de întârziere. Plus reputația
-              de subcontractor cu termen depășit pe un proiect cu finanțator
-              instituțional.
-            </p>
-            <p className="text-ink-500 italic border-l-2 border-uzx-orange pl-5 mt-6">
-              „Nu aveam timp să cer trei oferte și să compar specificații. Aveam nevoie
-              de cineva care să-mi spună în 30 de minute dacă rezolvă, și să fie aici
-              luni dimineață."
-              <span className="block not-italic mt-2 text-[11px] mono uppercase tracking-wider text-ink-400">
-                — Director producție FEG, vineri 17:35
-              </span>
+              <strong className="text-ink-900">Calculul antreprenorial pe deasupra:</strong>{" "}
+              prezența lor în zona industrială respectivă, combinată cu capacitatea
+              nouă de sudură premium, deschidea un canal de venit suplimentar —
+              servicii pentru vecini de zonă, după ce ar fi prins tracțiune. Tipul
+              de gândire în paralel pe care îl vezi la antreprenori care construiesc
+              ceva, nu doar la cei care răspund la cerere.
             </p>
           </div>
         </Section>
 
         {/* 3. DE CE UZINEX */}
-        <Section number="03" eyebrow="De ce ne-au ales pe noi · onest">
+        <Section number="03" eyebrow="Cum am ajuns să vorbim · onest">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             <ReasonCard
               num="A"
-              title="Răspuns pe WhatsApp în 90 minute"
-              body="Cererea a sosit la 17:42 vineri. Ofertă fermă cu disponibilitate în depozit Iași — la 19:10. Niciun alt furnizor contactat nu a confirmat stoc fizic în mai puțin de 24h."
+              title="Au cercetat singuri și au sunat decis"
+              body="FEG nu a așteptat să fie prospectați. Au făcut research activ pe Google pentru soluții tehnice, au evaluat ofertele văzute, au sunat când au identificat ce căutau. Conversația cu CEO-ul Uzinex a început tehnic, nu cu filtre comerciale — modul de lucru al unui antreprenor care știe ce vrea."
             />
             <ReasonCard
               num="B"
-              title="Stoc fizic în depozit Iași"
-              body="Pe categoriile critice (sudură, tăiere, manipulare, instrumentație) păstrăm permanent stoc tampon. FEG putea ridica echipamentul personal sâmbătă dimineață dacă alegea — am livrat noi, cu transport propriu, luni la 9:00."
+              title="Au cerut probă fizică pe materialul lor"
+              body="Decizia de capital într-o echipă de 3 oameni se ia pe rezultate, nu pe demo-uri. FEG au cerut firesc o validare pe lucrările lor reale. Le-am livrat un aparat din showroom în custodie pe perioada importului. Au plătit aparatul propriu după ce au confirmat că rezolvă — exact cum facem afaceri serioase."
             />
             <ReasonCard
               num="C"
-              title="Garanția de 60 luni + intervenție sub 24h"
-              body="Subcontractor pe șantier energetic = orice oprire neplanificată ulterior costă scump. Cei 60 de luni standard pe aparate de sudură au fost decisivi — față de 24 luni la importatorii direcți."
+              title="Configurăm să dureze, nu să se strice"
+              body="Politica noastră tehnică: configurăm echipamentele să fie cât mai fiabile, chiar dacă asta înseamnă mai puține intervenții și mai puține piese de schimb vândute pe termen lung. Pentru clienți care nu au timp să se ocupe de utilaje defecte, asta este singura politică care contează."
             />
           </div>
           <p className="text-sm text-ink-500 italic mt-8 max-w-3xl">
-            Au comparat 2 oferte. Una avea preț cu ~9% mai mic dar livrare „în maxim 5
-            zile lucrătoare". Au ales pe noi pentru certitudinea de luni dimineață.
-            Diferența s-a recuperat în prima zi.
+            Politica de probă fizică în custodie pe care am aplicat-o aici a devenit
+            standardul nostru pentru tehnologii pe care clientul nu le-a mai folosit
+            anterior. Pentru noi e o filtrare naturală — vinzi doar dacă tehnologia
+            chiar livrează. Pentru clienți, e siguranța că nu plătesc pentru o promisiune.
           </p>
         </Section>
 
-        {/* 4. SOLUȚIA CONFIGURATĂ */}
-        <Section number="04" eyebrow="Soluția configurată">
-          <h2
-            className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-8 max-w-3xl"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            Aparat de sudură + accesorii configurate pentru oțel structural S355.
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-4">
-            {EQUIPMENT.map((eq) => (
-              <Link
-                key={eq.name}
-                href={eq.href}
-                className="border hairline bg-white p-5 lg:p-6 hover:border-uzx-blue group transition flex flex-col"
+        {/* 4. SOLUȚIA */}
+        <Section number="04" eyebrow="Echipamentul livrat">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-7">
+              <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-4">
+                Aparat laser 3-in-1
+              </div>
+              <h2
+                className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6"
+                style={{ letterSpacing: "-0.02em" }}
               >
-                <div className="serif text-base lg:text-lg text-ink-900 leading-snug mb-2 group-hover:text-uzx-blue transition">
-                  {eq.name}
+                Sudură + curățare + debitare ·<br />
+                același utilaj, trei aplicații.
+              </h2>
+
+              <dl className="divide-y hairline border-y hairline">
+                <SpecRow label="Putere" value="2.000W" />
+                <SpecRow label="Sursă laser" value="MAX" />
+                <SpecRow label="Pistol" value="SUP23T" />
+                <SpecRow
+                  label="Aplicații"
+                  value="Sudură (inox, aluminiu, oțel) · curățare laser · debitare"
+                />
+                <SpecRow
+                  label="Configurare"
+                  value="Standard · validată tehnic la pre-comissioning în depozit"
+                />
+                <SpecRow label="Garanție" value="60 luni · standard Uzinex" />
+              </dl>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="bg-ink-50 p-6 lg:p-8 border hairline">
+                <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-3">
+                  De ce 3-in-1 (și nu 3 echipamente separate)
                 </div>
-                <div className="text-xs lg:text-sm text-ink-500 leading-relaxed flex-1">
-                  {eq.spec}
-                </div>
-                <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mt-4 inline-flex items-center gap-2">
-                  Cere ofertă similară
+                <ul className="space-y-3 text-sm text-ink-700">
+                  <li className="flex gap-3">
+                    <span className="text-uzx-orange num shrink-0">→</span>
+                    <span>
+                      <strong className="text-ink-900">Sudură:</strong> cordoane
+                      premium pe aluminiu, fără cunoștințe avansate de sudor —
+                      curba de învățare 2h în loc de 6 luni.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-uzx-orange num shrink-0">→</span>
+                    <span>
+                      <strong className="text-ink-900">Curățare:</strong>{" "}
+                      alternativă curată la sablare — fără chimicale, fără praf,
+                      fără spațiu separat de curățare.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-uzx-orange num shrink-0">→</span>
+                    <span>
+                      <strong className="text-ink-900">Debitare:</strong> tăieri
+                      precise pe oțel/aluminiu pentru ajustarea componentelor pe
+                      teren, fără disc abraziv.
+                    </span>
+                  </li>
+                </ul>
+                <Link
+                  href="/contact?subject=Echipament%20laser%203-in-1%20-%20sudur%C4%83%2C%20cur%C4%83%C8%9Bare%2C%20debitare"
+                  className="mt-6 inline-flex items-center gap-2 text-xs text-uzx-blue hover:text-uzx-orange underline-link group"
+                >
+                  Cere ofertă pentru același echipament
                   <span className="group-hover:translate-x-1 transition">→</span>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              </div>
+            </div>
           </div>
         </Section>
 
         {/* 5. TIMELINE */}
-        <Section number="05" eyebrow="Timeline livrare · date reale">
+        <Section number="05" eyebrow="Cum s-a desfășurat · onest">
           <ol className="space-y-6 lg:space-y-8 max-w-3xl">
             {TIMELINE.map((t, i) => (
               <li key={i} className="grid grid-cols-[auto_1fr] gap-4 lg:gap-6">
@@ -370,13 +390,8 @@ export default function FegCaseStudyPage() {
                   )}
                 </div>
                 <div className="pb-2">
-                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                    <span className="text-[10px] mono uppercase tracking-widest text-uzx-orange">
-                      {t.day}
-                    </span>
-                    <span className="text-[10px] mono uppercase tracking-widest text-ink-400 num">
-                      {t.date}
-                    </span>
+                  <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-2">
+                    {t.phase}
                   </div>
                   <h3
                     className="serif text-lg lg:text-xl text-ink-900 leading-tight mb-2"
@@ -394,7 +409,7 @@ export default function FegCaseStudyPage() {
         </Section>
 
         {/* 6. REZULTATE */}
-        <Section number="06" eyebrow="Rezultate cuantificate" tone="dark">
+        <Section number="06" eyebrow="Rezultate · ce putem măsura, ce putem estima" tone="dark">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
             {RESULTS.map((r) => (
               <div key={r.label} className="bg-[#082545] p-6 lg:p-8">
@@ -413,30 +428,41 @@ export default function FegCaseStudyPage() {
               </div>
             ))}
           </div>
+          <p className="text-xs lg:text-sm text-white/60 mt-8 max-w-3xl italic leading-relaxed">
+            Notă transparentă: clientul nu ne-a transmis ROI exact. Cifra de payback
+            de 4,4 luni e calculată exclusiv pe economia salarială (echipament
+            11.000 € / salariu evitat 2.500 €/lună). Beneficiile suplimentare —
+            calitate intern, lucrări care altfel s-ar fi externalizat, eventuale
+            servicii custom oferite în zonă — nu sunt incluse în calcul.
+          </p>
         </Section>
 
-        {/* 7. CITAT CLIENT */}
+        {/* 7. CITAT CLIENT — testimonial real */}
         <section className="border-b hairline bg-ink-50 py-14 lg:py-20">
           <div className="container-x">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-6">
-                07 / Citat client
+            <div className="max-w-4xl mx-auto">
+              <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-6 text-center">
+                07 / Testimonial real · George, Future Energy Group
               </div>
-              <blockquote
-                className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-snug"
-                style={{ letterSpacing: "-0.02em" }}
-              >
-                „Au fost lângă noi luni la 8 dimineața să verifice primele 12 cordoane
-                pe șantier — fără să-i fi rugat. Asta nu se vede în PDF-ul de ofertă,
-                dar asta înseamnă <span className="text-uzx-orange">subcontractor
-                serios</span>."
-              </blockquote>
-              <div className="mt-8 flex items-center justify-center gap-4">
+              <div className="space-y-6">
+                {TESTIMONIAL_QUOTES.map((q, i) => (
+                  <blockquote
+                    key={i}
+                    className="serif text-xl md:text-2xl lg:text-[28px] text-ink-900 leading-snug border-l-2 border-uzx-orange pl-6 lg:pl-8"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    „{q}"
+                  </blockquote>
+                ))}
+              </div>
+              <div className="mt-10 flex items-center gap-4">
                 <div className="w-10 h-px bg-ink-300" />
-                <div className="text-left">
-                  <div className="text-sm text-ink-900 serif">Director producție</div>
+                <div>
+                  <div className="text-sm text-ink-900 serif">
+                    George · Future Energy Group
+                  </div>
                   <div className="text-[11px] mono uppercase tracking-wider text-ink-400 mt-1">
-                    Future Energy Group · Iași
+                    Extras transcript video testimonial · 2024
                   </div>
                 </div>
               </div>
@@ -445,47 +471,43 @@ export default function FegCaseStudyPage() {
         </section>
 
         {/* 8. SERVICE POST-LIVRARE */}
-        <Section number="08" eyebrow="Service post-livrare · primele 90 zile">
+        <Section number="08" eyebrow="Service post-livrare · ce s-a întâmplat în primul an">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-5">
               <h2
                 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-4"
                 style={{ letterSpacing: "-0.02em" }}
               >
-                Aici se vinde efectiv garanția de 60 luni.
+                Un singur tichet în 12 luni — schimb de lentile.
               </h2>
               <p className="text-ink-600 leading-relaxed">
-                După instalare urmărim activ comportamentul echipamentului în primele
-                90 de zile — perioada în care apar majoritatea problemelor de fit
-                operațional. Toate intervențiile sunt acoperite de garanția standard.
+                Politica noastră de a configura echipamentele să dureze înseamnă
+                vânzări mai mici de piese de schimb și mai puține intervenții
+                facturate. Pentru un atelier de 3 oameni, asta înseamnă predictibilitate
+                operațională.
               </p>
             </div>
             <div className="lg:col-span-7">
               <dl className="divide-y hairline border-y hairline">
                 <ServiceRow
-                  label="Intervenții pe șantier"
-                  value="2 vizite preventive"
-                  detail="Verificare cordoane în T-uri critice (zilele 14 și 45) — la cerere FEG, fără cost."
+                  label="Intervenții service în 12 luni"
+                  value="1"
+                  detail="Schimb de lentile de protecție consumate prin uzura normală — nu defect tehnic."
                 />
                 <ServiceRow
-                  label="Tichete service deschise"
+                  label="Defecte tehnice raportate"
                   value="0"
-                  detail="Niciun defect tehnic raportat pe echipament în primele 90 zile."
+                  detail="Niciun ticket pentru defect, eroare sau problemă cu controller-ul."
                 />
                 <ServiceRow
-                  label="Timp mediu răspuns telefon"
-                  value="< 4 minute"
-                  detail="Pe linia dedicată tehnică Uzinex, în ore lucrătoare."
-                />
-                <ServiceRow
-                  label="Piese consumabile livrate"
-                  value="2 seturi · luna 1 + luna 3"
-                  detail="Duze, difuzori, sârmă SG2 — abonament setat automat la commissioning."
+                  label="Comunicare post-implementare"
+                  value="Suport on-demand"
+                  detail="Manuale, sfaturi tehnice și recomandări la cerere — confirmat de client în testimonialul video."
                 />
                 <ServiceRow
                   label="Garanție rămasă"
-                  value="58 luni · până 03/2031"
-                  detail="Inclusiv schimb piese OEM, manopera, deplasare."
+                  value="≈48 luni"
+                  detail="Standard Uzinex 60 luni · acoperă piese OEM, manopera, deplasare."
                 />
               </dl>
             </div>
@@ -493,39 +515,27 @@ export default function FegCaseStudyPage() {
         </Section>
 
         {/* 9. GALERIE */}
-        <Section number="09" eyebrow="Galerie · livrare și commissioning">
+        <Section number="09" eyebrow="Galerie · testimonial video">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-4">
-            <div className="lg:col-span-8 lg:row-span-2">
+            <div className="lg:col-span-12">
               <VideoPlayer
                 youtubeId={YT_ID}
                 thumbnail={HERO_IMG}
-                title="Walkthrough complet livrare + commissioning · 1:42"
+                title="Testimonial George · Future Energy Group"
               />
             </div>
-            <GalleryTile
-              src={`https://img.youtube.com/vi/${YT_ID}/hq1.jpg`}
-              alt="Aparat sudură industrial pregătit pentru transport în depozitul Uzinex Iași"
-              caption="Pregătire transport · sâmbătă dimineață"
-            />
-            <GalleryTile
-              src={`https://img.youtube.com/vi/${YT_ID}/hq2.jpg`}
-              alt="Calibrare aparat sudură MIG/MAG cu probă pe oțel structural S355 la sediul Future Energy Group"
-              caption="Calibrare cu probă · luni 09:30"
-            />
-            <GalleryTile
-              src={`https://img.youtube.com/vi/${YT_ID}/hq3.jpg`}
-              alt="Training operatori sudură FEG · controller MIG sinergic"
-              caption="Training operatori · luni 10:30"
-            />
-            <GalleryTile
-              src={`https://img.youtube.com/vi/${YT_ID}/hqdefault.jpg`}
-              alt="Primul cordon de sudură pe șantierul stației electrice — proiect Future Energy Group"
-              caption="Primul cordon pe șantier · luni 13:30"
-            />
+            <div className="lg:col-span-12 mt-4 text-sm text-ink-500 max-w-3xl">
+              <p className="leading-relaxed">
+                În video George explică în propriile cuvinte cum aparatul laser le-a
+                rezolvat problema structurilor speciale, demonstrează curățarea cu
+                laser pe metal ruginit (vs. metoda clasică cu deatea de rugină) și
+                arată tehnica de focalizare corectă pentru rezultat optim.
+              </p>
+            </div>
           </div>
         </Section>
 
-        {/* LECȚII (onestitate calculată) */}
+        {/* LECȚII */}
         <section className="border-b hairline bg-ink-900 text-white py-14 lg:py-20">
           <div className="container-x">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -538,12 +548,12 @@ export default function FegCaseStudyPage() {
                   style={{ letterSpacing: "-0.02em" }}
                 >
                   Ce nu a mers din prima<br />
-                  <span className="font-light text-white/70">și cum am rezolvat.</span>
+                  <span className="font-light text-white/70">și ce am schimbat în procesul nostru.</span>
                 </h2>
                 <p className="text-sm text-white/60 mt-5 leading-relaxed">
-                  Niciun proiect industrial nu se livrează „totul perfect din prima".
-                  Aici e ce a apărut neașteptat — și ce am schimbat în procesul nostru
-                  ca să nu se repete.
+                  Niciun proiect nu se livrează „totul perfect din prima". Aici e ce
+                  nu a mers la FEG și ce schimbări de proces au rămas la noi după
+                  acest proiect.
                 </p>
               </div>
               <div className="lg:col-span-8 space-y-6 lg:space-y-8">
@@ -571,18 +581,18 @@ export default function FegCaseStudyPage() {
           </div>
         </section>
 
-        {/* 10. PAYBACK CALCULATOR */}
-        <Section number="10" eyebrow="Calculator payback · estimează cazul tău">
+        {/* 10. CALCULATOR */}
+        <Section number="10" eyebrow="Calculator · merită investiția pentru cazul tău?">
           <p className="text-ink-600 max-w-2xl mb-8 lg:mb-10 leading-relaxed">
-            Introdu valorile tale operaționale și vezi în câte luni se amortizează o
-            decizie similară. Funcționează indiferent de tipul de echipament — sudură,
-            tăiere, manipulare, ambalare. Datele rămân la tine, nimic nu se trimite
-            pe server.
+            Replică decizia FEG pentru cazul tău. Introdu costul lunar al unui sudor
+            calificat în zona ta, ore de sudură efectivă pe săptămână, și costul
+            unui echipament laser similar. Vezi în câte luni se amortizează prin
+            economia pură de salariu.
           </p>
           <PaybackCalculator />
         </Section>
 
-        {/* CTA SPECIFIC */}
+        {/* CTA */}
         <section className="border-b hairline py-14 lg:py-20 bg-uzx-blue text-white">
           <div className="container-x">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -594,13 +604,14 @@ export default function FegCaseStudyPage() {
                   className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
                   style={{ letterSpacing: "-0.03em" }}
                 >
-                  Ai un termen ferm<br />
-                  <span className="font-light text-uzx-orange">și echipamentul a cedat?</span>
+                  Atelier mic,<br />
+                  <span className="font-light text-uzx-orange">nevoie de calitate premium?</span>
                 </h2>
                 <p className="text-white/85 leading-relaxed mt-6 max-w-xl">
-                  Sună-ne acum. Verificăm stocul Iași în maxim 30 de minute și îți
-                  spunem cinstit dacă rezolvăm — sau dacă mai sigur e să-ți recomandăm
-                  alt furnizor. Nu pierdem timpul nimănui.
+                  Dacă nu ai sudor angajat și o nevoie ocazională nu justifică
+                  angajarea, hai să discutăm. Putem livra echipamentul în custodie
+                  pentru probă fizică în atelierul tău — exact cum am făcut pentru
+                  Future Energy Group. Plătești după ce vezi că funcționează.
                 </p>
               </div>
               <div className="lg:col-span-5 lg:col-start-8 flex flex-col gap-3">
@@ -612,15 +623,15 @@ export default function FegCaseStudyPage() {
                   <span className="group-hover:translate-x-1 transition">→</span>
                 </a>
                 <Link
-                  href="/contact?subject=Echipament%20sudur%C4%83%20industrial%C4%83%20%E2%80%94%20livrare%20urgent%C4%83&context=Studiu%20de%20caz%20Future%20Energy%20Group"
+                  href="/contact?subject=Echipament%20laser%203-in-1%20%E2%80%94%20probare%20%C3%AEn%20custodie&context=Studiu%20de%20caz%20Future%20Energy%20Group"
                   className="border border-white/30 hover:border-white text-white text-sm px-7 py-4 inline-flex items-center justify-between gap-3 group transition"
                 >
-                  Cere ofertă pre-completată
+                  Vreau aparat în custodie pentru probă
                   <span className="group-hover:translate-x-1 transition">→</span>
                 </Link>
                 <p className="text-[11px] text-white/60 mt-2 leading-relaxed">
-                  Răspuns garantat în 90 minute pe ore lucrătoare. Pe weekend, prin
-                  WhatsApp, în maxim 4 ore.
+                  Nu factură proformă, nu avans. Aparat în atelierul tău, pe materialul
+                  tău. Plătești dacă vezi că rezolvă.
                 </p>
               </div>
             </div>
@@ -670,11 +681,7 @@ function Section({
       }`}
     >
       <div className="container-x">
-        <div
-          className={`text-[11px] mono uppercase tracking-[0.2em] mb-8 lg:mb-10 ${
-            isDark ? "text-uzx-orange" : "text-uzx-orange"
-          }`}
-        >
+        <div className="text-[11px] mono uppercase tracking-[0.2em] mb-8 lg:mb-10 text-uzx-orange">
           {number} / {eyebrow}
         </div>
         {children}
@@ -711,6 +718,17 @@ function ReasonCard({ num, title, body }: { num: string; title: string; body: st
   );
 }
 
+function SpecRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-2 md:gap-6 py-4">
+      <dt className="text-[11px] mono uppercase tracking-widest text-ink-400 self-center">
+        {label}
+      </dt>
+      <dd className="text-sm lg:text-base text-ink-900 leading-relaxed">{value}</dd>
+    </div>
+  );
+}
+
 function ServiceRow({
   label,
   value,
@@ -728,34 +746,9 @@ function ServiceRow({
         </dt>
         <dd className="text-sm text-ink-600 leading-relaxed">{detail}</dd>
       </div>
-      <div className="serif text-base lg:text-lg text-ink-900 num md:text-right md:min-w-[180px] md:self-center">
+      <div className="serif text-base lg:text-lg text-ink-900 num md:text-right md:min-w-[160px] md:self-center">
         {value}
       </div>
     </div>
-  );
-}
-
-function GalleryTile({
-  src,
-  alt,
-  caption,
-}: {
-  src: string;
-  alt: string;
-  caption: string;
-}) {
-  return (
-    <figure className="lg:col-span-2 relative aspect-[4/3] bg-ink-100 overflow-hidden group">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 1024px) 100vw, 33vw"
-        className="object-cover grayscale-[15%] group-hover:grayscale-0 transition duration-500"
-      />
-      <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-black/80 to-transparent text-white text-[10px] mono uppercase tracking-wider">
-        {caption}
-      </figcaption>
-    </figure>
   );
 }
