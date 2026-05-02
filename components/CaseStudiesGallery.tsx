@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+import { BazaNatoTile } from "./BazaNatoTile";
 
 const DETAIL_PAGES: Record<string, string> = {
   feg: "/studii-de-caz/future-energy-group",
@@ -669,19 +670,25 @@ export function CaseStudiesGallery({ data }: { data?: CaseStudiesAllData | null 
                     aria-label={c.youtubeId ? `Vezi videoclipul: ${c.title}` : c.title}
                     className="relative aspect-[16/10] overflow-hidden bg-ink-100 text-left disabled:cursor-default"
                   >
-                    <Image
-                      src={c.image}
-                      alt={c.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition duration-700"
-                      loading="lazy"
-                    />
+                    {c.id === "baza-nato" ? (
+                      <BazaNatoTile />
+                    ) : (
+                      <Image
+                        src={c.image}
+                        alt={c.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition duration-700"
+                        loading="lazy"
+                      />
+                    )}
                     <div
                       className="absolute inset-0 pointer-events-none"
                       style={{
                         background:
-                          "linear-gradient(180deg, rgba(8,37,69,0) 50%, rgba(8,37,69,0.85) 100%)",
+                          c.id === "baza-nato"
+                            ? "linear-gradient(180deg, rgba(8,37,69,0) 70%, rgba(8,37,69,0.85) 100%)"
+                            : "linear-gradient(180deg, rgba(8,37,69,0) 50%, rgba(8,37,69,0.85) 100%)",
                       }}
                     />
                     <div className="absolute top-3 left-3">
