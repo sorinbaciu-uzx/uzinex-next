@@ -101,7 +101,7 @@ export function PenaltyRiskCalculator() {
           className="serif text-2xl lg:text-3xl text-ink-900 leading-tight max-w-3xl"
           style={{ letterSpacing: "-0.02em" }}
         >
-          Cât te costă vremea pe un contract cu termen ferm dacă suzi cu TIG sau MIG?
+          Cât te costă vremea pe un contract cu termen ferm dacă sudezi cu TIG sau MIG?
         </h3>
         <p className="text-sm text-ink-600 mt-3 max-w-2xl leading-relaxed">
           Introdu valoarea contractului, penalitatea zilnică și regiunea
