@@ -360,7 +360,7 @@ export default async function CammaCasePage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-5 lg:flex lg:flex-col lg:justify-center lg:self-stretch">
                 <VideoPlayer
                   youtubeId={YT_ID}
                   thumbnail={HERO_IMG}
