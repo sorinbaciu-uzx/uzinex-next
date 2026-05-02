@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactCTA } from "@/components/ContactCTA";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo";
+import { InstrumentAnimation } from "./animations";
 
 export const metadata: Metadata = {
   title:
@@ -271,7 +272,7 @@ export default function FinantareHubPage() {
                     </div>
 
                     <div className="lg:col-span-5 p-6 lg:p-8 bg-ink-50 flex flex-col">
-                      <div className="grid grid-cols-3 gap-4 mb-6">
+                      <div className="grid grid-cols-3 gap-4 mb-5">
                         {it.stats.map((s) => (
                           <div key={s.label}>
                             <div
@@ -285,6 +286,9 @@ export default function FinantareHubPage() {
                             </div>
                           </div>
                         ))}
+                      </div>
+                      <div className="bg-white border hairline mb-5">
+                        <InstrumentAnimation index={i} />
                       </div>
                       <div className="mt-auto inline-flex items-center gap-2 text-sm text-uzx-blue group-hover:text-uzx-orange transition font-medium">
                         {it.cta}
