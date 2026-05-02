@@ -52,7 +52,7 @@ export default async function ContPage() {
                   01 / Catalog
                 </div>
                 <div className="serif text-xl text-ink-900">
-                  Catalog tehnic
+                  Echipamente
                 </div>
                 <div className="text-sm text-ink-500 mt-2">
                   Răsfoiește portofoliul complet de echipamente industriale.

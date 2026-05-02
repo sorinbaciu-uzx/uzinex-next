@@ -281,7 +281,7 @@ export function CatalogTabs() {
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
           <div className="lg:col-span-5">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-2">04 / Catalog tehnic</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-2">04 / Echipamente</div>
             <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
               Categorii din<br />portofoliul nostru.
             </h2>

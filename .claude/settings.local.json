@@ -13,7 +13,15 @@
       "Bash(curl -s \"https://demoanaf.ro/api/company/2816464\" --max-time 10 -H \"Accept: application/json\" -H \"User-Agent: Mozilla/5.0\")",
       "Bash(curl -s \"https://demoanaf.ro/api/company/2816464/balance/2023\" --max-time 10 -H \"Accept: application/json\" -H \"User-Agent: Mozilla/5.0\")",
       "Bash(npm run *)",
-      "Read(//c/tmp/**)"
+      "Read(//c/tmp/**)",
+      "Bash(tee /tmp/build-output.log)",
+      "Bash(mv \"4-spindle-rotary-axis-cnc-router-aprt-2 \\(2\\).webp\" \"4-spindle-rotary-axis-cnc-router-aprt-2.webp\")",
+      "Bash(mv \"4-spindle-rotary-axis-cnc-router-aprt-4 \\(2\\).webp\" \"4-spindle-rotary-axis-cnc-router-aprt-4.webp\")",
+      "Bash(mv \"4-spindle-rotary-axis-cnc-router-aprt-5 \\(2\\).webp\" \"4-spindle-rotary-axis-cnc-router-aprt-5.webp\")",
+      "Bash(mv \"4-spindles-cnc-router-with-a-rotary-device-1 \\(2\\).webp\" \"4-spindles-cnc-router-with-a-rotary-device-1.webp\")",
+      "Bash(npm install *)",
+      "Bash(awk 'NR>=720 && NR<=921 {next} {print}' \"C:/Users/mirudiva/OneDrive - Universitatea Alexandru Ioan Cuza din Iasi/Desktop/uzinex/uzinex-site/uzinex-next/components/GlobalNetwork.tsx\")",
+      "Read(//tmp/**)"
     ]
   }
 }

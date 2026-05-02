@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { GlobalNetwork } from "@/components/GlobalNetwork";
 import { PRODUCTS, type DescriptionBlock } from "@/app/magazin/products";
 import { AddToQuoteButton } from "@/app/magazin/AddToQuoteButton";
 import { SimilarCarousel } from "./SimilarCarousel";
@@ -316,7 +317,7 @@ export default async function Page({ params }: Props) {
 
   const crumbJsonLd = breadcrumbSchema([
     { name: "Acasă", url: "/" },
-    { name: "Catalog tehnic", url: "/magazin" },
+    { name: "Echipamente", url: "/magazin" },
     ...(p.category ? [{ name: p.category, url: `/magazin` }] : []),
     { name: p.name, url: `/produs/${p.slug}` },
   ]);
@@ -1039,6 +1040,9 @@ export default async function Page({ params }: Props) {
 
       {/* UZINEX LA TV — galerie video media (TV, târguri, interviuri) */}
       <VideoGallery data={videoGallery} />
+
+      {/* RETEA GLOBALA — harta cu HQ + hub-uri logistice (acelasi component ca home) */}
+      <GlobalNetwork />
 
       {/* STUDII DE CAZ — preluate de pe home, social proof inainte de cross-sell */}
       <CaseStudies data={caseStudies} />

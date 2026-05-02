@@ -299,7 +299,7 @@ export const EDITABLE_PAGES: Array<{
   category: string;
 }> = [
   { key: "home", path: "/", name: "Pagină principală", category: "Principal" },
-  { key: "magazin", path: "/magazin", name: "Catalog tehnic", category: "Principal" },
+  { key: "magazin", path: "/magazin", name: "Echipamente", category: "Principal" },
   { key: "contact", path: "/contact", name: "Contact", category: "Principal" },
   { key: "service", path: "/service", name: "Service overview", category: "Service" },
   {

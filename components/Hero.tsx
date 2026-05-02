@@ -22,7 +22,7 @@ export const HERO_DEFAULT: HeroData = {
   titleHighlight: "servicii superioare.",
   description:
     "Furnizăm echipamente grele și tehnologie industrială la cheie pentru sectorul privat, instituții de stat și sectorul de apărare. Optimizăm achizițiile prin fonduri europene sau proceduri guvernamentale, asigurând conformitate totală, trasabilitate și un ecosistem de suport tehnic 100% local.",
-  ctaLabel: "Vezi catalogul tehnic",
+  ctaLabel: "Vezi echipamentele",
   ctaHref: "/magazin",
   secondaryCtaLabel: "Discută cu un inginer",
   secondaryCtaHref: "/contact",

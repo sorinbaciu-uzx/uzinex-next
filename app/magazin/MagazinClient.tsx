@@ -215,7 +215,7 @@ export function MagazinClient({
                     isActive(filter, "all") ? "bg-uzx-orange" : "bg-ink-300"
                   }`}
                 />
-                <span className="leading-tight font-medium">Toate produsele</span>
+                <span className="leading-tight font-medium">Toate echipamentele</span>
               </button>
 
               {CATEGORIES.map((cat) => {

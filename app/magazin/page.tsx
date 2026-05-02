@@ -10,12 +10,12 @@ import {
 } from "@/lib/seo/product-seo";
 
 export const metadata: Metadata = {
-  title: "Catalog tehnic — 180+ utilaje industriale",
+  title: "Echipamente — catalog Uzinex cu 180+ utilaje industriale",
   description:
-    "Catalog tehnic Uzinex cu 180+ utilaje CNC, laser fiber, roboți, echipamente de ambalare, reciclare, energie, inspecție. Filtrare pe categorii, fișe tehnice descărcabile, eligibil SEAP/SICAP.",
+    "Catalog Uzinex cu 180+ echipamente industriale: CNC, laser fiber, roboți, ambalare, reciclare, energie, inspecție. Filtrare pe categorii, fișe tehnice descărcabile, eligibil SEAP/SICAP.",
   alternates: { canonical: "/magazin" },
   openGraph: {
-    title: "Catalog tehnic Uzinex — 180+ utilaje industriale",
+    title: "Echipamente Uzinex — catalog cu 180+ utilaje industriale",
     description:
       "Utilaje CNC, laser, roboți, echipamente pentru fabrică. Catalog complet cu filtrare categorică și fișe tehnice.",
     url: "/magazin",
@@ -34,7 +34,7 @@ export default async function Page() {
   }
 
   const collection = collectionPageSchema({
-    title: "Catalog tehnic Uzinex — 180+ utilaje industriale",
+    title: "Echipamente Uzinex — catalog cu 180+ utilaje industriale",
     description:
       "Utilaje CNC, laser fiber, roboți industriali, echipamente ambalare, reciclare, energie, inspecție. Catalog filtrabil pe categorii și subcategorii.",
     url: "/magazin",
@@ -52,7 +52,7 @@ export default async function Page() {
 
   const crumb = breadcrumbSchema([
     { name: "Acasă", url: "/" },
-    { name: "Catalog tehnic", url: "/magazin" },
+    { name: "Echipamente", url: "/magazin" },
   ]);
 
   return (
@@ -91,7 +91,7 @@ export default async function Page() {
         />
         <div className="container-x relative py-10 lg:py-14 text-white">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono">
-            — Catalog tehnic
+            — Echipamente
           </div>
         </div>
       </section>

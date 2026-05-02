@@ -3,15 +3,16 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Logo } from "./Logo";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
 /* ───────────────────────────── NAV STRUCTURE ───────────────────────────── */
 
 type SubItem = { label: string; href: string };
 type CategoryGroup = { name: string; href: string; items: SubItem[] };
 type NavItem =
-  | { label: string; href: string; external?: boolean }
-  | { label: string; href: string; type: "mega"; groups: CategoryGroup[] }
-  | { label: string; href: string; type: "dropdown"; items: SubItem[] };
+  | { label: string; href: string; labelKey?: string; external?: boolean }
+  | { label: string; href: string; labelKey?: string; type: "mega"; groups: CategoryGroup[] }
+  | { label: string; href: string; labelKey?: string; type: "dropdown"; items: SubItem[] };
 
 // Helper to build /magazin URLs with encoded query params
 const mag = (cat?: string, sub?: string) => {
@@ -145,13 +146,15 @@ const FINANTARE_ITEMS: SubItem[] = [
 
 const NAV: NavItem[] = [
   {
-    label: "Catalog tehnic",
+    label: "Echipamente",
+    labelKey: "nav.echipamente",
     href: "/magazin",
     type: "mega",
     groups: CATALOG_GROUPS,
   },
   {
     label: "Industry 4.0",
+    labelKey: "nav.industry",
     href: "/industry-4.0",
     type: "dropdown",
     items: [
@@ -163,37 +166,44 @@ const NAV: NavItem[] = [
       { label: "Software industrial", href: "/industry-4.0/software-industrial" },
     ],
   },
-  { label: "Studii de caz", href: "/studii-de-caz" },
+  { label: "Studii de caz", labelKey: "nav.studii", href: "/studii-de-caz" },
   {
     label: "Service",
+    labelKey: "nav.service",
     href: "/service",
     type: "dropdown",
     items: SERVICE_ITEMS,
   },
   {
     label: "Finanțare",
+    labelKey: "nav.finantare",
     href: "/finantare",
     type: "dropdown",
     items: FINANTARE_ITEMS,
   },
   {
     label: "Resurse",
+    labelKey: "nav.resurse",
     href: "#",
     type: "dropdown",
     items: RESURSE_ITEMS,
   },
-  { label: "Cariere", href: "/cariere" },
-  { label: "Contact", href: "/contact" },
+  { label: "Cariere", labelKey: "nav.cariere", href: "/cariere" },
+  { label: "Contact", labelKey: "nav.contact", href: "/contact" },
 ];
 
 /* ───────────────────────────── COMPONENT ───────────────────────────── */
 
-export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?: "ro" | "en" } = {}) {
+export function Header({ solid = false }: { solid?: boolean } = {}) {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [mobileGroupExpanded, setMobileGroupExpanded] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
+
+  const navLabel = (item: NavItem) =>
+    item.labelKey ? t(item.labelKey, item.label) : item.label;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -216,11 +226,13 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
         className="text-white/90 text-xs relative z-10"
         style={solid ? { background: "#082545" } : undefined}
       >
-        <div className="container-x flex items-center justify-between py-2.5">
+        <div className="container-x flex items-center justify-between py-2.5 gap-3">
           <span className="opacity-80 hidden sm:inline">
-            Sediu central: Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași · Livrare națională
+            {t("header.announcement")}
           </span>
-          <span className="opacity-80 sm:hidden">Iași · Livrare națională</span>
+          <span className="opacity-80 sm:hidden">
+            {t("header.announcementShort")}
+          </span>
           <div className="hidden md:flex items-center gap-5 opacity-80">
             <a href="tel:+40769081081" className="hover:opacity-100">
               +40 769 081 081
@@ -267,7 +279,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                     rel={"external" in item && item.external ? "noopener noreferrer" : undefined}
                     className="hover:text-white transition flex items-center gap-1 py-1"
                   >
-                    {item.label}
+                    {navLabel(item)}
                     {hasChildren && (
                       <span className="text-[10px] mt-0.5 opacity-70">▾</span>
                     )}
@@ -307,18 +319,18 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
               href="/autentificare"
               className="hidden md:inline text-[13px] text-white/80 hover:text-white transition"
             >
-              Autentificare
+              {t("header.login")}
             </a>
             <a
               href="/contact"
               className="bg-uzx-orange hover:bg-uzx-orange2 text-white text-[11px] sm:text-xs lg:text-[13px] px-2.5 sm:px-3 lg:px-5 py-1.5 lg:py-2.5 transition whitespace-nowrap"
             >
-              Discută cu un inginer
+              {t("header.cta")}
             </a>
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              aria-label={open ? "Închide meniul" : "Deschide meniul"}
+              aria-label={open ? t("header.closeMenu") : t("header.openMenu")}
               aria-expanded={open}
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 text-white shrink-0"
             >
@@ -394,7 +406,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                         onClick={() => !hasChildren && setOpen(false)}
                         className="serif text-xl py-4 flex-1 hover:text-uzx-orange transition"
                       >
-                        {item.label}
+                        {navLabel(item)}
                       </a>
                       {hasChildren && (
                         <button
@@ -403,7 +415,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                             setMobileExpanded(expanded ? null : item.label);
                             setMobileGroupExpanded(null);
                           }}
-                          aria-label={expanded ? "Ascunde submeniu" : "Arată submeniu"}
+                          aria-label={expanded ? t("header.closeSubmenu") : t("header.openSubmenu")}
                           className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition"
                         >
                           <span
@@ -437,7 +449,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                                     setMobileGroupExpanded(groupOpen ? null : g.name)
                                   }
                                   aria-label={
-                                    groupOpen ? "Ascunde subcategorii" : "Arată subcategorii"
+                                    groupOpen ? t("header.closeSubmenu") : t("header.openSubmenu")
                                   }
                                   className="w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition"
                                 >
@@ -498,7 +510,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
                 transition={{ delay: 0.35, duration: 0.3 }}
                 className="serif text-xl py-4 border-b border-white/10 text-white/60 hover:text-white transition"
               >
-                Autentificare
+                {t("header.login")}
               </motion.a>
               <motion.a
                 href="tel:+40769081081"
@@ -520,6 +532,7 @@ export function Header({ solid = false, lang = "ro" }: { solid?: boolean; lang?:
 
 /* ─── MEGA MENU: left rail (categories) + right panel (subcategories) ─── */
 function MegaMenuContent() {
+  const { t } = useI18n();
   const [activeGroup, setActiveGroup] = useState(CATALOG_GROUPS[0]?.name);
   const group = CATALOG_GROUPS.find((g) => g.name === activeGroup) ?? CATALOG_GROUPS[0];
 
@@ -529,7 +542,7 @@ function MegaMenuContent() {
         {/* LEFT RAIL — categories */}
         <aside className="col-span-4 border-r border-white/10 pr-6">
           <div className="text-[10px] uppercase tracking-[0.22em] text-white/60 mono mb-4 px-3">
-            Categorii
+            {t("mega.categorii")}
           </div>
           <ul className="space-y-0.5">
             {CATALOG_GROUPS.map((g) => {
@@ -566,7 +579,7 @@ function MegaMenuContent() {
           <div className="flex items-baseline justify-between mb-5">
             <div>
               <div className="text-[10px] uppercase tracking-[0.22em] text-uzx-orange mono mb-1">
-                Subcategorii
+                {t("mega.subcategorii")}
               </div>
               <a
                 href={group.href}
@@ -580,7 +593,7 @@ function MegaMenuContent() {
               href={group.href}
               className="text-[11px] mono uppercase tracking-wider text-white/70 hover:text-white transition"
             >
-              Vezi toate →
+              {t("mega.vezi")} →
             </a>
           </div>
 

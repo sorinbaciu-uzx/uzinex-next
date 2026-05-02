@@ -4,7 +4,7 @@ const MENU = [
   { label: "Acasă", href: "/" },
   { label: "Echipa", href: "/echipa" },
   { label: "Studii de caz", href: "/studii-de-caz" },
-  { label: "Catalog tehnic", href: "/magazin" },
+  { label: "Echipamente", href: "/magazin" },
   { label: "Noutăți & comunicări", href: "/noutati" },
   { label: "Finanțare", href: "/finantare" },
   { label: "Service", href: "/service" },

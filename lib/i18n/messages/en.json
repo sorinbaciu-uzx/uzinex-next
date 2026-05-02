@@ -1,0 +1,23 @@
+{
+  "header.announcement": "Headquarters: Tehnopolis Science Park, 10 Poitiers Blvd., Iași · National delivery",
+  "header.announcementShort": "Iași · National delivery",
+  "header.login": "Sign in",
+  "header.cta": "Talk to an engineer",
+  "header.openMenu": "Open menu",
+  "header.closeMenu": "Close menu",
+  "header.openSubmenu": "Show submenu",
+  "header.closeSubmenu": "Hide submenu",
+
+  "nav.echipamente": "Equipment",
+  "nav.industry": "Industry 4.0",
+  "nav.studii": "Case studies",
+  "nav.service": "Service",
+  "nav.finantare": "Financing",
+  "nav.resurse": "Resources",
+  "nav.cariere": "Careers",
+  "nav.contact": "Contact",
+
+  "mega.categorii": "Categories",
+  "mega.subcategorii": "Subcategories",
+  "mega.vezi": "View all"
+}

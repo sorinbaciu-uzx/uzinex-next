@@ -1,0 +1,23 @@
+{
+  "header.announcement": "Sediu central: Parc Științific Tehnopolis, Bd. Poitiers nr. 10, Iași · Livrare națională",
+  "header.announcementShort": "Iași · Livrare națională",
+  "header.login": "Autentificare",
+  "header.cta": "Discută cu un inginer",
+  "header.openMenu": "Deschide meniul",
+  "header.closeMenu": "Închide meniul",
+  "header.openSubmenu": "Arată submeniu",
+  "header.closeSubmenu": "Ascunde submeniu",
+
+  "nav.echipamente": "Echipamente",
+  "nav.industry": "Industry 4.0",
+  "nav.studii": "Studii de caz",
+  "nav.service": "Service",
+  "nav.finantare": "Finanțare",
+  "nav.resurse": "Resurse",
+  "nav.cariere": "Cariere",
+  "nav.contact": "Contact",
+
+  "mega.categorii": "Categorii",
+  "mega.subcategorii": "Subcategorii",
+  "mega.vezi": "Vezi toate"
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero, type HeroData } from "@/components/Hero";
+import { GlobalNetwork } from "@/components/GlobalNetwork";
 import { AuthorityStrip, type AuthorityData } from "@/components/AuthorityStrip";
 import { Certifications, type CertificationsData } from "@/components/Certifications";
 import { CatalogTabs } from "@/components/CatalogTabs";
@@ -59,6 +60,7 @@ export default async function Home() {
       <main>
         <Hero data={c.hero as HeroData | undefined} />
         <AuthorityStrip data={c.authority as AuthorityData | undefined} />
+        <GlobalNetwork />
         <CaseStudies data={c.case_studies_home as CaseStudiesHomeData | undefined} />
         <Certifications data={c.certifications as CertificationsData | undefined} />
         <VideoGallery data={c.video_gallery as VideoGalleryData | undefined} />
