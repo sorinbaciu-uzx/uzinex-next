@@ -16,6 +16,7 @@ import {
   HAZComparisonDiagram,
   MultiAppDiagram,
 } from "./diagrams";
+import { PenaltyRiskCalculator } from "./interactive";
 
 const SLUG = "baza-nato-aluminium-laser";
 
@@ -251,7 +252,7 @@ export default function NatoCasePage() {
         {/* HERO — military tone */}
         <section
           className="border-b text-white relative overflow-hidden"
-          style={{ background: "#0d1828", borderColor: "rgba(255,255,255,0.08)" }}
+          style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}
         >
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
@@ -763,7 +764,7 @@ export default function NatoCasePage() {
         </Section>
 
         {/* 10. LECȚII */}
-        <section className="border-b hairline bg-ink-900 text-white py-14 lg:py-20">
+        <section className="border-b hairline text-white py-14 lg:py-20" style={{ background: "#082545" }}>
           <div className="container-x">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-4">
@@ -857,13 +858,21 @@ export default function NatoCasePage() {
           </div>
         </Section>
 
-        {/* 12. CONTACT · CTA enterprise */}
-        <section className="border-b hairline py-14 lg:py-20" style={{ background: "#0d1828" }}>
+        {/* 12. TOOL INTERACTIV · calculator penalități */}
+        <Section
+          number="12"
+          eyebrow="Tool interactiv · calculează expunerea ta la penalități"
+        >
+          <PenaltyRiskCalculator />
+        </Section>
+
+        {/* 13. CONTACT · CTA enterprise */}
+        <section className="border-b hairline py-14 lg:py-20" style={{ background: "#082545" }}>
           <div className="container-x text-white">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-4">
-                  12 / Contact · proiect cu termen ferm și penalități?
+                  13 / Contact · proiect cu termen ferm și penalități?
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
