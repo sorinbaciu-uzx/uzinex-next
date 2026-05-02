@@ -16,7 +16,7 @@ const SLUG = "future-energy-group";
 const YT_ID = "DQO74tlDNNQ";
 const HERO_IMG = `https://img.youtube.com/vi/${YT_ID}/maxresdefault.jpg`;
 
-const VERTICAL_VIDEO_SRC = "";
+const VERTICAL_VIDEO_SRC = "https://youtube.com/shorts/1rq_TD2_ZcI";
 
 const FEG_WEBSITE = "https://fegenergy.ro/";
 
