@@ -8,7 +8,14 @@ import {
   articleSchema,
   faqSchema,
 } from "@/lib/seo";
-import { NatoCaseDiagrams } from "./diagrams";
+import {
+  NatoDiagramFigure,
+  HangarDiagram,
+  WindCompareDiagram,
+  MuscleMemoryDiagram,
+  HAZComparisonDiagram,
+  MultiAppDiagram,
+} from "./diagrams";
 
 const SLUG = "baza-nato-aluminium-laser";
 
@@ -457,37 +464,61 @@ export default function NatoCasePage() {
               </p>
             </aside>
           </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mt-10 lg:mt-14">
+            <NatoDiagramFigure
+              number="Schema 1 · imunitate la vânt și ploaie"
+              diagram={<WindCompareDiagram />}
+              caption="Stânga: TIG/MIG cu argonul suflat de vânt din zona arcului, oxigen în baia de sudură, porozitate, reject. Dreapta: laser cu fascicul focalizat și volum minim de gaz, cordon uniform conform indiferent de meteo."
+            />
+            <NatoDiagramFigure
+              number="Schema 2 · zona afectată termic"
+              diagram={<HAZComparisonDiagram />}
+              caption="Arcul electric depune energie pe o suprafață largă, HAZ de 5-10 mm, distorsiune termică, îndreptare necesară. Laserul concentrează energia în punct, HAZ sub 0,5 mm, piesa se montează direct fără corecții geometrice."
+            />
+          </div>
         </Section>
 
         {/* 4. DE CE 5 UNITĂȚI */}
         <Section number="04" eyebrow="De ce cinci unități · strategia de redundanță">
-          <div className="max-w-3xl space-y-5 text-ink-600 text-base lg:text-[17px] leading-relaxed">
-            <p>
-              Pentru un șantier cu echipe în mai multe schimburi, cu termen ferm
-              contractual și penalități zilnice, calculul nu este „câte aparate
-              produc volumul de sudură" ci „câte aparate garantează continuitatea
-              până la termen".
-            </p>
-            <p>
-              <strong className="text-ink-900">Trei active</strong> dimensionează
-              capacitatea de producție pe puncte de lucru simultane diferite ale
-              hangarului. <strong className="text-ink-900">Două în standby</strong>{" "}
-              imediat lângă șantier acoperă scenariile previzibile: schimb pentru
-              mentenanță programată, înlocuire în caz de defecțiune neașteptată,
-              rotație în timpul schimbării consumabilelor.
-            </p>
-            <p>
-              Costul celor 2 unități standby reprezintă sub 30% din valoarea totală
-              a comenzii. O singură zi de întârziere contractuală depășește această
-              sumă. Redundanța de 60% nu este overengineering, este o asigurare
-              simplă cu raport favorabil între cost și risc evitat.
-            </p>
-            <p className="text-ink-900 font-medium">
-              Pentru clienți cu proiecte similare, această strategie de redundanță
-              a devenit pattern-ul nostru standard de propunere. Recomandăm
-              dimensionarea pe baza penalității zilnice contractuale, nu pe baza
-              capacității teoretice de producție.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <div className="lg:col-span-7 space-y-5 text-ink-600 text-base lg:text-[17px] leading-relaxed">
+              <p>
+                Pentru un șantier cu echipe în mai multe schimburi, cu termen ferm
+                contractual și penalități zilnice, calculul nu este „câte aparate
+                produc volumul de sudură" ci „câte aparate garantează continuitatea
+                până la termen".
+              </p>
+              <p>
+                <strong className="text-ink-900">Trei active</strong> dimensionează
+                capacitatea de producție pe puncte de lucru simultane diferite ale
+                hangarului. <strong className="text-ink-900">Două în standby</strong>{" "}
+                imediat lângă șantier acoperă scenariile previzibile: schimb pentru
+                mentenanță programată, înlocuire în caz de defecțiune neașteptată,
+                rotație în timpul schimbării consumabilelor.
+              </p>
+              <p>
+                Costul celor 2 unități standby reprezintă sub 30% din valoarea totală
+                a comenzii. O singură zi de întârziere contractuală depășește această
+                sumă. Redundanța de 60% nu este overengineering, este o asigurare
+                simplă cu raport favorabil între cost și risc evitat.
+              </p>
+              <p className="text-ink-900 font-medium">
+                Pentru clienți cu proiecte similare, această strategie de redundanță
+                a devenit pattern-ul nostru standard de propunere. Recomandăm
+                dimensionarea pe baza penalității zilnice contractuale, nu pe baza
+                capacității teoretice de producție.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-24">
+                <NatoDiagramFigure
+                  number="Schema 3 · distribuție echipamente pe șantier"
+                  diagram={<HangarDiagram />}
+                  caption="3 aparate active operate simultan pe puncte diferite ale structurii, 2 în standby imediat lângă șantier. Pentru un proiect cu termen ferm și penalități, redundanța de 60% costă mai puțin decât o singură zi de întârziere."
+                />
+              </div>
+            </div>
           </div>
         </Section>
 
@@ -581,21 +612,37 @@ export default function NatoCasePage() {
               </div>
             </aside>
           </div>
+
+          <div className="mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-7">
+              <NatoDiagramFigure
+                number="Schema 4 · 3 aplicații pe același aparat"
+                diagram={<MultiAppDiagram />}
+                caption="Aparatele 3-in-1 livrate pe baza NATO sudează cordoanele de aluminiu, curăță suprafețele de oxizi și grăsimi înainte de sudură și debitează corecții geometrice direct pe șantier. Operatorul comută pistolul în câteva secunde."
+              />
+            </div>
+            <div className="lg:col-span-5 lg:pt-4">
+              <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-3">
+                De ce 3-in-1 contează pe șantier expediționar
+              </div>
+              <p className="text-sm lg:text-base text-ink-600 leading-relaxed mb-3">
+                Pe un șantier expediționar cu logistică limitată, fiecare utilaj
+                separat înseamnă o cursă de transport în plus, un consumabil în
+                plus de inventariat și un alt punct potențial de defecțiune.
+              </p>
+              <p className="text-sm lg:text-base text-ink-600 leading-relaxed">
+                Aparatele livrate la baza NATO acoperă cele trei nevoi într-o
+                singură unitate: sudura cordoanelor de aluminiu, curățarea
+                suprafețelor înainte de sudură și debitarea corecțiilor
+                geometrice făcute pe loc. Mai puțin echipament de transportat,
+                mai puțin de mentenat și o singură curbă de învățare pe operator.
+              </p>
+            </div>
+          </div>
         </Section>
 
-        {/* 7. SCHEMELE TEHNICE — animate */}
-        <Section number="07" eyebrow="Scheme tehnice · documentație vizuală anonimizată">
-          <p className="text-ink-600 max-w-3xl mb-8 lg:mb-10 leading-relaxed">
-            Materialele foto și video reale au fost omise la cererea clientului.
-            Diagramele de mai jos documentează tehnic strategia de distribuție pe
-            șantier, comportamentul tehnologiilor de sudură în condiții meteo
-            adverse și paradoxul forței de muncă observat pe acest proiect.
-          </p>
-          <NatoCaseDiagrams />
-        </Section>
-
-        {/* 8. TIMELINE */}
-        <Section number="08" eyebrow="Cum s-a desfășurat · onest">
+        {/* 7. TIMELINE */}
+        <Section number="07" eyebrow="Cum s-a desfășurat · onest">
           <ol className="space-y-6 lg:space-y-8 max-w-3xl">
             {TIMELINE.map((t, i) => (
               <li key={i} className="grid grid-cols-[auto_1fr] gap-4 lg:gap-6">
@@ -626,9 +673,9 @@ export default function NatoCasePage() {
           </ol>
         </Section>
 
-        {/* 9. REZULTATE */}
+        {/* 8. REZULTATE */}
         <Section
-          number="09"
+          number="08"
           eyebrow="Rezultate · măsurate sau anonimizate la cerere"
           tone="dark"
         >
@@ -658,8 +705,8 @@ export default function NatoCasePage() {
           </p>
         </Section>
 
-        {/* 10. SERVICE POST-LIVRARE */}
-        <Section number="10" eyebrow="Service post-livrare · suport tehnic continuu">
+        {/* 9. SERVICE POST-LIVRARE */}
+        <Section number="09" eyebrow="Service post-livrare · suport tehnic continuu">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-5">
               <h2
@@ -715,13 +762,13 @@ export default function NatoCasePage() {
           </div>
         </Section>
 
-        {/* 11. LECȚII */}
+        {/* 10. LECȚII */}
         <section className="border-b hairline bg-ink-900 text-white py-14 lg:py-20">
           <div className="container-x">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-3">
-                  11 / Lecții & provocări
+                  10 / Lecții & provocări
                 </div>
                 <h2
                   className="serif text-2xl lg:text-3xl leading-tight"
@@ -740,19 +787,30 @@ export default function NatoCasePage() {
               </div>
               <div className="lg:col-span-8 space-y-6 lg:space-y-8">
                 {LESSONS.map((l, i) => (
-                  <div key={i} className="border-l-2 border-uzx-orange pl-5 lg:pl-6">
-                    <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-2">
-                      Lecție {i + 1} / {LESSONS.length}
+                  <div key={i}>
+                    <div className="border-l-2 border-uzx-orange pl-5 lg:pl-6">
+                      <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-2">
+                        Lecție {i + 1} / {LESSONS.length}
+                      </div>
+                      <h3
+                        className="serif text-lg lg:text-xl text-white mb-3"
+                        style={{ letterSpacing: "-0.02em" }}
+                      >
+                        {l.title}
+                      </h3>
+                      <p className="text-sm lg:text-[15px] text-white/80 leading-relaxed">
+                        {l.body}
+                      </p>
                     </div>
-                    <h3
-                      className="serif text-lg lg:text-xl text-white mb-3"
-                      style={{ letterSpacing: "-0.02em" }}
-                    >
-                      {l.title}
-                    </h3>
-                    <p className="text-sm lg:text-[15px] text-white/80 leading-relaxed">
-                      {l.body}
-                    </p>
+                    {i === 1 && (
+                      <div className="mt-6 lg:mt-8">
+                        <NatoDiagramFigure
+                          number="Schema 5 · paradoxul forței de muncă"
+                          diagram={<MuscleMemoryDiagram />}
+                          caption="Sudorul cu zece ani de experiență MIG/TIG are mâna automatizată pe pendulare în zig-zag, esențială pentru sudura conventională. La laser, fasciculul are deja focalizare definită, iar pendularea îl scoate din focare. Operatorul fără experiență învață direct mișcarea liniară uniformă pe care o cere laserul, fără reflex contradictoriu."
+                        />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -760,8 +818,8 @@ export default function NatoCasePage() {
           </div>
         </section>
 
-        {/* 12. FAQ */}
-        <Section number="12" eyebrow="Întrebări tehnice · sudură laser în condiții dificile">
+        {/* 11. FAQ */}
+        <Section number="11" eyebrow="Întrebări tehnice · sudură laser în condiții dificile">
           <div className="max-w-4xl divide-y hairline border-y hairline">
             {FAQ.map((q, i) => (
               <details key={i} className="group py-5 lg:py-6">
@@ -799,13 +857,13 @@ export default function NatoCasePage() {
           </div>
         </Section>
 
-        {/* 13. CONTACT · CTA enterprise */}
+        {/* 12. CONTACT · CTA enterprise */}
         <section className="border-b hairline py-14 lg:py-20" style={{ background: "#0d1828" }}>
           <div className="container-x text-white">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-4">
-                  13 / Contact · proiect cu termen ferm și penalități?
+                  12 / Contact · proiect cu termen ferm și penalități?
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"

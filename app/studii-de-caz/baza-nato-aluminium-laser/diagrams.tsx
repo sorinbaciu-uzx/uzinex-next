@@ -113,7 +113,7 @@ function CompassRose({ x, y, r = 14 }: { x: number; y: number; r?: number }) {
   );
 }
 
-function HangarDiagram() {
+export function HangarDiagram() {
   return (
     <svg
       viewBox="0 0 600 360"
@@ -271,7 +271,7 @@ function HangarDiagram() {
   );
 }
 
-function WindCompareDiagram() {
+export function WindCompareDiagram() {
   return (
     <svg
       viewBox="0 0 600 320"
@@ -429,7 +429,7 @@ function WindCompareDiagram() {
   );
 }
 
-function MuscleMemoryDiagram() {
+export function MuscleMemoryDiagram() {
   return (
     <svg
       viewBox="0 0 600 360"
@@ -560,7 +560,7 @@ function MuscleMemoryDiagram() {
   );
 }
 
-function HAZComparisonDiagram() {
+export function HAZComparisonDiagram() {
   return (
     <svg
       viewBox="0 0 600 340"
@@ -754,7 +754,7 @@ function HAZComparisonDiagram() {
   );
 }
 
-function MultiAppDiagram() {
+export function MultiAppDiagram() {
   const panels: Array<{
     x: number;
     title: string;
@@ -1008,6 +1008,28 @@ function MultiAppDiagram() {
         y={285}
       />
     </svg>
+  );
+}
+
+export function NatoDiagramFigure({
+  diagram,
+  caption,
+  number,
+}: {
+  diagram: React.ReactNode;
+  caption: string;
+  number: string;
+}) {
+  return (
+    <figure className="border hairline bg-white">
+      {diagram}
+      <figcaption className="px-5 py-3 border-t hairline">
+        <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-1">
+          {number}
+        </div>
+        <p className="text-xs text-ink-600 leading-relaxed">{caption}</p>
+      </figcaption>
+    </figure>
   );
 }
 
