@@ -155,6 +155,32 @@ export default async function AdminDashboard() {
         </div>
       </div>
 
+      {/* STUDII DE CAZ · galerii foto */}
+      <div>
+        <h2 className="serif text-xl text-ink-900 mb-3">Studii de caz · galerii foto</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border hairline">
+          <Link
+            href="/admin/studii-de-caz/camma"
+            className="bg-white p-4 hover:bg-ink-50 transition flex items-center justify-between group"
+          >
+            <div className="flex-1 min-w-0">
+              <div className="text-[11px] uppercase tracking-wider text-uzx-orange font-mono">
+                case_camma_gallery
+              </div>
+              <div className="serif text-base text-ink-900 mt-1 truncate">
+                CAMMA · galerie foto linie cărămidă modulară
+              </div>
+              <div className="text-[11px] text-ink-500 mt-1">
+                6 sloturi · upload Vercel Blob · sedctiunea 06 a paginii publice
+              </div>
+            </div>
+            <span className="text-xl text-ink-300 group-hover:text-uzx-blue transition shrink-0">
+              →
+            </span>
+          </Link>
+        </div>
+      </div>
+
       {/* SHORTCUTS */}
       <div>
         <h2 className="serif text-xl text-ink-900 mb-3">Linkuri rapide</h2>

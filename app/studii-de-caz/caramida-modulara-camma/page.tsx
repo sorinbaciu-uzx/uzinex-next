@@ -9,8 +9,16 @@ import {
   videoSchema,
   faqSchema,
 } from "@/lib/seo";
-import { VideoPlayer } from "./interactive";
-import { CammaCaseDiagrams } from "./diagrams";
+import { VideoPlayer, GalleryGrid, WallBuilderTool } from "./interactive";
+import {
+  CammaDiagramFigure,
+  InterlockBrickDiagram,
+  PressureChemistryDiagram,
+  HumidityCalculatorDiagram,
+  ProductionFlowDiagram,
+  CapacityDiagram,
+} from "./diagrams";
+import { getCammaGallery } from "./gallery";
 
 const SLUG = "caramida-modulara-camma";
 const YT_ID = "AoMfOAPQzVQ";
@@ -226,7 +234,9 @@ const TESTIMONIAL_QUOTES = [
   "Suntem în topul producătorilor din România pe acest produs. Nu m-aș fi gândit la asta când porneam, dar lucrurile s-au așezat.",
 ];
 
-export default function CammaCasePage() {
+export default async function CammaCasePage() {
+  const gallery = await getCammaGallery();
+
   const crumb = breadcrumbSchema([
     { name: "Acasă", url: "/" },
     { name: "Studii de caz", url: "/studii-de-caz" },
@@ -290,6 +300,14 @@ export default function CammaCasePage() {
               backgroundImage:
                 "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
               backgroundSize: "32px 32px",
+            }}
+          />
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, transparent 0 60px, rgba(200,123,60,0.6) 60px 64px, transparent 64px 124px), linear-gradient(0deg, transparent 0 30px, rgba(200,123,60,0.6) 30px 34px, transparent 34px 60px)",
+              backgroundSize: "124px 60px",
             }}
           />
           <div
@@ -371,23 +389,45 @@ export default function CammaCasePage() {
           </div>
         </Section>
 
-        {/* 2. DE CE CĂRĂMIDĂ MODULARĂ */}
+        {/* 2. DE CE CĂRĂMIDĂ MODULARĂ — text + diagram interlock */}
         <Section
           number="02"
           eyebrow="De ce cărămidă modulară hyper-presată · patru argumente verificabile"
         >
-          <h2
-            className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-8 max-w-3xl"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            Cărămida modulară nu este o variantă mai ieftină a celei clasice. Este
-            o tehnologie de construcție diferită, cu logică proprie pe materiale,
-            execuție și amprentă de mediu.
-          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-10 lg:mb-12">
+            <div className="lg:col-span-7">
+              <h2
+                className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6"
+                style={{ letterSpacing: "-0.02em" }}
+              >
+                Cărămida modulară nu este o variantă mai ieftină a celei clasice.
+                Este o tehnologie de construcție diferită, cu logică proprie pe
+                materiale, execuție și amprentă de mediu.
+              </h2>
+              <p className="text-ink-600 leading-relaxed">
+                Profilul tongue-and-groove al cărămizii hyper-presate permite
+                ridicarea zidăriei fără mortar pe rosturile structurale. Cărămizile
+                se așază decalat pe rânduri alterne, similar pieselor unei jucării
+                de construcții, iar îmbinarea mecanică ține peretele rigid în
+                timpul ridicării. Mai jos vezi schema simplificată a îmbinării.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <CammaDiagramFigure
+                number="01 · îmbinare modulară"
+                diagram={<InterlockBrickDiagram />}
+                caption="Tongue-and-groove vizibil între rândurile alterne. Ridicarea zidăriei se face uscat, fără mortar structural pe rost, cu finisaj direct fair-faced."
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {WHY_BRICK.map((r, i) => (
               <article key={i} className="border hairline bg-white p-6 lg:p-7">
-                <div className="serif text-3xl text-uzx-orange mb-4 num leading-none">
+                <div
+                  className="serif text-3xl mb-4 num leading-none"
+                  style={{ color: i % 2 === 0 ? "#f5851f" : "#c87b3c" }}
+                >
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3
@@ -409,7 +449,7 @@ export default function CammaCasePage() {
           </p>
         </Section>
 
-        {/* 3. PARADOXUL UCRAINEAN */}
+        {/* 3. PARADOXUL UCRAINEAN — text + diagram paradox */}
         <Section
           number="03"
           eyebrow="Punctul de plecare · paradoxul forței de presare"
@@ -451,103 +491,103 @@ export default function CammaCasePage() {
                 </p>
               </div>
             </div>
-            <aside className="lg:col-span-5 border hairline bg-ink-50 p-6 lg:p-8">
-              <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-4">
-                Comparație rapidă · presele Ucraina vs linia Uzinex
-              </div>
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="border-b hairline">
-                    <th className="text-left py-2 text-[10px] mono uppercase tracking-widest text-ink-400">
-                      Criteriu
-                    </th>
-                    <th className="text-right py-2 text-[10px] mono uppercase tracking-widest text-ink-400">
-                      Ucraina
-                    </th>
-                    <th className="text-right py-2 text-[10px] mono uppercase tracking-widest text-uzx-orange">
-                      Uzinex
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-ink-700">
-                  {[
-                    ["Forță presare", "Enormă", "Calibrată"],
-                    ["Rețetă materie primă", "Lipsă", "Inclusă"],
-                    ["Flux tehnologic", "Doar presa", "Linie completă"],
-                    ["Calculator umiditate", "Nu", "Da"],
-                    ["Suport tehnic local", "0", "Direct ingineri"],
-                    ["Cărămizi utile/zi", "≈0", "≈20.000"],
-                  ].map(([crit, ua, ro]) => (
-                    <tr key={crit} className="border-b hairline">
-                      <td className="py-2.5 text-xs lg:text-sm">{crit}</td>
-                      <td className="py-2.5 text-right text-xs lg:text-sm text-ink-500">
-                        {ua}
-                      </td>
-                      <td className="py-2.5 text-right text-xs lg:text-sm text-uzx-orange font-medium">
-                        {ro}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p className="text-[11px] text-ink-500 mt-4 leading-relaxed">
-                Comparația reflectă situația concretă a CAMMA în 2022. Furnizorul
-                anterior este menționat doar ca țară de origine, fără identificare
-                comercială.
-              </p>
-            </aside>
+            <div className="lg:col-span-5 space-y-4">
+              <CammaDiagramFigure
+                number="02 · forță vs. chimie"
+                diagram={<PressureChemistryDiagram />}
+                caption="Stânga: presele Ucraina cu pistoane brute pe materie primă fără rețetă, output ≈ 0. Dreapta: linia Uzinex cu presiune calibrată pe rețetă adaptată local, output 20.000 buc/zi."
+              />
+              <aside className="border hairline bg-ink-50 p-5">
+                <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-3">
+                  Comparație rapidă · Ucraina vs. Uzinex
+                </div>
+                <table className="w-full text-sm border-collapse">
+                  <tbody className="text-ink-700">
+                    {[
+                      ["Forță presare", "Enormă", "Calibrată"],
+                      ["Rețetă materie primă", "Lipsă", "Inclusă"],
+                      ["Flux tehnologic", "Doar presa", "Linie completă"],
+                      ["Calculator umiditate", "Nu", "Da"],
+                      ["Suport tehnic local", "0", "Direct ingineri"],
+                      ["Cărămizi utile/zi", "≈0", "≈20.000"],
+                    ].map(([crit, ua, ro]) => (
+                      <tr key={crit} className="border-b hairline">
+                        <td className="py-2 text-xs">{crit}</td>
+                        <td className="py-2 text-right text-xs text-ink-500">
+                          {ua}
+                        </td>
+                        <td className="py-2 text-right text-xs text-uzx-orange font-medium">
+                          {ro}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </aside>
+            </div>
           </div>
         </Section>
 
-        {/* 4. CHIMIA + FLUXUL */}
+        {/* 4. CHIMIA + FLUXUL — text + diagram humidity calc */}
         <Section
           number="04"
           eyebrow="Cheia tehnologică · chimia materiei prime și fluxul calibrat"
         >
-          <div className="max-w-3xl space-y-5 text-ink-600 text-base lg:text-[17px] leading-relaxed">
-            <p>
-              O linie de cărămidă modulară hyper-presată semi-uscată funcționează
-              dacă patru parametri sunt aliniați simultan: granulometria după
-              moară, umiditatea de presare, proporția argilă-nisip-ciment și
-              presiunea aplicată pe matriță. Modificarea oricăruia dintre ei
-              afectează direct rezistența și aspectul final al cărămizii.
-            </p>
-            <p>
-              <strong className="text-ink-900">
-                Granulometria fină este responsabilitatea morii și a cernătorului.
-              </strong>{" "}
-              Argila uscată intră în moara cu ciocane care o sparge în pudră
-              fină, apoi cernătorul reține bucățile mari care scapă din moară.
-              Fără cernătorul în flux, cărămida iese cu defecte la suprafață și
-              cu rezistență neuniformă.
-            </p>
-            <p>
-              <strong className="text-ink-900">
-                Umiditatea calibrată este responsabilitatea malaxorului și a
-                calculatorului dedicat.
-              </strong>{" "}
-              Argila din carieră are umiditate naturală variabilă pe sezon,
-              stratificație și meteo. Calculatorul de umiditate măsoară materia
-              primă curentă și recalculează automat proporțiile pentru fiecare
-              șarjă, păstrând constanța de calitate fără ajustări făcute din ochi
-              de operator.
-            </p>
-            <p>
-              <strong className="text-ink-900">
-                Presiunea calibrată pe matriță este responsabilitatea presei
-                hidraulice configurate pe rețeta locală.
-              </strong>{" "}
-              Forța de presare nu e o valoare brută urmărită până la maxim, e o
-              valoare calibrată pe geometria matriței și pe consistența mixului
-              semi-uscat. Pe linia livrată la Buzău, presiunea a fost calibrată
-              direct pe materialul real, nu pe valori teoretice.
-            </p>
-            <p className="text-ink-900 font-medium">
-              Pentru fabricanți care s-au lovit de același paradox al forței de
-              presare, recomandarea noastră este consistentă: cumperi linie
-              completă cu rețetă inclusă și calibrare locală, sau nu cumperi.
-              Tonajul singur nu produce, doar consumă curent și material.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            <div className="lg:col-span-7 space-y-5 text-ink-600 text-base lg:text-[17px] leading-relaxed">
+              <p>
+                O linie de cărămidă modulară hyper-presată semi-uscată funcționează
+                dacă patru parametri sunt aliniați simultan: granulometria după
+                moară, umiditatea de presare, proporția argilă-nisip-ciment și
+                presiunea aplicată pe matriță. Modificarea oricăruia dintre ei
+                afectează direct rezistența și aspectul final al cărămizii.
+              </p>
+              <p>
+                <strong className="text-ink-900">
+                  Granulometria fină este responsabilitatea morii și a cernătorului.
+                </strong>{" "}
+                Argila uscată intră în moara cu ciocane care o sparge în pudră
+                fină, apoi cernătorul reține bucățile mari care scapă din moară.
+                Fără cernător în flux, cărămida iese cu defecte la suprafață și
+                cu rezistență neuniformă.
+              </p>
+              <p>
+                <strong className="text-ink-900">
+                  Umiditatea calibrată este responsabilitatea malaxorului și a
+                  calculatorului dedicat.
+                </strong>{" "}
+                Argila din carieră are umiditate naturală variabilă pe sezon,
+                stratificație și meteo. Calculatorul de umiditate măsoară materia
+                primă curentă și recalculează automat proporțiile pentru fiecare
+                șarjă, păstrând constanța de calitate fără ajustări făcute din ochi
+                de operator. Vezi schema dreapta.
+              </p>
+              <p>
+                <strong className="text-ink-900">
+                  Presiunea calibrată pe matriță este responsabilitatea presei
+                  hidraulice configurate pe rețeta locală.
+                </strong>{" "}
+                Forța de presare nu e o valoare brută urmărită până la maxim, e o
+                valoare calibrată pe geometria matriței și pe consistența mixului
+                semi-uscat. Pe linia livrată la Buzău, presiunea a fost calibrată
+                direct pe materialul real, nu pe valori teoretice.
+              </p>
+              <p className="text-ink-900 font-medium pt-2 border-t hairline">
+                Pentru fabricanți care s-au lovit de același paradox al forței de
+                presare, recomandarea noastră este consistentă: cumperi linie
+                completă cu rețetă inclusă și calibrare locală, sau nu cumperi.
+                Tonajul singur nu produce, doar consumă curent și material.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-24">
+                <CammaDiagramFigure
+                  number="03 · calculator umiditate"
+                  diagram={<HumidityCalculatorDiagram />}
+                  caption="Trei bare oscilează proporțiile recalculate live pentru argilă, nisip, ciment. Senzor în malaxor citește umiditatea curentă și ajustează amestecul șarjă cu șarjă."
+                />
+              </div>
+            </div>
           </div>
         </Section>
 
@@ -572,9 +612,9 @@ export default function CammaCasePage() {
           </div>
         </Section>
 
-        {/* 6. SOLUȚIA */}
-        <Section number="06" eyebrow="Linia livrată · echipamente și sub-sisteme">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* 6. SOLUȚIA + GALERIE FOTO */}
+        <Section number="06" eyebrow="Linia livrată · echipamente, sub-sisteme și foto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 lg:mb-12">
             <div className="lg:col-span-7">
               <h2
                 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6"
@@ -628,26 +668,34 @@ export default function CammaCasePage() {
               </p>
             </div>
 
-            <aside className="lg:col-span-5">
-              <div className="bg-uzx-blue text-white p-6 lg:p-8">
-                <div className="text-[10px] mono uppercase tracking-widest text-white/70 mb-3">
+            <div className="lg:col-span-5 space-y-4">
+              <CammaDiagramFigure
+                number="04 · flux linie"
+                diagram={<ProductionFlowDiagram />}
+                caption="Cinci stații conectate prin benzi transportoare, automatizate integral cu excepția paletizării manuale. Două operatori per schimb."
+              />
+              <div
+                className="bg-uzx-blue text-white p-5 lg:p-6"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #082545 0%, #0d2240 100%)",
+                }}
+              >
+                <div className="text-[10px] mono uppercase tracking-widest text-white/70 mb-2">
                   Calculator umiditate · sub-sistem cheie
                 </div>
                 <h3
-                  className="serif text-xl lg:text-2xl leading-tight mb-4"
+                  className="serif text-lg lg:text-xl leading-tight mb-3"
                   style={{ letterSpacing: "-0.02em" }}
                 >
-                  Constanța de calitate fără ajustări făcute din ochi de
-                  operator.
+                  Constanța de calitate fără ajustări din ochi de operator.
                 </h3>
-                <p className="text-sm text-white/85 leading-relaxed mb-5">
-                  Argila din carieră are umiditate diferită vara față de iarna,
-                  după ploaie față de zi uscată, și de la un strat geologic la
-                  altul. Calculatorul măsoară materia primă curentă și
+                <p className="text-sm text-white/85 leading-relaxed mb-4">
+                  Sensor în malaxor măsoară umiditatea curentă și controller-ul
                   recalculează automat proporțiile de nisip, ciment și apă
                   pentru fiecare șarjă. Pentru fabrici cu materie primă
-                  naturală, acest sub-sistem face diferența între consistență și
-                  rebut sistematic.
+                  naturală, acest sub-sistem face diferența între consistență
+                  și rebut sistematic.
                 </p>
                 <Link
                   href="/contact?subject=Linie%20produc%C8%9Bie%20c%C4%83r%C4%83mid%C4%83%20modular%C4%83&context=Studiu%20de%20caz%20CAMMA"
@@ -657,23 +705,54 @@ export default function CammaCasePage() {
                   <span className="group-hover:translate-x-1 transition">→</span>
                 </Link>
               </div>
-            </aside>
+            </div>
+          </div>
+
+          <div>
+            <div className="text-[10px] mono uppercase tracking-widest mb-4" style={{ color: "#8a4f23" }}>
+              Foto · linia în fabrica CAMMA
+            </div>
+            <GalleryGrid slots={gallery} />
+            <p className="text-[11px] text-ink-500 mt-4 leading-relaxed italic">
+              Sloturile fără imagine sunt placeholder-e. Fotografiile reale se
+              adaugă din admin la /admin/studii-de-caz/camma.
+            </p>
           </div>
         </Section>
 
-        {/* 7. SCHEME TEHNICE */}
-        <Section
-          number="07"
-          eyebrow="Scheme tehnice · documentație vizuală a fluxului"
-        >
-          <p className="text-ink-600 max-w-3xl mb-8 lg:mb-10 leading-relaxed">
-            Diagramele de mai jos reprezintă schematic fluxul tehnologic livrat
-            la Buzău, paradoxul forței de presare versus chimia rețetei și
-            saltul operațional măsurat după punerea în funcțiune. Materialele
-            foto-video reale sunt disponibile la cerere, sub NDA dacă proiectul
-            cere confidențialitate.
-          </p>
-          <CammaCaseDiagrams />
+        {/* 7. SCHEMA DE ANSAMBLU + CAPACITY */}
+        <Section number="07" eyebrow="Salt operațional · în cifre">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-5 space-y-5 text-ink-600 leading-relaxed">
+              <h2
+                className="serif text-2xl lg:text-3xl text-ink-900 leading-tight"
+                style={{ letterSpacing: "-0.02em" }}
+              >
+                ×100 capacitate operațională, +66% cifră de afaceri într-un singur an.
+              </h2>
+              <p>
+                Înainte de intrarea liniei Uzinex în funcțiune, CAMMA reușea să
+                producă sub 200 de cărămizi pe zi, cu pierderi mari pe fiecare
+                șarjă. După implementare și transferul de know-how, capacitatea
+                operațională a ajuns la 20.000 de cărămizi pe zi, iar pierderile
+                s-au redus la minim.
+              </p>
+              <p>
+                Cifra de afaceri publică a urmat: 900K lei în 2023, 1.5M lei în
+                2024. Capacitatea teoretică a liniei este de 800.000 m³ de
+                cărămidă pe an, iar adăugând cele 2 prese ucrainene refolosite cu
+                rețeta corectă, CAMMA depășește 1.000.000 m³ pe an la nivel de
+                fabrică.
+              </p>
+            </div>
+            <div className="lg:col-span-7">
+              <CammaDiagramFigure
+                number="05 · salt capacitate"
+                diagram={<CapacityDiagram />}
+                caption="200 → 20.000 cărămizi/zi reprezentat la scară reală pe axă lineară. Curba portocalie marchează tranziția pre vs. post Uzinex. Panou lateral: cifră de afaceri publică."
+              />
+            </div>
+          </div>
         </Section>
 
         {/* 8. TIMELINE */}
@@ -754,9 +833,7 @@ export default function CammaCasePage() {
                 CAMMA a preluat operarea liniei integral in-house. Niciun apel
                 pentru defect tehnic raportat post-PIF, mentenanță planificată
                 făcută local, iar aparatura funcționează continuu pe parametrii
-                proiectați. Pentru o linie completă, acesta este indicatorul cel
-                mai relevant pentru calitatea integrării și pentru claritatea
-                trainingului inițial.
+                proiectați.
               </p>
               <Link
                 href="/service"
@@ -798,17 +875,18 @@ export default function CammaCasePage() {
           </div>
         </Section>
 
-        {/* TESTIMONIAL */}
-        <section className="border-b hairline bg-ink-50 py-14 lg:py-20">
+        {/* 11. TESTIMONIAL */}
+        <section className="border-b hairline py-14 lg:py-20" style={{ background: "#faf6f1" }}>
           <div className="container-x">
             <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-8">
-              Testimonial · fragmente din interviul video
+              11 / Testimonial · fragmente din interviul video
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl">
               {TESTIMONIAL_QUOTES.map((q, i) => (
                 <blockquote
                   key={i}
-                  className="border-l-2 border-uzx-orange pl-5 py-2"
+                  className="border-l-2 pl-5 py-2"
+                  style={{ borderColor: "#c87b3c" }}
                 >
                   <p className="serif text-base lg:text-lg text-ink-900 leading-snug italic">
                     „{q}"
@@ -818,19 +896,19 @@ export default function CammaCasePage() {
             </div>
             <p className="text-[11px] text-ink-500 mt-8 leading-relaxed italic max-w-3xl">
               Citate editate pentru claritate, păstrând sensul exact al
-              declarațiilor. Interviul video integral este disponibil în secțiunea
-              hero a paginii.
+              declarațiilor. Interviul video integral este disponibil în
+              secțiunea hero a paginii.
             </p>
           </div>
         </section>
 
-        {/* 11. LECȚII */}
+        {/* 12. LECȚII */}
         <section className="border-b hairline bg-ink-900 text-white py-14 lg:py-20">
           <div className="container-x">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-3">
-                  11 / Lecții & provocări
+                  12 / Lecții & provocări
                 </div>
                 <h2
                   className="serif text-2xl lg:text-3xl leading-tight"
@@ -844,8 +922,6 @@ export default function CammaCasePage() {
                 <p className="text-sm text-white/60 mt-5 leading-relaxed">
                   Trei observații care au schimbat felul în care propunem linii
                   complete pentru clienți cu materie primă naturală variabilă.
-                  Aplicabile dincolo de cărămida modulară, oriunde rețeta și
-                  fluxul contează mai mult decât tonajul brut.
                 </p>
               </div>
               <div className="lg:col-span-8 space-y-6 lg:space-y-8">
@@ -870,9 +946,9 @@ export default function CammaCasePage() {
           </div>
         </section>
 
-        {/* 12. FAQ */}
+        {/* 13. FAQ */}
         <Section
-          number="12"
+          number="13"
           eyebrow="Întrebări tehnice · cărămidă modulară hyper-presată"
         >
           <div className="max-w-4xl divide-y hairline border-y hairline">
@@ -897,7 +973,15 @@ export default function CammaCasePage() {
           </div>
         </Section>
 
-        {/* 13. CONTACT · CTA */}
+        {/* 14. WALL BUILDER TOOL */}
+        <Section
+          number="14"
+          eyebrow="Tool interactiv · estimează un perete real"
+        >
+          <WallBuilderTool />
+        </Section>
+
+        {/* 15. CONTACT · CTA */}
         <section
           className="border-b hairline py-14 lg:py-20"
           style={{ background: "#0d1828" }}
@@ -906,7 +990,7 @@ export default function CammaCasePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-4">
-                  13 / Contact · vrei o linie completă pentru fabrica ta?
+                  15 / Contact · vrei o linie completă pentru fabrica ta?
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"
