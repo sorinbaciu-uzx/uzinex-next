@@ -134,7 +134,7 @@ const SOLUTIONS: Solution[] = [
 ];
 
 export const SOLUTIONS_DEFAULT: SolutionsData = {
-  eyebrow: "06 / Industry 4.0",
+  eyebrow: "05 / Industry 4.0",
   titleLine1: "Soluții integrate",
   titleLine2: "pentru fabrica viitorului.",
   description:
@@ -151,7 +151,7 @@ export function Solutions({ data }: { data?: SolutionsData | null }) {
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
           <div className="lg:col-span-6">
-            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{SOLUTIONS_DEFAULT.eyebrow}</div>
             <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
               {d.titleLine1}<br />{d.titleLine2}
             </h2>
