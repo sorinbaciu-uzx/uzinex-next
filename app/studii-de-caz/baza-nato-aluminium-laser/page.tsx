@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title:
     "Studiu de caz · 5 aparate sudură laser pe o bază NATO din România · contractor apărare",
   description:
-    "Cum un contractor român cu acreditare NATO a livrat hangare expediționare din aluminiu pe o bază militară terestră, cu termen ferm și penalități, în condiții meteo care făceau imposibilă sudura MIG sau TIG. Soluția: 5 aparate laser identice — 3 active, 2 în standby — operate de oameni fără experiență care s-au adaptat mai rapid decât sudorii cu zece ani vechime.",
+    "Cum un contractor român cu acreditare NATO a livrat hangare expediționare din aluminiu pe o bază militară terestră, cu termen ferm și penalități, în condiții meteo care făceau imposibilă sudura MIG sau TIG. Soluția: 5 aparate laser identice, 3 active și 2 în standby, operate de oameni fără experiență care s-au adaptat mai rapid decât sudorii cu zece ani vechime.",
   keywords: [
     "aparat sudura laser baza nato",
     "hangare aluminiu baza militara",
@@ -69,7 +69,7 @@ const ALU_REASONS: Array<{ title: string; body: string }> = [
   {
     title: "Aliniere cu standardele NATO pentru rapid-deploy",
     body:
-      "Standardele NATO pentru infrastructura expediționară (referință STANAG-uri din familia logistică terestră) favorizează aluminiul seria 5xxx (5083, 5754) pentru aplicații de tip rapid-deploy. Caracteristicile mecanice rămân stabile pe intervale largi de temperatură, iar materialul este sudabil cu tehnologii moderne fără tratament termic post-sudură.",
+      "Standardele NATO pentru infrastructura expediționară, cu referință la STANAG-urile din familia logistică terestră, favorizează aluminiul seria 5xxx, în special aliajele 5083 și 5754, pentru aplicații de tip rapid-deploy. Caracteristicile mecanice rămân stabile pe intervale largi de temperatură, iar materialul este sudabil cu tehnologii moderne fără tratament termic post-sudură.",
   },
 ];
 
@@ -149,12 +149,12 @@ const LESSONS: Array<{ title: string; body: string }> = [
   {
     title: "Pe proiecte cu termen ferm și penalități, redundanța 60% e mai ieftină decât întârzierea",
     body:
-      "Cele 2 unități standby au reprezentat sub 30% din valoarea totală a comenzii. O singură zi de întârziere contractuală ar fi depășit această sumă, iar pe șantier cu echipe în mai multe schimburi backup-ul a permis continuitate fără pauze de înlocuire piese sau diagnoză. Pentru contractori publici cu termene ferme, redundanța nu este un cost — este o asigurare ieftină.",
+      "Cele 2 unități standby au reprezentat sub 30% din valoarea totală a comenzii. O singură zi de întârziere contractuală ar fi depășit această sumă, iar pe șantier cu echipe în mai multe schimburi backup-ul a permis continuitate fără pauze de înlocuire piese sau diagnoză. Pentru contractori publici cu termene ferme, redundanța nu este un cost, ci o asigurare ieftină.",
   },
   {
     title: "Curba de învățare la sudori experimentați poate fi negativă pe tehnologii noi",
     body:
-      "Sudorii cu zece ani de experiență MIG sau TIG au sudat constant mai prost decât operatorii fără experiență anterioară. Reflexul automatizat de pendulare în zig-zag, esențial pentru sudura conventională pe aluminiu subțire, scoate fasciculul laser din zona de focalizare și produce cordoane neuniforme. Pe acest șantier, sudorii experimentați au fost mutați la pregătirea materialelor (debavurare, fitting, alignment) iar laserele au fost operate de oameni necalificați cu rezultate mai bune.",
+      "Sudorii cu zece ani de experiență MIG sau TIG au sudat constant mai prost decât operatorii fără experiență anterioară. Reflexul automatizat de pendulare în zig-zag, esențial pentru sudura conventională pe aluminiu subțire, scoate fasciculul laser din zona de focalizare și produce cordoane neuniforme. Pe acest șantier, sudorii experimentați au fost mutați la pregătirea materialelor, adică debavurare, fitting și alignment, iar laserele au fost operate de oameni necalificați cu rezultate mai bune.",
   },
   {
     title: "Vremea în România este un avantaj competitiv consistent pentru laser",
@@ -167,30 +167,30 @@ const FAQ: Array<{ question: string; answer: string }> = [
   {
     question: "De ce nu a funcționat sudura MIG sau TIG pe șantierul de pe baza NATO?",
     answer:
-      "Sudura TIG și MIG depinde de un flux de gaz protector (Argon sau mix Argon/CO₂) în jurul arcului. Vântul peste 5-7 m/s deviază gazul din zona băii de sudură, iar oxigenul atmosferic intră în topitură. Pe aluminiu subțire (3-4 mm) tipic pentru hangare expediționare, rezultatul este porozitate, oxizi de aluminiu și cordoane respinse la inspecție. Standardele aerospatiale precum AWS D17.1 cer mediu controlat pentru sudura aluminiului. Sudura laser are zona afectată termic foarte mică, fascicul focalizat și volum minim de gaz, ceea ce o face practic imună la vânt și ploaie.",
+      "Sudura TIG și MIG depinde de un flux de gaz protector, Argon pur sau mix Argon cu CO₂, în jurul arcului. Vântul peste 5-7 m/s deviază gazul din zona băii de sudură, iar oxigenul atmosferic intră în topitură. Pe aluminiu subțire de 3-4 mm tipic pentru hangare expediționare, rezultatul este porozitate, oxizi de aluminiu și cordoane respinse la inspecție. Standardele aerospatiale precum AWS D17.1 cer mediu controlat pentru sudura aluminiului. Sudura laser are zona afectată termic foarte mică, fascicul focalizat și volum minim de gaz, ceea ce o face practic imună la vânt și ploaie.",
   },
   {
     question: "De ce aluminiu pentru hangarele de pe baza NATO și nu oțel?",
     answer:
-      "Patru motive verificabile. Greutatea redusă (sub jumătate din echivalentul din oțel) facilitează transportul și asamblarea rapidă a hangarelor expediționare. Rezistența naturală la coroziune elimină nevoia de pasivare și reduce costul de mentenanță în câmp. Aluminiul nu este magnetic, ceea ce este avantajos în medii cu echipamente sensibile, iar amprenta termică este mai uniformă. Standardele NATO pentru infrastructură expediționară favorizează aliajele de aluminiu serie 5xxx, sudabile cu tehnologii moderne fără tratament post-sudură.",
+      "Patru motive verificabile. Greutatea redusă, sub jumătate din echivalentul din oțel, facilitează transportul și asamblarea rapidă a hangarelor expediționare. Rezistența naturală la coroziune elimină nevoia de pasivare și reduce costul de mentenanță în câmp. Aluminiul nu este magnetic, ceea ce este avantajos în medii cu echipamente sensibile, iar amprenta termică este mai uniformă. Standardele NATO pentru infrastructură expediționară favorizează aliajele de aluminiu serie 5xxx, sudabile cu tehnologii moderne fără tratament post-sudură.",
   },
   {
     question: "Cum este posibil ca operatorii fără experiență să sudeze mai bine decât sudorii cu zece ani vechime?",
     answer:
-      "Sudura MIG și TIG cere o mișcare de pendulare în zig-zag, prin care pistolul „pictează” baia de sudură pe lățimea cordonului. După mii de ore de practică, această mișcare devine automatizată reflexă — sudorul nu o mai gândește, mâna o face singură. Sudura laser cere exact opusul: mișcare strict liniară uniformă, fără pendulare, pentru că fasciculul are deja focalizare definită. Sudorul cu zece ani de experiență „luptă” cu reflexul propriu și produce cordoane neuniforme. Operatorul fără experiență învață direct mișcarea liniară pe care o cere laserul și ajunge la conformitate în două ore de training. Acest paradox îl observăm pe aproape toate proiectele de sudură laser pe care le-am livrat.",
+      "Sudura MIG și TIG cere o mișcare de pendulare în zig-zag, prin care pistolul „pictează” baia de sudură pe lățimea cordonului. După mii de ore de practică, această mișcare devine automatizată reflexă, iar sudorul nu o mai gândește deloc, mâna o face singură. Sudura laser cere exact opusul: mișcare strict liniară uniformă, fără pendulare, pentru că fasciculul are deja focalizare definită. Sudorul cu zece ani de experiență „luptă” cu reflexul propriu și produce cordoane neuniforme. Operatorul fără experiență învață direct mișcarea liniară pe care o cere laserul și ajunge la conformitate în două ore de training. Acest paradox îl observăm pe aproape toate proiectele de sudură laser pe care le-am livrat.",
   },
   {
     question: "Ce înseamnă concret abonamentul de înlocuire în 24 de ore pentru aparate laser?",
     answer:
-      "Este un model asemănător leasing-ului operațional pentru utilaje critice. Clientul plătește aparatele plus o taxă de abonament lunară. În caz de defect care necesită intervenție extinsă, livrăm un aparat de schimb în 24 de ore care rămâne la client până la remedierea celui original. Pentru contractori cu proiecte sub termen ferm și penalități zilnice, garanția standard de 60 luni nu este suficientă — abonamentul transformă echipamentul într-un serviciu cu uptime garantat. Detalii tehnice și niveluri de SLA pe pagina noastră de [abonamente service](/service/abonamente).",
+      "Este un model asemănător leasing-ului operațional pentru utilaje critice. Clientul plătește aparatele plus o taxă de abonament lunară. În caz de defect care necesită intervenție extinsă, livrăm un aparat de schimb în 24 de ore care rămâne la client până la remedierea celui original. Pentru contractori cu proiecte sub termen ferm și penalități zilnice, garanția standard de 60 luni nu este suficientă, iar abonamentul transformă echipamentul într-un serviciu cu uptime garantat. Detalii tehnice și niveluri de SLA pe pagina noastră de [abonamente service](/service/abonamente).",
   },
   {
     question: "Cum s-a asigurat securitatea conexiunii remote pentru un client cu clearance NATO?",
     answer:
-      "Conexiunea remote pe care am folosit-o pentru rezolvarea bug-ului software este criptată end-to-end și inițiată exclusiv de la fața locului — operatorul de pe șantier deschide sesiunea, controlează ce vede tehnicianul Uzinex, și o închide la final. Aparatul nu rămâne accesibil din afară permanent. Pentru clienți cu cerințe suplimentare de securitate, putem opera și în regim de intervenție pur telefonică, ghidând operatorul pas cu pas, sau cu deplasare fizică sub supraveghere.",
+      "Conexiunea remote pe care am folosit-o pentru rezolvarea bug-ului software este criptată end-to-end și inițiată exclusiv de la fața locului. Operatorul de pe șantier deschide sesiunea, controlează ce vede tehnicianul Uzinex și o închide la final. Aparatul nu rămâne accesibil din afară permanent. Pentru clienți cu cerințe suplimentare de securitate, putem opera și în regim de intervenție pur telefonică, ghidând operatorul pas cu pas, sau cu deplasare fizică sub supraveghere.",
   },
   {
-    question: "De ce este utilă o redundanță de 60% (2 standby la 3 active) pe un proiect cu termen ferm?",
+    question: "De ce este utilă o redundanță de 60%, cu 2 unități standby la 3 active, pe un proiect cu termen ferm?",
     answer:
       "Pentru un șantier cu echipe în mai multe schimburi și termen contractual cu penalități zilnice, valoarea unei zile de pauză depășește valoarea unui aparat de schimb. Două aparate în standby permit continuitate completă în caz de defecțiune, intervenție de mentenanță programată sau rotație pentru consumabile. Costul lor se amortizează deja la prima zi de întârziere evitată. Strategia este standard în industrii militare și aerospatiale unde uptime-ul este obligatoriu.",
   },
@@ -214,9 +214,9 @@ export default function NatoCasePage() {
   const article = articleSchema({
     slug: SLUG,
     title:
-      "Bază NATO România — 5 aparate laser pentru hangare aluminiu pe vreme imposibilă pentru TIG/MIG",
+      "Bază NATO România · 5 aparate laser pentru hangare aluminiu pe vreme imposibilă pentru TIG/MIG",
     excerpt:
-      "Contractor român cu acreditare NATO livrează hangare expediționare din aluminiu pe o bază militară terestră, cu termen ferm și vânt care făcea imposibilă sudura conventională. Soluția: 5 aparate laser identice — 3 active, 2 în standby.",
+      "Contractor român cu acreditare NATO livrează hangare expediționare din aluminiu pe o bază militară terestră, cu termen ferm și vânt care făcea imposibilă sudura conventională. Soluția: 5 aparate laser identice, dintre care 3 active și 2 în standby.",
     category: "Studiu de caz · Apărare & infrastructură",
     datePublished: "2025-03-15",
   });
@@ -315,9 +315,9 @@ export default function NatoCasePage() {
                   <p className="text-sm text-white/75 leading-relaxed">
                     Toate datele care ar permite identificarea clientului, locației
                     bazei sau a destinației operaționale a hangarelor au fost
-                    omise la cererea clientului. Restul informațiilor — context
-                    tehnic, configurația livrării, lecții — sunt reale și
-                    verificabile la sediul Uzinex.
+                    omise la cererea clientului. Restul informațiilor, precum
+                    contextul tehnic, configurația livrării și lecțiile, sunt
+                    reale și verificabile la sediul Uzinex.
                   </p>
                   <div className="border-t border-white/10 mt-5 pt-5">
                     <div className="text-[10px] mono uppercase tracking-widest text-white/50 mb-2">
@@ -386,8 +386,8 @@ export default function NatoCasePage() {
               <div className="space-y-4 text-ink-600 text-base lg:text-[17px] leading-relaxed">
                 <p>
                   Sudura aluminiului subțire în atmosferă deschisă cu MIG sau TIG
-                  cere un flux constant de gaz protector în jurul arcului — Argon
-                  pur la TIG, mix Argon plus CO₂ la MIG. Gazul împiedică oxigenul
+                  cere un flux constant de gaz protector în jurul arcului, Argon
+                  pur la TIG sau mix Argon plus CO₂ la MIG. Gazul împiedică oxigenul
                   atmosferic să ajungă la baia de topitură. Aluminiul oxidează
                   instantaneu în prezența oxigenului, formând oxizi cu temperatură
                   de topire mult mai mare decât metalul de bază. Rezultatul: porozitate,
@@ -484,7 +484,7 @@ export default function NatoCasePage() {
             </p>
             <p className="text-ink-900 font-medium">
               Pentru clienți cu proiecte similare, această strategie de redundanță
-              a devenit pattern-ul nostru standard de propunere — recomandăm
+              a devenit pattern-ul nostru standard de propunere. Recomandăm
               dimensionarea pe baza penalității zilnice contractuale, nu pe baza
               capacității teoretice de producție.
             </p>
@@ -502,12 +502,12 @@ export default function NatoCasePage() {
             <ReasonCard
               num="B"
               title="Decizia ancorată în trei elemente concrete"
-              body="Necesitatea tehnică imposibil de acoperit cu MIG sau TIG pe vremea pe care o aveau. Garanția standard Uzinex de 60 luni cu suport tehnic inclus — detalii pe pagina noastră de [service inclus la livrare](/service). Și abonamentul de înlocuire în 24 de ore care transformă fiecare aparat într-un serviciu cu uptime garantat."
+              body="Necesitatea tehnică imposibil de acoperit cu MIG sau TIG pe vremea pe care o aveau. Garanția standard Uzinex de 60 luni cu suport tehnic inclus, cu detalii pe pagina noastră de [service inclus la livrare](/service). Și abonamentul de înlocuire în 24 de ore care transformă fiecare aparat într-un serviciu cu uptime garantat."
             />
             <ReasonCard
               num="C"
               title="Cumpărare directă, fără probă în custodie"
-              body="Spre deosebire de antreprenorii civili care cer probă fizică înainte de plată, contractorul a comandat direct cele 5 unități. Presiunea termenului contractual a fost mai mare decât nevoia de validare independentă. Pentru noi, asta a însemnat responsabilitate maximă pe livrare — nu mai era loc de „dacă nu merge”."
+              body="Spre deosebire de antreprenorii civili care cer probă fizică înainte de plată, contractorul a comandat direct cele 5 unități. Presiunea termenului contractual a fost mai mare decât nevoia de validare independentă. Pentru noi, asta a însemnat responsabilitate maximă pe livrare, fără loc pentru „dacă nu merge”."
             />
           </div>
         </Section>
@@ -520,7 +520,7 @@ export default function NatoCasePage() {
                 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6"
                 style={{ letterSpacing: "-0.02em" }}
               >
-                Aceeași configurație ca la majoritatea proiectelor noastre B2B —
+                Aceeași configurație ca la majoritatea proiectelor noastre B2B,
                 pentru că este raportul optim între calitate, preț și acoperire de
                 nevoi.
               </h2>
@@ -536,7 +536,7 @@ export default function NatoCasePage() {
                 />
                 <SpecRow
                   label="Distribuție pe șantier"
-                  value="3 active + 2 standby (redundanță 60%)"
+                  value="3 active + 2 standby · redundanță 60%"
                 />
                 <SpecRow
                   label="Pachet consumabile"
@@ -672,7 +672,7 @@ export default function NatoCasePage() {
                 Pentru un client cu clearance de securitate, capacitatea de
                 intervenție remote validată tehnic este la fel de importantă ca
                 garanția standard. Nu putem garanta deplasare fizică imediată pe
-                o bază NATO — putem însă rezolva majoritatea problemelor software
+                o bază NATO, dar putem rezolva majoritatea problemelor software
                 fără să părăsim sediul.
               </p>
               <Link
@@ -715,13 +715,13 @@ export default function NatoCasePage() {
           </div>
         </Section>
 
-        {/* LECȚII */}
+        {/* 11. LECȚII */}
         <section className="border-b hairline bg-ink-900 text-white py-14 lg:py-20">
           <div className="container-x">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
               <div className="lg:col-span-4">
                 <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-3">
-                  Lecții & provocări
+                  11 / Lecții & provocări
                 </div>
                 <h2
                   className="serif text-2xl lg:text-3xl leading-tight"
@@ -760,8 +760,8 @@ export default function NatoCasePage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <Section number="11" eyebrow="Întrebări tehnice · sudură laser în condiții dificile">
+        {/* 12. FAQ */}
+        <Section number="12" eyebrow="Întrebări tehnice · sudură laser în condiții dificile">
           <div className="max-w-4xl divide-y hairline border-y hairline">
             {FAQ.map((q, i) => (
               <details key={i} className="group py-5 lg:py-6">
@@ -799,13 +799,13 @@ export default function NatoCasePage() {
           </div>
         </Section>
 
-        {/* CTA enterprise */}
+        {/* 13. CONTACT · CTA enterprise */}
         <section className="border-b hairline py-14 lg:py-20" style={{ background: "#0d1828" }}>
           <div className="container-x text-white">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-7">
-                <div className="text-[11px] mono uppercase tracking-[0.2em] text-white/70 mb-4">
-                  Proiect cu termen ferm și penalități?
+                <div className="text-[11px] mono uppercase tracking-[0.2em] text-uzx-orange mb-4">
+                  13 / Contact · proiect cu termen ferm și penalități?
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95]"

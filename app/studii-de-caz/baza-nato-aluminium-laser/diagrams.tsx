@@ -256,7 +256,7 @@ function HangarDiagram() {
       </g>
 
       <CompassRose x={50} y={70} />
-      <ClassifiedStamp x={500} y={120} />
+      <ClassifiedStamp x={300} y={245} />
       <TitleBlock
         rows={[
           ["UZX-LASER", "REV. A"],
@@ -553,8 +553,459 @@ function MuscleMemoryDiagram() {
           ["TRAINING", "2h"],
           ["LB", "RO · AI"],
         ]}
-        x={444}
+        x={20}
         y={252}
+      />
+    </svg>
+  );
+}
+
+function HAZComparisonDiagram() {
+  return (
+    <svg
+      viewBox="0 0 600 340"
+      className="w-full h-auto"
+      role="img"
+      aria-labelledby="haz-title"
+    >
+      <title id="haz-title">
+        Comparație zonă afectată termic HAZ pentru sudură TIG MIG vs sudură laser pe aluminiu subțire
+      </title>
+      <defs>
+        <GridDefs id="grid-haz" />
+      </defs>
+      <rect width="600" height="340" fill="url(#grid-haz)" />
+
+      <text
+        x="300"
+        y="32"
+        textAnchor="middle"
+        fontSize="11"
+        fill={INK}
+        fontFamily="ui-monospace, monospace"
+        letterSpacing="6"
+      >
+        ZONA AFECTATĂ TERMIC · HAZ
+      </text>
+      <text
+        x="300"
+        y="50"
+        textAnchor="middle"
+        fontSize="9"
+        fill={ACCENT}
+        fontFamily="ui-monospace, monospace"
+      >
+        cu cât e mai mică, cu atât piesa stă mai plată
+      </text>
+
+      <g transform="translate(0,90)">
+        <text
+          x={150}
+          y={0}
+          textAnchor="middle"
+          fontSize="9"
+          fill={ALERT}
+          fontFamily="ui-monospace, monospace"
+          letterSpacing="2"
+        >
+          TIG / MIG · ARC ELECTRIC
+        </text>
+
+        <rect x={50} y={70} width={200} height={20} fill="#dde4ef" stroke={INK} strokeWidth="0.8" />
+
+        {[0, 1, 2].map((i) => (
+          <motion.circle
+            key={i}
+            cx={150}
+            cy={80}
+            r={10}
+            fill={ALERT}
+            fillOpacity={0.35}
+            stroke={ALERT}
+            strokeWidth="0.6"
+            strokeOpacity={0.5}
+            animate={{ r: [8, 50, 8], opacity: [0.55, 0, 0.55] }}
+            transition={{
+              duration: 2.4,
+              repeat: Infinity,
+              delay: i * 0.6,
+              ease: "easeOut",
+            }}
+          />
+        ))}
+
+        <circle cx={150} cy={80} r={6} fill={ALERT} />
+
+        <line x1={108} y1={120} x2={192} y2={120} stroke={ALERT} strokeWidth="1.2" />
+        <line x1={108} y1={115} x2={108} y2={125} stroke={ALERT} strokeWidth="1.2" />
+        <line x1={192} y1={115} x2={192} y2={125} stroke={ALERT} strokeWidth="1.2" />
+        <text
+          x={150}
+          y={140}
+          textAnchor="middle"
+          fontSize="10"
+          fill={ALERT}
+          fontFamily="ui-monospace, monospace"
+          fontWeight="bold"
+        >
+          HAZ ≈ 5–10 mm
+        </text>
+        <text
+          x={150}
+          y={160}
+          textAnchor="middle"
+          fontSize="8"
+          fill={DIM}
+          fontFamily="ui-monospace, monospace"
+        >
+          distorsiune termică · warp
+        </text>
+        <text
+          x={150}
+          y={185}
+          textAnchor="middle"
+          fontSize="9"
+          fill={ALERT}
+          fontFamily="ui-monospace, monospace"
+          fontWeight="bold"
+          letterSpacing="2"
+        >
+          ÎNDREPTARE NECESARĂ
+        </text>
+      </g>
+
+      <line x1={300} y1={70} x2={300} y2={290} stroke={DIM} strokeWidth="0.5" strokeDasharray="3 3" />
+
+      <g transform="translate(300,90)">
+        <text
+          x={150}
+          y={0}
+          textAnchor="middle"
+          fontSize="9"
+          fill={OK}
+          fontFamily="ui-monospace, monospace"
+          letterSpacing="2"
+        >
+          LASER · FOCUS ÎN PUNCT
+        </text>
+
+        <rect x={50} y={70} width={200} height={20} fill="#dde4ef" stroke={INK} strokeWidth="0.8" />
+
+        <line x1={150} y1={20} x2={150} y2={70} stroke={LASER} strokeWidth="1.4" strokeDasharray="3 2" />
+
+        <motion.circle
+          cx={150}
+          cy={80}
+          r={4}
+          fill={LASER}
+          animate={{ opacity: [1, 0.4, 1] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+        <circle cx={150} cy={80} r={2} fill={LASER} />
+
+        <line x1={147} y1={120} x2={153} y2={120} stroke={OK} strokeWidth="1.4" />
+        <line x1={147} y1={115} x2={147} y2={125} stroke={OK} strokeWidth="1.4" />
+        <line x1={153} y1={115} x2={153} y2={125} stroke={OK} strokeWidth="1.4" />
+        <text
+          x={150}
+          y={140}
+          textAnchor="middle"
+          fontSize="10"
+          fill={OK}
+          fontFamily="ui-monospace, monospace"
+          fontWeight="bold"
+        >
+          HAZ &lt; 0.5 mm
+        </text>
+        <text
+          x={150}
+          y={160}
+          textAnchor="middle"
+          fontSize="8"
+          fill={DIM}
+          fontFamily="ui-monospace, monospace"
+        >
+          piesă plată · zero warp
+        </text>
+        <text
+          x={150}
+          y={185}
+          textAnchor="middle"
+          fontSize="9"
+          fill={OK}
+          fontFamily="ui-monospace, monospace"
+          fontWeight="bold"
+          letterSpacing="2"
+        >
+          MONTAJ DIRECT
+        </text>
+      </g>
+
+      <TitleBlock
+        rows={[
+          ["UZX-LASER", "REV. A"],
+          ["AWS D17.1", "Al 3-4 mm"],
+          ["MEAS", "mm"],
+        ]}
+        x={444}
+        y={285}
+      />
+    </svg>
+  );
+}
+
+function MultiAppDiagram() {
+  const panels: Array<{
+    x: number;
+    title: string;
+    subtitle: string;
+    tag: string;
+    delay: number;
+  }> = [
+    { x: 35, title: "SUDURĂ", subtitle: "cordon Al 5083 · hangare", tag: "PROD HANGAR", delay: 0 },
+    { x: 225, title: "CURĂȚARE", subtitle: "oxizi · vopsea · grăsimi", tag: "PREP MATERIAL", delay: 0.6 },
+    { x: 415, title: "DEBITARE", subtitle: "tablă Al · oțel · inox", tag: "AJUSTARE PE LOC", delay: 1.2 },
+  ];
+
+  return (
+    <svg
+      viewBox="0 0 600 340"
+      className="w-full h-auto"
+      role="img"
+      aria-labelledby="multiapp-title"
+    >
+      <title id="multiapp-title">
+        Acelasi aparat laser face sudură, curățare și debitare 3-in-1, cu un singur set de scule
+      </title>
+      <defs>
+        <GridDefs id="grid-multi" />
+      </defs>
+      <rect width="600" height="340" fill="url(#grid-multi)" />
+
+      <text
+        x="300"
+        y="32"
+        textAnchor="middle"
+        fontSize="11"
+        fill={INK}
+        fontFamily="ui-monospace, monospace"
+        letterSpacing="6"
+      >
+        ACELAȘI APARAT · 3 APLICAȚII
+      </text>
+      <text
+        x="300"
+        y="50"
+        textAnchor="middle"
+        fontSize="9"
+        fill={ACCENT}
+        fontFamily="ui-monospace, monospace"
+      >
+        sudură + curățare + debitare cu un singur set de scule
+      </text>
+
+      {panels.map((p) => (
+        <g key={p.title} transform={`translate(${p.x},90)`}>
+          <rect x={0} y={0} width={150} height={150} fill="white" stroke={INK} strokeWidth="0.8" />
+          <text
+            x={75}
+            y={20}
+            textAnchor="middle"
+            fontSize="10"
+            fill={INK}
+            fontFamily="ui-monospace, monospace"
+            fontWeight="bold"
+            letterSpacing="2"
+          >
+            {p.title}
+          </text>
+
+          {p.title === "SUDURĂ" && (
+            <>
+              <rect x={20} y={66} width={50} height={8} fill="#dde4ef" stroke={INK} strokeWidth="0.5" />
+              <rect x={80} y={66} width={50} height={8} fill="#dde4ef" stroke={INK} strokeWidth="0.5" />
+              <motion.rect
+                x={70}
+                y={68}
+                width={10}
+                height={4}
+                fill={LASER}
+                animate={{ x: [55, 85, 55] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+              />
+              <motion.line
+                x1={75}
+                y1={40}
+                x2={75}
+                y2={66}
+                stroke={LASER}
+                strokeWidth="1.2"
+                strokeDasharray="2 2"
+                animate={{ x1: [60, 90, 60], x2: [60, 90, 60] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+              />
+            </>
+          )}
+
+          {p.title === "CURĂȚARE" && (
+            <>
+              <rect x={20} y={64} width={110} height={14} fill="#dde4ef" stroke={INK} strokeWidth="0.5" />
+              {[28, 42, 56, 70, 84, 98, 112].map((cx, i) => (
+                <motion.circle
+                  key={i}
+                  cx={cx}
+                  cy={71}
+                  r={1.6}
+                  fill="#7d4d00"
+                  animate={{ opacity: [1, 1, 0, 0, 1] }}
+                  transition={{
+                    duration: 3,
+                    times: [0, 0.18 + i * 0.06, 0.32 + i * 0.06, 0.92, 1],
+                    repeat: Infinity,
+                    delay: p.delay,
+                  }}
+                />
+              ))}
+              <motion.line
+                x1={20}
+                y1={71}
+                x2={20}
+                y2={71}
+                stroke={LASER}
+                strokeWidth="2.5"
+                strokeOpacity={0.85}
+                animate={{ x2: [20, 130, 130, 20] }}
+                transition={{
+                  duration: 3,
+                  times: [0, 0.5, 0.55, 1],
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: p.delay,
+                }}
+              />
+              <motion.line
+                x1={20}
+                y1={40}
+                x2={20}
+                y2={64}
+                stroke={LASER}
+                strokeWidth="1"
+                strokeDasharray="2 2"
+                animate={{ x1: [20, 130, 130, 20], x2: [20, 130, 130, 20] }}
+                transition={{
+                  duration: 3,
+                  times: [0, 0.5, 0.55, 1],
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: p.delay,
+                }}
+              />
+            </>
+          )}
+
+          {p.title === "DEBITARE" && (
+            <>
+              <rect x={20} y={50} width={110} height={50} fill="#dde4ef" stroke={INK} strokeWidth="0.5" />
+              <motion.path
+                d="M 35 60 L 35 92 L 115 92 L 115 60"
+                fill="none"
+                stroke={LASER}
+                strokeWidth="1.6"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: [0, 1, 1, 0] }}
+                transition={{
+                  duration: 3.2,
+                  times: [0, 0.7, 0.85, 1],
+                  repeat: Infinity,
+                  delay: p.delay,
+                }}
+              />
+              <motion.circle
+                cx={35}
+                cy={60}
+                r={3.2}
+                fill={LASER}
+                animate={{
+                  cx: [35, 35, 115, 115, 35],
+                  cy: [60, 92, 92, 60, 60],
+                }}
+                transition={{
+                  duration: 3.2,
+                  times: [0, 0.25, 0.5, 0.7, 1],
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: p.delay,
+                }}
+              />
+            </>
+          )}
+
+          <text
+            x={75}
+            y={120}
+            textAnchor="middle"
+            fontSize="8"
+            fill={DIM}
+            fontFamily="ui-monospace, monospace"
+          >
+            {p.subtitle}
+          </text>
+          <rect
+            x={15}
+            y={128}
+            width={120}
+            height={14}
+            fill={LASER}
+            fillOpacity={0.1}
+            stroke={LASER}
+            strokeWidth="0.6"
+          />
+          <text
+            x={75}
+            y={138}
+            textAnchor="middle"
+            fontSize="8"
+            fill={LASER}
+            fontFamily="ui-monospace, monospace"
+            fontWeight="bold"
+            letterSpacing="1"
+          >
+            {p.tag}
+          </text>
+        </g>
+      ))}
+
+      <g transform="translate(110,265)">
+        <line x1={0} y1={0} x2={380} y2={0} stroke={DIM} strokeWidth="0.6" strokeDasharray="3 2" />
+        <motion.circle
+          cx={0}
+          cy={0}
+          r={4}
+          fill={LASER}
+          animate={{ cx: [0, 190, 380, 190, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+        />
+        <text
+          x={190}
+          y={18}
+          textAnchor="middle"
+          fontSize="8"
+          fill={DIM}
+          fontFamily="ui-monospace, monospace"
+          letterSpacing="2"
+        >
+          UN SINGUR APARAT · COMUTARE PISTOL
+        </text>
+      </g>
+
+      <TitleBlock
+        rows={[
+          ["UZX-LASER", "REV. A"],
+          ["MAX", "2.000W"],
+          ["GUN", "SUP23T"],
+        ]}
+        x={444}
+        y={285}
       />
     </svg>
   );
@@ -606,6 +1057,40 @@ export function NatoCaseDiagrams() {
             iar pendularea îl scoate din focare. Operatorul fără experiență învață
             direct mișcarea liniară uniformă pe care o cere laserul, fără reflex
             contradictoriu de „dezvăț".
+          </p>
+        </figcaption>
+      </figure>
+
+      <figure className="border hairline bg-white">
+        <HAZComparisonDiagram />
+        <figcaption className="px-5 py-4 border-t hairline">
+          <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-1.5">
+            Schema 4 · zona afectată termic și distorsiunea piesei
+          </div>
+          <p className="text-xs lg:text-sm text-ink-600 leading-relaxed">
+            Arcul electric depune energie pe o suprafață largă, iar zona afectată
+            termic ajunge la 5-10 mm pe aluminiu subțire. Tabla se deformează și
+            cere îndreptare după sudură. Fasciculul laser are focus în punct, iar
+            zona afectată termic rămâne sub jumătate de milimetru. Pentru hangare
+            expediționare cu toleranțe strânse, asta înseamnă montaj direct fără
+            corecții geometrice intermediare.
+          </p>
+        </figcaption>
+      </figure>
+
+      <figure className="border hairline bg-white">
+        <MultiAppDiagram />
+        <figcaption className="px-5 py-4 border-t hairline">
+          <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-1.5">
+            Schema 5 · acelasi aparat, trei aplicații
+          </div>
+          <p className="text-xs lg:text-sm text-ink-600 leading-relaxed">
+            Aparatele 3-in-1 livrate pe baza NATO sudează cordoanele de aluminiu,
+            curăță suprafețele de oxizi și grăsimi înainte de sudură și debitează
+            corecții geometrice direct pe șantier. Echipa nu mai cară trei utilaje
+            separate, iar operatorul comută pistolul în câteva secunde. Pe un
+            șantier expediționar cu logistică limitată, versatilitatea înseamnă
+            mai puține curse de transport și mai puține echipamente de mentenat.
           </p>
         </figcaption>
       </figure>
