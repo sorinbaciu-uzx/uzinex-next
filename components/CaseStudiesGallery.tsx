@@ -10,6 +10,7 @@ const DETAIL_PAGES: Record<string, string> = {
   feg: "/studii-de-caz/future-energy-group",
   "baza-nato": "/studii-de-caz/baza-nato-aluminium-laser",
   camma: "/studii-de-caz/caramida-modulara-camma",
+  "fier-forjat-limanu": "/studii-de-caz/fier-forjat-limanu",
 };
 
 type Industry =
@@ -305,26 +306,28 @@ const CASE_STUDIES: CaseStudyAll[] = [
   },
   {
     id: "fier-forjat-limanu",
-    client: "Fier-Forjat Limanu S.R.L.",
+    client: "Fier-Forjat Limanu SRL · Jan Paul Elhor",
     industry: "Auto & metalurgie",
     location: "Limanu, Constanța",
-    year: "2025",
-    title: "Fabrică completă de confecții metalice din fier forjat",
+    year: "2023",
+    title: "Atelier de fier forjat semi-automatizat cu finanțare nerambursabilă Start-Up Nation",
     excerpt:
-      "Fier-Forjat Limanu S.R.L. din localitatea Limanu, județul Constanța, este specializată în confecții metalice artizanale și industriale din fier forjat. Uzinex a furnizat fabrica completă cu utilaje pentru forjare, prelucrare, îndoire și finisare, păstrând caracterul tradițional al meșteșugului combinat cu eficiența industrială.",
+      "Un meșter în fier forjat din Limanu, cu dureri cronice de spate după un accident de pe acoperiș, construiește un atelier semi-automat de 68.000 € prin Start-Up Nation. Uzinex livrează echipamentele și pregătește dosarul de finanțare gratuit. Rezultat: ×5–6 viteză producție, +50% calitate, 1 om operează 3–4 mașini, durerile de spate eliminate.",
     equipment: [
-      "Presă hidraulică de forjare",
-      "Mașini de îndoit fier forjat",
-      "Cuptoare industriale de încălzire",
-      "Utilaje de finisare și vopsire",
+      "Mașină îndoit fier rece A150A · Spania · CNC · platbandă 2,20m",
+      "Ghilotină combinată cu pedaul · taie tablă + găurire",
+      "Ciocan pneumatic 40 kg-forță",
+      "Fierăstrău cu bandă · mașină găurit cu avans automat",
+      "Aparate sudură MIG/MAG/TIG · forjă · freză · CNC",
     ],
     metrics: [
-      { label: "Specializare", value: "Fier forjat" },
-      { label: "Dotare", value: "Completă" },
-      { label: "Profil", value: "Artizanal + Industrial" },
+      { label: "Viteză producție", value: "×5–6" },
+      { label: "Calitate cordoane", value: "+50%" },
+      { label: "Investiție", value: "≈ 68K €" },
     ],
     image: "https://img.youtube.com/vi/bCxoVN1QgQM/maxresdefault.jpg",
-    alt: "Fabrică completă de fier forjat Uzinex pentru Fier-Forjat Limanu Constanța",
+    alt: "Atelier complet de fier forjat semi-automatizat Uzinex pentru Jan Paul Elhor — Fier-Forjat Limanu Constanța",
+    featured: true,
     youtubeId: "bCxoVN1QgQM",
   },
   {
