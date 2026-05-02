@@ -75,15 +75,15 @@ const PROFILE: Array<{
 const TIMELINE: Array<{ phase: string; title: string; body: string }> = [
   {
     phase: "Apel inițial · 2020",
-    title: "Reclamă pe Facebook și un apel la 2 dimineața",
+    title: "Reclamă pe Facebook și apel direct",
     body:
-      "Jan a văzut o reclamă pe Facebook despre fonduri Start-Up Nation. A sunat imediat, iar a doua zi am avut o conferință video. Am verificat codurile CAEN, am discutat ce echipamente i-ar rezolva durerile concrete în atelier — nu doar ergonomic, ci și de viteză și calitate. Conversația a început tehnic, fără filtre comerciale.",
+      "Jan a văzut o reclamă pe Facebook despre fonduri Start-Up Nation. A sunat imediat, iar a doua zi am avut o conferință video. Am verificat codurile CAEN și am discutat ce echipamente i-ar rezolva durerile concrete în atelier, nu doar ergonomic, ci și de viteză și calitate. Conversația a început tehnic, fără filtre comerciale.",
   },
   {
     phase: "Consultanță finanțare · 2020-2021",
     title: "Dosarul Start-Up Nation pregătit fără cost de consultanță",
     body:
-      "Am pregătit împreună dosarul tehnic pentru aplicația Start-Up Nation: justificare echipamente, plan de implementare, buget defalcat. Nu am luat bani de consultanță — politica noastră pe finanțare e că dacă lucrăm împreună la dosar și la furnizarea echipamentelor, asistența e inclusă. Pentru un meșter care încă nu primise banii, asta a contat enorm.",
+      "Am pregătit împreună dosarul tehnic pentru aplicația Start-Up Nation: justificare echipamente, plan de implementare, buget defalcat. Nu am luat bani de consultanță, pentru că politica noastră pe finanțare e că dacă lucrăm împreună la dosar și la furnizarea echipamentelor, asistența e inclusă. Pentru un meșter care încă nu primise banii, asta a contat enorm.",
   },
   {
     phase: "Aprobare și aștept",
@@ -107,7 +107,7 @@ const TIMELINE: Array<{ phase: string; title: string; body: string }> = [
     phase: "Prima lună de producție",
     title: "Sorin, producem la viteza de 5–6 ori mai rapid",
     body:
-      "După câteva săptămâni de producție stabilă, Jan m-a sunat. „Sorin, avem de lucru la fel de mult ca înainte. Doar că acum stăm și o grămadă de timp degeaba — pentru că producem la viteza de 5–6 ori mai rapid.” A fost momentul în care am înțeles că proiectul a depășit așteptările pentru ambele părți.",
+      "După câteva săptămâni de producție stabilă, Jan m-a sunat. „Sorin, avem de lucru la fel de mult ca înainte. Doar că acum stăm și o grămadă de timp degeaba, pentru că producem la viteza de 5–6 ori mai rapid.” A fost momentul în care am înțeles că proiectul a depășit așteptările pentru ambele părți.",
   },
 ];
 
@@ -172,7 +172,7 @@ const FAQ: Array<{ question: string; answer: string }> = [
   {
     question: "Cum funcționează asistența de finanțare gratuită pe care o oferiți?",
     answer:
-      "Pentru proiectele unde livrăm echipamentele, consultanța pe dosarul de finanțare este inclusă fără cost adițional. Ajutăm cu identificarea programului potrivit (Start-Up Nation, Femeia Antreprenor, Microîntreprinderi, Industria Prelucrătoare etc.), pregătim partea tehnică a dosarului — specificații, justificări, plan de implementare, buget defalcat — și o transmitem consultantului acreditat care depune cererea. Politica este standard pentru clienții care comandă echipamentele de la noi.",
+      "Pentru proiectele unde livrăm echipamentele, consultanța pe dosarul de finanțare este inclusă fără cost adițional. Ajutăm cu identificarea programului potrivit precum Start-Up Nation, Femeia Antreprenor, Microîntreprinderi sau Industria Prelucrătoare, pregătim partea tehnică a dosarului cu specificații, justificări, plan de implementare și buget defalcat, apoi o transmitem consultantului acreditat care depune cererea. Politica este standard pentru clienții care comandă echipamentele de la noi.",
   },
   {
     question: "De ce a durat atât de mult de la aplicarea finanțării la livrarea echipamentelor?",
@@ -197,7 +197,7 @@ const FAQ: Array<{ question: string; answer: string }> = [
   {
     question: "Ce înseamnă un ciocan pneumatic de 40 kg-forță în practica de zi cu zi a unui atelier de fier forjat?",
     answer:
-      "În forjarea tradițională, fierul încălzit se modelează prin lovituri repetate cu ciocanul. La un atelier mic, asta înseamnă brațul fondatorului ridicând și coborând un ciocan greu pentru ore întregi. Un ciocan pneumatic de 40 kg-forță elimină efortul fizic, dar și standardizează lovitura — fiecare impact are aceeași presiune și unghi, deci forjarea iese uniformă. Pentru un meșter cu probleme de spate, este diferența dintre a continua meseria sau a o abandona.",
+      "În forjarea tradițională, fierul încălzit se modelează prin lovituri repetate cu ciocanul. La un atelier mic, asta înseamnă brațul fondatorului ridicând și coborând un ciocan greu pentru ore întregi. Un ciocan pneumatic de 40 kg-forță elimină efortul fizic, dar și standardizează lovitura, iar fiecare impact are aceeași presiune și unghi, deci forjarea iese uniformă. Pentru un meșter cu probleme de spate, este diferența dintre a continua meseria sau a o abandona.",
   },
   {
     question: "Cât de critic a fost suportul tehnic post-livrare pentru succesul atelierului?",
@@ -218,7 +218,7 @@ const HERO_QUOTE = {
 };
 
 const FOUNDER_CALL_QUOTE = {
-  text: "Sorin, avem de lucru la fel de mult ca înainte. Doar că acum stăm și o grămadă de timp degeaba — pentru că producem la viteza de 5-6 ori mai rapid.",
+  text: "Sorin, avem de lucru la fel de mult ca înainte. Doar că acum stăm și o grămadă de timp degeaba, pentru că producem la viteza de 5-6 ori mai rapid.",
   source: "Jan Paul Elhor · telefon către Sorin Baciu, prima lună de producție",
 };
 
@@ -308,7 +308,7 @@ export default function FierForjatLimanuPage() {
                   viața în Limanu, Constanța. Un accident pe acoperiș îi
                   lăsase dureri cronice de spate, iar utilajele lui erau în
                   mare parte construite manual sau cumpărate second-hand.
-                  Întreabarea nu era „cum vând mai mult", ci „cum continui să
+                  Întrebarea nu era „cum vând mai mult", ci „cum continui să
                   pot lucra". Soluția: un atelier semi-automat de 68.000 €
                   finanțat prin Start-Up Nation, cu consultanță de dosar
                   inclusă fără cost. Rezultatul: ×5-6 viteza pe ciclu și un
@@ -373,8 +373,8 @@ export default function FierForjatLimanuPage() {
                 <p>
                   Înainte de Uzinex, utilajele lui erau aproape toate
                   construite de el sau cumpărate second-hand: noi erau doar
-                  aparatele de sudură. Restul — fierăstraul, ghilotina,
-                  mașinile de îndoit, ciocanul — toate cereau efort fizic
+                  aparatele de sudură. Restul, adică fierăstraul, ghilotina,
+                  mașinile de îndoit și ciocanul, toate cereau efort fizic
                   direct, manual, repetitiv.
                 </p>
                 <p>
@@ -492,10 +492,10 @@ export default function FierForjatLimanuPage() {
               </h2>
               <p>
                 Atelierul Limanu nu este o linie de producție în serie. Este
-                un flux artizanal cu 5 stații tehnologice unde aceeași comandă
-                — o poartă custom, o balustradă pentru o vilă, o replică
-                istorică pentru o biserică — trece de la oțel brut la produs
-                finit fără să schimbe atelierul.
+                un flux artizanal cu 5 stații tehnologice unde aceeași
+                comandă, fie poartă custom, balustradă pentru o vilă sau
+                replică istorică pentru o biserică, trece de la oțel brut la
+                produs finit fără să schimbe atelierul.
               </p>
               <p>
                 Avansul automat de pe mașina de găurit, comanda numerică de pe
@@ -520,8 +520,8 @@ export default function FierForjatLimanuPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             <ReasonCard
               num="A"
-              title="Reclamă pe Facebook · apel direct la 2 dimineața"
-              body="Jan a văzut o reclamă pe Facebook despre fonduri Start-Up Nation. A sunat imediat la 2 dimineața, iar a doua zi am avut o conferință video. Conversația a început tehnic, fără filtre comerciale, sub presiunea reală a unui meșter cu durere cronică de spate care voia să-și păstreze meseria."
+              title="Reclamă pe Facebook · apel direct și conferință video"
+              body="Jan a văzut o reclamă pe Facebook despre fonduri Start-Up Nation. A sunat imediat, iar a doua zi am avut o conferință video. Conversația a început tehnic, fără filtre comerciale, sub presiunea reală a unui meșter cu durere cronică de spate care voia să-și păstreze meseria."
             />
             <ReasonCard
               num="B"
@@ -548,11 +548,11 @@ export default function FierForjatLimanuPage() {
               </h2>
               <p>
                 Pentru o comandă tipică pe care un atelier manual o termină
-                într-o zi de 8 ore — debit secțiuni, găurire, îndoire,
-                sudură, finisare — atelierul semi-automat livrează 5-6
-                comenzi în același interval. Multiplier-ul nu vine dintr-o
-                schimbare de calificare a echipei. Vine din eliminarea
-                ajustărilor, a remedierii și a etapelor manual repetitive.
+                într-o zi de 8 ore prin debit, găurire, îndoire, sudură și
+                finisare, atelierul semi-automat livrează 5-6 comenzi în
+                același interval. Multiplier-ul nu vine dintr-o schimbare de
+                calificare a echipei, ci din eliminarea ajustărilor, a
+                remedierii și a etapelor manual repetitive.
               </p>
               <blockquote className="border-l-2 pl-5 py-2 my-5" style={{ borderColor: "#c83a17" }}>
                 <p className="serif text-base lg:text-lg text-ink-900 leading-snug italic">
@@ -653,8 +653,8 @@ export default function FierForjatLimanuPage() {
                 După punere în funcțiune, atelierul a operat fără probleme
                 tehnice majore. Singura intervenție pe parcurs a fost o
                 garnitură de ulei la ciocanul pneumatic, rezolvată rapid pe
-                deplasare. Toate celelalte echipamente — A150A, ghilotina,
-                fierăstraul, mașina de găurit — funcționează fără chemări în
+                deplasare. Toate celelalte echipamente A150A, ghilotina,
+                fierăstraul și mașina de găurit funcționează fără chemări în
                 garanție.
               </p>
               <Link

@@ -221,8 +221,6 @@ export function ProductivityCompareDiagram() {
         </text>
       </g>
 
-      <line x1={300} y1={100} x2={300} y2={250} stroke={STROKE_DIM} strokeWidth="0.5" strokeDasharray="3 3" />
-
       <g transform="translate(360,110)">
         <text x={120} y={0} textAnchor="middle" fontSize="9" fill={OK} fontFamily="ui-monospace, monospace" letterSpacing="2" fontWeight="bold">
           SEMI-AUTO · UZINEX
@@ -342,27 +340,19 @@ export function ErgonomicLoadDiagram() {
           <line x1={0} y1={6} x2={-8} y2={26} stroke={ALERT} strokeWidth="1.4" />
           <line x1={0} y1={6} x2={8} y2={26} stroke={ALERT} strokeWidth="1.4" />
 
-          <motion.path
-            d="M -16 -2 Q -22 -8 -16 -14"
-            fill="none"
-            stroke={ALERT}
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            animate={{ opacity: [0.3, 1, 0.3] }}
+          <motion.text
+            x={0}
+            y={-44}
+            textAnchor="middle"
+            fontSize="11"
+            fill={ALERT}
+            fontFamily="ui-monospace, monospace"
+            fontWeight="bold"
+            animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 1.4, repeat: Infinity }}
-          />
-          <motion.path
-            d="M 16 -2 Q 22 -8 16 -14"
-            fill="none"
-            stroke={ALERT}
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ duration: 1.4, repeat: Infinity, delay: 0.4 }}
-          />
-          <text x={0} y={-44} textAnchor="middle" fontSize="9" fill={ALERT} fontFamily="ui-monospace, monospace" fontWeight="bold">
+          >
             !
-          </text>
+          </motion.text>
         </g>
 
         <g transform="translate(0,80)">
@@ -405,8 +395,6 @@ export function ErgonomicLoadDiagram() {
           DURERI DE SPATE · CRONIC
         </text>
       </g>
-
-      <line x1={300} y1={100} x2={300} y2={290} stroke={STROKE_DIM} strokeWidth="0.5" strokeDasharray="3 3" />
 
       <g transform="translate(360,100)">
         <text x={100} y={0} textAnchor="middle" fontSize="9" fill={OK} fontFamily="ui-monospace, monospace" letterSpacing="2" fontWeight="bold">
@@ -475,19 +463,9 @@ export function ErgonomicLoadDiagram() {
         </text>
       </g>
 
-      <text x="300" y="296" textAnchor="middle" fontSize="9" fill={ORANGE} fontFamily="ui-monospace, monospace" letterSpacing="3" fontWeight="bold">
+      <text x="300" y="306" textAnchor="middle" fontSize="9" fill={ORANGE} fontFamily="ui-monospace, monospace" letterSpacing="3" fontWeight="bold">
         AUTOMATIZAREA SALVEAZĂ NU DOAR TIMP · SALVEAZĂ MEȘTERI
       </text>
-
-      <CornerTable
-        rows={[
-          ["UZX-FFL", "REV. A"],
-          ["MEAS", "kgf · h"],
-          ["LOC", "LIMANU"],
-        ]}
-        x={20}
-        y={252}
-      />
     </svg>
   );
 }
