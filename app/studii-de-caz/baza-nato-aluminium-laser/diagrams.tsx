@@ -152,7 +152,7 @@ function HangarDiagram() {
         3 unități active + 2 standby · redundanță 60%
       </text>
 
-      <g transform="translate(150,170)">
+      <g transform="translate(150,200)">
         <line x1={0} y1={0} x2={300} y2={0} stroke={INK} strokeWidth="1.2" />
         <line x1={0} y1={0} x2={0} y2={-90} stroke={INK} strokeWidth="1.2" />
         <line x1={300} y1={0} x2={300} y2={-90} stroke={INK} strokeWidth="1.2" />
@@ -256,7 +256,7 @@ function HangarDiagram() {
       </g>
 
       <CompassRose x={50} y={70} />
-      <ClassifiedStamp x={300} y={245} />
+      <ClassifiedStamp x={300} y={268} />
       <TitleBlock
         rows={[
           ["UZX-LASER", "REV. A"],
@@ -432,7 +432,7 @@ function WindCompareDiagram() {
 function MuscleMemoryDiagram() {
   return (
     <svg
-      viewBox="0 0 600 320"
+      viewBox="0 0 600 360"
       className="w-full h-auto"
       role="img"
       aria-labelledby="mm-title"
@@ -443,7 +443,7 @@ function MuscleMemoryDiagram() {
       <defs>
         <GridDefs id="grid-mm" />
       </defs>
-      <rect width="600" height="320" fill="url(#grid-mm)" />
+      <rect width="600" height="360" fill="url(#grid-mm)" />
 
       <text
         x="300"
@@ -553,8 +553,8 @@ function MuscleMemoryDiagram() {
           ["TRAINING", "2h"],
           ["LB", "RO · AI"],
         ]}
-        x={20}
-        y={252}
+        x={219}
+        y={300}
       />
     </svg>
   );
