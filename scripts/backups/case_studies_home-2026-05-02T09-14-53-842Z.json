@@ -1,0 +1,48 @@
+{
+  "key": "case_studies_home",
+  "updatedAt": "2026-04-08T13:35:01.611Z",
+  "data": {
+    "items": [
+      {
+        "alt": "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
+        "image": "https://img.youtube.com/vi/DQO74tlDNNQ/maxresdefault.jpg",
+        "title": "Future Energy Group reduce timpul de instalare",
+        "client": "FUTURE ENERGY GROUP S.R.L.",
+        "subtitle": "cu o nouă instalație de sudură industrială pusă în funcțiune în doar 2 ore",
+        "youtubeId": "DQO74tlDNNQ"
+      },
+      {
+        "alt": "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — echipamente Uzinex pentru CAMMA Tehno Metal",
+        "image": "https://img.youtube.com/vi/AoMfOAPQzVQ/maxresdefault.jpg",
+        "title": "Linie completă de producție pentru cea mai mare fabrică",
+        "client": "CAMMA TEHNO METAL S.R.L.",
+        "subtitle": "de cărămidă modulară din România",
+        "youtubeId": "AoMfOAPQzVQ"
+      },
+      {
+        "alt": "Echipamente Uzinex pentru AIRONE — lider piață HoReCa România",
+        "image": "https://img.youtube.com/vi/LVRLKCO4yQY/maxresdefault.jpg",
+        "title": "Fabrică de echipamente HoReCa pentru cel mai important",
+        "client": "AIRONE",
+        "subtitle": "jucător din piața din România",
+        "youtubeId": "LVRLKCO4yQY"
+      },
+      {
+        "alt": "Fabrică de confecții metalice Geomar Pitești — dotare completă cu echipamente Uzinex",
+        "image": "https://img.youtube.com/vi/Ofsgi59eWI4/maxresdefault.jpg",
+        "title": "Fabrică de confecții metalice dotată integral",
+        "client": "GEOMAR S.R.L.",
+        "subtitle": "cu echipamente Uzinex la Pitești",
+        "youtubeId": "Ofsgi59eWI4"
+      },
+      {
+        "alt": "Linie de producție ambalaje carton Uzinex pentru Gold Pack Râmnicu Sărat",
+        "image": "https://img.youtube.com/vi/Jqy_Rx89lH0/maxresdefault.jpg",
+        "title": "Fabrică de ambalaje personalizate din carton",
+        "client": "GOLD PACK S.R.L.",
+        "subtitle": "cu linie de producție completă la Râmnicu Sărat",
+        "youtubeId": "Jqy_Rx89lH0"
+      }
+    ]
+  }
+}
