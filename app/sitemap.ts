@@ -59,6 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/contact`, priority: 0.9, changeFrequency: "monthly" as const, lastModified: now },
     { url: `${BASE}/cariere`, priority: 0.8, changeFrequency: "weekly" as const, lastModified: now },
     { url: `${BASE}/studii-de-caz`, priority: 0.8, changeFrequency: "weekly" as const, lastModified: now },
+    { url: `${BASE}/studii-de-caz/future-energy-group`, priority: 0.7, changeFrequency: "monthly" as const, lastModified: now },
     { url: `${BASE}/echipa`, priority: 0.6, changeFrequency: "monthly" as const, lastModified: now },
     { url: `${BASE}/noutati`, priority: 0.8, changeFrequency: "weekly" as const, lastModified: now },
     { url: `${BASE}/materiale-utile`, priority: 0.7, changeFrequency: "monthly" as const, lastModified: now },

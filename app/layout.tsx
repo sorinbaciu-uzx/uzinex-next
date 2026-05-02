@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
 import { AllLinksNewTab } from "@/components/AllLinksNewTab";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
 import "./globals.css";
 
@@ -225,6 +226,7 @@ export default function RootLayout({
         <AllLinksNewTab />
         <I18nProvider>{children}</I18nProvider>
         <SpeedInsights />
+        <VercelAnalytics />
       </body>
     </html>
   );

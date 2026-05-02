@@ -2,7 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+
+const DETAIL_PAGES: Record<string, string> = {
+  feg: "/studii-de-caz/future-energy-group",
+};
 
 type Industry =
   | "Toate"
@@ -78,21 +83,21 @@ const CASE_STUDIES: CaseStudyAll[] = [
   },
   {
     id: "feg",
-    client: "Future Energy Group S.R.L.",
+    client: "Future Energy Group",
     industry: "Energie & infrastructură",
-    location: "Iași, România",
-    year: "2026",
-    title: "Instalație de sudură industrială pusă în funcțiune în 2 ore",
+    location: "București, România",
+    year: "2024",
+    title: "Atelier fotovoltaic premium care a învățat să sudeze în 2 ore",
     excerpt:
-      "Future Energy Group, producător român de echipamente energetice, avea nevoie urgentă de o instalație de sudură industrială pentru un proiect cu termen contractual strict. Inginerii Uzinex au livrat soluția completă și au efectuat commissioning-ul în doar 2 ore.",
-    equipment: ["Aparat sudură industrială", "Sistem de protecție", "Set consumabile"],
+      "Future Energy Group, instalator de sisteme fotovoltaice premium din București, avea nevoie să producă intern cuști de aluminiu pentru organizarea cablajelor — la standardul calitativ pe care îl livrează clienților lor. Cu o echipă agile de 3 oameni și fără sudor angajat, au ales un aparat laser 3-in-1 (sudură + curățare + debitare). Owner-ul a învățat tehnologia în 2 ore. Cost evitat: 2.500 €/lună salariu sudor.",
+    equipment: ["Aparat laser 3-in-1 · 2.000W MAX · pistol SUP23T"],
     metrics: [
-      { label: "Timp instalare", value: "2 ore" },
-      { label: "Reducere downtime", value: "85%" },
-      { label: "Conformitate", value: "100%" },
+      { label: "Curba de învățare", value: "2 ore" },
+      { label: "Salariu sudor evitat", value: "2.500 €/lună" },
+      { label: "Payback estimat", value: "≈4,4 luni" },
     ],
     image: "https://img.youtube.com/vi/DQO74tlDNNQ/maxresdefault.jpg",
-    alt: "Instalație de sudură industrială Uzinex livrată Future Energy Group — pusă în funcțiune în 2 ore",
+    alt: "Aparat laser 3-in-1 Uzinex livrat Future Energy Group București — sudură, curățare și debitare în atelierul fotovoltaic",
     featured: true,
     youtubeId: "DQO74tlDNNQ",
   },
@@ -733,6 +738,16 @@ export function CaseStudiesGallery({ data }: { data?: CaseStudiesAllData | null 
                         )}
                       </ul>
                     </div>
+
+                    {DETAIL_PAGES[c.id] && (
+                      <Link
+                        href={DETAIL_PAGES[c.id]}
+                        className="mt-5 inline-flex items-center gap-2 text-xs text-uzx-blue hover:text-uzx-orange underline-link self-start group/cta"
+                      >
+                        Citește studiul complet
+                        <span className="group-hover/cta:translate-x-1 transition">→</span>
+                      </Link>
+                    )}
                   </div>
                 </motion.article>
               ))}
