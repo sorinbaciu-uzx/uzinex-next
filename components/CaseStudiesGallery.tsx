@@ -9,6 +9,7 @@ import { BazaNatoTile } from "./BazaNatoTile";
 const DETAIL_PAGES: Record<string, string> = {
   feg: "/studii-de-caz/future-energy-group",
   "baza-nato": "/studii-de-caz/baza-nato-aluminium-laser",
+  camma: "/studii-de-caz/caramida-modulara-camma",
 };
 
 type Industry =
@@ -42,19 +43,26 @@ const CASE_STUDIES: CaseStudyAll[] = [
     id: "camma",
     client: "CAMMA Tehno Metal S.R.L.",
     industry: "Procesare & reciclare",
-    location: "Transilvania, România",
-    year: "2025",
+    location: "Buzău, România",
+    year: "2022",
     title: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România",
     excerpt:
-      "CAMMA Tehno Metal a ales Uzinex pentru implementarea unei linii complete de producție pentru cea mai mare fabrică de cărămidă modulară din România. Proiectul a inclus dimensionare tehnică, livrare echipamente, instalare și training pentru operatori, finanțat prin fonduri europene.",
-    equipment: ["Presă hidraulică", "Linie de uscare", "Sistem de paletizare", "Conveyor industrial"],
+      "CAMMA Tehno Metal cumpărase din Ucraina 2 prese hidraulice cu forțe enorme și nu reușea să producă nici o cărămidă utilă. Soluția nu a fost forța de presare, ci o linie completă turnkey, calculator de umiditate pentru materia primă și transferul rețetei pentru chimia betoanelor hyper-presate semi-uscate, adaptată in-situ pe argila din Buzău. Capacitate operațională ×100, de la 200 la 20.000 cărămizi/zi.",
+    equipment: [
+      "Moară cu ciocane · spargere argilă uscată",
+      "Cernător · site fine pentru bucățile mari",
+      "Malaxor materie primă · amestec calibrat",
+      "Presă hidraulică · compactare semi-uscată",
+      "Benzi transportoare · interconectare flux + evacuare",
+      "Calculator umiditate · recalculare automată proporții",
+    ],
     metrics: [
-      { label: "Capacitate", value: "+300%" },
-      { label: "Status", value: "Operațional" },
-      { label: "Finanțare", value: "Fonduri UE" },
+      { label: "Capacitate", value: "×100" },
+      { label: "Capacitate teoretică", value: "800K m³/an" },
+      { label: "Defecte garanție", value: "0" },
     ],
     image: "https://img.youtube.com/vi/AoMfOAPQzVQ/maxresdefault.jpg",
-    alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — CAMMA Tehno Metal",
+    alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — CAMMA Tehno Metal Buzău",
     featured: true,
     youtubeId: "AoMfOAPQzVQ",
   },
