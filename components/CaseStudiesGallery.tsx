@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 const DETAIL_PAGES: Record<string, string> = {
   feg: "/studii-de-caz/future-energy-group",
+  "baza-nato": "/studii-de-caz/baza-nato-aluminium-laser",
 };
 
 type Industry =
@@ -80,6 +81,30 @@ const CASE_STUDIES: CaseStudyAll[] = [
     alt: "Echipamente de producție Uzinex pentru AIRONE — lider piață HoReCa România",
     featured: true,
     youtubeId: "LVRLKCO4yQY",
+  },
+  {
+    id: "baza-nato",
+    client: "Contractor român · construcții apărare",
+    industry: "Apărare & securitate",
+    location: "Bază NATO · România",
+    year: "2025",
+    title: "5 aparate laser pe o bază NATO unde vremea bloca sudura conventională",
+    excerpt:
+      "Un contractor român cu acreditare NATO a livrat hangare expediționare din aluminiu pe o bază militară terestră, cu termen ferm și penalități zilnice. Vântul și ploaia făceau imposibilă sudura MIG sau TIG. Soluția: 5 aparate laser identice, 3 active plus 2 în standby, operate de oameni fără experiență de sudură care s-au adaptat mai rapid decât sudorii cu zece ani vechime.",
+    equipment: [
+      "5× aparat laser 3-in-1 · 2.000W · sursă MAX · pistol SUP23T",
+      "Pachet consumabile pentru 12 luni",
+      "Abonament înlocuire 24h",
+    ],
+    metrics: [
+      { label: "Unități livrate", value: "5" },
+      { label: "Backup", value: "2 standby" },
+      { label: "Imun la vreme", value: "100%" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80&auto=format&fit=crop",
+    alt: "Aparate de sudură laser Uzinex livrate pentru un contractor român cu acreditare NATO pentru hangare expediționare din aluminiu pe o bază militară terestră",
+    featured: true,
   },
   {
     id: "feg",
