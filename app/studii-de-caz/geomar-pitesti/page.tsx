@@ -136,7 +136,7 @@ const RESULTS: Array<{ value: string; label: string; detail: string }> = [
       "Pentru clienții care comandă echipamentele de la noi, consultanța pe dosarul Start-Up Nation este inclusă fără cost adițional. La Geomar, ca și la Fier-Forjat Limanu, asta a fost diferențiatorul.",
   },
   {
-    value: "Următor",
+    value: "Următorul pas",
     label: "Linie vopsire electrostatică · în pregătire",
     detail:
       "Relația continuă. După atelierul de bază, urmează să livrăm o linie de vopsire electrostatică pentru finisaj final pe produsele Geomar destinate exteriorului. Story-ul evoluează.",
