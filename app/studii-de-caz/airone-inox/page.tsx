@@ -531,9 +531,10 @@ export default function AironeInoxPage() {
 
               <AironeDiagramFigure
                 number="Schema 1 · matrice capacitate prelucrare"
-                diagram={<CapabilityMatrixDiagram />}
                 caption="Cele 6 operații tehnologice livrate de Uzinex, cu intervalul optim de grosime pe care fiecare utilaj operează cu cea mai bună precizie. Acoperirea matricii permite AIRONE să facă atât tablă subțire vizibilă, cât și piese structurale groase pentru gabarit mare."
-              />
+              >
+                <CapabilityMatrixDiagram />
+              </AironeDiagramFigure>
             </aside>
           </div>
         </Section>
@@ -573,9 +574,10 @@ export default function AironeInoxPage() {
             <div className="lg:col-span-7">
               <AironeDiagramFigure
                 number="Schema 2 · timeline 9 ani · 0 intervenții"
-                diagram={<NineYearRecordDiagram />}
                 caption="Linia verde uptime curge continuu de la 2017 la 2026. Linia ticketelor service este zero pe toată durata. Cele 6 echipamente livrate în etape sunt marcate cronologic, cu laserul flagship pulsing pe data de instalare."
-              />
+              >
+                <NineYearRecordDiagram />
+              </AironeDiagramFigure>
             </div>
           </div>
         </Section>
@@ -610,9 +612,10 @@ export default function AironeInoxPage() {
             <div className="lg:col-span-7">
               <AironeDiagramFigure
                 number="Schema 3 · flux producție inox"
-                diagram={<InoxProductionFlowDiagram />}
                 caption="Cinci stații tehnologice cu echipamente Uzinex, conectate prin transport intern și control de calitate intermediar. Iesirea: gama HoReCa premium pentru piața românească și piața white label italiană."
-              />
+              >
+                <InoxProductionFlowDiagram />
+              </AironeDiagramFigure>
             </div>
           </div>
         </Section>

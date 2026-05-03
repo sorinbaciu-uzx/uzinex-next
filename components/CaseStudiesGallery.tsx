@@ -12,6 +12,7 @@ const DETAIL_PAGES: Record<string, string> = {
   camma: "/studii-de-caz/caramida-modulara-camma",
   "fier-forjat-limanu": "/studii-de-caz/fier-forjat-limanu",
   airone: "/studii-de-caz/airone-inox",
+  geomar: "/studii-de-caz/geomar-pitesti",
 };
 
 type Industry =
@@ -166,26 +167,26 @@ const CASE_STUDIES: CaseStudyAll[] = [
   },
   {
     id: "geomar",
-    client: "Geomar S.R.L.",
+    client: "Geomar SRL · Marian",
     industry: "Auto & metalurgie",
-    location: "Pitești, România",
-    year: "2025",
-    title: "Fabrică de confecții metalice dotată integral cu echipamente Uzinex",
+    location: "Pitești, Argeș",
+    year: "2022–2023",
+    title: "Atelier B2C confecții metalice cu laser fiber 6 kW · pivotare spre tabla curată",
     excerpt:
-      "Geomar S.R.L. din Pitești a ales Uzinex pentru dotarea completă a fabricii de confecții metalice. Proiectul a inclus utilaje de prelucrare metal, sudură, vopsire și asamblare, configurate pentru producție de serie și pentru comenzi personalizate.",
+      "Marian, fondatorul Geomar SRL din Pitești, a observat că nișa „tablă curată” devine mainstream pe B2C și a pivotat strategic. Cu o investiție Start-Up Nation 2022 de circa 50.000 €, atelierul lui de 2 oameni a primit laser fiber economy 6 kW, aparat sudură laser și pachet de digitalizare. Pentru clienți B2C care văd direct muchia produsului, edge-ul curat din laser este diferențiatorul vizibil.",
     equipment: [
-      "Mașini de tăiere laser",
-      "Sudură robotizată",
-      "Ștanțe și abkant",
-      "Cabină vopsire industrială",
+      "Laser fiber economy 6 kW · debit tablă curată inox / aluminiu / oțel",
+      "Aparat sudură cu laser · cordoane fine pe inox și aluminiu",
+      "Pachet digitalizare · software industrial proiectare elemente metalice",
     ],
     metrics: [
-      { label: "Dotare", value: "Integrală" },
-      { label: "Proces", value: "Automatizat" },
-      { label: "Flexibilitate", value: "Ridicată" },
+      { label: "Investiție Start-Up Nation", value: "≈ 50K €" },
+      { label: "Pivot", value: "Tabla curată" },
+      { label: "Service post-PIF", value: "0 chemări" },
     ],
     image: "https://img.youtube.com/vi/Ofsgi59eWI4/maxresdefault.jpg",
-    alt: "Fabrică de confecții metalice Geomar Pitești — dotare completă cu echipamente Uzinex",
+    alt: "Atelier B2C confecții metalice Geomar SRL Pitești — laser fiber 6 kW economy plus sudură laser plus pachet digitalizare prin Start-Up Nation 2022",
+    featured: true,
     youtubeId: "Ofsgi59eWI4",
   },
   {

@@ -144,21 +144,42 @@ export function NineYearRecordDiagram() {
         {equipment.map((e, i) => {
           const x = ((e.year - startYear) / totalYears) * 480;
           const offset = i % 2 === 0 ? 38 : 60;
+          const isFlag = !!e.flagship;
           return (
-            <g key={`${e.year}-${e.label}`}>
-              <line x1={x} y1={5} x2={x} y2={offset - 6} stroke={e.flagship ? LASER : STEEL} strokeWidth="0.8" strokeDasharray={e.flagship ? "" : "2 2"} />
-              <motion.circle
-                cx={x}
-                cy={5}
-                r={e.flagship ? 4.5 : 3.2}
-                fill={e.flagship ? LASER : STEEL}
-                stroke="white"
-                strokeWidth="1"
-                animate={e.flagship ? { scale: [1, 1.25, 1] } : undefined}
-                style={e.flagship ? { transformOrigin: `${x}px 5px`, transformBox: "fill-box" } : undefined}
-                transition={e.flagship ? { duration: 1.6, repeat: Infinity } : undefined}
+            <g key={`eq-${i}`}>
+              <line
+                x1={x}
+                y1={5}
+                x2={x}
+                y2={offset - 6}
+                stroke={isFlag ? LASER : STEEL}
+                strokeWidth="0.8"
+                strokeDasharray={isFlag ? "0" : "2 2"}
               />
-              <text x={x} y={offset} textAnchor="middle" fontSize="7" fill={e.flagship ? LASER : STROKE_INK} fontFamily="ui-monospace, monospace" fontWeight={e.flagship ? "bold" : "normal"}>
+              {isFlag ? (
+                <motion.circle
+                  cx={x}
+                  cy={5}
+                  r={4.5}
+                  fill={LASER}
+                  stroke="white"
+                  strokeWidth="1"
+                  animate={{ scale: [1, 1.25, 1] }}
+                  style={{ transformOrigin: `${x}px 5px`, transformBox: "fill-box" }}
+                  transition={{ duration: 1.6, repeat: Infinity }}
+                />
+              ) : (
+                <circle cx={x} cy={5} r={3.2} fill={STEEL} stroke="white" strokeWidth="1" />
+              )}
+              <text
+                x={x}
+                y={offset}
+                textAnchor="middle"
+                fontSize="7"
+                fill={isFlag ? LASER : STROKE_INK}
+                fontFamily="ui-monospace, monospace"
+                fontWeight={isFlag ? "bold" : "normal"}
+              >
                 {e.label}
               </text>
             </g>
@@ -260,8 +281,8 @@ export function InoxProductionFlowDiagram() {
           style={{ transformOrigin: "74px 26px", transformBox: "fill-box" }}
           transition={{ duration: 1.2, repeat: Infinity }}
         >
-          <circle cx={74} cy={26} r={3.5} fill={LASER} fillOpacity={0.45} />
-          <circle cx={74} cy={26} r={1.8} fill={LASER} />
+          <circle key="laser-glow" cx={74} cy={26} r={3.5} fill={LASER} fillOpacity={0.45} />
+          <circle key="laser-core" cx={74} cy={26} r={1.8} fill={LASER} />
         </motion.g>
       </g>
 
@@ -416,17 +437,17 @@ export function CapabilityMatrixDiagram() {
 }
 
 export function AironeDiagramFigure({
-  diagram,
+  children,
   caption,
   number,
 }: {
-  diagram: React.ReactNode;
+  children: React.ReactNode;
   caption: string;
   number: string;
 }) {
   return (
     <figure className="border hairline bg-white">
-      {diagram}
+      {children}
       <figcaption className="px-5 py-3 border-t hairline">
         <div className="text-[10px] mono uppercase tracking-widest text-uzx-orange mb-1">
           {number}
