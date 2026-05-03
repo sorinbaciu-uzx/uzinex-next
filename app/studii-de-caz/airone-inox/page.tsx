@@ -130,7 +130,7 @@ const RESULTS: Array<{ value: string; label: string; detail: string }> = [
     value: "24 ani",
     label: "Lider de piață HoReCa · România",
     detail:
-      "AIRONE este pe piață din 2002, partener white label pentru branduri italiene consacrate, plus clienți direcți pe piața românească (restaurante, hoteluri, cantine).",
+      "AIRONE este pe piață din 2002, partener white label pentru branduri italiene consacrate, plus clienți direcți pe piața românească din restaurante, hoteluri și cantine industriale.",
   },
   {
     value: "RO + IT",
@@ -142,7 +142,7 @@ const RESULTS: Array<{ value: string; label: string; detail: string }> = [
     value: "AISI 304 / 316",
     label: "Inox prelucrat · grosimi 0,5–10 mm",
     detail:
-      "Capabilitatea fabricii acoperă întreaga gamă de inox alimentar pentru bucătării profesionale. Toate procesele (debit, îndoire, formare, sudură) sunt calibrate pe aceste materiale.",
+      "Capabilitatea fabricii acoperă întreaga gamă de inox alimentar pentru bucătării profesionale. Toate procesele majore de debit, îndoire, formare și sudură sunt calibrate pe aceste materiale.",
   },
 ];
 
@@ -160,7 +160,7 @@ const LESSONS: Array<{ title: string; body: string }> = [
   {
     title: "Capacitatea de integrare a 7 utilaje diferite e mai grea decât livrarea unuia complex",
     body:
-      "Pe gama largă AIRONE — inox subțire, inox gros, profile, formare la rece, sudură fină, sudură serie — utilajele trebuie să se completeze tehnic, nu să dubleze capacități. Pentru a integra laser, waterjet, abkant, presă, sudură laser și robot sudură, am dimensionat fiecare achiziție în funcție de ce există deja în fabrică. Lecția: pentru clienți care cumpără în etape, fiecare utilaj nou trebuie configurat în context, nu izolat.",
+      "Pe gama largă AIRONE pentru inox subțire, inox gros, profile, formare la rece, sudură fină și sudură serie, utilajele Uzinex trebuie să se completeze tehnic cu cele existente în fabrică, nu să dubleze capacități. Pentru a integra laser, waterjet, abkant, presă, sudură laser și robot sudură, am dimensionat fiecare achiziție în funcție de ce există deja în fabrică, inclusiv utilajele anterioare ale AIRONE care au rămas în producție. Lecția: pentru clienți care cumpără în etape, fiecare utilaj nou trebuie configurat în context, nu izolat.",
   },
 ];
 
@@ -178,7 +178,7 @@ const FAQ: Array<{ question: string; answer: string }> = [
   {
     question: "Ce înseamnă concret „white label” pentru fabrica AIRONE și de ce contează pentru calitate?",
     answer:
-      "AIRONE produce echipamente HoReCa pe care le marchează cu brandul lor pentru piața românească, dar și pentru partenerii italieni consacrați care le marchează cu propriul lor brand pentru export. Modelul white label cere ca finisajul, dimensiunile, sudurile și asamblarea să fie indistinguibile între producția italiană originală și cea românească. Pentru asta, calitatea nu este un parametru pe care îl negociezi în jos. Echipamentele Uzinex livrate la AIRONE au fost dimensionate pentru exact acest standard, iar relația de 9 ani este consecința directă a faptului că standardul a fost atins consistent.",
+      "AIRONE produce echipamente HoReCa pe care le marchează cu brandul lor pentru piața românească, dar și pentru partenerii italieni consacrați care le marchează cu propriul lor brand pentru export. Modelul white label cere ca finisajul, dimensiunile, sudurile și asamblarea să fie identice între producția italiană originală și cea românească. Pentru asta, calitatea nu este un parametru pe care îl negociezi în jos. Echipamentele Uzinex livrate la AIRONE au fost dimensionate pentru exact acest standard, iar relația de 9 ani este consecința directă a faptului că standardul a fost atins consistent.",
   },
   {
     question: "Care este lista completă a utilajelor livrate la AIRONE între 2017 și 2026?",
@@ -198,7 +198,7 @@ const FAQ: Array<{ question: string; answer: string }> = [
   {
     question: "Pentru un fabricant care vrea să intre în segmentul HoReCa premium, ce echipamente sunt esențiale de la început?",
     answer:
-      "Recomandarea noastră pe baza experienței AIRONE este următoarea. Mașină de tăiat cu laser fiber pentru tablă inox subțire și medie, deoarece debitul calitativ este fundamentul tuturor produselor HoReCa. Abkant pentru îndoire precisă a tablei. Sistem de sudură care să acopere atât cordoane fine vizibile (laser) cât și suduri seriale repetabile (robot sau MIG/MAG). Capabilitate de formare la rece dacă produci structuri de gabarit mare. Plus software industrial de proiectare. Configurația de bază pornește de la circa 250.000 €, iar capacitatea se extinde modular în următorii ani. Pentru un audit pe profilul tău concret, contactează-ne cu lista de produse pe care vrei să le faci în atelier.",
+      "Recomandarea noastră pe baza experienței AIRONE este următoarea. Mașină de tăiat cu laser fiber pentru tablă inox subțire și medie, deoarece debitul calitativ este fundamentul tuturor produselor HoReCa. Abkant pentru îndoire precisă a tablei. Sistem de sudură care să acopere atât cordoane fine vizibile cu laser, cât și suduri seriale repetabile cu robot sau MIG/MAG. Capabilitate de formare la rece dacă produci structuri de gabarit mare. Plus software industrial de proiectare. Configurația de bază pornește de la circa 250.000 €, iar capacitatea se extinde modular în următorii ani. Pentru un audit pe profilul tău concret, contactează-ne cu lista de produse pe care vrei să le faci în atelier.",
   },
 ];
 
@@ -355,7 +355,7 @@ export default function AironeInoxPage() {
                   industriale. Pentru piața italiană, lucrează white label,
                   marcând producția cu brandurile consacrate ale partenerilor
                   italieni. Modelul cere ca finisajul, sudurile și asamblarea
-                  să fie indistinguibile între producția italiană originală
+                  să fie identice între producția italiană originală
                   și cea făcută la Măcin.
                 </p>
                 <p>
@@ -428,7 +428,7 @@ export default function AironeInoxPage() {
             <ReasonCard
               num="B"
               title="Capacitate de integrare a 7 utilaje diferite în etape"
-              body="Pe gama largă AIRONE — inox subțire, inox gros, profile, formare la rece, sudură fină, sudură serie — utilajele trebuie să se completeze tehnic, nu să dubleze capacități. Am dimensionat fiecare achiziție în funcție de ce fabrica avea deja, evitând dublările și calibrând pe profilul lor real de operare."
+              body="Pe gama largă AIRONE pentru inox subțire, inox gros, profile, formare la rece, sudură fină și sudură serie, utilajele Uzinex trebuie să se completeze tehnic cu utilajele deja prezente în fabrică, nu să dubleze capacități. Am dimensionat fiecare achiziție în funcție de ce fabrica avea deja, calibrând pe profilul lor real de operare."
             />
             <ReasonCard
               num="C"
@@ -439,15 +439,26 @@ export default function AironeInoxPage() {
         </Section>
 
         {/* 4. ECHIPAMENTE LIVRATE */}
-        <Section number="04" eyebrow="Echipamente livrate · 7 utilaje cumulate 2017–2026">
+        <Section number="04" eyebrow="Echipamente livrate de Uzinex · 7 utilaje cheie 2017–2026">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-7">
               <h2
                 className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6"
                 style={{ letterSpacing: "-0.02em" }}
               >
-                O fabrică completă de inox construită în nouă ani de achiziții recurente.
+                Cele șapte utilaje Uzinex care formează fundamentul fabricii AIRONE de astăzi.
               </h2>
+
+              <p className="text-ink-600 leading-relaxed mb-6 text-sm lg:text-base">
+                Fabrica AIRONE de la Măcin operează cu un parc de utilaje
+                semnificativ mai larg, acumulat în 24 de ani de activitate.
+                Lista de mai jos cuprinde doar utilajele livrate de Uzinex
+                între 2017 și 2026, cele care au modernizat capabilitatea
+                strategică pe debitare, formare, sudură fină și sudură serie.
+                Restul fabricii rămâne configurat cu utilajele anterioare ale
+                clientului, calibrate să se completeze cu echipamentele
+                Uzinex în fluxul integrat.
+              </p>
 
               <dl className="divide-y hairline border-y hairline">
                 <SpecRow
@@ -489,7 +500,7 @@ export default function AironeInoxPage() {
 
             <aside className="lg:col-span-5">
               <div
-                className="text-white p-6 lg:p-8"
+                className="text-white p-6 lg:p-8 mb-4"
                 style={{ background: "#082545" }}
               >
                 <div className="text-[10px] mono uppercase tracking-widest text-white/70 mb-3">
@@ -499,15 +510,15 @@ export default function AironeInoxPage() {
                   className="serif text-xl lg:text-2xl leading-tight mb-4"
                   style={{ letterSpacing: "-0.02em" }}
                 >
-                  De la tablă brută la echipament HoReCa premium fără furnizor extern.
+                  Cele 7 utilaje Uzinex acoperă coloana vertebrală a procesului inox.
                 </h3>
                 <p className="text-sm text-white/85 leading-relaxed mb-5">
-                  Cele 7 utilaje acoperă întregul proces de prelucrare a
-                  inoxului: debitare laser și waterjet pe orice grosime,
+                  Debitare laser și waterjet pe gama largă de grosimi,
                   îndoire abkant, formare la rece până la 600 tone, sudură
-                  laser și robot pentru orice cordon. Pentru AIRONE, asta
+                  laser pentru cordoane fine și robot pentru serii. În
+                  combinație cu utilajele preexistente ale AIRONE, asta
                   înseamnă control total al lanțului de fabricație fără
-                  dependență de subcontractori externi.
+                  dependență de subcontractori externi pe operațiile cheie.
                 </p>
                 <Link
                   href="/contact?subject=Fabric%C4%83%20inox%20HoReCa%20%E2%80%94%20dimensionare%20utilaje&context=Studiu%20de%20caz%20AIRONE"
@@ -517,6 +528,12 @@ export default function AironeInoxPage() {
                   <span className="group-hover:translate-x-1 transition">→</span>
                 </Link>
               </div>
+
+              <AironeDiagramFigure
+                number="Schema 1 · matrice capacitate prelucrare"
+                diagram={<CapabilityMatrixDiagram />}
+                caption="Cele 6 operații tehnologice livrate de Uzinex, cu intervalul optim de grosime pe care fiecare utilaj operează cu cea mai bună precizie. Acoperirea matricii permite AIRONE să facă atât tablă subțire vizibilă, cât și piese structurale groase pentru gabarit mare."
+              />
             </aside>
           </div>
         </Section>
@@ -555,7 +572,7 @@ export default function AironeInoxPage() {
             </div>
             <div className="lg:col-span-7">
               <AironeDiagramFigure
-                number="Schema 1 · timeline 9 ani · 0 intervenții"
+                number="Schema 2 · timeline 9 ani · 0 intervenții"
                 diagram={<NineYearRecordDiagram />}
                 caption="Linia verde uptime curge continuu de la 2017 la 2026. Linia ticketelor service este zero pe toată durata. Cele 6 echipamente livrate în etape sunt marcate cronologic, cu laserul flagship pulsing pe data de instalare."
               />
@@ -583,23 +600,18 @@ export default function AironeInoxPage() {
                 custom.
               </p>
               <p>
-                Pentru AIRONE, capabilitatea închisă pe orizontal — debitare,
-                îndoire, formare, sudură, asamblare — înseamnă că nu există
-                furnizori externi în lanțul de calitate. Fiecare etapă este
-                sub control intern, calibrată pe gama de produse, scalabilă
-                pentru ambele canale de piață.
+                Pentru AIRONE, capabilitatea închisă pe orizontal de
+                debitare, îndoire, formare, sudură și asamblare înseamnă că
+                nu există furnizori externi în lanțul de calitate. Fiecare
+                etapă este sub control intern, calibrată pe gama de produse,
+                scalabilă pentru ambele canale de piață.
               </p>
             </div>
-            <div className="lg:col-span-7 space-y-4">
+            <div className="lg:col-span-7">
               <AironeDiagramFigure
-                number="Schema 2 · flux producție inox"
+                number="Schema 3 · flux producție inox"
                 diagram={<InoxProductionFlowDiagram />}
                 caption="Cinci stații tehnologice cu echipamente Uzinex, conectate prin transport intern și control de calitate intermediar. Iesirea: gama HoReCa premium pentru piața românească și piața white label italiană."
-              />
-              <AironeDiagramFigure
-                number="Schema 3 · matrice capacitate prelucrare"
-                diagram={<CapabilityMatrixDiagram />}
-                caption="Cele 6 operații tehnologice acoperite, cu intervalul optim de grosime pe care fiecare utilaj operează cu cea mai bună precizie. Acoperirea matricii este ce permite AIRONE să facă atât tablă subțire vizibilă, cât și piese structurale groase."
               />
             </div>
           </div>
