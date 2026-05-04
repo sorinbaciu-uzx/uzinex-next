@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { CopyButton } from "./CopyButton";
 import { Sparkline, MiniBar } from "./Sparkline";
+import { EmbedActions } from "./EmbedActions";
 import type { InsightView } from "@/lib/newsroom/extract";
 
 const TYPE_LABELS: Record<string, { label: string; color: string }> = {
@@ -95,8 +96,9 @@ export function AnomalyCard({ insight, view, shareableHeadline, storyLink }: Pro
           href={`/api/newsroom/insights/${insight.id}/data.csv`}
           className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded border border-ink-200 hover:border-uzx-blue hover:bg-white transition text-ink-700"
         >
-          📊 Descarcă datele (CSV)
+          📊 CSV
         </a>
+        <EmbedActions insightId={insight.id} title={insight.title} />
 
         {storyLink && (
           <Link href={`/newsroom/stories/${storyLink.slug}`} className="ml-auto inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-uzx-orange text-white hover:bg-uzx-orange2 font-medium transition">

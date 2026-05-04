@@ -128,6 +128,9 @@ const RESURSE_ITEMS: SubItem[] = [
   { label: "Newsroom — story-uri", href: "/newsroom" },
   { label: "Anomalii săptămânale", href: "/newsroom/anomalii" },
   { label: "Profile firme industriale", href: "/newsroom/firme" },
+  { label: "Perspective globale", href: "/newsroom/lume" },
+  { label: "Press Center (jurnaliști)", href: "/newsroom/press" },
+  { label: "Metodologie newsroom", href: "/newsroom/metodologie" },
   { label: "Echipa", href: "/echipa" },
   { label: "Materiale utile", href: "/materiale-utile" },
 ];

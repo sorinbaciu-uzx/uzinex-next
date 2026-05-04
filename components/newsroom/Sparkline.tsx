@@ -2,16 +2,23 @@
 
 import { LineChart, Line, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, ReferenceLine } from "recharts";
 
-type Point = { date: string | number; value: number };
+type Point = { date?: string | number; year?: number; value: number };
 
 export function Sparkline({ data, height = 60, color = "#1e6bb8", highlightLast = true }: { data: Point[]; height?: number; color?: string; highlightLast?: boolean }) {
   if (!data || data.length === 0) return null;
   const baseline = data.slice(0, -1).reduce((s, p) => s + p.value, 0) / Math.max(1, data.length - 1);
-  const series = data.map((p, i) => ({
-    x: i,
-    value: p.value,
-    date: typeof p.date === "string" ? p.date : new Date(p.date).toISOString().slice(0, 10),
-  }));
+  const series = data.map((p, i) => {
+    let dateStr = `#${i}`;
+    if (typeof p.date === "string") {
+      dateStr = p.date;
+    } else if (p.date != null) {
+      const d = new Date(p.date);
+      if (!Number.isNaN(d.getTime())) dateStr = d.toISOString().slice(0, 10);
+    } else if (typeof p.year === "number") {
+      dateStr = String(p.year);
+    }
+    return { x: i, value: p.value, date: dateStr };
+  });
 
   return (
     <div style={{ height }} className="w-full">
