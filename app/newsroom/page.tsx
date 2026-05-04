@@ -42,6 +42,9 @@ export default function NewsroomPage() {
             <Link href="/newsroom/anomalii" className="inline-flex items-center gap-1.5 bg-uzx-orange text-white text-sm font-medium px-4 py-2 rounded hover:bg-uzx-orange2 transition-colors">
               → Anomalii săptămânale
             </Link>
+            <Link href="/newsroom/firme" className="inline-flex items-center gap-1.5 bg-uzx-blue text-white text-sm font-medium px-4 py-2 rounded hover:bg-uzx-blue2 transition-colors">
+              Profile firme industriale
+            </Link>
             <a href="mailto:sorin.baciu@uzinex.ro?subject=Cerere%20interviu%20-%20Newsroom%20UZINEX" className="inline-flex items-center gap-1.5 text-sm px-4 py-2 rounded border border-ink-200 hover:border-uzx-blue hover:bg-ink-50 text-ink-700">
               Cere interviu
             </a>

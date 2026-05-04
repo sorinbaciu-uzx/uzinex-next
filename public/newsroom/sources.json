@@ -133,7 +133,7 @@
     "category": "ro_justice",
     "description": "Dosare comerciale, executări, falimente",
     "impl": "scraper",
-    "pointsCollected": 0
+    "pointsCollected": 39
   },
   {
     "id": "ani_integritate",

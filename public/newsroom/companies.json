@@ -1,0 +1,1844 @@
+[
+  {
+    "cui": 1590082,
+    "name": "OMV PETROM SA",
+    "sector": "petrol_gas",
+    "sectorLabel": "Petrol & gaz",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 19793585306,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 14795525494,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2021,
+          "value": 23586087255,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2022,
+          "value": 55939915254,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2023,
+          "value": 33828196866,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2024,
+          "value": 29692697896,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2025,
+          "value": 30828147506,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 3563589092,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 1381578837,
+          "label": "Net profit"
+        },
+        {
+          "year": 2021,
+          "value": 2688416594,
+          "label": "Net profit"
+        },
+        {
+          "year": 2022,
+          "value": 10287553182,
+          "label": "Net profit"
+        },
+        {
+          "year": 2023,
+          "value": 3944059894,
+          "label": "Net profit"
+        },
+        {
+          "year": 2024,
+          "value": 4143914310,
+          "label": "Net profit"
+        },
+        {
+          "year": 2025,
+          "value": 3067559914,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 11814,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 10949,
+          "label": "Average employees"
+        },
+        {
+          "year": 2021,
+          "value": 8271,
+          "label": "Average employees"
+        },
+        {
+          "year": 2022,
+          "value": 7372,
+          "label": "Average employees"
+        },
+        {
+          "year": 2023,
+          "value": 7228,
+          "label": "Average employees"
+        },
+        {
+          "year": 2024,
+          "value": 7207,
+          "label": "Average employees"
+        },
+        {
+          "year": 2025,
+          "value": 6701,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 6044818154,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 6104710219,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2021,
+          "value": 9089515020,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2022,
+          "value": 9187909952,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2023,
+          "value": 8403525127,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2024,
+          "value": 8682417713,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2025,
+          "value": 10502278253,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 32350950623,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 32012940116,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2021,
+          "value": 32869707478,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2022,
+          "value": 39143576653,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2023,
+          "value": 37930402732,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2024,
+          "value": 37621075425,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2025,
+          "value": 36669074978,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 22224269257,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 18544842429,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2021,
+          "value": 29738633465,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2022,
+          "value": 66230603370,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2023,
+          "value": 38504569627,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2024,
+          "value": 33435310514,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2025,
+          "value": 35975251054,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 1000,
+      "recentHearings": 1502,
+      "recentCases": [
+        {
+          "numar": "7206/40/2010",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni termen de control",
+          "lastHearing": "2026-10-11"
+        },
+        {
+          "numar": "2980/30/2012",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-04"
+        },
+        {
+          "numar": "513/87/2012",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-09-13"
+        },
+        {
+          "numar": "1042/89/2011",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată continuare procedură",
+          "lastHearing": "2026-05-06"
+        },
+        {
+          "numar": "11971/62/2010",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-05-13"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 1860712,
+    "name": "ROMPETROL RAFINARE SA",
+    "sector": "rafinare",
+    "sectorLabel": "Rafinare",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 14750359139,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 8275110517,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2021,
+          "value": 12149617467,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2022,
+          "value": 23026777606,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2023,
+          "value": 17120703327,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2024,
+          "value": 15014243836,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2021,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2022,
+          "value": 666277159,
+          "label": "Net profit"
+        },
+        {
+          "year": 2023,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2024,
+          "value": 0,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 1156,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 1097,
+          "label": "Average employees"
+        },
+        {
+          "year": 2021,
+          "value": 1061,
+          "label": "Average employees"
+        },
+        {
+          "year": 2022,
+          "value": 1074,
+          "label": "Average employees"
+        },
+        {
+          "year": 2023,
+          "value": 1124,
+          "label": "Average employees"
+        },
+        {
+          "year": 2024,
+          "value": 1112,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 5610317808,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 5765413105,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2021,
+          "value": 7540248177,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2022,
+          "value": 6901426523,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2023,
+          "value": 7815424517,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2024,
+          "value": 8016732189,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 1967984039,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 1335607145,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2021,
+          "value": 2331807666,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2022,
+          "value": 2919993039,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2023,
+          "value": 1962613686,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2024,
+          "value": 1483865797,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 14900650905,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 8629571744,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2021,
+          "value": 13021042927,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2022,
+          "value": 24833394926,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2023,
+          "value": 17906754311,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2024,
+          "value": 15479644875,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 129,
+      "recentHearings": 201,
+      "recentCases": [
+        {
+          "numar": "5517/99/2007",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni contestaţie creanţă",
+          "lastHearing": "2026-05-26"
+        },
+        {
+          "numar": "6/107/2003",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-06-23"
+        },
+        {
+          "numar": "19/110/2003**",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată nr vechi 4941/2003",
+          "lastHearing": "2026-05-12"
+        },
+        {
+          "numar": "90/118/2004",
+          "obiect": "procedura insolvenţei – persoane juridice de drept privat antrenarea  răspunderii patrimoniale",
+          "lastHearing": "2026-05-10"
+        },
+        {
+          "numar": "4238/118/2014",
+          "obiect": "deschiderea procedurii la cererea debitorului",
+          "lastHearing": "2026-09-27"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 1639739,
+    "name": "LIBERTY GALATI S.A.",
+    "sector": "metalurgie",
+    "sectorLabel": "Metalurgie (oțel)",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 1000,
+      "recentHearings": 1599,
+      "recentCases": [
+        {
+          "numar": "3139/88/2011",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni analiza activitate lichidator judiciar",
+          "lastHearing": "2026-06-17"
+        },
+        {
+          "numar": "1661/121/2014",
+          "obiect": "procedura insolvenţei",
+          "lastHearing": "2026-09-09"
+        },
+        {
+          "numar": "2575/121/2017",
+          "obiect": "acţiune în constatare",
+          "lastHearing": "2025-05-20"
+        },
+        {
+          "numar": "7103/233/2018",
+          "obiect": "ucidere din culpă (art.192 NCP)",
+          "lastHearing": "2025-10-09"
+        },
+        {
+          "numar": "1745/62/2018",
+          "obiect": "deschiderea procedurii la cererea debitorului",
+          "lastHearing": "2026-10-21"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 2126855,
+    "name": "ARCELORMITTAL HUNEDOARA SA",
+    "sector": "metalurgie",
+    "sectorLabel": "Metalurgie (oțel)",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 212,
+      "recentHearings": 227,
+      "recentCases": [
+        {
+          "numar": "6402/97/2012",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-14"
+        },
+        {
+          "numar": "4675/99/2020",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-09-09"
+        },
+        {
+          "numar": "3093/243/2022",
+          "obiect": "rectificare carte funciară",
+          "lastHearing": "2026-05-10"
+        },
+        {
+          "numar": "875/97/2023",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-09-20"
+        },
+        {
+          "numar": "1556/243/2023",
+          "obiect": "uzucapiune",
+          "lastHearing": "2026-09-30"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 2057240,
+    "name": "ARCELORMITTAL TUBULAR PRODUCTS ROMAN SA",
+    "sector": "metalurgie",
+    "sectorLabel": "Metalurgie (oțel)",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 81,
+      "recentHearings": 54,
+      "recentCases": [
+        {
+          "numar": "63/62/2002",
+          "obiect": "procedura insolvenţei – instituţii de credit",
+          "lastHearing": "2026-10-14"
+        },
+        {
+          "numar": "4664/99/2016",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-06"
+        },
+        {
+          "numar": "3459/99/2018",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-02-17"
+        },
+        {
+          "numar": "1080/103/2014",
+          "obiect": "brevete de invenţii",
+          "lastHearing": "2025-06-05"
+        },
+        {
+          "numar": "3231/103/2022",
+          "obiect": "anulare act",
+          "lastHearing": "2025-05-28"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 1515374,
+    "name": "ALRO SA",
+    "sector": "metalurgie_aluminiu",
+    "sectorLabel": "Metalurgie aluminiu",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 2551314935,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 2333335299,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2021,
+          "value": 3298048157,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2022,
+          "value": 3212299097,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2023,
+          "value": 2557589964,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2024,
+          "value": 3400459880,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 295206223,
+          "label": "Net profit"
+        },
+        {
+          "year": 2021,
+          "value": 35209984,
+          "label": "Net profit"
+        },
+        {
+          "year": 2022,
+          "value": 330970599,
+          "label": "Net profit"
+        },
+        {
+          "year": 2023,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2024,
+          "value": 15321476,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 2514,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 2427,
+          "label": "Average employees"
+        },
+        {
+          "year": 2021,
+          "value": 2479,
+          "label": "Average employees"
+        },
+        {
+          "year": 2022,
+          "value": 2170,
+          "label": "Average employees"
+        },
+        {
+          "year": 2023,
+          "value": 1956,
+          "label": "Average employees"
+        },
+        {
+          "year": 2024,
+          "value": 2104,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 1311404190,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 1316600636,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2021,
+          "value": 1468886465,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2022,
+          "value": 1893992206,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2023,
+          "value": 1747765741,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2024,
+          "value": 2045645519,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 741550823,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 1031967483,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2021,
+          "value": 1073192260,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2022,
+          "value": 1412886956,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2023,
+          "value": 869365430,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2024,
+          "value": 881906206,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 2814680284,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 3116562445,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2021,
+          "value": 3568384448,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2022,
+          "value": 4397665586,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2023,
+          "value": 2784556258,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2024,
+          "value": 3692254853,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 169,
+      "recentHearings": 152,
+      "recentCases": [
+        {
+          "numar": "1863/114/2014",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-05-24"
+        },
+        {
+          "numar": "2291/99/2007",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată STRĂMUTAT TRIBUNALUL IAŞI",
+          "lastHearing": "2025-11-25"
+        },
+        {
+          "numar": "1608/303/2020",
+          "obiect": "pretenţii",
+          "lastHearing": "2026-06-09"
+        },
+        {
+          "numar": "14562/3/2021",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-09-24"
+        },
+        {
+          "numar": "14562/3/2021/a9",
+          "obiect": "contestaţie creanţe imp.tabelului Preliminar (Alive Capital SA imp.cr.Land Power SA)",
+          "lastHearing": "2026-05-14"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 10640589,
+    "name": "HEIDELBERG MATERIALS ROMÂNIA S.A.",
+    "sector": "ciment",
+    "sectorLabel": "Ciment",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 61,
+      "recentHearings": 132,
+      "recentCases": [
+        {
+          "numar": "7843/121/2009**",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-04-16"
+        },
+        {
+          "numar": "84/188/2023",
+          "obiect": "infectarea apei (art.356 NCP)",
+          "lastHearing": "2025-07-10"
+        },
+        {
+          "numar": "2738/86/2023*",
+          "obiect": "acţiune în răspundere patrimonială",
+          "lastHearing": "2026-11-16"
+        },
+        {
+          "numar": "6847/192/2023",
+          "obiect": "plângere contravenţională pr vb seriaC , nr.0000747/10.11.2023",
+          "lastHearing": "2026-06-28"
+        },
+        {
+          "numar": "2326/188/2023",
+          "obiect": "uzucapiune",
+          "lastHearing": "2026-04-07"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 12253732,
+    "name": "Holcim (Romania) SA",
+    "sector": "ciment",
+    "sectorLabel": "Ciment",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 427,
+      "recentHearings": 770,
+      "recentCases": [
+        {
+          "numar": "7023/30/2009",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-02-04"
+        },
+        {
+          "numar": "2980/30/2012",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-04"
+        },
+        {
+          "numar": "11971/62/2010",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-05-13"
+        },
+        {
+          "numar": "4721/63/2010*/a1",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-09-07"
+        },
+        {
+          "numar": "11866/83/2012",
+          "obiect": "procedura insolvenţei raport de activitate",
+          "lastHearing": "2026-05-10"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 1200490,
+    "name": "AZOMURES SA",
+    "sector": "chimie_ingrasaminte",
+    "sectorLabel": "Chimie & îngrășăminte",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 1633326548,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 1836514494,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 0,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 0,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 1120,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 1054,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 1290463770,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 1256860362,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 1037402169,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 1009395122,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 1749888971,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 1812610103,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 48,
+      "recentHearings": 79,
+      "recentCases": [
+        {
+          "numar": "47/62/2001",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-05-06"
+        },
+        {
+          "numar": "108/100/2005",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-11-17"
+        },
+        {
+          "numar": "1179/103/2006",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-26"
+        },
+        {
+          "numar": "4/107/2000",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-06-14"
+        },
+        {
+          "numar": "14152/95/2007",
+          "obiect": "deschiderea procedurii la cererea creditorului",
+          "lastHearing": "2026-03-16"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 1973096,
+    "name": "ANTIBIOTICE SA",
+    "sector": "farma",
+    "sectorLabel": "Industrie farmaceutică",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 390646543,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 341047668,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2021,
+          "value": 368421809,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2022,
+          "value": 483724186,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2023,
+          "value": 600780825,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2024,
+          "value": 675010971,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 30823278,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 26388049,
+          "label": "Net profit"
+        },
+        {
+          "year": 2021,
+          "value": 29939404,
+          "label": "Net profit"
+        },
+        {
+          "year": 2022,
+          "value": 38513427,
+          "label": "Net profit"
+        },
+        {
+          "year": 2023,
+          "value": 81088596,
+          "label": "Net profit"
+        },
+        {
+          "year": 2024,
+          "value": 102202828,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 1415,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 1415,
+          "label": "Average employees"
+        },
+        {
+          "year": 2021,
+          "value": 1410,
+          "label": "Average employees"
+        },
+        {
+          "year": 2022,
+          "value": 1355,
+          "label": "Average employees"
+        },
+        {
+          "year": 2023,
+          "value": 1352,
+          "label": "Average employees"
+        },
+        {
+          "year": 2024,
+          "value": 1350,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 286944006,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 269425989,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2021,
+          "value": 284076509,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2022,
+          "value": 206200889,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2023,
+          "value": 273942573,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2024,
+          "value": 367753307,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 496842915,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 577272048,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2021,
+          "value": 604991800,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2022,
+          "value": 641430601,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2023,
+          "value": 846964120,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2024,
+          "value": 894308823,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 407780551,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 380393220,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2021,
+          "value": 388925110,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2022,
+          "value": 522227008,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2023,
+          "value": 640726948,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2024,
+          "value": 692983751,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 83,
+      "recentHearings": 78,
+      "recentCases": [
+        {
+          "numar": "18359/3/2012",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-06-04"
+        },
+        {
+          "numar": "17619/3/2015",
+          "obiect": "deschiderea procedurii la cererea creditorului rep.cf.disp.art.114 indice 24 alin 1 din ROIJ - cerer",
+          "lastHearing": "2026-06-03"
+        },
+        {
+          "numar": "1408/85/2016",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-06-21"
+        },
+        {
+          "numar": "597/1371/2017",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-06-17"
+        },
+        {
+          "numar": "8307/3/2023",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) Dosar repartizat manual Completului 2 CC, ",
+          "lastHearing": "2026-05-11"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 341563,
+    "name": "BIOFARM SA",
+    "sector": "farma",
+    "sectorLabel": "Industrie farmaceutică",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 195390812,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 216451696,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2021,
+          "value": 239086666,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2022,
+          "value": 277026343,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2023,
+          "value": 280313675,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2024,
+          "value": 286780014,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 50881819,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 54264580,
+          "label": "Net profit"
+        },
+        {
+          "year": 2021,
+          "value": 60355769,
+          "label": "Net profit"
+        },
+        {
+          "year": 2022,
+          "value": 70917262,
+          "label": "Net profit"
+        },
+        {
+          "year": 2023,
+          "value": 77012898,
+          "label": "Net profit"
+        },
+        {
+          "year": 2024,
+          "value": 74396967,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 356,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 331,
+          "label": "Average employees"
+        },
+        {
+          "year": 2021,
+          "value": 371,
+          "label": "Average employees"
+        },
+        {
+          "year": 2022,
+          "value": 387,
+          "label": "Average employees"
+        },
+        {
+          "year": 2023,
+          "value": 399,
+          "label": "Average employees"
+        },
+        {
+          "year": 2024,
+          "value": 373,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 52003451,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 40966089,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2021,
+          "value": 48779891,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2022,
+          "value": 58314169,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2023,
+          "value": 49433438,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2024,
+          "value": 61905163,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 257230332,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 291551533,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2021,
+          "value": 332787318,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2022,
+          "value": 380055572,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2023,
+          "value": 434411125,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2024,
+          "value": 478261456,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 202379726,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 221215218,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2021,
+          "value": 241859881,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2022,
+          "value": 290778411,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2023,
+          "value": 289780621,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2024,
+          "value": 296688417,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 35,
+      "recentHearings": 56,
+      "recentCases": [
+        {
+          "numar": "30962/3/2016",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) cerere de modificare a planului de reorgan",
+          "lastHearing": "2026-06-03"
+        },
+        {
+          "numar": "597/1371/2017",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-06-17"
+        },
+        {
+          "numar": "3745/62/2019",
+          "obiect": "deschiderea procedurii la cererea debitorului",
+          "lastHearing": "2026-09-09"
+        },
+        {
+          "numar": "3278/62/2020",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-09-09"
+        },
+        {
+          "numar": "3745/62/2019/a16",
+          "obiect": "contestaţie creanţe CONTESTAŢIE TABEL DEFINITIV",
+          "lastHearing": "2025-06-25"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 10874881,
+    "name": "NUCLEARELECTRICA SA",
+    "sector": "energie_nucleara",
+    "sectorLabel": "Energie nucleară",
+    "financials": {
+      "anaf_company_turnover": [
+        {
+          "year": 2019,
+          "value": 2379424484,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2020,
+          "value": 2448712083,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2021,
+          "value": 3118375073,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2022,
+          "value": 6368544558,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2023,
+          "value": 7469308958,
+          "label": "Net turnover (Cifra de afaceri)"
+        },
+        {
+          "year": 2024,
+          "value": 4680533991,
+          "label": "Net turnover (Cifra de afaceri)"
+        }
+      ],
+      "anaf_company_net_profit": [
+        {
+          "year": 2019,
+          "value": 535667264,
+          "label": "Net profit"
+        },
+        {
+          "year": 2020,
+          "value": 699322229,
+          "label": "Net profit"
+        },
+        {
+          "year": 2021,
+          "value": 1036261626,
+          "label": "Net profit"
+        },
+        {
+          "year": 2022,
+          "value": 2764423452,
+          "label": "Net profit"
+        },
+        {
+          "year": 2023,
+          "value": 2506518832,
+          "label": "Net profit"
+        },
+        {
+          "year": 2024,
+          "value": 1708188496,
+          "label": "Net profit"
+        }
+      ],
+      "anaf_company_employees": [
+        {
+          "year": 2019,
+          "value": 2038,
+          "label": "Average employees"
+        },
+        {
+          "year": 2020,
+          "value": 2028,
+          "label": "Average employees"
+        },
+        {
+          "year": 2021,
+          "value": 2002,
+          "label": "Average employees"
+        },
+        {
+          "year": 2022,
+          "value": 2221,
+          "label": "Average employees"
+        },
+        {
+          "year": 2023,
+          "value": 2352,
+          "label": "Average employees"
+        },
+        {
+          "year": 2024,
+          "value": 2300,
+          "label": "Average employees"
+        }
+      ],
+      "anaf_company_total_liabilities": [
+        {
+          "year": 2019,
+          "value": 1041923608,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2020,
+          "value": 885933746,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2021,
+          "value": 816243784,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2022,
+          "value": 884307232,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2023,
+          "value": 952813911,
+          "label": "Total liabilities (Datorii)"
+        },
+        {
+          "year": 2024,
+          "value": 1313612480,
+          "label": "Total liabilities (Datorii)"
+        }
+      ],
+      "anaf_company_total_equity": [
+        {
+          "year": 2019,
+          "value": 7334934060,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2020,
+          "value": 7519685249,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2021,
+          "value": 8365261327,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2022,
+          "value": 10535504870,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2023,
+          "value": 11755091169,
+          "label": "Total equity (Capitaluri)"
+        },
+        {
+          "year": 2024,
+          "value": 12343231489,
+          "label": "Total equity (Capitaluri)"
+        }
+      ],
+      "anaf_company_total_revenue": [
+        {
+          "year": 2019,
+          "value": 2480140831,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2020,
+          "value": 2564634123,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2021,
+          "value": 3249866600,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2022,
+          "value": 6681566794,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2023,
+          "value": 8000651021,
+          "label": "Total revenue"
+        },
+        {
+          "year": 2024,
+          "value": 5105944682,
+          "label": "Total revenue"
+        }
+      ]
+    },
+    "court": {
+      "dosareCount": 234,
+      "recentHearings": 272,
+      "recentCases": [
+        {
+          "numar": "1867/90/2010",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni - LA CEREREA DEBITOAREI",
+          "lastHearing": "2026-05-12"
+        },
+        {
+          "numar": "10948/118/2008",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-24"
+        },
+        {
+          "numar": "9089/101/2013",
+          "obiect": "deschiderea procedurii la cererea debitorului Legea nr. 85/2006",
+          "lastHearing": "2026-06-09"
+        },
+        {
+          "numar": "5802/118/2017",
+          "obiect": "calcul drepturi salariale",
+          "lastHearing": "2026-06-04"
+        },
+        {
+          "numar": "511/118/2018",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-05-25"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 30537180,
+    "name": "TRANSGAZ SA",
+    "sector": "transport_gaz",
+    "sectorLabel": "Transport gaz",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 954,
+      "recentHearings": 1646,
+      "recentCases": [
+        {
+          "numar": "2177/99/2012",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-06-23"
+        },
+        {
+          "numar": "2/103/2003",
+          "obiect": "procedura insolvenţei – societăţi în comandită pe acţiuni LEGEA NR.85/2006",
+          "lastHearing": "2026-02-10"
+        },
+        {
+          "numar": "1463/108/2012",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-06-14"
+        },
+        {
+          "numar": "81/121/2005*",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-12"
+        },
+        {
+          "numar": "186/1371/2007",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-09-17"
+        }
+      ]
+    }
+  },
+  {
+    "cui": 13093222,
+    "name": "ENGIE ROMANIA S.A.",
+    "sector": "energie_retail",
+    "sectorLabel": "Energie retail",
+    "financials": {
+      "anaf_company_turnover": [],
+      "anaf_company_net_profit": [],
+      "anaf_company_employees": [],
+      "anaf_company_total_liabilities": [],
+      "anaf_company_total_equity": [],
+      "anaf_company_total_revenue": []
+    },
+    "court": {
+      "dosareCount": 1000,
+      "recentHearings": 1648,
+      "recentCases": [
+        {
+          "numar": "6221/90/2012",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-14"
+        },
+        {
+          "numar": "10568/95/2012",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată deschidere procedură la cererea creditorulu",
+          "lastHearing": "2026-09-14"
+        },
+        {
+          "numar": "15857/62/2010",
+          "obiect": "deschiderea procedurii la cererea creditorului",
+          "lastHearing": "2026-05-11"
+        },
+        {
+          "numar": "5741/62/2012",
+          "obiect": "deschiderea procedurii la cererea debitorului",
+          "lastHearing": "2026-06-22"
+        },
+        {
+          "numar": "19766/63/2011/a1",
+          "obiect": "procedura insolvenţei",
+          "lastHearing": "2026-05-03"
+        }
+      ]
+    }
+  }
+]

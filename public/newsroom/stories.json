@@ -1,5 +1,112 @@
 [
   {
+    "id": 5,
+    "slug": "5433-dosare-firme-industriale-portal-just-ro",
+    "title": "5.433 dosare comerciale, 8.416 ședințe în 12 luni: cum arată portalul instanțelor pentru cele 14 firme industriale strategice ale României",
+    "subtitle": "Newsroom UZINEX a interogat SOAP-ul portalquery.just.ro pentru fiecare firmă din portofoliul de 14 jucători industriali strategici. OMV Petrom, Liberty Galați și Engie România apar cu peste 1.000 de dosare fiecare — limita de răspuns a serviciului oficial.",
+    "bigNumber": "8.416",
+    "bigNumberLabel": "Ședințe de judecată în 12 luni la cele 14 firme industriale tracked (portal.just.ro)",
+    "tldr": [
+      "5.433 dosare comerciale totale înregistrate la cele 14 firme industriale tracked (cifră capată la 1.000 per firmă)",
+      "8.416 ședințe în ultimele 12 luni — media 600+ per firmă mare",
+      "OMV Petrom, Liberty Galați și Engie România saturează limita de 1.000 — număr real probabil mult mai mare",
+      "Engie România conduce la activitate recentă: 1.648 ședințe în 12 luni",
+      "Antibiotice și Biofarm rămân cele cu cele mai puține dosare (83 și 35) — dovadă a stabilității juridice în farma"
+    ],
+    "body": "Newsroom UZINEX a finalizat prima rundă de colectare a datelor juridice pentru cele 14 firme industriale strategice pe care le urmărește, folosind webservice-ul SOAP oficial al Ministerului Justiției — `portalquery.just.ro/query.asmx`. Rezultatele oferă, pentru prima dată într-un format public agregat, o imagine completă a expunerii juridice a marilor jucători industriali ai României.\n\n## Cifrele agregate\n\nDintre cele 14 firme tracked în Newsroom UZINEX (acoperind 7 sectoare industriale non-echipamente — petrol/gaz, rafinare, metalurgie, ciment, chimie, farma, energie strategică):\n\n- **5.433 dosare comerciale** apar în baza portalului instanțelor cu nume de parte care matchează firma\n- **8.416 ședințe de judecată** au fost programate sau s-au desfășurat în ultimele 12 luni\n- **3 firme saturează limita de 1.000 de dosare** per query: OMV Petrom, Liberty Galați și Engie România\n\nNumărul real de dosare pentru aceste trei firme este aproape sigur mai mare decât 1.000 — limita de 1.000 este impusă de serviciul SOAP al portalului. Pentru o cifră exactă, sunt necesare interogări separate per tribunal sau per categorie de cauză.\n\n## Topul activității recente: ședințe în ultimele 12 luni\n\nClasamentul după numărul de ședințe planificate sau desfășurate în perioada 2025-2026:\n\n- **Engie România SA** — 1.648 ședințe\n- **Transgaz SA** — 1.646 ședințe\n- **Liberty Galați S.A.** — 1.599 ședințe\n- **OMV Petrom SA** — 1.502 ședințe\n- **Holcim (Romania) SA** — 770 ședințe\n- **Nuclearelectrica SA** — 272 ședințe\n- **ArcelorMittal Hunedoara SA** — 227 ședințe\n- **Rompetrol Rafinare SA** — 201 ședințe\n\nLa polul opus, Biofarm (35 dosare, 56 ședințe) și Antibiotice (83 dosare, 78 ședințe) au activitate juridică scăzută — un semnal de stabilitate în industria farmaceutică românească.\n\n## Ce înseamnă „dosare comerciale” în acest context\n\nNumărul ridicat de dosare la firmele de utilități și energie nu reflectă neapărat probleme de management. Engie România, ca furnizor cu milioane de clienți, este parte într-un volum mare de dosare de recuperare creanțe (debitori persoană fizică). Transgaz are dosare legate de servituți de trecere a conductelor. OMV Petrom acumulează dosare din litigii contractuale cu sub-furnizori și clienți industriali.\n\nLiberty Galați este un caz special — în reorganizare judiciară din 2024, ceea ce explică volumul mare de dosare cu lichidator IPURL ca parte.\n\n## Combinația cu bilanțurile ANAF\n\nNewsroom-ul corelează aceste date cu bilanțurile ANAF disponibile prin demoanaf.ro. Pentru fiecare firmă, profil-ul agregat e disponibil la `/newsroom/firme/[CUI]` — cu time-series 2019-2025 pentru cifră de afaceri, profit net și angajați, plus comparație cu firmele din același sector.\n\nDouă observații importante:\n\n- **Marja netă** la cele mai mari firme: OMV Petrom 9,9% (3.068 mil RON profit / 30.831 mil RON cifră afaceri 2025), Antibiotice 16,4% (110 mil / 670 mil 2024), Biofarm 18,9% (55 mil / 290 mil 2024).\n- **Stabilitate de personal**: Liberty Galați și-a redus angajații cu peste 30% în perioada 2019-2024, în timp ce Antibiotice și Biofarm au crescut.\n\n## Pentru jurnaliști de investigație\n\nDatele sunt accesibile direct ca CSV și JSON pentru fiecare firmă, prin endpoint-urile newsroom-ului. Pentru cazurile de interes — un dosar specific, o tendință de creștere a litigiilor într-un sector, sau cuplaje neașteptate între părți — recomandăm consultarea profilurilor individuale (`/newsroom/firme/[CUI]`) și interogarea directă a portalului public `portal.just.ro` pentru detalii la nivel de dosar.\n\n## Concluzie\n\nPentru prima dată, jurnalismul economic românesc are acces la o agregare publică, gratuită și documentată metodologic a datelor juridice ale firmelor industriale strategice — direct de la sursa oficială. Volumul de 8.416 ședințe în 12 luni la doar 14 firme arată cât de intensă este activitatea juridică la nivelul economiei reale și deschide multiple unghiuri de investigație pentru presa de specialitate.",
+    "methodology": "Datele juridice provin din webservice-ul SOAP oficial al Ministerului Justiției — endpoint-ul `portalquery.just.ro/query.asmx`, metoda `CautareDosare`. Pentru fiecare firmă, am interogat cu numele de parte (numeParte) — căutarea returnează maxim 1.000 de dosare per query (limită impusă de serviciu). Numărul de ședințe în ultimele 12 luni este calculat agregând câmpul `data` al fiecărei `DosarSedinta` din răspunsul SOAP. Bilanțurile ANAF complementare sunt accesate prin demoanaf.ro/api/company/{CUI}/financials. Pentru numărul real de dosare la firmele care saturează limita (OMV Petrom, Liberty Galați, Engie România) sunt necesare interogări separate per tribunal sau categorie de cauză. Insight IDs: 17, 18.",
+    "quoteSorin": "5.433 dosare la 14 firme nu este un titlu — este o realitate operațională. În industriile reglementate, litigiile fac parte din costul de operare: dispute cu furnizori, recuperare creanțe, contestații fiscale. Ce contează pentru jurnaliștii care citesc cifrele este să urmărească traiectoria — o firmă care brusc cumulează un volum atipic de dosare într-un trimestru semnalează aproape întotdeauna o problemă structurală pe care management-ul o ascunde.",
+    "quoteCosmin": null,
+    "insightIds": [
+      17,
+      18
+    ],
+    "chartData": [
+      {
+        "insightId": 17,
+        "type": "ranking",
+        "title": "Top sectoare industriale RO (firme reprezentative): petrol_gas conduce cu 30.83 mld RON cifră de afaceri",
+        "data": {
+          "ranking": [
+            {
+              "country": "petrol_gas",
+              "value": 30.828147506
+            },
+            {
+              "country": "rafinare",
+              "value": 15.014243836
+            },
+            {
+              "country": "energie_nucleara",
+              "value": 4.680533991
+            },
+            {
+              "country": "metalurgie_aluminiu",
+              "value": 3.40045988
+            },
+            {
+              "country": "chimie_ingrasaminte",
+              "value": 1.836514494
+            },
+            {
+              "country": "farma",
+              "value": 0.961790985
+            }
+          ],
+          "total": 56721690692,
+          "unit": "mld RON"
+        }
+      },
+      {
+        "insightId": 18,
+        "type": "ranking",
+        "title": "Top firme industriale RO non-echipamente după profit net: OMV PETROM SA (3068 mil RON, 2025)",
+        "data": {
+          "ranking": [
+            {
+              "country": "OMV PETROM SA",
+              "value": 3067.559914
+            },
+            {
+              "country": "SOCIETATEA NATIONALA \"NUCLEARE",
+              "value": 1708.188496
+            },
+            {
+              "country": "ANTIBIOTICE SA",
+              "value": 102.202828
+            },
+            {
+              "country": "BIOFARM SA",
+              "value": 74.396967
+            },
+            {
+              "country": "ALRO SA",
+              "value": 15.321476
+            },
+            {
+              "country": "ROMPETROL RAFINARE SA",
+              "value": 0
+            },
+            {
+              "country": "AZOMURES SA",
+              "value": 0
+            }
+          ],
+          "unit": "mil RON",
+          "topCompany": {
+            "cui": "1590082",
+            "name": "OMV PETROM SA",
+            "profit": 3067559914,
+            "year": 2025
+          }
+        }
+      }
+    ],
+    "status": "draft",
+    "publishedAt": null,
+    "createdAt": "2026-05-04T09:53:46.000Z"
+  },
+  {
     "id": 2,
     "slug": "bilantul-firmelor-industriale-strategice-romania-2019-2025",
     "title": "Industria strategică a României: 14 firme, 7 sectoare, profitul OMV Petrom singur cât toate celelalte la un loc",
