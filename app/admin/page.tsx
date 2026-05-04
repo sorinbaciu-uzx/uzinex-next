@@ -93,6 +93,35 @@ export default async function AdminDashboard() {
           </div>
         </Link>
 
+        {/* NEWSROOM — INTERNAL CONTENT ENGINE */}
+        <Link
+          href="/admin/newsroom"
+          className="relative overflow-hidden bg-gradient-to-br from-ink-900 to-uzx-blue text-white p-6 hover:shadow-xl transition group"
+        >
+          <div
+            className="absolute -top-px -right-px w-24 h-24 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(135deg, transparent 0%, transparent 50%, rgba(245,133,31,0.5) 50%)",
+            }}
+          />
+          <div className="text-[10px] uppercase tracking-[0.22em] opacity-70 font-mono mb-3">
+            Motor intern · știri/bloguri
+          </div>
+          <div className="serif text-2xl leading-tight">
+            Newsroom — date oficiale
+          </div>
+          <p className="text-sm text-white/80 mt-2 leading-relaxed">
+            Pipeline de agregare din 90+ surse oficiale (BNR, IMF, Eurostat,
+            World Bank, USASpending, SAM.gov, ANAF, portal.just.ro). Insights
+            algoritmice săptămânale + story-uri editoriale, ca tool intern
+            de generare conținut.
+          </p>
+          <div className="absolute bottom-4 right-5 text-3xl opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition">
+            →
+          </div>
+        </Link>
+
         {/* USERS */}
         <Link
           href="/admin/users"

@@ -125,12 +125,6 @@ const CATALOG_GROUPS: CategoryGroup[] = [
 
 const RESURSE_ITEMS: SubItem[] = [
   { label: "Noutăți & comunicări", href: "/noutati" },
-  { label: "Newsroom — story-uri", href: "/newsroom" },
-  { label: "Insights săptămânale", href: "/newsroom/anomalii" },
-  { label: "Profile firme industriale", href: "/newsroom/firme" },
-  { label: "Perspective globale", href: "/newsroom/lume" },
-  { label: "Press Center (jurnaliști)", href: "/newsroom/press" },
-  { label: "Metodologie newsroom", href: "/newsroom/metodologie" },
   { label: "Echipa", href: "/echipa" },
   { label: "Materiale utile", href: "/materiale-utile" },
 ];
