@@ -125,6 +125,8 @@ const CATALOG_GROUPS: CategoryGroup[] = [
 
 const RESURSE_ITEMS: SubItem[] = [
   { label: "Noutăți & comunicări", href: "/noutati" },
+  { label: "Newsroom — story-uri", href: "/newsroom" },
+  { label: "Anomalii săptămânale", href: "/newsroom/anomalii" },
   { label: "Echipa", href: "/echipa" },
   { label: "Materiale utile", href: "/materiale-utile" },
 ];

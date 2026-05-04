@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-05-04T08:58:27.376Z",
+  "counts": {
+    "stories": 1,
+    "insights": 8,
+    "sources": 90
+  },
+  "notes": "Generat din newsroom-uzinex local. Pentru regenerare: cd newsroom-uzinex && npm run export:static"
+}

@@ -1,0 +1,722 @@
+[
+  {
+    "id": "bnr",
+    "name": "BNR — Banca Națională",
+    "category": "ro_stats",
+    "description": "Cursuri valutare, dobânzi, balanță plăți",
+    "impl": "real",
+    "pointsCollected": 2960
+  },
+  {
+    "id": "eurostat",
+    "name": "Eurostat",
+    "category": "eu_stats",
+    "description": "Statistici UE — producție industrială, salarii",
+    "impl": "real",
+    "pointsCollected": 2328
+  },
+  {
+    "id": "worldbank",
+    "name": "World Bank Open Data",
+    "category": "intl_org",
+    "description": "Toate țările lumii, indicatori macro",
+    "impl": "real",
+    "pointsCollected": 405
+  },
+  {
+    "id": "ecb",
+    "name": "ECB — Banca Centrală Europeană",
+    "category": "eu_stats",
+    "description": "Inflație, dobânzi, schimburi valutare zona euro",
+    "impl": "real",
+    "pointsCollected": 120
+  },
+  {
+    "id": "ted",
+    "name": "TED Europa",
+    "category": "eu_procurement",
+    "description": "Toate licitațiile UE >prag",
+    "impl": "real",
+    "pointsCollected": 27
+  },
+  {
+    "id": "sam",
+    "name": "SAM.gov — contracte federale SUA",
+    "category": "us_defense",
+    "description": "Toate contractele federale SUA, inclusiv DoD",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "seap",
+    "name": "ANAP / SEAP / e-licitatie.ro",
+    "category": "ro_procurement",
+    "description": "Anunțuri participare, atribuiri, contestații",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "cnsc",
+    "name": "ANAP — Contestații CNSC",
+    "category": "ro_procurement",
+    "description": "Decizii contestații achiziții publice",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "date_gov_ro",
+    "name": "Date.gov.ro",
+    "category": "ro_stats",
+    "description": "1500+ dataseturi guvernamentale RO (CKAN API)",
+    "impl": "real",
+    "pointsCollected": 17
+  },
+  {
+    "id": "ins_tempo",
+    "name": "INS / TEMPO-Online",
+    "category": "ro_stats",
+    "description": "Producție industrială, comerț, salarii, inflație, PIB",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "onrc",
+    "name": "ONRC — Registrul Comerțului",
+    "category": "ro_companies",
+    "description": "Toate firmele din RO, asociați, bilanțuri (Recom)",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "anaf",
+    "name": "ANAF — verificare TVA",
+    "category": "ro_companies",
+    "description": "Status TVA contribuabili (webservice public)",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "mfp_bilanturi",
+    "name": "MFP — bilanțuri publice firme",
+    "category": "ro_companies",
+    "description": "Bilanțuri publice toate firmele din RO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "mipe_pnrr",
+    "name": "MIPE — PNRR/POR/POIM/POCU",
+    "category": "ro_funds",
+    "description": "Stadiu absorbție fonduri europene RO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "afir",
+    "name": "AFIR — fonduri agricole PNDR",
+    "category": "ro_funds",
+    "description": "Sesiuni finanțare, beneficiari",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "adr_regions",
+    "name": "ADR-uri regionale (8 agenții)",
+    "category": "ro_funds",
+    "description": "POR per regiune RO (Vest, NE, NV, S, SE, SV, Centru, BI)",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "portal_just",
+    "name": "Portal Instanțelor — portal.just.ro",
+    "category": "ro_justice",
+    "description": "Dosare comerciale, executări, falimente",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "ani_integritate",
+    "name": "ANI — Agenția Națională Integritate",
+    "category": "ro_justice",
+    "description": "Declarații avere, conflicte interese politicieni",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "anrp_dna",
+    "name": "ANRP / DNA — comunicate",
+    "category": "ro_justice",
+    "description": "Dosare deschise, comunicate de presă",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "anv_vama",
+    "name": "ANV — Autoritatea Vamală",
+    "category": "ro_customs",
+    "description": "Importuri industriale, statistici trimestriale",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "ins_comert_exterior",
+    "name": "INS Comerț Exterior (via Eurostat Comext)",
+    "category": "ro_customs",
+    "description": "Importuri/exporturi RO pe NC8, origine, destinație",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "anre",
+    "name": "ANRE — Reglementare Energie",
+    "category": "ro_energy",
+    "description": "Prețuri, capacități, producători energie RO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "transelectrica",
+    "name": "Transelectrica + Transgaz",
+    "category": "ro_energy",
+    "description": "Consum, producție, balanță energetică RO live",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "anofm",
+    "name": "ANOFM — Locuri muncă vacante",
+    "category": "ro_labor",
+    "description": "Locuri muncă vacante, șomaj per județ RO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "itm",
+    "name": "ITM — Inspecția Muncii",
+    "category": "ro_labor",
+    "description": "Sancțiuni, accidente muncă RO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eu_open_data",
+    "name": "EU Open Data Portal",
+    "category": "eu_stats",
+    "description": "1.7M+ dataseturi UE",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "cohesion",
+    "name": "Cohesion Open Data Platform",
+    "category": "eu_stats",
+    "description": "Fonduri coeziune absorbție per țară",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "cordis",
+    "name": "CORDIS — proiecte cercetare UE",
+    "category": "eu_stats",
+    "description": "Proiecte H2020, Horizon Europe",
+    "impl": "real",
+    "pointsCollected": 1
+  },
+  {
+    "id": "eu_prodcom",
+    "name": "Eurostat PRODCOM",
+    "category": "eu_industry",
+    "description": "Producție industrială UE per produs (NACE)",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "comext",
+    "name": "Comext — comerț UE extra",
+    "category": "eu_industry",
+    "description": "Importuri UE din afara UE pe produs",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eu_trade_helpdesk",
+    "name": "EU Trade Helpdesk",
+    "category": "eu_industry",
+    "description": "Tarife, restricții, certificări per produs UE",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eu_sanctions",
+    "name": "EU Sanctions Map",
+    "category": "eu_competition",
+    "description": "Companii și persoane sancționate UE",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eu_cartel",
+    "name": "EU Cartel Decisions",
+    "category": "eu_competition",
+    "description": "Amenzi cartel, abuz poziție dominantă",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eu_digital_decade",
+    "name": "EU Digital Decade",
+    "category": "eu_digital",
+    "description": "Digitalizare per țară, indicatori DESI",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "nspa",
+    "name": "NSPA — NATO Procurement (RSS)",
+    "category": "nato",
+    "description": "FBO/NoI/RFP-uri publice NATO",
+    "impl": "real",
+    "pointsCollected": 1
+  },
+  {
+    "id": "ncia",
+    "name": "NCIA — NATO Communications",
+    "category": "nato",
+    "description": "Oportunități IT/comunicații NATO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "nato_innovation",
+    "name": "NATO Innovation Fund + DIANA",
+    "category": "nato",
+    "description": "Investiții, accelerator, programe NATO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eda",
+    "name": "EDA — European Defence Agency",
+    "category": "nato",
+    "description": "Defence Data Reports anuale UE",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "usaspending",
+    "name": "USASpending.gov",
+    "category": "us_defense",
+    "description": "Cheltuieli federale SUA, geo-tagged",
+    "impl": "real",
+    "pointsCollected": 72
+  },
+  {
+    "id": "dod_contracts",
+    "name": "DoD Contracts (RSS)",
+    "category": "us_defense",
+    "description": "Contracte zilnice DoD >$7.5M",
+    "impl": "real",
+    "pointsCollected": 21
+  },
+  {
+    "id": "fbo_gov",
+    "name": "FBO.gov / SAM.gov FBO",
+    "category": "us_defense",
+    "description": "Oportunități contractare deschise (integrat în SAM)",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "sipri",
+    "name": "SIPRI — armament global",
+    "category": "armament",
+    "description": "Transferuri armament, cheltuieli militare",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "iiss",
+    "name": "IISS — Military Balance",
+    "category": "armament",
+    "description": "Capabilități militare per țară",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "uk_des",
+    "name": "UK Defence Equipment & Support",
+    "category": "armament",
+    "description": "Contracte UK MoD",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "bundeswehr",
+    "name": "Bundeswehr Procurement (Germania)",
+    "category": "armament",
+    "description": "Contracte armata germană",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "polish_iuzbrojenie",
+    "name": "Polish Armed Forces Procurement",
+    "category": "armament",
+    "description": "Achiziții poloneze (Inspectoratul Înarmare)",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "french_dga",
+    "name": "French DGA — Direction Générale Armement",
+    "category": "armament",
+    "description": "Contracte franceze defense",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "imf",
+    "name": "IMF — DataMapper",
+    "category": "intl_org",
+    "description": "Prognoze economice, datorie, inflație",
+    "impl": "real",
+    "pointsCollected": 40372
+  },
+  {
+    "id": "oecd",
+    "name": "OECD Stats",
+    "category": "intl_org",
+    "description": "38 țări dezvoltate, indicatori industrie",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "un_comtrade",
+    "name": "UN Comtrade",
+    "category": "intl_trade",
+    "description": "Toate țările, toate produsele, lunar",
+    "impl": "real",
+    "pointsCollected": 446
+  },
+  {
+    "id": "wto",
+    "name": "WTO — World Trade Organization",
+    "category": "intl_trade",
+    "description": "Comerț global, tarife, dispute",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "ilo",
+    "name": "ILO — piața muncii global",
+    "category": "intl_org",
+    "description": "Salarii, ocupare, șomaj",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "unesco",
+    "name": "UNESCO UIS",
+    "category": "intl_org",
+    "description": "Educație, R&D, cultură",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "wipo",
+    "name": "WIPO — proprietate intelectuală",
+    "category": "intl_org",
+    "description": "Brevete, mărci, design industrial",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "trading_economics",
+    "name": "Trading Economics",
+    "category": "intl_trade",
+    "description": "Indicatori macro globali live",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "world_steel",
+    "name": "World Steel Association",
+    "category": "industry_assoc",
+    "description": "Producție oțel global, trend-uri",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "iea",
+    "name": "International Energy Agency",
+    "category": "energy_env",
+    "description": "Date energie globală",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "ifr",
+    "name": "International Federation of Robotics",
+    "category": "industry_assoc",
+    "description": "Roboți industriali per țară",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "statista",
+    "name": "Statista",
+    "category": "intl_trade",
+    "description": "Agregator statistici tematice",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "ft_markets",
+    "name": "Financial Times Markets API",
+    "category": "intl_trade",
+    "description": "Cotații live",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "china_customs",
+    "name": "China Customs Statistics",
+    "category": "supply_china",
+    "description": "Exporturi China — date trimestriale",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "alibaba_industry",
+    "name": "Alibaba Industry Insights",
+    "category": "supply_china",
+    "description": "Trend-uri produse, prețuri",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "made_in_china",
+    "name": "Made-in-China Database",
+    "category": "supply_china",
+    "description": "Producători chinezi, certificări",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "panjiva",
+    "name": "Panjiva (S&P Global)",
+    "category": "supply_chain",
+    "description": "Shipment-uri globale individuale",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "import_genius",
+    "name": "ImportGenius",
+    "category": "supply_chain",
+    "description": "Bills of lading, importuri SUA detaliate",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "marine_traffic",
+    "name": "Marine Traffic API",
+    "category": "logistics",
+    "description": "Poziții live nave, porturi",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "fleetmon",
+    "name": "FleetMon",
+    "category": "logistics",
+    "description": "Trafic Marea Neagră, similar Marine Traffic",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "anyport",
+    "name": "AnyPort.io",
+    "category": "logistics",
+    "description": "Date porturi globale",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "unctad_maritime",
+    "name": "UNCTAD Maritime Statistics",
+    "category": "logistics",
+    "description": "Comerț maritim global",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eia",
+    "name": "EIA — U.S. Energy Information",
+    "category": "energy_env",
+    "description": "Energie globală, prețuri petrol",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "entsoe",
+    "name": "ENTSO-E — piața energiei UE",
+    "category": "energy_env",
+    "description": "Prețuri electricitate live RO + UE",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eea",
+    "name": "EEA — European Environment Agency",
+    "category": "energy_env",
+    "description": "Emisii, calitate aer, deșeuri",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eu_ets",
+    "name": "EU ETS — Emissions Trading",
+    "category": "energy_env",
+    "description": "Emisii companii reglementate",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "climate_trace",
+    "name": "Climate TRACE",
+    "category": "energy_env",
+    "description": "Emisii globale per asset (fabrici)",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "global_carbon_atlas",
+    "name": "Global Carbon Atlas",
+    "category": "energy_env",
+    "description": "Date publice CO2 global",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "github",
+    "name": "GitHub API",
+    "category": "tech",
+    "description": "Programatori RO, contribuții open source",
+    "impl": "real",
+    "pointsCollected": 3
+  },
+  {
+    "id": "stack_overflow",
+    "name": "Stack Overflow Annual Survey",
+    "category": "tech",
+    "description": "Salarii dezvoltatori, trend-uri",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "pitchbook",
+    "name": "PitchBook",
+    "category": "tech",
+    "description": "Investiții VC global",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "crunchbase",
+    "name": "Crunchbase API",
+    "category": "tech",
+    "description": "Companii, finanțări, achiziții",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "cb_insights",
+    "name": "CB Insights",
+    "category": "tech",
+    "description": "Trend-uri tech, investiții",
+    "impl": "paid",
+    "pointsCollected": 0
+  },
+  {
+    "id": "newsapi",
+    "name": "NewsAPI.org",
+    "category": "media",
+    "description": "Articole presa globală (100/zi free)",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "gdelt",
+    "name": "GDELT Project",
+    "category": "media",
+    "description": "Toate știrile globale, sentiment, geo",
+    "impl": "real",
+    "pointsCollected": 0
+  },
+  {
+    "id": "media_cloud",
+    "name": "MediaCloud",
+    "category": "media",
+    "description": "Arhive presă globală",
+    "impl": "key_required",
+    "pointsCollected": 0
+  },
+  {
+    "id": "common_crawl",
+    "name": "Common Crawl",
+    "category": "media",
+    "description": "Arhivă web mondială (S3)",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "manufacturing_net",
+    "name": "Manufacturing.net Data",
+    "category": "industry_assoc",
+    "description": "Trend-uri industriale globale",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "isa",
+    "name": "ISA — International Society of Automation",
+    "category": "industry_assoc",
+    "description": "Automatizare industrială",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "astm",
+    "name": "ASTM International",
+    "category": "industry_assoc",
+    "description": "Standarde industriale",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "iso_db",
+    "name": "ISO Database",
+    "category": "industry_assoc",
+    "description": "Certificări companii ISO",
+    "impl": "scraper",
+    "pointsCollected": 0
+  },
+  {
+    "id": "cecimo",
+    "name": "CECIMO — European Machine Tool",
+    "category": "industry_assoc",
+    "description": "Producție mașini-unelte UE",
+    "impl": "manual",
+    "pointsCollected": 0
+  },
+  {
+    "id": "eurofer",
+    "name": "EUROFER — European Steel",
+    "category": "industry_assoc",
+    "description": "Industria siderurgică UE",
+    "impl": "manual",
+    "pointsCollected": 0
+  }
+]

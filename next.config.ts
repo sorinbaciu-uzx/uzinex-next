@@ -24,6 +24,7 @@ const RESERVED_SLUGS = new Set([
   "industry-4.0",
   "magazin",
   "materiale-utile",
+  "newsroom",
   "noutati",
   "oferta",
   "autentificare",

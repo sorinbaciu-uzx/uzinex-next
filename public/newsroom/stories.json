@@ -1,0 +1,1309 @@
+[
+  {
+    "id": 1,
+    "slug": "industria-romaneasca-ultima-din-regiune-2026",
+    "title": "Industria românească, ultima din regiune: 13,2% din PIB și producție în scădere",
+    "subtitle": "Polonia urcă +5,9% YoY, Cehia +1,3%, dar producția industrială a României alunecă la -1,5%. Date Eurostat, World Bank și TED Europa pentru martie 2026.",
+    "bigNumber": "13,2%",
+    "bigNumberLabel": "Industria prelucrătoare în PIB-ul României — ultima din regiune",
+    "tldr": [
+      "România are 13,2% din PIB în industria prelucrătoare — ultima dintre țările analizate (sursa: World Bank, 2024)",
+      "Producția industrială RO a scăzut -1,5% YoY în februarie 2026, în timp ce Polonia urcă +5,9% (Eurostat)",
+      "EUR/RON a sărit la 5,1417 pe 30 aprilie — deviație de 5σ vs media celor 30 sesiuni anterioare (BNR)",
+      "Polonia a publicat 9.330 anunțuri TED în 30 zile, România doar 3.397 (16,2% din regiune)",
+      "Decalajul față de Cehia (industria reprezintă 19,9% din PIB) crește în loc să scadă"
+    ],
+    "body": "România rămâne pe ultimul loc în Europa Centrală și de Est la ponderea industriei prelucrătoare în PIB, potrivit datelor Băncii Mondiale, iar dinamica recentă a producției confirmă tendința de divergență față de vecini. Indicele producției industriale comunicat de Eurostat pentru februarie 2026 plasează România la -1,5% an pe an, în timp ce Polonia înregistrează +5,9% YoY — un decalaj de peste șapte puncte procentuale între cele două economii.\n\n## Cifrele de bază\n\nÎn ultimele date Eurostat (NACE B-D, ajustat sezonier), indicele producției industriale arată următoarea fotografie regională:\n\n- **Polonia**: 118,4 (martie 2026), +5,9% YoY\n- **Cehia**: 103,2, +1,3% YoY\n- **România**: 94,2, -1,5% YoY\n- **Ungaria**: 92,2, -1,4% YoY\n- **Media UE-27**: 99,7, -0,1% YoY\n\nLa nivel structural, World Bank confirmă în datele pentru 2024 că industria prelucrătoare reprezintă 13,2% din PIB-ul României — sub media UE de 14,3% și considerabil sub Cehia (19,9%), Germania (18,0%), Polonia (16,1%) sau Ungaria (15,8%). Practic, dintre țările analizate, România este țara cu cea mai redusă bază industrială raportată la economie.\n\n## Achizițiile publice — un al doilea unghi\n\nDatele TED Europa (Tenders Electronic Daily) pentru ultimele 30 de zile arată că România a publicat 3.397 de anunțuri de licitație publică, reprezentând 16,2% din volumul cumulat al regiunii (RO+PL+HU+CZ+BG). Polonia a publicat 9.330 de anunțuri, Cehia 5.048, iar Bulgaria 2.190 — un volum aparent semnificativ pentru România, dar care nu se traduce într-o creștere proporțională a producției interne.\n\nCu alte cuvinte: comenzile publice se mișcă, dar fluxul nu se prelinge spre fabrici. O parte explicabilă prin importurile de echipamente, infrastructură și servicii din zona euro.\n\n## Cursul valutar — context macro\n\nÎn aceeași perioadă, BNR a comunicat un curs EUR/RON de 5,1417 la închiderea ședinței din 30 aprilie, peste media de 5,0964 a ultimelor 30 de sesiuni (deviație standard 0,0090). Saltul reprezintă o abatere statistică de peste cinci sigma — atipic pentru o monedă administrată într-o bandă strânsă, care adaugă un strat suplimentar de presiune asupra costurilor de import pentru industria românească.\n\n## Ce înseamnă pentru distribuitorii de echipamente\n\nPentru companiile care servesc piața industrială locală, combinația dintre o bază industrială mai îngustă, o dinamică negativă de producție și o presiune valutară pe cost echipament este o ecuație inconfortabilă. Investițiile rămân, dar concentrate în câteva sectoare — automotive, FMCG, energie — în timp ce industria prelucrătoare clasică pierde teren.\n\n## Concluzie\n\nDecalajul față de Polonia — a cărei expansiune industrială trage media regională în sus — se adâncește. România nu mai este într-o competiție directă cu Cehia sau Ungaria, ci într-o categorie separată, cu o dinamică mai apropiată de Ungaria (-1,4%) decât de motorul polonez (+5,9%). Sursele citate: Eurostat (sts_inpr_m), World Bank (NV.IND.MANF.ZS), BNR (cursuri valutare oficiale) și TED Europa (notificări de achiziție publică).",
+    "methodology": "Datele provin direct din API-uri publice oficiale: Eurostat (sts_inpr_m, NACE B-D ajustat sezonier, februarie 2026), World Bank Open Data (NV.IND.MANF.ZS pentru ponderea industriei prelucrătoare în PIB, ultimul an disponibil 2024), BNR (cursuri valutare oficiale, 30 aprilie 2026), TED Europa v3 (anunțuri publicate în ultimele 30 zile, filtrate per buyer-country). Insight-urile #1-#8 au fost detectate automat de modulul de analiză (anomaly detection cu z-score > 1,5σ și cross-country ranking) — nu există interpolare sau estimare a valorilor.",
+    "quoteSorin": "Decalajul față de Polonia nu mai este o nuanță statistică — sunt aproape șapte puncte de creștere YoY diferență. Dacă industria prelucrătoare nu redevine prioritate de politică economică, vom continua să cumpărăm tehnologie produsă în vecinătatea imediată în loc să o producem noi.",
+    "quoteCosmin": null,
+    "insightIds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "chartData": [
+      {
+        "insightId": 1,
+        "type": "anomaly",
+        "title": "EUR/RON la 5.1417 — abatere +5.01σ vs media ultimelor 30 zile",
+        "data": {
+          "metric": "fx_eur_ron",
+          "latest": {
+            "date": "2026-04-30T00:00:00.000Z",
+            "value": 5.1417
+          },
+          "baseline": {
+            "mean": 5.09642,
+            "stdev": 0.009044083606195956,
+            "n": 30
+          },
+          "zScore": 5.006587949826049,
+          "chart": [
+            {
+              "date": "2026-02-25T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-02-25T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-02-26T00:00:00.000Z",
+              "value": 5.0955
+            },
+            {
+              "date": "2026-02-26T00:00:00.000Z",
+              "value": 5.0955
+            },
+            {
+              "date": "2026-02-27T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-02-27T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-03-02T00:00:00.000Z",
+              "value": 5.0972
+            },
+            {
+              "date": "2026-03-02T00:00:00.000Z",
+              "value": 5.0972
+            },
+            {
+              "date": "2026-03-03T00:00:00.000Z",
+              "value": 5.0981
+            },
+            {
+              "date": "2026-03-03T00:00:00.000Z",
+              "value": 5.0981
+            },
+            {
+              "date": "2026-03-04T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-04T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-05T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-03-05T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-03-06T00:00:00.000Z",
+              "value": 5.0941
+            },
+            {
+              "date": "2026-03-06T00:00:00.000Z",
+              "value": 5.0941
+            },
+            {
+              "date": "2026-03-09T00:00:00.000Z",
+              "value": 5.0979
+            },
+            {
+              "date": "2026-03-09T00:00:00.000Z",
+              "value": 5.0979
+            },
+            {
+              "date": "2026-03-10T00:00:00.000Z",
+              "value": 5.0955
+            },
+            {
+              "date": "2026-03-10T00:00:00.000Z",
+              "value": 5.0955
+            },
+            {
+              "date": "2026-03-11T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-03-11T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-03-12T00:00:00.000Z",
+              "value": 5.0938
+            },
+            {
+              "date": "2026-03-12T00:00:00.000Z",
+              "value": 5.0938
+            },
+            {
+              "date": "2026-03-13T00:00:00.000Z",
+              "value": 5.0947
+            },
+            {
+              "date": "2026-03-13T00:00:00.000Z",
+              "value": 5.0947
+            },
+            {
+              "date": "2026-03-16T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-03-16T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-03-17T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-03-17T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-03-18T00:00:00.000Z",
+              "value": 5.094
+            },
+            {
+              "date": "2026-03-18T00:00:00.000Z",
+              "value": 5.094
+            },
+            {
+              "date": "2026-03-19T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-19T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-20T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-03-20T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-03-23T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-23T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-24T00:00:00.000Z",
+              "value": 5.0962
+            },
+            {
+              "date": "2026-03-24T00:00:00.000Z",
+              "value": 5.0962
+            },
+            {
+              "date": "2026-03-25T00:00:00.000Z",
+              "value": 5.0952
+            },
+            {
+              "date": "2026-03-25T00:00:00.000Z",
+              "value": 5.0952
+            },
+            {
+              "date": "2026-03-26T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-03-26T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-03-27T00:00:00.000Z",
+              "value": 5.0991
+            },
+            {
+              "date": "2026-03-27T00:00:00.000Z",
+              "value": 5.0991
+            },
+            {
+              "date": "2026-03-30T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-30T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-31T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-03-31T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-01T00:00:00.000Z",
+              "value": 5.0985
+            },
+            {
+              "date": "2026-04-01T00:00:00.000Z",
+              "value": 5.0985
+            },
+            {
+              "date": "2026-04-02T00:00:00.000Z",
+              "value": 5.0986
+            },
+            {
+              "date": "2026-04-02T00:00:00.000Z",
+              "value": 5.0986
+            },
+            {
+              "date": "2026-04-03T00:00:00.000Z",
+              "value": 5.0978
+            },
+            {
+              "date": "2026-04-03T00:00:00.000Z",
+              "value": 5.0978
+            },
+            {
+              "date": "2026-04-06T00:00:00.000Z",
+              "value": 5.0961
+            },
+            {
+              "date": "2026-04-06T00:00:00.000Z",
+              "value": 5.0961
+            },
+            {
+              "date": "2026-04-07T00:00:00.000Z",
+              "value": 5.0963
+            },
+            {
+              "date": "2026-04-07T00:00:00.000Z",
+              "value": 5.0963
+            },
+            {
+              "date": "2026-04-08T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-04-08T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-04-09T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-09T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-14T00:00:00.000Z",
+              "value": 5.092
+            },
+            {
+              "date": "2026-04-14T00:00:00.000Z",
+              "value": 5.092
+            },
+            {
+              "date": "2026-04-15T00:00:00.000Z",
+              "value": 5.0914
+            },
+            {
+              "date": "2026-04-15T00:00:00.000Z",
+              "value": 5.0914
+            },
+            {
+              "date": "2026-04-16T00:00:00.000Z",
+              "value": 5.0918
+            },
+            {
+              "date": "2026-04-16T00:00:00.000Z",
+              "value": 5.0918
+            },
+            {
+              "date": "2026-04-17T00:00:00.000Z",
+              "value": 5.0987
+            },
+            {
+              "date": "2026-04-17T00:00:00.000Z",
+              "value": 5.0987
+            },
+            {
+              "date": "2026-04-20T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-04-20T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-04-21T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-21T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-22T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-04-22T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-04-23T00:00:00.000Z",
+              "value": 5.0924
+            },
+            {
+              "date": "2026-04-23T00:00:00.000Z",
+              "value": 5.0924
+            },
+            {
+              "date": "2026-04-24T00:00:00.000Z",
+              "value": 5.0928
+            },
+            {
+              "date": "2026-04-24T00:00:00.000Z",
+              "value": 5.0928
+            },
+            {
+              "date": "2026-04-27T00:00:00.000Z",
+              "value": 5.0927
+            },
+            {
+              "date": "2026-04-27T00:00:00.000Z",
+              "value": 5.0927
+            },
+            {
+              "date": "2026-04-28T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-28T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-29T00:00:00.000Z",
+              "value": 5.1004
+            },
+            {
+              "date": "2026-04-29T00:00:00.000Z",
+              "value": 5.1004
+            },
+            {
+              "date": "2026-04-30T00:00:00.000Z",
+              "value": 5.1417
+            },
+            {
+              "date": "2026-04-30T00:00:00.000Z",
+              "value": 5.1417
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 2,
+        "type": "trend",
+        "title": "Producția industrială EU27_2020: -0.1% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "EU27_2020",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 99.7
+          },
+          "yearAgo": {
+            "date": "2025-02-01T00:00:00.000Z",
+            "value": 99.8
+          },
+          "yoy": -0.10020040080159752,
+          "chart": [
+            {
+              "date": "2023-03-01T00:00:00.000Z",
+              "value": 101.3
+            },
+            {
+              "date": "2023-04-01T00:00:00.000Z",
+              "value": 101.4
+            },
+            {
+              "date": "2023-05-01T00:00:00.000Z",
+              "value": 102.1
+            },
+            {
+              "date": "2023-06-01T00:00:00.000Z",
+              "value": 102.4
+            },
+            {
+              "date": "2023-07-01T00:00:00.000Z",
+              "value": 100
+            },
+            {
+              "date": "2023-08-01T00:00:00.000Z",
+              "value": 99.7
+            },
+            {
+              "date": "2023-09-01T00:00:00.000Z",
+              "value": 99.5
+            },
+            {
+              "date": "2023-10-01T00:00:00.000Z",
+              "value": 99.2
+            },
+            {
+              "date": "2023-11-01T00:00:00.000Z",
+              "value": 100.2
+            },
+            {
+              "date": "2023-12-01T00:00:00.000Z",
+              "value": 100
+            },
+            {
+              "date": "2024-01-01T00:00:00.000Z",
+              "value": 99.2
+            },
+            {
+              "date": "2024-02-01T00:00:00.000Z",
+              "value": 99.2
+            },
+            {
+              "date": "2024-03-01T00:00:00.000Z",
+              "value": 98.2
+            },
+            {
+              "date": "2024-04-01T00:00:00.000Z",
+              "value": 99.4
+            },
+            {
+              "date": "2024-05-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2024-06-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2024-07-01T00:00:00.000Z",
+              "value": 98.5
+            },
+            {
+              "date": "2024-08-01T00:00:00.000Z",
+              "value": 98.9
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 98.1
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 98.6
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 98.5
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 98.3
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 99.1
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 101
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 99.5
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 100.3
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 100.2
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 100.4
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 99.7
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 100.3
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 100.5
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 100.4
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 100.2
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 99.3
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 99.7
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 3,
+        "type": "trend",
+        "title": "Producția industrială CZ: +1.3% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "CZ",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 103.2
+          },
+          "yearAgo": {
+            "date": "2025-02-01T00:00:00.000Z",
+            "value": 101.9
+          },
+          "yoy": 1.2757605495583877,
+          "chart": [
+            {
+              "date": "2023-03-01T00:00:00.000Z",
+              "value": 102.9
+            },
+            {
+              "date": "2023-04-01T00:00:00.000Z",
+              "value": 100.5
+            },
+            {
+              "date": "2023-05-01T00:00:00.000Z",
+              "value": 101.3
+            },
+            {
+              "date": "2023-06-01T00:00:00.000Z",
+              "value": 102.3
+            },
+            {
+              "date": "2023-07-01T00:00:00.000Z",
+              "value": 99.6
+            },
+            {
+              "date": "2023-08-01T00:00:00.000Z",
+              "value": 100.1
+            },
+            {
+              "date": "2023-09-01T00:00:00.000Z",
+              "value": 98.3
+            },
+            {
+              "date": "2023-10-01T00:00:00.000Z",
+              "value": 101.4
+            },
+            {
+              "date": "2023-11-01T00:00:00.000Z",
+              "value": 100.1
+            },
+            {
+              "date": "2023-12-01T00:00:00.000Z",
+              "value": 102.7
+            },
+            {
+              "date": "2024-01-01T00:00:00.000Z",
+              "value": 100.3
+            },
+            {
+              "date": "2024-02-01T00:00:00.000Z",
+              "value": 99.9
+            },
+            {
+              "date": "2024-03-01T00:00:00.000Z",
+              "value": 100.4
+            },
+            {
+              "date": "2024-04-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2024-05-01T00:00:00.000Z",
+              "value": 98.9
+            },
+            {
+              "date": "2024-06-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2024-07-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2024-08-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 100.3
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 99.7
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 103
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 101.5
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 101.3
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 101.8
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 103.7
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 104.8
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 103.2
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 4,
+        "type": "trend",
+        "title": "Producția industrială HU: -1.4% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "HU",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 92.2
+          },
+          "yearAgo": {
+            "date": "2025-02-01T00:00:00.000Z",
+            "value": 93.5
+          },
+          "yoy": -1.390374331550799,
+          "chart": [
+            {
+              "date": "2023-03-01T00:00:00.000Z",
+              "value": 100.5
+            },
+            {
+              "date": "2023-04-01T00:00:00.000Z",
+              "value": 99.1
+            },
+            {
+              "date": "2023-05-01T00:00:00.000Z",
+              "value": 100.8
+            },
+            {
+              "date": "2023-06-01T00:00:00.000Z",
+              "value": 99.9
+            },
+            {
+              "date": "2023-07-01T00:00:00.000Z",
+              "value": 102.6
+            },
+            {
+              "date": "2023-08-01T00:00:00.000Z",
+              "value": 100.5
+            },
+            {
+              "date": "2023-09-01T00:00:00.000Z",
+              "value": 101.7
+            },
+            {
+              "date": "2023-10-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2023-11-01T00:00:00.000Z",
+              "value": 98
+            },
+            {
+              "date": "2023-12-01T00:00:00.000Z",
+              "value": 101.6
+            },
+            {
+              "date": "2024-01-01T00:00:00.000Z",
+              "value": 97.5
+            },
+            {
+              "date": "2024-02-01T00:00:00.000Z",
+              "value": 100.8
+            },
+            {
+              "date": "2024-03-01T00:00:00.000Z",
+              "value": 98.2
+            },
+            {
+              "date": "2024-04-01T00:00:00.000Z",
+              "value": 96.7
+            },
+            {
+              "date": "2024-05-01T00:00:00.000Z",
+              "value": 95.7
+            },
+            {
+              "date": "2024-06-01T00:00:00.000Z",
+              "value": 97
+            },
+            {
+              "date": "2024-07-01T00:00:00.000Z",
+              "value": 95.4
+            },
+            {
+              "date": "2024-08-01T00:00:00.000Z",
+              "value": 96.3
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 94.5
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 96.4
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 96.8
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 93.4
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 93.9
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 93.5
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 93.3
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 94.4
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 93.4
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 92.3
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 93.9
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 91.8
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 93.2
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 93.2
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 91.6
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 92.5
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 93.9
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 92.2
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 5,
+        "type": "trend",
+        "title": "Producția industrială PL: +5.9% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "PL",
+          "latest": {
+            "date": "2026-03-01T00:00:00.000Z",
+            "value": 118.4
+          },
+          "yearAgo": {
+            "date": "2025-03-01T00:00:00.000Z",
+            "value": 111.8
+          },
+          "yoy": 5.903398926654748,
+          "chart": [
+            {
+              "date": "2023-04-01T00:00:00.000Z",
+              "value": 106.9
+            },
+            {
+              "date": "2023-05-01T00:00:00.000Z",
+              "value": 109.1
+            },
+            {
+              "date": "2023-06-01T00:00:00.000Z",
+              "value": 109.5
+            },
+            {
+              "date": "2023-07-01T00:00:00.000Z",
+              "value": 108.3
+            },
+            {
+              "date": "2023-08-01T00:00:00.000Z",
+              "value": 109.6
+            },
+            {
+              "date": "2023-09-01T00:00:00.000Z",
+              "value": 109.9
+            },
+            {
+              "date": "2023-10-01T00:00:00.000Z",
+              "value": 109
+            },
+            {
+              "date": "2023-11-01T00:00:00.000Z",
+              "value": 110.2
+            },
+            {
+              "date": "2023-12-01T00:00:00.000Z",
+              "value": 110.4
+            },
+            {
+              "date": "2024-01-01T00:00:00.000Z",
+              "value": 110.4
+            },
+            {
+              "date": "2024-02-01T00:00:00.000Z",
+              "value": 110.4
+            },
+            {
+              "date": "2024-03-01T00:00:00.000Z",
+              "value": 107.7
+            },
+            {
+              "date": "2024-04-01T00:00:00.000Z",
+              "value": 111.1
+            },
+            {
+              "date": "2024-05-01T00:00:00.000Z",
+              "value": 109.3
+            },
+            {
+              "date": "2024-06-01T00:00:00.000Z",
+              "value": 111
+            },
+            {
+              "date": "2024-07-01T00:00:00.000Z",
+              "value": 109.7
+            },
+            {
+              "date": "2024-08-01T00:00:00.000Z",
+              "value": 109.6
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 108.4
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 111.4
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 111.8
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 108.7
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 112.6
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 111.5
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 111.8
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 112.5
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 111.9
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 111.2
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 112.9
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 112.5
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 114.5
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 114.8
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 111.6
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 115.3
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 112.1
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 112.3
+            },
+            {
+              "date": "2026-03-01T00:00:00.000Z",
+              "value": 118.4
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 6,
+        "type": "trend",
+        "title": "Producția industrială RO: -1.5% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "RO",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 94.2
+          },
+          "yearAgo": {
+            "date": "2025-02-01T00:00:00.000Z",
+            "value": 95.6
+          },
+          "yoy": -1.4644351464435057,
+          "chart": [
+            {
+              "date": "2023-03-01T00:00:00.000Z",
+              "value": 100
+            },
+            {
+              "date": "2023-04-01T00:00:00.000Z",
+              "value": 98.2
+            },
+            {
+              "date": "2023-05-01T00:00:00.000Z",
+              "value": 101.4
+            },
+            {
+              "date": "2023-06-01T00:00:00.000Z",
+              "value": 98.2
+            },
+            {
+              "date": "2023-07-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2023-08-01T00:00:00.000Z",
+              "value": 98.4
+            },
+            {
+              "date": "2023-09-01T00:00:00.000Z",
+              "value": 100.1
+            },
+            {
+              "date": "2023-10-01T00:00:00.000Z",
+              "value": 97.8
+            },
+            {
+              "date": "2023-11-01T00:00:00.000Z",
+              "value": 97.6
+            },
+            {
+              "date": "2023-12-01T00:00:00.000Z",
+              "value": 99.2
+            },
+            {
+              "date": "2024-01-01T00:00:00.000Z",
+              "value": 95.8
+            },
+            {
+              "date": "2024-02-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2024-03-01T00:00:00.000Z",
+              "value": 103
+            },
+            {
+              "date": "2024-04-01T00:00:00.000Z",
+              "value": 101.1
+            },
+            {
+              "date": "2024-05-01T00:00:00.000Z",
+              "value": 94.8
+            },
+            {
+              "date": "2024-06-01T00:00:00.000Z",
+              "value": 98.4
+            },
+            {
+              "date": "2024-07-01T00:00:00.000Z",
+              "value": 95.3
+            },
+            {
+              "date": "2024-08-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 96.9
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 95.8
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 98.6
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 97.8
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 97.5
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 96.7
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 97.2
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 96.6
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 97.4
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 94.5
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 94.2
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 7,
+        "type": "ranking",
+        "title": "Top țări după ponderea industriei în PIB",
+        "data": {
+          "metric": "manufacturing_share_gdp",
+          "ranking": [
+            {
+              "country": "CZ",
+              "value": 19.8858959477882,
+              "year": "2024"
+            },
+            {
+              "country": "DE",
+              "value": 18.0067082931968,
+              "year": "2024"
+            },
+            {
+              "country": "PL",
+              "value": 16.0769928111431,
+              "year": "2024"
+            },
+            {
+              "country": "HU",
+              "value": 15.8039940838573,
+              "year": "2024"
+            },
+            {
+              "country": "EU",
+              "value": 14.305328518762,
+              "year": "2024"
+            },
+            {
+              "country": "RO",
+              "value": 13.1961348200611,
+              "year": "2024"
+            }
+          ],
+          "romaniaPosition": 0
+        }
+      },
+      {
+        "insightId": 8,
+        "type": "cross_reference",
+        "title": "România: 3397 licitații publice TED în ultimele 30 zile (16.2% din regiune)",
+        "data": {
+          "ranking": [
+            {
+              "country": "POL",
+              "count": 9330
+            },
+            {
+              "country": "CZE",
+              "count": 5048
+            },
+            {
+              "country": "ROU",
+              "count": 3397
+            },
+            {
+              "country": "BGR",
+              "count": 2190
+            },
+            {
+              "country": "HUN",
+              "count": 993
+            }
+          ],
+          "total": 20958,
+          "romania": 3397,
+          "romaniaShare": 16.208607691573622
+        }
+      }
+    ],
+    "status": "published",
+    "publishedAt": "2026-05-04T07:15:14.000Z",
+    "createdAt": "2026-05-03T17:30:39.000Z"
+  }
+]
