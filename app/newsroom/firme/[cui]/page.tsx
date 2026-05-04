@@ -160,25 +160,106 @@ export default async function CompanyProfilePage({ params }: { params: Promise<{
               <h2 className="serif text-2xl tracking-tight text-ink-900 mb-2">Dosare comerciale portal.just.ro</h2>
               <p className="text-sm text-ink-500 mb-5">
                 Date colectate prin SOAP din <code className="mono text-xs">portalquery.just.ro/query.asmx</code> pentru numele de parte „{company.name.split(" ").slice(0, 3).join(" ")}".
-                Numărul total este capat la 1000 per query.
+                Numărul total este capat la 1000 per query (limita serviciului oficial).
               </p>
-              <div className="grid sm:grid-cols-2 gap-3 mb-5">
+
+              {/* CRITICAL DISCLAIMER */}
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r p-4 mb-6 text-sm text-amber-950 leading-relaxed">
+                <strong>De citit înainte:</strong> „Dosare comerciale" = orice dosar la care firma apare ca parte (Pârât, Reclamant, Creditor, Debitor, etc.). O firmă mare cu mulți clienți poate apărea ca <em>Creditor</em> în sute de dosare de recuperare creanțe contra clienților datornici — asta NU înseamnă că firma însăși e în dificultate financiară. Pentru o evaluare corectă, urmărește categoriile de mai jos.
+              </div>
+
+              {/* HEADLINE STATS */}
+              <div className="grid sm:grid-cols-2 gap-3 mb-6">
                 <Stat label="Total dosare găsite" value={`${company.court.dosareCount}${company.court.dosareCount >= 1000 ? "+" : ""}`} />
                 <Stat label="Ședințe în ultimele 12 luni" value={String(company.court.recentHearings)} />
               </div>
+
+              {/* CATEGORY BREAKDOWN */}
+              {company.court.categoryCounts && (() => {
+                const cats = company.court.categoryCounts;
+                const subj = cats.subject || 0;
+                const cred = cats.creditor || 0;
+                const other = cats.other || 0;
+                const total = subj + cred + other;
+                if (total === 0) return null;
+                return (
+                  <div className="mb-6">
+                    <h3 className="serif text-lg tracking-tight text-ink-900 mb-3">Categorii de dosare cu activitate recentă</h3>
+                    <div className="grid sm:grid-cols-3 gap-3">
+                      <CourtCategoryCard
+                        label="Probleme proprii"
+                        sublabel="Pârât, Reclamant, Apelant, etc."
+                        value={subj}
+                        total={total}
+                        color="amber"
+                      />
+                      <CourtCategoryCard
+                        label="Creditor"
+                        sublabel="Recuperare creanțe vs clienți"
+                        value={cred}
+                        total={total}
+                        color="blue"
+                      />
+                      <CourtCategoryCard
+                        label="Alte calități"
+                        sublabel="Lichidator, Garant, Intervenient, etc."
+                        value={other}
+                        total={total}
+                        color="gray"
+                      />
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* TOP ROLES */}
+              {company.court.roleCounts && Object.keys(company.court.roleCounts).length > 0 && (
+                <div className="mb-6 border border-ink-100 rounded-lg p-4 bg-white">
+                  <div className="text-xs uppercase tracking-widest text-ink-500 font-medium mb-3">Distribuția rolurilor în care apare firma (top 8)</div>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    {Object.entries(company.court.roleCounts).map(([role, count]) => (
+                      <span key={role} className="bg-ink-50 text-ink-700 px-2.5 py-1 rounded">
+                        <strong className="text-ink-900">{role}</strong> <span className="num text-ink-500">{count}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* RECENT CASES */}
               {company.court.recentCases.length > 0 && (
                 <div className="border border-ink-100 rounded-lg overflow-hidden bg-white">
-                  <div className="bg-ink-50 px-4 py-2 text-xs uppercase tracking-widest text-ink-500 font-medium">Dosare cu activitate recentă</div>
+                  <div className="bg-ink-50 px-4 py-2.5 text-xs uppercase tracking-widest text-ink-500 font-medium flex items-center justify-between">
+                    <span>Mostră de dosare cu activitate recentă</span>
+                    <span className="normal-case text-ink-400 lowercase">3 proprii · 2 creditor · 2 alte calități</span>
+                  </div>
                   <ul className="divide-y divide-ink-100">
-                    {company.court.recentCases.map((c, i) => (
-                      <li key={i} className="px-4 py-3 text-sm">
-                        <div className="flex items-baseline justify-between gap-3">
-                          <div className="mono text-xs text-ink-900 font-medium">{c.numar}</div>
-                          <div className="num text-xs text-ink-400">{c.lastHearing}</div>
-                        </div>
-                        {c.obiect && <div className="text-xs text-ink-600 mt-0.5">{c.obiect}</div>}
-                      </li>
-                    ))}
+                    {company.court.recentCases.map((c, i) => {
+                      const cat = c.category || "other";
+                      const catColor =
+                        cat === "subject"
+                          ? "bg-amber-100 text-amber-900"
+                          : cat === "creditor"
+                          ? "bg-uzx-blue/15 text-uzx-blue2"
+                          : "bg-ink-100 text-ink-700";
+                      const catLabel =
+                        cat === "subject" ? "PROPRIU" : cat === "creditor" ? "CREDITOR" : "ALTĂ CALITATE";
+                      return (
+                        <li key={i} className="px-4 py-3 text-sm">
+                          <div className="flex items-start justify-between gap-3 flex-wrap">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${catColor}`}>{catLabel}</span>
+                              <code className="mono text-xs text-ink-900 font-medium">{c.numar}</code>
+                              {c.calitateParte && c.calitateParte !== "—" && (
+                                <span className="text-xs text-ink-500">· rol: <strong className="text-ink-700">{c.calitateParte}</strong></span>
+                              )}
+                            </div>
+                            <div className="num text-xs text-ink-400">{c.lastHearing}</div>
+                          </div>
+                          {c.obiect && <div className="text-xs text-ink-600 mt-1.5">{c.obiect}</div>}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
