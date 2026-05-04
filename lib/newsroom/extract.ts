@@ -58,11 +58,14 @@ export function extractInsightView(i: Insight): InsightView {
       const ranking: Array<{ country: string; value: number }> = parsed.ranking || [];
       const ro = parsed.romania as { country: string; value: number; year: string } | undefined;
       const pos = parsed.romaniaPosition as number | undefined;
+      // Use unit from data if provided (e.g. "mil RON", "mld RON", "mil USD"),
+      // default to "%" only for legacy ranking insights (GDP shares).
+      const unit = parsed.unit ? ` ${parsed.unit}` : "%";
       return {
-        bigNumber: ro ? `${fmtNum(ro.value, { maximumFractionDigits: 1 })}%` : (ranking[0] ? `${fmtNum(ranking[0].value, { maximumFractionDigits: 1 })}%` : "—"),
+        bigNumber: ro ? `${fmtNum(ro.value, { maximumFractionDigits: 1 })}${unit}` : (ranking[0] ? `${fmtNum(ranking[0].value, { maximumFractionDigits: 1 })}${unit}` : "—"),
         bigNumberLabel: ro ? `România — locul ${pos || "?"} din ${ranking.length}` : (ranking[0] ? `Top: ${ranking[0].country}` : "ranking"),
         bullets: ranking.slice(0, 5).map((r, idx) =>
-          `${idx + 1}. ${r.country}: ${fmtNum(r.value, { maximumFractionDigits: 1 })}%${ro && r.country === ro.country ? "  ← România" : ""}`,
+          `${idx + 1}. ${r.country}: ${fmtNum(r.value, { maximumFractionDigits: 1 })}${unit}${ro && r.country === ro.country ? "  ← România" : ""}`,
         ),
         chartType: "bar",
         chartData: ranking.map((r) => ({ label: r.country, value: r.value })),
@@ -73,12 +76,13 @@ export function extractInsightView(i: Insight): InsightView {
       const total = parsed.total as number | undefined;
       const romania = parsed.romania as number | undefined;
       const share = parsed.romaniaShare as number | undefined;
+      const unit = parsed.unit ? ` ${parsed.unit}` : "";
       return {
-        bigNumber: romania != null ? fmtNum(romania, { maximumFractionDigits: 0 }) : (total != null ? fmtNum(total, { maximumFractionDigits: 0 }) : "—"),
+        bigNumber: romania != null ? `${fmtNum(romania, { maximumFractionDigits: 0 })}${unit}` : (total != null ? `${fmtNum(total, { maximumFractionDigits: 0 })}${unit}` : "—"),
         bigNumberLabel: share != null ? `${fmtNum(share, { maximumFractionDigits: 1 })}% din regiune` : "valoare cumulată",
         bullets: [
-          total != null ? `Total regional: ${fmtNum(total, { maximumFractionDigits: 0 })}` : "",
-          ...ranking.slice(0, 5).map((r, idx) => `${idx + 1}. ${r.country}: ${fmtNum((r.count ?? r.value ?? 0), { maximumFractionDigits: 0 })}`),
+          total != null ? `Total regional: ${fmtNum(total, { maximumFractionDigits: 0 })}${unit}` : "",
+          ...ranking.slice(0, 5).map((r, idx) => `${idx + 1}. ${r.country}: ${fmtNum((r.count ?? r.value ?? 0), { maximumFractionDigits: 0 })}${unit}`),
         ].filter(Boolean),
         chartType: "bar",
         chartData: ranking.map((r) => ({ label: r.country, value: r.count ?? r.value ?? 0 })),
