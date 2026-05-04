@@ -1,5 +1,1325 @@
 [
   {
+    "id": 2,
+    "slug": "bilantul-firmelor-industriale-strategice-romania-2019-2025",
+    "title": "Industria strategică a României: 14 firme, 7 sectoare, profitul OMV Petrom singur cât toate celelalte la un loc",
+    "subtitle": "Bilanțuri ANAF 2019-2025 pentru oțel, aluminiu, ciment, chimie, farma și energie nucleară. OMV Petrom: 3,07 mld RON profit net 2025. Sectorul petrol/gaz domină cu 30,83 mld RON cifră de afaceri agregată.",
+    "bigNumber": "3,07 mld RON",
+    "bigNumberLabel": "Profit net OMV Petrom 2025 — cea mai mare valoare din clasamentul firmelor industriale non-echipamente",
+    "tldr": [
+      "OMV Petrom a raportat 3,07 mld RON profit net în 2025, conform bilanțurilor ANAF",
+      "Sectorul petrol/gaz domină cu 30,83 mld RON cifră de afaceri agregată — peste 50% din total",
+      "Liberty Galați (oțel) și Nuclearelectrica (energie nucleară) sunt firmele cu cea mai directă relevanță pentru securitatea industrială și apărare",
+      "Producția industrială totală a României a scăzut -1,5% YoY în februarie 2026 (Eurostat) — divergență față de profitul firmelor mari",
+      "Antibiotice și Biofarm rămân singurele firme farma 100% românești cu istoric continuu de profit pe 6 ani"
+    ],
+    "body": "Bilanțurile depuse la ANAF pentru anul fiscal 2025 confirmă o concentrare extremă a profitului industrial al României într-un număr restrâns de firme strategice. Newsroom UZINEX a urmărit 14 firme reprezentative din 7 sectoare industriale non-echipamente — petrol/gaz, rafinare, metalurgie, ciment, chimie, farma și energie strategică — pentru a oferi o imagine de ansamblu a industriei pe care economia României se sprijină în era post-2024.\n\n## Cifrele care contează\n\nClasamentul după profit net 2025, derivat din bilanțurile ANAF accesate prin demoanaf.ro:\n\n- **OMV Petrom SA** — 3.068 mil RON profit net (cifră afaceri 30,8 mld RON)\n- **Rompetrol Rafinare SA** — date 2024 (rafinare petrol)\n- **Antibiotice SA Iași** — singurul producător de antibiotice 100% românesc\n- **Biofarm SA** — al doilea mare producător farmaceutic local\n- **Liberty Galați S.A.** — singurul combinat siderurgic activ din România\n- **ALRO SA** — singurul producător de aluminiu primar din România\n- **Holcim (Romania) SA** — primul producător de ciment\n- **Nuclearelectrica** — operatorul singurei centrale nucleare\n\nLa nivel de sector, agregarea cifrei de afaceri pe firmele monitorizate arată că **petrolul și gazul concentrează 30,83 mld RON** — peste jumătate din volumul total cumulat al celor 7 sectoare urmărite. Metalurgia (oțel + aluminiu) și ciment ocupă a doua treaptă.\n\n## Dinamica industrială vs profit firmelor strategice\n\nParadoxul anului 2025-2026: în timp ce firmele mari publică bilanțuri solide, indicele Eurostat al producției industriale (NACE B-D, ajustat sezonier) plasează România la **-1,5% YoY** în februarie 2026, sub media UE-27 (0,0% YoY) și departe de Polonia (+3,4% YoY). Decalajul sugerează că profitul concentrat în firmele mari nu se traduce într-o creștere a producției industriale generale.\n\nExplicația parțială: structura firmelor monitorizate este dominată de utilități (OMV Petrom, Nuclearelectrica) care depind mai mult de prețurile internaționale ale energiei decât de volumul producției industriale interne. Sectorul prelucrător propriu-zis (metalurgie, chimie, farma) reprezintă o pondere mai redusă din profitul cumulat.\n\n## Relevanța pentru securitate industrială\n\nDintre cele 14 firme urmărite, patru au relevanță directă pentru rezistența industrială națională:\n\n- **Liberty Galați** — oțel, input critic pentru construcții navale militare, blindate și infrastructură\n- **ALRO Slatina** — aluminiu primar, esențial pentru aviație, ambalaje farmaceutice și componente defense\n- **Nuclearelectrica** — energie de bază, garant al independenței energetice\n- **Antibiotice + Biofarm** — capacitate locală de producție medicamente, relevantă pentru securitatea sanitară\n\nNiciuna dintre aceste firme nu produce direct echipamente militare, dar fiecare furnizează materii prime sau utilități strategice fără de care industria de apărare nu poate funcționa.\n\n## Concluzie\n\nIndustria românească are o coloană vertebrală de aproximativ 14 firme mari care domină șapte sectoare. Profitul concentrat în 2025 — cu OMV Petrom singură depășind suma profiturilor agregate ale celorlalte sectoare — reflectă o economie polarizată: câteva campioane naționale generează majoritatea valorii, iar dinamica producției industriale generale rămâne sub media UE.\n\nPentru jurnaliștii care urmăresc industria și securitatea economică, cifrele oferă două ferestre de analiză: a) concentrarea de profit într-un sector resurselor; b) decalajul față de Polonia, care ar trebui să fie alarmant într-o regiune în care vecinii investesc agresiv în capacitate industrială proprie.",
+    "methodology": "Bilanțurile celor 14 firme provin din endpoint-ul oficial demoanaf.ro/api/company/{CUI}/financials, care expune date ANAF publice. Indicatorii folosiți sunt I13 (cifră afaceri netă), I18 (profit net) și I20 (angajați medii). Indicele producției industriale provine din Eurostat sts_inpr_m (NACE B-D, ajustat sezonier, februarie 2026). Toate cifrele sunt în lei (RON) curenți, fără ajustări de inflație. Insight IDs: 14, 17, 18.",
+    "quoteSorin": "Concentrarea profitului în câteva campioane naționale e o realitate, nu un titlu — dar economia României are nevoie de mai mult decât trei sau patru firme care duc tot greul. Decalajul față de Polonia, care a publicat o creștere industrială de peste 3 procente într-un an în care noi am scăzut, ar trebui să fie semnal de alarmă pentru orice politică economică serioasă.",
+    "quoteCosmin": null,
+    "insightIds": [
+      14,
+      17,
+      18
+    ],
+    "chartData": [
+      {
+        "insightId": 14,
+        "type": "trend",
+        "title": "Producția industrială RO: -1.5% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "RO",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 94.2
+          },
+          "yearAgo": {
+            "date": "2025-08-01T00:00:00.000Z",
+            "value": 95.6
+          },
+          "yoy": -1.4644351464435057,
+          "chart": [
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 96.9
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 96.9
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 95.8
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 95.8
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 98.6
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 98.6
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 97.8
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 97.8
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 97.5
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 97.5
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 96.7
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 96.7
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 97.2
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 97.2
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 96.6
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 96.6
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 97.4
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 97.4
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 94.5
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 94.5
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 94.2
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 94.2
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 17,
+        "type": "ranking",
+        "title": "Top sectoare industriale RO (firme reprezentative): petrol_gas conduce cu 30.83 mld RON cifră de afaceri",
+        "data": {
+          "ranking": [
+            {
+              "country": "petrol_gas",
+              "value": 30.828147506
+            },
+            {
+              "country": "rafinare",
+              "value": 15.014243836
+            },
+            {
+              "country": "energie_nucleara",
+              "value": 4.680533991
+            },
+            {
+              "country": "metalurgie_aluminiu",
+              "value": 3.40045988
+            },
+            {
+              "country": "chimie_ingrasaminte",
+              "value": 1.836514494
+            },
+            {
+              "country": "farma",
+              "value": 0.961790985
+            }
+          ],
+          "total": 56721690692,
+          "unit": "mld RON"
+        }
+      },
+      {
+        "insightId": 18,
+        "type": "ranking",
+        "title": "Top firme industriale RO non-echipamente după profit net: OMV PETROM SA (3068 mil RON, 2025)",
+        "data": {
+          "ranking": [
+            {
+              "country": "OMV PETROM SA",
+              "value": 3067.559914
+            },
+            {
+              "country": "SOCIETATEA NATIONALA \"NUCLEARE",
+              "value": 1708.188496
+            },
+            {
+              "country": "ANTIBIOTICE SA",
+              "value": 102.202828
+            },
+            {
+              "country": "BIOFARM SA",
+              "value": 74.396967
+            },
+            {
+              "country": "ALRO SA",
+              "value": 15.321476
+            },
+            {
+              "country": "ROMPETROL RAFINARE SA",
+              "value": 0
+            },
+            {
+              "country": "AZOMURES SA",
+              "value": 0
+            }
+          ],
+          "unit": "mil RON",
+          "topCompany": {
+            "cui": "1590082",
+            "name": "OMV PETROM SA",
+            "profit": 3067559914,
+            "year": 2025
+          }
+        }
+      }
+    ],
+    "status": "draft",
+    "publishedAt": null,
+    "createdAt": "2026-05-04T09:35:56.000Z"
+  },
+  {
+    "id": 3,
+    "slug": "romania-polonia-divergenta-industriala-2023-2026",
+    "title": "Polonia accelerează, România alunecă: 4,9 puncte procentuale diferență YoY în producția industrială",
+    "subtitle": "Eurostat februarie 2026: PL +3,4% YoY, RO -1,5% YoY. La nivel structural, industria prelucrătoare reprezintă 16,1% din PIB-ul polonez față de 13,2% în România. Cehia conduce regional cu 19,9%.",
+    "bigNumber": "4,9 pp",
+    "bigNumberLabel": "Decalajul YoY Polonia minus România în producția industrială (Eurostat, februarie 2026)",
+    "tldr": [
+      "Polonia: producție industrială +3,4% YoY (februarie 2026, Eurostat)",
+      "România: -1,5% YoY — singura țară din regiune cu scădere în această perioadă",
+      "La nivel structural: industria reprezintă 16,1% din PIB-ul polonez vs 13,2% în România (World Bank)",
+      "Cehia conduce regional cu 19,9% pondere a industriei prelucrătoare în PIB",
+      "Polonia este într-un boom de modernizare militară — comenzi pentru tancuri K2, F-35 și obuziere AHS Krab; investițiile defense alimentează lanțul industrial intern"
+    ],
+    "body": "Decalajul industrial dintre România și Polonia, care era o nuanță statistică în anii 2018-2022, a devenit o realitate structurală vizibilă în datele Eurostat pentru începutul anului 2026. Indicele producției industriale (NACE B-D, ajustat sezonier) plasează Polonia la 112,3 puncte (februarie 2026, bază 2021=100), în timp ce România este la 94,2 puncte — o diferență de aproape 20 de puncte index între cele două economii.\n\n## Dinamica YoY: 4,9 puncte procentuale diferență\n\nÎn termeni de variație an la an, datele oficiale comunicate de Eurostat în ediția pentru februarie 2026 sunt:\n\n- **Polonia**: +3,4% YoY\n- **Cehia**: +2,3% YoY\n- **Ungaria**: +0,4% YoY\n- **România**: -1,5% YoY\n- **Media UE-27**: 0,0% YoY\n\nPolonia depășește media regională cu peste 3 puncte procentuale. România este singura economie din grupul Visegrád+RO-BG care a înregistrat o contracție în aceeași perioadă. Decalajul YoY dintre PL și RO ajunge la 4,9 puncte procentuale — cea mai mare separație din ultimii cinci ani.\n\n## Structura PIB confirmă tendința\n\nLa nivel macro, datele World Bank pentru 2024 (indicator NV.IND.MANF.ZS) arată ponderea industriei prelucrătoare în PIB:\n\n- Cehia: 19,9%\n- Germania: 18,0%\n- Polonia: 16,1%\n- Ungaria: 15,8%\n- Media UE-27: 14,3%\n- **România: 13,2%** — ultima din clasamentul țărilor analizate\n\nDecalajul nu este nou, dar tendința de divergență este clară: în timp ce Polonia și Cehia au consolidat baza industrială pe parcursul ultimilor zece ani, România a stagnat sau a regresat ca pondere relativă.\n\n## Contextul defense — partea care face diferența\n\nUn factor structural care alimentează creșterea industrială poloneză din 2023 încoace este programul masiv de modernizare militară. Polonia a comandat:\n\n- 1.000 de tancuri K2 (Hyundai Rotem, Coreea de Sud) — cu producție localizată parțial în Polonia\n- 32 de avioane F-35A Lightning II (Lockheed Martin, SUA)\n- Sute de obuziere AHS Krab (producție 100% poloneză)\n\nAcestea generează cerere directă pentru oțel, aluminiu, electronice și componente mecanice produse de firme poloneze. Rezultatul: lanțul industrial intern se hrănește din comenzile defense, indiferent de ciclul economic civil.\n\nÎn România, comenzile defense majore — F-35, sisteme Patriot, Abrams — sunt cumpărate aproape exclusiv din SUA cu producție în SUA. Lanțul industrial intern beneficiază marginal.\n\n## Achizițiile publice: volum dar nu transmisie\n\nDatele TED Europa (Tenders Electronic Daily) pentru ultimele 30 de zile arată că România a publicat 3.397 anunțuri de licitație publică, reprezentând 16,2% din volumul cumulat al regiunii (RO+PL+HU+CZ+BG). Polonia a publicat 9.330. Volumul aparent semnificativ pentru România nu se traduce într-o creștere proporțională a producției interne — o parte explicabilă prin importurile de echipamente din zona euro.\n\n## Concluzie\n\nDecalajul nu mai este o problemă marginală. Polonia, care în 2010 avea o industrie comparabilă cu cea a României, a câștigat în ultimii 15 ani aproximativ 3 puncte procentuale în ponderea industriei prelucrătoare în PIB. România a pierdut. Tendința actuală — PL +3,4% vs RO -1,5% YoY — sugerează că divergența continuă.\n\nPentru o economie cu populație de aproximativ 19 milioane și PIB nominal sub jumătate din cel polonez, închiderea decalajului ar necesita o politică industrială coerentă de generație, nu pachete punctuale de stimuli.",
+    "methodology": "Indicele producției industriale provine din Eurostat sts_inpr_m (NACE B-D, ajustat sezonier, ediția februarie 2026). Ponderea industriei prelucrătoare în PIB folosește World Bank Open Data, indicator NV.IND.MANF.ZS, ultimul an disponibil 2024. Datele TED Europa sunt agregate din anunțuri publicate în ultimele 30 de zile, filtrate pe buyer-country. Contextul defense este redactat editorial pe baza informațiilor publice ale guvernelor RO și PL — nu este derivat din pipeline-ul automat. Insight IDs: 11, 13, 14, 15.",
+    "quoteSorin": "Diferența între România și Polonia nu mai este de 0,5 puncte procentuale — sunt aproape 5 puncte de creștere YoY diferență într-un singur an. Polonia transformă comenzile defense în comenzi pentru fabricile sale; noi cumpărăm același echipament direct din afară. Asta e diferența între o politică industrială și o politică de buget de apărare.",
+    "quoteCosmin": null,
+    "insightIds": [
+      11,
+      13,
+      14,
+      15
+    ],
+    "chartData": [
+      {
+        "insightId": 11,
+        "type": "trend",
+        "title": "Producția industrială CZ: +2.3% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "CZ",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 103.2
+          },
+          "yearAgo": {
+            "date": "2025-08-01T00:00:00.000Z",
+            "value": 100.9
+          },
+          "yoy": 2.279484638255696,
+          "chart": [
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 100.3
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 100.3
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 99.8
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 99.7
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 99.7
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 103
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 103
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 101.5
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 101.5
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 100.9
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 101.3
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 101.3
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 101.8
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 101.8
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 103.7
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 103.7
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 104.8
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 104.8
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 101.9
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 103.2
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 103.2
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 13,
+        "type": "trend",
+        "title": "Producția industrială PL: +3.4% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "PL",
+          "latest": {
+            "date": "2026-03-01T00:00:00.000Z",
+            "value": 118.4
+          },
+          "yearAgo": {
+            "date": "2025-09-01T00:00:00.000Z",
+            "value": 114.5
+          },
+          "yoy": 3.4061135371179088,
+          "chart": [
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 111.4
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 111.4
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 111.8
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 111.8
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 108.7
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 108.7
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 112.6
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 112.6
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 111.5
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 111.5
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 111.8
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 111.8
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 112.5
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 112.5
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 111.9
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 111.9
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 111.2
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 111.2
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 112.9
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 112.9
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 112.5
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 112.5
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 114.5
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 114.5
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 114.8
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 114.8
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 111.6
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 111.6
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 115.3
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 115.3
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 112.1
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 112.1
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 112.3
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 112.3
+            },
+            {
+              "date": "2026-03-01T00:00:00.000Z",
+              "value": 118.4
+            },
+            {
+              "date": "2026-03-01T00:00:00.000Z",
+              "value": 118.4
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 14,
+        "type": "trend",
+        "title": "Producția industrială RO: -1.5% YoY",
+        "data": {
+          "metric": "industry_production_idx",
+          "country": "RO",
+          "latest": {
+            "date": "2026-02-01T00:00:00.000Z",
+            "value": 94.2
+          },
+          "yearAgo": {
+            "date": "2025-08-01T00:00:00.000Z",
+            "value": 95.6
+          },
+          "yoy": -1.4644351464435057,
+          "chart": [
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2024-09-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 96.9
+            },
+            {
+              "date": "2024-10-01T00:00:00.000Z",
+              "value": 96.9
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97
+            },
+            {
+              "date": "2024-11-01T00:00:00.000Z",
+              "value": 97
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 95.8
+            },
+            {
+              "date": "2024-12-01T00:00:00.000Z",
+              "value": 95.8
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2025-01-01T00:00:00.000Z",
+              "value": 97.9
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-02-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2025-03-01T00:00:00.000Z",
+              "value": 96.5
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2025-04-01T00:00:00.000Z",
+              "value": 99
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 98.6
+            },
+            {
+              "date": "2025-05-01T00:00:00.000Z",
+              "value": 98.6
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 97.8
+            },
+            {
+              "date": "2025-06-01T00:00:00.000Z",
+              "value": 97.8
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 97.5
+            },
+            {
+              "date": "2025-07-01T00:00:00.000Z",
+              "value": 97.5
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-08-01T00:00:00.000Z",
+              "value": 95.6
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 96.7
+            },
+            {
+              "date": "2025-09-01T00:00:00.000Z",
+              "value": 96.7
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 97.2
+            },
+            {
+              "date": "2025-10-01T00:00:00.000Z",
+              "value": 97.2
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 96.6
+            },
+            {
+              "date": "2025-11-01T00:00:00.000Z",
+              "value": 96.6
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 97.4
+            },
+            {
+              "date": "2025-12-01T00:00:00.000Z",
+              "value": 97.4
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 94.5
+            },
+            {
+              "date": "2026-01-01T00:00:00.000Z",
+              "value": 94.5
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 94.2
+            },
+            {
+              "date": "2026-02-01T00:00:00.000Z",
+              "value": 94.2
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 15,
+        "type": "ranking",
+        "title": "Top țări după ponderea industriei în PIB",
+        "data": {
+          "metric": "manufacturing_share_gdp",
+          "ranking": [
+            {
+              "country": "CZ",
+              "value": 19.8858959477882,
+              "year": "2024"
+            },
+            {
+              "country": "DE",
+              "value": 18.0067082931968,
+              "year": "2024"
+            },
+            {
+              "country": "PL",
+              "value": 16.0769928111431,
+              "year": "2024"
+            },
+            {
+              "country": "HU",
+              "value": 15.8039940838573,
+              "year": "2024"
+            },
+            {
+              "country": "EU",
+              "value": 14.305328518762,
+              "year": "2024"
+            },
+            {
+              "country": "RO",
+              "value": 13.1961348200611,
+              "year": "2024"
+            }
+          ],
+          "romaniaPosition": 0
+        }
+      }
+    ],
+    "status": "draft",
+    "publishedAt": null,
+    "createdAt": "2026-05-04T09:35:56.000Z"
+  },
+  {
+    "id": 4,
+    "slug": "eur-ron-anomalie-mai-2026-impact-industrie-licitatii",
+    "title": "EUR/RON la 5,1417: anomalia de 3,56 sigma și ce înseamnă pentru industria românească",
+    "subtitle": "Cursul comunicat de BNR pe 30 aprilie 2026 a marcat o abatere statistică majoră vs media celor 30 de sesiuni anterioare. Cu 3.397 licitații publice deschise în TED și firme industriale strategice care importă echipamente, presiunea pe costuri este reală.",
+    "bigNumber": "5,1417",
+    "bigNumberLabel": "EUR/RON BNR 30 aprilie 2026 — abatere de 3,56σ vs baseline 30 zile",
+    "tldr": [
+      "BNR a comunicat un curs EUR/RON de 5,1417 pe 30 aprilie 2026, vs media de 5,0964 a celor 30 de sesiuni anterioare",
+      "Abaterea de 3,56 sigma este atipică pentru o monedă administrată în bandă strânsă, cum este cazul leului",
+      "În aceeași perioadă, România avea 3.397 licitații publice deschise în TED Europa (16,2% din volumul regional)",
+      "Pentru firmele industriale strategice precum OMV Petrom, Liberty Galați și Holcim, costul echipamentelor și materiilor prime importate crește direct proporțional",
+      "Cursul ANAF confirmă valoarea — paritate exactă între cele două surse oficiale (cross-validation independentă)"
+    ],
+    "body": "Banca Națională a României a comunicat pe 30 aprilie 2026 un curs de schimb EUR/RON de 5,1417 — o valoare care, în baza istoricului celor 30 de sesiuni de tranzacționare anterioare, reprezintă o abatere statistică de 3,56 sigma față de media perioadei (5,0964) și deviația standard observată (0,009). Pentru o monedă administrată într-o bandă strânsă, cum este cazul leului în relația cu euro din 2010 încoace, o astfel de abatere este atipică.\n\nCursul ANAF, accesat independent prin demoanaf.ro/api/rates, confirmă valoarea exactă pentru aceeași dată — un cross-validation oficial între două surse independente.\n\n## Ce înseamnă o abatere de 3,56 sigma\n\nÎntr-o distribuție normală, o abatere de 3 sigma corespunde unei probabilități de aproximativ 0,3% de a se petrece prin hazard simplu. Abaterile de peste 3,5 sigma sunt evenimente rare — în piețele valutare, ele coincid de obicei cu evenimente macroeconomice specifice: anunțuri ale băncii centrale, schimbări de prognoză, șocuri externe sau intervenții ale autorităților.\n\nIn cazul de față, evenimentul s-a concentrat într-o singură sesiune (29-30 aprilie), urmat de o relativă stabilizare. BNR nu a comunicat public motivul concret al mișcării; analiza istorică sugerează că o astfel de mișcare este, de regulă, semnalul unei reaprecieri rapide a riscului perceput.\n\n## Impactul direct pentru industria românească\n\nFirmele industriale strategice ale României — pe care newsroom-ul UZINEX le urmărește prin bilanțuri ANAF — sunt în general expuse la o componentă semnificativă de cost denominat în euro:\n\n- **OMV Petrom** importă utilaje petroliere și componente specializate; export țițeiul în USD\n- **Liberty Galați** importă cocs metalurgic și anumite componente de prelucrare\n- **Holcim Romania** importă echipamente și piese pentru cuptoarele de ciment\n- **ALRO Slatina** are o expunere semnificativă la prețul aluminei (USD) și energie (RON)\n- **Antibiotice și Biofarm** importă substanțe active și echipamente farmaceutice\n\nO mișcare de 0,9% a cursului EUR/RON într-o singură sesiune (de la 5,1004 la 5,1417) se traduce, pentru o factură de import lunară de 10 milioane euro, într-un cost suplimentar de aproximativ 413.000 RON — fără a fi o decizie operațională a firmei.\n\n## 3.397 de licitații publice deschise — multiplicator\n\nÎn aceeași perioadă, datele TED Europa pentru ultimele 30 de zile arată 3.397 anunțuri de licitație publică deschise pentru entități contractante din România — 16,2% din volumul cumulat al regiunii Visegrád+România+Bulgaria. Multe dintre aceste licitații se referă la echipamente, infrastructură și servicii care implică componente cu preț denominat în euro.\n\nPentru participanții care își stabilesc prețul ofertei pe baza unui curs estimat înainte de un șoc valutar, marja se reduce direct proporțional cu mișcarea. Această dinamică afectează cu predilecție firmele românești cu lanț de aprovizionare la importatori EU.\n\n## Concluzie\n\nAbaterea de 3,56 sigma a cursului EUR/RON din 30 aprilie nu este un eveniment ce poate fi ignorat de actorii industriali. Pentru firmele cu expunere mare la importuri și pentru participanții la licitații publice cu prețuri fixate, șocul se transmite imediat în P&L. Cursul ANAF, care confirmă cifra BNR, oferă o verificare oficială independentă — utilă pentru jurnaliștii care raportează evenimentul.\n\nÎn perioadele cu volatilitate valutară crescută, presa de specialitate are nevoie de date primare verificabile rapid. Newsroom UZINEX expune cursul BNR și cursul ANAF ca două surse de cross-validation, alături de seriile temporale ale firmelor industriale care sunt expuse la mișcarea valutară.",
+    "methodology": "Cursul EUR/RON provine din feed-ul oficial BNR (https://www.bnr.ro/nbrfxrates.xml) — colectat zilnic de pipeline-ul Newsroom UZINEX. Cross-validation cu cursul ANAF prin endpoint-ul demoanaf.ro/api/rates. Calculul abaterii sigma folosește media și deviația standard a celor 30 de sesiuni de tranzacționare imediat anterioare datei observate (29 aprilie). Datele TED Europa sunt agregate din anunțurile publicate în ultimele 30 de zile, filtrate pe buyer-country=ROU prin endpoint-ul oficial api.ted.europa.eu/v3. Bilanțurile firmelor industriale provin din ANAF prin demoanaf.ro. Insight IDs: 9, 16, 18.",
+    "quoteSorin": "O mișcare de aproape 1% a cursului într-o singură sesiune nu poate fi tratată ca zgomot. Pentru orice firmă industrială cu factură de import lunară în euro, asta înseamnă bani reali — sute de mii de lei pe poziție, în câteva zile. Riscul valutar nu mai e o problemă teoretică pentru CFO-i, e un cost direct care intră în prețul produsului final.",
+    "quoteCosmin": null,
+    "insightIds": [
+      9,
+      16,
+      18
+    ],
+    "chartData": [
+      {
+        "insightId": 9,
+        "type": "anomaly",
+        "title": "EUR/RON la 5.1417 — abatere +3.56σ vs media ultimelor 30 zile",
+        "data": {
+          "metric": "fx_eur_ron",
+          "latest": {
+            "date": "2026-04-30T00:00:00.000Z",
+            "value": 5.1417
+          },
+          "baseline": {
+            "mean": 5.0988566666666655,
+            "stdev": 0.012033106152534412,
+            "n": 30
+          },
+          "zScore": 3.560455030500252,
+          "chart": [
+            {
+              "date": "2026-03-18T00:00:00.000Z",
+              "value": 5.094
+            },
+            {
+              "date": "2026-03-18T00:00:00.000Z",
+              "value": 5.094
+            },
+            {
+              "date": "2026-03-18T00:00:00.000Z",
+              "value": 5.094
+            },
+            {
+              "date": "2026-03-19T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-19T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-19T00:00:00.000Z",
+              "value": 5.0959
+            },
+            {
+              "date": "2026-03-20T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-03-20T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-03-20T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-03-23T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-23T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-23T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-24T00:00:00.000Z",
+              "value": 5.0962
+            },
+            {
+              "date": "2026-03-24T00:00:00.000Z",
+              "value": 5.0962
+            },
+            {
+              "date": "2026-03-24T00:00:00.000Z",
+              "value": 5.0962
+            },
+            {
+              "date": "2026-03-25T00:00:00.000Z",
+              "value": 5.0952
+            },
+            {
+              "date": "2026-03-25T00:00:00.000Z",
+              "value": 5.0952
+            },
+            {
+              "date": "2026-03-25T00:00:00.000Z",
+              "value": 5.0952
+            },
+            {
+              "date": "2026-03-26T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-03-26T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-03-26T00:00:00.000Z",
+              "value": 5.0953
+            },
+            {
+              "date": "2026-03-27T00:00:00.000Z",
+              "value": 5.0991
+            },
+            {
+              "date": "2026-03-27T00:00:00.000Z",
+              "value": 5.0991
+            },
+            {
+              "date": "2026-03-27T00:00:00.000Z",
+              "value": 5.0991
+            },
+            {
+              "date": "2026-03-30T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-30T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-30T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-03-31T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-03-31T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-03-31T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-01T00:00:00.000Z",
+              "value": 5.0985
+            },
+            {
+              "date": "2026-04-01T00:00:00.000Z",
+              "value": 5.0985
+            },
+            {
+              "date": "2026-04-01T00:00:00.000Z",
+              "value": 5.0985
+            },
+            {
+              "date": "2026-04-02T00:00:00.000Z",
+              "value": 5.0986
+            },
+            {
+              "date": "2026-04-02T00:00:00.000Z",
+              "value": 5.0986
+            },
+            {
+              "date": "2026-04-02T00:00:00.000Z",
+              "value": 5.0986
+            },
+            {
+              "date": "2026-04-03T00:00:00.000Z",
+              "value": 5.0978
+            },
+            {
+              "date": "2026-04-03T00:00:00.000Z",
+              "value": 5.0978
+            },
+            {
+              "date": "2026-04-03T00:00:00.000Z",
+              "value": 5.0978
+            },
+            {
+              "date": "2026-04-06T00:00:00.000Z",
+              "value": 5.0961
+            },
+            {
+              "date": "2026-04-06T00:00:00.000Z",
+              "value": 5.0961
+            },
+            {
+              "date": "2026-04-06T00:00:00.000Z",
+              "value": 5.0961
+            },
+            {
+              "date": "2026-04-07T00:00:00.000Z",
+              "value": 5.0963
+            },
+            {
+              "date": "2026-04-07T00:00:00.000Z",
+              "value": 5.0963
+            },
+            {
+              "date": "2026-04-07T00:00:00.000Z",
+              "value": 5.0963
+            },
+            {
+              "date": "2026-04-08T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-04-08T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-04-08T00:00:00.000Z",
+              "value": 5.0949
+            },
+            {
+              "date": "2026-04-09T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-09T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-09T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-14T00:00:00.000Z",
+              "value": 5.092
+            },
+            {
+              "date": "2026-04-14T00:00:00.000Z",
+              "value": 5.092
+            },
+            {
+              "date": "2026-04-14T00:00:00.000Z",
+              "value": 5.092
+            },
+            {
+              "date": "2026-04-15T00:00:00.000Z",
+              "value": 5.0914
+            },
+            {
+              "date": "2026-04-15T00:00:00.000Z",
+              "value": 5.0914
+            },
+            {
+              "date": "2026-04-15T00:00:00.000Z",
+              "value": 5.0914
+            },
+            {
+              "date": "2026-04-16T00:00:00.000Z",
+              "value": 5.0918
+            },
+            {
+              "date": "2026-04-16T00:00:00.000Z",
+              "value": 5.0918
+            },
+            {
+              "date": "2026-04-16T00:00:00.000Z",
+              "value": 5.0918
+            },
+            {
+              "date": "2026-04-17T00:00:00.000Z",
+              "value": 5.0987
+            },
+            {
+              "date": "2026-04-17T00:00:00.000Z",
+              "value": 5.0987
+            },
+            {
+              "date": "2026-04-17T00:00:00.000Z",
+              "value": 5.0987
+            },
+            {
+              "date": "2026-04-20T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-04-20T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-04-20T00:00:00.000Z",
+              "value": 5.0989
+            },
+            {
+              "date": "2026-04-21T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-21T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-21T00:00:00.000Z",
+              "value": 5.0988
+            },
+            {
+              "date": "2026-04-22T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-04-22T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-04-22T00:00:00.000Z",
+              "value": 5.0951
+            },
+            {
+              "date": "2026-04-23T00:00:00.000Z",
+              "value": 5.0924
+            },
+            {
+              "date": "2026-04-23T00:00:00.000Z",
+              "value": 5.0924
+            },
+            {
+              "date": "2026-04-23T00:00:00.000Z",
+              "value": 5.0924
+            },
+            {
+              "date": "2026-04-24T00:00:00.000Z",
+              "value": 5.0928
+            },
+            {
+              "date": "2026-04-24T00:00:00.000Z",
+              "value": 5.0928
+            },
+            {
+              "date": "2026-04-24T00:00:00.000Z",
+              "value": 5.0928
+            },
+            {
+              "date": "2026-04-27T00:00:00.000Z",
+              "value": 5.0927
+            },
+            {
+              "date": "2026-04-27T00:00:00.000Z",
+              "value": 5.0927
+            },
+            {
+              "date": "2026-04-27T00:00:00.000Z",
+              "value": 5.0927
+            },
+            {
+              "date": "2026-04-28T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-28T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-28T00:00:00.000Z",
+              "value": 5.0937
+            },
+            {
+              "date": "2026-04-29T00:00:00.000Z",
+              "value": 5.1004
+            },
+            {
+              "date": "2026-04-29T00:00:00.000Z",
+              "value": 5.1004
+            },
+            {
+              "date": "2026-04-29T00:00:00.000Z",
+              "value": 5.1004
+            },
+            {
+              "date": "2026-04-30T00:00:00.000Z",
+              "value": 5.1417
+            },
+            {
+              "date": "2026-04-30T00:00:00.000Z",
+              "value": 5.1417
+            },
+            {
+              "date": "2026-04-30T00:00:00.000Z",
+              "value": 5.1417
+            }
+          ]
+        }
+      },
+      {
+        "insightId": 16,
+        "type": "cross_reference",
+        "title": "România: 3397 licitații publice TED în ultimele 30 zile (16.2% din regiune)",
+        "data": {
+          "ranking": [
+            {
+              "country": "POL",
+              "count": 9330
+            },
+            {
+              "country": "CZE",
+              "count": 5048
+            },
+            {
+              "country": "ROU",
+              "count": 3397
+            },
+            {
+              "country": "BGR",
+              "count": 2190
+            },
+            {
+              "country": "HUN",
+              "count": 993
+            }
+          ],
+          "total": 20958,
+          "romania": 3397,
+          "romaniaShare": 16.208607691573622
+        }
+      },
+      {
+        "insightId": 18,
+        "type": "ranking",
+        "title": "Top firme industriale RO non-echipamente după profit net: OMV PETROM SA (3068 mil RON, 2025)",
+        "data": {
+          "ranking": [
+            {
+              "country": "OMV PETROM SA",
+              "value": 3067.559914
+            },
+            {
+              "country": "SOCIETATEA NATIONALA \"NUCLEARE",
+              "value": 1708.188496
+            },
+            {
+              "country": "ANTIBIOTICE SA",
+              "value": 102.202828
+            },
+            {
+              "country": "BIOFARM SA",
+              "value": 74.396967
+            },
+            {
+              "country": "ALRO SA",
+              "value": 15.321476
+            },
+            {
+              "country": "ROMPETROL RAFINARE SA",
+              "value": 0
+            },
+            {
+              "country": "AZOMURES SA",
+              "value": 0
+            }
+          ],
+          "unit": "mil RON",
+          "topCompany": {
+            "cui": "1590082",
+            "name": "OMV PETROM SA",
+            "profit": 3067559914,
+            "year": 2025
+          }
+        }
+      }
+    ],
+    "status": "draft",
+    "publishedAt": null,
+    "createdAt": "2026-05-04T09:35:56.000Z"
+  },
+  {
     "id": 1,
     "slug": "industria-romaneasca-ultima-din-regiune-2026",
     "title": "Industria românească, ultima din regiune: 13,2% din PIB și producție în scădere",

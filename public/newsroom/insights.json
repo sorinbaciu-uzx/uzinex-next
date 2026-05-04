@@ -384,7 +384,7 @@
       ]
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 4
   },
   {
     "id": 1,
@@ -822,7 +822,7 @@
       }
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 4
   },
   {
     "id": 17,
@@ -864,7 +864,7 @@
       "unit": "mld RON"
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 2
   },
   {
     "id": 15,
@@ -912,7 +912,7 @@
       "romaniaPosition": 0
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 3
   },
   {
     "id": 7,
@@ -999,7 +999,7 @@
       "romaniaShare": 16.208607691573622
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 4
   },
   {
     "id": 8,
@@ -1380,7 +1380,7 @@
       ]
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 3
   },
   {
     "id": 11,
@@ -1551,7 +1551,7 @@
       ]
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 3
   },
   {
     "id": 14,
@@ -1722,7 +1722,7 @@
       ]
     },
     "createdAt": "2026-05-04T09:28:54.000Z",
-    "usedInStoryId": null
+    "usedInStoryId": 3
   },
   {
     "id": 6,
