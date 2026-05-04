@@ -275,7 +275,7 @@ export function OfertaClient() {
                       <div className="col-span-7 flex items-center gap-3 min-w-0">
                         <div className="w-16 h-16 shrink-0 border border-ink-300 flex items-center justify-center">
                           <Image
-                            src="/products/plastic-crusher.webp"
+                            src="/images/produse/plastic-crusher.webp"
                             alt={it.name}
                             width={90}
                             height={90}
