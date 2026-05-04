@@ -233,31 +233,70 @@
       "recentHearings": 1502,
       "recentCases": [
         {
-          "numar": "7206/40/2010",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni termen de control",
-          "lastHearing": "2026-10-11"
+          "numar": "3337/317/2021",
+          "obiect": "pretenţii obliga?ie de a face",
+          "lastHearing": "2026-11-10",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "2980/30/2012",
+          "numar": "3371/317/2021",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-11-10",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "10319/280/2021",
+          "obiect": "revendicare imobiliară + RECTIFICARE C.F.",
+          "lastHearing": "2026-10-27",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "23/1285/2022",
+          "obiect": "deschiderea procedurii la cererea creditorului",
+          "lastHearing": "2026-11-25",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "7534/30/2014",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-11-18",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "7807/3/2009",
           "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-04"
+          "lastHearing": "2026-10-06",
+          "calitateParte": "—",
+          "category": "other"
         },
         {
-          "numar": "513/87/2012",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-09-13"
-        },
-        {
-          "numar": "1042/89/2011",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată continuare procedură",
-          "lastHearing": "2026-05-06"
-        },
-        {
-          "numar": "11971/62/2010",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-05-13"
+          "numar": "1747/85/2015",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-09-27",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 304,
+        "Pârât": 244,
+        "Reclamant": 122,
+        "Intimat": 64,
+        "Petent": 56,
+        "Contestator": 27,
+        "Parte civilă": 21,
+        "Intimat Pârât": 17
+      },
+      "categoryCounts": {
+        "subject": 100,
+        "creditor": 198,
+        "other": 19
+      }
     }
   },
   {
@@ -464,31 +503,70 @@
       "recentHearings": 201,
       "recentCases": [
         {
-          "numar": "5517/99/2007",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni contestaţie creanţă",
-          "lastHearing": "2026-05-26"
+          "numar": "503/118/2022*",
+          "obiect": "actiune în daune delictuale",
+          "lastHearing": "2026-11-24",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "6/107/2003",
+          "numar": "9549/212/2020",
+          "obiect": "servitute",
+          "lastHearing": "2026-09-27",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "5036/105/2023",
+          "obiect": "acţiune în constatare",
+          "lastHearing": "2026-09-23",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "14789/3/2023",
           "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-06-23"
-        },
-        {
-          "numar": "19/110/2003**",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată nr vechi 4941/2003",
-          "lastHearing": "2026-05-12"
-        },
-        {
-          "numar": "90/118/2004",
-          "obiect": "procedura insolvenţei – persoane juridice de drept privat antrenarea  răspunderii patrimoniale",
-          "lastHearing": "2026-05-10"
+          "lastHearing": "2026-10-21",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "4238/118/2014",
           "obiect": "deschiderea procedurii la cererea debitorului",
-          "lastHearing": "2026-09-27"
+          "lastHearing": "2026-09-27",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "4547/86/2024",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-06-08",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "21744/3/2020***",
+          "obiect": "înşelăciunea (art. 215 C.p.)",
+          "lastHearing": "2026-05-04",
+          "calitateParte": "Parte civilă",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 35,
+        "Reclamant": 25,
+        "Pârât": 17,
+        "Intimat Creditor": 8,
+        "Petent": 5,
+        "Intimat Pârât": 4,
+        "Intimat Membru Comitet Creditori": 3,
+        "Parte civilă": 2
+      },
+      "categoryCounts": {
+        "subject": 37,
+        "creditor": 16,
+        "other": 5
+      }
     }
   },
   {
@@ -506,34 +584,73 @@
     },
     "court": {
       "dosareCount": 1000,
-      "recentHearings": 1599,
+      "recentHearings": 1600,
       "recentCases": [
         {
-          "numar": "3139/88/2011",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni analiza activitate lichidator judiciar",
-          "lastHearing": "2026-06-17"
+          "numar": "571/121/2025",
+          "obiect": "pretenţii",
+          "lastHearing": "2026-09-08",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "1661/121/2014",
-          "obiect": "procedura insolvenţei",
-          "lastHearing": "2026-09-09"
+          "numar": "3363/93/2025",
+          "obiect": "anulare act NOTIFICARE NR. 101645/122/20.10.2025",
+          "lastHearing": "2026-06-15",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "2575/121/2017",
-          "obiect": "acţiune în constatare",
-          "lastHearing": "2025-05-20"
+          "numar": "4010/121/2024",
+          "obiect": "pretenţii",
+          "lastHearing": "2026-05-26",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "7103/233/2018",
-          "obiect": "ucidere din culpă (art.192 NCP)",
-          "lastHearing": "2025-10-09"
+          "numar": "3165/121/2024",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-10-28",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "1745/62/2018",
           "obiect": "deschiderea procedurii la cererea debitorului",
-          "lastHearing": "2026-10-21"
+          "lastHearing": "2026-10-21",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "24438/233/2024",
+          "obiect": "anulare proces verbal de contravenţie SERIA GNM NR. 012953/30-10-2024",
+          "lastHearing": "2028-10-17",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "16679/233/2024/a1",
+          "obiect": "pretenţii -recurs împotriva încheierii de suspendare din 06.11.2025",
+          "lastHearing": "2028-03-15",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Debitor": 128,
+        "Creditor": 19,
+        "Pârât": 18,
+        "Reclamant": 7,
+        "Intimat": 6,
+        "Petent": 3,
+        "Contestator": 2,
+        "Parte vătămată": 2
+      },
+      "categoryCounts": {
+        "subject": 31,
+        "creditor": 11,
+        "other": 397
+      }
     }
   },
   {
@@ -554,31 +671,70 @@
       "recentHearings": 227,
       "recentCases": [
         {
-          "numar": "6402/97/2012",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-14"
+          "numar": "8645/97/2024",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2027-06-13",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "9108/97/2024",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2027-06-13",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "439/97/2025",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2027-06-13",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
           "numar": "4675/99/2020",
           "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-09-09"
+          "lastHearing": "2026-09-09",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "3093/243/2022",
-          "obiect": "rectificare carte funciară",
-          "lastHearing": "2026-05-10"
+          "numar": "6402/97/2012",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
+          "lastHearing": "2026-05-14",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "875/97/2023",
+          "numar": "378/97/2025",
           "obiect": "obligaţie de a face",
-          "lastHearing": "2026-09-20"
+          "lastHearing": "2027-05-30",
+          "calitateParte": "—",
+          "category": "other"
         },
         {
-          "numar": "1556/243/2023",
-          "obiect": "uzucapiune",
-          "lastHearing": "2026-09-30"
+          "numar": "2697/97/2024",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-10-04",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Pârât": 168,
+        "Creditor": 3,
+        "Apelant Pârât": 2,
+        "Debitor": 2,
+        "Parte vătămată Parte vătămată": 1,
+        "Intimat Parte vătămată": 1,
+        "Intimat Pârât": 1,
+        "Terţ poprit": 1
+      },
+      "categoryCounts": {
+        "subject": 117,
+        "creditor": 2,
+        "other": 27
+      }
     }
   },
   {
@@ -599,31 +755,56 @@
       "recentHearings": 54,
       "recentCases": [
         {
+          "numar": "357/103/2026",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-09-16",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "2822/103/2024",
+          "obiect": "calcul drepturi salariale",
+          "lastHearing": "2026-06-11",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "41637/245/2025",
+          "obiect": "plângere soluţii de neurmărire/netrimitere judecată (art.340 NCPP)",
+          "lastHearing": "2026-06-08",
+          "calitateParte": "Intimat",
+          "category": "subject"
+        },
+        {
           "numar": "63/62/2002",
           "obiect": "procedura insolvenţei – instituţii de credit",
-          "lastHearing": "2026-10-14"
+          "lastHearing": "2026-10-14",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "4664/99/2016",
           "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-06"
-        },
-        {
-          "numar": "3459/99/2018",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-02-17"
-        },
-        {
-          "numar": "1080/103/2014",
-          "obiect": "brevete de invenţii",
-          "lastHearing": "2025-06-05"
-        },
-        {
-          "numar": "3231/103/2022",
-          "obiect": "anulare act",
-          "lastHearing": "2025-05-28"
+          "lastHearing": "2026-05-06",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Pârât": 32,
+        "Intimat Pârât": 8,
+        "Apelant Pârât": 7,
+        "Creditor": 6,
+        "Reclamant": 5,
+        "Chemat în garanţie": 4,
+        "Apelant Chemat în garanţie": 4,
+        "Intimat": 4
+      },
+      "categoryCounts": {
+        "subject": 17,
+        "creditor": 3,
+        "other": 0
+      }
     }
   },
   {
@@ -830,31 +1011,70 @@
       "recentHearings": 152,
       "recentCases": [
         {
-          "numar": "1863/114/2014",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-05-24"
+          "numar": "8343/192/2025",
+          "obiect": "alte cereri raspunderea comitentului pentru fapta prepusului",
+          "lastHearing": "2027-04-06",
+          "calitateParte": "Reclamant",
+          "category": "subject"
         },
         {
-          "numar": "2291/99/2007",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată STRĂMUTAT TRIBUNALUL IAŞI",
-          "lastHearing": "2025-11-25"
-        },
-        {
-          "numar": "1608/303/2020",
+          "numar": "10599/311/2025",
           "obiect": "pretenţii",
-          "lastHearing": "2026-06-09"
+          "lastHearing": "2026-09-27",
+          "calitateParte": "Reclamant",
+          "category": "subject"
+        },
+        {
+          "numar": "742/104/2025",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-09-02",
+          "calitateParte": "Apelant Pârât",
+          "category": "subject"
         },
         {
           "numar": "14562/3/2021",
           "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
-          "lastHearing": "2026-09-24"
+          "lastHearing": "2026-09-24",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "14562/3/2021/a9",
           "obiect": "contestaţie creanţe imp.tabelului Preliminar (Alive Capital SA imp.cr.Land Power SA)",
-          "lastHearing": "2026-05-14"
+          "lastHearing": "2026-05-14",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "4613/311/2025",
+          "obiect": "furtul calificat (art.229 NCP) cu aplic art. 77 lit. a C.pen",
+          "lastHearing": "2026-06-01",
+          "calitateParte": "Parte civilă",
+          "category": "other"
+        },
+        {
+          "numar": "1863/114/2014",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
+          "lastHearing": "2026-05-24",
+          "calitateParte": "Debitor",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Pârât": 36,
+        "Reclamant": 34,
+        "Petent": 18,
+        "Intimat": 12,
+        "Terţ poprit": 10,
+        "Intimat Pârât": 9,
+        "Parte vătămată": 8,
+        "Intimat Reclamant": 5
+      },
+      "categoryCounts": {
+        "subject": 33,
+        "creditor": 2,
+        "other": 16
+      }
     }
   },
   {
@@ -875,31 +1095,70 @@
       "recentHearings": 132,
       "recentCases": [
         {
-          "numar": "7843/121/2009**",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-04-16"
-        },
-        {
-          "numar": "84/188/2023",
-          "obiect": "infectarea apei (art.356 NCP)",
-          "lastHearing": "2025-07-10"
-        },
-        {
           "numar": "2738/86/2023*",
           "obiect": "acţiune în răspundere patrimonială",
-          "lastHearing": "2026-11-16"
+          "lastHearing": "2026-11-16",
+          "calitateParte": "Reclamant",
+          "category": "subject"
+        },
+        {
+          "numar": "27991/299/2025",
+          "obiect": "anulare proces verbal de contravenţie SERIA AVR NR. 0002423/18.06.2025",
+          "lastHearing": "2026-09-15",
+          "calitateParte": "Petent",
+          "category": "subject"
         },
         {
           "numar": "6847/192/2023",
           "obiect": "plângere contravenţională pr vb seriaC , nr.0000747/10.11.2023",
-          "lastHearing": "2026-06-28"
+          "lastHearing": "2026-06-28",
+          "calitateParte": "Petent",
+          "category": "subject"
         },
         {
-          "numar": "2326/188/2023",
-          "obiect": "uzucapiune",
-          "lastHearing": "2026-04-07"
+          "numar": "3165/121/2024",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-10-28",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "265/103/2024",
+          "obiect": "deschiderea procedurii la cererea debitorului",
+          "lastHearing": "2026-06-08",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "537/283/2026",
+          "obiect": "validare poprire",
+          "lastHearing": "2026-09-14",
+          "calitateParte": "Terţ poprit",
+          "category": "other"
+        },
+        {
+          "numar": "3743/108/2024",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-06-24",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 13,
+        "Pârât": 8,
+        "Reclamant": 7,
+        "Petent": 4,
+        "Intimat": 3,
+        "Intimat Creditor": 3,
+        "Parte responsabilă civilmente": 2,
+        "Intimat Pârât": 2
+      },
+      "categoryCounts": {
+        "subject": 20,
+        "creditor": 4,
+        "other": 10
+      }
     }
   },
   {
@@ -920,31 +1179,70 @@
       "recentHearings": 770,
       "recentCases": [
         {
-          "numar": "7023/30/2009",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-02-04"
+          "numar": "420/109/2025",
+          "obiect": "obligaţie de a face eliberare adev.",
+          "lastHearing": "2026-09-15",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "2980/30/2012",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-04"
+          "numar": "236/83/2026",
+          "obiect": "actiune in raspundere delictuala",
+          "lastHearing": "2026-06-17",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "11971/62/2010",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-05-13"
+          "numar": "4697/117/2022",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-06-15",
+          "calitateParte": "Intimat Intervenient",
+          "category": "subject"
         },
         {
-          "numar": "4721/63/2010*/a1",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-09-07"
+          "numar": "18465/3/2021",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată contest.debitorului imp.cererii de deschidere a proced.",
+          "lastHearing": "2026-10-29",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "11866/83/2012",
-          "obiect": "procedura insolvenţei raport de activitate",
-          "lastHearing": "2026-05-10"
+          "numar": "114/30/2019",
+          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată Faliment general",
+          "lastHearing": "2026-10-28",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "7780/62/2013",
+          "obiect": "deschiderea procedurii la cererea creditorului",
+          "lastHearing": "2026-09-22",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "1289/3/2022",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) opozitia creditorului imp.incheierii de deschidere a proceduri",
+          "lastHearing": "2026-06-25",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 215,
+        "Pârât": 49,
+        "Intimat Creditor": 30,
+        "Reclamant": 12,
+        "Intimat": 10,
+        "Chemat în garanţie": 9,
+        "Petent": 9,
+        "Intimat CREDITOR": 5
+      },
+      "categoryCounts": {
+        "subject": 48,
+        "creditor": 132,
+        "other": 26
+      }
     }
   },
   {
@@ -1031,31 +1329,49 @@
       "recentHearings": 79,
       "recentCases": [
         {
-          "numar": "47/62/2001",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-05-06"
+          "numar": "7817/102/2024",
+          "obiect": "contestaţie decizie de concediere",
+          "lastHearing": "2026-02-09",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "8299/102/2024",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2025-06-03",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
           "numar": "108/100/2005",
           "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-11-17"
+          "lastHearing": "2026-11-17",
+          "calitateParte": "—",
+          "category": "other"
         },
         {
-          "numar": "1179/103/2006",
+          "numar": "10/103/2002",
           "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-26"
-        },
-        {
-          "numar": "4/107/2000",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-06-14"
-        },
-        {
-          "numar": "14152/95/2007",
-          "obiect": "deschiderea procedurii la cererea creditorului",
-          "lastHearing": "2026-03-16"
+          "lastHearing": "2026-07-27",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Pârât": 7,
+        "Reclamant": 2,
+        "Creditor": 1,
+        "Apelant Reclamant": 1,
+        "Apelant Pârât": 1,
+        "Intimat": 1,
+        "Petent": 1,
+        "Terţ poprit": 1
+      },
+      "categoryCounts": {
+        "subject": 2,
+        "creditor": 0,
+        "other": 21
+      }
     }
   },
   {
@@ -1262,31 +1578,70 @@
       "recentHearings": 78,
       "recentCases": [
         {
-          "numar": "18359/3/2012",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-06-04"
+          "numar": "13056/3/2025",
+          "obiect": "comunicare informaţii de interes public (Legea Nr.544/2001) CERERE 01.04.2025",
+          "lastHearing": "2026-09-20",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "17619/3/2015",
-          "obiect": "deschiderea procedurii la cererea creditorului rep.cf.disp.art.114 indice 24 alin 1 din ROIJ - cerer",
-          "lastHearing": "2026-06-03"
+          "numar": "46204/245/2025",
+          "obiect": "pretenţii",
+          "lastHearing": "2026-06-25",
+          "calitateParte": "Pârât",
+          "category": "subject"
+        },
+        {
+          "numar": "13084/245/2025",
+          "obiect": "plângere contravenţională seria AVR NR 0007554/04/04/2025",
+          "lastHearing": "2026-05-05",
+          "calitateParte": "Petent",
+          "category": "subject"
+        },
+        {
+          "numar": "30237/3/2025",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) Dosar repartizat manual Completului 18 CC, conform disp. art. ",
+          "lastHearing": "2026-06-25",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "1408/85/2016",
           "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-06-21"
-        },
-        {
-          "numar": "597/1371/2017",
-          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
-          "lastHearing": "2026-06-17"
+          "lastHearing": "2026-06-21",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "8307/3/2023",
-          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) Dosar repartizat manual Completului 2 CC, ",
-          "lastHearing": "2026-05-11"
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) Dosar repartizat manual Completului 2 CC, în conformitate cu d",
+          "lastHearing": "2026-05-11",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "9308/245/2025",
+          "obiect": "ordonanţă de plată - OUG 119/2007 / art.1014 CPC ş.u.",
+          "lastHearing": "2025-08-06",
+          "calitateParte": "Debitor",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 14,
+        "Pârât": 14,
+        "Petent": 13,
+        "Intimat": 12,
+        "Apelant": 6,
+        "Reclamant": 5,
+        "Contestator": 4,
+        "Recurent": 2
+      },
+      "categoryCounts": {
+        "subject": 19,
+        "creditor": 7,
+        "other": 3
+      }
     }
   },
   {
@@ -1493,31 +1848,63 @@
       "recentHearings": 56,
       "recentCases": [
         {
-          "numar": "30962/3/2016",
-          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) cerere de modificare a planului de reorgan",
-          "lastHearing": "2026-06-03"
+          "numar": "32418/302/2025",
+          "obiect": "acţiune în constatare",
+          "lastHearing": "2026-09-10",
+          "calitateParte": "Pârât",
+          "category": "subject"
         },
         {
-          "numar": "597/1371/2017",
-          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
-          "lastHearing": "2026-06-17"
+          "numar": "13881/299/2022",
+          "obiect": "contestaţie la executare DOSAR EXECUTARE NR. 1548/2021",
+          "lastHearing": "2026-05-06",
+          "calitateParte": "Intimat Terţ poprit",
+          "category": "subject"
+        },
+        {
+          "numar": "11555/301/2026",
+          "obiect": "confirmare renunţare urmărire penală (art. 318 alin. 12 NCPP)",
+          "lastHearing": "2026-05-06",
+          "calitateParte": "Intimat",
+          "category": "subject"
         },
         {
           "numar": "3745/62/2019",
           "obiect": "deschiderea procedurii la cererea debitorului",
-          "lastHearing": "2026-09-09"
+          "lastHearing": "2026-09-09",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
           "numar": "3278/62/2020",
           "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-09-09"
+          "lastHearing": "2026-09-09",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "3745/62/2019/a16",
-          "obiect": "contestaţie creanţe CONTESTAŢIE TABEL DEFINITIV",
-          "lastHearing": "2025-06-25"
+          "numar": "7523/299/2025",
+          "obiect": "pretenţii 21282 EUR + 4800 LEI",
+          "lastHearing": "2026-05-11",
+          "calitateParte": "Intervenient",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 10,
+        "Pârât": 5,
+        "Intimat": 4,
+        "Intimat Creditor": 3,
+        "Reclamant": 2,
+        "Terţ poprit": 2,
+        "Parte vătămată": 2,
+        "Intimat Pârât": 2
+      },
+      "categoryCounts": {
+        "subject": 6,
+        "creditor": 7,
+        "other": 1
+      }
     }
   },
   {
@@ -1724,31 +2111,70 @@
       "recentHearings": 272,
       "recentCases": [
         {
-          "numar": "1867/90/2010",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni - LA CEREREA DEBITOAREI",
-          "lastHearing": "2026-05-12"
+          "numar": "42349/299/2024",
+          "obiect": "pretenţii",
+          "lastHearing": "2026-11-18",
+          "calitateParte": "Apelant",
+          "category": "subject"
         },
         {
-          "numar": "10948/118/2008",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-24"
+          "numar": "15399/299/2024",
+          "obiect": "pretenţii",
+          "lastHearing": "2026-11-04",
+          "calitateParte": "Apelant",
+          "category": "subject"
         },
         {
-          "numar": "9089/101/2013",
-          "obiect": "deschiderea procedurii la cererea debitorului Legea nr. 85/2006",
-          "lastHearing": "2026-06-09"
+          "numar": "16597/3/2020",
+          "obiect": "executare contract administrativ",
+          "lastHearing": "2026-09-29",
+          "calitateParte": "Reclamant",
+          "category": "subject"
         },
         {
-          "numar": "5802/118/2017",
-          "obiect": "calcul drepturi salariale",
-          "lastHearing": "2026-06-04"
+          "numar": "23089/3/2021",
+          "obiect": "procedura insolvenţei – societăţi pe acţiuni contestatia debitorului la cererea de deschidere a procedurii formulata de ",
+          "lastHearing": "2026-09-21",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "511/118/2018",
-          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
-          "lastHearing": "2026-05-25"
+          "numar": "23089/3/2021/a21",
+          "obiect": "contestaţie împotriva măsurilor administratorului/lichidatorului judiciar imp.masurilor adm.jud.fata de refuzul de a pla",
+          "lastHearing": "2026-06-15",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "504/121/2025",
+          "obiect": "concordat preventiv",
+          "lastHearing": "2026-06-23",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "1730/256/2024",
+          "obiect": "nerespectarea măsurilor legale de securitate şi sănătate în muncă (art.350 NCP) alin. 1 + art. 192 alin. 1 şi 2 C.pen.",
+          "lastHearing": "2026-06-16",
+          "calitateParte": "Parte responsabilă civilmente",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Pârât": 58,
+        "Reclamant": 41,
+        "Creditor": 22,
+        "Intimat": 16,
+        "Apelant": 12,
+        "Apelant Pârât": 11,
+        "Intimat Pârât": 11,
+        "Petent": 11
+      },
+      "categoryCounts": {
+        "subject": 69,
+        "creditor": 8,
+        "other": 4
+      }
     }
   },
   {
@@ -1769,31 +2195,70 @@
       "recentHearings": 1646,
       "recentCases": [
         {
-          "numar": "2177/99/2012",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-06-23"
+          "numar": "31689/211/2025",
+          "obiect": "cerere de valoare redusă",
+          "lastHearing": "2027-01-21",
+          "calitateParte": "Reclamant",
+          "category": "subject"
         },
         {
-          "numar": "2/103/2003",
-          "obiect": "procedura insolvenţei – societăţi în comandită pe acţiuni LEGEA NR.85/2006",
-          "lastHearing": "2026-02-10"
+          "numar": "16731/1748/2023",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-12-13",
+          "calitateParte": "Reclamant",
+          "category": "subject"
         },
         {
-          "numar": "1463/108/2012",
+          "numar": "1631/328/2025",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-11-18",
+          "calitateParte": "Reclamant",
+          "category": "subject"
+        },
+        {
+          "numar": "3065/3/2024",
           "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
-          "lastHearing": "2026-06-14"
+          "lastHearing": "2026-10-12",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "81/121/2005*",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-12"
+          "numar": "25517/3/2019",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) rep cf disp art 107 al 3 din ROIIJ",
+          "lastHearing": "2026-09-28",
+          "calitateParte": "Creditor",
+          "category": "creditor"
         },
         {
-          "numar": "186/1371/2007",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată",
-          "lastHearing": "2026-09-17"
+          "numar": "29881/3/2015",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) rep cf disp.art 114 indice 22 alin 1 din roij - cerere de modi",
+          "lastHearing": "2026-10-22",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "3783/337/2025",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2026-10-22",
+          "calitateParte": "Intervenient în nume propriu",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Reclamant": 281,
+        "Pârât": 161,
+        "Creditor": 62,
+        "Intimat": 61,
+        "Contestator": 40,
+        "Intimat Reclamant": 30,
+        "Petent": 30,
+        "Apelant Reclamant": 29
+      },
+      "categoryCounts": {
+        "subject": 385,
+        "creditor": 46,
+        "other": 41
+      }
     }
   },
   {
@@ -1814,31 +2279,70 @@
       "recentHearings": 1648,
       "recentCases": [
         {
-          "numar": "6221/90/2012",
-          "obiect": "procedura insolvenţei – societăţi pe acţiuni",
-          "lastHearing": "2026-05-14"
+          "numar": "25676/299/2022",
+          "obiect": "cerere de valoare redusă 877,52 LEI",
+          "lastHearing": "2026-09-15",
+          "calitateParte": "Reclamant",
+          "category": "subject"
         },
         {
-          "numar": "10568/95/2012",
-          "obiect": "procedura insolvenţei – societăţi cu răspundere limitată deschidere procedură la cererea creditorulu",
-          "lastHearing": "2026-09-14"
+          "numar": "23530/94/2022",
+          "obiect": "cerere de valoare redusă fără citare",
+          "lastHearing": "2026-05-12",
+          "calitateParte": "Reclamant",
+          "category": "subject"
         },
         {
-          "numar": "15857/62/2010",
+          "numar": "1368/226/2022",
+          "obiect": "cerere de valoare redusă",
+          "lastHearing": "2025-12-09",
+          "calitateParte": "Reclamant",
+          "category": "subject"
+        },
+        {
+          "numar": "10900/3/2016",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014) opozitia creditorului impotriva incheierii de deschidere a pro",
+          "lastHearing": "2026-11-23",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "32773/3/2019",
+          "obiect": "cererea debitorului (art.66 alin.10 din Legea nr.85/2014)",
+          "lastHearing": "2026-11-23",
+          "calitateParte": "Creditor",
+          "category": "creditor"
+        },
+        {
+          "numar": "7246/233/2019",
+          "obiect": "obligaţie de a face",
+          "lastHearing": "2027-04-14",
+          "calitateParte": "—",
+          "category": "other"
+        },
+        {
+          "numar": "632/93/2021*",
           "obiect": "deschiderea procedurii la cererea creditorului",
-          "lastHearing": "2026-05-11"
-        },
-        {
-          "numar": "5741/62/2012",
-          "obiect": "deschiderea procedurii la cererea debitorului",
-          "lastHearing": "2026-06-22"
-        },
-        {
-          "numar": "19766/63/2011/a1",
-          "obiect": "procedura insolvenţei",
-          "lastHearing": "2026-05-03"
+          "lastHearing": "2027-01-13",
+          "calitateParte": "—",
+          "category": "other"
         }
-      ]
+      ],
+      "roleCounts": {
+        "Creditor": 385,
+        "Reclamant": 206,
+        "Pârât": 28,
+        "Intimat": 13,
+        "Petent": 12,
+        "Apelant Reclamant": 9,
+        "Apelant": 8,
+        "Intimat Reclamant": 5
+      },
+      "categoryCounts": {
+        "subject": 13,
+        "creditor": 231,
+        "other": 131
+      }
     }
   }
 ]

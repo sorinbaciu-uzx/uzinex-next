@@ -241,3 +241,23 @@ function Stat({ label, value, sublabel, accent, warning }: { label: string; valu
     </div>
   );
 }
+
+function CourtCategoryCard({ label, sublabel, value, total, color }: { label: string; sublabel: string; value: number; total: number; color: "amber" | "blue" | "gray" }) {
+  const pct = total > 0 ? (value / total) * 100 : 0;
+  const colorClass =
+    color === "amber"
+      ? "border-amber-300 bg-amber-50"
+      : color === "blue"
+      ? "border-uzx-blue/30 bg-uzx-blue/5"
+      : "border-ink-200 bg-ink-50";
+  const valueClass =
+    color === "amber" ? "text-amber-900" : color === "blue" ? "text-uzx-blue2" : "text-ink-700";
+  return (
+    <div className={`border rounded-lg p-4 ${colorClass}`}>
+      <div className="text-xs uppercase tracking-widest text-ink-500 font-medium">{label}</div>
+      <div className={`serif text-3xl tracking-tight mt-1 num ${valueClass}`}>{value}</div>
+      <div className="text-xs num text-ink-500 mt-0.5">{pct.toFixed(0)}% din eșantion</div>
+      <div className="text-[11px] text-ink-500 mt-2 leading-tight">{sublabel}</div>
+    </div>
+  );
+}

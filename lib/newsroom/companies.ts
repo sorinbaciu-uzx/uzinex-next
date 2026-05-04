@@ -17,7 +17,15 @@ export type Company = {
   court: {
     dosareCount: number;
     recentHearings: number;
-    recentCases: Array<{ numar: string; obiect: string; lastHearing: string }>;
+    recentCases: Array<{
+      numar: string;
+      obiect: string;
+      lastHearing: string;
+      calitateParte?: string;
+      category?: "subject" | "creditor" | "other";
+    }>;
+    roleCounts?: Record<string, number>;
+    categoryCounts?: { subject?: number; creditor?: number; other?: number };
   };
 };
 
