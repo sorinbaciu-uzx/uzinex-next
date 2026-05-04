@@ -3,10 +3,13 @@ import { loadInsights } from "@/lib/newsroom/data";
 import { extractInsightView } from "@/lib/newsroom/extract";
 import { Sparkline, MiniBar } from "@/components/newsroom/Sparkline";
 
-// Minimal embed page — no header/footer, iframe-friendly, with backlink credit.
-// Loaded by journalists' iframe embeds in their articles.
+// Minimal embed page — designed for iframe usage. No header/footer; only the
+// card content + UZINEX backlink credit. The root layout still wraps html/body
+// (Next.js App Router requires that), but we hide all chrome via the card-only
+// markup and the body bg-white styling is already covered by globals.
+//
+// The /embed prefix is not in the sitemap and not crawled — see app/robots.ts.
 
-export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export default async function EmbedInsightPage({ params }: { params: Promise<{ id: string }> }) {
@@ -15,51 +18,111 @@ export default async function EmbedInsightPage({ params }: { params: Promise<{ i
   if (!insight) notFound();
 
   const view = extractInsightView(insight);
+  const dateStr = new Date(insight.createdAt).toLocaleDateString("ro-RO", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
 
   return (
-    <html lang="ro">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{insight.title} — UZINEX Newsroom embed</title>
-        <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
-        <style>{`
-          html, body { margin: 0; padding: 0; background: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
-          .embed-card { padding: 16px; border: 1px solid #eeeef0; border-radius: 8px; height: calc(100vh - 4px); display: flex; flex-direction: column; box-sizing: border-box; }
-          .embed-title { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 500; letter-spacing: -0.02em; font-size: 16px; line-height: 1.3; color: #0e0e12; margin: 0 0 4px; }
-          .embed-meta { font-size: 11px; color: #5f5f6b; margin-bottom: 10px; }
-          .embed-big { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 500; letter-spacing: -0.02em; font-size: 28px; color: #f5851f; line-height: 1; }
-          .embed-big-label { font-size: 10px; color: #5f5f6b; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
-          .embed-chart { flex: 1; min-height: 100px; margin-top: 10px; }
-          .embed-credit { margin-top: 10px; padding-top: 8px; border-top: 1px solid #eeeef0; font-size: 10px; color: #5f5f6b; display: flex; justify-content: space-between; align-items: center; }
-          .embed-credit a { color: #1e6bb8; text-decoration: none; }
-          .embed-credit a:hover { color: #f5851f; }
-        `}</style>
-      </head>
-      <body>
-        <div className="embed-card">
-          <h1 className="embed-title">{insight.title}</h1>
-          <div className="embed-meta">
-            {insight.sources.join(", ")} · {new Date(insight.createdAt).toLocaleDateString("ro-RO", { day: "2-digit", month: "long", year: "numeric" })}
-          </div>
-          <div>
-            <div className="embed-big">{view.bigNumber}</div>
-            <div className="embed-big-label">{view.bigNumberLabel}</div>
-          </div>
-          <div className="embed-chart">
-            {view.chartType === "line" && view.chartData.length > 1 && (
-              <Sparkline data={view.chartData as Array<{ date: string; value: number }>} height={120} />
-            )}
-            {view.chartType === "bar" && view.chartData.length > 1 && (
-              <MiniBar data={view.chartData as Array<{ label: string; value: number }>} height={120} />
-            )}
-          </div>
-          <div className="embed-credit">
-            <span>Sursă: <a href="https://uzinex.ro/newsroom" target="_blank" rel="noopener">UZINEX Newsroom</a></span>
-            <a href={`https://uzinex.ro/newsroom/anomalii`} target="_blank" rel="noopener">vezi feed-ul complet →</a>
-          </div>
+    <div
+      className="embed-card"
+      style={{
+        padding: 16,
+        border: "1px solid #eeeef0",
+        borderRadius: 8,
+        background: "#fff",
+        fontFamily: "var(--font-inter), system-ui, sans-serif",
+        boxSizing: "border-box",
+      }}
+    >
+      <h1
+        style={{
+          fontFamily: "var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif",
+          fontWeight: 500,
+          letterSpacing: "-0.02em",
+          fontSize: 16,
+          lineHeight: 1.3,
+          color: "#0e0e12",
+          margin: "0 0 4px",
+        }}
+      >
+        {insight.title}
+      </h1>
+      <div style={{ fontSize: 11, color: "#5f5f6b", marginBottom: 10 }}>
+        {insight.sources.join(", ")} · {dateStr}
+      </div>
+      <div>
+        <div
+          style={{
+            fontFamily: "var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif",
+            fontWeight: 500,
+            letterSpacing: "-0.02em",
+            fontSize: 28,
+            color: "#f5851f",
+            lineHeight: 1,
+          }}
+        >
+          {view.bigNumber}
         </div>
-      </body>
-    </html>
+        <div
+          style={{
+            fontSize: 10,
+            color: "#5f5f6b",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            marginTop: 4,
+          }}
+        >
+          {view.bigNumberLabel}
+        </div>
+      </div>
+      <div style={{ minHeight: 100, marginTop: 10 }}>
+        {view.chartType === "line" && view.chartData.length > 1 && (
+          <Sparkline
+            data={view.chartData as Array<{ date: string; value: number }>}
+            height={120}
+          />
+        )}
+        {view.chartType === "bar" && view.chartData.length > 1 && (
+          <MiniBar
+            data={view.chartData as Array<{ label: string; value: number }>}
+            height={120}
+          />
+        )}
+      </div>
+      <div
+        style={{
+          marginTop: 10,
+          paddingTop: 8,
+          borderTop: "1px solid #eeeef0",
+          fontSize: 10,
+          color: "#5f5f6b",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <span>
+          Sursă:{" "}
+          <a
+            href="https://uzinex.ro/newsroom"
+            target="_blank"
+            rel="noopener"
+            style={{ color: "#1e6bb8", textDecoration: "none" }}
+          >
+            UZINEX Newsroom
+          </a>
+        </span>
+        <a
+          href="https://uzinex.ro/newsroom/anomalii"
+          target="_blank"
+          rel="noopener"
+          style={{ color: "#1e6bb8", textDecoration: "none" }}
+        >
+          vezi feed-ul complet →
+        </a>
+      </div>
+    </div>
   );
 }
