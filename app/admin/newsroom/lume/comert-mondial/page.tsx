@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadWorld } from "@/lib/newsroom/world";
 import { MultiLineChart } from "@/components/newsroom/MultiLineChart";
 import { CopyButton } from "@/components/newsroom/CopyButton";
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
   title: "Comerțul exterior al României 2024 — UN Comtrade + World Bank | Newsroom UZINEX",
   description:
     "Date oficiale UN Comtrade și World Bank pentru exporturile și importurile României. Pondere comerțului în PIB, comparație cu Polonia, Ungaria, Cehia, Germania.",
-  alternates: { canonical: "/newsroom/lume/comert-mondial" },
+  alternates: { canonical: "/admin/newsroom/lume/comert-mondial" },
 };
 
 const fmtMld = (v: number) => `${(v / 1_000_000_000).toLocaleString("ro-RO", { maximumFractionDigits: 1 })} mld`;
@@ -33,10 +31,10 @@ export default function ComertMondialPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <article className="max-w-4xl mx-auto pb-20">
-          <Link href="/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
+          <Link href="/admin/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
 
           <header className="mt-6 mb-10">
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">UN Comtrade · World Bank · Eurostat</div>
@@ -104,7 +102,7 @@ export default function ComertMondialPage() {
               <ul>
                 <li><code>NE.EXP.GNFS.ZS</code> — exporturi de bunuri și servicii (% din PIB)</li>
                 <li><code>BX.KLT.DINV.WD.GD.ZS</code> — FDI net inflows (% din PIB)</li>
-                <li><code>NV.IND.MANF.ZS</code> — pondere industria prelucrătoare în PIB (vezi <Link href="/newsroom/firme">/newsroom/firme</Link>)</li>
+                <li><code>NV.IND.MANF.ZS</code> — pondere industria prelucrătoare în PIB (vezi <Link href="/admin/newsroom/firme">/newsroom/firme</Link>)</li>
               </ul>
               <p>
                 <strong>Limitări:</strong> Comtrade poate avea decalaj de 6-12 luni între raportarea statului și disponibilitatea în baza de date globală. World Bank actualizează majoritatea indicatorilor anual cu lag de 12-18 luni — ultimul an disponibil pentru majoritatea indicatorilor este 2024.
@@ -120,8 +118,8 @@ export default function ComertMondialPage() {
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }
@@ -129,9 +127,9 @@ export default function ComertMondialPage() {
 function ErrorPage() {
   return (
     <>
-      <Header solid />
-      <main className="container-x py-14"><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></main>
-      <Footer />
+      
+      <div><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></div>
+      
     </>
   );
 }

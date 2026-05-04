@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadWorld } from "@/lib/newsroom/world";
 import { MultiLineChart } from "@/components/newsroom/MultiLineChart";
 import { CopyButton } from "@/components/newsroom/CopyButton";
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
   title: "Datoria publică RO vs vecini — proiecție IMF 2018-2031 | Newsroom UZINEX",
   description:
     "Datoria publică a României crește de la 60,6% PIB (2025) la 70,4% PIB (2031), conform proiecțiilor IMF DataMapper. Comparație cu Polonia, Ungaria, Cehia, Germania și media zonei euro.",
-  alternates: { canonical: "/newsroom/lume/datorie-publica" },
+  alternates: { canonical: "/admin/newsroom/lume/datorie-publica" },
 };
 
 export default function DatoriePublicaPage() {
@@ -41,10 +39,10 @@ export default function DatoriePublicaPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <article className="max-w-4xl mx-auto pb-20">
-          <Link href="/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
+          <Link href="/admin/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
 
           <header className="mt-6 mb-10">
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">IMF DataMapper · GGXWDG_NGDP</div>
@@ -180,8 +178,8 @@ export default function DatoriePublicaPage() {
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }
@@ -189,9 +187,9 @@ export default function DatoriePublicaPage() {
 function ErrorPage() {
   return (
     <>
-      <Header solid />
-      <main className="container-x py-14"><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></main>
-      <Footer />
+      
+      <div><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></div>
+      
     </>
   );
 }

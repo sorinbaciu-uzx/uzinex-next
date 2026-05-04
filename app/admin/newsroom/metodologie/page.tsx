@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadCompanies } from "@/lib/newsroom/companies";
 
 export const revalidate = 3600;
@@ -10,7 +8,7 @@ export const metadata: Metadata = {
   title: "Metodologie — cum lucrăm cu datele | Newsroom UZINEX",
   description:
     "Explicații complete despre criteriile de selecție, sursele oficiale folosite, threshold-urile algoritmilor de detecție anomalii, frecvența de update și limitări metodologice ale Newsroom UZINEX.",
-  alternates: { canonical: "/newsroom/metodologie" },
+  alternates: { canonical: "/admin/newsroom/metodologie" },
 };
 
 export default function MetodologiePage() {
@@ -18,11 +16,11 @@ export default function MetodologiePage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <div className="max-w-3xl mx-auto pb-20 space-y-10">
           <header>
-            <Link href="/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
+            <Link href="/admin/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mt-3 mb-2">Metodologie</div>
             <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 leading-[1.05] mb-4">Cum lucrăm cu datele — criterii, threshold-uri, limitări</h1>
             <p className="text-lg text-ink-600 leading-relaxed">
@@ -116,7 +114,7 @@ export default function MetodologiePage() {
               </table>
             </div>
             <p className="text-xs text-ink-500 mt-3">
-              Pentru complete listă a celor 90 surse înregistrate (din care ~25 active live, restul în pregătire — scrapere Playwright sau API-uri plătite), vezi <Link href="/newsroom/lume" className="text-uzx-blue hover:text-uzx-orange">/newsroom/lume</Link>.
+              Pentru complete listă a celor 90 surse înregistrate (din care ~25 active live, restul în pregătire — scrapere Playwright sau API-uri plătite), vezi <Link href="/admin/newsroom/lume" className="text-uzx-blue hover:text-uzx-orange">Perspective globale</Link>.
             </p>
           </section>
 
@@ -181,8 +179,8 @@ export default function MetodologiePage() {
             <strong className="text-ink-900">Disclaimer editorial:</strong> Newsroom UZINEX este produs de UZINEX SC GW LASER TECHNOLOGY SRL, firmă activă în distribuția de echipamente industriale. Datele agregate au fost selectate cu intenția de a oferi context macro, NU de a evidenția competitori direcți sau de a face advertorial. Excluderea explicită a sectorului „echipamente industriale" din lista de firme tracked este o decizie editorială pentru a evita conflictele de interes.
           </section>
         </div>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }

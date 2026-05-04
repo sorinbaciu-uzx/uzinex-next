@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadWorld } from "@/lib/newsroom/world";
 import { CompanyComparisonBar } from "@/components/newsroom/CompanyChart";
 import { CopyButton } from "@/components/newsroom/CopyButton";
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
   title: "Cheltuielile federale SUA în România FY2026 | Newsroom UZINEX",
   description:
     "USASpending.gov + DoD RSS + NSPA: care agenții federale americane cheltuie în România, top awards, pipeline DoD recent și oportunități NATO deschise prin NSPA.",
-  alternates: { canonical: "/newsroom/lume/sua-in-romania" },
+  alternates: { canonical: "/admin/newsroom/lume/sua-in-romania" },
 };
 
 const fmtUsd = (v: number) => `$${(v / 1_000_000).toLocaleString("en-US", { maximumFractionDigits: 1 })}M`;
@@ -31,10 +29,10 @@ export default function SuaInRomaniaPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <article className="max-w-4xl mx-auto pb-20">
-          <Link href="/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
+          <Link href="/admin/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
 
           <header className="mt-6 mb-10">
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">USASpending.gov · DoD · NSPA NATO</div>
@@ -190,8 +188,8 @@ export default function SuaInRomaniaPage() {
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }
@@ -199,9 +197,9 @@ export default function SuaInRomaniaPage() {
 function ErrorPage() {
   return (
     <>
-      <Header solid />
-      <main className="container-x py-14"><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></main>
-      <Footer />
+      
+      <div><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></div>
+      
     </>
   );
 }

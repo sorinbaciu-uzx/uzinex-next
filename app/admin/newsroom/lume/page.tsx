@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadWorld } from "@/lib/newsroom/world";
 
 export const revalidate = 3600;
@@ -10,7 +8,7 @@ export const metadata: Metadata = {
   title: "Perspective globale — datele internaționale ale României | Newsroom UZINEX",
   description:
     "Datoria publică (IMF), cheltuielile federale SUA (USASpending), comerțul mondial (UN Comtrade), emisiile industriale (Climate TRACE). 4 perspective globale ale economiei și industriei românești cu cifre verificabile.",
-  alternates: { canonical: "/newsroom/lume" },
+  alternates: { canonical: "/admin/newsroom/lume" },
 };
 
 const fmtMld = (v: number) => `${(v / 1_000_000_000).toFixed(1)} mld`;
@@ -21,9 +19,9 @@ export default function LumeIndexPage() {
   if (!w) {
     return (
       <>
-        <Header solid />
-        <main className="container-x py-14"><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></main>
-        <Footer />
+        
+        <div><p className="text-center text-ink-500">Datele globale nu sunt încă disponibile.</p></div>
+        
       </>
     );
   }
@@ -34,7 +32,7 @@ export default function LumeIndexPage() {
 
   const cards = [
     {
-      href: "/newsroom/lume/datorie-publica",
+      href: "/admin/newsroom/lume/datorie-publica",
       eyebrow: "IMF DataMapper",
       title: "Datoria publică va atinge 70% din PIB până în 2030",
       bigNumber: roDebt2025 ? `${roDebt2025.toFixed(1)}% → ${roDebt2030?.toFixed(1) ?? "70,4"}%` : "70,4%",
@@ -43,7 +41,7 @@ export default function LumeIndexPage() {
       sources: ["IMF", "Eurostat", "World Bank"],
     },
     {
-      href: "/newsroom/lume/sua-in-romania",
+      href: "/admin/newsroom/lume/sua-in-romania",
       eyebrow: "USASpending + DoD + NSPA",
       title: "Cheltuielile federale SUA în România FY2026",
       bigNumber: `$${fmtMil(w.usaspending.total).replace(" mil", "M")}`,
@@ -52,7 +50,7 @@ export default function LumeIndexPage() {
       sources: ["USASpending.gov", "DoD RSS", "NSPA"],
     },
     {
-      href: "/newsroom/lume/comert-mondial",
+      href: "/admin/newsroom/lume/comert-mondial",
       eyebrow: "UN Comtrade · World Bank",
       title: "Comerțul exterior al României — context macro",
       bigNumber: w.comtrade.totalExport > 0 ? `${fmtMld(w.comtrade.totalExport)} USD` : "în așteptare",
@@ -61,7 +59,7 @@ export default function LumeIndexPage() {
       sources: ["UN Comtrade", "World Bank"],
     },
     {
-      href: "/newsroom/lume/emisii-industriale",
+      href: "/admin/newsroom/lume/emisii-industriale",
       eyebrow: "Climate TRACE",
       title: "Emisii industriale ale României",
       bigNumber: w.climate.ranking.length > 0 ? `${w.climate.ranking.length}` : "în pregătire",
@@ -73,11 +71,11 @@ export default function LumeIndexPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <div className="max-w-5xl mx-auto space-y-10 pb-10">
           <header>
-            <Link href="/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
+            <Link href="/admin/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mt-3 mb-2">Perspective globale</div>
             <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 mb-3">România în context internațional — 4 perspective cu cifre proprii</h1>
             <p className="text-lg text-ink-600 leading-relaxed max-w-3xl">
@@ -126,8 +124,8 @@ export default function LumeIndexPage() {
             Generat automat din pipeline-ul Newsroom UZINEX. Toate cifrele sunt verificabile prin endpoint-urile oficiale citate. Pentru întrebări de metodologie: <a href="mailto:sorin.baciu@uzinex.ro" className="text-uzx-blue hover:text-uzx-orange underline underline-offset-2">sorin.baciu@uzinex.ro</a>.
           </footer>
         </div>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }

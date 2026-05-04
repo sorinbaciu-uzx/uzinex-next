@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadCompany, loadCompanies, loadSectorPeers } from "@/lib/newsroom/companies";
 import { FinancialLineChart, CompanyComparisonBar } from "@/components/newsroom/CompanyChart";
 import { CopyButton } from "@/components/newsroom/CopyButton";
@@ -21,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ cui: stri
   return {
     title: `${company.name} — profil ANAF + dosare portal.just.ro`,
     description: `${company.name} (CUI ${company.cui}) — bilanțuri ANAF${turnover ? `, cifră de afaceri ${(turnover.value / 1_000_000_000).toFixed(2)} mld RON (${turnover.year})` : ""}, ${company.court.dosareCount}${company.court.dosareCount >= 1000 ? "+" : ""} dosare comerciale, ${company.court.recentHearings} ședințe în ultimele 12 luni.`,
-    alternates: { canonical: `/newsroom/firme/${company.cui}` },
+    alternates: { canonical: `/admin/newsroom/firme/${company.cui}` },
   };
 }
 
@@ -73,12 +71,12 @@ export default async function CompanyProfilePage({ params }: { params: Promise<{
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <article className="max-w-4xl mx-auto pb-20">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-          <Link href="/newsroom/firme" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Toate firmele</Link>
+          <Link href="/admin/newsroom/firme" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Toate firmele</Link>
 
           <header className="mt-8 mb-10">
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">{company.sectorLabel}</div>
@@ -272,7 +270,7 @@ export default async function CompanyProfilePage({ params }: { params: Promise<{
               <h2 className="serif text-2xl tracking-tight text-ink-900 mb-4">Alte firme din {company.sectorLabel}</h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {peers.map((p) => (
-                  <Link key={p.cui} href={`/newsroom/firme/${p.cui}`} className="block border border-ink-100 rounded p-3 hover:border-uzx-blue text-sm transition-colors">
+                  <Link key={p.cui} href={`/admin/newsroom/firme/${p.cui}`} className="block border border-ink-100 rounded p-3 hover:border-uzx-blue text-sm transition-colors">
                     <div className="font-medium text-ink-900">{p.name}</div>
                     <div className="text-xs text-ink-500 mt-0.5 mono">CUI {p.cui}</div>
                   </Link>
@@ -307,8 +305,8 @@ export default async function CompanyProfilePage({ params }: { params: Promise<{
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }

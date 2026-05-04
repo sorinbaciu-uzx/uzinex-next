@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadWorld } from "@/lib/newsroom/world";
 import { CompanyComparisonBar } from "@/components/newsroom/CompanyChart";
 import { loadCompanies } from "@/lib/newsroom/companies";
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
   title: "Emisiile industriale ale României — Climate TRACE per sector | Newsroom UZINEX",
   description:
     "Date Climate TRACE asset-level pentru sectoarele industriale românești. Cross-referențiat cu firmele tracked (Liberty Galați, Holcim, Nuclearelectrica) și cu obiectivele EU ETS.",
-  alternates: { canonical: "/newsroom/lume/emisii-industriale" },
+  alternates: { canonical: "/admin/newsroom/lume/emisii-industriale" },
 };
 
 const SECTOR_LABELS: Record<string, string> = {
@@ -42,10 +40,10 @@ export default function EmisiiPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <article className="max-w-4xl mx-auto pb-20">
-          <Link href="/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
+          <Link href="/admin/newsroom/lume" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Perspective globale</Link>
 
           <header className="mt-6 mb-10">
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">Climate TRACE · EU ETS · ANAF</div>
@@ -101,7 +99,7 @@ export default function EmisiiPage() {
                 return (
                   <Link
                     key={c.cui}
-                    href={`/newsroom/firme/${c.cui}`}
+                    href={`/admin/newsroom/firme/${c.cui}`}
                     className="block border border-ink-100 rounded-lg p-4 bg-white hover:border-uzx-blue transition-colors group"
                   >
                     <div className="text-xs uppercase tracking-widest text-uzx-orange mb-1 font-medium">{c.sectorLabel}</div>
@@ -140,8 +138,8 @@ export default function EmisiiPage() {
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }

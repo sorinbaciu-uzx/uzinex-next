@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { StoryCharts } from "@/components/newsroom/StoryCharts";
 import { CopyButton } from "@/components/newsroom/CopyButton";
 import { renderMarkdown } from "@/lib/newsroom/markdown";
@@ -21,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: story.title,
     description: story.subtitle || "Story Newsroom UZINEX cu cifre din surse oficiale.",
-    alternates: { canonical: `/newsroom/stories/${story.slug}` },
+    alternates: { canonical: `/admin/newsroom/stories/${story.slug}` },
     openGraph: {
       title: story.title,
       description: story.subtitle || "",
@@ -41,7 +39,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   const wordCount = story.body.split(/\s+/).filter(Boolean).length;
   const readingMin = Math.max(1, Math.round(wordCount / 200));
 
-  const canonicalUrl = `/newsroom/stories/${story.slug}`;
+  const canonicalUrl = `/admin/newsroom/stories/${story.slug}`;
   const fullUrl = `https://uzinex.ro${canonicalUrl}`;
   const citationApa = `UZINEX Newsroom (${created.getFullYear()}). ${story.title}. Newsroom UZINEX. ${fullUrl}`;
   const citationHtml = `<a href="${fullUrl}" target="_blank" rel="noopener">Sursă: UZINEX Newsroom — ${story.title}</a>`;
@@ -67,12 +65,12 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <article className="max-w-3xl mx-auto pb-20">
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-          <Link href="/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Toate story-urile</Link>
+          <Link href="/admin/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Toate story-urile</Link>
 
           {/* HEADER */}
           <header className="mt-8 mb-10">
@@ -223,8 +221,8 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
             </div>
           </section>
         </article>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }

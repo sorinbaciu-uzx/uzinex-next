@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { loadCompanies } from "@/lib/newsroom/companies";
 
 export const revalidate = 3600;
@@ -10,7 +8,7 @@ export const metadata: Metadata = {
   title: "Firme industriale strategice — profile complete | Newsroom UZINEX",
   description:
     "14 firme industriale non-echipamente urmărite în Newsroom UZINEX: bilanțuri ANAF 2019-2025 + dosare comerciale portal.just.ro. Petrol/gaz, metalurgie, ciment, chimie, farma, energie nucleară.",
-  alternates: { canonical: "/newsroom/firme" },
+  alternates: { canonical: "/admin/newsroom/firme" },
 };
 
 function fmtNum(v: number, divisor = 1, suffix = "") {
@@ -33,11 +31,11 @@ export default function FirmeIndexPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <div className="max-w-5xl mx-auto space-y-10 pb-10">
           <header>
-            <Link href="/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
+            <Link href="/admin/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mt-3 mb-2">Profile firme</div>
             <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 mb-3">14 firme industriale strategice — date complete</h1>
             <p className="text-lg text-ink-600 leading-relaxed max-w-3xl">
@@ -60,7 +58,7 @@ export default function FirmeIndexPage() {
                   return (
                     <Link
                       key={c.cui}
-                      href={`/newsroom/firme/${c.cui}`}
+                      href={`/admin/newsroom/firme/${c.cui}`}
                       className="block border border-ink-100 rounded-lg p-5 bg-white hover:border-uzx-blue transition-colors group"
                     >
                       <div className="font-medium text-ink-900 group-hover:text-uzx-blue mb-1">{c.name}</div>
@@ -101,8 +99,8 @@ export default function FirmeIndexPage() {
             </section>
           ))}
         </div>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }

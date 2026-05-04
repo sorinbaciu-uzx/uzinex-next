@@ -1,7 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CopyButton } from "@/components/newsroom/CopyButton";
 import { loadManifest } from "@/lib/newsroom/data";
 import { loadCompanies } from "@/lib/newsroom/companies";
@@ -12,7 +10,7 @@ export const metadata: Metadata = {
   title: "Press Center — pentru jurnaliști | Newsroom UZINEX",
   description:
     "Resurse pentru presă: bio Sorin Baciu, politica de citare, logo download, calendar editorial Newsroom UZINEX, contact pentru interviu, embed code pentru grafice și API public.",
-  alternates: { canonical: "/newsroom/press" },
+  alternates: { canonical: "/admin/newsroom/press" },
 };
 
 export default function PressCenterPage() {
@@ -21,11 +19,11 @@ export default function PressCenterPage() {
 
   return (
     <>
-      <Header solid />
-      <main className="container-x py-10 md:py-14">
+      
+      <div>
         <div className="max-w-4xl mx-auto pb-20 space-y-12">
           <header>
-            <Link href="/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
+            <Link href="/admin/newsroom" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Newsroom</Link>
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mt-3 mb-2">Press Center</div>
             <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 leading-[1.05] mb-4">Pentru jurnaliști — resurse complete</h1>
             <p className="text-lg text-ink-600 leading-relaxed">
@@ -117,14 +115,14 @@ export default function PressCenterPage() {
                   date="Săptămâna 19 (4-10 mai)"
                   status="published"
                   title="Industria strategică a României: 14 firme, 7 sectoare"
-                  href="/newsroom/stories/bilantul-firmelor-industriale-strategice-romania-2019-2025"
+                  href="/admin/newsroom/stories/bilantul-firmelor-industriale-strategice-romania-2019-2025"
                   sources={["ANAF", "Eurostat", "World Bank"]}
                 />
                 <CalendarEntry
                   date="Săptămâna 19 (4-10 mai)"
                   status="published"
                   title="5.433 dosare comerciale la 14 firme industriale strategice"
-                  href="/newsroom/stories/5433-dosare-firme-industriale-portal-just-ro"
+                  href="/admin/newsroom/stories/5433-dosare-firme-industriale-portal-just-ro"
                   sources={["portal.just.ro", "ANAF"]}
                 />
                 <CalendarEntry
@@ -184,13 +182,13 @@ export default function PressCenterPage() {
               <ResourceCard
                 title="API public REST"
                 description="Endpoint /api/newsroom/insights/[id]/data.csv pentru fiecare insight. Press Kit ZIP per story."
-                href="/newsroom/lume"
+                href="/admin/newsroom/lume"
                 cta="Vezi documentație"
               />
               <ResourceCard
                 title="RSS feed (story-uri + insights)"
                 description="Abonare în Feedly, NewsBlur, Inoreader. Story-urile editoriale + insights cu score ≥ 0,6 (top 30). Update orar."
-                href="/newsroom/feed.xml"
+                href="/admin/newsroom/feed.xml"
                 cta="Adaugă în feed reader"
               />
               <ResourceCard
@@ -221,8 +219,8 @@ export default function PressCenterPage() {
             </div>
           </section>
         </div>
-      </main>
-      <Footer />
+      </div>
+      
     </>
   );
 }
