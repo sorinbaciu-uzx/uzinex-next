@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { AnomalyCard } from "@/components/newsroom/AnomalyCard";
 import { extractInsightView, buildShareableHeadline } from "@/lib/newsroom/extract";
 import { loadStories, loadInsights, loadManifest } from "@/lib/newsroom/data";
+import { listBlogDrafts } from "@/lib/newsroom/blog-drafts";
 
 // Admin-only newsroom dashboard. The public newsroom was removed in favor of
 // using this as an internal content-generation engine for stories/blogs.
@@ -20,6 +21,7 @@ export default function NewsroomAdminPage() {
   const stories = loadStories();
   const insights = loadInsights();
   const manifest = loadManifest();
+  const drafts = listBlogDrafts();
   const featured = stories[0];
   const rest = stories.slice(1);
   const topAnomalies = insights
@@ -29,6 +31,7 @@ export default function NewsroomAdminPage() {
 
   const verifiedInsights = insights.filter((i) => i.usedInStoryId).length;
   const algorithmicInsights = insights.length - verifiedInsights;
+  const uniqueDraftSlugs = new Set(drafts.map((d) => d.slug)).size;
   const lastUpdate = manifest.generatedAt
     ? new Date(manifest.generatedAt).toLocaleString("ro-RO", {
         day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit",
@@ -91,6 +94,16 @@ export default function NewsroomAdminPage() {
             href="/admin/newsroom/metodologie"
             label="Metodologie & limitări"
             sub="Threshold-uri · surse · algoritmic vs editorial"
+          />
+          <NavCard
+            href="/admin/newsroom/blog-drafts"
+            label="Drafturi blog (skill output)"
+            sub={
+              uniqueDraftSlugs > 0
+                ? `${uniqueDraftSlugs} articole · ${drafts.length} versiuni · skill /uzinex-blog-article`
+                : "Generate prin skill-ul /uzinex-blog-article — nimic încă"
+            }
+            disabled={uniqueDraftSlugs === 0}
           />
         </div>
       </div>
