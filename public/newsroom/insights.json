@@ -1,6 +1,6 @@
 [
   {
-    "id": 81,
+    "id": 94,
     "type": "anomaly",
     "title": "EUR/RON staționar la 5.1417 — peste media de 30 de sesiuni cu +3.56σ",
     "summary": "BNR a comunicat un curs EUR/RON de 5.1417 pe 2026-04-30. Mișcarea zilnică (0.00%) este sub pragul de relevanță, însă cursul s-a stabilizat la un nivel cu 3.56 deviații standard peste media celor 30 de sesiuni anterioare (5.0989, deviație standard 0.0120). Pattern tipic pentru un curs ținut sub control — un plateau ridicat susținut, nu un salt brusc. Pentru o firmă industrială cu factură lunară de €10 milioane în euro, plateau-ul față de media trecută adaugă aproximativ 428 mii lei la costul lunar.",
@@ -393,11 +393,11 @@
         }
       ]
     },
-    "createdAt": "2026-05-04T12:03:20.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 91,
+    "id": 104,
     "type": "trend",
     "title": "Datoria publică RO crește de la 60.6% PIB (2025) la 68.8% PIB (2030) — proiecție IMF",
     "summary": "Pe baza prognozelor IMF DataMapper (indicator GGXWDG_NGDP), datoria publică a României va crește de la 60.6% din PIB în 2025 la 68.8% în 2030 — o creștere de 8.2 puncte procentuale într-o decadă.",
@@ -1438,11 +1438,11 @@
         ]
       }
     },
-    "createdAt": "2026-05-04T12:03:21.000Z",
+    "createdAt": "2026-05-04T12:47:15.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 92,
+    "id": 105,
     "type": "ranking",
     "title": "Datorie publică PIB 2030: România 70.4% — locul 4 din 6 țări UE analizate (IMF)",
     "summary": "Proiecția IMF pentru 2031: România 70.4% (locul 4), Polonia 77.6%, Ungaria 88.8%, Cehia 53.6%, Germania 73.7%.",
@@ -1484,11 +1484,85 @@
       },
       "romaniaPosition": 4
     },
-    "createdAt": "2026-05-04T12:03:21.000Z",
+    "createdAt": "2026-05-04T12:47:15.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 90,
+    "id": 107,
+    "type": "cross_reference",
+    "title": "România: 2 oportunități SAM.gov în ultimele 30 zile (place of performance) — top regional NATO",
+    "summary": "Baza de date SAM.gov (US federal opportunities) raportează 2 oportunități cu place of performance în România în ultimele 30 zile, cu valoare cumulată neraportată per record. În clasamentul flancului estic NATO (RO, PL, BG, HU, UA, TR, MD, GR), România reprezintă 25.0% din volum.",
+    "score": 0.75,
+    "sources": [
+      "sam"
+    ],
+    "data": {
+      "metric": "sam_regional",
+      "ranking": [
+        {
+          "country": "Polonia",
+          "count": 2,
+          "value": 0
+        },
+        {
+          "country": "România",
+          "count": 2,
+          "value": 0
+        },
+        {
+          "country": "Turcia",
+          "count": 2,
+          "value": 0
+        },
+        {
+          "country": "Moldova",
+          "count": 1,
+          "value": 0
+        },
+        {
+          "country": "Ucraina",
+          "count": 1,
+          "value": 0
+        }
+      ],
+      "total": 8,
+      "romania": 2,
+      "romaniaShare": 25,
+      "unit": "oportunități"
+    },
+    "createdAt": "2026-05-04T12:47:15.000Z",
+    "usedInStoryId": null
+  },
+  {
+    "id": 106,
+    "type": "ranking",
+    "title": "Cheltuieli federale SUA cu locul de execuție în România: $58.4M FY2026 — top 2 agenții",
+    "summary": "USASpending.gov raportează 58.4 milioane USD în awards cu place_of_performance România în anul fiscal curent. Distribuit pe 2 agenții federale, cu cea mai mare alocare către Department of Defense. Notă metodologică importantă: această cifră NU include contractele FMS (Foreign Military Sales) precum F-35, Patriot, HIMARS sau Abrams — acelea sunt agregate ca exporturi militare către prime contractors din SUA, nu ca awards cu place_of_performance România. Cifra reflectă doar awards directe către entități executate fizic în România (granturi USAID, contracte locale, asistență tehnică). Pentru imaginea completă a fluxurilor SUA→RO, datele FMS trebuie consultate separat la DSCA.mil.",
+    "score": 0.7,
+    "sources": [
+      "usaspending"
+    ],
+    "data": {
+      "metric": "us_spending_by_agency",
+      "total": 58359609.719999984,
+      "ranking": [
+        {
+          "country": "Department of Defense",
+          "value": 57.16714030999999
+        },
+        {
+          "country": "Department of State",
+          "value": 1.19246941
+        }
+      ],
+      "unit": "mil USD",
+      "disclaimer": "Exclude contractele FMS (F-35, Patriot etc.) care apar ca exporturi US, nu ca awards locale."
+    },
+    "createdAt": "2026-05-04T12:47:15.000Z",
+    "usedInStoryId": null
+  },
+  {
+    "id": 103,
     "type": "ranking",
     "title": "Top firme industriale RO non-echipamente după profit net: OMV PETROM SA (3068 mil RON, 2025)",
     "summary": "Bilanțuri ANAF — top firme industriale (oțel, aluminiu, ciment, chimie, farma, energie) după profit net. OMV PETROM SA conduce cu 3068 milioane RON profit net în 2025. Date din 7 firme reprezentative urmărite.",
@@ -1535,39 +1609,11 @@
         "year": 2025
       }
     },
-    "createdAt": "2026-05-04T12:03:21.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 93,
-    "type": "ranking",
-    "title": "Cheltuieli federale SUA cu locul de execuție în România: $58.4M FY2026 — top 2 agenții",
-    "summary": "USASpending.gov raportează 58.4 milioane USD în awards cu place_of_performance România în anul fiscal curent. Distribuit pe 2 agenții federale, cu cea mai mare alocare către Department of Defense. Notă metodologică importantă: această cifră NU include contractele FMS (Foreign Military Sales) precum F-35, Patriot, HIMARS sau Abrams — acelea sunt agregate ca exporturi militare către prime contractors din SUA, nu ca awards cu place_of_performance România. Cifra reflectă doar awards directe către entități executate fizic în România (granturi USAID, contracte locale, asistență tehnică). Pentru imaginea completă a fluxurilor SUA→RO, datele FMS trebuie consultate separat la DSCA.mil.",
-    "score": 0.7,
-    "sources": [
-      "usaspending"
-    ],
-    "data": {
-      "metric": "us_spending_by_agency",
-      "total": 58359609.719999984,
-      "ranking": [
-        {
-          "country": "Department of Defense",
-          "value": 57.16714030999999
-        },
-        {
-          "country": "Department of State",
-          "value": 1.19246941
-        }
-      ],
-      "unit": "mil USD",
-      "disclaimer": "Exclude contractele FMS (F-35, Patriot etc.) care apar ca exporturi US, nu ca awards locale."
-    },
-    "createdAt": "2026-05-04T12:03:21.000Z",
-    "usedInStoryId": null
-  },
-  {
-    "id": 89,
+    "id": 102,
     "type": "ranking",
     "title": "Top sectoare industriale RO (firme reprezentative): petrol_gas conduce cu 30.83 mld RON cifră de afaceri",
     "summary": "Pe baza bilanțurilor depuse la ANAF de firme reprezentative (OMV Petrom, Rompetrol, Liberty Galați, Alro, Holcim, Antibiotice, Biofarm, Nuclearelectrica ș.a.), sectorul petrol_gas conduce clasamentul agregat cu 30.83 miliarde RON. Total 6 sectoare urmărite, cifră cumulată 56.7 mld RON.",
@@ -1605,11 +1651,11 @@
       "total": 56721690692,
       "unit": "mld RON"
     },
-    "createdAt": "2026-05-04T12:03:21.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 87,
+    "id": 100,
     "type": "ranking",
     "title": "Top țări după ponderea industriei în PIB",
     "summary": "Topul țărilor după pondere industrie prelucrătoare în PIB.",
@@ -1653,11 +1699,11 @@
       ],
       "romaniaPosition": 0
     },
-    "createdAt": "2026-05-04T12:03:21.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 88,
+    "id": 101,
     "type": "cross_reference",
     "title": "România: 3397 licitații publice TED în ultimele 30 zile (16.2% din regiune)",
     "summary": "În baza de date TED (Tenders Electronic Daily) a UE, România a publicat 3397 anunțuri în ultimele 30 zile. În clasamentul cu Polonia, Ungaria, Cehia și Bulgaria, România reprezintă 16.2% din volumul regional.",
@@ -1692,11 +1738,11 @@
       "romania": 3397,
       "romaniaShare": 16.208607691573622
     },
-    "createdAt": "2026-05-04T12:03:21.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 85,
+    "id": 98,
     "type": "trend",
     "title": "Producția industrială PL: +3.4% YoY",
     "summary": "Indicele producției industriale (B-D, ajustat sezonier) pentru PL a fost 118.4 în 2026-03, față de 114.5 cu un an înainte — o variație de 3.4% an la an.",
@@ -1863,11 +1909,11 @@
         }
       ]
     },
-    "createdAt": "2026-05-04T12:03:20.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 83,
+    "id": 96,
     "type": "trend",
     "title": "Producția industrială CZ: +2.3% YoY",
     "summary": "Indicele producției industriale (B-D, ajustat sezonier) pentru CZ a fost 103.2 în 2026-02, față de 100.9 cu un an înainte — o variație de 2.3% an la an.",
@@ -2034,11 +2080,11 @@
         }
       ]
     },
-    "createdAt": "2026-05-04T12:03:20.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 86,
+    "id": 99,
     "type": "trend",
     "title": "Producția industrială RO: -1.5% YoY",
     "summary": "Indicele producției industriale (B-D, ajustat sezonier) pentru RO a fost 94.2 în 2026-02, față de 95.6 cu un an înainte — o variație de -1.5% an la an.",
@@ -2205,11 +2251,11 @@
         }
       ]
     },
-    "createdAt": "2026-05-04T12:03:20.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 84,
+    "id": 97,
     "type": "trend",
     "title": "Producția industrială HU: +0.4% YoY",
     "summary": "Indicele producției industriale (B-D, ajustat sezonier) pentru HU a fost 92.2 în 2026-02, față de 91.8 cu un an înainte — o variație de 0.4% an la an.",
@@ -2376,11 +2422,11 @@
         }
       ]
     },
-    "createdAt": "2026-05-04T12:03:20.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   },
   {
-    "id": 82,
+    "id": 95,
     "type": "trend",
     "title": "Producția industrială EU27_2020: 0.0% YoY",
     "summary": "Indicele producției industriale (B-D, ajustat sezonier) pentru EU27_2020 a fost 99.7 în 2026-02, față de 99.7 cu un an înainte — o variație de 0.0% an la an.",
@@ -2547,7 +2593,7 @@
         }
       ]
     },
-    "createdAt": "2026-05-04T12:03:20.000Z",
+    "createdAt": "2026-05-04T12:47:14.000Z",
     "usedInStoryId": null
   }
 ]

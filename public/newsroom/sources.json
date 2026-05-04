@@ -45,7 +45,7 @@
     "category": "us_defense",
     "description": "Toate contractele federale SUA, inclusiv DoD",
     "impl": "key_required",
-    "pointsCollected": 0
+    "pointsCollected": 681
   },
   {
     "id": "seap",
