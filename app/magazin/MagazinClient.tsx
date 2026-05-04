@@ -133,7 +133,35 @@ export function MagazinClient({
 } = {}) {
   const [filter, setFilter] = useState<Filter>({ type: "all" });
   const [page, setPage] = useState(1);
+  const [expandedCats, setExpandedCats] = useState<Set<string>>(new Set());
+  const [expandedSubs, setExpandedSubs] = useState<Set<string>>(new Set());
   const productsTopRef = useRef<HTMLDivElement>(null);
+
+  const toggleCatExpanded = (name: string) => {
+    setExpandedCats((prev) => {
+      const next = new Set(prev);
+      if (next.has(name)) next.delete(name);
+      else next.add(name);
+      return next;
+    });
+  };
+  const toggleSubExpanded = (name: string) => {
+    setExpandedSubs((prev) => {
+      const next = new Set(prev);
+      if (next.has(name)) next.delete(name);
+      else next.add(name);
+      return next;
+    });
+  };
+  const isCatOpen = (name: string) =>
+    (filter.type === "category" && filter.value === name) ||
+    (filter.type === "subcategory" && filter.parent === name) ||
+    (filter.type === "subSubcategory" && filter.grandparent === name) ||
+    expandedCats.has(name);
+  const isSubOpen = (name: string) =>
+    (filter.type === "subcategory" && filter.value === name) ||
+    (filter.type === "subSubcategory" && filter.parent === name) ||
+    expandedSubs.has(name);
 
   const goToPage = (n: number) => {
     setPage(n);
@@ -170,6 +198,12 @@ export function MagazinClient({
   const setF = (f: Filter) => {
     setFilter(f);
     setPage(1);
+    requestAnimationFrame(() => {
+      const el = productsTopRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
   };
 
   // pagination: compact like 1 2 3 4 … 14 15 16
@@ -221,38 +255,49 @@ export function MagazinClient({
               {CATEGORIES.map((cat) => {
                 const catActive = isActive(filter, "category", cat.name);
                 return (
-                  <details key={cat.name} className="group/cat" open={
-                    filter.type === "category" && filter.value === cat.name ||
-                    filter.type === "subcategory" && filter.parent === cat.name ||
-                    filter.type === "subSubcategory" && filter.grandparent === cat.name
-                  }>
+                  <details key={cat.name} className="group/cat" open={isCatOpen(cat.name)}>
                     <summary className="list-none cursor-pointer">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setF({ type: "category", value: cat.name });
-                        }}
-                        className={`w-full text-left px-4 py-2 transition flex items-center gap-2.5 ${
+                      <div
+                        className={`w-full text-left transition flex items-center ${
                           catActive
                             ? "bg-uzx-blue text-white shadow-md shadow-uzx-blue/20"
                             : "text-ink-600 hover:bg-ink-50 hover:text-uzx-blue"
                         }`}
                       >
-                        <span
-                          className={`w-1.5 h-1.5 shrink-0 transition ${
-                            catActive ? "bg-uzx-orange" : "bg-ink-300 group-hover/cat:bg-uzx-orange"
-                          }`}
-                        />
-                        <span className="leading-tight flex-1">{cat.name}</span>
-                        <span
-                          className={`text-[10px] group-open/cat:rotate-90 transition ${
-                            catActive ? "text-white/70" : "text-ink-400"
-                          }`}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setF({ type: "category", value: cat.name });
+                          }}
+                          className="flex-1 flex items-center gap-2.5 px-4 py-2 text-left"
                         >
-                          ▶
-                        </span>
-                      </button>
+                          <span
+                            className={`w-1.5 h-1.5 shrink-0 transition ${
+                              catActive ? "bg-uzx-orange" : "bg-ink-300 group-hover/cat:bg-uzx-orange"
+                            }`}
+                          />
+                          <span className="leading-tight flex-1">{cat.name}</span>
+                        </button>
+                        <button
+                          type="button"
+                          aria-label={`Extinde ${cat.name}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleCatExpanded(cat.name);
+                          }}
+                          className="px-4 py-2"
+                        >
+                          <span
+                            className={`text-[10px] block group-open/cat:rotate-90 transition ${
+                              catActive ? "text-white/70" : "text-ink-400"
+                            }`}
+                          >
+                            ▶
+                          </span>
+                        </button>
+                      </div>
                     </summary>
                     <ul className="ml-4 mt-0.5 mb-1 border-l border-ink-100 pl-2 space-y-0.5">
                       {cat.children.map((sub) => {
@@ -284,36 +329,45 @@ export function MagazinClient({
                         const subActive = isActive(filter, "subcategory", sub.name);
                         return (
                           <li key={sub.name}>
-                            <details
-                              className="group/sub"
-                              open={
-                                filter.type === "subcategory" && filter.value === sub.name ||
-                                filter.type === "subSubcategory" && filter.parent === sub.name
-                              }
-                            >
+                            <details className="group/sub" open={isSubOpen(sub.name)}>
                               <summary className="list-none cursor-pointer">
-                                <button
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    setF({ type: "subcategory", value: sub.name, parent: cat.name });
-                                  }}
-                                  className={`w-full text-left px-3 py-1.5 text-[12px] transition flex items-center gap-2 ${
+                                <div
+                                  className={`w-full text-left text-[12px] transition flex items-center ${
                                     subActive
                                       ? "bg-uzx-blue/10 text-uzx-blue font-medium"
                                       : "text-ink-500 hover:bg-ink-50 hover:text-uzx-blue"
                                   }`}
                                 >
-                                  <span
-                                    className={`w-1 h-1 ${
-                                      subActive ? "bg-uzx-orange" : "bg-ink-300"
-                                    }`}
-                                  />
-                                  <span className="flex-1">{sub.name}</span>
-                                  <span className="text-[9px] text-ink-400 group-open/sub:rotate-90 transition">
-                                    ▶
-                                  </span>
-                                </button>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      setF({ type: "subcategory", value: sub.name, parent: cat.name });
+                                    }}
+                                    className="flex-1 flex items-center gap-2 px-3 py-1.5 text-left"
+                                  >
+                                    <span
+                                      className={`w-1 h-1 ${
+                                        subActive ? "bg-uzx-orange" : "bg-ink-300"
+                                      }`}
+                                    />
+                                    <span className="flex-1">{sub.name}</span>
+                                  </button>
+                                  <button
+                                    type="button"
+                                    aria-label={`Extinde ${sub.name}`}
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      e.stopPropagation();
+                                      toggleSubExpanded(sub.name);
+                                    }}
+                                    className="px-3 py-1.5"
+                                  >
+                                    <span className="text-[9px] block text-ink-400 group-open/sub:rotate-90 transition">
+                                      ▶
+                                    </span>
+                                  </button>
+                                </div>
                               </summary>
                               <ul className="ml-3 mt-0.5 border-l border-ink-100 pl-2 space-y-0.5">
                                 {sub.children.map((leaf) => {
@@ -405,10 +459,17 @@ export function MagazinClient({
                       rel="noopener noreferrer"
                       className="pt-12 px-6 flex items-center justify-center h-56 cursor-pointer"
                     >
-                      {p.image ? (
+                      {(() => {
+                        const firstGalleryImg = p.gallery?.find(
+                          (m): m is { type: "image"; url: string; alt?: string } =>
+                            m.type === "image" && !!(m as { url?: string }).url
+                        );
+                        const mainSrc = firstGalleryImg?.url || p.image;
+                        const mainAlt = firstGalleryImg?.alt || p.imageAlt || p.name;
+                        return mainSrc ? (
                         <Image
-                          src={p.image}
-                          alt={p.name}
+                          src={mainSrc}
+                          alt={mainAlt}
                           width={400}
                           height={300}
                           className="object-contain max-h-full w-auto group-hover:scale-105 transition duration-500"
@@ -424,7 +485,8 @@ export function MagazinClient({
                             imagine indisponibilă
                           </span>
                         </div>
-                      )}
+                        );
+                      })()}
                     </a>
 
                   <div className="px-6 pb-6 flex flex-col flex-1">
