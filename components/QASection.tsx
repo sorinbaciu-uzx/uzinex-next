@@ -50,7 +50,7 @@ const QA: QAItem[] = [
 ];
 
 export const QA_DEFAULT: QAData = {
-  eyebrow: "07 / Întrebări",
+  eyebrow: "08 / Întrebări",
   titleLine1: "Întrebări",
   titleLine2: "frecvente.",
   description:
@@ -74,7 +74,7 @@ export function QASection({ data }: { data?: QAData | null }) {
       />
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{QA_DEFAULT.eyebrow}</div>
           <h2 className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
             {d.titleLine1}<br />{d.titleLine2}
           </h2>

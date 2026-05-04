@@ -290,7 +290,7 @@ export function GlobalNetwork() {
         {/* Section header */}
         <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-white/70 mb-3 mono">
           <span className="w-8 h-px bg-white/40" />
-          <span>Prezență internațională</span>
+          <span>06 / Prezență internațională</span>
         </div>
         <h2
           className="serif font-medium leading-[1.05] text-white max-w-3xl mb-6 lg:mb-4"

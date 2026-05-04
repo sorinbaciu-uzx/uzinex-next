@@ -16,7 +16,7 @@ export type ContactCTAData = {
 };
 
 export const CONTACT_CTA_DEFAULT: ContactCTAData = {
-  eyebrow: "08 / Contact",
+  eyebrow: "09 / Contact",
   titleLine1: "Construim împreună",
   titleLine2: "următorul tău",
   titleHighlight: "proiect.",
@@ -39,7 +39,7 @@ export function ContactCTA({ data }: { data?: ContactCTAData | null }) {
     <section id="contact" className="border-b hairline py-10 lg:py-14">
       <div className="container-x grid grid-cols-1 lg:grid-cols-12 gap-10">
         <div className="lg:col-span-7">
-          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{d.eyebrow}</div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">{CONTACT_CTA_DEFAULT.eyebrow}</div>
           <h2 className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.92]" style={{ letterSpacing: "-0.03em" }}>
             {d.titleLine1}<br />
             {d.titleLine2} <span className="font-light text-uzx-orange">{d.titleHighlight}</span>

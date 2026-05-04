@@ -286,7 +286,7 @@ const CHANGELOG: ChangelogData = {
 };
 
 export const NEWS_DEFAULT: NewsData = {
-  eyebrow: "05 / Noutăți & comunicări",
+  eyebrow: "07 / Noutăți & comunicări",
   titleLine1: "Ultimele articole,",
   titleHighlight: "comunicate și studii.",
   description:
@@ -306,7 +306,7 @@ export function NewsSection({ data }: { data?: NewsData | null }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
           <div className="lg:col-span-6">
             <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3">
-              {d.eyebrow}
+              {NEWS_DEFAULT.eyebrow}
             </div>
             <h2
               className="serif text-2xl md:text-3xl lg:text-4xl text-ink-900 leading-[0.95]"

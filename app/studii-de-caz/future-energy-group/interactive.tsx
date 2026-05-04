@@ -3,6 +3,80 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+export function VerticalVideoSlot({
+  videoSrc,
+  posterSrc,
+  caption,
+}: {
+  videoSrc?: string;
+  posterSrc?: string;
+  caption?: string;
+}) {
+  if (videoSrc) {
+    const isYouTube = /youtube\.com|youtu\.be/.test(videoSrc);
+    const ytShortMatch = videoSrc.match(/(?:shorts\/|v=|youtu\.be\/)([\w-]{11})/);
+    const ytId = ytShortMatch?.[1];
+    return (
+      <figure className="bg-ink-900 border hairline overflow-hidden">
+        <div className="relative mx-auto" style={{ aspectRatio: "9 / 16", maxWidth: 360 }}>
+          {isYouTube && ytId ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1`}
+              title={caption || "Video vertical Future Energy Group"}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          ) : (
+            <video
+              src={videoSrc}
+              poster={posterSrc}
+              controls
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
+        </div>
+        {caption && (
+          <figcaption className="text-[10px] mono uppercase tracking-widest text-white/70 text-center py-3 px-4">
+            {caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
+
+  return (
+    <figure
+      className="bg-ink-50 border-2 border-dashed border-ink-300 mx-auto flex flex-col items-center justify-center text-center p-8"
+      style={{ aspectRatio: "9 / 16", maxWidth: 360 }}
+      data-uzx-slot="vertical-video"
+    >
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#9aa6b8"
+        strokeWidth="1.2"
+        className="mb-4"
+      >
+        <rect x="6" y="3" width="12" height="18" rx="2" />
+        <circle cx="12" cy="17" r="1" fill="#9aa6b8" />
+      </svg>
+      <div className="text-[10px] mono uppercase tracking-widest text-ink-400 mb-2">
+        Slot video vertical · 9:16
+      </div>
+      <div className="serif text-base text-ink-700 mb-2">
+        Adaugă din admin
+      </div>
+      <p className="text-xs text-ink-500 leading-relaxed max-w-[220px]">
+        Configurează URL-ul în <code className="mono text-[11px]">verticalVideoSrc</code> din pagina FEG ca să apară aici.
+      </p>
+    </figure>
+  );
+}
+
 export function VideoPlayer({
   youtubeId,
   thumbnail,

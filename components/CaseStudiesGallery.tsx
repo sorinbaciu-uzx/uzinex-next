@@ -4,9 +4,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+import { BazaNatoTile } from "./BazaNatoTile";
 
 const DETAIL_PAGES: Record<string, string> = {
   feg: "/studii-de-caz/future-energy-group",
+  "baza-nato": "/studii-de-caz/baza-nato-aluminium-laser",
+  camma: "/studii-de-caz/caramida-modulara-camma",
+  "fier-forjat-limanu": "/studii-de-caz/fier-forjat-limanu",
+  airone: "/studii-de-caz/airone-inox",
+  geomar: "/studii-de-caz/geomar-pitesti",
 };
 
 type Industry =
@@ -40,46 +46,80 @@ const CASE_STUDIES: CaseStudyAll[] = [
     id: "camma",
     client: "CAMMA Tehno Metal S.R.L.",
     industry: "Procesare & reciclare",
-    location: "Transilvania, România",
-    year: "2025",
+    location: "Buzău, România",
+    year: "2022",
     title: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România",
     excerpt:
-      "CAMMA Tehno Metal a ales Uzinex pentru implementarea unei linii complete de producție pentru cea mai mare fabrică de cărămidă modulară din România. Proiectul a inclus dimensionare tehnică, livrare echipamente, instalare și training pentru operatori, finanțat prin fonduri europene.",
-    equipment: ["Presă hidraulică", "Linie de uscare", "Sistem de paletizare", "Conveyor industrial"],
+      "CAMMA Tehno Metal cumpărase din Ucraina 2 prese hidraulice cu forțe enorme și nu reușea să producă nici o cărămidă utilă. Soluția nu a fost forța de presare, ci o linie completă turnkey, calculator de umiditate pentru materia primă și transferul rețetei pentru chimia betoanelor hyper-presate semi-uscate, adaptată in-situ pe argila din Buzău. Capacitate operațională ×100, de la 200 la 20.000 cărămizi/zi.",
+    equipment: [
+      "Moară cu ciocane · spargere argilă uscată",
+      "Cernător · site fine pentru bucățile mari",
+      "Malaxor materie primă · amestec calibrat",
+      "Presă hidraulică · compactare semi-uscată",
+      "Benzi transportoare · interconectare flux + evacuare",
+      "Calculator umiditate · recalculare automată proporții",
+    ],
     metrics: [
-      { label: "Capacitate", value: "+300%" },
-      { label: "Status", value: "Operațional" },
-      { label: "Finanțare", value: "Fonduri UE" },
+      { label: "Capacitate", value: "×100" },
+      { label: "Capacitate teoretică", value: "800K m³/an" },
+      { label: "Defecte garanție", value: "0" },
     ],
     image: "https://img.youtube.com/vi/AoMfOAPQzVQ/maxresdefault.jpg",
-    alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — CAMMA Tehno Metal",
+    alt: "Linie completă de producție pentru cea mai mare fabrică de cărămidă modulară din România — CAMMA Tehno Metal Buzău",
     featured: true,
     youtubeId: "AoMfOAPQzVQ",
   },
   {
     id: "airone",
-    client: "AIRONE",
+    client: "DORASERV SRL · AIRONE Inox · Octav Damasken",
     industry: "Producție & manufactură",
-    location: "România",
-    year: "2025",
-    title: "Fabrică de echipamente HoReCa pentru cel mai important jucător din piața din România",
+    location: "Măcin, Tulcea",
+    year: "2017–2026",
+    title: "9 ani · 0 intervenții service · recordul Uzinex pe laser fiber 6 kW la AIRONE Inox",
     excerpt:
-      "AIRONE, liderul pieței românești de echipamente HoReCa, a colaborat cu Uzinex pentru dotarea fabricii de producție cu utilaje industriale de ultimă generație. Proiectul a inclus utilaje de prelucrare inox, presare, sudură și asamblare automatizată pentru fabricarea de echipamente profesionale de bucătărie.",
+      "DORASERV SRL cu brandul AIRONE Inox produce de 24 de ani echipamente pentru bucătării profesionale, lider HoReCa pe piața românească și partener white label pentru branduri italiene. Din 2017 până în 2026, Uzinex a livrat 7 echipamente majore (≈ 500.000 € investiție continuă), iar laserul fiber 6 kW din 2017 funcționează în 2026 fără o singură chemare în garanție. Recordul absolut Uzinex.",
     equipment: [
-      "Utilaje prelucrare inox",
-      "Mașini de presare",
-      "Sisteme sudură TIG/MIG",
-      "Linie asamblare automatizată",
+      "Laser fiber 6 kW · masă transfer · cabină închisă (2017, flagship)",
+      "Abkant pentru îndoire tablă inox",
+      "Sudură laser 2 kW pentru cordoane fine",
+      "Robot de sudură pentru serii repetabile",
+      "Mașină debitare cu jet de apă (waterjet)",
+      "Presă formare la rece 600 tone (2025)",
+      "Software industrial proiectare elemente metalice",
     ],
     metrics: [
-      { label: "Poziție piață", value: "#1 RO" },
-      { label: "Segment", value: "HoReCa" },
-      { label: "Integrare", value: "Completă" },
+      { label: "Service post-livrare", value: "9 ani · 0" },
+      { label: "Investiție continuă", value: "≈ 500K €" },
+      { label: "Vechime piață", value: "24 ani" },
     ],
     image: "https://img.youtube.com/vi/LVRLKCO4yQY/maxresdefault.jpg",
-    alt: "Echipamente de producție Uzinex pentru AIRONE — lider piață HoReCa România",
+    alt: "Echipamente Uzinex livrate la AIRONE Inox Măcin — laser fiber 6 kW cu 9 ani 0 intervenții service, plus 6 utilaje complementare pentru fabrica completă de inox HoReCa",
     featured: true,
     youtubeId: "LVRLKCO4yQY",
+  },
+  {
+    id: "baza-nato",
+    client: "Contractor român · construcții apărare",
+    industry: "Apărare & securitate",
+    location: "Bază NATO · România",
+    year: "2025",
+    title: "5 aparate laser pe o bază NATO unde vremea bloca sudura conventională",
+    excerpt:
+      "Un contractor român cu acreditare NATO a livrat hangare expediționare din aluminiu pe o bază militară terestră, cu termen ferm și penalități zilnice. Vântul și ploaia făceau imposibilă sudura MIG sau TIG. Soluția: 5 aparate laser identice, 3 active plus 2 în standby, operate de oameni fără experiență de sudură care s-au adaptat mai rapid decât sudorii cu zece ani vechime.",
+    equipment: [
+      "5× aparat laser 3-in-1 · 2.000W · sursă MAX · pistol SUP23T",
+      "Pachet consumabile pentru 12 luni",
+      "Abonament înlocuire 24h",
+    ],
+    metrics: [
+      { label: "Unități livrate", value: "5" },
+      { label: "Backup", value: "2 standby" },
+      { label: "Imun la vreme", value: "100%" },
+    ],
+    image:
+      "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=80&auto=format&fit=crop",
+    alt: "Aparate de sudură laser Uzinex livrate pentru un contractor român cu acreditare NATO pentru hangare expediționare din aluminiu pe o bază militară terestră",
+    featured: true,
   },
   {
     id: "feg",
@@ -127,26 +167,26 @@ const CASE_STUDIES: CaseStudyAll[] = [
   },
   {
     id: "geomar",
-    client: "Geomar S.R.L.",
+    client: "Geomar SRL · Marian",
     industry: "Auto & metalurgie",
-    location: "Pitești, România",
-    year: "2025",
-    title: "Fabrică de confecții metalice dotată integral cu echipamente Uzinex",
+    location: "Pitești, Argeș",
+    year: "2022–2023",
+    title: "Atelier B2C confecții metalice cu laser fiber 6 kW · pivotare spre tabla curată",
     excerpt:
-      "Geomar S.R.L. din Pitești a ales Uzinex pentru dotarea completă a fabricii de confecții metalice. Proiectul a inclus utilaje de prelucrare metal, sudură, vopsire și asamblare, configurate pentru producție de serie și pentru comenzi personalizate.",
+      "Marian, fondatorul Geomar SRL din Pitești, a observat că nișa „tablă curată” devine mainstream pe B2C și a pivotat strategic. Cu o investiție Start-Up Nation 2022 de circa 50.000 €, atelierul lui de 2 oameni a primit laser fiber economy 6 kW, aparat sudură laser și pachet de digitalizare. Pentru clienți B2C care văd direct muchia produsului, edge-ul curat din laser este diferențiatorul vizibil.",
     equipment: [
-      "Mașini de tăiere laser",
-      "Sudură robotizată",
-      "Ștanțe și abkant",
-      "Cabină vopsire industrială",
+      "Laser fiber economy 6 kW · debit tablă curată inox / aluminiu / oțel",
+      "Aparat sudură cu laser · cordoane fine pe inox și aluminiu",
+      "Pachet digitalizare · software industrial proiectare elemente metalice",
     ],
     metrics: [
-      { label: "Dotare", value: "Integrală" },
-      { label: "Proces", value: "Automatizat" },
-      { label: "Flexibilitate", value: "Ridicată" },
+      { label: "Investiție Start-Up Nation", value: "≈ 50K €" },
+      { label: "Pivot", value: "Tabla curată" },
+      { label: "Service post-PIF", value: "0 chemări" },
     ],
     image: "https://img.youtube.com/vi/Ofsgi59eWI4/maxresdefault.jpg",
-    alt: "Fabrică de confecții metalice Geomar Pitești — dotare completă cu echipamente Uzinex",
+    alt: "Atelier B2C confecții metalice Geomar SRL Pitești — laser fiber 6 kW economy plus sudură laser plus pachet digitalizare prin Start-Up Nation 2022",
+    featured: true,
     youtubeId: "Ofsgi59eWI4",
   },
   {
@@ -271,26 +311,28 @@ const CASE_STUDIES: CaseStudyAll[] = [
   },
   {
     id: "fier-forjat-limanu",
-    client: "Fier-Forjat Limanu S.R.L.",
+    client: "Fier-Forjat Limanu SRL · Jan Paul Elhor",
     industry: "Auto & metalurgie",
     location: "Limanu, Constanța",
-    year: "2025",
-    title: "Fabrică completă de confecții metalice din fier forjat",
+    year: "2023",
+    title: "Atelier de fier forjat semi-automatizat cu finanțare nerambursabilă Start-Up Nation",
     excerpt:
-      "Fier-Forjat Limanu S.R.L. din localitatea Limanu, județul Constanța, este specializată în confecții metalice artizanale și industriale din fier forjat. Uzinex a furnizat fabrica completă cu utilaje pentru forjare, prelucrare, îndoire și finisare, păstrând caracterul tradițional al meșteșugului combinat cu eficiența industrială.",
+      "Un meșter în fier forjat din Limanu, cu dureri cronice de spate după un accident de pe acoperiș, construiește un atelier semi-automat de 68.000 € prin Start-Up Nation. Uzinex livrează echipamentele și pregătește dosarul de finanțare gratuit. Rezultat: ×5–6 viteză producție, +50% calitate, 1 om operează 3–4 mașini, durerile de spate eliminate.",
     equipment: [
-      "Presă hidraulică de forjare",
-      "Mașini de îndoit fier forjat",
-      "Cuptoare industriale de încălzire",
-      "Utilaje de finisare și vopsire",
+      "Mașină îndoit fier rece A150A · Spania · CNC · platbandă 2,20m",
+      "Ghilotină combinată cu pedaul · taie tablă + găurire",
+      "Ciocan pneumatic 40 kg-forță",
+      "Fierăstrău cu bandă · mașină găurit cu avans automat",
+      "Aparate sudură MIG/MAG/TIG · forjă · freză · CNC",
     ],
     metrics: [
-      { label: "Specializare", value: "Fier forjat" },
-      { label: "Dotare", value: "Completă" },
-      { label: "Profil", value: "Artizanal + Industrial" },
+      { label: "Viteză producție", value: "×5–6" },
+      { label: "Calitate cordoane", value: "+50%" },
+      { label: "Investiție", value: "≈ 68K €" },
     ],
     image: "https://img.youtube.com/vi/bCxoVN1QgQM/maxresdefault.jpg",
-    alt: "Fabrică completă de fier forjat Uzinex pentru Fier-Forjat Limanu Constanța",
+    alt: "Atelier complet de fier forjat semi-automatizat Uzinex pentru Jan Paul Elhor — Fier-Forjat Limanu Constanța",
+    featured: true,
     youtubeId: "bCxoVN1QgQM",
   },
   {
@@ -644,19 +686,25 @@ export function CaseStudiesGallery({ data }: { data?: CaseStudiesAllData | null 
                     aria-label={c.youtubeId ? `Vezi videoclipul: ${c.title}` : c.title}
                     className="relative aspect-[16/10] overflow-hidden bg-ink-100 text-left disabled:cursor-default"
                   >
-                    <Image
-                      src={c.image}
-                      alt={c.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition duration-700"
-                      loading="lazy"
-                    />
+                    {c.id === "baza-nato" ? (
+                      <BazaNatoTile />
+                    ) : (
+                      <Image
+                        src={c.image}
+                        alt={c.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition duration-700"
+                        loading="lazy"
+                      />
+                    )}
                     <div
                       className="absolute inset-0 pointer-events-none"
                       style={{
                         background:
-                          "linear-gradient(180deg, rgba(8,37,69,0) 50%, rgba(8,37,69,0.85) 100%)",
+                          c.id === "baza-nato"
+                            ? "linear-gradient(180deg, rgba(8,37,69,0) 70%, rgba(8,37,69,0.85) 100%)"
+                            : "linear-gradient(180deg, rgba(8,37,69,0) 50%, rgba(8,37,69,0.85) 100%)",
                       }}
                     />
                     <div className="absolute top-3 left-3">
