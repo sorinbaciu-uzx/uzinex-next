@@ -6,6 +6,7 @@ import { CopyButton } from "./CopyButton";
 import { Sparkline, MiniBar } from "./Sparkline";
 import { EmbedActions } from "./EmbedActions";
 import type { InsightView } from "@/lib/newsroom/extract";
+import { buildPrimarySourceUrl, buildCrossCheckUrl } from "@/lib/newsroom/source-urls";
 
 const TYPE_LABELS: Record<string, { label: string; color: string }> = {
   anomaly: { label: "ANOMALIE STATISTICĂ", color: "bg-red-100 text-red-800" },
@@ -24,6 +25,7 @@ type Props = {
     createdAt: string;
     usedInStoryId: number | null;
     sources: string[];
+    data?: any;
   };
   view: InsightView;
   shareableHeadline: string;
@@ -35,6 +37,10 @@ export function AnomalyCard({ insight, view, shareableHeadline, storyLink }: Pro
 
   const type = TYPE_LABELS[insight.type] || { label: insight.type.toUpperCase(), color: "bg-ink-100 text-ink-700" };
   const dateStr = new Date(insight.createdAt).toLocaleDateString("ro-RO", { day: "2-digit", month: "long", year: "numeric" });
+  // Verification links: primary source (BNR / IMF / SAM / etc) + Google cross-check.
+  // Both honor the journalist's need to verify our numbers independently.
+  const primaryLink = buildPrimarySourceUrl(insight as any);
+  const crossLink = buildCrossCheckUrl(insight as any);
 
   return (
     <article className="border border-ink-100 rounded-lg bg-white overflow-hidden hover:border-uzx-blue/40 transition-colors">
@@ -111,6 +117,39 @@ export function AnomalyCard({ insight, view, shareableHeadline, storyLink }: Pro
 
       {/* ACTION ROW */}
       <div className="border-t border-ink-100 bg-ink-50/40 px-5 md:px-6 py-3 flex flex-wrap gap-2 items-center">
+        {/* VERIFICATION GROUP — primary source + cross-check */}
+        {primaryLink && (
+          <a
+            href={primaryLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={primaryLink.hint || "Verifică cifra pe site-ul oficial al sursei"}
+            className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded border border-emerald-200 bg-emerald-50/60 hover:bg-emerald-50 hover:border-emerald-400 text-emerald-900 font-medium transition"
+          >
+            <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <path d="M14 4.5V14a2 2 0 01-2 2H4a2 2 0 01-2-2V2a2 2 0 012-2h5.5L14 4.5z" />
+              <polyline points="9 0 9 5 14 5" />
+            </svg>
+            {primaryLink.label}
+          </a>
+        )}
+        <a
+          href={crossLink.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={crossLink.hint}
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded border border-ink-200 hover:border-uzx-blue hover:bg-white transition text-ink-700"
+        >
+          <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <circle cx="7" cy="7" r="5" />
+            <line x1="11" y1="11" x2="15" y2="15" />
+          </svg>
+          {crossLink.label}
+        </a>
+
+        <span className="w-px h-5 bg-ink-200 mx-1 hidden sm:inline-block" />
+
+        {/* COPY/EXPORT GROUP */}
         <CopyButton value={insight.title} label="Copiază titlul" />
         <CopyButton value={shareableHeadline} label="Copiază titlu + bullets + sursă" />
         <a
