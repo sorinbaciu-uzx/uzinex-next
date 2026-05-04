@@ -12,7 +12,12 @@ export const metadata: Metadata = {
   title: "Newsroom — date oficiale despre industria românească",
   description:
     "Newsroom UZINEX agregă date din 90+ surse oficiale (BNR, Eurostat, TED Europa, World Bank, IMF) și publică săptămânal anomalii și story-uri cu cifre verificabile pentru jurnaliști.",
-  alternates: { canonical: "/newsroom" },
+  alternates: {
+    canonical: "/newsroom",
+    types: {
+      "application/rss+xml": [{ url: "/newsroom/feed.xml", title: "Newsroom UZINEX — RSS" }],
+    },
+  },
 };
 
 export default function NewsroomPage() {
@@ -20,7 +25,11 @@ export default function NewsroomPage() {
   const insights = loadInsights();
   const featured = stories[0];
   const rest = stories.slice(1);
-  const topAnomalies = insights.slice(0, 3);
+  // Top insights for landing: filter low-score noise (score >= 0.5), sort by score, take 3
+  const topAnomalies = insights
+    .filter((i) => (i.score ?? 0) >= 0.5)
+    .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+    .slice(0, 3);
 
   return (
     <>
@@ -40,7 +49,7 @@ export default function NewsroomPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/newsroom/anomalii" className="inline-flex items-center gap-1.5 bg-uzx-orange text-white text-sm font-medium px-4 py-2 rounded hover:bg-uzx-orange2 transition-colors">
-              → Anomalii săptămânale
+              → Insights săptămânale
             </Link>
             <Link href="/newsroom/firme" className="inline-flex items-center gap-1.5 bg-uzx-blue text-white text-sm font-medium px-4 py-2 rounded hover:bg-uzx-blue2 transition-colors">
               Profile firme industriale
@@ -57,7 +66,7 @@ export default function NewsroomPage() {
             <div className="flex items-baseline justify-between mb-5">
               <div>
                 <div className="text-xs uppercase tracking-widest text-uzx-orange mb-1 font-medium">Pentru articolul tău săptămânal</div>
-                <h2 className="serif text-2xl md:text-3xl tracking-tight text-ink-900">Top 3 anomalii — gata de copy</h2>
+                <h2 className="serif text-2xl md:text-3xl tracking-tight text-ink-900">Top 3 insights — gata de copy</h2>
               </div>
               <Link href="/newsroom/anomalii" className="text-sm text-uzx-blue hover:text-uzx-orange font-medium hidden sm:inline">
                 Vezi toate →
@@ -136,6 +145,22 @@ export default function NewsroomPage() {
             <p className="serif text-lg text-ink-700 mb-2">Niciun story sau insight publicat încă.</p>
           </div>
         )}
+
+        {/* SUBSCRIBE FOOTER */}
+        <section className="border-t border-ink-100 pt-8 flex flex-wrap gap-4 items-center justify-between text-sm text-ink-600">
+          <div>
+            <strong className="text-ink-900">Urmărește Newsroom UZINEX:</strong> RSS feed pentru feed reader, sau email la <a href="mailto:sorin.baciu@uzinex.ro" className="text-uzx-blue hover:text-uzx-orange underline underline-offset-2">sorin.baciu@uzinex.ro</a>.
+          </div>
+          <a
+            href="/newsroom/feed.xml"
+            className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded border border-ink-200 hover:border-uzx-orange hover:bg-uzx-orange/5 text-ink-700 font-medium"
+          >
+            <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="currentColor" aria-hidden>
+              <path d="M5 17.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 11v3a8 8 0 0 1 8 8h3A11 11 0 0 0 3 11zm0-8v3a16 16 0 0 1 16 16h3A19 19 0 0 0 3 3z" />
+            </svg>
+            RSS feed
+          </a>
+        </section>
       </main>
       <Footer />
     </>

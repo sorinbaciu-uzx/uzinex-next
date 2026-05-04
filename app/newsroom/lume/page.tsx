@@ -53,11 +53,11 @@ export default function LumeIndexPage() {
     },
     {
       href: "/newsroom/lume/comert-mondial",
-      eyebrow: "UN Comtrade",
-      title: "Comerțul exterior al României 2024",
-      bigNumber: `${fmtMld(w.comtrade.totalExport)} USD`,
-      bigNumberLabel: "EXPORT TOTAL 2024",
-      subtitle: `Date oficiale UN Comtrade pentru reporter ROU în 2024. Combinat cu World Bank exports/GDP și balanța comercială multi-anuală.`,
+      eyebrow: "UN Comtrade · World Bank",
+      title: "Comerțul exterior al României — context macro",
+      bigNumber: w.comtrade.totalExport > 0 ? `${fmtMld(w.comtrade.totalExport)} USD` : "în așteptare",
+      bigNumberLabel: w.comtrade.totalExport > 0 ? "EXPORT TOTAL 2024" : "TIER GRATUIT — necesită COMTRADE_API_KEY",
+      subtitle: `Pondere export în PIB (World Bank), FDI ca % din PIB, investiții străine — comparație România vs vecini regionali. Tier gratuit UN Comtrade returnează doar count, nu agregate world.`,
       sources: ["UN Comtrade", "World Bank"],
     },
     {

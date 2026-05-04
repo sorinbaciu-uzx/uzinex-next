@@ -397,7 +397,7 @@
     "category": "intl_trade",
     "description": "Toate țările, toate produsele, lunar",
     "impl": "real",
-    "pointsCollected": 446
+    "pointsCollected": 1
   },
   {
     "id": "wto",

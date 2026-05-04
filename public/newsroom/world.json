@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T10:39:42.213Z",
+  "generatedAt": "2026-05-04T12:04:31.682Z",
   "countries": [
     "ROU",
     "POL",
@@ -5612,9 +5612,9 @@
     ]
   },
   "comtrade": {
-    "totalExport": 136519363524.29,
+    "totalExport": 0,
     "totalImport": 0,
-    "balance": 136519363524.29
+    "balance": 0
   },
   "nato": {
     "nspaOpenOpportunities": 0

@@ -188,6 +188,12 @@ export default function PressCenterPage() {
                 cta="Vezi documentație"
               />
               <ResourceCard
+                title="RSS feed (story-uri + insights)"
+                description="Abonare în Feedly, NewsBlur, Inoreader. Story-urile editoriale + insights cu score ≥ 0,6 (top 30). Update orar."
+                href="/newsroom/feed.xml"
+                cta="Adaugă în feed reader"
+              />
+              <ResourceCard
                 title="Bio Sorin Baciu"
                 description="Text scurt + lung pentru atribuire în articole."
                 href="#bio"

@@ -51,13 +51,13 @@ export default function ComertMondialPage() {
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">Export 2024</div>
-                <div className="serif text-5xl md:text-6xl text-uzx-orange num">{fmtMld(c.totalExport)}</div>
-                <div className="text-xs text-ink-400 mt-1">USD, UN Comtrade</div>
+                <div className="serif text-5xl md:text-6xl text-uzx-orange num">{c.totalExport > 0 ? fmtMld(c.totalExport) : "în așteptare"}</div>
+                <div className="text-xs text-ink-400 mt-1">{c.totalExport > 0 ? "USD, UN Comtrade" : "necesită COMTRADE_API_KEY"}</div>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-ink-500 mb-2">Import 2024</div>
-                <div className="serif text-5xl md:text-6xl text-ink-900 num">{c.totalImport > 0 ? fmtMld(c.totalImport) : "în pregătire"}</div>
-                <div className="text-xs text-ink-400 mt-1">USD, UN Comtrade</div>
+                <div className="serif text-5xl md:text-6xl text-ink-900 num">{c.totalImport > 0 ? fmtMld(c.totalImport) : "în așteptare"}</div>
+                <div className="text-xs text-ink-400 mt-1">{c.totalImport > 0 ? "USD, UN Comtrade" : "necesită COMTRADE_API_KEY"}</div>
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-ink-500 mb-2">Pondere export în PIB</div>
@@ -65,6 +65,11 @@ export default function ComertMondialPage() {
                 <div className="text-xs text-ink-400 mt-1">{roExportShare?.year ?? ""}, World Bank</div>
               </div>
             </div>
+            {(c.totalExport === 0 || c.totalImport === 0) && (
+              <div className="mt-6 max-w-2xl mx-auto bg-amber-50 border-l-4 border-amber-400 p-4 text-sm text-amber-900 rounded-r">
+                <strong>Notă transparență:</strong> Tier-ul gratuit UN Comtrade returnează numărul de înregistrări (446 pentru reporter ROU, an 2024), dar fără descrierea fluxului (export/import) și fără partener — agregarea totalurilor este imposibilă fără cheie API plătită. Decizia editorială UZINEX: NU publicăm cifre sintetice (precum „473 mld USD" generate prin sumarea coloanelor null). Pentru date utilizabile, vezi pondere export în PIB de la World Bank (coloana 3) — sursa primară pentru analize macro.
+              </div>
+            )}
           </section>
 
           {/* EXPORTS SHARE GDP */}
@@ -91,7 +96,7 @@ export default function ComertMondialPage() {
             <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">Metodologie & surse</h2>
             <div className="prose-newsroom text-[15px]">
               <p>
-                Datele UN Comtrade provin din endpoint-ul oficial <code>comtradeapi.un.org/public/v1/preview/C/A/HS</code>, filtrat pe <code>reporterCode=642</code> (România), <code>period=2024</code>, <code>partnerCode=0</code> (lume), <code>flowCode=M,X</code> (importuri și exporturi). Volumul total este suma valorilor primaryValue per record.
+                Datele UN Comtrade provin din endpoint-ul oficial <code>comtradeapi.un.org/public/v1/preview/C/A/HS</code>, filtrat pe <code>reporterCode=642</code> (România), <code>period=2024</code>, <code>partnerCode=0</code> (lume), <code>flowCode=M,X</code> (importuri și exporturi). <strong>Important:</strong> tier-ul gratuit returnează doar numărul de înregistrări (count); coloanele <code>flowDesc</code> și <code>partnerDesc</code> vin null, iar <code>primaryValue</code> reflectă slice-uri parțiale, nu agregate world TOTAL. Pentru cifre publicabile, este nevoie de cheie API plătită (variabila de mediu <code>COMTRADE_API_KEY</code>). Politica UZINEX: <strong>nu publicăm cifre derivate prin agregare nesigură</strong> — preferăm tăcerea unei cifre lipsă față de o cifră greșită.
               </p>
               <p>
                 Datele World Bank Open Data sunt accesate prin <code>api.worldbank.org/v2/country/[ISO]/indicator/[CODE]?format=json</code>. Pentru această pagină folosim:

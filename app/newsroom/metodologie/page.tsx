@@ -121,7 +121,33 @@ export default function MetodologiePage() {
           </section>
 
           <section>
-            <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">4. Limitări metodologice — ce NU putem afirma</h2>
+            <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">4. Algoritmic vs editorial — citește badge-urile</h2>
+            <div className="prose-newsroom text-[15px]">
+              <p>
+                Pe paginile de insights, fiecare card are un badge care semnalează tipul de validare aplicat cifrei:
+              </p>
+              <ul>
+                <li>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs mr-1">
+                    ✓ Verificat editorial
+                  </span>
+                  — cifra a fost folosită într-un story scris și revizuit manual de echipa UZINEX (Sorin Baciu, Director General). Sumarul, contextul și implicațiile au fost validate înainte de publicare. <strong>Poate fi citată direct în articole.</strong>
+                </li>
+                <li>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-medium bg-amber-50 text-amber-800 border border-amber-200 text-xs mr-1">
+                    ⚠ Algoritmic
+                  </span>
+                  — cifra a trecut filtrele de detecție automată (z-score &gt; 3,0σ, YoY &gt; 15%, sanity check pe valoare absolută), dar <strong>nu a fost încă revizuită editorial</strong>. Pot exista situații excepționale (modificare metodologie la sursă, re-clasificare cod NACE, schimbare baseline IMF) care nu sunt detectate algoritmic. Recomandăm verificare la sursa primară înainte de citare.
+                </li>
+              </ul>
+              <p>
+                Distincția aceasta este o promisiune editorială clară pentru jurnaliști: nu ascundem care cifră a trecut prin om și care doar prin algoritm. Toate insights publicate trec prin sanity checks (max/min plauzibil, surse consistente între ele), dar verificarea editorială rămâne nivelul superior de încredere.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">5. Limitări metodologice — ce NU putem afirma</h2>
             <div className="prose-newsroom text-[15px]">
               <ul>
                 <li><strong>Datoria publică IMF</strong> — proiecțiile pentru 2026-2031 sunt scenarii pe ipoteze de politici economice constante. Pot devia semnificativ de la realitate.</li>
@@ -136,7 +162,7 @@ export default function MetodologiePage() {
           </section>
 
           <section>
-            <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">5. Reproducibilitate</h2>
+            <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">6. Reproducibilitate</h2>
             <div className="prose-newsroom text-[15px]">
               <p>Toate cifrele de pe Newsroom sunt verificabile independent:</p>
               <ol>

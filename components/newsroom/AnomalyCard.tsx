@@ -42,6 +42,27 @@ export function AnomalyCard({ insight, view, shareableHeadline, storyLink }: Pro
         {/* HEADER */}
         <div className="flex flex-wrap items-center gap-2.5 mb-4 text-xs">
           <span className={`px-2 py-0.5 rounded font-medium ${type.color}`}>{type.label}</span>
+          {storyLink ? (
+            <span
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-medium bg-emerald-50 text-emerald-800 border border-emerald-200"
+              title="Această cifră a fost folosită într-un story editorial revizuit manual de UZINEX (Sorin Baciu)."
+            >
+              <svg viewBox="0 0 16 16" className="w-3 h-3" fill="currentColor" aria-hidden>
+                <path d="M13.78 4.22a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06 0l-3.5-3.5a.75.75 0 111.06-1.06L5.75 11.19l6.97-6.97a.75.75 0 011.06 0z" />
+              </svg>
+              Verificat editorial
+            </span>
+          ) : (
+            <span
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded font-medium bg-amber-50 text-amber-800 border border-amber-200"
+              title="Cifră detectată algoritmic — nu a fost încă revizuită editorial. Recomandăm verificare la sursă înainte de publicare."
+            >
+              <svg viewBox="0 0 16 16" className="w-3 h-3" fill="currentColor" aria-hidden>
+                <path d="M8 1.45l6.705 11.55H1.295L8 1.45zM8 6v3M8 11v.01" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+              </svg>
+              Algoritmic
+            </span>
+          )}
           <span className="num text-ink-500">score <strong className="text-ink-900">{insight.score.toFixed(2)}</strong></span>
           <span className="text-ink-300">·</span>
           <span className="text-ink-500 num">{dateStr}</span>

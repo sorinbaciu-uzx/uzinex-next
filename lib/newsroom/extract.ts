@@ -30,7 +30,7 @@ export function extractInsightView(i: Insight): InsightView {
         bullets: [
           latest ? `Ultima valoare: ${fmtNum(latest.value, { maximumFractionDigits: 4 })} pe ${latest.date.slice(0, 10)}` : "",
           baseline ? `Baseline (${baseline.n} sesiuni): media ${fmtNum(baseline.mean, { maximumFractionDigits: 4 })}, stdev ${fmtNum(baseline.stdev, { maximumFractionDigits: 4 })}` : "",
-          z != null ? `Z-score: ${fmtNum(z, { maximumFractionDigits: 2 })} — atipic statistic dacă |z| > 1,5` : "",
+          z != null ? `Z-score: ${fmtNum(z, { maximumFractionDigits: 2 })} — atipic statistic dacă |z| > 3,0 (prag UZINEX)` : "",
         ].filter(Boolean),
         chartType: chart.length > 1 ? "line" : null,
         chartData: chart,

@@ -9,32 +9,43 @@ import { loadInsights, loadStories } from "@/lib/newsroom/data";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Anomalii săptămânale — Newsroom UZINEX",
+  title: "Insights săptămânale — Newsroom UZINEX",
   description:
-    "Anomalii statistice, trend-uri YoY și ranking-uri cross-country detectate automat săptămânal de pipeline-ul Newsroom UZINEX. Date oficiale, gata pentru articol.",
+    "Insights săptămânale: anomalii statistice (z-score > 3,0σ), trend-uri YoY, ranking-uri cross-country detectate automat de pipeline-ul Newsroom UZINEX. Date oficiale, gata pentru articol.",
   alternates: { canonical: "/newsroom/anomalii" },
 };
 
 const FILTERS = [
   { val: "all", label: "Toate" },
-  { val: "anomaly", label: "Anomalii" },
-  { val: "trend", label: "Trend-uri" },
+  { val: "anomaly", label: "Anomalii (z>3σ)" },
+  { val: "trend", label: "Trend-uri YoY" },
   { val: "ranking", label: "Ranking-uri" },
   { val: "cross_reference", label: "Cross-reference" },
 ];
 
+// Default minimum score to filter out low-relevance trends; can be overridden with ?score=0
+const DEFAULT_SCORE_THRESHOLD = 0.5;
+
 export default async function AnomaliiPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
   const filter = (typeof sp.type === "string" ? sp.type : "all") as string;
+  const scoreParam = typeof sp.score === "string" ? Number.parseFloat(sp.score) : DEFAULT_SCORE_THRESHOLD;
+  const scoreMin = Number.isFinite(scoreParam) ? scoreParam : DEFAULT_SCORE_THRESHOLD;
 
   const allInsights = loadInsights();
   const stories = loadStories();
-  const list = filter === "all" ? allInsights : allInsights.filter((i) => i.type === filter);
+  // Apply score floor first (default 0.5) so the feed shows only relevant insights;
+  // user can pass ?score=0 to see everything (debug / completeness view).
+  const filteredByScore = allInsights.filter((i) => (i.score ?? 0) >= scoreMin);
+  const list = filter === "all" ? filteredByScore : filteredByScore.filter((i) => i.type === filter);
 
-  const countMap = allInsights.reduce<Record<string, number>>((acc, x) => {
+  const countMap = filteredByScore.reduce<Record<string, number>>((acc, x) => {
     acc[x.type] = (acc[x.type] || 0) + 1;
     return acc;
   }, {});
+
+  const totalUnfiltered = allInsights.length;
+  const filteredOut = totalUnfiltered - filteredByScore.length;
 
   return (
     <>
@@ -43,21 +54,31 @@ export default async function AnomaliiPage({ searchParams }: { searchParams: Pro
         <div className="max-w-4xl mx-auto space-y-8 pb-10">
           <header>
             <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">Investigation feed</div>
-            <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 mb-3">Anomalii săptămânale</h1>
+            <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 mb-3">Insights săptămânale</h1>
             <p className="text-lg text-ink-600 leading-relaxed max-w-3xl">
-              Pipeline-ul Newsroom UZINEX rulează detectoare automate săptămânal: <strong>z-score &gt; 1,5σ</strong> pe serii temporale, comparații YoY, ranking-uri cross-country.
+              Pipeline-ul Newsroom UZINEX rulează detectoare automate săptămânal: <strong>anomalii statistice cu z-score &gt; 3,0σ</strong> pe serii temporale, <strong>trend-uri YoY</strong> peste 15% variație, <strong>ranking-uri cross-country</strong>.
               Fiecare card de mai jos e gata pentru articol — copiază titlul, copiază sumarul cu sursă, descarcă datele.
             </p>
+            {scoreMin > 0 && filteredOut > 0 && (
+              <p className="mt-3 text-xs text-ink-500">
+                Afișăm insights cu score &ge; {scoreMin.toFixed(1)} ({filteredByScore.length} din {totalUnfiltered}).
+                {" "}
+                <Link href={`/newsroom/anomalii?score=0${filter !== "all" ? `&type=${filter}` : ""}`} className="text-uzx-blue hover:text-uzx-orange underline underline-offset-2">
+                  Arată toate cele {totalUnfiltered}
+                </Link>
+              </p>
+            )}
           </header>
 
           <div className="flex flex-wrap gap-2 border-b border-ink-100 pb-4">
             {FILTERS.map((f) => {
               const active = filter === f.val;
-              const count = f.val === "all" ? allInsights.length : (countMap[f.val] || 0);
+              const count = f.val === "all" ? filteredByScore.length : (countMap[f.val] || 0);
+              const scoreSuffix = scoreMin !== DEFAULT_SCORE_THRESHOLD ? `&score=${scoreMin}` : "";
               return (
                 <Link
                   key={f.val}
-                  href={f.val === "all" ? "/newsroom/anomalii" : `/newsroom/anomalii?type=${f.val}`}
+                  href={f.val === "all" ? `/newsroom/anomalii${scoreSuffix ? `?score=${scoreMin}` : ""}` : `/newsroom/anomalii?type=${f.val}${scoreSuffix}`}
                   className={`text-sm px-3 py-1.5 rounded-full transition ${
                     active ? "bg-ink-900 text-white" : "bg-ink-50 text-ink-700 hover:bg-ink-100"
                   }`}
