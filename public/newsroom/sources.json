@@ -93,7 +93,7 @@
     "category": "ro_companies",
     "description": "Status TVA contribuabili (webservice public)",
     "impl": "real",
-    "pointsCollected": 0
+    "pointsCollected": 295
   },
   {
     "id": "mfp_bilanturi",
