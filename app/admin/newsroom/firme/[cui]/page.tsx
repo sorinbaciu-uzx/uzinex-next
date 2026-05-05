@@ -1,0 +1,342 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { loadCompany, loadCompanies, loadSectorPeers } from "@/lib/newsroom/companies";
+import { FinancialLineChart, CompanyComparisonBar } from "@/components/newsroom/CompanyChart";
+import { CopyButton } from "@/components/newsroom/CopyButton";
+
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  return loadCompanies().map((c) => ({ cui: String(c.cui) }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ cui: string }> }): Promise<Metadata> {
+  const { cui } = await params;
+  const company = loadCompany(Number(cui));
+  if (!company) return { title: "Firmă negăsită" };
+  const turnover = company.financials.anaf_company_turnover?.slice(-1)[0];
+  return {
+    title: `${company.name} — profil ANAF + dosare portal.just.ro`,
+    description: `${company.name} (CUI ${company.cui}) — bilanțuri ANAF${turnover ? `, cifră de afaceri ${(turnover.value / 1_000_000_000).toFixed(2)} mld RON (${turnover.year})` : ""}, ${company.court.dosareCount}${company.court.dosareCount >= 1000 ? "+" : ""} dosare comerciale, ${company.court.recentHearings} ședințe în ultimele 12 luni.`,
+    alternates: { canonical: `/admin/newsroom/firme/${company.cui}` },
+  };
+}
+
+function fmtNum(v: number, divisor = 1, suffix = "") {
+  return (v / divisor).toLocaleString("ro-RO", { maximumFractionDigits: 2 }) + suffix;
+}
+
+export default async function CompanyProfilePage({ params }: { params: Promise<{ cui: string }> }) {
+  const { cui } = await params;
+  const company = loadCompany(Number(cui));
+  if (!company) notFound();
+
+  const peers = loadSectorPeers(company.sector, company.cui);
+
+  const turnover = company.financials.anaf_company_turnover || [];
+  const profit = company.financials.anaf_company_net_profit || [];
+  const employees = company.financials.anaf_company_employees || [];
+  const liabilities = company.financials.anaf_company_total_liabilities || [];
+
+  const latestTurnover = turnover.slice(-1)[0];
+  const latestProfit = profit.slice(-1)[0];
+  const latestEmployees = employees.slice(-1)[0];
+  const yoyTurnover =
+    turnover.length >= 2
+      ? ((turnover[turnover.length - 1].value - turnover[turnover.length - 2].value) / turnover[turnover.length - 2].value) * 100
+      : null;
+
+  // Sector comparison data
+  const allSector = [company, ...peers];
+  const sectorTurnoverData = allSector
+    .map((c) => {
+      const t = c.financials.anaf_company_turnover?.slice(-1)[0];
+      return t ? { cui: c.cui, name: c.name.slice(0, 25), value: t.value } : null;
+    })
+    .filter((x): x is { cui: number; name: string; value: number } => x !== null)
+    .sort((a, b) => b.value - a.value);
+
+  const profitMargin = latestTurnover && latestProfit && latestTurnover.value > 0
+    ? (latestProfit.value / latestTurnover.value) * 100
+    : null;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: company.name,
+    identifier: `CUI ${company.cui}`,
+    url: `https://uzinex.ro/newsroom/firme/${company.cui}`,
+  };
+
+  return (
+    <>
+      
+      <div>
+        <article className="max-w-4xl mx-auto pb-20">
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+          <Link href="/admin/newsroom/firme" className="text-sm text-ink-500 hover:text-uzx-orange transition-colors">← Toate firmele</Link>
+
+          <header className="mt-8 mb-10">
+            <div className="text-xs uppercase tracking-widest text-uzx-orange font-medium mb-2">{company.sectorLabel}</div>
+            <h1 className="serif text-4xl md:text-5xl tracking-tight text-ink-900 mb-3">{company.name}</h1>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-ink-500">
+              <span className="mono">CUI {company.cui}</span>
+              <CopyButton value={String(company.cui)} label="Copiază CUI" variant="inline" />
+              <span className="text-ink-300">·</span>
+              <a href={`https://demoanaf.ro/firma/${company.cui}`} target="_blank" rel="noopener" className="text-uzx-blue hover:text-uzx-orange">demoanaf.ro →</a>
+            </div>
+          </header>
+
+          {/* HERO STATS */}
+          <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+            <Stat
+              label="Cifră de afaceri"
+              value={latestTurnover ? fmtNum(latestTurnover.value, 1_000_000_000, "") + " mld" : "—"}
+              sublabel={latestTurnover ? `${latestTurnover.year}${yoyTurnover !== null ? ` · ${yoyTurnover >= 0 ? "+" : ""}${yoyTurnover.toFixed(1)}% YoY` : ""}` : ""}
+              accent
+            />
+            <Stat
+              label="Profit net"
+              value={latestProfit ? fmtNum(latestProfit.value, 1_000_000, "") + " mil" : "—"}
+              sublabel={latestProfit ? String(latestProfit.year) : ""}
+            />
+            <Stat
+              label="Angajați medii"
+              value={latestEmployees ? fmtNum(latestEmployees.value) : "—"}
+              sublabel={latestEmployees ? String(latestEmployees.year) : ""}
+            />
+            <Stat
+              label="Dosare comerciale"
+              value={`${company.court.dosareCount}${company.court.dosareCount >= 1000 ? "+" : ""}`}
+              sublabel={`${company.court.recentHearings} ședințe în 12 luni`}
+              warning={company.court.dosareCount >= 500}
+            />
+          </section>
+
+          {profitMargin !== null && (
+            <div className="border-l-4 border-uzx-blue bg-ink-50/50 rounded-r-lg p-4 mb-10 text-sm">
+              <strong className="text-ink-900">Marja netă {latestProfit?.year}:</strong> {profitMargin.toFixed(2)}% — profit {fmtNum(latestProfit!.value, 1_000_000, "")} mil RON la o cifră de afaceri de {fmtNum(latestTurnover!.value, 1_000_000_000, "")} mld RON.
+            </div>
+          )}
+
+          {/* CHARTS — financial time series */}
+          {turnover.length >= 2 && (
+            <section className="mb-10">
+              <h2 className="serif text-2xl tracking-tight text-ink-900 mb-4">Cifra de afaceri în timp</h2>
+              <FinancialLineChart data={turnover} title={`Cifra de afaceri ${turnover[0].year}-${turnover.slice(-1)[0].year}`} unit="mld RON" />
+            </section>
+          )}
+
+          {profit.length >= 2 && (
+            <section className="mb-10">
+              <h2 className="serif text-2xl tracking-tight text-ink-900 mb-4">Profit net în timp</h2>
+              <FinancialLineChart data={profit} title={`Profit net ${profit[0].year}-${profit.slice(-1)[0].year}`} color="#155290" unit="mil RON" divisor={1_000_000} />
+            </section>
+          )}
+
+          {employees.length >= 2 && (
+            <section className="mb-10">
+              <h2 className="serif text-2xl tracking-tight text-ink-900 mb-4">Angajați medii în timp</h2>
+              <FinancialLineChart data={employees} title={`Angajați medii ${employees[0].year}-${employees.slice(-1)[0].year}`} color="#f5851f" unit="angajați" divisor={1} />
+            </section>
+          )}
+
+          {/* SECTOR COMPARISON */}
+          {sectorTurnoverData.length >= 2 && (
+            <section className="mb-10">
+              <h2 className="serif text-2xl tracking-tight text-ink-900 mb-2">Comparație în sectorul {company.sectorLabel}</h2>
+              <p className="text-sm text-ink-500 mb-4">Cifră de afaceri ultim an pentru toate firmele din sector. Bara portocalie = {company.name}.</p>
+              <CompanyComparisonBar data={sectorTurnoverData} accentCui={company.cui} title={`${company.sectorLabel} — cifră de afaceri ultimul an`} />
+            </section>
+          )}
+
+          {/* COURT CASES */}
+          {company.court.dosareCount > 0 && (
+            <section className="mb-10 border-t border-ink-100 pt-10">
+              <h2 className="serif text-2xl tracking-tight text-ink-900 mb-2">Dosare comerciale portal.just.ro</h2>
+              <p className="text-sm text-ink-500 mb-5">
+                Date colectate prin SOAP din <code className="mono text-xs">portalquery.just.ro/query.asmx</code> pentru numele de parte „{company.name.split(" ").slice(0, 3).join(" ")}".
+                Numărul total este capat la 1000 per query (limita serviciului oficial).
+              </p>
+
+              {/* CRITICAL DISCLAIMER */}
+              <div className="bg-amber-50 border-l-4 border-amber-400 rounded-r p-4 mb-6 text-sm text-amber-950 leading-relaxed">
+                <strong>De citit înainte:</strong> „Dosare comerciale" = orice dosar la care firma apare ca parte (Pârât, Reclamant, Creditor, Debitor, etc.). O firmă mare cu mulți clienți poate apărea ca <em>Creditor</em> în sute de dosare de recuperare creanțe contra clienților datornici — asta NU înseamnă că firma însăși e în dificultate financiară. Pentru o evaluare corectă, urmărește categoriile de mai jos.
+              </div>
+
+              {/* HEADLINE STATS */}
+              <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                <Stat label="Total dosare găsite" value={`${company.court.dosareCount}${company.court.dosareCount >= 1000 ? "+" : ""}`} />
+                <Stat label="Ședințe în ultimele 12 luni" value={String(company.court.recentHearings)} />
+              </div>
+
+              {/* CATEGORY BREAKDOWN */}
+              {company.court.categoryCounts && (() => {
+                const cats = company.court.categoryCounts;
+                const subj = cats.subject || 0;
+                const cred = cats.creditor || 0;
+                const other = cats.other || 0;
+                const total = subj + cred + other;
+                if (total === 0) return null;
+                return (
+                  <div className="mb-6">
+                    <h3 className="serif text-lg tracking-tight text-ink-900 mb-3">Categorii de dosare cu activitate recentă</h3>
+                    <div className="grid sm:grid-cols-3 gap-3">
+                      <CourtCategoryCard
+                        label="Probleme proprii"
+                        sublabel="Pârât, Reclamant, Apelant, etc."
+                        value={subj}
+                        total={total}
+                        color="amber"
+                      />
+                      <CourtCategoryCard
+                        label="Creditor"
+                        sublabel="Recuperare creanțe vs clienți"
+                        value={cred}
+                        total={total}
+                        color="blue"
+                      />
+                      <CourtCategoryCard
+                        label="Alte calități"
+                        sublabel="Lichidator, Garant, Intervenient, etc."
+                        value={other}
+                        total={total}
+                        color="gray"
+                      />
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* TOP ROLES */}
+              {company.court.roleCounts && Object.keys(company.court.roleCounts).length > 0 && (
+                <div className="mb-6 border border-ink-100 rounded-lg p-4 bg-white">
+                  <div className="text-xs uppercase tracking-widest text-ink-500 font-medium mb-3">Distribuția rolurilor în care apare firma (top 8)</div>
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    {Object.entries(company.court.roleCounts).map(([role, count]) => (
+                      <span key={role} className="bg-ink-50 text-ink-700 px-2.5 py-1 rounded">
+                        <strong className="text-ink-900">{role}</strong> <span className="num text-ink-500">{count}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* RECENT CASES */}
+              {company.court.recentCases.length > 0 && (
+                <div className="border border-ink-100 rounded-lg overflow-hidden bg-white">
+                  <div className="bg-ink-50 px-4 py-2.5 text-xs uppercase tracking-widest text-ink-500 font-medium flex items-center justify-between">
+                    <span>Mostră de dosare cu activitate recentă</span>
+                    <span className="normal-case text-ink-400 lowercase">3 proprii · 2 creditor · 2 alte calități</span>
+                  </div>
+                  <ul className="divide-y divide-ink-100">
+                    {company.court.recentCases.map((c, i) => {
+                      const cat = c.category || "other";
+                      const catColor =
+                        cat === "subject"
+                          ? "bg-amber-100 text-amber-900"
+                          : cat === "creditor"
+                          ? "bg-uzx-blue/15 text-uzx-blue2"
+                          : "bg-ink-100 text-ink-700";
+                      const catLabel =
+                        cat === "subject" ? "PROPRIU" : cat === "creditor" ? "CREDITOR" : "ALTĂ CALITATE";
+                      return (
+                        <li key={i} className="px-4 py-3 text-sm">
+                          <div className="flex items-start justify-between gap-3 flex-wrap">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${catColor}`}>{catLabel}</span>
+                              <code className="mono text-xs text-ink-900 font-medium">{c.numar}</code>
+                              {c.calitateParte && c.calitateParte !== "—" && (
+                                <span className="text-xs text-ink-500">· rol: <strong className="text-ink-700">{c.calitateParte}</strong></span>
+                              )}
+                            </div>
+                            <div className="num text-xs text-ink-400">{c.lastHearing}</div>
+                          </div>
+                          {c.obiect && <div className="text-xs text-ink-600 mt-1.5">{c.obiect}</div>}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* PEERS */}
+          {peers.length > 0 && (
+            <section className="mb-10 border-t border-ink-100 pt-10">
+              <h2 className="serif text-2xl tracking-tight text-ink-900 mb-4">Alte firme din {company.sectorLabel}</h2>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {peers.map((p) => (
+                  <Link key={p.cui} href={`/admin/newsroom/firme/${p.cui}`} className="block border border-ink-100 rounded p-3 hover:border-uzx-blue text-sm transition-colors">
+                    <div className="font-medium text-ink-900">{p.name}</div>
+                    <div className="text-xs text-ink-500 mt-0.5 mono">CUI {p.cui}</div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* METHODOLOGY */}
+          <section className="mb-10 border-t border-ink-100 pt-10">
+            <h2 className="serif text-2xl tracking-tight text-ink-900 mb-3">Metodologie & surse</h2>
+            <div className="text-sm text-ink-700 leading-relaxed space-y-3">
+              <p>
+                <strong>Bilanțuri financiare:</strong> Date oficiale ANAF accesate prin demoanaf.ro/api/company/{company.cui}/financials. Indicatorii folosiți sunt I13 (cifră afaceri netă), I18 (profit net), I20 (angajați medii), I7 (datorii totale), I10 (capitaluri proprii). Toate cifrele sunt în lei (RON) curenți, fără ajustări de inflație.
+              </p>
+              <p>
+                <strong>Dosare comerciale:</strong> Colectate prin SOAP de la portalquery.just.ro/query.asmx (Ministerul Justiției), endpoint-ul oficial CautareDosare. Căutarea folosește numele firmei ca parte (numeParte) — pot exista dosare în care firma apare cu denumire variantă (de ex. „SC X SA" vs „X S.A.") care nu sunt incluse în acest count. Numărul de dosare este capat la 1000 per query (limita serviciului).
+              </p>
+              <p className="text-xs text-ink-400">CUI: {company.cui} · Sector: {company.sector}</p>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section className="bg-ink-900 text-white rounded-lg p-7">
+            <h2 className="serif text-2xl tracking-tight mb-2">Pentru jurnaliști</h2>
+            <p className="text-sm text-white/70 mb-5">Folosește datele de mai sus liber — citează „Newsroom UZINEX" cu link spre această pagină. Pentru întrebări de metodologie sau pentru a programa un interviu cu Sorin Baciu (Director General UZINEX), scrie pe sorin.baciu@uzinex.ro sau sună la +40 769 081 081.</p>
+            <div className="flex flex-wrap gap-2">
+              <CopyButton value={`Sursă: UZINEX Newsroom — profil ${company.name} (https://uzinex.ro/newsroom/firme/${company.cui})`} label="Copiază citarea" className="!bg-white/5 !border-white/15 !text-white hover:!bg-white/10" />
+              <a href={`mailto:sorin.baciu@uzinex.ro?subject=Interviu%20-%20${encodeURIComponent(company.name)}`} className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-uzx-orange text-white hover:bg-uzx-orange2 font-medium transition">
+                Trimite email pentru interviu
+              </a>
+            </div>
+          </section>
+        </article>
+      </div>
+      
+    </>
+  );
+}
+
+function Stat({ label, value, sublabel, accent, warning }: { label: string; value: string; sublabel?: string; accent?: boolean; warning?: boolean }) {
+  return (
+    <div className={`border rounded-lg p-4 bg-white ${accent ? "border-uzx-orange/30 bg-uzx-orange/5" : warning ? "border-amber-300 bg-amber-50/50" : "border-ink-100"}`}>
+      <div className="text-xs uppercase tracking-widest text-ink-500 font-medium">{label}</div>
+      <div className={`serif text-2xl md:text-3xl tracking-tight mt-1 num ${accent ? "text-uzx-orange" : warning ? "text-amber-900" : "text-ink-900"}`}>{value}</div>
+      {sublabel && <div className="text-xs text-ink-500 num mt-1">{sublabel}</div>}
+    </div>
+  );
+}
+
+function CourtCategoryCard({ label, sublabel, value, total, color }: { label: string; sublabel: string; value: number; total: number; color: "amber" | "blue" | "gray" }) {
+  const pct = total > 0 ? (value / total) * 100 : 0;
+  const colorClass =
+    color === "amber"
+      ? "border-amber-300 bg-amber-50"
+      : color === "blue"
+      ? "border-uzx-blue/30 bg-uzx-blue/5"
+      : "border-ink-200 bg-ink-50";
+  const valueClass =
+    color === "amber" ? "text-amber-900" : color === "blue" ? "text-uzx-blue2" : "text-ink-700";
+  return (
+    <div className={`border rounded-lg p-4 ${colorClass}`}>
+      <div className="text-xs uppercase tracking-widest text-ink-500 font-medium">{label}</div>
+      <div className={`serif text-3xl tracking-tight mt-1 num ${valueClass}`}>{value}</div>
+      <div className="text-xs num text-ink-500 mt-0.5">{pct.toFixed(0)}% din eșantion</div>
+      <div className="text-[11px] text-ink-500 mt-2 leading-tight">{sublabel}</div>
+    </div>
+  );
+}

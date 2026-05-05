@@ -125,12 +125,22 @@ export function buildPrimarySourceUrl(insight: Insight): SourceLink | null {
     }
 
     case "anaf": {
-      // ANAF doesn't have a stable per-firm deep link (forms based), link to
-      // the bulanțuri search page; user can input CUI from our data.
+      // anaf.ro/InfoCUI returns 403 to non-browser clients and the official
+      // search is form-based. demoanaf.ro is a public read-only viewer over
+      // the same ANAF dataset (it's the source our collector scrapes), with
+      // stable per-CUI URLs that work for journalists in any browser.
+      const cui = data.topCompany?.cui || data.cui;
+      if (cui) {
+        return {
+          label: `Verifică firma pe ANAF (CUI ${cui})`,
+          url: `https://demoanaf.ro/${cui}/dosare-fiscale`,
+          hint: "Bilanțuri + dosare fiscale (oglindă publică ANAF, datele oficiale)",
+        };
+      }
       return {
-        label: "Verifică pe ANAF",
-        url: "https://www.anaf.ro/InfoCUI/",
-        hint: "Caută după CUI pentru a vedea bilanțul depus oficial",
+        label: "Caută pe ANAF (demoanaf.ro)",
+        url: "https://demoanaf.ro/",
+        hint: "Tastă CUI pentru a deschide bilanțul depus oficial",
       };
     }
 

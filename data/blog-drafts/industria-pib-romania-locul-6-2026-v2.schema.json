@@ -1,0 +1,145 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://uzinex.ro/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://uzinex.ro/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Industria românească", "item": "https://uzinex.ro/blog/categorie/industria-romaneasca/" },
+        { "@type": "ListItem", "position": 4, "name": "Pondere industrie în PIB" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/#article",
+      "headline": "Industria românească 13,2% din PIB — patru oportunități ascunse pentru IMM-uri sub poziția aparent ultimă",
+      "description": "România are pondere industrie 13,2% PIB (locul 6 din 6 vs Cehia, Germania, Polonia, Ungaria), dar 4 avantaje structurale invizibile la prima vedere: locul 3 sustenabilitate datorie (IMF), cofinanțare UE 80-95%, marje EBITDA 18,3% și $58,4M USASpending FY2026.",
+      "image": "https://uzinex.ro/images/blog/industria-pib-romania-2026-cover.webp",
+      "datePublished": "2026-05-04T08:00:00+03:00",
+      "dateModified": "2026-05-04T08:00:00+03:00",
+      "author": {
+        "@type": "Person",
+        "@id": "https://uzinex.ro/echipa/sorin-baciu/#person",
+        "name": "Sorin Baciu",
+        "jobTitle": "Director General",
+        "worksFor": { "@id": "https://uzinex.ro/#organization" },
+        "sameAs": ["https://www.linkedin.com/in/sorin-baciu-uzinex"]
+      },
+      "publisher": { "@id": "https://uzinex.ro/#organization" },
+      "mainEntityOfPage": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/",
+      "about": [
+        { "@type": "Thing", "name": "Industria prelucrătoare România" },
+        { "@type": "Thing", "name": "PIB România 2024" },
+        { "@type": "Thing", "name": "PNRR Componenta 9" },
+        { "@type": "Thing", "name": "USASpending awards Romania" },
+        { "@type": "Thing", "name": "IMF debt projection 2031" }
+      ],
+      "mentions": [
+        { "@type": "Country", "name": "Cehia" },
+        { "@type": "Country", "name": "Germania" },
+        { "@type": "Country", "name": "Polonia" },
+        { "@type": "Country", "name": "Ungaria" },
+        { "@type": "Country", "name": "Bulgaria" },
+        { "@type": "Country", "name": "România" },
+        { "@type": "Organization", "name": "World Bank" },
+        { "@type": "Organization", "name": "IMF" },
+        { "@type": "Organization", "name": "USASpending.gov" },
+        { "@type": "Organization", "name": "Department of Defense" },
+        { "@type": "Organization", "name": "Department of State" },
+        { "@type": "Organization", "name": "Eurostat" },
+        { "@type": "Organization", "name": "PORR Government Services Romania" },
+        { "@type": "Organization", "name": "AMENTUM Services" },
+        { "@type": "Organization", "name": "PROCONT INFO SOFT" },
+        { "@type": "Organization", "name": "IDEEA PROIECT GPS" },
+        { "@type": "Organization", "name": "GLOBAL DEFENSE LOGISTICS" },
+        { "@type": "Organization", "name": "UGIR" },
+        { "@type": "Organization", "name": "CONPIROM" }
+      ],
+      "wordCount": 2174,
+      "inLanguage": "ro-RO",
+      "articleSection": "Industria românească",
+      "keywords": [
+        "ponderea industriei in PIB",
+        "industria romaneasca 2026",
+        "PNRR Componenta 9 Digitalizare IMM",
+        "USASpending awards Romania FY2026",
+        "IMF debt projection Romania 2031",
+        "cofinantare UE Regulamentul 1060/2021",
+        "defense subcontracting Romania PORR AMENTUM",
+        "marja EBITDA industrie romaneasca"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cum se calculează ponderea industriei prelucrătoare în PIB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ponderea = valoare adăugată brută a Sectorului C (Industria Prelucrătoare, fără minerit, energie, construcții) ÷ PIB total. Indicatorul oficial e World Bank NV.IND.MANF.ZS, calculat anual din Conturile Naționale (Eurostat NAMA pentru UE, INS pentru România). Pentru 2024, România raportează 13,2%, conform datelor publicate Q1 2025."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De ce datoria publică contează pentru o decizie de investiție industrială?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Datoria publică macro influențează prin trei canale: probabilitatea tax hikes neașteptate (impozit pe profit, contribuții, taxe energie), costul finanțării bancare prin spread-uri suverane, accesul continuu la fonduri europene în regulile actuale. România cu 70,4% PIB 2031 se află în clusterul risc moderat — sub Polonia (77,6%), Zona euro (81,1%), Ungaria (88,8%)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Care sunt cele 5 firme românești cu contracte SUA în FY2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conform USASpending.gov (data 3 mai 2026): PROCONT INFO SOFT SRL ($1,22M, IT defense), PORR GOVERNMENT SERVICES ROMANIA SRL ($1,04M, construcții infrastructură militară), IDEEA PROIECT GPS SRL ($0,91M, proiectare State Department), GLOBAL DEFENSE LOGISTICS SRL ($0,59M, logistică defense). Total combinat $3,76M direct la firme cu sediul legal RO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pot aplica simultan la PNRR C9 și Startup Nation 2025?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nu pe același echipament (regula dublei finanțări). Da, pe echipamente diferite în proiecte paralele — ex: laser fibră prin PNRR (utilaj principal), abkant CNC prin Startup Nation (echipament complementar). Verificare la dosar prin platformele MFE.gov.ro și aippimm.ro. Rata de aprobare istorică UZINEX pe combinații PNRR+SUN: 89% pe 18 dosare 2024-2025."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Care e diferența reală de cost finanțare între România și Cehia pentru un laser fibră 6kW?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Laser fibră 6kW cost listă 130k €. În România prin PNRR C9: cofinanțare 100k € grant + 30k € beneficiar = cost net 30k € (-77%). În Cehia prin program echivalent: cofinanțare 65k € grant + 65k € beneficiar = cost net 65k € (-50%). Diferență structurală 35k € în favoarea României, derivată din Regulamentul UE 1060/2021 art. 112."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De ce Bulgaria are datoria proiectată cea mai mică (35,9% PIB 2031)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trei factori: politică fiscală conservatoare istoric (deficit bugetar sub 3% PIB de un deceniu), absorbție EFRD/coeziune sub potențial (~70%, similar RO), creștere economică solidă (proiecție IMF +2,80% 2026). Combinat, asta produce reducere graduală a datoriei în loc de creștere. Implicație pentru România: spațiu fiscal pentru proiecte industriale ambițioase 2026-2030."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum verific dacă firma mea e eligibilă pentru defense subcontracting cu PORR sau AMENTUM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pasul 1: înregistrare în SAM.gov (gratuit, 5-10 zile). Pasul 2: obținere DUNS Number / UEI prin Dun & Bradstreet sau direct SAM.gov. Pasul 3: verificare ITAR/EAR pentru produsele tale (export controls). Pasul 4: contactare directă HR/procurement la prime contractor. UZINEX poate facilita matching prin rețeaua existentă cu prime contractors activi în RO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce rol joacă UZINEX în acest peisaj competitiv?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UZINEX e distribuitor B2B de echipamente industriale (lasere fibră, CNC, sudură robotică, reciclare, stivuitoare) cu sediul în Iași Tehnopolis. Listat SEAP/SICAP cu coduri CPV principale 42400000-0, 42600000-2, 31682530-4. Acoperire teritorială 41 județe + București. Servicii: vânzare + instalare + autorizare ISCIR + consultanță PNRR + service preventiv."
+          }
+        }
+      ]
+    }
+  ]
+}

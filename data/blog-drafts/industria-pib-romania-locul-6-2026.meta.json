@@ -1,0 +1,152 @@
+{
+  "slug": "industria-pib-romania-locul-6-2026",
+  "title": "Industria României 13,2% PIB — locul 6 vs Cehia, Germania, Polonia 2024",
+  "metaTitle": "Industria României 13,2% PIB — locul 6 vs Cehia, Germania | UZINEX",
+  "metaDescription": "România are pondere industrie 13,2% PIB în 2024, sub Cehia (19,9%), Germania (18%), Polonia (16,1%), Ungaria (15,8%). Analiză World Bank + opțiuni PNRR pentru IMM-uri.",
+  "keywords": [
+    "ponderea industriei in PIB",
+    "industria romaneasca 2026",
+    "PNRR Componenta 9",
+    "Startup Nation 2025",
+    "Cehia Polonia comparatie industrie",
+    "World Bank manufacturing share",
+    "OEE industria romaneasca",
+    "finantare echipamente IMM"
+  ],
+  "lang": "ro-RO",
+  "publishedAt": "2026-05-04T08:00:00+03:00",
+  "updatedAt": "2026-05-04T08:00:00+03:00",
+  "wordCount": 2087,
+  "readingTimeMinutes": 9,
+  "format": "comparativ",
+  "vertical": "industria-macro",
+  "audience": "sme",
+  "audienceSecondary": "inginer",
+  "fanOut": [
+    "Care e ponderea industriei in PIB-ul Romaniei vs Cehia, Germania, Polonia, Ungaria in 2024-2026?",
+    "De ce conteaza ponderea industriei pentru o firma IMM care vrea sa investeasca?",
+    "Cum poate Romania recupera prin PNRR Componenta 9 Digitalizare IMM si Startup Nation 2025?"
+  ],
+  "author": {
+    "name": "Sorin Baciu",
+    "jobTitle": "Director General UZINEX",
+    "linkedin": "https://www.linkedin.com/in/sorin-baciu-uzinex",
+    "email": "sorin.baciu@uzinex.ro"
+  },
+  "newsroomInsightId": 100,
+  "primarySources": [
+    "World Bank NV.IND.MANF.ZS (manufacturing value added % GDP) — 2024 data",
+    "Eurostat NAMA (National Accounts Main Aggregates)",
+    "MFE Instructiunea MIPE 14/15.01.2026 (PNRR Componenta 9)",
+    "IMM Romania rapoarte aprilie 2026",
+    "UGIR analize sectoriale 2025",
+    "ANRE preturi energie industriala"
+  ],
+  "entitiesUsed": {
+    "institutions": [
+      "World Bank",
+      "Eurostat",
+      "Comisia Europeana",
+      "MFE / MIPE",
+      "ANRE",
+      "INS"
+    ],
+    "standards": [
+      "Indicator NV.IND.MANF.ZS",
+      "Eurostat NAMA",
+      "Regulamentul UE 1060/2021",
+      "ISO 9001 (mentionat)",
+      "IATF 16949 (auto)"
+    ],
+    "funding": [
+      "PNRR Componenta 9 Digitalizare IMM (Instructiunea MIPE 14/15.01.2026)",
+      "Startup Nation 2025 (446 mil EUR, 250.000 lei/firma)",
+      "POR 2021-2027 Axa 1",
+      "RePowerEU C16"
+    ],
+    "associations": [
+      "UGIR (Uniunea Generala a Industriasilor)",
+      "CONPIROM (Confederatia Patronala Industria Romaniei)",
+      "IMM Romania",
+      "CzechInvest (referinta)"
+    ],
+    "brands": [
+      "Trumpf",
+      "Bystronic",
+      "DMG Mori",
+      "Mazak",
+      "KUKA",
+      "HSG",
+      "Bodor",
+      "Haas",
+      "Hartford",
+      "IPG",
+      "Raycus",
+      "Universal Robots",
+      "Erema",
+      "Tomra"
+    ],
+    "categoriesCovered": "5/5"
+  },
+  "validation": {
+    "tldrLength": 60,
+    "atomicAnswerCount": 6,
+    "tablesCount": 4,
+    "faqPairs": 8,
+    "internalCifre": 6,
+    "externalStats": 11,
+    "h2Count": 9,
+    "checklist": "58/61 (95%)"
+  },
+  "images": [
+    {
+      "src": "/images/blog/industria-pib-romania-2026-cover.webp",
+      "alt": "Comparație pondere industrie în PIB pentru România, Cehia, Germania, Polonia, Ungaria 2024 — World Bank",
+      "width": 1200,
+      "height": 630,
+      "type": "cover"
+    },
+    {
+      "src": "/images/blog/industria-pib-bar-chart-cz-de-pl-hu-ro.webp",
+      "alt": "Grafic bar chart pondere industrie prelucrătoare PIB 2024: CZ 19.9% DE 18% PL 16.1% HU 15.8% EU 14.3% RO 13.2%",
+      "width": 1200,
+      "height": 600,
+      "type": "data-visualization"
+    },
+    {
+      "src": "/images/blog/industria-romania-trend-2010-2024.webp",
+      "alt": "Evoluție pondere industrie în PIB-ul României 2010-2024 — stagnare la 13-14%",
+      "width": 1200,
+      "height": 600,
+      "type": "trend-chart"
+    },
+    {
+      "src": "/images/blog/atelier-cluj-pre-post-uzinex.webp",
+      "alt": "Atelier metalurgic Cluj — productivitate înainte (320 piese/zi) vs după (520 piese/zi) UZINEX laser fibră",
+      "width": 1200,
+      "height": 600,
+      "type": "case-study"
+    },
+    {
+      "src": "/images/blog/pnrr-c9-startup-nation-flow.webp",
+      "alt": "Flux finanțare PNRR Componenta 9 Digitalizare IMM și Startup Nation 2025 — eligibilitate, sume, deadline",
+      "width": 1200,
+      "height": 800,
+      "type": "infographic"
+    }
+  ],
+  "internalLinks": [
+    "/blog/laser-fibra-ghid-2026",
+    "/blog/pnrr-digitalizare-imm-2026",
+    "/magazin?cat=lasere-fibra"
+  ],
+  "externalLinks": [
+    "https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations=RO",
+    "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a10/",
+    "https://immromania.eu",
+    "https://ugir.ro",
+    "https://mfe.gov.ro",
+    "https://www.anre.ro",
+    "https://www.czechinvest.org"
+  ]
+}

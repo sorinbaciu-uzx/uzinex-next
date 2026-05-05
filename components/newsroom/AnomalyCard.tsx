@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { CopyButton } from "./CopyButton";
 import { Sparkline, MiniBar } from "./Sparkline";
-import { EmbedActions } from "./EmbedActions";
 import type { InsightView } from "@/lib/newsroom/extract";
 import { buildPrimarySourceUrl, buildCrossCheckUrl } from "@/lib/newsroom/source-urls";
 
@@ -33,8 +31,6 @@ type Props = {
 };
 
 export function AnomalyCard({ insight, view, shareableHeadline, storyLink }: Props) {
-  const [generating] = useState(false);
-
   const type = TYPE_LABELS[insight.type] || { label: insight.type.toUpperCase(), color: "bg-ink-100 text-ink-700" };
   const dateStr = new Date(insight.createdAt).toLocaleDateString("ro-RO", { day: "2-digit", month: "long", year: "numeric" });
   // Verification links: primary source (BNR / IMF / SAM / etc) + Google cross-check.
@@ -158,10 +154,9 @@ export function AnomalyCard({ insight, view, shareableHeadline, storyLink }: Pro
         >
           📊 CSV
         </a>
-        <EmbedActions insightId={insight.id} title={insight.title} />
 
         {storyLink && (
-          <Link href={`/newsroom/stories/${storyLink.slug}`} className="ml-auto inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-uzx-orange text-white hover:bg-uzx-orange2 font-medium transition">
+          <Link href={`/admin/newsroom/stories/${storyLink.slug}`} className="ml-auto inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded bg-uzx-orange text-white hover:bg-uzx-orange2 font-medium transition">
             Vezi story complet →
           </Link>
         )}

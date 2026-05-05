@@ -1,0 +1,135 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://uzinex.ro/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://uzinex.ro/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Industria românească", "item": "https://uzinex.ro/blog/categorie/industria-romaneasca/" },
+        { "@type": "ListItem", "position": 4, "name": "Pondere industrie în PIB" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/#article",
+      "headline": "Industria românească are 13,2% din PIB — locul 6 din 6 între economiile Cehiei, Germaniei, Poloniei și Ungariei (World Bank 2024)",
+      "description": "Analiza ponderea industriei prelucrătoare în PIB pentru 6 economii europene în 2024: Cehia 19,9%, Germania 18%, Polonia 16,1%, Ungaria 15,8%, EU 14,3%, România 13,2%. Implicații pentru IMM-urile industriale și opțiuni finanțare PNRR/Startup Nation 2026.",
+      "image": "https://uzinex.ro/images/blog/industria-pib-romania-2026-cover.webp",
+      "datePublished": "2026-05-04T08:00:00+03:00",
+      "dateModified": "2026-05-04T08:00:00+03:00",
+      "author": {
+        "@type": "Person",
+        "@id": "https://uzinex.ro/echipa/sorin-baciu/#person",
+        "name": "Sorin Baciu",
+        "jobTitle": "Director General",
+        "worksFor": { "@id": "https://uzinex.ro/#organization" },
+        "sameAs": ["https://www.linkedin.com/in/sorin-baciu-uzinex"]
+      },
+      "publisher": { "@id": "https://uzinex.ro/#organization" },
+      "mainEntityOfPage": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/",
+      "about": [
+        { "@type": "Thing", "name": "Industria prelucrătoare" },
+        { "@type": "Thing", "name": "PIB România" },
+        { "@type": "Thing", "name": "PNRR Componenta 9" },
+        { "@type": "Thing", "name": "World Bank Open Data" }
+      ],
+      "mentions": [
+        { "@type": "Country", "name": "Cehia" },
+        { "@type": "Country", "name": "Germania" },
+        { "@type": "Country", "name": "Polonia" },
+        { "@type": "Country", "name": "Ungaria" },
+        { "@type": "Country", "name": "România" },
+        { "@type": "Organization", "name": "World Bank" },
+        { "@type": "Organization", "name": "Eurostat" },
+        { "@type": "Organization", "name": "UGIR" },
+        { "@type": "Organization", "name": "CONPIROM" },
+        { "@type": "Organization", "name": "IMM România" }
+      ],
+      "wordCount": 2087,
+      "inLanguage": "ro-RO",
+      "articleSection": "Industria românească",
+      "keywords": [
+        "ponderea industriei in PIB",
+        "industria romaneasca 2026",
+        "PNRR Componenta 9 Digitalizare IMM",
+        "Startup Nation 2025",
+        "World Bank manufacturing share GDP",
+        "Cehia Germania Polonia Ungaria comparatie industrie",
+        "OEE industria romaneasca",
+        "finantare echipamente industriale Romania"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://uzinex.ro/blog/industria-pib-romania-locul-6-2026/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Cum se calculează ponderea industriei prelucrătoare în PIB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ponderea se calculează ca raport între valoarea adăugată brută a industriei prelucrătoare (CAEN sectorul C, fără minerit, energie, construcții) și PIB-ul total. Indicatorul oficial este World Bank NV.IND.MANF.ZS, calculat anual pe baza datelor Conturilor Naționale (Eurostat NAMA pentru UE, INS pentru România). Pentru 2024, România raportează 13,2%, conform datelor publicate în Q1 2025."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Care e diferența între pondere industrie totală vs prelucrătoare?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Industria totală include sectoarele B (minerit), C (prelucrătoare), D (energie) și E (apă, deșeuri). Industria prelucrătoare e doar C — singura care produce bunuri tangibile transformând materii prime. România are pondere industrie totală ~21% (cu energie și minerit), dar prelucrătoare 13,2%. Cifrele cele mai relevante pentru deciziile de investiție în echipamente sunt cele de industrie prelucrătoare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De ce Cehia conduce cu 19,9% și nu Germania?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Germania și-a externalizat producția low-margin către Cehia, Polonia, Ungaria și România în ultimele 3 decenii. Cehia a absorbit cea mai mare parte din subcontractingul auto german (Skoda + clusterul de furnizori VW), ceea ce explică pondere industrie 19,9%. Germania concentrează acum mai mult pe servicii high-value (cercetare, design, finanțe) — pondere industrie 18% e încă remarcabilă pentru o economie matură."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ponderea României va crește în 2026-2030?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conform proiecțiilor Comisiei Europene (raport European Economic Forecast Spring 2025), ponderea industriei prelucrătoare în PIB-ul României ar putea crește marginal la 13,8% până în 2030, dacă fondurile PNRR ajung la termenele asumate. Scenariul optimist (catch-up cu Polonia 16%) presupune absorbție 90%+ a fondurilor PNRR Componenta 9 și implementare integrală a RePowerEU C16 — improbabil la nivelele actuale de absorbție."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum afectează ponderea scăzută eligibilitatea pentru fonduri europene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Indirect, pozitiv. Programele de coeziune UE (POR, PNRR) aloca preferențial fonduri către regiunile/țările cu pondere industrie sub media UE. România beneficiază din această clasificare cu rate de cofinanțare publică 80-95% pentru proiecte industriale (vs 50% pentru regiuni dezvoltate), conform Regulamentului UE 1060/2021. Practic, dezavantajul macro devine avantaj la nivel micro-economic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Care sunt sectoarele românești cu cea mai mare pondere industrie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conform datelor INS și UGIR (analiză 2024), cele 5 sub-sectoare CAEN cu cea mai mare pondere în industria românească sunt: 29 Fabricarea autovehiculelor (~21% din industria prelucrătoare), 10 Industria alimentară (~13%), 25 Construcții metalice (~9%), 16 Industria lemnului (~7%) și 24 Metalurgie (~6%). Subcontractarea auto rămâne motorul principal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum se compară salariile în industria românească vs Cehia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Salariul mediu brut în industria prelucrătoare română este 6.800 RON/lună în Q1 2026 (conform INS), echivalent cu ~1.380 €. În Cehia, același indicator e ~1.850 € (date Eurostat earnings 2024). Diferența de 34% reflectă atât productivitatea (OEE 67% vs 72%) cât și nivelul tehnologiei utilizate. Investițiile în echipamente moderne reduc gap-ul prin creșterea valorii adăugate per angajat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cum poate UZINEX ajuta concret o firmă să beneficieze de PNRR C9?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UZINEX furnizează: (1) audit tehnologic gratuit pentru identificarea echipamentelor optime, (2) ofertă tehnică completă conformă cu cerințele PNRR (specs, declarație CE, plan instalare), (3) asistență la dosar (verificare CAEN, calcul plafon, business plan tehnic), (4) instalare + PIF + instructaj operatori în max 14 zile post-aprobare, (5) contract service preventiv pentru păstrarea garanției. Pe 31 contracte PNRR C9 finalizate de UZINEX în 2024-2025, rata de aprobare a fost 97%."
+          }
+        }
+      ]
+    }
+  ]
+}

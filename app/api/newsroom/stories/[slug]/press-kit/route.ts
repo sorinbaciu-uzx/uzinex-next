@@ -8,7 +8,11 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   if (!story) return NextResponse.json({ error: "Story not found" }, { status: 404 });
 
   const url = new URL(req.url);
-  const fullUrl = `${url.protocol}//${url.host}/newsroom/stories/${story.slug}`;
+  // Newsroom is now admin-only (internal content engine). The URL inside the
+  // press kit references the admin path so the team has a source link when
+  // copy-pasting into external publications. Replace with a public-facing URL
+  // (e.g. /noutati/) once a story gets promoted to a public article.
+  const fullUrl = `${url.protocol}//${url.host}/admin/newsroom/stories/${story.slug}`;
 
   const zip = new JSZip();
   const created = new Date(story.createdAt).toLocaleDateString("ro-RO", { day: "2-digit", month: "long", year: "numeric" });

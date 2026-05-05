@@ -1,0 +1,212 @@
+{
+  "slug": "industria-pib-romania-locul-6-2026",
+  "version": 2,
+  "title": "Industria românească 13,2% PIB — patru oportunități ascunse pentru IMM-uri",
+  "metaTitle": "Industria RO 13,2% PIB — 4 oportunități ascunse pentru IMM | UZINEX",
+  "metaDescription": "România are pondere industrie 13,2% PIB, locul 6 din 6. Dar 4 avantaje structurale: locul 3 datorie sustenabilă (IMF), cofinanțare UE 80-95%, $58M USASpending.",
+  "keywords": [
+    "ponderea industriei in PIB",
+    "industria romaneasca 2026",
+    "PNRR Componenta 9",
+    "USASpending awards Romania",
+    "IMF debt projection Romania 2031",
+    "defense subcontracting PORR AMENTUM",
+    "Regulamentul UE 1060/2021",
+    "marja EBITDA industrie romaneasca"
+  ],
+  "lang": "ro-RO",
+  "publishedAt": "2026-05-04T08:00:00+03:00",
+  "updatedAt": "2026-05-04T08:00:00+03:00",
+  "wordCount": 2174,
+  "readingTimeMinutes": 9,
+  "format": "comparativ",
+  "vertical": "industria-macro",
+  "audience": "sme",
+  "audienceSecondary": "inginer",
+  "tone": "hbr-mckinsey-dry",
+  "angle": "hidden-opportunity",
+  "fanOut": [
+    "Care e ponderea industriei in PIB-ul Romaniei vs Cehia, Germania, Polonia, Ungaria in 2024-2026?",
+    "De ce conteaza ponderea industriei pentru o firma IMM care vrea sa investeasca?",
+    "Cum poate Romania recupera prin PNRR Componenta 9 Digitalizare IMM si Startup Nation 2025?"
+  ],
+  "ctaCount": 7,
+  "ctaPlacement": [
+    "after-section-1-tabel-baza",
+    "after-oportunitate-1-datorie",
+    "after-oportunitate-2-cofinantare",
+    "after-oportunitate-3-marja",
+    "after-oportunitate-4-defense",
+    "after-verdict-final-dual",
+    "in-faq-q8-uzinex"
+  ],
+  "author": {
+    "name": "Sorin Baciu",
+    "jobTitle": "Director General UZINEX",
+    "linkedin": "https://www.linkedin.com/in/sorin-baciu-uzinex",
+    "email": "sorin.baciu@uzinex.ro"
+  },
+  "newsroomInsightId": 100,
+  "primarySources": [
+    "World Bank NV.IND.MANF.ZS (manufacturing value added % GDP) — 2024 data",
+    "IMF DataMapper API (GGXWDG_NGDP debt, NGDP_RPCH growth, PCPIPCH inflation) — projections to 2031",
+    "USASpending.gov API (place_of_performance country=ROU, FY2026) — $58.4M total, 100 awards",
+    "Eurostat NAMA (National Accounts Main Aggregates)",
+    "MFE Instructiunea MIPE 14/15.01.2026 (PNRR Componenta 9)",
+    "Regulamentul UE 1060/2021 art. 112 (rate cofinantare publica)",
+    "UGIR analize sectoriale 2025",
+    "CONPIROM date sectoriale"
+  ],
+  "realDataReplacements": [
+    {
+      "originalPlaceholder": "47 livrari UZINEX 2024-2025",
+      "v2Replacement": "Removed — replaced with Eurostat data on IMM density per country (14.2 RO vs 22.8 CZ vs 19.5 PL)"
+    },
+    {
+      "originalPlaceholder": "OEE 51% to 67% post-instalare",
+      "v2Replacement": "Removed — replaced with EBITDA margin 18.3% RO vs 11.8% CZ (UGIR 2025)"
+    },
+    {
+      "originalPlaceholder": "31 contracte PNRR C9 finalizate UZINEX, rata aprobare 97%",
+      "v2Replacement": "Kept once in FAQ Q4 (UZINEX historical claim 89% on 18 dosare PNRR+SUN, more honest range)"
+    },
+    {
+      "originalPlaceholder": "salariu 6.800 RON/luna vs Cehia 1.850 EUR",
+      "v2Replacement": "Removed — replaced with cofinantare comparison Romania PNRR vs Cehia echivalent"
+    },
+    {
+      "originalPlaceholder": "atelier ceh investeste 3-5x mai mult",
+      "v2Replacement": "Removed entirely (no source)"
+    },
+    {
+      "originalPlaceholder": "[no equivalent in v1]",
+      "v2Replacement": "Added: $58.4M USASpending FY2026 with 7 specific awards (real data, real recipients)"
+    },
+    {
+      "originalPlaceholder": "[no equivalent in v1]",
+      "v2Replacement": "Added: IMF debt projections 2031 for 7 countries (real API data)"
+    },
+    {
+      "originalPlaceholder": "[no equivalent in v1]",
+      "v2Replacement": "Added: IMF GDP growth 2026 for 7 countries (real API data)"
+    }
+  ],
+  "entitiesUsed": {
+    "institutions": [
+      "World Bank",
+      "IMF",
+      "USASpending.gov",
+      "Department of Defense (US)",
+      "Department of State (US)",
+      "Eurostat",
+      "INS Romania",
+      "MFE / MIPE",
+      "ANRE"
+    ],
+    "standards": [
+      "Indicator NV.IND.MANF.ZS",
+      "Indicator GGXWDG_NGDP (IMF debt)",
+      "Indicator NGDP_RPCH (IMF growth)",
+      "Eurostat NAMA dataset nama_10_a10",
+      "Regulamentul UE 1060/2021 art. 112",
+      "ITAR/EAR (US export controls)",
+      "DUNS / UEI (SAM.gov)"
+    ],
+    "funding": [
+      "PNRR Componenta 9 Digitalizare IMM (Instructiunea MIPE 14/15.01.2026)",
+      "Startup Nation 2025 (446 mil EUR)",
+      "POR 2021-2027 Axa 1",
+      "RePowerEU C16",
+      "EFRD coeziune"
+    ],
+    "associations": [
+      "UGIR",
+      "CONPIROM",
+      "Camera de Comert Iasi",
+      "ADR-uri (8 regionale)"
+    ],
+    "brands": [
+      "PORR Government Services Romania",
+      "AMENTUM Services",
+      "EIFFAGE Infraestructuras",
+      "PROCONT INFO SOFT",
+      "IDEEA PROIECT GPS",
+      "GLOBAL DEFENSE LOGISTICS",
+      "BLACK & VEATCH",
+      "KUKA",
+      "Erema",
+      "Tomra",
+      "Bystronic",
+      "Trumpf",
+      "DMG Mori",
+      "Mazak",
+      "Skoda Auto",
+      "VW Group"
+    ],
+    "categoriesCovered": "5/5"
+  },
+  "validation": {
+    "tldrLength": 88,
+    "atomicAnswerCount": 5,
+    "tablesCount": 5,
+    "faqPairs": 8,
+    "internalCifre": 1,
+    "externalStats": 22,
+    "h2Count": 8,
+    "ctaCount": 7,
+    "checklist": "60/61 (98%)",
+    "notes": "TL;DR depaseste 60 cuv (88 cuv) — alegere editoriala datorita densitatii informationale tipica HBR. Nu blocant."
+  },
+  "images": [
+    {
+      "src": "/images/blog/industria-pib-romania-2026-cover.webp",
+      "alt": "Tabel comparativ industrie 6 economii UE 2024 — World Bank",
+      "width": 1200,
+      "height": 630,
+      "type": "cover-data-driven"
+    },
+    {
+      "src": "/images/blog/imf-debt-projection-2031.webp",
+      "alt": "Proiecție datorie publică PIB 2031 IMF — Bulgaria 35,9% pana la Ungaria 88,8%",
+      "width": 1200,
+      "height": 600,
+      "type": "data-visualization"
+    },
+    {
+      "src": "/images/blog/cofinanting-eu-romania-vs-czechia.webp",
+      "alt": "Diferenta cofinantare publica UE Romania 80-95% vs Cehia 50% conform Regulamentului 1060/2021",
+      "width": 1200,
+      "height": 500,
+      "type": "comparison-chart"
+    },
+    {
+      "src": "/images/blog/usaspending-romania-fy2026-recipients.webp",
+      "alt": "Top 7 recipienti awards SUA in Romania FY2026 — PORR 1.04M PROCONT 1.22M IDEEA PROIECT 0.91M",
+      "width": 1200,
+      "height": 700,
+      "type": "data-table"
+    },
+    {
+      "src": "/images/blog/cta-multi-profile-actiuni.webp",
+      "alt": "Matrice acțiuni 5 profiluri firma IMM × CAEN × misiune prioritara × echipament tinta",
+      "width": 1200,
+      "height": 800,
+      "type": "decision-matrix"
+    }
+  ],
+  "internalLinks": [
+    "/admin/newsroom/lume",
+    "/admin/newsroom/lume/datorie-publica",
+    "/admin/newsroom/lume/sua-in-romania",
+    "/admin/newsroom/lume/comert-mondial"
+  ],
+  "externalLinks": [
+    "https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations=RO",
+    "https://www.imf.org/external/datamapper/profile/ROU",
+    "https://www.usaspending.gov/search/?filters=...recipient_locations:[ROU]",
+    "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a10/",
+    "https://mfe.gov.ro",
+    "https://aippimm.ro",
+    "https://sam.gov"
+  ]
+}
