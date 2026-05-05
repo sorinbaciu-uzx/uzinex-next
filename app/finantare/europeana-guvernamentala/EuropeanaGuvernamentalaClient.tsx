@@ -19,7 +19,7 @@ const SHARED_CSS = `
 @keyframes fg-drop { 0% { transform: translateY(-10%); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(120%); opacity: 0; } }
 `;
 
-/** Hero animation — EU flag with flowing capital streams into industrial coin */
+/** Hero animation, EU flag with flowing capital streams into industrial coin */
 function HeroAnim() {
   return (
     <svg className="w-full h-full" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid meet">
@@ -100,7 +100,7 @@ function HeroAnim() {
   );
 }
 
-/** EU programs section banner animation — network topology */
+/** EU programs section banner animation, network topology */
 function NetworkAnim() {
   const nodes = [
     { x: 40, y: 40, label: "UE" },
@@ -144,12 +144,12 @@ function NetworkAnim() {
   );
 }
 
-/** Government programs section banner animation — budget distribution */
+/** Government programs section banner animation, budget distribution */
 function BudgetAnim() {
   const bars = [
     { label: "IND. PREL.", v: 90, color: "#c05621" },
     { label: "PoCIDIF", v: 35, color: "#2b6cb0" },
-    { label: "FM — ENERGIE", v: 62, color: "#2f855a" },
+    { label: "FM, ENERGIE", v: 62, color: "#2f855a" },
     { label: "POR", v: 28, color: "#4a90e2" },
     { label: "PoTJ", v: 50, color: "#c05621" },
     { label: "E-MOBILITY", v: 40, color: "#4a90e2" },
@@ -183,7 +183,7 @@ function BudgetAnim() {
   );
 }
 
-/** Process section animation — funnel */
+/** Process section animation, funnel */
 function FunnelAnim() {
   return (
     <svg className="w-full h-full" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid meet">
@@ -251,11 +251,11 @@ function InlineCTA({ title, desc, action, href, accent = "#f5851f" }: { title: s
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   /finantare/europeana-guvernamentala — Pagină dedicată fondurilor europene
+   /finantare/europeana-guvernamentala, Pagină dedicată fondurilor europene
    și schemelor de ajutor de stat pentru achiziția de echipamente industriale.
    Datele sunt consolidate din surse publice oficiale (UEFISCDI, Ministerul
    Economiei, Ministerul Energiei, Comisia Europeană, InAfaceri, inafaceri.ro).
-   Valorile sunt orientative — fiecare program are ghid propriu și linkuri
+   Valorile sunt orientative, fiecare program are ghid propriu și linkuri
    către documentația oficială.
    ───────────────────────────────────────────────────────────────────── */
 
@@ -285,11 +285,11 @@ type Program = {
 const EU_PROGRAMS: Program[] = [
   {
     id: "horizon",
-    name: "Horizon Europe — Cluster 5 (Energy & Mobility)",
+    name: "Horizon Europe, Cluster 5 (Energy & Mobility)",
     subtitle: "Cel mai mare program de cercetare & inovare al UE (2021–2027)",
     budget: "95,5 miliarde EUR total program",
-    amount: "1 — 15 milioane EUR per proiect",
-    intensity: "70% — 100% (funcție de tip proiect)",
+    amount: "1, 15 milioane EUR per proiect",
+    intensity: "70%, 100% (funcție de tip proiect)",
     beneficiary: "Consorții internaționale (universități, companii, institute)",
     description:
       "Apeluri pentru digitalizare industrială, hidrogen verde, tehnologii manufacturing avansate, producție circulară și tranziție energetică. Necesită consorții cu minim 3 parteneri din state membre diferite. Uzinex a sprijinit consorții industriale pentru echipamente de producție eligibile.",
@@ -300,8 +300,8 @@ const EU_PROGRAMS: Program[] = [
       "Echipamente pentru economie circulară",
       "Cercetare aplicată cu TRL 6+",
     ],
-    deadline: "Apeluri lunare — verifică portalul Funding & Tenders",
-    source: "Comisia Europeană — Funding & Tenders Portal",
+    deadline: "Apeluri lunare, verifică portalul Funding & Tenders",
+    source: "Comisia Europeană, Funding & Tenders Portal",
     sourceUrl:
       "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2027-07-D3-16",
     accent: "#1e6bb8",
@@ -309,13 +309,13 @@ const EU_PROGRAMS: Program[] = [
   {
     id: "digital-europe",
     name: "Digital Europe Programme",
-    subtitle: "Accelerarea transformării digitale — AI, cloud, cybersecurity, HPC",
+    subtitle: "Accelerarea transformării digitale, AI, cloud, cybersecurity, HPC",
     budget: "7,9 miliarde EUR (2021–2027)",
-    amount: "500k — 20M EUR",
-    intensity: "50% — 75% (IMM beneficiază de intensități mai mari)",
+    amount: "500k, 20M EUR",
+    intensity: "50%, 75% (IMM beneficiază de intensități mai mari)",
     beneficiary: "Companii, IMM-uri, hub-uri digitale, instituții publice",
     description:
-      "Finanțează adoptarea tehnologiilor digitale avansate (AI, data analytics, cloud), centrele European Digital Innovation Hubs (EDIH) și digitalizarea IMM-urilor. PNCDI IV — SP 5.8.2 Digital Europe oferă co-finanțare națională pentru proiecte aprobate de Comisia Europeană.",
+      "Finanțează adoptarea tehnologiilor digitale avansate (AI, data analytics, cloud), centrele European Digital Innovation Hubs (EDIH) și digitalizarea IMM-urilor. PNCDI IV, SP 5.8.2 Digital Europe oferă co-finanțare națională pentru proiecte aprobate de Comisia Europeană.",
     eligible: [
       "Platforme AI & data spaces",
       "Echipamente HPC (high-performance computing)",
@@ -324,17 +324,17 @@ const EU_PROGRAMS: Program[] = [
       "Digitalizarea liniilor de producție",
     ],
     deadline: "Depunere continuă la UEFISCDI (2025 Call)",
-    source: "UEFISCDI — PNCDI IV, SP 5.8.2",
+    source: "UEFISCDI, PNCDI IV, SP 5.8.2",
     sourceUrl: "https://uefiscdi-direct.ro/",
     accent: "#4a90e2",
   },
   {
     id: "eureka",
-    name: "EUREKA — Eurostars",
+    name: "EUREKA, Eurostars",
     subtitle: "Cel mai mare program de finanțare pentru R&D internațional la IMM-uri",
     budget: "2 miliarde EUR (2021–2027)",
-    amount: "250k — 2M EUR per proiect",
-    intensity: "40% — 60% (granturi combinate RO + partener)",
+    amount: "250k, 2M EUR per proiect",
+    intensity: "40%, 60% (granturi combinate RO + partener)",
     beneficiary: "IMM-uri inovatoare (cu co-aplicant din alt stat EUREKA)",
     description:
       "Proiecte bilaterale/multilaterale de cercetare aplicată cu TRL 6+, durată 36 luni, condus de un IMM. Uzinex acționează ca integrator tehnologic pentru componenta de echipamente, testare și scale-up industrial.",
@@ -346,7 +346,7 @@ const EU_PROGRAMS: Program[] = [
       "Servicii tehnice pentru validare",
     ],
     deadline: "Cut-off semestrial (martie, septembrie)",
-    source: "UEFISCDI — EUREKA-EUROSTARS 2025",
+    source: "UEFISCDI, EUREKA-EUROSTARS 2025",
     sourceUrl: "https://uefiscdi-direct.ro/",
     accent: "#2b6cb0",
   },
@@ -355,8 +355,8 @@ const EU_PROGRAMS: Program[] = [
     name: "Erasmus+ VET (Vocational Education & Training)",
     subtitle: "Mobilitate, acreditare și parteneriate de cooperare pentru formare profesională",
     budget: "26,2 miliarde EUR (2021–2027)",
-    amount: "60k — 400k EUR per proiect",
-    intensity: "80% — 100% (lump sum)",
+    amount: "60k, 400k EUR per proiect",
+    intensity: "80%, 100% (lump sum)",
     beneficiary: "Firme cu departament de formare, școli profesionale, ONG-uri educaționale",
     description:
       "Finanțează programe de training pe echipamente industriale moderne (CNC, cobots, viziune industrială), mobilități pentru operatori și ingineri, precum și parteneriate între angajatori și școli VET. Uzinex furnizează echipamente didactice și conținut tehnic pentru școli duale.",
@@ -374,11 +374,11 @@ const EU_PROGRAMS: Program[] = [
   },
   {
     id: "pnrr",
-    name: "PNRR — Componenta C6 Energie & C9 Business",
+    name: "PNRR, Componenta C6 Energie & C9 Business",
     subtitle: "Planul Național de Redresare și Reziliență",
     budget: "29,2 miliarde EUR (2021–2026)",
-    amount: "200k — 50M EUR funcție de măsură",
-    intensity: "50% — 100% (diferă pe componentă)",
+    amount: "200k, 50M EUR funcție de măsură",
+    intensity: "50%, 100% (diferă pe componentă)",
     beneficiary: "IMM-uri, companii mari, administrație publică, consorții industriale",
     description:
       "PNRR include măsuri pentru digitalizarea IMM-urilor, eficiență energetică, capacități de producție energie regenerabilă și infrastructură verde. Multe apeluri s-au încheiat, însă componentele C6 și C9 continuă până în 2026 cu calendare trimestriale.",
@@ -389,7 +389,7 @@ const EU_PROGRAMS: Program[] = [
       "Pompe de căldură industriale",
       "Sisteme de stocare energie",
     ],
-    deadline: "Apeluri trimestriale — termen final decembrie 2026",
+    deadline: "Apeluri trimestriale, termen final decembrie 2026",
     source: "Ministerul Investițiilor și Proiectelor Europene",
     sourceUrl: "https://mfe.gov.ro/pnrr/",
     accent: "#2f855a",
@@ -399,14 +399,14 @@ const EU_PROGRAMS: Program[] = [
 const GOV_PROGRAMS: Program[] = [
   {
     id: "industria-prelucratoare",
-    name: "Granturi Industria Prelucrătoare — HG 702/2024",
+    name: "Granturi Industria Prelucrătoare, HG 702/2024",
     subtitle: "Cea mai mare schemă de ajutor de stat pentru echipamente de producție (2025–2029)",
     budget: "447 milioane EUR",
-    amount: "1M — 50M EUR per investiție",
-    intensity: "30% — 75% (funcție de județ + dimensiune firmă)",
+    amount: "1M, 50M EUR per investiție",
+    intensity: "30%, 75% (funcție de județ + dimensiune firmă)",
     beneficiary: "Companii din industria prelucrătoare, toate regiunile exceptând București",
     description:
-      "Schema operată de Ministerul Economiei vizează reducerea deficitului comercial prin stimularea producției interne de bunuri prelucrate. Grila de punctaj favorizează investițiile verzi și digitale (Industry 4.0). Uzinex livrează echipamente eligibile — utilaje CNC, linii de producție, automatizări, sisteme IIoT.",
+      "Schema operată de Ministerul Economiei vizează reducerea deficitului comercial prin stimularea producției interne de bunuri prelucrate. Grila de punctaj favorizează investițiile verzi și digitale (Industry 4.0). Uzinex livrează echipamente eligibile, utilaje CNC, linii de producție, automatizări, sisteme IIoT.",
     eligible: [
       "Utilaje CNC, linii de producție, roboți industriali",
       "Automatizare & MES / SCADA",
@@ -415,17 +415,17 @@ const GOV_PROGRAMS: Program[] = [
       "Infrastructură IT industrială",
     ],
     deadline: "Acorduri de finanțare până la 31 decembrie 2026",
-    source: "Ministerul Economiei — DGPE",
+    source: "Ministerul Economiei, DGPE",
     sourceUrl: "https://economie.gov.ro/schema-de-ajutor-de-stat-privind-acordarea-de-granturi-pentru-investitii-destinate-industriei-prelucratoare/",
     accent: "#c05621",
   },
   {
     id: "pocidif-it",
-    name: "PoCIDIF 2.1 — Dezvoltare produse IT prin inovare",
+    name: "PoCIDIF 2.1, Dezvoltare produse IT prin inovare",
     subtitle: "Programul Operațional Creștere Inteligentă, Digitalizare și Instrumente Financiare",
     budget: "48,8 milioane EUR (ERDF + buget de stat)",
-    amount: "200k — 3M EUR",
-    intensity: "30% — 85% (funcție de regiune și tip firmă)",
+    amount: "200k, 3M EUR",
+    intensity: "30%, 85% (funcție de regiune și tip firmă)",
     beneficiary: "IMM-uri și companii nou-înființate din sectorul ICT (CAEN 6201, 6202, 6203, 6209, 6311, 6312, 6399, 7490, 7112)",
     description:
       "Finanțează dezvoltarea de noi servicii, aplicații și produse prin cercetare-dezvoltare-inovare folosind tehnologii avansate (AI, big data, cybersecurity, edge computing). Eligibile pentru achiziția de servere, stații de lucru, echipamente de testare și software specializat.",
@@ -436,18 +436,18 @@ const GOV_PROGRAMS: Program[] = [
       "Consultanță tehnică pentru implementare",
       "Salarii echipă R&D (plafonat)",
     ],
-    deadline: "Relansare II decembrie 2025 — ianuarie 2026",
-    source: "Oportunități UE — PoCIDIF 2021–2027",
+    deadline: "Relansare II decembrie 2025, ianuarie 2026",
+    source: "Oportunități UE, PoCIDIF 2021–2027",
     sourceUrl: "https://inafaceri.ro/finantari/finantare-nerambursabila-pentru-firmele-de-it-intre-200-000-si-3-000-000-euro",
     accent: "#2b6cb0",
   },
   {
     id: "por-bucuresti",
     name: "Programul Regional București-Ilfov",
-    subtitle: "POR BI 2021–2027 — sprijin pentru IMM-uri din capitală",
+    subtitle: "POR BI 2021–2027, sprijin pentru IMM-uri din capitală",
     budget: "~1,4 miliarde EUR (regiunea)",
-    amount: "25k — 200k EUR",
-    intensity: "60% — 85% (funcție de dimensiune firmă)",
+    amount: "25k, 200k EUR",
+    intensity: "60%, 85% (funcție de dimensiune firmă)",
     beneficiary: "Microîntreprinderi & IMM-uri cu sediul în București sau Ilfov",
     description:
       "Cofinanțare FEDR pentru investiții în echipamente productive, digitalizare și eficiență energetică la scară mică-medie. Schema are aplicabilitate restrânsă pentru regiunea București-Ilfov, cu intensități reduse față de regiunile mai puțin dezvoltate.",
@@ -458,7 +458,7 @@ const GOV_PROGRAMS: Program[] = [
       "Sisteme eficiență energetică",
       "Echipamente pentru digitalizare",
     ],
-    deadline: "Apeluri deschise periodic — consultă ADR BI",
+    deadline: "Apeluri deschise periodic, consultă ADR BI",
     source: "ADR București-Ilfov",
     sourceUrl: "https://inafaceri.ro/finantari/programul-regional-bucuresti-ilfov-25-000-200-000-euro-0001",
     accent: "#4a90e2",
@@ -468,11 +468,11 @@ const GOV_PROGRAMS: Program[] = [
     name: "Programul Regional Nord-Est (RST) 2021–2027",
     subtitle: "Modernizarea microîntreprinderilor din regiunea Nord-Est",
     budget: "~1,6 miliarde EUR (regiunea)",
-    amount: "100k — 300k EUR",
+    amount: "100k, 300k EUR",
     intensity: "Până la 85% (ajutor regional)",
     beneficiary: "Microîntreprinderi din județele Bacău, Botoșani, Iași, Neamț, Suceava, Vaslui",
     description:
-      "Sprijin pentru modernizare și creșterea capacității productive a microîntreprinderilor din cea mai puțin dezvoltată regiune din UE. Intensitate maximă — cea mai avantajoasă schemă pentru firmele din zonă.",
+      "Sprijin pentru modernizare și creșterea capacității productive a microîntreprinderilor din cea mai puțin dezvoltată regiune din UE. Intensitate maximă, cea mai avantajoasă schemă pentru firmele din zonă.",
     eligible: [
       "Utilaje & echipamente noi",
       "Linii de producție automatizate",
@@ -480,18 +480,18 @@ const GOV_PROGRAMS: Program[] = [
       "Certificări calitate & brevetare",
       "Modernizare spații de producție",
     ],
-    deadline: "Apeluri periodice — consultă ADR Nord-Est",
+    deadline: "Apeluri periodice, consultă ADR Nord-Est",
     source: "ADR Nord-Est",
     sourceUrl: "https://inafaceri.ro/finantari/programul-regional-nord-rst-2021-2027-100-000%E2%80%93si-300-000-euro-pentru-modernizarea-micro%C3%AEntreprinderilor",
     accent: "#2f855a",
   },
   {
     id: "potj",
-    name: "PoTJ — Programul Tranziție Justă",
+    name: "PoTJ, Programul Tranziție Justă",
     subtitle: "Investiții în IMM-uri pentru creșterea durabilă (regiunile miniere & siderurgice)",
     budget: "~2,5 miliarde EUR",
-    amount: "200k — 5M EUR",
-    intensity: "50% — 75%",
+    amount: "200k, 5M EUR",
+    intensity: "50%, 75%",
     beneficiary: "IMM-uri din județele Gorj, Hunedoara, Mureș, Galați, Prahova, Dolj",
     description:
       "Finanțare dedicată pentru reconversia economică a regiunilor afectate de tranziția energetică. Priorități: crearea locurilor de muncă, diversificarea economiei locale, adoptarea tehnologiilor curate. Eligibile: echipamente industriale, linii noi de producție, automatizări.",
@@ -502,18 +502,18 @@ const GOV_PROGRAMS: Program[] = [
       "Sisteme eficiență energetică",
       "Formare profesională integrată",
     ],
-    deadline: "Apeluri deschise — 2026",
+    deadline: "Apeluri deschise, 2026",
     source: "Ministerul Investițiilor și Proiectelor Europene",
     sourceUrl: "https://inafaceri.ro/finantari/potj-200-000-5-000-000-euro-investitii-pt-dezvoltarea-imm-care-sprijina-cresterea-durabila-si-crearea-de-locuri-de-munca",
     accent: "#c05621",
   },
   {
     id: "pro-infra",
-    name: "PRO-INFRA — Producție materii prime & produse",
+    name: "PRO-INFRA, Producție materii prime & produse",
     subtitle: "Schemă de ajutor pentru susținerea producției interne de materiale strategice",
     budget: "Buget multianual (HG dedicată)",
-    amount: "1M — 50M EUR per investiție",
-    intensity: "30% — 70% (funcție de regiune)",
+    amount: "1M, 50M EUR per investiție",
+    intensity: "30%, 70% (funcție de regiune)",
     beneficiary: "Companii producătoare de materii prime, materiale și produse industriale",
     description:
       "Schemă operată de Ministerul Economiei pentru reducerea dependenței de importuri la materiale strategice. Eligibile: linii de producție, utilaje grele, echipamente de prelucrare primară și secundară, infrastructură industrială.",
@@ -531,7 +531,7 @@ const GOV_PROGRAMS: Program[] = [
   },
   {
     id: "fm-autoconsum",
-    name: "Fondul pentru Modernizare — Panouri solare autoconsum",
+    name: "Fondul pentru Modernizare, Panouri solare autoconsum",
     subtitle: "Capacități noi de producție energie regenerabilă pentru autoconsum industrial",
     budget: "310 milioane EUR (apelul 2025–2026)",
     amount: "Până la 20M EUR per întreprindere",
@@ -553,7 +553,7 @@ const GOV_PROGRAMS: Program[] = [
   },
   {
     id: "fm-agricultura",
-    name: "Fondul pentru Modernizare — Energie verde agricultură",
+    name: "Fondul pentru Modernizare, Energie verde agricultură",
     subtitle: "200M EUR pentru fermieri & procesatori alimentari (AFIR)",
     budget: "200 milioane EUR",
     amount: "Până la 20M EUR per proiect",
@@ -568,18 +568,18 @@ const GOV_PROGRAMS: Program[] = [
       "Infrastructură racordare",
       "Monitoring & management energetic",
     ],
-    deadline: "Apel 2026 — conform calendar AFIR",
-    source: "AFIR — Agenția pentru Finanțarea Investițiilor Rurale",
+    deadline: "Apel 2026, conform calendar AFIR",
+    source: "AFIR, Agenția pentru Finanțarea Investițiilor Rurale",
     sourceUrl: "https://inafaceri.ro/finantari/fondul-pentru-modernizare-schema-de-ajutor-pentru-energie-verde-pentru-agricultura-romaneasca",
     accent: "#22543d",
   },
   {
     id: "emove",
-    name: "E-MOVE RO — Mobilitate cu emisii zero",
+    name: "E-MOVE RO, Mobilitate cu emisii zero",
     subtitle: "Infrastructură de sprijin pentru transport electric (HG dedicată)",
-    budget: "Multianual — fonduri Fondul pentru Modernizare",
-    amount: "500k — 20M EUR",
-    intensity: "30% — 75%",
+    budget: "Multianual, fonduri Fondul pentru Modernizare",
+    amount: "500k, 20M EUR",
+    intensity: "30%, 75%",
     beneficiary: "Operatori de transport, flote comerciale, municipalități",
     description:
       "Schemă de ajutor de stat pentru sprijinirea investițiilor în infrastructura de mobilitate cu emisii zero. Include stații rapide DC, depouri de încărcare pentru flote, infrastructură aferentă și integrare cu producția de energie verde.",
@@ -597,11 +597,11 @@ const GOV_PROGRAMS: Program[] = [
   },
   {
     id: "emobility",
-    name: "E-MOBILITY RO — Infrastructură reîncărcare",
+    name: "E-MOBILITY RO, Infrastructură reîncărcare",
     subtitle: "Dezvoltarea infrastructurii de reîncărcare pentru vehicule electrice",
     budget: "Multianual",
-    amount: "100k — 5M EUR",
-    intensity: "50% — 75%",
+    amount: "100k, 5M EUR",
+    intensity: "50%, 75%",
     beneficiary: "Companii private, parcuri industriale, centre comerciale, operatori logistică",
     description:
       "Finanțează instalarea de stații de reîncărcare publice și semi-publice în zone strategice: parcări comerciale, hub-uri logistice, benzinării, parcuri de afaceri. Poate fi combinată cu panouri fotovoltaice și stocare pentru infrastructură energetică integrată.",
@@ -619,11 +619,11 @@ const GOV_PROGRAMS: Program[] = [
   },
   {
     id: "vehicule-zero",
-    name: "Vehicule cu emisii zero — Achiziție",
+    name: "Vehicule cu emisii zero, Achiziție",
     subtitle: "Schemă ajutor stat pentru achiziția de vehicule electrice comerciale",
     budget: "Multianual",
-    amount: "Per vehicul: 2,5k — 50k EUR",
-    intensity: "30% — 50% din valoare achiziție",
+    amount: "Per vehicul: 2,5k, 50k EUR",
+    intensity: "30%, 50% din valoare achiziție",
     beneficiary: "IMM-uri, firme de logistică, operatori flote comerciale",
     description:
       "Sprijin pentru înlocuirea flotelor diesel/benzină cu vehicule electrice. Eligibile: autoutilitare electrice (N1), camioane medii (N2), autobuze electrice, vehicule speciale industriale. Poate fi cumulată cu E-MOBILITY RO pentru infrastructura de încărcare.",
@@ -668,7 +668,7 @@ const STEPS = [
 const FAQ = [
   {
     q: "Uzinex redactează cererile de finanțare?",
-    a: "Nu — Uzinex este integrator tehnic, nu consultant de fonduri. Colaborăm însă cu consultanți acreditați ANAP și pregătim partea tehnică a dosarului: specificații, proforme, fișe tehnice, studiu de fezabilitate și plan de implementare.",
+    a: "Nu, Uzinex este integrator tehnic, nu consultant de fonduri. Colaborăm însă cu consultanți acreditați ANAP și pregătim partea tehnică a dosarului: specificații, proforme, fișe tehnice, studiu de fezabilitate și plan de implementare.",
   },
   {
     q: "Ce echipamente Uzinex sunt eligibile prin fonduri europene?",
@@ -676,7 +676,7 @@ const FAQ = [
   },
   {
     q: "Cât durează până la livrarea efectivă?",
-    a: "Evaluarea eligibilității — 3–5 zile lucrătoare. Pregătirea dosarului tehnic — 2–4 săptămâni. Evaluarea organismului — 3–9 luni funcție de program. Livrarea post-contractare — 4–16 săptămâni funcție de complexitatea echipamentului.",
+    a: "Evaluarea eligibilității, 3–5 zile lucrătoare. Pregătirea dosarului tehnic, 2–4 săptămâni. Evaluarea organismului, 3–9 luni funcție de program. Livrarea post-contractare, 4–16 săptămâni funcție de complexitatea echipamentului.",
   },
   {
     q: "Pot combina mai multe fonduri?",
@@ -688,7 +688,7 @@ const FAQ = [
   },
   {
     q: "Uzinex oferă finanțare punte până la rambursare?",
-    a: "Da, indirect — lucrăm cu partenerii noștri financiari (GRENKE, BT Leasing, BRD, UniCredit) pentru credite punte care acoperă gap-ul între plata către furnizor și rambursarea din fonduri. Vezi pagina /finantare/credite-leasing pentru detalii.",
+    a: "Da, indirect, lucrăm cu partenerii noștri financiari (GRENKE, BT Leasing, BRD, UniCredit) pentru credite punte care acoperă gap-ul între plata către furnizor și rambursarea din fonduri. Vezi pagina /finantare/credite-leasing pentru detalii.",
   },
 ];
 
@@ -762,7 +762,7 @@ export default function EuropeanaGuvernamentalaClient() {
                 </div>
               </div>
 
-              {/* Hero stats — full width below */}
+              {/* Hero stats, full width below */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mt-12 lg:mt-16 pt-10 border-t border-white/10">
                 {HERO_STATS.map((s, i) => (
                   <motion.div
@@ -789,7 +789,7 @@ export default function EuropeanaGuvernamentalaClient() {
           <div className="container-x">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
               <div className="lg:col-span-5">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Rolul Uzinex</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Rolul Uzinex</div>
                 <h2
                   className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]"
                   style={{ letterSpacing: "-0.03em" }}
@@ -800,14 +800,14 @@ export default function EuropeanaGuvernamentalaClient() {
               </div>
               <div className="lg:col-span-7 space-y-5 text-ink-600 text-base leading-relaxed">
                 <p>
-                  Fondurile europene și schemele guvernamentale nu sunt un produs — sunt un proces cu 3 actori:
+                  Fondurile europene și schemele guvernamentale nu sunt un produs, sunt un proces cu 3 actori:
                   <strong className="text-ink-900"> beneficiarul</strong> (tu), <strong className="text-ink-900">consultantul acreditat</strong> (redactor de cerere)
                   și <strong className="text-ink-900">furnizorul echipamentului</strong> (Uzinex).
                 </p>
                 <p>
                   Uzinex acoperă strict componenta tehnică: specificații detaliate, proforme cu prețuri ferme,
                   studiu de fezabilitate cu justificare tehnico-economică, plan de implementare, dosar de conformitate
-                  (CE, ISO, STANAG) și trasabilitatea furnizorilor. Această parte este cea mai des respinsă în evaluări —
+                  (CE, ISO, STANAG) și trasabilitatea furnizorilor. Această parte este cea mai des respinsă în evaluări ,
                   o tratăm cu rigoare industrială.
                 </p>
                 <p>
@@ -834,7 +834,7 @@ export default function EuropeanaGuvernamentalaClient() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
                 <div className="lg:col-span-7">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                    — Programe europene
+                   , Programe europene
                   </div>
                   <h2
                     className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
@@ -874,7 +874,7 @@ export default function EuropeanaGuvernamentalaClient() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
                 <div className="lg:col-span-7">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                    — Scheme guvernamentale
+                   , Scheme guvernamentale
                   </div>
                   <h2
                     className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
@@ -902,7 +902,7 @@ export default function EuropeanaGuvernamentalaClient() {
         {/* ───── INLINE CTA before process ───── */}
         <InlineCTA
           title="Lucrezi cu consultant propriu? Îl sprijinim cu fișele noastre."
-          desc="Trimitem consultantului tău acreditat toată documentația tehnică necesară: proforme, specificații, certificate CE/ISO, studiu de fezabilitate — în formatul cerut de autoritatea de management."
+          desc="Trimitem consultantului tău acreditat toată documentația tehnică necesară: proforme, specificații, certificate CE/ISO, studiu de fezabilitate, în formatul cerut de autoritatea de management."
           action="Trimite CUI consultant"
           href="mailto:info@uzinex.ro?subject=Colaborare%20consultant"
         />
@@ -913,7 +913,7 @@ export default function EuropeanaGuvernamentalaClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
                 <div className="lg:col-span-7">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Proces</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Proces</div>
                   <h2
                     className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-3"
                     style={{ letterSpacing: "-0.03em" }}
@@ -923,7 +923,7 @@ export default function EuropeanaGuvernamentalaClient() {
                   </h2>
                   <p className="text-sm text-ink-500 max-w-2xl">
                     Procesul standard din momentul primului apel până la instalarea echipamentului în hală.
-                    Fără surprize de parcurs — fiecare etapă are livrabil clar.
+                    Fără surprize de parcurs, fiecare etapă are livrabil clar.
                   </p>
                 </div>
                 <div className="lg:col-span-5">
@@ -954,7 +954,7 @@ export default function EuropeanaGuvernamentalaClient() {
         <section className="border-b hairline py-14 lg:py-20 bg-white">
           <div className="container-x">
             <div className="max-w-4xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Întrebări frecvente</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Întrebări frecvente</div>
               <h2
                 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12"
                 style={{ letterSpacing: "-0.03em" }}
@@ -979,7 +979,7 @@ export default function EuropeanaGuvernamentalaClient() {
           />
           <div className="container-x relative">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 mono">— Următorul pas</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-4 mono">, Următorul pas</div>
               <h2
                 className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95] mb-6"
                 style={{ letterSpacing: "-0.03em" }}

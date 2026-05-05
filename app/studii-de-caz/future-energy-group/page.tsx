@@ -196,7 +196,7 @@ export default function FegCaseStudyPage() {
   const article = articleSchema({
     slug: SLUG,
     title:
-      "Future Energy Group — atelier fotovoltaic care a învățat să sudeze cu laser 3-in-1",
+      "Future Energy Group, atelier fotovoltaic care a învățat să sudeze cu laser 3-in-1",
     excerpt:
       "Instalator de sisteme fotovoltaice premium din București cu 3 angajați, fără experiență la sudură. A evitat costul angajării unui sudor calificat (2.500 €/lună) cu un aparat laser 3-in-1.",
     category: "Studiu de caz",
@@ -308,7 +308,7 @@ export default function FegCaseStudyPage() {
           </div>
         </Section>
 
-        {/* 2. PUNCTUL DE PLECARE — focus pe forța de muncă */}
+        {/* 2. PUNCTUL DE PLECARE, focus pe forța de muncă */}
         <Section number="02" eyebrow="Punctul de plecare · forța de muncă">
           <h2
             className="serif text-2xl lg:text-3xl text-ink-900 leading-tight mb-6 max-w-3xl"
@@ -705,7 +705,7 @@ export default function FegCaseStudyPage() {
           <PaybackCalculator />
         </Section>
 
-        {/* FAQ — pentru SEO + utilitate reală */}
+        {/* FAQ, pentru SEO + utilitate reală */}
         <Section number="11" eyebrow="Întrebări frecvente · sudură laser 3-in-1">
           <div className="max-w-4xl divide-y hairline border-y hairline">
             {FAQ.map((q, i) => (

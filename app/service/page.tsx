@@ -6,7 +6,7 @@ import { ContactCTA } from "@/components/ContactCTA";
 import { serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Service tehnic — Inclus, abonamente și manuale AI",
+  title: "Service tehnic, Inclus, abonamente și manuale AI",
   description:
     "Trei direcții de service tehnic Uzinex: ce primești gratuit cu fiecare echipament, contractele de abonament pentru mentenanță preventivă și manualele interactive cu inteligență artificială.",
   alternates: { canonical: "/service" },
@@ -19,7 +19,7 @@ const CARDS = [
     eyebrow: "Inclus gratuit",
     title: "Service inclus la livrare",
     description:
-      "Punerea în funcțiune, trainingul operatorilor, garanția standard, diagnoza colaborativă remote și piesele originale OEM — fiecare echipament livrat de Uzinex vine cu ecosistemul complet de suport tehnic.",
+      "Punerea în funcțiune, trainingul operatorilor, garanția standard, diagnoza colaborativă remote și piesele originale OEM, fiecare echipament livrat de Uzinex vine cu ecosistemul complet de suport tehnic.",
     highlights: [
       "60 luni garanție standard",
       "Intervenție fizică sub 24h",
@@ -34,7 +34,7 @@ const CARDS = [
     eyebrow: "Mentenanță preventivă",
     title: "Abonamente Service",
     description:
-      "Contracte de mentenanță preventivă cu costuri previzibile, SLA-uri clare și acoperire totală. Alege dintre trei niveluri — Esențial, Avansat sau Premium — în funcție de criticitatea flotei tale.",
+      "Contracte de mentenanță preventivă cu costuri previzibile, SLA-uri clare și acoperire totală. Alege dintre trei niveluri, Esențial, Avansat sau Premium, în funcție de criticitatea flotei tale.",
     highlights: [
       "3 tier-uri de abonament",
       "SLA garantat prin contract",
@@ -132,7 +132,7 @@ export default function ServiceHubPage() {
                       className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-3"
                       style={{ color: c.accent }}
                     >
-                      — {c.num} / {c.eyebrow}
+                     , {c.num} / {c.eyebrow}
                     </div>
                     <h2
                       className="serif text-2xl lg:text-3xl text-ink-900 leading-[1.05] mb-4 group-hover:text-uzx-blue transition"

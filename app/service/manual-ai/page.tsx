@@ -27,7 +27,7 @@ const FEATURES = [
   {
     num: "03",
     title: "Recunoaștere prin imagini",
-    body: "Fotografiezi o piesă, un cod de eroare de pe display sau o componentă necunoscută — manualul AI o identifică instant, îți spune codul SKU, compatibilitatea și locul montării.",
+    body: "Fotografiezi o piesă, un cod de eroare de pe display sau o componentă necunoscută, manualul AI o identifică instant, îți spune codul SKU, compatibilitatea și locul montării.",
   },
   {
     num: "04",
@@ -37,7 +37,7 @@ const FEATURES = [
   {
     num: "05",
     title: "Proceduri pas-cu-pas",
-    body: "Ghiduri clare pentru punere în funcțiune, parametrizare, mentenanță preventivă, troubleshooting și situații de urgență — toate în format acționabil.",
+    body: "Ghiduri clare pentru punere în funcțiune, parametrizare, mentenanță preventivă, troubleshooting și situații de urgență, toate în format acționabil.",
   },
   {
     num: "06",
@@ -68,7 +68,7 @@ const FEATURES = [
 
 export default function ServiceManualAIPage() {
   const svc = serviceSchema({
-    name: "Manual de service cu AI — Uzinex",
+    name: "Manual de service cu AI, Uzinex",
     description:
       "Manuale interactive cu AI pentru echipamente industriale: limbaj natural, comandă vocală, recunoaștere imagini, disponibile offline 24/7.",
     serviceType: "AI-powered equipment documentation and support",
@@ -130,7 +130,7 @@ export default function ServiceManualAIPage() {
                   Nu ai luat echipamentul de la noi?
                 </span>{" "}
                 Îți putem construi la comandă, contra cost, un manual AI
-                personalizat pentru orice utilaj industrial — indiferent de
+                personalizat pentru orice utilaj industrial, indiferent de
                 brand, model sau vechime.
               </p>
             </div>
@@ -155,7 +155,7 @@ export default function ServiceManualAIPage() {
                     <p className="text-xs text-ink-600 leading-relaxed">
                       Manualul AI este parte integrantă din fiecare livrare
                       Uzinex, fără cost suplimentar. Nu există abonamente,
-                      licențe ascunse sau limitări de utilizare — o dată primit
+                      licențe ascunse sau limitări de utilizare, o dată primit
                       echipamentul, asistentul tehnic este al tău.
                     </p>
                   </div>
@@ -164,7 +164,7 @@ export default function ServiceManualAIPage() {
 
               <div className="lg:col-span-6 lg:col-start-7">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                  — 10 capabilități
+                 , 10 capabilități
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
@@ -231,7 +231,7 @@ export default function ServiceManualAIPage() {
 
                 <div className="lg:col-span-7 relative">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                    — Serviciu disponibil separat
+                   , Serviciu disponibil separat
                   </div>
                   <h3
                     className="serif text-2xl md:text-3xl lg:text-4xl leading-[0.95] mb-5"
@@ -247,7 +247,7 @@ export default function ServiceManualAIPage() {
                   <p className="text-ink-200 text-base leading-relaxed max-w-2xl">
                     Chiar dacă echipamentul tău nu a fost achiziționat prin
                     Uzinex, îți putem dezvolta un manual interactiv cu
-                    inteligență artificială contra cost — personalizat pe
+                    inteligență artificială contra cost, personalizat pe
                     modelul, configurația și procedurile tale interne. Lucrăm
                     pe orice tip de utilaj industrial, indiferent de brand sau
                     vechime.

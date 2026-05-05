@@ -10,9 +10,9 @@ import { ContactCTA } from "@/components/ContactCTA";
 /* ─────── DATA ─────── */
 
 const CONDITIONS = [
-  { value: "10 — 30%", label: "Avans obligatoriu", desc: "Minim 10% din valoare. Procentul crește proporțional cu riscul evaluat." },
-  { value: "3 — 18", label: "Rate lunare", desc: "Eșalonare cu rată fixă stabilită la semnare, incluzând costul finanțării." },
-  { value: "Fixă", label: "Dobândă transparentă", desc: "Dobândă fixă pe toată durata, stabilită la evaluare — nu există dobândă 0%." },
+  { value: "10, 30%", label: "Avans obligatoriu", desc: "Minim 10% din valoare. Procentul crește proporțional cu riscul evaluat." },
+  { value: "3, 18", label: "Rate lunare", desc: "Eșalonare cu rată fixă stabilită la semnare, incluzând costul finanțării." },
+  { value: "Fixă", label: "Dobândă transparentă", desc: "Dobândă fixă pe toată durata, stabilită la evaluare, nu există dobândă 0%." },
   { value: "Riguros", label: "Proces de calificare", desc: "Analiză financiară internă: bilanț, datorii, capacitate de plată, garanții." },
 ];
 
@@ -21,7 +21,7 @@ const GUARANTEES = [
     num: "01",
     title: "Bilete la ordin avalizate",
     icon: "",
-    desc: "Emise de client la valoarea fiecărei rate, cu scadența lunară corespunzătoare graficului de plată, și avalizate personal de administrator sau asociatul majoritar. Avalul transformă administratorul în garant solidar — la scadență, biletul devine titlu executoriu atât împotriva societății, cât și a persoanei fizice care a avalizat.",
+    desc: "Emise de client la valoarea fiecărei rate, cu scadența lunară corespunzătoare graficului de plată, și avalizate personal de administrator sau asociatul majoritar. Avalul transformă administratorul în garant solidar, la scadență, biletul devine titlu executoriu atât împotriva societății, cât și a persoanei fizice care a avalizat.",
     details: ["Titlu executoriu la scadență", "Un BO per rată sau BO global", "Avalizate personal de administrator/asociat"],
     accent: "#1e6bb8",
   },
@@ -53,7 +53,7 @@ const GUARANTEES = [
     num: "05",
     title: "Garanție personală administrator",
     icon: "",
-    desc: "Administratorul sau asociatul majoritar semnează un angajament personal de plată (fidejusiune) prin care garantează solidar cu societatea obligațiile din contractul de credit furnizor. Garanția poate include și bunuri proprii ale administratorului — imobile, autovehicule sau alte active personale — diferite de echipamentele finanțate, oferind un nivel suplimentar de acoperire a riscului.",
+    desc: "Administratorul sau asociatul majoritar semnează un angajament personal de plată (fidejusiune) prin care garantează solidar cu societatea obligațiile din contractul de credit furnizor. Garanția poate include și bunuri proprii ale administratorului, imobile, autovehicule sau alte active personale, diferite de echipamentele finanțate, oferind un nivel suplimentar de acoperire a riscului.",
     details: ["Fidejusiune personală solidară", "Poate include bunuri proprii (imobile, auto, active)", "Semnată de administrator/asociat"],
     accent: "#0a4d96",
   },
@@ -86,16 +86,16 @@ const STEPS = [
 const ADVANTAGES = [
   { title: "Decizie rapidă", desc: "Evaluarea e internă, nu trece prin comitete bancare. Dacă te califici, primești răspuns în 1-3 zile lucrătoare." },
   { title: "Fără CIP/BNR", desc: "Creditul furnizor nu se raportează la Centrala Riscului de Credit. Nu îți afectează scoring-ul bancar." },
-  { title: "Costuri transparente", desc: "Dobânda e fixă, stabilită la semnare. Rata include totul — fără comisioane ascunse sau variabile." },
+  { title: "Costuri transparente", desc: "Dobânda e fixă, stabilită la semnare. Rata include totul, fără comisioane ascunse sau variabile." },
   { title: "Livrare la semnare", desc: "Echipamentul se comandă imediat ce contractul e semnat și garanțiile constituite. Nu aștepți banca." },
-  { title: "Garanții structurate", desc: "7 tipuri de garanții combinabile. Structura se adaptează la profilul tău — nu e o formulă unică." },
+  { title: "Garanții structurate", desc: "7 tipuri de garanții combinabile. Structura se adaptează la profilul tău, nu e o formulă unică." },
   { title: "Evaluare serioasă", desc: "Analizăm bilanțul, datoriile și capacitatea reală de plată. Aprobăm doar clienții care pot susține ratele." },
 ];
 
 const FAQ = [
   { q: "Ce se întâmplă dacă nu pot plăti o rată la timp?", a: "Te contactăm proactiv cu 7 zile înainte de scadență. Dacă ai o situație temporară, putem discuta restructurarea. Dacă rata rămâne neplătită, se execută garanția aferentă (BO sau CEC la scadență) conform contractului. Neplata repetată duce la rezilierea contractului și recuperarea echipamentului." },
   { q: "Pot plăti anticipat fără penalități?", a: "Da. Plata anticipată totală sau parțială se face fără penalități. Garanțiile corespunzătoare se eliberează imediat." },
-  { q: "Cât este dobânda?", a: "Dobânda este fixă pe toată durata contractului, stabilită la momentul evaluării. Nivelul depinde de valoarea comenzii, durata eșalonării, garanțiile oferite și profilul financiar al companiei. Nu există dobândă 0% — costul finanțării este real și transparent." },
+  { q: "Cât este dobânda?", a: "Dobânda este fixă pe toată durata contractului, stabilită la momentul evaluării. Nivelul depinde de valoarea comenzii, durata eșalonării, garanțiile oferite și profilul financiar al companiei. Nu există dobândă 0%, costul finanțării este real și transparent." },
   { q: "Ce valoare maximă pot finanța prin credit furnizor?", a: "Depinde de garanțiile oferite și capacitatea de plată demonstrată. Orientativ, finanțăm prin credit furnizor comenzi de până la €100.000. Pentru sume mai mari, recomandăm leasing bancar sau structuri mixte." },
   { q: "Cine se califică și cine nu?", a: "Se califică companiile cu minim 1 an de activitate, bilanțul depus, fără datorii restante semnificative și cu capacitate demonstrabilă de a susține ratele lunare. Nu acordăm credit furnizor start-up-urilor fără istoric, companiilor cu datorii mari la buget sau celor care nu pot constitui garanțiile minime." },
 ];
@@ -122,7 +122,7 @@ function GuaranteeShield() {
   return (
     <div className="bg-[#0a0e14] p-6 lg:p-8 border border-white/10">
       <div className="text-[9px] mono text-white/40 uppercase tracking-widest mb-5">
-        Structură garanții — model tipic
+        Structură garanții, model tipic
       </div>
       <div className="relative flex items-center justify-center py-8">
         {/* Central shield */}
@@ -217,7 +217,7 @@ export default function CreditFurnizorClient() {
                     <span className="font-light italic text-uzx-orange">direct de la Uzinex.</span>
                   </h1>
                   <p className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl">
-                    Achiziționezi echipamentul în rate direct de la noi, fără intermediar bancar. Procesul de calificare este riguros — analizăm bilanțul, capacitatea de plată, istoricul comercial și garanțiile oferite. Nu acordăm finanțare oricui, dar clienților care se califică le oferim condiții corecte și decizie rapidă.
+                    Achiziționezi echipamentul în rate direct de la noi, fără intermediar bancar. Procesul de calificare este riguros, analizăm bilanțul, capacitatea de plată, istoricul comercial și garanțiile oferite. Nu acordăm finanțare oricui, dar clienților care se califică le oferim condiții corecte și decizie rapidă.
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:col-start-9">
@@ -240,7 +240,7 @@ export default function CreditFurnizorClient() {
           <div className="container-x">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
               <div className="lg:col-span-5">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Ce este</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Ce este</div>
                 <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
                   Plătești în rate,<br /><span className="font-light text-uzx-orange">direct la noi.</span>
                 </h2>
@@ -250,7 +250,7 @@ export default function CreditFurnizorClient() {
                   Creditul furnizor este o formă de finanțare comercială în care Uzinex, în calitate de furnizor, îți acordă un termen de plată eșalonat pentru echipamentele achiziționate. Plata se face pe o perioadă de 3 până la 18 de luni, cu dobândă fixă stabilită în funcție de risc.
                 </p>
                 <p className="text-ink-600 leading-relaxed mb-5">
-                  Spre deosebire de creditul bancar, relația contractuală este exclusiv între tine și Uzinex — fără intermediar financiar și fără raportare la CIP/BNR. Dar asta nu înseamnă că procesul e superficial.
+                  Spre deosebire de creditul bancar, relația contractuală este exclusiv între tine și Uzinex, fără intermediar financiar și fără raportare la CIP/BNR. Dar asta nu înseamnă că procesul e superficial.
                 </p>
                 <p className="text-ink-600 leading-relaxed">
                   <strong className="text-ink-900">Calificarea este riguroasă.</strong> Analizăm ultimele 2 bilanțuri, datoriile curente, capacitatea reală de plată a ratelor și garanțiile pe care le poți constitui. Clienții cu istoric comercial la Uzinex și profil financiar solid beneficiază de condiții preferențiale. Ceilalți sunt redirecționați către soluțiile de leasing bancar.
@@ -266,7 +266,7 @@ export default function CreditFurnizorClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
                 <div className="lg:col-span-5">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Garanții acceptate</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Garanții acceptate</div>
                   <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-6" style={{ letterSpacing: "-0.03em" }}>
                     7 tipuri de garanții<br /><span className="font-light text-uzx-orange">combinabile flexibil.</span>
                   </h2>
@@ -314,7 +314,7 @@ export default function CreditFurnizorClient() {
         <section className="border-b hairline py-14 lg:py-20 bg-white">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Proces</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Proces</div>
               <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12" style={{ letterSpacing: "-0.03em" }}>
                 De la comandă la prima rată<br /><span className="font-light text-uzx-orange">în 5 pași simpli.</span>
               </h2>
@@ -349,14 +349,14 @@ export default function CreditFurnizorClient() {
         <section className="border-b hairline py-14 lg:py-20 bg-ink-50">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Avantaje</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Avantaje</div>
               <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12" style={{ letterSpacing: "-0.03em" }}>
                 De ce credit furnizor<br /><span className="font-light text-uzx-orange">în loc de credit bancar.</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink-200 border-y border-ink-200">
                 {ADVANTAGES.map((a, i) => (
                   <div key={i} className="bg-white p-8">
-                    <div className="text-[11px] mono text-uzx-blue mb-4">— {String(i + 1).padStart(2, "0")}</div>
+                    <div className="text-[11px] mono text-uzx-blue mb-4">, {String(i + 1).padStart(2, "0")}</div>
                     <h3 className="serif text-lg text-ink-900 mb-3 leading-tight">{a.title}</h3>
                     <p className="text-sm text-ink-600 leading-relaxed">{a.desc}</p>
                   </div>
@@ -395,7 +395,7 @@ export default function CreditFurnizorClient() {
           <div className="container-x">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
               <div className="lg:col-span-4">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Întrebări frecvente</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Întrebări frecvente</div>
                 <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>Despre creditul furnizor.</h2>
               </div>
               <div className="lg:col-span-7 lg:col-start-6">

@@ -10,12 +10,12 @@ import {
 } from "@/lib/seo/product-seo";
 
 export const metadata: Metadata = {
-  title: "Echipamente — catalog Uzinex cu 180+ utilaje industriale",
+  title: "Echipamente, catalog Uzinex cu 180+ utilaje industriale",
   description:
     "Catalog Uzinex cu 180+ echipamente industriale: CNC, laser fiber, roboți, ambalare, reciclare, energie, inspecție. Filtrare pe categorii, fișe tehnice descărcabile, eligibil SEAP/SICAP.",
   alternates: { canonical: "/magazin" },
   openGraph: {
-    title: "Echipamente Uzinex — catalog cu 180+ utilaje industriale",
+    title: "Echipamente Uzinex, catalog cu 180+ utilaje industriale",
     description:
       "Utilaje CNC, laser, roboți, echipamente pentru fabrică. Catalog complet cu filtrare categorică și fișe tehnice.",
     url: "/magazin",
@@ -30,11 +30,11 @@ export default async function Page() {
     const overrides = await getAllProductOverrides();
     products = PRODUCTS.map((p) => mergeProductWithOverride(p, overrides[p.slug]));
   } catch {
-    // DB unavailable — use baseline
+    // DB unavailable, use baseline
   }
 
   const collection = collectionPageSchema({
-    title: "Echipamente Uzinex — catalog cu 180+ utilaje industriale",
+    title: "Echipamente Uzinex, catalog cu 180+ utilaje industriale",
     description:
       "Utilaje CNC, laser fiber, roboți industriali, echipamente ambalare, reciclare, energie, inspecție. Catalog filtrabil pe categorii și subcategorii.",
     url: "/magazin",
@@ -91,7 +91,7 @@ export default async function Page() {
         />
         <div className="container-x relative py-10 lg:py-14 text-white">
           <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mono">
-            — Echipamente
+           , Echipamente
           </div>
         </div>
       </section>

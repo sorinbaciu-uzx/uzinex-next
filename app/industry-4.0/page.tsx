@@ -20,12 +20,12 @@ const ANIM_MAP: Record<string, React.FC> = {
 };
 
 export const metadata: Metadata = {
-  title: "Industry 4.0 — Soluții integrate pentru fabrica viitorului",
+  title: "Industry 4.0, Soluții integrate pentru fabrica viitorului",
   description:
     "Șase direcții tehnologice integrate la cheie: IIoT, robotică colaborativă, mentenanță predictivă, inspecție optică, Edge Computing și software industrial pe comandă.",
   alternates: { canonical: "/industry-4.0" },
   openGraph: {
-    title: "Industry 4.0 Uzinex — 6 direcții tehnologice la cheie",
+    title: "Industry 4.0 Uzinex, 6 direcții tehnologice la cheie",
     description:
       "IIoT, cobots, mentenanță predictivă, inspecție optică, Edge/MES, software industrial. Fabrica viitorului, integrată de Uzinex.",
     url: "/industry-4.0",
@@ -39,7 +39,7 @@ const DIRECTIONS = [
     title: "IIoT & Monitorizare Plug & Play",
     subtitle: "Digitalizare rapidă cu ROI din prima lună",
     description:
-      "Montăm senzori pe orice utilaj — nou sau vechi — și în câteva ore ai dashboard-ul OEE pe telefon. Primul pas concret spre fabrica inteligentă, fără cablaje complicate și fără oprirea producției.",
+      "Montăm senzori pe orice utilaj, nou sau vechi, și în câteva ore ai dashboard-ul OEE pe telefon. Primul pas concret spre fabrica inteligentă, fără cablaje complicate și fără oprirea producției.",
     highlights: ["Dashboard OEE pe telefon", "Montare fără oprirea producției", "ROI în 3-6 luni"],
     accent: "#1e6bb8",
   },
@@ -49,7 +49,7 @@ const DIRECTIONS = [
     title: "Robotică colaborativă",
     subtitle: "Rezolvă lipsa de personal, nu triplezi costurile",
     description:
-      "Cobotul lucrează în siguranță lângă oamenii tăi — paletizează, alimentează CNC-ul, sudează. Prețuri cu 30-40% sub distribuitorii europeni, cu instalare și programare de la noi.",
+      "Cobotul lucrează în siguranță lângă oamenii tăi, paletizează, alimentează CNC-ul, sudează. Prețuri cu 30-40% sub distribuitorii europeni, cu instalare și programare de la noi.",
     highlights: ["ROI în 12-18 luni", "Instalare + programare incluse", "30-40% sub prețul pieței"],
     accent: "#f5851f",
   },
@@ -59,7 +59,7 @@ const DIRECTIONS = [
     title: "Mentenanță predictivă",
     subtitle: "Zero opriri neplanificate, liniște totală",
     description:
-      "Algoritmii noștri analizează datele de la senzori și îți spun exact ce piesă va ceda și când — noi o aducem pe linia ta de producție înainte de defecțiune.",
+      "Algoritmii noștri analizează datele de la senzori și îți spun exact ce piesă va ceda și când, noi o aducem pe linia ta de producție înainte de defecțiune.",
     highlights: ["Predicție defecțiuni pe bază de AI", "Piesa ajunge preventiv", "Critic pentru contracte publice"],
     accent: "#155290",
   },
@@ -156,7 +156,7 @@ export default function Industry40HubPage() {
                       className="text-[11px] uppercase tracking-[0.22em] mono font-bold mb-4"
                       style={{ color: d.accent }}
                     >
-                      — {d.num}
+                     , {d.num}
                     </div>
                     <h2
                       className="serif text-2xl lg:text-[26px] text-ink-900 leading-[1.08] mb-2 group-hover:text-uzx-blue transition"

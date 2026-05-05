@@ -708,7 +708,7 @@ export default function GeomarPitestiPage() {
           </div>
         </Section>
 
-        {/* 10. BONUS — RELAȚIA CONTINUĂ */}
+        {/* 10. BONUS, RELAȚIA CONTINUĂ */}
         <section className="border-b hairline py-14 lg:py-20" style={{ background: "#faf6f1" }}>
           <div className="container-x">
             <div className="text-[11px] mono uppercase tracking-[0.2em] mb-4" style={{ color: "#c83a17" }}>
@@ -728,7 +728,7 @@ export default function GeomarPitestiPage() {
                     nișă „tablă curată”, Marian a identificat etapa
                     următoare: vopsirea finală a produselor destinate
                     exteriorului. Porți, balustrade exterior, mobilier de
-                    grădină — toate cer un finisaj de protecție durabilă
+                    grădină, toate cer un finisaj de protecție durabilă
                     împotriva intemperiilor.
                   </p>
                   <p>

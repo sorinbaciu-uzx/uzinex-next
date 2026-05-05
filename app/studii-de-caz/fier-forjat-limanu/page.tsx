@@ -746,7 +746,7 @@ export default function FierForjatLimanuPage() {
                 </div>
                 <ul className="space-y-3 text-sm text-ink-700">
                   <li className="flex gap-2">
-                    <span className="shrink-0 mt-[2px]" style={{ color: "#c83a17" }}>—</span>
+                    <span className="shrink-0 mt-[2px]" style={{ color: "#c83a17" }}>,</span>
                     <span>
                       <strong className="text-ink-900">Producție atelier propriu:</strong>{" "}
                       porți, garduri, balustrade, replici istorice, comenzi
@@ -754,7 +754,7 @@ export default function FierForjatLimanuPage() {
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="shrink-0 mt-[2px]" style={{ color: "#c83a17" }}>—</span>
+                    <span className="shrink-0 mt-[2px]" style={{ color: "#c83a17" }}>,</span>
                     <span>
                       <strong className="text-ink-900">Subcontractor Uzinex:</strong>{" "}
                       structuri metalice pentru centralele fotovoltaice
@@ -762,7 +762,7 @@ export default function FierForjatLimanuPage() {
                     </span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="shrink-0 mt-[2px]" style={{ color: "#c83a17" }}>—</span>
+                    <span className="shrink-0 mt-[2px]" style={{ color: "#c83a17" }}>,</span>
                     <span>
                       <strong className="text-ink-900">Relația continuă:</strong>{" "}
                       mentenanță, consumabile, suport tehnic la cerere.

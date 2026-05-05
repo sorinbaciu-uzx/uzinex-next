@@ -67,7 +67,7 @@ export default function ServiceAbonamentePage() {
               </h1>
               <p className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl">
                 Costuri previzibile, zero surprize. Alege dintre trei niveluri
-                de abonament — Esențial, Avansat sau Premium — în funcție de
+                de abonament, Esențial, Avansat sau Premium, în funcție de
                 criticitatea echipamentelor și dimensiunea flotei tale. Toate
                 contractele includ intervenție rapidă, rapoarte tehnice și
                 piese originale OEM.
@@ -126,7 +126,7 @@ export default function ServiceAbonamentePage() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-5">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                  — Abordarea noastră
+                 , Abordarea noastră
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
@@ -139,7 +139,7 @@ export default function ServiceAbonamentePage() {
                   </span>
                 </h2>
                 <p className="text-ink-500 leading-relaxed">
-                  Uzinex nu este doar un furnizor de echipamente — suntem
+                  Uzinex nu este doar un furnizor de echipamente, suntem
                   integrator industrial complet. Asta înseamnă că îți preluăm
                   proiectul din faza de analiză tehnică și te însoțim până la
                   scoaterea din uz a echipamentului, cu aceeași echipă, aceleași
@@ -211,7 +211,7 @@ export default function ServiceAbonamentePage() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               <div className="lg:col-span-6">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                  — Satisfacția ta
+                 , Satisfacția ta
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95] mb-6"
@@ -258,7 +258,7 @@ export default function ServiceAbonamentePage() {
 
               <div className="lg:col-span-5 lg:col-start-8">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-5 mono">
-                  — Simply Efficient
+                 , Simply Efficient
                 </div>
                 <p className="text-ink-200 leading-relaxed mb-8">
                   Atributele de performanță reprezintă reperul eficienței

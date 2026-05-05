@@ -41,7 +41,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const { article } = await getArticle(slug);
-  if (!article) return { title: "Articol — Uzinex" };
+  if (!article) return { title: "Articol, Uzinex" };
   const canonicalPath = `/noutati/${article.slug}`;
   return {
     title: article.title,
@@ -109,7 +109,7 @@ export default async function ArticlePage({
   // Shared across every paragraph so each link target is used at most once.
   const alreadyLinked = new Set<string>();
   const currentPath = `/noutati/${article.slug}`;
-  // Product targets — articles that mention a product by full name get
+  // Product targets, articles that mention a product by full name get
   // contextual cross-links (strict matching: full name, ≥15 char, 3/page cap).
   const productTargets = buildProductTargets("", PRODUCTS);
 
@@ -191,7 +191,7 @@ export default async function ArticlePage({
                 <Cover article={article} />
               </div>
               <div className="text-[10px] mono text-ink-400 mt-3 uppercase tracking-wider">
-                — Uzinex Editorial
+               , Uzinex Editorial
               </div>
             </div>
           </div>
@@ -247,7 +247,7 @@ export default async function ArticlePage({
             <div className="container-x py-14 lg:py-20">
               <div className="max-w-6xl mx-auto">
                 <div className="text-[10px] uppercase tracking-[0.25em] text-uzx-orange mb-3 mono">
-                  — Continuă să citești
+                 , Continuă să citești
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-10"

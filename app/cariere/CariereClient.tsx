@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 /* ─────────────────────────────────────────────────────────────────────────
-   /cariere — pagină de recrutare Uzinex
+   /cariere, pagină de recrutare Uzinex
    Focus: ingineri + specialiști digitalizare
    Design modern, animații SVG tehnice, 3 CTA-uri "Aplică"
    ───────────────────────────────────────────────────────────────────── */
@@ -22,14 +22,14 @@ const HERO_STATS = [
 ];
 
 const BENEFITS = [
-  { icon: "01", title: "Proiecte cu impact real", desc: "Lucrezi la linii de producție, cobots, laser fiber, MES și stații fotovoltaice industriale. Nu la demo-uri — la instalații care funcționează 24/7." },
-  { icon: "02", title: "AI de frontieră, zi de zi", desc: "Folosești zilnic cele mai avansate sisteme de inteligență artificială de pe planetă în fluxul tău de ofertare, proiectare și diagnoză. Nu experimentăm cu AI. Îl folosim deja — integrat în instrumentele noastre interne." },
+  { icon: "01", title: "Proiecte cu impact real", desc: "Lucrezi la linii de producție, cobots, laser fiber, MES și stații fotovoltaice industriale. Nu la demo-uri, la instalații care funcționează 24/7." },
+  { icon: "02", title: "AI de frontieră, zi de zi", desc: "Folosești zilnic cele mai avansate sisteme de inteligență artificială de pe planetă în fluxul tău de ofertare, proiectare și diagnoză. Nu experimentăm cu AI. Îl folosim deja, integrat în instrumentele noastre interne." },
   { icon: "03", title: "Tehnologii premium", desc: "Siemens, Mitsubishi, ABB, Schneider, Fanuc, Yaskawa, IPG. Certificări producător plătite integral." },
   { icon: "04", title: "Mentorat + seniori", desc: "Fiecare junior e asociat cu un inginer senior 3-5 ani experiență. Nu te arunci în gol." },
-  { icon: "05", title: "Parc științific Iași", desc: "Sediu în Tehnopolis — clădire modernă cu laborator propriu, parcare, cafeteria, spațiu de prototipare." },
+  { icon: "05", title: "Parc științific Iași", desc: "Sediu în Tehnopolis, clădire modernă cu laborator propriu, parcare, cafeteria, spațiu de prototipare." },
   { icon: "06", title: "Pachet transparent", desc: "Salariu fix + bonus performanță + bonus proiect. Grila publică intern, fără negociere ascunsă." },
   { icon: "07", title: "Training & conferințe", desc: "Participare la Hannover Messe, Automatica, EMO, plus cursuri TÜV / Siemens / Fanuc anual." },
-  { icon: "08", title: "Abonament medical & dental", desc: "Abonament privat Regina Maria sau Sanador pentru tine și familie. Consultații, analize, intervenții stomatologice — toate acoperite." },
+  { icon: "08", title: "Abonament medical & dental", desc: "Abonament privat Regina Maria sau Sanador pentru tine și familie. Consultații, analize, intervenții stomatologice, toate acoperite." },
   { icon: "09", title: "Echilibru real work-life", desc: "Program flexibil cu 2-3 zile hibrid/săptămână (roluri eligibile), 25+ zile concediu, fără weekend-uri sau overtime neplătit. Family-friendly." },
 ];
 
@@ -109,7 +109,7 @@ const DIGI_ROLES: Role[] = [
     tags: ["Python", "PostgreSQL", "Grafana", "time-series"],
   },
   {
-    title: "AI/ML engineer — vision industrial",
+    title: "AI/ML engineer, vision industrial",
     level: "Senior",
     location: "Iași · hibrid",
     type: "Full-time",
@@ -510,7 +510,7 @@ export default function CariereClient() {
                     Căutăm <strong className="text-white">ingineri</strong> și <strong className="text-white">specialiști digitalizare</strong> care
                     vor să lucreze pe proiecte reale: linii de producție, cobots, laser fiber, MES, stații
                     fotovoltaice industriale. <strong className="text-white">Folosești zilnic cele mai avansate sisteme AI de pe planetă</strong> în
-                    ofertare, proiectare și diagnoză. Fără ceremonii, fără KPI absurzi — doar inginerie care funcționează.
+                    ofertare, proiectare și diagnoză. Fără ceremonii, fără KPI absurzi, doar inginerie care funcționează.
                   </p>
                   <div className="flex flex-wrap items-center gap-4 mt-8">
                     <a
@@ -563,7 +563,7 @@ export default function CariereClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
                 <div className="lg:col-span-5">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— De ce Uzinex</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, De ce Uzinex</div>
                   <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
                     Ce primești dincolo<br />
                     <span className="font-light text-uzx-orange">de salariu.</span>
@@ -571,9 +571,9 @@ export default function CariereClient() {
                 </div>
                 <div className="lg:col-span-7">
                   <p className="text-ink-600 text-base leading-relaxed">
-                    Suntem o echipă mică și agilă — <strong className="text-ink-900">5 ingineri</strong> care
+                    Suntem o echipă mică și agilă, <strong className="text-ink-900">5 ingineri</strong> care
                     livrează proiecte industriale reale. Creștem cu grijă, nu cu headcount forțat. Fiecare nou
-                    coleg e o decizie conștientă — ai impact direct din săptămâna întâi.
+                    coleg e o decizie conștientă, ai impact direct din săptămâna întâi.
                   </p>
                 </div>
               </div>
@@ -612,7 +612,7 @@ export default function CariereClient() {
         <section id="roluri" className="border-b hairline py-14 lg:py-20 bg-ink-50">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Roluri deschise</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Roluri deschise</div>
               <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-4" style={{ letterSpacing: "-0.03em" }}>
                 Două direcții.<br />
                 <span className="font-light text-uzx-orange">Aceeași echipă.</span>
@@ -671,7 +671,7 @@ export default function CariereClient() {
                       </h3>
                       <p className="text-sm text-ink-600 leading-relaxed max-w-xl">
                         {pillar === "ingineri"
-                          ? "Proiectare, ofertare tehnică, punere în funcțiune, mentenanță. Lucrezi cu CNC, laser fiber, cobots, PLC Siemens/Beckhoff, robotică Fanuc. Ești responsabil end-to-end: de la discuția cu clientul și construirea proformei cu preț ferm, până la predarea echipamentului instalat și operatorul format. Nu există silos între proiectare și comercial — fiecare inginer face și ofertare."
+                          ? "Proiectare, ofertare tehnică, punere în funcțiune, mentenanță. Lucrezi cu CNC, laser fiber, cobots, PLC Siemens/Beckhoff, robotică Fanuc. Ești responsabil end-to-end: de la discuția cu clientul și construirea proformei cu preț ferm, până la predarea echipamentului instalat și operatorul format. Nu există silos între proiectare și comercial, fiecare inginer face și ofertare."
                           : "MES, IIoT, AI vision, data engineering. Construiești platforme care iau date din PLC-uri și le duc la Grafana/dashboard-uri decizionale. Scrii cod care rulează pe edge devices lângă utilaje, nu doar pe laptop."}
                       </p>
                     </div>
@@ -700,7 +700,7 @@ export default function CariereClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 items-center">
                 <div className="lg:col-span-5">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Proces</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Proces</div>
                   <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-4" style={{ letterSpacing: "-0.03em" }}>
                     De la CV la ofertă.<br />
                     <span className="font-light text-uzx-orange">7 zile.</span>
@@ -739,13 +739,13 @@ export default function CariereClient() {
           <div className="container-x">
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-200 border hairline">
               <div className="bg-white p-8 lg:p-10">
-                <div className="text-[10px] mono text-uzx-orange uppercase tracking-wider mb-3">— Aplicație spontană</div>
+                <div className="text-[10px] mono text-uzx-orange uppercase tracking-wider mb-3">, Aplicație spontană</div>
                 <h3 className="serif text-2xl text-ink-900 leading-tight mb-4" style={{ letterSpacing: "-0.02em" }}>
                   Nu vezi rolul tău?<br />Aplică oricum.
                 </h3>
                 <p className="text-sm text-ink-600 leading-relaxed mb-6">
                   Dacă ești inginer/ă sau specialist/ă digitalizare și vrei să lucrezi la proiecte industriale
-                  reale — trimite CV-ul cu subiectul <strong className="text-ink-900">[APLICATIE SPONTANA]</strong>.
+                  reale, trimite CV-ul cu subiectul <strong className="text-ink-900">[APLICATIE SPONTANA]</strong>.
                   Revenim când apare ceva potrivit.
                 </p>
                 <a
@@ -814,7 +814,7 @@ export default function CariereClient() {
           />
           <div className="container-x relative">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-orange mb-4 mono">— Gata să începi</div>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-orange mb-4 mono">, Gata să începi</div>
               <h2 className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95] mb-6" style={{ letterSpacing: "-0.03em" }}>
                 Un email poate schimba totul.<br />
                 <span className="font-light text-uzx-orange">Să vedem dacă suntem potriviți.</span>

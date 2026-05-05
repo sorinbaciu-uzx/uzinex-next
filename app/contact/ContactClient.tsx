@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { trackLead } from "@/components/Analytics";
 
 /* ─────────────────────────────────────────────────────────────────────────
-   /contact — pagină de contact Uzinex
+   /contact, pagină de contact Uzinex
    Include: formular, harta Google Maps (Tehnopolis Iași),
    departamente, CTA-uri pe canale.
    ───────────────────────────────────────────────────────────────────── */
@@ -228,7 +228,7 @@ export default function ContactClient() {
       if (res.ok && json.ok) {
         setState("success");
         form.reset();
-        // Fire conversion events (GA4, Meta Pixel, LinkedIn) — no-op if pixels not set
+        // Fire conversion events (GA4, Meta Pixel, LinkedIn), no-op if pixels not set
         trackLead(intent);
       } else {
         throw new Error(json.error ?? "Submit failed");
@@ -298,8 +298,8 @@ export default function ContactClient() {
                     <span className="text-uzx-orange font-light">Fără filtre.</span>
                   </h1>
                   <p className="text-base lg:text-lg text-ink-200 max-w-2xl leading-relaxed">
-                    Nu trece prin call center. Nu completa 12 câmpuri pentru un apel. Alege canalul potrivit —
-                    telefon, email, WhatsApp sau vizită la sediu — și primești răspuns direct de la persoana
+                    Nu trece prin call center. Nu completa 12 câmpuri pentru un apel. Alege canalul potrivit ,
+                    telefon, email, WhatsApp sau vizită la sediu, și primești răspuns direct de la persoana
                     care știe cum să te ajute.
                   </p>
                   <div className="flex flex-wrap items-center gap-4 mt-8">
@@ -358,7 +358,7 @@ export default function ContactClient() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
               {/* Form */}
               <div className="lg:col-span-7">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Scrie-ne</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Scrie-ne</div>
                 <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-4" style={{ letterSpacing: "-0.03em" }}>
                   Formular de contact.<br />
                   <span className="font-light text-uzx-orange">Te sunăm în 24h.</span>
@@ -406,7 +406,7 @@ export default function ContactClient() {
                   />
                   <FormField label="Mesaj" name="message" type="textarea" required placeholder="Descrie pe scurt nevoia ta: echipament, volum, termene, buget estimat..." />
 
-                  {/* Honeypot — câmp ascuns pentru boți. Userii reali nu-l completează. */}
+                  {/* Honeypot, câmp ascuns pentru boți. Userii reali nu-l completează. */}
                   <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
                     <label>
                       Website (nu completa)
@@ -446,7 +446,7 @@ export default function ContactClient() {
 
               {/* Departments sidebar */}
               <div className="lg:col-span-5">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Departamente</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Departamente</div>
                 <h2 className="serif text-2xl md:text-3xl text-ink-900 leading-[0.95] mb-6" style={{ letterSpacing: "-0.03em" }}>
                   Contact rapid<br />
                   <span className="font-light text-uzx-orange">pe departamente.</span>
@@ -492,13 +492,13 @@ export default function ContactClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-10 items-end">
                 <div className="lg:col-span-7">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Vizitează-ne</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Vizitează-ne</div>
                   <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-4" style={{ letterSpacing: "-0.03em" }}>
                     Parc Științific Tehnopolis.<br />
                     <span className="font-light text-uzx-orange">Iași · Moldova.</span>
                   </h2>
                   <p className="text-sm text-ink-500 max-w-lg">
-                    Sediul nostru e în Parcul Științific & Tehnologic Tehnopolis, în zona Copou—Păcurari.
+                    Sediul nostru e în Parcul Științific & Tehnologic Tehnopolis, în zona Copou,Păcurari.
                     Parcare gratuită, laborator propriu, spațiu de prezentare echipamente. Te așteptăm cu programare.
                   </p>
                 </div>
@@ -560,7 +560,7 @@ export default function ContactClient() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Harta sediu Uzinex — Parc Tehnopolis Iași"
+                  title="Harta sediu Uzinex, Parc Tehnopolis Iași"
                 />
                 {/* Fallback link below iframe */}
                 <div className="absolute bottom-3 right-3 z-10 bg-white px-3 py-1.5 border hairline text-[10px] mono">
@@ -589,7 +589,7 @@ export default function ContactClient() {
           />
           <div className="container-x relative">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-orange mb-4 mono">— Urmează-ne</div>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-orange mb-4 mono">, Urmează-ne</div>
               <h2 className="serif text-3xl md:text-4xl leading-[0.95] mb-6" style={{ letterSpacing: "-0.03em" }}>
                 Pe YouTube e conținutul tehnic.<br />
                 <span className="font-light text-uzx-orange">Aici e conversația.</span>

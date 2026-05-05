@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import { PLAYLISTS, type Playlist } from "./playlists";
 
 /* ─────────────────────────────────────────────────────────────────────────
-   /materiale-utile — bibliotecă video cu 48 de resurse gratuite
+   /materiale-utile, bibliotecă video cu 48 de resurse gratuite
    Importate din canalul YouTube UzineX, organizate în 3 playlisturi.
    Data sursă: ./playlists.ts (modul non-client pentru a permite importul
    și din server components, ex. page.tsx pentru JSON-LD).
@@ -219,7 +219,7 @@ export default function MaterialeUtileClient() {
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
                 <div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Player</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Player</div>
                   <h2
                     className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]"
                     style={{ letterSpacing: "-0.03em" }}
@@ -396,7 +396,7 @@ export default function MaterialeUtileClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-10">
                 <div className="lg:col-span-5">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Ce vei învăța</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Ce vei învăța</div>
                   <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
                     48 de episoade,<br />
                     <span className="font-light text-uzx-orange">8 teme tehnice.</span>
@@ -405,7 +405,7 @@ export default function MaterialeUtileClient() {
                 <div className="lg:col-span-7">
                   <p className="text-ink-600 text-base leading-relaxed">
                     Conținut produs de echipa Uzinex pentru manageri, ingineri și antreprenori. Nu reciclăm bloguri
-                    — fiecare episod e bazat pe proiecte reale pe care le-am implementat la clienții noștri industriali.
+                   , fiecare episod e bazat pe proiecte reale pe care le-am implementat la clienții noștri industriali.
                   </p>
                 </div>
               </div>
@@ -455,13 +455,13 @@ export default function MaterialeUtileClient() {
           />
           <div className="container-x relative">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-orange mb-4 mono">— Nu pierde următorul episod</div>
+              <div className="text-[11px] uppercase tracking-[0.25em] text-uzx-orange mb-4 mono">, Nu pierde următorul episod</div>
               <h2 className="serif text-3xl md:text-4xl lg:text-5xl leading-[0.95] mb-6" style={{ letterSpacing: "-0.03em" }}>
                 Abonează-te pe YouTube<br />
                 <span className="font-light text-uzx-orange">și primești notificare la fiecare episod nou.</span>
               </h2>
               <p className="text-ink-300 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-                Publicăm săptămânal episoade noi — Lean Manufacturing, podcast-uri cu antreprenori,
+                Publicăm săptămânal episoade noi, Lean Manufacturing, podcast-uri cu antreprenori,
                 știri industriale. Canalul e gratuit și fără paywall.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-5">

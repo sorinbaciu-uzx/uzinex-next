@@ -249,7 +249,7 @@ export default function NatoCasePage() {
       <Header solid />
 
       <main className="bg-white">
-        {/* HERO — military tone */}
+        {/* HERO, military tone */}
         <section
           className="border-b text-white relative overflow-hidden"
           style={{ background: "#082545", borderColor: "rgba(255,255,255,0.08)" }}

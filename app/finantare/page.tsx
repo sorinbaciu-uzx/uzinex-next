@@ -8,7 +8,7 @@ import { InstrumentAnimation } from "./animations";
 
 export const metadata: Metadata = {
   title:
-    "Finanțare echipamente industriale · credite, leasing, fonduri UE și credit furnizor — Uzinex",
+    "Finanțare echipamente industriale · credite, leasing, fonduri UE și credit furnizor, Uzinex",
   description:
     "Trei instrumente de finanțare pentru echipamente industriale: credite și leasing prin 10 parteneri financiari, fonduri europene și guvernamentale prin 12 programe, sau credit furnizor direct cu 7 tipuri de garanții. Dosar tehnic pregătit de Uzinex inclus.",
   keywords: [
@@ -256,7 +256,7 @@ export default function FinantareHubPage() {
                             key={b}
                             className="text-sm text-ink-700 flex gap-2 leading-snug"
                           >
-                            <span className="text-uzx-orange shrink-0 mt-[2px]">—</span>
+                            <span className="text-uzx-orange shrink-0 mt-[2px]">,</span>
                             <span>{b}</span>
                           </li>
                         ))}

@@ -11,7 +11,7 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 const BENEFITS = [
   { value: "0%", label: "Avans minim", desc: "Obții echipamentul fără investiție inițială. Capitalul tău rămâne liber pentru operațiuni." },
-  { value: "Fix", label: "Rate fixe", desc: "Fără surprize. Rata lunară e aceeași pe toată durata contractului — planificare financiară predictibilă." },
+  { value: "Fix", label: "Rate fixe", desc: "Fără surprize. Rata lunară e aceeași pe toată durata contractului, planificare financiară predictibilă." },
   { value: "48h", label: "Aprobare rapidă", desc: "Dosarul trece prin partenerii noștri financiari în maxim 48 de ore lucrătoare de la depunere." },
   { value: "1 pag.", label: "Documentație simplă", desc: "Formular scurt, CUI, ultimele 2 bilanțuri. Noi pregătim specificațiile tehnice și proformele." },
 ];
@@ -40,9 +40,9 @@ const PARTNERS: Partner[] = [
     type: "LEASING",
     specs: [
       { label: "Avans", value: "0%" },
-      { label: "Durată", value: "18 — 60 luni" },
+      { label: "Durată", value: "18, 60 luni" },
       { label: "Valoare minimă", value: "€500 + TVA" },
-      { label: "Aprobare", value: "6 — 24 ore" },
+      { label: "Aprobare", value: "6, 24 ore" },
     ],
     details: [
       "Comision administrare: 1% din valoarea contractului (minim €50)",
@@ -58,15 +58,15 @@ const PARTNERS: Partner[] = [
     tagline: "Leasing financiar de la Banca Transilvania",
     type: "LEASING FINANCIAR",
     specs: [
-      { label: "Avans", value: "10 — 30%" },
-      { label: "Durată", value: "24 — 60 luni" },
+      { label: "Avans", value: "10, 30%" },
+      { label: "Durată", value: "24, 60 luni" },
       { label: "Valoare minimă", value: "€5.000 + TVA" },
-      { label: "Aprobare", value: "24 — 48 ore" },
+      { label: "Aprobare", value: "24, 48 ore" },
     ],
     details: [
       "Dobândă fixă sau variabilă, în EUR sau RON",
-      "Valoare reziduală: 1 — 20% negociabilă",
-      "Comision de analiză: 0.5 — 1% (negociabil la volum)",
+      "Valoare reziduală: 1, 20% negociabilă",
+      "Comision de analiză: 0.5, 1% (negociabil la volum)",
       "Asigurare CASCO obligatorie pentru utilaje mobile",
     ],
     eligibil: "SRL, SA cu minim 1 an activitate",
@@ -77,10 +77,10 @@ const PARTNERS: Partner[] = [
     tagline: "Credite pentru investiții industriale",
     type: "CREDIT INVESTIȚII",
     specs: [
-      { label: "Avans", value: "15 — 25%" },
-      { label: "Durată", value: "12 — 84 luni" },
+      { label: "Avans", value: "15, 25%" },
+      { label: "Durată", value: "12, 84 luni" },
       { label: "Valoare minimă", value: "€10.000" },
-      { label: "Aprobare", value: "3 — 5 zile" },
+      { label: "Aprobare", value: "3, 5 zile" },
     ],
     details: [
       "Dobândă variabilă: EURIBOR + marjă de la 3.5%",
@@ -96,10 +96,10 @@ const PARTNERS: Partner[] = [
     tagline: "Finanțare adaptată pentru IMM-uri",
     type: "CREDIT / LEASING",
     specs: [
-      { label: "Avans", value: "0 — 20%" },
-      { label: "Durată", value: "12 — 72 luni" },
+      { label: "Avans", value: "0, 20%" },
+      { label: "Durată", value: "12, 72 luni" },
       { label: "Valoare minimă", value: "€3.000" },
-      { label: "Aprobare", value: "24 — 72 ore" },
+      { label: "Aprobare", value: "24, 72 ore" },
     ],
     details: [
       "Dobândă fixă pe primii 2 ani, apoi variabilă",
@@ -107,7 +107,7 @@ const PARTNERS: Partner[] = [
       "Comision de analiză: 0% pentru clienții Uzinex",
       "Posibilitate cofinanțare cu fonduri europene",
     ],
-    eligibil: "PFA, SRL, SA — inclusiv start-up-uri cu minim 6 luni",
+    eligibil: "PFA, SRL, SA, inclusiv start-up-uri cu minim 6 luni",
     accent: "#155290",
   },
   {
@@ -115,10 +115,10 @@ const PARTNERS: Partner[] = [
     tagline: "Leasing operațional și financiar pentru echipamente industriale",
     type: "LEASING",
     specs: [
-      { label: "Avans", value: "0 — 25%" },
-      { label: "Durată", value: "18 — 60 luni" },
+      { label: "Avans", value: "0, 25%" },
+      { label: "Durată", value: "18, 60 luni" },
       { label: "Valoare minimă", value: "€2.000 + TVA" },
-      { label: "Aprobare", value: "24 — 48 ore" },
+      { label: "Aprobare", value: "24, 48 ore" },
     ],
     details: [
       "Leasing financiar cu opțiune de cumpărare la final",
@@ -126,7 +126,7 @@ const PARTNERS: Partner[] = [
       "Rată fixă sau variabilă în EUR sau RON",
       "Asigurare CASCO inclusă în rata lunară",
     ],
-    eligibil: "PFA, SRL, SA — inclusiv micro-întreprinderi",
+    eligibil: "PFA, SRL, SA, inclusiv micro-întreprinderi",
     accent: "#0a4d96",
   },
   {
@@ -134,16 +134,16 @@ const PARTNERS: Partner[] = [
     tagline: "Leasing industrial de la UniCredit Bank",
     type: "LEASING FINANCIAR / OPERAȚIONAL",
     specs: [
-      { label: "Avans", value: "10 — 30%" },
-      { label: "Durată", value: "12 — 60 luni" },
+      { label: "Avans", value: "10, 30%" },
+      { label: "Durată", value: "12, 60 luni" },
       { label: "Valoare minimă", value: "€5.000 + TVA" },
-      { label: "Aprobare", value: "2 — 5 zile" },
+      { label: "Aprobare", value: "2, 5 zile" },
     ],
     details: [
       "Finanțare în EUR sau RON cu dobândă competitivă",
       "Leasing financiar și operațional pentru utilaje industriale",
       "Sale and leaseback pentru echipamente existente",
-      "Structuri adaptate pe perioadele de 12 — 60 luni",
+      "Structuri adaptate pe perioadele de 12, 60 luni",
     ],
     eligibil: "SRL, SA cu minim 1 an activitate",
     accent: "#c4161c",
@@ -153,13 +153,13 @@ const PARTNERS: Partner[] = [
     tagline: "Cel mai mare portofoliu de leasing din România",
     type: "LEASING FINANCIAR",
     specs: [
-      { label: "Avans", value: "10 — 25%" },
-      { label: "Durată", value: "12 — 72 luni" },
+      { label: "Avans", value: "10, 25%" },
+      { label: "Durată", value: "12, 72 luni" },
       { label: "Valoare minimă", value: "€10.000" },
-      { label: "Aprobare", value: "3 — 7 zile" },
+      { label: "Aprobare", value: "3, 7 zile" },
     ],
     details: [
-      "Portofoliu de €933 milioane (2024) — cel mai mare din România",
+      "Portofoliu de €933 milioane (2024), cel mai mare din România",
       "23% din portofoliu alocat echipamentelor și utilajelor",
       "Dobândă variabilă EURIBOR + marjă negociabilă",
       "Partener de finanțare pentru proiecte cofinanțate UE",
@@ -172,10 +172,10 @@ const PARTNERS: Partner[] = [
     tagline: "IFN specializat pe echipamente și utilaje",
     type: "LEASING",
     specs: [
-      { label: "Avans", value: "5 — 20%" },
-      { label: "Durată", value: "12 — 48 luni" },
+      { label: "Avans", value: "5, 20%" },
+      { label: "Durată", value: "12, 48 luni" },
       { label: "Valoare minimă", value: "€1.000 + TVA" },
-      { label: "Aprobare", value: "24 — 48 ore" },
+      { label: "Aprobare", value: "24, 48 ore" },
     ],
     details: [
       "Aprobare rapidă cu documentație minimală",
@@ -183,7 +183,7 @@ const PARTNERS: Partner[] = [
       "Flexibilitate la structura ratelor (sezonalitate, grație)",
       "Proces simplificat pentru clienții cu istoric bun",
     ],
-    eligibil: "PFA, SRL, SA — proces simplificat pentru companii cu cifră > €50K",
+    eligibil: "PFA, SRL, SA, proces simplificat pentru companii cu cifră > €50K",
     accent: "#2d7d46",
   },
   {
@@ -191,10 +191,10 @@ const PARTNERS: Partner[] = [
     tagline: "Leasing de la OTP Bank pentru echipamente industriale",
     type: "LEASING FINANCIAR",
     specs: [
-      { label: "Avans", value: "10 — 30%" },
-      { label: "Durată", value: "12 — 60 luni" },
+      { label: "Avans", value: "10, 30%" },
+      { label: "Durată", value: "12, 60 luni" },
       { label: "Valoare minimă", value: "€5.000" },
-      { label: "Aprobare", value: "3 — 5 zile" },
+      { label: "Aprobare", value: "3, 5 zile" },
     ],
     details: [
       "Finanțare în EUR și RON cu dobândă fixă pe toată durata",
@@ -210,18 +210,18 @@ const PARTNERS: Partner[] = [
     tagline: "Leasing operațional pentru echipamente și flote",
     type: "LEASING OPERAȚIONAL",
     specs: [
-      { label: "Avans", value: "0 — 10%" },
-      { label: "Durată", value: "12 — 60 luni" },
+      { label: "Avans", value: "0, 10%" },
+      { label: "Durată", value: "12, 60 luni" },
       { label: "Valoare minimă", value: "€3.000 + TVA" },
-      { label: "Aprobare", value: "24 — 48 ore" },
+      { label: "Aprobare", value: "24, 48 ore" },
     ],
     details: [
-      "Leasing operațional pur — off-balance sheet, nu afectează bilanțul",
+      "Leasing operațional pur, off-balance sheet, nu afectează bilanțul",
       "Rata lunară include mentenanța și asigurarea (opțional)",
       "La final: returnare, prelungire sau achiziție la valoare reziduală",
       "Cel mai mare operator de leasing operațional din România",
     ],
-    eligibil: "PFA, SRL, SA — inclusiv companii noi cu garanții suplimentare",
+    eligibil: "PFA, SRL, SA, inclusiv companii noi cu garanții suplimentare",
     accent: "#e30613",
   },
 ];
@@ -356,14 +356,14 @@ export default function CrediteLeasingClient() {
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
                 <div className="lg:col-span-5">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Proces simplu</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Proces simplu</div>
                   <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
                     De la ofertă la<br /><span className="font-light text-uzx-orange">prima rată în 4 pași.</span>
                   </h2>
                 </div>
                 <div className="lg:col-span-6 lg:col-start-7 flex items-end">
                   <p className="text-ink-600 leading-relaxed">
-                    Nu te ocupi tu de birocrația financiară — o facem noi. Tu alegi echipamentul, noi pregătim dosarul, obținem aprobarea și livrăm la cheie.
+                    Nu te ocupi tu de birocrația financiară, o facem noi. Tu alegi echipamentul, noi pregătim dosarul, obținem aprobarea și livrăm la cheie.
                   </p>
                 </div>
               </div>
@@ -377,7 +377,7 @@ export default function CrediteLeasingClient() {
         <section className="border-b hairline py-14 lg:py-20 bg-white">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Tipuri de finanțare</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Tipuri de finanțare</div>
               <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12" style={{ letterSpacing: "-0.03em" }}>
                 Alege structura potrivită<br /><span className="font-light text-uzx-orange">pentru investiția ta.</span>
               </h2>
@@ -409,7 +409,7 @@ export default function CrediteLeasingClient() {
         <section className="border-b hairline py-14 lg:py-20 bg-ink-50">
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Parteneri financiari</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Parteneri financiari</div>
               <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-12" style={{ letterSpacing: "-0.03em" }}>
                 Lucrăm cu cei mai buni<br /><span className="font-light text-uzx-orange">pentru rata ta optimă.</span>
               </h2>
@@ -500,7 +500,7 @@ export default function CrediteLeasingClient() {
           <div className="container-x">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
               <div className="lg:col-span-4">
-                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">— Întrebări frecvente</div>
+                <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">, Întrebări frecvente</div>
                 <h2 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]" style={{ letterSpacing: "-0.03em" }}>
                   Despre finanțare.
                 </h2>
@@ -557,7 +557,7 @@ export default function CrediteLeasingClient() {
                   Solicită o simulare de finanțare<br /><span className="font-light text-uzx-orange">în 24 de ore.</span>
                 </h2>
                 <p className="text-white/70 leading-relaxed">
-                  Spune-ne ce echipament te interesează și primești o simulare completă: rată lunară, avans, durata contractului și costul total al finanțării — pe toate cele 3 variante (leasing financiar, leasing operațional, credit).
+                  Spune-ne ce echipament te interesează și primești o simulare completă: rată lunară, avans, durata contractului și costul total al finanțării, pe toate cele 3 variante (leasing financiar, leasing operațional, credit).
                 </p>
               </div>
               <div className="lg:col-span-4 lg:col-start-9 flex flex-col gap-3">
@@ -597,7 +597,7 @@ function ProcessAnimation({ steps }: { steps: typeof STEPS }) {
   return (
     <div className="bg-[#0a0e14] p-6 lg:p-10 border border-white/10">
       <div className="text-[9px] mono text-white/40 uppercase tracking-widest mb-6">
-        Proces de finanțare — 4 etape
+        Proces de finanțare, 4 etape
       </div>
 
       {/* Steps */}

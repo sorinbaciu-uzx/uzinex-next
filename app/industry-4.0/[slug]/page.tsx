@@ -39,7 +39,7 @@ const DIRECTIONS: Direction[] = [
     subtitle: "Digitalizare rapidă cu ROI din prima lună",
     accent: "#1e6bb8",
     heroDescription:
-      "Montăm senzori inteligenți pe orice utilaj din hala ta — nou sau vechi, indiferent de brand. În câteva ore ai dashboard-ul OEE pe telefon, cu date live despre temperatură, vibrații, consum energetic și ciclu de lucru. Fără cablaje complicate, fără oprirea producției.",
+      "Montăm senzori inteligenți pe orice utilaj din hala ta, nou sau vechi, indiferent de brand. În câteva ore ai dashboard-ul OEE pe telefon, cu date live despre temperatură, vibrații, consum energetic și ciclu de lucru. Fără cablaje complicate, fără oprirea producției.",
     sections: [
       {
         title: "Ce primești concret",
@@ -65,7 +65,7 @@ const DIRECTIONS: Direction[] = [
     ],
     useCases: [
       "Fabrici cu flotă mixtă de utilaje (multi-brand, multi-generație)",
-      "Companii care pregătesc dosare de finanțare UE (PNRR/POIM) — monitorizarea e cerință",
+      "Companii care pregătesc dosare de finanțare UE (PNRR/POIM), monitorizarea e cerință",
       "Manageri care vor vizibilitate asupra OEE fără investiție masivă",
       "Primul pas concret în strategia de digitalizare Industry 4.0",
     ],
@@ -79,7 +79,7 @@ const DIRECTIONS: Direction[] = [
     subtitle: "Rezolvă lipsa de personal, nu triplezi costurile",
     accent: "#f5851f",
     heroDescription:
-      "Cobotul lucrează în siguranță lângă oamenii tăi — paletizează, alimentează CNC-ul, sudează, asamblează — fără cuști de protecție masive. Integrăm branduri asiatice de top cu prețuri cu 30-40% sub distribuitorii europeni, cu instalare, programare și suport incluse.",
+      "Cobotul lucrează în siguranță lângă oamenii tăi, paletizează, alimentează CNC-ul, sudează, asamblează, fără cuști de protecție masive. Integrăm branduri asiatice de top cu prețuri cu 30-40% sub distribuitorii europeni, cu instalare, programare și suport incluse.",
     sections: [
       {
         title: "Ce primești concret",
@@ -88,7 +88,7 @@ const DIRECTIONS: Direction[] = [
       },
       {
         title: "Cum funcționează integrarea",
-        body: "Analizăm fluxul tău de producție, identificăm operațiile repetitive sau periculoase și propunem configurația optimă. Instalarea + programarea durează 3-5 zile. Operatorii învață să lucreze cu cobotul în maxim 2 zile — interfața este intuitivă, nu necesită cunoștințe de robotică.",
+        body: "Analizăm fluxul tău de producție, identificăm operațiile repetitive sau periculoase și propunem configurația optimă. Instalarea + programarea durează 3-5 zile. Operatorii învață să lucreze cu cobotul în maxim 2 zile, interfața este intuitivă, nu necesită cunoștințe de robotică.",
         anim: { type: "flowchart", steps: [{ label: "Analiză flux", time: "Ziua 1" }, { label: "Instalare", time: "Ziua 2-3" }, { label: "Programare", time: "Ziua 4" }, { label: "Training", time: "Ziua 5" }], totalTime: "3-5 zile" },
       },
       {
@@ -104,10 +104,10 @@ const DIRECTIONS: Direction[] = [
       { label: "Training", value: "2 zile" },
     ],
     useCases: [
-      "Paletizare la capăt de linie — manipulare cutii, saci, baxuri",
-      "Alimentare/descărcare CNC — ciclu pick-and-place repetitiv",
-      "Sudură colaborativă — operatorul fixează, cobotul sudează",
-      "Asamblare componente — precizie repetabilă sub 0.1mm",
+      "Paletizare la capăt de linie, manipulare cutii, saci, baxuri",
+      "Alimentare/descărcare CNC, ciclu pick-and-place repetitiv",
+      "Sudură colaborativă, operatorul fixează, cobotul sudează",
+      "Asamblare componente, precizie repetabilă sub 0.1mm",
     ],
     ctaTitle: "Solicită o simulare gratuită",
     ctaBody: "Venim la tine, analizăm fluxul și îți arătăm exact cum ar funcționa cobotul pe linia ta.",
@@ -119,7 +119,7 @@ const DIRECTIONS: Direction[] = [
     subtitle: "Zero opriri neplanificate, liniște operațională totală",
     accent: "#155290",
     heroDescription:
-      "Algoritmii noștri analizează datele de la senzorii IIoT și îți spun exact ce piesă va ceda și când. Noi o aducem pe linia ta de producție înainte de defecțiune — zero opriri neplanificate, zero penalități contractuale.",
+      "Algoritmii noștri analizează datele de la senzorii IIoT și îți spun exact ce piesă va ceda și când. Noi o aducem pe linia ta de producție înainte de defecțiune, zero opriri neplanificate, zero penalități contractuale.",
     sections: [
       {
         title: "Ce primești concret",
@@ -145,7 +145,7 @@ const DIRECTIONS: Direction[] = [
     ],
     useCases: [
       "Linii de producție critice cu penalități contractuale pentru opriri",
-      "Contracte publice și sector apărare — reziliență operațională obligatorie",
+      "Contracte publice și sector apărare, reziliență operațională obligatorie",
       "Flote mari de utilaje unde mentenanța reactivă este prea costisitoare",
       "Companii cu audituri UE unde trasabilitatea intervențiilor este cerință",
     ],
@@ -184,7 +184,7 @@ const DIRECTIONS: Direction[] = [
       { label: "Montare", value: "Pe bandă existentă" },
     ],
     useCases: [
-      "Producție repere auto pentru export — clauze PPM sub 50",
+      "Producție repere auto pentru export, clauze PPM sub 50",
       "Fabrici de packaging care cer etichetare 100% corectă",
       "Producție farmaceutică cu cerințe de conformitate stricte",
       "Orice linie unde controlul manual nu ține pasul cu viteza de producție",
@@ -199,7 +199,7 @@ const DIRECTIONS: Direction[] = [
     subtitle: "Conectează orice utilaj la biroul tău",
     accent: "#0a4d96",
     heroDescription:
-      "Gateway-ul nostru Edge traduce automat datele din orice mașină — indiferent de brand sau protocol — în formatul ERP-ului tău. Managerul vede producția live, operatorul primește instrucțiuni digitale, fără hârtie, fără erori.",
+      "Gateway-ul nostru Edge traduce automat datele din orice mașină, indiferent de brand sau protocol, în formatul ERP-ului tău. Managerul vede producția live, operatorul primește instrucțiuni digitale, fără hârtie, fără erori.",
     sections: [
       {
         title: "Ce primești concret",
@@ -239,7 +239,7 @@ const DIRECTIONS: Direction[] = [
     subtitle: "Codul e al tău, fără licențe recurente, niciodată",
     accent: "#f5851f",
     heroDescription:
-      "Ai un proces pe care niciun soft de raft nu-l rezolvă? Îți dezvoltăm aplicații industriale la comandă — de la panouri SCADA personalizate și interfețe HMI, la sisteme de planificare producție, trasabilitate lot și raportare automată. Codul e al tău, rulează pe serverele tale.",
+      "Ai un proces pe care niciun soft de raft nu-l rezolvă? Îți dezvoltăm aplicații industriale la comandă, de la panouri SCADA personalizate și interfețe HMI, la sisteme de planificare producție, trasabilitate lot și raportare automată. Codul e al tău, rulează pe serverele tale.",
     sections: [
       {
         title: "Ce primești concret",
@@ -285,14 +285,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const d = DIRECTIONS.find((x) => x.slug === slug);
-  if (!d) return { title: "Industry 4.0 — Uzinex" };
+  if (!d) return { title: "Industry 4.0, Uzinex" };
   const canonicalPath = `/industry-4.0/${d.slug}`;
   return {
-    title: `${d.title} — Industry 4.0`,
+    title: `${d.title}, Industry 4.0`,
     description: d.heroDescription,
     alternates: { canonical: canonicalPath },
     openGraph: {
-      title: `${d.title} — Industry 4.0 Uzinex`,
+      title: `${d.title}, Industry 4.0 Uzinex`,
       description: d.heroDescription,
       url: canonicalPath,
       type: "website",
@@ -314,7 +314,7 @@ export default async function DirectionPage({
   // Shared across every prose block on this page so each link target is used at most once.
   const alreadyLinked = new Set<string>();
   const currentPath = `/industry-4.0/${d.slug}`;
-  // Product targets — if any prose on this page mentions a product by full name,
+  // Product targets, if any prose on this page mentions a product by full name,
   // it becomes a contextual cross-link. Safe: strict full-name matching + 3/page cap.
   const productTargets = buildProductTargets("", PRODUCTS);
 
@@ -412,7 +412,7 @@ export default async function DirectionPage({
                     className="text-[11px] uppercase tracking-[0.2em] mono mb-3"
                     style={{ color: d.accent }}
                   >
-                    — {String(i + 1).padStart(2, "0")}
+                   , {String(i + 1).padStart(2, "0")}
                   </div>
                   <h2
                     className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95]"
@@ -450,7 +450,7 @@ export default async function DirectionPage({
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
               <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                — Cazuri de utilizare
+               , Cazuri de utilizare
               </div>
               <h2
                 className="serif text-3xl md:text-4xl text-ink-900 leading-[0.95] mb-10"
@@ -543,7 +543,7 @@ export default async function DirectionPage({
           <div className="container-x">
             <div className="max-w-6xl mx-auto">
               <div className="text-[10px] uppercase tracking-[0.25em] text-ink-400 mono mb-3">
-                — Celelalte direcții Industry 4.0
+               , Celelalte direcții Industry 4.0
               </div>
               <h2
                 className="serif text-2xl md:text-3xl text-ink-900 leading-[0.95] mb-8"
@@ -562,7 +562,7 @@ export default async function DirectionPage({
                       className="text-[10px] mono font-bold mb-2"
                       style={{ color: o.accent }}
                     >
-                      — {o.num}
+                     , {o.num}
                     </div>
                     <div
                       className="serif text-base text-ink-900 leading-tight group-hover:text-uzx-blue transition"

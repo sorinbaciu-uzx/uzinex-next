@@ -235,7 +235,7 @@ export function MagazinClient({
           <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto scroll-thin bg-white border border-ink-100 shadow-sm">
             <div className="px-6 pt-6 pb-4">
               <div className="text-[10px] uppercase tracking-[0.2em] text-uzx-orange mono">
-                — Filtrează
+               , Filtrează
               </div>
             </div>
             <div className="h-px bg-ink-100 mx-6" />

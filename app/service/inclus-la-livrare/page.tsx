@@ -18,7 +18,7 @@ const PROMISES = [
   {
     num: "01",
     title: "Disponibilitate",
-    body: "Datorită rețelei naționale de service, echipa ta personală Uzinex — formată din manager regional, dispecer și tehnician — este mereu aproape de tine, prin toate canalele de comunicare. Telefon, email și aplicație mobilă, disponibile 24/7.",
+    body: "Datorită rețelei naționale de service, echipa ta personală Uzinex, formată din manager regional, dispecer și tehnician, este mereu aproape de tine, prin toate canalele de comunicare. Telefon, email și aplicație mobilă, disponibile 24/7.",
   },
   {
     num: "02",
@@ -68,7 +68,7 @@ export default function ServiceInclusPage() {
   const svc = serviceSchema({
     name: "Service inclus la livrare Uzinex",
     description:
-      "Punere în funcțiune, training operatori, garanție 60 luni, intervenție sub 24h, piese OEM, diagnoză colaborativă remote — incluse cu fiecare echipament.",
+      "Punere în funcțiune, training operatori, garanție 60 luni, intervenție sub 24h, piese OEM, diagnoză colaborativă remote, incluse cu fiecare echipament.",
     serviceType: "Equipment commissioning and warranty service",
     url: "/service/inclus-la-livrare",
   });
@@ -117,7 +117,7 @@ export default function ServiceInclusPage() {
                 </span>
               </h1>
               <p className="text-ink-500 text-base lg:text-lg leading-relaxed mt-8 max-w-2xl">
-                Service-ul Uzinex nu începe după cumpărare — e parte integrantă
+                Service-ul Uzinex nu începe după cumpărare, e parte integrantă
                 din livrare. Punerea în funcțiune, trainingul operatorilor,
                 garanția standard de 60 de luni, intervenția sub 24 de ore și
                 piesele originale OEM sunt incluse fără cost suplimentar.
@@ -133,7 +133,7 @@ export default function ServiceInclusPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12 lg:mb-16">
                 <div className="lg:col-span-6">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                    — Te poți baza pe noi
+                   , Te poți baza pe noi
                   </div>
                   <h2
                     className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95]"
@@ -151,7 +151,7 @@ export default function ServiceInclusPage() {
                     Service-ul Uzinex este construit pe patru piloni
                     fundamentali. Fiecare echipament livrat, fiecare intervenție
                     efectuată și fiecare contract semnat respectă aceste
-                    promisiuni — fără excepție și fără compromisuri.
+                    promisiuni, fără excepție și fără compromisuri.
                   </p>
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function ServiceInclusPage() {
                 {PROMISES.map((p) => (
                   <div key={p.num} className="bg-white p-8 lg:p-10">
                     <div className="text-[11px] mono text-uzx-orange mb-6">
-                      — {p.num}
+                     , {p.num}
                     </div>
                     <h3
                       className="serif text-xl lg:text-2xl text-ink-900 mb-4 leading-tight"
@@ -201,7 +201,7 @@ export default function ServiceInclusPage() {
                   </div>
                   <p className="text-sm text-ink-600 leading-relaxed max-w-2xl">
                     Fiecare echipament livrat de Uzinex vine însoțit de un
-                    manual digital interactiv cu AI — limbaj natural, comandă
+                    manual digital interactiv cu AI, limbaj natural, comandă
                     vocală, recunoaștere prin imagini, proceduri pas-cu-pas.
                     Disponibil offline, 24/7, fără cost suplimentar sau
                     abonamente ascunse.
@@ -224,7 +224,7 @@ export default function ServiceInclusPage() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               <div className="lg:col-span-5">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                  — Service digital
+                 , Service digital
                 </div>
                 <h2
                   className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
@@ -281,7 +281,7 @@ export default function ServiceInclusPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
                 <div className="lg:col-span-6">
                   <div className="text-[11px] uppercase tracking-[0.2em] text-uzx-orange mb-3 mono">
-                    — Piese originale OEM
+                   , Piese originale OEM
                   </div>
                   <h2
                     className="serif text-3xl md:text-4xl lg:text-5xl text-ink-900 leading-[0.95] mb-6"
@@ -297,7 +297,7 @@ export default function ServiceInclusPage() {
                     Lucrăm exclusiv cu piese originale, certificate de
                     producători OEM și supuse celor mai stricte teste de
                     calitate. Aceste piese nu sunt doar foarte rezistente și mai
-                    puțin sensibile la uzură — ele garantează exploatarea în
+                    puțin sensibile la uzură, ele garantează exploatarea în
                     siguranță a utilajului tău și păstrarea valorii investiției
                     pe termen lung.
                   </p>

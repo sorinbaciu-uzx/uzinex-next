@@ -389,7 +389,7 @@ export default async function CammaCasePage() {
           </div>
         </Section>
 
-        {/* 2. DE CE CĂRĂMIDĂ MODULARĂ — text + diagram interlock */}
+        {/* 2. DE CE CĂRĂMIDĂ MODULARĂ, text + diagram interlock */}
         <Section
           number="02"
           eyebrow="De ce cărămidă modulară hyper-presată · patru argumente verificabile"
@@ -449,7 +449,7 @@ export default async function CammaCasePage() {
           </p>
         </Section>
 
-        {/* 3. PARADOXUL UCRAINEAN — text + diagram paradox */}
+        {/* 3. PARADOXUL UCRAINEAN, text + diagram paradox */}
         <Section
           number="03"
           eyebrow="Punctul de plecare · paradoxul forței de presare"
@@ -528,7 +528,7 @@ export default async function CammaCasePage() {
           </div>
         </Section>
 
-        {/* 4. CHIMIA + FLUXUL — text + diagram humidity calc */}
+        {/* 4. CHIMIA + FLUXUL, text + diagram humidity calc */}
         <Section
           number="04"
           eyebrow="Cheia tehnologică · chimia materiei prime și fluxul calibrat"
