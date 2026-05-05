@@ -25,6 +25,13 @@ const mag = (cat?: string, sub?: string) => {
 
 const CATALOG_GROUPS: CategoryGroup[] = [
   {
+    name: "Packing",
+    href: mag("Packing"),
+    items: [
+      { label: "Mașini de Ambalat Industriale", href: mag("Packing", "Mașini de Ambalat Industriale") },
+    ],
+  },
+  {
     name: "Utilaje de construcții",
     href: mag("Utilaje de construcții"),
     items: [

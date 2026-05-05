@@ -20,6 +20,12 @@ type CatNode = {
 
 const CATEGORIES: CatNode[] = [
   {
+    name: "Packing",
+    children: [
+      "Mașini de Ambalat Industriale"
+    ],
+  },
+  {
     name: "Utilaje de construcții",
     children: [
       { name: "Excavatoare", children: ["Miniexcavatoare", "Excavatoare pe șenile"] },
