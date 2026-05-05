@@ -44,10 +44,18 @@ export function ProductGallery({
     ? { type: "image", url: mainImage, alt: mainAlt }
     : null;
 
+  const seenUrls = new Set<string>();
+  if (mainAsItem) seenUrls.add(mainAsItem.url);
+  const dedupedGalleryImages = galleryImages.filter((g) => {
+    if (seenUrls.has(g.url)) return false;
+    seenUrls.add(g.url);
+    return true;
+  });
+
   const items: ViewerItem[] = [
     ...videos,
     ...(mainAsItem ? [mainAsItem] : []),
-    ...galleryImages,
+    ...dedupedGalleryImages,
   ];
 
   const total = items.length;
