@@ -137,6 +137,7 @@ export function ProductGallery({
                 alt={activeItem.alt || productName}
                 width={600}
                 height={420}
+                sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-contain max-h-full w-full"
                 priority={activeIndex === 0}
               />
@@ -211,6 +212,33 @@ export function ProductGallery({
               {activeIndex + 1} / {total}
             </div>
           </>
+        )}
+
+        {/* Prefetch vecinii (prev/next) ca să fie deja în cache la click pe săgeată */}
+        {total > 1 && (
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-0 pointer-events-none -z-10"
+          >
+            {items.map((it, i) => {
+              if (it.type !== "image") return null;
+              const isNeighbor =
+                i === (activeIndex + 1) % total ||
+                i === (activeIndex - 1 + total) % total;
+              if (!isNeighbor) return null;
+              return (
+                <Image
+                  key={`prefetch-${i}-${it.url}`}
+                  src={it.url}
+                  alt=""
+                  width={600}
+                  height={420}
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  loading="eager"
+                />
+              );
+            })}
+          </div>
         )}
       </div>
 
